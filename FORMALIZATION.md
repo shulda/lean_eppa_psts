@@ -13,11 +13,11 @@ is on `main` and GitHub Actions is green.
 
 | Mathematical item / gate | Lean declaration / file | Status | Notes |
 | --- | --- | --- | --- |
-| Repository / CI bootstrap | `PSTSEPPA.lean`, `.github/workflows/lean.yml` | Current target | Mirror the pinned toolchain, build and axiom-audit policy of `lean_all_those_eppa_classes`. |
-| T0: PSTS basic API | `PSTSEPPA/PSTS/Basic.lean` | Planned | Partial binary operation; repeated arguments and Steiner identities must be explicit. |
-| T0: closed subsets / induced systems | `PSTSEPPA/PSTS/Closed.lean` | Planned | Closedness is essential for the EPPA category. |
-| T0/T1: partial automorphisms | `PSTSEPPA/PSTS/PartialAut.lean` | Planned | Prefer concrete partial equivalences if mathlib's API is robust enough. |
-| T1: signed words and partial evaluation | `PSTSEPPA/PSTS/WordEval.lean` | Planned | Audit composition/action orientation carefully. |
+| Repository / CI bootstrap | `PSTSEPPA.lean`, `.github/workflows/lean.yml` | **Formalized** | Lean/mathlib 4.34.1; full build and axiom audit are green. |
+| T0: PSTS basic API | `PSTSEPPA/PSTS/Basic.lean` | **API formalized** | `Option`-valued partial operation; diagonal is total; symmetry plus one companion identity, with the other derived. |
+| T0: closed subsets / induced systems | `PSTSEPPA/PSTS/Closed.lean` | **API formalized** | Closed sets are closed under defined operation values; restriction to a closed subtype is a PSTS. |
+| T0: partial automorphisms | `PSTSEPPA/PSTS/PartialAut.lean` | **API formalized** | Uses option-valued `PEquiv`; source/target are closed; inverse and composition are checked. Composition means first `p`, then `q`, matching `PEquiv.trans`. |
+| T0: regression examples | `PSTSEPPA/PSTS/Examples.lean` | **Formalized** | Discrete systems on 0/1/2 points, one Steiner triple, a non-closed two-point subset, and a genuinely partial singleton automorphism. |\n| T1: signed words and partial evaluation | `PSTSEPPA/PSTS/WordEval.lean` | **Current target** | Audit composition/action orientation carefully. |
 | T2: abstract MAX interface | `PSTSEPPA/PSTS/MaxTransporter.lean` | Planned | State only what the quotient development needs. |
 | T2: quotient development | `PSTSEPPA/PSTS/Development.lean` | Planned | Equality criterion, injective base copy, functionality, closedness, group action. |
 | T2: conditional EPPA transfer | `PSTSEPPA/PSTS/EPPAFromMax.lean` | Planned | **Hard gate before ABO Sections 3–5.** |
@@ -42,3 +42,20 @@ finite PSTS A + finite selected partial automorphisms + MAX extension
 
 If that transfer layer does not compile cleanly, repair it or use the documented
 fallback ladder before investing in ABO Sections 3–5.
+
+
+### Gate T0 design note
+
+The PSTS API deliberately uses a partial binary operation
+`op : V → V → Option V` rather than a ternary relation.  Diagonal values are
+total (`op x x = some x`).  Symmetry and one Steiner companion identity are
+stored; the second companion identity is derived.  This keeps the structure
+nonredundant while making closure under the partial operation literal.
+
+Partial automorphisms are built on mathlib's option-valued `PEquiv`.  The
+operation-isomorphism condition is a single `Option.bind` equality, so it
+simultaneously preserves and reflects definedness.  Their domains and ranges
+are required to be closed.  Inversion, closed preimages and composition are
+proved in Lean; the composition convention is the one used by
+`PEquiv.trans`: first the left map, then the right map.  This convention is
+the one to be used by the signed-word layer.
