@@ -156,8 +156,12 @@ def single [DecidableEq V] (A : PSTS V) (a b : V) : PartialAut A where
       simpa only [Option.mem_def] using hx
     have hymem : y' ∈ PEquiv.single a b y := by
       simpa only [Option.mem_def] using hy
-    rcases (PEquiv.mem_single_iff x a x' b).1 hxmem with ⟨rfl, rfl⟩
-    rcases (PEquiv.mem_single_iff y a y' b).1 hymem with ⟨rfl, rfl⟩
+    rcases (PEquiv.mem_single_iff x' b x a).1 hxmem with ⟨hxa, hxb⟩
+    rcases (PEquiv.mem_single_iff y' b y a).1 hymem with ⟨hya, hyb⟩
+    subst x
+    subst x'
+    subst y
+    subst y'
     rw [A.diag a, A.diag b]
     simp
 
