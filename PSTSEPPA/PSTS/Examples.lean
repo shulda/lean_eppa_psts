@@ -1,6 +1,5 @@
 import PSTSEPPA.PSTS.PartialAut
 import Mathlib.Data.Fin.Basic
-import Mathlib.Data.Fintype.Basic
 
 /-!
 # Gate T0 regression examples
@@ -44,7 +43,7 @@ def twoPoint : PSTS (Fin 2) := discrete (Fin 2)
 /-- Three named points supporting one Steiner triple. -/
 inductive TriplePoint
   | a | b | c
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
 
 open TriplePoint
 
@@ -67,7 +66,9 @@ def oneTriple : PSTS TriplePoint where
   symm x y := by cases x <;> cases y <;> rfl
   steiner_left := by
     intro x y z hxyz
-    cases x <;> cases y <;> simp_all [tripleOp]
+    cases x <;> cases y <;>
+      simp only [tripleOp, Option.some.injEq] at hxyz ⊢ <;>
+      subst z <;> rfl
 
 /-- Every singleton in the one-triple PSTS is closed. -/
 example (p : TriplePoint) : oneTriple.Closed ({p} : Set TriplePoint) :=
@@ -79,7 +80,7 @@ theorem oneTriple_ab_not_closed :
   intro h
   have hc : c ∈ ({a, b} : Set TriplePoint) :=
     h (x := a) (y := b) (z := c) (by simp) (by simp) (by rfl)
-  simpa using hc
+  simp at hc
 
 /-- A genuinely partial automorphism: it is defined only at `a` and sends it
 to `b`. -/
