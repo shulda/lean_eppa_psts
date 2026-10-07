@@ -113,13 +113,23 @@ theorem inv_cons (s : SignedLetter ι) (w : SignedWord ι) :
     inv (s :: w) = inv w ++ [s.inv] :=
   rfl
 
+/-- Inversion reverses concatenation. -/
+theorem inv_append (u v : SignedWord ι) :
+    inv (u ++ v) = inv v ++ inv u := by
+  induction u with
+  | nil =>
+      simp [inv]
+  | cons s u ih =>
+      simp [inv, ih, List.append_assoc]
+
 @[simp]
 theorem inv_inv (w : SignedWord ι) : inv (inv w) = w := by
   induction w with
   | nil =>
       rfl
   | cons s w ih =>
-      simp [inv, ih]
+      rw [inv_cons, inv_append, ih]
+      simp [inv]
 
 /-- Evaluation of the formal inverse word is the inverse partial automorphism. -/
 theorem eval_inv (gen : ι → PartialAut A) (w : SignedWord ι) :
