@@ -165,7 +165,7 @@ def trans (p q : PartialAut A) : PartialAut A where
     rcases hx with ⟨x', hx₁, hx₂⟩
     rcases hy with ⟨y', hy₁, hy₂⟩
     change (A.op x y).bind (fun z => (p.toPEquiv z).bind q.toPEquiv) = A.op x'' y''
-    rw [Option.bind_assoc, p.map_op hx₁ hy₁, q.map_op hx₂ hy₂]
+    rw [← Option.bind_assoc, p.map_op hx₁ hy₁, q.map_op hx₂ hy₂]
 
 end PartialAut
 
