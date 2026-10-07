@@ -70,7 +70,8 @@ theorem evalGroup_inv [Group H] (liftGen : ι → H) (w : SignedWord ι) :
     evalGroup liftGen (inv w) = (evalGroup liftGen w)⁻¹ := by
   induction w with
   | nil =>
-      simpa [evalGroup] using (inv_one : (1 : H)⁻¹ = 1).symm
+      change (1 : H) = 1⁻¹
+      rw [inv_one]
   | cons s w ih =>
       rw [inv_cons, evalGroup_append, ih]
       simp [evalGroup]
