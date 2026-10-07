@@ -142,6 +142,7 @@ theorem developmentRight_liftGen_base
     X.developmentMk b 1
   rw [one_mul]
   apply Quotient.sound
+  change DevelopmentGlue X (a, X.liftGen i) (b, 1)
   simpa using X.glue_pos i hab (1 : X.H)
 
 /-- The total quotient automorphism associated to `liftGen i` extends
