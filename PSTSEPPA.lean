@@ -7,6 +7,7 @@ import PSTSEPPA.PSTS.WordExamples
 import PSTSEPPA.PSTS.MaxTransporter
 import PSTSEPPA.PSTS.Development
 import PSTSEPPA.PSTS.DevelopmentOperation
+import PSTSEPPA.PSTS.DevelopmentBase
 
 /-!
 # EPPA for partial Steiner triple systems
