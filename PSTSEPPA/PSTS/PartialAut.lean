@@ -229,6 +229,11 @@ theorem toPEquiv_trans (p q : PartialAut A) :
   rfl
 
 @[simp]
+theorem symm_refl (A : PSTS V) : (refl A).symm = refl A := by
+  apply PartialAut.ext
+  rfl
+
+@[simp]
 theorem symm_symm (p : PartialAut A) : p.symm.symm = p := by
   apply PartialAut.ext
   simp
