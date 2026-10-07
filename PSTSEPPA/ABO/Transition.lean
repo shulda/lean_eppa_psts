@@ -1,6 +1,6 @@
 import PSTSEPPA.ABO.Graph
 import Mathlib.Algebra.Group.End
-import Mathlib.GroupTheory.Subgroup.Basic
+import Mathlib.Algebra.Group.Subgroup.Lattice
 
 /-!
 # Transition groups of complete ABO graphs
