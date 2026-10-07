@@ -74,9 +74,10 @@ theorem signedTransition_neg (i : ι) :
   rfl
 
 /-- ABO value of a signed word. -/
-noncomputable def wordValue : LabelWord ι → RightPerm V
+noncomputable def wordValue (H : CompleteEGraph V Edge ι) :
+    LabelWord ι → RightPerm V
   | [] => 1
-  | s :: w => G.signedTransition s * wordValue G w
+  | s :: w => H.signedTransition s * wordValue H w
 
 @[simp]
 theorem wordValue_nil :
