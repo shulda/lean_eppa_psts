@@ -22,12 +22,21 @@ def Closed (A : PSTS V) (S : Set V) : Prop :=
 @[simp]
 theorem closed_empty (A : PSTS V) : A.Closed (∅ : Set V) := by
   intro x y z hx
-  exact False.elim (by simpa using hx)
+  simp at hx
 
 @[simp]
 theorem closed_univ (A : PSTS V) : A.Closed (Set.univ : Set V) := by
   intro x y z hx hy hxy
   trivial
+
+/-- Every singleton is a closed substructure. -/
+@[simp]
+theorem closed_singleton (A : PSTS V) (a : V) : A.Closed ({a} : Set V) := by
+  intro x y z hx hy hxy
+  simp only [Set.mem_singleton_iff] at hx hy ⊢
+  subst x
+  subst y
+  exact (Option.some.inj ((A.diag a).symm.trans hxy)).symm
 
 theorem Closed.inter {A : PSTS V} {S T : Set V} (hS : A.Closed S) (hT : A.Closed T) :
     A.Closed (S ∩ T) := by

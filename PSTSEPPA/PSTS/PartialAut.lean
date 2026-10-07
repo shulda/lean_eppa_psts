@@ -52,6 +52,17 @@ theorem pEquivTarget_symm (p : V ≃. W) :
     PEquivTarget p.symm = PEquivSource p := by
   simp [PEquivTarget]
 
+@[simp]
+theorem pEquivSource_single [DecidableEq V] [DecidableEq W] (a : V) (b : W) :
+    PEquivSource (PEquiv.single a b) = ({a} : Set V) := by
+  ext x
+  simp [PEquivSource, PEquiv.single]
+
+@[simp]
+theorem pEquivTarget_single [DecidableEq V] [DecidableEq W] (a : V) (b : W) :
+    PEquivTarget (PEquiv.single a b) = ({b} : Set W) := by
+  simp [PEquivTarget]
+
 /-- Source of a composite partial equivalence. -/
 theorem pEquivSource_trans (p : V ≃. W) {U : Type*} (q : W ≃. U) :
     PEquivSource (p.trans q) = PEquivPreimage p (PEquivSource q) := by
@@ -101,14 +112,14 @@ theorem map_op_symm (p : PartialAut A) {x y x' y' : V}
   have hmap := p.map_op hx' hy'
   rw [← hmap]
   cases hop : A.op x' y' with
-  | none => simp [hop]
+  | none => simp
   | some z =>
       have hzsource : z ∈ PEquivSource p.toPEquiv :=
         p.source_closed ⟨x, hx'⟩ ⟨y, hy'⟩ hop
       rcases hzsource with ⟨z', hz'⟩
       have hzinv : p.toPEquiv.symm z' = some z :=
         (p.toPEquiv.eq_some_iff).2 hz'
-      simp [hop, hz', hzinv]
+      simp [hz', hzinv]
 
 /-- Inverse partial automorphism. -/
 def symm (p : PartialAut A) : PartialAut A where
@@ -132,7 +143,23 @@ def refl (A : PSTS V) : PartialAut A where
     simp only [PEquiv.refl_apply, Option.some.injEq] at hx hy
     subst x'
     subst y'
-    cases h : A.op x y <;> simp [h]
+    cases A.op x y <;> simp
+
+/-- The partial automorphism between two singleton closed substructures. -/
+def single [DecidableEq V] (A : PSTS V) (a b : V) : PartialAut A where
+  toPEquiv := PEquiv.single a b
+  source_closed := by simpa using A.closed_singleton a
+  target_closed := by simpa using A.closed_singleton b
+  map_op := by
+    intro x y x' y' hx hy
+    have hxmem : x' ∈ PEquiv.single a b x := by
+      simpa only [Option.mem_def] using hx
+    have hymem : y' ∈ PEquiv.single a b y := by
+      simpa only [Option.mem_def] using hy
+    rcases (PEquiv.mem_single_iff x a x' b).1 hxmem with ⟨rfl, rfl⟩
+    rcases (PEquiv.mem_single_iff y a y' b).1 hymem with ⟨rfl, rfl⟩
+    rw [A.diag a, A.diag b]
+    simp
 
 /-- A closed set pulls back to a closed set under a partial automorphism. -/
 theorem closed_preimage (p : PartialAut A) {T : Set V} (hT : A.Closed T) :
