@@ -4,6 +4,7 @@ import PSTSEPPA.PSTS.PartialAut
 import PSTSEPPA.PSTS.Examples
 import PSTSEPPA.PSTS.WordEval
 import PSTSEPPA.PSTS.WordExamples
+import PSTSEPPA.PSTS.MaxTransporter
 
 /-!
 # EPPA for partial Steiner triple systems
