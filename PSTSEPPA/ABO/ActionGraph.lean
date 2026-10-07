@@ -117,6 +117,7 @@ theorem transitionGenerator (i : ι) :
       MulOpposite.op (gen i) := by
   unfold CompleteEGraph.transitionGenerator
   rw [letterPerm]
+  rfl
 
 /-- The action graph remembers the supplied generators even when they are
 non-faithful or trivial. -/
@@ -128,9 +129,9 @@ theorem transitionGroup_eq :
   ext g
   constructor
   · rintro ⟨i, rfl⟩
-    exact ⟨i, transitionGenerator gen i⟩
-  · rintro ⟨i, rfl⟩
     exact ⟨i, (transitionGenerator gen i).symm⟩
+  · rintro ⟨i, rfl⟩
+    exact ⟨i, transitionGenerator gen i⟩
 
 end actionGraph
 
