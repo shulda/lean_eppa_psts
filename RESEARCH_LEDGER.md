@@ -79,3 +79,49 @@ then introduce only the minimal inverse-monoid interface; then specialize even
 harder to the binary PSTS case; finally mirror the audited corrected source
 more literally. A nonlocal gap is isolated as a named missing lemma rather than
 patched silently.
+
+
+## 2026-10-07 — Gate T2 accepted
+
+The specialized transfer route has passed Lean and the axiom audit.
+
+### Certified interface
+
+`MaxTransporterExtension A gen` assumes only a finite ambient group, lifts of
+the selected generators, and one maximum partial transporter in every
+group-value fibre.  No inverse-monoid abstraction and no generation hypothesis
+on the ambient group are required by the transfer proof.
+
+### Certified quotient facts
+
+The generated development relation satisfies the exact equality criterion
+
+```text
+[a,g] = [b,h]
+  iff
+∃ w, evalH(w) = g * h⁻¹ ∧ evalPartial(w)(a) = b.
+```
+
+The identity fibre is handled by the repaired argument
+`refl ≤ eval(maxWord 1)` plus totality of `refl`; no global maximality claim
+for the identity is used.
+
+Fibre-MAX proves functionality of the common-chart PSTS operation.  The
+canonical base copy is injective and closed, and the exact base operation
+formula shows it is an induced copy of the original PSTS.
+
+Right multiplication by the ambient group gives total automorphisms of the
+quotient PSTS.  The distinguished lift of every selected generator extends the
+corresponding partial automorphism on the base copy.
+
+### Constructive hard gate
+
+`MaxTransporterExtension.selectedEPPAWitness` is the constructive
+`MAX => selected-PSTS-EPPA` theorem.  For finite `V` it returns a finite
+witness together with the closed embedding and explicit total extensions.
+A redundant existential `Nonempty` wrapper was intentionally omitted because
+it erased the concrete quotient universe and created a universe metavariable;
+the constructive definition is strictly stronger and avoids that artefact.
+
+**Decision:** Gate T2 is accepted.  Begin ABO only now, starting from the
+finite oriented-labelled-graph/transition-group layer.
