@@ -1,5 +1,5 @@
 import PSTSEPPA.PSTS.WordEval
-import Mathlib.Algebra.Group.DivInvMonoid
+import Mathlib.Algebra.Group.Basic
 import Mathlib.Data.Fintype.Basic
 
 /-!
