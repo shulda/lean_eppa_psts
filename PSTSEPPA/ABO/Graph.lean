@@ -117,7 +117,7 @@ theorem follows_right_unique {u v₁ v₂ : V} {w : LabelWord ι}
     v₁ = v₂ := by
   induction h₁ generalizing v₂ with
   | nil u =>
-      simpa using (G.follows_nil_iff.mp h₂).symm
+      exact G.follows_nil_iff.mp h₂
   | @cons u v s w e hs hl hrest ih =>
       cases h₂ with
       | cons f hs' hl' hrest' =>
