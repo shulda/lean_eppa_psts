@@ -99,7 +99,7 @@ theorem glue_word (w : SignedWord ι) {a b : V}
         simpa [SignedWord.eval] using hab
       subst b
       simpa [SignedWord.evalGroup] using
-        (Relation.EqvGen.refl (DevelopmentGlueStep X) (a, k))
+        (Relation.EqvGen.refl (a, k))
   | cons s w ih =>
       have hab' :
           ((SignedWord.evalLetter gen s).toPEquiv.trans
