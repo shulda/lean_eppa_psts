@@ -1,5 +1,5 @@
 import PSTSEPPA.PSTS.Basic
-import Mathlib.Data.Set.Lattice
+import Mathlib.Data.Set.Lattice.Indexed
 
 /-!
 # Closed substructures of a partial Steiner triple system
@@ -52,7 +52,14 @@ theorem restrictOp_eq_some_iff {A : PSTS V} {S : Set V} (hS : A.Closed S)
     (x y z : S) :
     restrictOp hS x y = some z ↔ A.op x.1 y.1 = some z.1 := by
   unfold restrictOp
-  split <;> simp_all
+  split
+  · simp
+  · simp only [Option.some.injEq]
+    constructor
+    · intro h
+      exact congrArg Subtype.val h
+    · intro h
+      exact Subtype.ext h
 
 @[simp]
 theorem restrictOp_eq_none_iff {A : PSTS V} {S : Set V} (hS : A.Closed S)
@@ -68,8 +75,7 @@ def induced (A : PSTS V) {S : Set V} (hS : A.Closed S) : PSTS S where
   symm x y := by
     apply Option.ext
     intro z
-    rw [restrictOp_eq_some_iff, restrictOp_eq_some_iff]
-    exact Iff.of_eq (A.symm x.1 y.1)
+    rw [restrictOp_eq_some_iff, restrictOp_eq_some_iff, A.symm x.1 y.1]
   steiner_left := by
     intro x y z hxyz
     apply (restrictOp_eq_some_iff hS x z y).2
