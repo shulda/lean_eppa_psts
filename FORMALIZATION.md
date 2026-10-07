@@ -20,10 +20,12 @@ is on `main` and GitHub Actions is green.
 | T0: regression examples | `PSTSEPPA/PSTS/Examples.lean` | **Formalized** | Discrete systems on 0/1/2 points, one Steiner triple, a non-closed two-point subset, and a genuinely partial singleton automorphism. |
 | T1: signed words and partial evaluation | `PSTSEPPA/PSTS/WordEval.lean` | **Formalized** | Signed letters, left-to-right evaluation, append/composition and inverse-word calculus; orientation regressions include `p ; p⁻¹` being only a partial identity. |
 | T2: abstract MAX interface | `PSTSEPPA/PSTS/MaxTransporter.lean` | **Formalized** | Finite ambient group, group-valued word evaluation, fibre maxima in the `PEquiv` restriction order, and the corrected identity-fibre lemma. |
-| T2: quotient development | `PSTSEPPA/PSTS/Development.lean` | **Current target** | Equality criterion with orientation `g * h⁻¹`, injective base copy, and right-`H` action are formalized; base closedness remains. |
+| T2: quotient development | `PSTSEPPA/PSTS/Development.lean` | **Formalized** | Equality criterion with orientation `g * h⁻¹`, injective base copy, and right-`H` action are checked. |
 | T2: quotient PSTS operation | `PSTSEPPA/PSTS/DevelopmentOperation.lean` | **Formalized** | Common-chart operation; fibre-MAX proves functionality; resulting quotient PSTS is checked. |
-| T2: conditional EPPA transfer | `PSTSEPPA/PSTS/EPPAFromMax.lean` | Planned | **Hard gate before ABO Sections 3–5.** Needs base closedness, action automorphisms/extension, and finiteness. |
-| A1: oriented labelled graphs / transition groups | `PSTSEPPA/ABO/...` | Planned | Custom graph API likely preferable to `SimpleGraph`. |
+| T2: closed base copy | `PSTSEPPA/PSTS/DevelopmentBase.lean` | **Formalized** | Exact base-copy operation formula, reflection of undefinedness, and closedness of the base image. |
+| T2: quotient automorphism action | `PSTSEPPA/PSTS/DevelopmentAction.lean` | **Formalized** | Right multiplication gives total PSTS automorphisms; distinguished lifts extend the selected partial automorphisms. |
+| T2: conditional EPPA transfer | `PSTSEPPA/PSTS/EPPAFromMax.lean` | **Formalized** | Constructive hard gate: `selectedEPPAWitness` packages finiteness, closed induced base copy, and explicit total extensions. |
+| A1: oriented labelled graphs / transition groups | `PSTSEPPA/ABO/...` | **Current target** | Start with a custom finite oriented labelled multigraph API supporting loops, formal inverses, repeated labels and trivial generators. |
 | A2: clusters / coset extensions | `PSTSEPPA/ABO/...` | Planned | Include degenerate/equal-parameter cases explicitly. |
 | A3: corrected ABO Theorem 4.7 | `PSTSEPPA/ABO/UpwardInduction.lean` | Planned | Incorporate repairs R1, R7, R8. Highest-risk gate. |
 | A4: corrected Section 5 induction | `PSTSEPPA/ABO/FiniteConstruction.lean` | Planned | Separate repaired `k = 1` base case R2. |
@@ -100,7 +102,17 @@ This fixes the orientation permanently and yields injectivity of the base map
 `a ↦ [a,1]`.  Simultaneous right multiplication of group coordinates
 descends to the quotient.  A common-chart relation also defines an
 option-valued PSTS operation on the quotient; fibre-MAX is used to prove this
-relation functional.  The next obligations are to prove the base image closed,
-identify its induced PSTS with `A`, prove the right action acts by PSTS
-automorphisms and extends the selected partial automorphisms, and package
-finiteness into the conditional EPPA theorem.
+relation functional.
+
+The base image is then proved closed, with an exact formula showing that the
+induced partial operation is precisely the original operation on `A`.  Right
+multiplication by every `h : H` is lifted to a total automorphism of the
+quotient PSTS, and the distinguished lift of each selected generator extends
+the corresponding partial automorphism on the base copy.
+
+Finally `EPPAFromMax.lean` packages the construction as
+`selectedEPPAWitness`: for finite `V`, any finite fibre-MAX extension
+constructively returns a finite PSTS witness, an injective closed induced base
+embedding, and explicit total automorphism extensions (with both source and
+target equal to `Set.univ`).  This is the completed hard gate; ABO is now the
+active frontier.
