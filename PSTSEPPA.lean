@@ -11,6 +11,7 @@ import PSTSEPPA.PSTS.DevelopmentBase
 import PSTSEPPA.PSTS.DevelopmentAction
 import PSTSEPPA.PSTS.EPPAFromMax
 import PSTSEPPA.ABO.ActionGraph
+import PSTSEPPA.ABO.CayleyGraph
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
