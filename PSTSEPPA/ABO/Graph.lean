@@ -78,10 +78,7 @@ namespace EGraph
 
 variable {V Edge ι : Type*} (G : EGraph V Edge ι)
 
-abbrev source := G.toLabelledGraph.source
 abbrev target := G.toLabelledGraph.target
-abbrev inv := G.toLabelledGraph.inv
-abbrev label := G.toLabelledGraph.label
 
 /-- An `E`-graph is complete when every signed label occurs exactly once as
 an outgoing edge at every vertex.  Uniqueness is already supplied by
@@ -139,10 +136,7 @@ namespace CompleteEGraph
 
 variable {V Edge ι : Type*} (G : CompleteEGraph V Edge ι)
 
-abbrev source := G.toEGraph.source
 abbrev target := G.toEGraph.target
-abbrev inv := G.toEGraph.inv
-abbrev label := G.toEGraph.label
 
 /-- The unique outgoing edge with source `u` and signed label `s`. -/
 noncomputable def edgeAt (u : V) (s : SignedLabel ι) : Edge :=
@@ -176,10 +170,11 @@ theorem edgeAt_inv (u : V) (s : SignedLabel ι) :
 
 /-- Every word labels a unique path from every starting vertex in a complete
 `E`-graph. -/
-noncomputable def followWord (u : V) : LabelWord ι → V
+noncomputable def followWord (H : CompleteEGraph V Edge ι)
+    (u : V) : LabelWord ι → V
   | [] => u
   | s :: w =>
-      G.followWord (G.target (G.edgeAt u s)) w
+      followWord H (H.target (H.edgeAt u s)) w
 
 @[simp]
 theorem followWord_nil (u : V) :
