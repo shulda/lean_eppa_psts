@@ -230,29 +230,29 @@ theorem toPEquiv_trans (p q : PartialAut A) :
 
 @[simp]
 theorem symm_symm (p : PartialAut A) : p.symm.symm = p := by
-  ext
+  apply PartialAut.ext
   simp
 
 @[simp]
 theorem refl_trans (p : PartialAut A) : (refl A).trans p = p := by
-  ext
+  apply PartialAut.ext
   simp
 
 @[simp]
 theorem trans_refl (p : PartialAut A) : p.trans (refl A) = p := by
-  ext
+  apply PartialAut.ext
   simp
 
 /-- Associativity uses the same left-to-right convention as `PEquiv.trans`. -/
 theorem trans_assoc (p q r : PartialAut A) :
     (p.trans q).trans r = p.trans (q.trans r) := by
-  ext
+  apply PartialAut.ext
   exact PEquiv.trans_assoc p.toPEquiv q.toPEquiv r.toPEquiv
 
 /-- Inversion reverses the order of composition. -/
 theorem symm_trans_rev (p q : PartialAut A) :
     (p.trans q).symm = q.symm.trans p.symm := by
-  ext
+  apply PartialAut.ext
   rfl
 
 end PartialAut
