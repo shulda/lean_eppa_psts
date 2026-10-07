@@ -39,7 +39,7 @@ structure SelectedEPPAWitness (A : PSTS V) (gen : ι → PartialAut A) where
   /-- The extensions are total. -/
   extend_total : ∀ i, PEquivSource (extend i).toPEquiv = (Set.univ : Set W)
   /-- Each chosen extension agrees with the original map on the base copy. -/
-  extends : ∀ i {a b : V},
+  extends_gen : ∀ i {a b : V},
     (gen i).toPEquiv a = some b →
       (extend i).toPEquiv (embed a) = some (embed b)
 
@@ -51,6 +51,8 @@ variable (X : MaxTransporterExtension A gen)
 finite. -/
 noncomputable instance developmentFintype [Fintype V] :
     Fintype X.Development := by
+  letI : Fintype (DevelopmentRaw X) := inferInstance
+  letI : Finite (DevelopmentRaw X) := Finite.of_fintype _
   letI : Finite X.Development :=
     Quotient.finite X.developmentSetoid
   exact Fintype.ofFinite X.Development
@@ -72,7 +74,7 @@ noncomputable def selectedEPPAWitness [Fintype V] :
   extend_total i := by
     ext q
     simp [PEquivSource, developmentRightAut, Equiv.toPEquiv_apply]
-  extends i hab :=
+  extends_gen i hab :=
     X.developmentRightAut_extends i hab
 
 /-- Existential form of the conditional transfer theorem.
