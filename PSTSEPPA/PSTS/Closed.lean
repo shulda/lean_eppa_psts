@@ -53,13 +53,18 @@ theorem restrictOp_eq_some_iff {A : PSTS V} {S : Set V} (hS : A.Closed S)
     restrictOp hS x y = some z ↔ A.op x.1 y.1 = some z.1 := by
   unfold restrictOp
   split
-  · simp
-  · simp only [Option.some.injEq]
+  · rename_i heq
+    simp [heq]
+  · rename_i z' heq
     constructor
     · intro h
-      exact congrArg Subtype.val h
+      have hzsub : (⟨z', hS x.2 y.2 heq⟩ : S) = z := Option.some.inj h
+      have hzval : z' = z.1 := congrArg Subtype.val hzsub
+      exact heq.trans (congrArg some hzval)
     · intro h
-      exact Subtype.ext h
+      have hzval : z' = z.1 := Option.some.inj (heq.symm.trans h)
+      have hzsub : (⟨z', hS x.2 y.2 heq⟩ : S) = z := Subtype.ext hzval
+      exact congrArg some hzsub
 
 @[simp]
 theorem restrictOp_eq_none_iff {A : PSTS V} {S : Set V} (hS : A.Closed S)
