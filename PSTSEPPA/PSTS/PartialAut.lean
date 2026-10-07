@@ -148,8 +148,12 @@ def refl (A : PSTS V) : PartialAut A where
 /-- The partial automorphism between two singleton closed substructures. -/
 def single [DecidableEq V] (A : PSTS V) (a b : V) : PartialAut A where
   toPEquiv := PEquiv.single a b
-  source_closed := by\n    rw [pEquivSource_single]\n    exact A.closed_singleton a
-  target_closed := by\n    rw [pEquivTarget_single]\n    exact A.closed_singleton b
+  source_closed := by
+    rw [pEquivSource_single]
+    exact A.closed_singleton a
+  target_closed := by
+    rw [pEquivTarget_single]
+    exact A.closed_singleton b
   map_op := by
     intro x y x' y' hx hy
     have hxmem : x' ∈ PEquiv.single a b x := by
