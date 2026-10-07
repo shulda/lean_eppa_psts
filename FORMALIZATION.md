@@ -17,7 +17,8 @@ is on `main` and GitHub Actions is green.
 | T0: PSTS basic API | `PSTSEPPA/PSTS/Basic.lean` | **API formalized** | `Option`-valued partial operation; diagonal is total; symmetry plus one companion identity, with the other derived. |
 | T0: closed subsets / induced systems | `PSTSEPPA/PSTS/Closed.lean` | **API formalized** | Closed sets are closed under defined operation values; restriction to a closed subtype is a PSTS. |
 | T0: partial automorphisms | `PSTSEPPA/PSTS/PartialAut.lean` | **API formalized** | Uses option-valued `PEquiv`; source/target are closed; inverse and composition are checked. Composition means first `p`, then `q`, matching `PEquiv.trans`. |
-| T0: regression examples | `PSTSEPPA/PSTS/Examples.lean` | **Formalized** | Discrete systems on 0/1/2 points, one Steiner triple, a non-closed two-point subset, and a genuinely partial singleton automorphism. |\n| T1: signed words and partial evaluation | `PSTSEPPA/PSTS/WordEval.lean` | **Current target** | Audit composition/action orientation carefully. |
+| T0: regression examples | `PSTSEPPA/PSTS/Examples.lean` | **Formalized** | Discrete systems on 0/1/2 points, one Steiner triple, a non-closed two-point subset, and a genuinely partial singleton automorphism. |
+| T1: signed words and partial evaluation | `PSTSEPPA/PSTS/WordEval.lean` | **Current target** | Signed letters, left-to-right evaluation, concatenation/composition and inverse-word calculus. Orientation regressions live in `WordExamples.lean`. |
 | T2: abstract MAX interface | `PSTSEPPA/PSTS/MaxTransporter.lean` | Planned | State only what the quotient development needs. |
 | T2: quotient development | `PSTSEPPA/PSTS/Development.lean` | Planned | Equality criterion, injective base copy, functionality, closedness, group action. |
 | T2: conditional EPPA transfer | `PSTSEPPA/PSTS/EPPAFromMax.lean` | Planned | **Hard gate before ABO Sections 3–5.** |

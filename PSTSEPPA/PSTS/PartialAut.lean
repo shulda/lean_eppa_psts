@@ -169,6 +169,11 @@ def single [DecidableEq V] (A : PSTS V) (a b : V) : PartialAut A where
     rw [A.diag a, A.diag b]
     simp
 
+@[simp]
+theorem toPEquiv_single [DecidableEq V] (A : PSTS V) (a b : V) :
+    (single A a b).toPEquiv = PEquiv.single a b :=
+  rfl
+
 /-- A closed set pulls back to a closed set under a partial automorphism. -/
 theorem closed_preimage (p : PartialAut A) {T : Set V} (hT : A.Closed T) :
     A.Closed (PEquivPreimage p.toPEquiv T) := by
@@ -201,6 +206,64 @@ def trans (p q : PartialAut A) : PartialAut A where
     rcases hy with ⟨y', hy₁, hy₂⟩
     change (A.op x y).bind (fun z => (p.toPEquiv z).bind q.toPEquiv) = A.op x'' y''
     rw [← Option.bind_assoc, p.map_op hx₁ hy₁, q.map_op hx₂ hy₂]
+
+/-- Partial automorphisms are determined by their underlying partial equivalence. -/
+@[ext]
+theorem ext {p q : PartialAut A} (h : p.toPEquiv = q.toPEquiv) : p = q := by
+  cases p with
+  | mk p hs ht hm =>
+    cases q with
+    | mk q hs' ht' hm' =>
+      dsimp at h
+      cases h
+      rfl
+
+@[simp]
+theorem toPEquiv_refl (A : PSTS V) :
+    (refl A).toPEquiv = PEquiv.refl V :=
+  rfl
+
+@[simp]
+theorem toPEquiv_symm (p : PartialAut A) :
+    p.symm.toPEquiv = p.toPEquiv.symm :=
+  rfl
+
+@[simp]
+theorem toPEquiv_trans (p q : PartialAut A) :
+    (p.trans q).toPEquiv = p.toPEquiv.trans q.toPEquiv :=
+  rfl
+
+@[simp]
+theorem symm_refl (A : PSTS V) : (refl A).symm = refl A := by
+  apply PartialAut.ext
+  rfl
+
+@[simp]
+theorem symm_symm (p : PartialAut A) : p.symm.symm = p := by
+  apply PartialAut.ext
+  simp
+
+@[simp]
+theorem refl_trans (p : PartialAut A) : (refl A).trans p = p := by
+  apply PartialAut.ext
+  simp
+
+@[simp]
+theorem trans_refl (p : PartialAut A) : p.trans (refl A) = p := by
+  apply PartialAut.ext
+  simp
+
+/-- Associativity uses the same left-to-right convention as `PEquiv.trans`. -/
+theorem trans_assoc (p q r : PartialAut A) :
+    (p.trans q).trans r = p.trans (q.trans r) := by
+  apply PartialAut.ext
+  exact PEquiv.trans_assoc p.toPEquiv q.toPEquiv r.toPEquiv
+
+/-- Inversion reverses the order of composition. -/
+theorem symm_trans_rev (p q : PartialAut A) :
+    (p.trans q).symm = q.symm.trans p.symm := by
+  apply PartialAut.ext
+  rfl
 
 end PartialAut
 

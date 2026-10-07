@@ -2,6 +2,8 @@ import PSTSEPPA.PSTS.Basic
 import PSTSEPPA.PSTS.Closed
 import PSTSEPPA.PSTS.PartialAut
 import PSTSEPPA.PSTS.Examples
+import PSTSEPPA.PSTS.WordEval
+import PSTSEPPA.PSTS.WordExamples
 
 /-!
 # EPPA for partial Steiner triple systems
