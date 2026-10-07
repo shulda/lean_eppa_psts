@@ -1,5 +1,5 @@
 import PSTSEPPA.PSTS.WordEval
-import Mathlib.Algebra.Group.Defs
+import Mathlib.Algebra.Group.DivInvMonoid
 import Mathlib.Data.Fintype.Basic
 
 /-!
@@ -109,6 +109,14 @@ structure MaxTransporterExtension (A : PSTS V) (gen : ι → PartialAut A) where
 namespace MaxTransporterExtension
 
 variable {gen : ι → PartialAut A}
+
+/-- Recover the ambient group structure carried by a MAX extension. -/
+instance instGroup (X : MaxTransporterExtension A gen) : Group X.H :=
+  X.groupH
+
+/-- Recover finiteness of the ambient group carried by a MAX extension. -/
+instance instFintype (X : MaxTransporterExtension A gen) : Fintype X.H :=
+  X.fintypeH
 
 /-- A partial equivalence extending the total identity must equal the total
 identity.  This is the elementary repair needed in the identity fibre. -/
