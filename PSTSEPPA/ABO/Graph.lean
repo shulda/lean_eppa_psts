@@ -156,8 +156,8 @@ theorem edgeAt_eq {u : V} {s : SignedLabel ι} {e : Edge}
     (hs : G.source e = u) (hl : G.label e = s) :
     G.edgeAt u s = e := by
   apply G.toEGraph.deterministic
-  · simpa [hs]
-  · simpa [hl]
+  · exact (G.edgeAt_source u s).trans hs.symm
+  · exact (G.edgeAt_label u s).trans hl.symm
 
 /-- Reversing the unique `s`-edge gives the unique inverse-labelled edge
 from its terminal vertex. -/
