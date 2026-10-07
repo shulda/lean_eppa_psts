@@ -87,7 +87,7 @@ noncomputable def selectedEPPAWitness [Fintype V] :
     intro i a b hab
     exact X.developmentRightAut_extends i hab
 
-/-- `selectedEPPAWitness` is the constructive conditional transfer theorem:
+/- `selectedEPPAWitness` is the constructive conditional transfer theorem:
 given a finite PSTS and a fibre-MAX extension, it returns the finite closed
 EPPA witness together with explicit total extensions.  No separate existential
 wrapper is needed; the construction is stronger and also keeps the universe of
