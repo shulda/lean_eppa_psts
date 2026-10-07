@@ -115,6 +115,41 @@ theorem glue_word (w : SignedWord ι) {a b : V}
       simpa [SignedWord.evalGroup, mul_assoc] using h₁₂
 
 
+/-- Right multiplication on the raw group coordinate. -/
+def developmentRawRight (t : X.H) (x : DevelopmentRaw X) :
+    DevelopmentRaw X :=
+  (x.1, x.2 * t)
+
+/-- One generating glue step is preserved by simultaneous right
+multiplication of the group coordinates. -/
+theorem glueStep_right
+    {x y : DevelopmentRaw X}
+    (hxy : DevelopmentGlueStep X x y) (t : X.H) :
+    DevelopmentGlueStep X
+      (developmentRawRight X t x)
+      (developmentRawRight X t y) := by
+  rcases hxy with ⟨i, a, b, k, hab, rfl, rfl⟩
+  refine ⟨i, a, b, k * t, hab, ?_, ?_⟩
+  · simp [developmentRawRight, mul_assoc]
+  · rfl
+
+/-- The generated equivalence relation is right-`H` invariant. -/
+theorem glue_right
+    {x y : DevelopmentRaw X}
+    (hxy : DevelopmentGlue X x y) (t : X.H) :
+    DevelopmentGlue X
+      (developmentRawRight X t x)
+      (developmentRawRight X t y) := by
+  induction hxy with
+  | rel x y hstep =>
+      exact Relation.EqvGen.rel _ _ (X.glueStep_right hstep t)
+  | refl x =>
+      exact Relation.EqvGen.refl _
+  | symm x y hxy ih =>
+      exact Relation.EqvGen.symm _ _ ih
+  | trans x y z hxy hyz ihxy ihyz =>
+      exact Relation.EqvGen.trans _ _ _ ihxy ihyz
+
 /-- The concrete signed-word description of a pair of equivalent raw points. -/
 def DevelopmentWordWitness
     (x y : DevelopmentRaw X) : Prop :=
@@ -203,6 +238,36 @@ def Development :=
 /-- Class of a raw pair `(a,g)`. -/
 def developmentMk (a : V) (g : X.H) : X.Development :=
   Quotient.mk X.developmentSetoid (a, g)
+
+/-- Right multiplication descends to the quotient development. -/
+def developmentRight (q : X.Development) (t : X.H) :
+    X.Development :=
+  Quotient.map
+    (developmentRawRight X t)
+    (fun hxy => X.glue_right hxy t)
+    q
+
+@[simp]
+theorem developmentRight_mk (a : V) (g t : X.H) :
+    X.developmentRight (X.developmentMk a g) t =
+      X.developmentMk a (g * t) :=
+  rfl
+
+@[simp]
+theorem developmentRight_one (q : X.Development) :
+    X.developmentRight q 1 = q := by
+  induction q using Quotient.inductionOn with
+  | _ x =>
+      rcases x with ⟨a, g⟩
+      simp [developmentRight, developmentRawRight]
+
+theorem developmentRight_mul (q : X.Development) (s t : X.H) :
+    X.developmentRight (X.developmentRight q s) t =
+      X.developmentRight q (s * t) := by
+  induction q using Quotient.inductionOn with
+  | _ x =>
+      rcases x with ⟨a, g⟩
+      simp [developmentRight, developmentRawRight, mul_assoc]
 
 /-- Quotient equality in the signed-word normal form. -/
 theorem developmentMk_eq_iff
