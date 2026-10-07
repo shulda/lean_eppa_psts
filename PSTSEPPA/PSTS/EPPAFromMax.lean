@@ -86,7 +86,7 @@ This is the statement intended for later instantiation by the corrected
 ABO/Cayley construction. -/
 theorem exists_selected_eppa_witness [Fintype V] :
     Nonempty (SelectedEPPAWitness A gen) :=
-  ⟨X.selectedEPPAWitness⟩
+  ⟨selectedEPPAWitness X⟩
 
 end MaxTransporterExtension
 
