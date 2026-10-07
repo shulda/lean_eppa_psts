@@ -21,7 +21,8 @@ is on `main` and GitHub Actions is green.
 | T1: signed words and partial evaluation | `PSTSEPPA/PSTS/WordEval.lean` | **Formalized** | Signed letters, left-to-right evaluation, append/composition and inverse-word calculus; orientation regressions include `p ; p⁻¹` being only a partial identity. |
 | T2: abstract MAX interface | `PSTSEPPA/PSTS/MaxTransporter.lean` | **Formalized** | Finite ambient group, group-valued word evaluation, fibre maxima in the `PEquiv` restriction order, and the corrected identity-fibre lemma. |
 | T2: quotient development | `PSTSEPPA/PSTS/Development.lean` | **Current target** | Equality criterion with orientation `g * h⁻¹`, injective base copy, and right-`H` action are formalized; base closedness remains. |
-| T2: quotient PSTS operation | `PSTSEPPA/PSTS/DevelopmentOperation.lean` | **Formalized** | Common-chart operation; fibre-MAX proves functionality; resulting quotient PSTS is checked. |\n| T2: conditional EPPA transfer | `PSTSEPPA/PSTS/EPPAFromMax.lean` | Planned | **Hard gate before ABO Sections 3–5.** Needs base closedness, action automorphisms/extension, and finiteness. |
+| T2: quotient PSTS operation | `PSTSEPPA/PSTS/DevelopmentOperation.lean` | **Formalized** | Common-chart operation; fibre-MAX proves functionality; resulting quotient PSTS is checked. |
+| T2: conditional EPPA transfer | `PSTSEPPA/PSTS/EPPAFromMax.lean` | Planned | **Hard gate before ABO Sections 3–5.** Needs base closedness, action automorphisms/extension, and finiteness. |
 | A1: oriented labelled graphs / transition groups | `PSTSEPPA/ABO/...` | Planned | Custom graph API likely preferable to `SimpleGraph`. |
 | A2: clusters / coset extensions | `PSTSEPPA/ABO/...` | Planned | Include degenerate/equal-parameter cases explicitly. |
 | A3: corrected ABO Theorem 4.7 | `PSTSEPPA/ABO/UpwardInduction.lean` | Planned | Incorporate repairs R1, R7, R8. Highest-risk gate. |
