@@ -1,5 +1,6 @@
 import PSTSEPPA.PSTS.DevelopmentAction
 import Mathlib.Data.Fintype.EquivFin
+import Mathlib.Basic.Finite.Prod
 
 /-!
 # Conditional EPPA from a maximum-transporter extension
@@ -51,8 +52,9 @@ variable (X : MaxTransporterExtension A gen)
 finite. -/
 noncomputable instance developmentFintype [Fintype V] :
     Fintype X.Development := by
-  letI : Fintype (DevelopmentRaw X) := inferInstance
-  letI : Finite (DevelopmentRaw X) := Finite.of_fintype _
+  letI : Finite V := Finite.of_fintype V
+  letI : Finite X.H := Finite.of_fintype X.H
+  letI : Finite (DevelopmentRaw X) := inferInstance
   letI : Finite X.Development :=
     Quotient.finite X.developmentSetoid
   exact Fintype.ofFinite X.Development
@@ -74,8 +76,9 @@ noncomputable def selectedEPPAWitness [Fintype V] :
   extend_total i := by
     ext q
     simp [PEquivSource, developmentRightAut, Equiv.toPEquiv_apply]
-  extends_gen i hab :=
-    X.developmentRightAut_extends i hab
+  extends_gen := by
+    intro i a b hab
+    exact X.developmentRightAut_extends i hab
 
 /-- Existential form of the conditional transfer theorem.
 
