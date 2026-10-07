@@ -39,6 +39,9 @@ structure SelectedEPPAWitness (A : PSTS V) (gen : ι → PartialAut A) where
   extend : ι → PartialAut B
   /-- The extensions are total. -/
   extend_total : ∀ i, PEquivSource (extend i).toPEquiv = (Set.univ : Set W)
+  /-- The extension ranges are total as well. -/
+  extend_target_total : ∀ i,
+    PEquivTarget (extend i).toPEquiv = (Set.univ : Set W)
   /-- Each chosen extension agrees with the original map on the base copy. -/
   extends_gen : ∀ i {a b : V},
     (gen i).toPEquiv a = some b →
@@ -76,6 +79,10 @@ noncomputable def selectedEPPAWitness [Fintype V] :
   extend_total i := by
     ext q
     simp [PEquivSource, developmentRightAut, Equiv.toPEquiv_apply]
+  extend_target_total i := by
+    ext q
+    simp [PEquivTarget, PEquivSource, developmentRightAut,
+      ← Equiv.toPEquiv_symm]
   extends_gen := by
     intro i a b hab
     exact X.developmentRightAut_extends i hab
@@ -84,7 +91,8 @@ noncomputable def selectedEPPAWitness [Fintype V] :
 
 This is the statement intended for later instantiation by the corrected
 ABO/Cayley construction. -/
-theorem exists_selected_eppa_witness [Fintype V] :
+theorem exists_selected_eppa_witness [Fintype V]
+    (X : MaxTransporterExtension A gen) :
     Nonempty (SelectedEPPAWitness A gen) :=
   ⟨selectedEPPAWitness X⟩
 
