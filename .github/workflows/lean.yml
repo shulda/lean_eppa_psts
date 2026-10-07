@@ -1,0 +1,49 @@
+name: Lean CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Keep the explicit toolchain cache used in lean_all_those_eppa_classes.
+      - name: Cache Lean toolchain
+        uses: actions/cache@v5
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain') }}
+
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      # Download only the Mathlib artifacts expected to be useful in the first
+      # transfer phase. Extend this list when imports grow; do not cache the
+      # complete .lake workspace unless measurements justify it.
+      - name: Download Mathlib cache
+        run: |
+          lake exe cache get             Mathlib.Algebra.Ring.BooleanRing             Mathlib.Algebra.BigOperators.Group.Finset.Basic             Mathlib.Data.Fin.Tuple.Basic             Mathlib.Data.Fintype.Sort             Mathlib.Data.Fintype.Pi             Mathlib.Data.Fintype.Prod             Mathlib.Data.Fintype.Sigma             Mathlib.Data.Nat.Bits             Mathlib.Data.Set.Finite.Range             Mathlib.Logic.Equiv.Fintype             Mathlib.Logic.Equiv.PartialEquiv             Mathlib.GroupTheory.Perm.Basic             Mathlib.Combinatorics.SimpleGraph.Basic
+
+      - name: Build and audit Lean project
+        uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
+        with:
+          auto-config: false
+          build: true
+          use-github-cache: false
+          use-mathlib-cache: false
+          axiom-audit: true
+          axiom-audit-root: PSTSEPPA
+          axiom-audit-allow: propext,Classical.choice,Quot.sound
