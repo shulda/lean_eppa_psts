@@ -244,7 +244,9 @@ def developmentRight (q : X.Development) (t : X.H) :
     X.Development :=
   Quotient.map
     (developmentRawRight X t)
-    (fun hxy => X.glue_right hxy t)
+    (by
+      intro x y hxy
+      exact X.glue_right hxy t)
     q
 
 @[simp]
@@ -256,18 +258,19 @@ theorem developmentRight_mk (a : V) (g t : X.H) :
 @[simp]
 theorem developmentRight_one (q : X.Development) :
     X.developmentRight q 1 = q := by
-  induction q using Quotient.inductionOn with
-  | _ x =>
-      rcases x with ⟨a, g⟩
-      simp [developmentRight, developmentRawRight]
+  refine Quotient.inductionOn q ?_
+  rintro ⟨a, g⟩
+  change X.developmentMk a (g * 1) = X.developmentMk a g
+  rw [mul_one]
 
 theorem developmentRight_mul (q : X.Development) (s t : X.H) :
     X.developmentRight (X.developmentRight q s) t =
       X.developmentRight q (s * t) := by
-  induction q using Quotient.inductionOn with
-  | _ x =>
-      rcases x with ⟨a, g⟩
-      simp [developmentRight, developmentRawRight, mul_assoc]
+  refine Quotient.inductionOn q ?_
+  rintro ⟨a, g⟩
+  change X.developmentMk a ((g * s) * t) =
+    X.developmentMk a (g * (s * t))
+  rw [mul_assoc]
 
 /-- Quotient equality in the signed-word normal form. -/
 theorem developmentMk_eq_iff
