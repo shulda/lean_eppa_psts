@@ -60,7 +60,7 @@ def twoTrivialGenerators : CompleteEGraph Unit LoopEdge Bool where
 example :
     twoTrivialGenerators.transitionGenerator false =
       twoTrivialGenerators.transitionGenerator true := by
-  apply MulOpposite.op_injective
+  apply MulOpposite.unop_injective
   apply Equiv.ext
   intro u
   cases u
@@ -68,7 +68,7 @@ example :
 
 example :
     twoTrivialGenerators.transitionGenerator false = 1 := by
-  apply MulOpposite.op_injective
+  apply MulOpposite.unop_injective
   apply Equiv.ext
   intro u
   cases u
