@@ -146,7 +146,7 @@ theorem baseMap_op_eq_none_iff
   · intro hdev
     cases hA : A.op a b with
     | none =>
-        exact hA
+        rfl
     | some c =>
         have hsome := X.baseMap_map_op hA
         rw [hdev] at hsome
@@ -154,7 +154,7 @@ theorem baseMap_op_eq_none_iff
   · intro hA
     cases hdev : X.developmentPSTS.op (X.baseMap a) (X.baseMap b) with
     | none =>
-        exact hdev
+        rfl
     | some z =>
         rcases X.developmentPSTS_base_eq_some_iff.mp hdev with
           ⟨c, hac, hzc⟩
