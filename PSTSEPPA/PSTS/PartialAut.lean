@@ -169,6 +169,11 @@ def single [DecidableEq V] (A : PSTS V) (a b : V) : PartialAut A where
     rw [A.diag a, A.diag b]
     simp
 
+@[simp]
+theorem toPEquiv_single [DecidableEq V] (A : PSTS V) (a b : V) :
+    (single A a b).toPEquiv = PEquiv.single a b :=
+  rfl
+
 /-- A closed set pulls back to a closed set under a partial automorphism. -/
 theorem closed_preimage (p : PartialAut A) {T : Set V} (hT : A.Closed T) :
     A.Closed (PEquivPreimage p.toPEquiv T) := by
