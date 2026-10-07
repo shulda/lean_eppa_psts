@@ -27,13 +27,21 @@ noncomputable def letterPerm (s : SignedLabel ι) : Equiv.Perm V where
   invFun u :=
     G.target (G.edgeAt u (PSTS.SignedLetter.inv s))
   left_inv u := by
+    change
+      G.target
+          (G.edgeAt (G.target (G.edgeAt u s))
+            (PSTS.SignedLetter.inv s)) = u
     rw [G.edgeAt_inv]
-    simp [LabelledGraph.target, G.toEGraph.toLabelledGraph.inv_inv]
+    simp [LabelledGraph.target, G.inv_inv]
   right_inv u := by
+    change
+      G.target
+          (G.edgeAt
+            (G.target (G.edgeAt u (PSTS.SignedLetter.inv s))) s) = u
     have h := G.edgeAt_inv u (PSTS.SignedLetter.inv s)
     simp only [PSTS.SignedLetter.inv_inv] at h
     rw [h]
-    simp [LabelledGraph.target, G.toEGraph.toLabelledGraph.inv_inv]
+    simp [LabelledGraph.target, G.inv_inv]
 
 @[simp]
 theorem letterPerm_apply (s : SignedLabel ι) (u : V) :
@@ -43,7 +51,7 @@ theorem letterPerm_apply (s : SignedLabel ι) (u : V) :
 @[simp]
 theorem letterPerm_inv (s : SignedLabel ι) :
     G.letterPerm (PSTS.SignedLetter.inv s) = (G.letterPerm s).symm := by
-  rfl
+  cases s <;> rfl
 
 /-- Positive generator of the transition group.  The opposite permutation
 group aligns multiplication with the paper's right action convention. -/
@@ -68,7 +76,7 @@ theorem signedTransition_neg (i : ι) :
 /-- ABO value of a signed word. -/
 noncomputable def wordValue : LabelWord ι → RightPerm V
   | [] => 1
-  | s :: w => G.signedTransition s * G.wordValue w
+  | s :: w => G.signedTransition s * wordValue G w
 
 @[simp]
 theorem wordValue_nil :
@@ -112,8 +120,8 @@ theorem rightApply_signedTransition (s : SignedLabel ι) (u : V) :
   | neg i =>
       change (G.letterPerm (.pos i)).symm u =
         G.letterPerm (.neg i) u
-      rw [G.letterPerm_inv (.pos i)]
-      rfl
+      exact congrArg (fun p : Equiv.Perm V => p u)
+        (G.letterPerm_inv (.pos i)).symm
 
 /-- Word values act exactly by following the uniquely labelled path. -/
 theorem rightApply_wordValue (w : LabelWord ι) (u : V) :
