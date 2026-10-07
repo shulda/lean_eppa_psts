@@ -10,6 +10,11 @@ import PSTSEPPA.PSTS.DevelopmentOperation
 import PSTSEPPA.PSTS.DevelopmentBase
 import PSTSEPPA.PSTS.DevelopmentAction
 import PSTSEPPA.PSTS.EPPAFromMax
+import PSTSEPPA.ABO.ActionGraph
+
+import PSTSEPPA.ABO.Graph
+import PSTSEPPA.ABO.Transition
+import PSTSEPPA.ABO.Examples
 
 /-!
 # EPPA for partial Steiner triple systems
