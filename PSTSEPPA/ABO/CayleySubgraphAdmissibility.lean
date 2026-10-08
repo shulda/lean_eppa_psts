@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.CayleySubgraph
+import Mathlib.Data.Finset.Card
 
 /-!
 # ABO Definition 3.16: admissibility for coset extensions
@@ -30,9 +31,8 @@ theorem generatedSubgroup_empty (gen : ι → Γ) :
   apply le_antisymm
   · unfold generatedSubgroup
     apply (Subgroup.closure_le _).2
-    rintro x ⟨i, rfl⟩
-    have hi : False := by simpa using i.2
-    exact hi.elim
+    rintro _ ⟨⟨i, hi⟩, rfl⟩
+    simp at hi
   · exact bot_le
 
 /-- The coset for the empty alphabet is a singleton, including for trivial
@@ -105,7 +105,7 @@ theorem admissible_implies_ambient_disjoint
       ⟨g, hg⟩
     exact (hdisj (hadm B B₁ B₂ hB hB₁ hB₂ x y hxy hn)).elim
   · intro hg
-    exact (Set.not_mem_empty g hg).elim
+    simp at hg
 
 /-- The low-rank admissibility repair needed at the base of the ABO
 induction (Proposition 4.4 / repair R4).
