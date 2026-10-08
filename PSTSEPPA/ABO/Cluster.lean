@@ -101,7 +101,7 @@ theorem edge_target_mem
   rcases he with ⟨B, hBP, hs, hl⟩
   exact
     P.constituent_vertex_mem gen hBP
-      (P.target_mem_constituent gen B e hs hl)
+      (target_mem_constituent gen B e hs hl)
 
 /-- Cluster edge membership is closed under formal edge reversal. -/
 theorem edge_inv_mem
@@ -114,7 +114,7 @@ theorem edge_inv_mem
       (cayleyGraph gen).source ((cayleyGraph gen).inv e) ∈
         generatedSubgroup gen B
     rw [(cayleyGraph gen).source_inv]
-    exact P.target_mem_constituent gen B e hs hl
+    exact target_mem_constituent gen B e hs hl
   · rw [(cayleyGraph gen).label_inv_eq]
     simpa using hl
 
