@@ -83,10 +83,9 @@ theorem attachedSubalphabetMap_injective_of_admissible
     K.componentIndex_eq_of_map_eq_and_cosets_meet
       hadm B C hBA hCB hsub c d hindex hmeet
   subst d
-  apply Sigma.ext rfl
-  apply HEq.of_eq
-  apply Subtype.ext
-  exact hvalue
+  have hxy : xc = yd := Subtype.ext hvalue
+  cases hxy
+  rfl
 
 end CayleySubgraphSpec
 
