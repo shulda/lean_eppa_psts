@@ -91,6 +91,7 @@ import PSTSEPPA.ABO.StandardCosetFamily
 import PSTSEPPA.ABO.LocalCosetEmbedding
 import PSTSEPPA.ABO.MultiCosetParentFold
 import PSTSEPPA.ABO.MultiCosetParentHom
+import PSTSEPPA.ABO.MultiCosetParentPathInvariant
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
