@@ -14,6 +14,10 @@ sources agree by the ambient projection, and the original Cayley
 skeleton is deterministic. Their targets therefore agree in the
 vertex quotient by alphabet-independence of the old skeleton copy.
 
+The old edge determinism is used with signed edge tokens; equal
+ambient target coordinates alone would not identify distinct skeleton
+components without using their literal source and edge data.
+
 Unlike the mixed and completed cases, this argument does not need
 admissibility beyond the hypotheses already used to construct the
 multi-alphabet vertex quotient.
