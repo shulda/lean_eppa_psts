@@ -29,6 +29,7 @@ import PSTSEPPA.ABO.ClusterComponentGraph
 import PSTSEPPA.ABO.ClusterComponentIntersections
 import PSTSEPPA.ABO.AugmentedCluster
 import PSTSEPPA.ABO.Stability
+import PSTSEPPA.ABO.ClusterTransport
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
