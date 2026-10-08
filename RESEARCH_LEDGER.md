@@ -321,3 +321,67 @@ Cayley/semidirect fibre-MAX bridge, and unconditional PSTS EPPA are open.
 unknown edge-congruence hypothesis is left in the Lean statement; it
 still takes admissibility, retractability and generation as explicit
 hypotheses and does not prove the overarching theorem.
+
+## 2026-10-08 — A2 structural components and local embeddings checkpoint
+
+This checkpoint **supersedes the outdated 'PR #76 pending' note above**.
+
+### Fully checked and merged to main
+
+- PR #76 canonical multi-coset labelled Cayley morphism and skeleton embedding;
+  PR #79 uniqueness of that morphism from its skeleton restriction, for
+  nonempty alphabet families only. The map into Cayley need not be injective
+  globally.
+- PR #78 actual intrinsic B/C-component intersection theorem in an
+  admissible retractable A-skeleton: any nonempty intersection is exactly
+  an intrinsic (B∩C)-component. In the nested/equal-alphabet case the
+  strictness requirement is handled separately.
+- PR #80 admissibility witnesses remain inside a chosen B-component;
+  PR #81 constructs that component as a literal Cayley subgraph; PR #95
+  transports realised paths and proves the lower component skeleton
+  admissible; PR #97 proves it is actually B-path-connected. A historical
+  stacked PR #89 was *not* merged to main: its checked proof was
+  explicitly forward-ported with PR #95.
+- PR #101 identifies intrinsic D⊆B reachability inside the component
+  with inherited reachability in the parent K, and proves injections
+  of D-component indices and tagged attached D-cosets.
+- PR #85 locally reflects ambient overlaps within a fixed parent
+  B-component, avoiding the false claim of global injectivity;
+  PR #88 injectively folds lower-family vertices into B-copies;
+  PR #92 shows vertex-injective E-graph morphisms inject signed edges;
+  PR #98 gives injective single-C→single-B E-graph morphisms;
+  PR #99 extends this to the entire lower family and proves
+  vertex/edge surjectivity when B itself belongs to the family.
+  Historical stacked #93 was green but not in main; #98 ported it.
+- PR #102 uses actual B-connectivity to show that the full B-coset
+  extension of one intrinsic B-component embeds into the ambient
+  Cayley graph. Its vertex image is the actual left coset root·G[B].
+- PR #91 weak completeness under original edge-label coverage;
+  PR #100 defines the canonical proper-alphabet family P_A and
+  discharges coverage for |A|≥2. This is strictly weaker than
+  graph completeness.
+
+All the above were merged only after successful full Lean builds and
+axiom audits. The head of main must still be checked from GitHub,
+rather than inferred from this ledger.
+
+### Live mathematical boundary
+
+The new PR #103 attempts an injective labelled morphism from the
+single-C coset extension of a literal B-component into CE(G,K;C).
+That PR must not be counted as certified until Lean CI is green
+and the code is cleanly merged to main.
+
+**Do not conflate** (a) a single B-component's full B-extension
+embedding into Cayley, (b) single-C extension embeddings, and
+(c) the full local multi-CE embedding required by all downstream
+applications of ABO Lemma 3.20. The first is checked; (b) is under
+formalization; (c) remains open. The latter will require naturality
+of component-index refinement and exact gluing across C∩D.
+
+Also still open are the augmented-cluster intrinsic path-component
+form of Corollary 3.15, Proposition 3.23 cluster property,
+Proposition 3.24, rank-two cluster case of Proposition 4.4,
+Theorem 4.7 with repairs R1/R7/R8, Section 5 induction,
+the MAX transport bridge and unconditional PSTS EPPA. No
+final-EPPA claim is warranted by the present graph constructions.
