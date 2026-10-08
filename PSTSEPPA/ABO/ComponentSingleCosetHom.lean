@@ -72,7 +72,7 @@ theorem componentSubgraphSingleCosetEdgeMap_source
     (K.singleCosetEGraph C).source
         (K.componentSubgraphSingleCosetEdgeMap B C hCB root e) =
       K.componentSubgraphAttachedMap B C hCB root
-        ((K.subalphabetComponentSubgraph B root).singleCosetEGraph C).source e := by
+        (((K.subalphabetComponentSubgraph B root).singleCosetEGraph C).source e) := by
   cases e with
   | inl e =>
       change
