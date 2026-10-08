@@ -25,8 +25,8 @@ is on `main` and GitHub Actions is green.
 | T2: closed base copy | `PSTSEPPA/PSTS/DevelopmentBase.lean` | **Formalized** | Exact base-copy operation formula, reflection of undefinedness, and closedness of the base image. |
 | T2: quotient automorphism action | `PSTSEPPA/PSTS/DevelopmentAction.lean` | **Formalized** | Right multiplication gives total PSTS automorphisms; distinguished lifts extend the selected partial automorphisms. |
 | T2: conditional EPPA transfer | `PSTSEPPA/PSTS/EPPAFromMax.lean` | **Formalized** | Constructive hard gate: `selectedEPPAWitness` packages finiteness, closed induced base copy, and explicit total extensions. |
-| A1: oriented labelled graphs / transition groups | `PSTSEPPA/ABO/...` | **Current target** | Start with a custom finite oriented labelled multigraph API supporting loops, formal inverses, repeated labels and trivial generators. |
-| A2: clusters / coset extensions | `PSTSEPPA/ABO/...` | Planned | Include degenerate/equal-parameter cases explicitly. |
+| A1: labelled graphs / transition groups / retractability | `PSTSEPPA/ABO/Graph.lean`, `Transition.lean`, `ActionGraph.lean`, `CayleyGraph.lean`, `Morphisms.lean`, `CanonicalCover.lean`, `Retractability*.lean` | **Formalized** | Includes loops/formal inverse edge tokens, repeated or trivial generators, right-action orientation, canonical Cayley-to-component maps, source-facing cover normalization, and ABO Proposition 3.3. |
+| A2: subgroup/coset intersections, clusters / coset extensions | `PSTSEPPA/ABO/SubgroupIntersections.lean`, further `PSTSEPPA/ABO/...` | **Current target** | First prove `G[A] ∩ G[B] = G[A ∩ B]` and connected coset intersections, then clusters 3.10–3.15, admissibility and coset extensions. Include degenerate/equal-parameter cases explicitly. |
 | A3: corrected ABO Theorem 4.7 | `PSTSEPPA/ABO/UpwardInduction.lean` | Planned | Incorporate repairs R1, R7, R8. Highest-risk gate. |
 | A4: corrected Section 5 induction | `PSTSEPPA/ABO/FiniteConstruction.lean` | Planned | Separate repaired `k = 1` base case R2. |
 | A5: corrected ABO Lemma 2.5 | `PSTSEPPA/ABO/MainLemma.lean` | Planned | Include final-group equality and equivariance. |
@@ -116,3 +116,11 @@ constructively returns a finite PSTS witness, an injective closed induced base
 embedding, and explicit total automorphism extensions (with both source and
 target equal to `Set.univ`).  This is the completed hard gate; ABO is now the
 active frontier.
+
+### ABO A1 checkpoint: labelled groups and retractability
+
+The complete E-graph layer now matches the source conventions: formal edge inversion is fixed-point-free even for geometric loops; distinct labels may induce the same transition permutation; generators may act trivially; and word composition is aligned with ABO's right action by using the opposite permutation group.
+
+For every complete E-graph and base vertex, Lean constructs the canonical labelled morphism from the Cayley graph of the transition subgroup and proves that its vertex and directed-edge images are exactly the reachable component.  Retractability is formalized by deletion of all occurrences of a generator and its formal inverse.  Trivial subalphabet completions are encoded by making generators outside the subalphabet act as the identity.
+
+The based cover formulation is proved equivalent to the source-facing unbased one by left-translation normalization; vertex-surjectivity automatically implies directed-edge surjectivity for complete E-graph morphisms.  The resulting theorem is the source-facing form of ABO Proposition 3.3: for a labelled generating family, retractability is equivalent to existence of covers of all trivial subalphabet completions.
