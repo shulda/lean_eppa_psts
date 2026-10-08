@@ -26,6 +26,7 @@ import PSTSEPPA.ABO.Cluster
 import PSTSEPPA.ABO.ClusterCore
 import PSTSEPPA.ABO.ClusterComponents
 import PSTSEPPA.ABO.ClusterComponentGraph
+import PSTSEPPA.ABO.AugmentedCluster
 import PSTSEPPA.ABO.Stability
 
 import PSTSEPPA.ABO.Graph
