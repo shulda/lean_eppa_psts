@@ -99,7 +99,10 @@ theorem Follows.map
       refine Follows.cons (f.onEdge e) ?_ ?_ ?_
       · exact (f.map_source e).trans (congrArg f.onVertex hs)
       · exact (f.map_label e).trans hl
-      · change H.Follows (f.onVertex (G.target e)) w (f.onVertex v)
+      · have ht :
+            H.target (f.onEdge e) = f.onVertex (G.target e) := by
+          exact f.map_target e
+        rw [ht]
         exact ih
 
 end EGraph
