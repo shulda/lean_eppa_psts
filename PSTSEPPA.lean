@@ -24,6 +24,8 @@ import PSTSEPPA.ABO.CosetIntersections
 import PSTSEPPA.ABO.CosetConnectivity
 import PSTSEPPA.ABO.Cluster
 import PSTSEPPA.ABO.ClusterCore
+import PSTSEPPA.ABO.ClusterComponents
+import PSTSEPPA.ABO.ClusterComponentGraph
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
