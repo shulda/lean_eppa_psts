@@ -43,6 +43,7 @@ import PSTSEPPA.ABO.SingleCosetExtension
 import PSTSEPPA.ABO.SingleCosetEGraph
 import PSTSEPPA.ABO.SingleCosetConnectivity
 import PSTSEPPA.ABO.SingleCosetComponentInvariant
+import PSTSEPPA.ABO.SingleCosetComponentExact
 import PSTSEPPA.ABO.SingleCosetSkeletonEmbedding
 import PSTSEPPA.ABO.AugmentedClusterTransport
 
