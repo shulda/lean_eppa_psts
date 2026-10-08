@@ -58,6 +58,7 @@ def subalphabetComponentSubgraph
   label_mem := by
     intro e he
     rcases he with ⟨f, rfl, hfB, _href⟩
+    change signedBase f.1.2 ∈ B
     exact hfB
 
 /-- Exactly the vertices of the intrinsic B-component are selected. -/
@@ -107,8 +108,8 @@ theorem subalphabetComponentSubgraphHom_vertex_injective
     Function.Injective
       (K.subalphabetComponentSubgraphHom B root).onVertex := by
   intro x y hxy
-  apply Subtype.ext
-  exact congrArg Subtype.val hxy
+  have hv := congrArg (fun u : K.Vertex => u.1) hxy
+  exact Subtype.ext hv
 
 /-- The literal B-component subgraph inclusion is also injective on
 formal directed edge tokens, including geometric loops. -/
@@ -117,8 +118,8 @@ theorem subalphabetComponentSubgraphHom_edge_injective
     Function.Injective
       (K.subalphabetComponentSubgraphHom B root).onEdge := by
   intro e f hef
-  apply Subtype.ext
-  exact congrArg Subtype.val hef
+  have hv := congrArg (fun u : K.Edge => u.1) hef
+  exact Subtype.ext hv
 
 end CayleySubgraphSpec
 end ABO
