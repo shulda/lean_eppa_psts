@@ -30,8 +30,10 @@ is on `main` and GitHub Actions is green.
 | A2: ordinary clusters, ABO Lemmas 3.10–3.11 and Corollaries 3.12–3.13 | `PSTSEPPA/ABO/Cluster*.lean`, `Stability.lean`, `ClusterTransport.lean` | **Formalized** | Literal vertex/edge unions; common-core projection; full-coset/lower-cluster component slices; intersection identities; stable-quotient graph bijectivity. |
 | A2: augmented clusters and ABO Lemma 3.14 | `PSTSEPPA/ABO/AugmentedCluster.lean`, `AugmentedClusterReflection.lean`, `AugmentedClusterTransport.lean` | **Formalized** | Literal augmented graph and degenerate full-component case; cross-piece reflection; vertex/edge bijective graph morphism under proper-alphabet stability. |
 | A2: structural graph-data layer for ABO Corollary 3.15 | `PSTSEPPA/ABO/AugmentedComponentSlices.lean`, `AugmentedComponentClassification.lean`, `AugmentedComponentSeparation.lean` | **Formalized (structural layer)** | Exact C-slices and edges; full-coset/lower-augmented result when the old slice meets the attachment; disjoint union and absence of crossing edges otherwise. Actual path-component correspondence remains open. |
-| A2: arbitrary Cayley skeletons and intrinsic C-paths | `PSTSEPPA/ABO/CayleySubgraph.lean` | **API formalized** | General A-labelled subgraphs with inverse-edge closure; deterministic E-graph inclusion; every intrinsic C-path stays in an ambient C-coset. |
-| A2: component reachability, admissibility and coset extensions | further `PSTSEPPA/ABO/...` | **Current target** | Prove intrinsic component calculus, formalize Definition 3.16, then the gluing quotient (3.6)–(3.12) and Proposition 3.18. Equal/degenerate alphabet parameters must be explicit (R5). |
+| A2: Cayley skeletons and intrinsic C-components | `PSTSEPPA/ABO/CayleySubgraph.lean`, `CayleySubgraphComponents.lean` | **Formalized** | Arbitrary incomplete skeletons; path concatenation/reversal; intrinsic component equivalence classes; containment in ambient group cosets. |
+| A2: admissibility and rank-two base | `PSTSEPPA/ABO/CayleySubgraphAdmissibility.lean` | **Formalized** | ABO Definition 3.16, equivalent ambient-overlap reflection and original disjointness implication; automatic admissibility for |A|≤2 (R4, admissibility part only). |
+| A2: component-indexed coset copies | `PSTSEPPA/ABO/ComponentIndexedCosets.lean` | **Formalized (preparatory API)** | Intrinsic B-component quotient indices and separately tagged ambient B-coset copies; original skeleton vertices inject into the copies, with no premature identifications. |
+| A2: coset extension construction / gluing | further `PSTSEPPA/ABO/...` | **Current target** | Build CE(G,K;B) and multiple-alphabet gluing, verify (3.6)–(3.12), Proposition 3.18 and equal/degenerate parameter transitivity (R5). Then connect structural Corollary 3.15 to intrinsic path-components. |
 | A3: corrected ABO Theorem 4.7 | `PSTSEPPA/ABO/UpwardInduction.lean` | Planned | Incorporate repairs R1, R7, R8. Highest-risk gate. |
 | A4: corrected Section 5 induction | `PSTSEPPA/ABO/FiniteConstruction.lean` | Planned | Separate repaired `k = 1` base case R2. |
 | A5: corrected ABO Lemma 2.5 | `PSTSEPPA/ABO/MainLemma.lean` | Planned | Include final-group equality and equivariance. |
@@ -165,3 +167,36 @@ subalphabet reachability is defined by actual paths in the skeleton, and the
 ambient-coset containment direction is checked. Next prove the elementary
 intrinsic path-component calculus and then implement admissibility and
 coset-extension quotient/gluing with explicit equal-parameter cases (R5).
+
+### 2026-10-08 continuation: admissibility and indexed attachment gate
+
+Intrinsic B-reachability of a general incomplete Cayley skeleton has been proved
+reflexive, symmetric and transitive by explicit concatenation and inversion
+of realised graph paths. Its quotient into true connected B-components is now
+available. In particular, these components must **not** be confused with
+ambient B-cosets, which may overlap for different skeleton components.
+
+ABO Definition 3.16 is formalized in the equivalent contrapositive form:
+inside one intrinsic B-component, an overlap of ambient B₁- and B₂-cosets
+(on proper B₁,B₂ ⊂ B ⊂ A) must be witnessed by a skeleton vertex reachable
+from both chosen vertices over the corresponding smaller alphabets.
+Its source-facing disjointness implication is proved. The rank-two
+admissibility argument from repair R4 is now a Lean theorem for every A of
+size at most two, requiring no group retractability or skeleton
+connectedness; the *cluster property* part of the cited Proposition 4.4
+is a separate future gate.
+
+For a fixed attaching alphabet B, each skeleton B-component indexes a
+**separate** ambient B-coset copy, represented without choosing a basepoint
+using quotient recursion. Original skeleton vertices inject into this family
+of tagged copies. This prepares CE(G,K;B) while avoiding the mathematically
+false identification of distinct intrinsic B-components whose images happen
+to occupy the same ambient B-coset. Directed-edge completion and the
+multiple-alphabet quotient are not constructed yet.
+
+The open proof-engineering task is now to build a literal labelled graph
+CE(G,K;B) retaining old non-B skeleton edges and completing all tagged
+B-cosets, then formalize the multi-alphabet gluing with the explicit
+strict/equal-parameter split R5. An explicit possible model is tagged coset
+vertices together with the union of full tagged B-edges and original
+skeleton edges outside B. This is a **research plan, not a formalized claim**.
