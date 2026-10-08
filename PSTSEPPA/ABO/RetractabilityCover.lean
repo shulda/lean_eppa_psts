@@ -38,15 +38,11 @@ complementary subalphabet. -/
 theorem LabelWord.restrictTo_univ_erase (a : ι) (w : LabelWord ι) :
     LabelWord.restrictTo (Finset.univ.erase a) w =
       LabelWord.eraseGenerator a w := by
-  induction w with
-  | nil =>
-      rfl
-  | cons s w ih =>
-      by_cases h : signedBase s = a
-      · simp [LabelWord.restrictTo, LabelWord.eraseGenerator,
-          LabelWord.deleteGenerators, h, ih]
-      · simp [LabelWord.restrictTo, LabelWord.eraseGenerator,
-          LabelWord.deleteGenerators, h, ih]
+  have hfin :
+      Finset.univ \ (Finset.univ.erase a) = ({a} : Finset ι) := by
+    ext x
+    by_cases h : x = a <;> simp [h]
+  simp [LabelWord.restrictTo, LabelWord.eraseGenerator, hfin]
 
 /-- The easy direction of ABO Proposition 3.3:
 if every trivial completion is covered by the ambient Cayley graph, then the
