@@ -96,15 +96,8 @@ theorem cosetStep_inverse
     (s : {s : SignedLabel ι // signedBase s ∈ B}) :
     K.cosetStep B (K.cosetStep B p s) (inverseBLabel B s) = p := by
   rcases p with ⟨c, ⟨x, hx⟩⟩
-  dsimp [cosetStep, inverseBLabel]
-  apply Sigma.ext rfl
-  apply HEq.of_eq
-  apply Subtype.ext
-  change
-    (x * PSTS.SignedWord.evalGroupLetter gen s.1) *
-        PSTS.SignedWord.evalGroupLetter gen
-          (PSTS.SignedLetter.inv s.1) = x
-  simp [PSTS.SignedWord.evalGroupLetter_inv, mul_assoc]
+  simp [cosetStep, inverseBLabel,
+    PSTS.SignedWord.evalGroupLetter_inv, mul_assoc]
 
 /-- Old skeleton edges with labels outside the completed B-alphabet. -/
 abbrev OutsideEdge (B : Finset ι) :=
@@ -144,6 +137,7 @@ noncomputable def singleCosetInv
             change signedBase
               ((cayleyGraph gen).label ((cayleyGraph gen).inv e.1.1)) ∉ B
             rw [(cayleyGraph gen).label_inv_eq]
+            change signedBase (PSTS.SignedLetter.inv e.1.1.2) ∉ B
             simpa only [signedBase_inv] using e.2⟩
   | .inr e =>
       .inr (K.cosetStep B e.1 e.2, inverseBLabel B e.2)
