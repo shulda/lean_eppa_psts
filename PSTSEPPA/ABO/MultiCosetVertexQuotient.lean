@@ -61,10 +61,10 @@ def multiCosetSetoid
       K.shareIntersectionSupport_refl p.1.1 p.2
     symm := fun h =>
       K.shareIntersectionSupport_symm _ _ h
-    trans := fun hpq hqr =>
+    trans := fun {p q r} hpq hqr =>
       K.shareIntersectionSupport_trans
-        hadm hgen hret _ _ _ (P.proper _ _)
-        hpq hqr
+        hadm hgen hret p.1.1 q.1.1 r.1.1
+        (P.proper q.1.1 q.1.2) hpq hqr
   }
 
 /-- Vertices of the P-coset extension, as a genuine quotient by ABO 3.10. -/
@@ -85,8 +85,12 @@ def multiCosetAmbientValue
     (fun p : K.MultiCosetRawVertex P => K.attachedValue p.1.1 p.2)
     (by
       intro p q hpq
+      have hshare :
+          K.ShareIntersectionSupport p.1.1 q.1.1 p.2 q.2 := by
+        change K.MultiCosetRawRelated P p q at hpq
+        exact hpq
       exact K.shareIntersectionSupport_value_eq
-        p.1.1 q.1.1 hpq)
+        p.1.1 q.1.1 hshare)
 
 /-- Inject the B-summand into the glued quotient. -/
 def multiCosetInclude
@@ -122,8 +126,12 @@ theorem multiCosetInclude_injective
     (B : Finset ι) (hBP : B ∈ P.alphabets) :
     Function.Injective (K.multiCosetInclude P hadm hgen hret B hBP) := by
   intro p q hpq
-  have hrel : K.ShareIntersectionSupport B B p q :=
-    Quotient.exact hpq
+  have hrel : K.ShareIntersectionSupport B B p q := by
+    have h := Quotient.exact hpq
+    change K.MultiCosetRawRelated P
+      (⟨⟨B, hBP⟩, p⟩ : K.MultiCosetRawVertex P)
+      (⟨⟨B, hBP⟩, q⟩ : K.MultiCosetRawVertex P) at h
+    exact h
   exact (K.shareIntersectionSupport_self_iff B p q).1 hrel
 
 /-- The image of an old skeleton vertex does not depend on which
@@ -140,6 +148,9 @@ theorem multiCosetInclude_skeleton_independent
       K.multiCosetInclude P hadm hgen hret C hCP
         (K.attachedOfSkeletonVertex C x) := by
   apply Quotient.sound
+  change K.ShareIntersectionSupport B C
+    (K.attachedOfSkeletonVertex B x)
+    (K.attachedOfSkeletonVertex C x)
   exact
     ⟨K.attachedOfSkeletonVertex (B ∩ C) x,
       K.attachedSubalphabetMap_ofSkeletonVertex
