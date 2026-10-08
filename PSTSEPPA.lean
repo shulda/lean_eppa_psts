@@ -60,6 +60,7 @@ import PSTSEPPA.ABO.AdmissibleAttachedIntersectionLe
 import PSTSEPPA.ABO.MultiCosetTransitivity
 import PSTSEPPA.ABO.MultiCosetVertexQuotient
 import PSTSEPPA.ABO.MultiCosetRawEdges
+import PSTSEPPA.ABO.MultiCosetOldEdgeOverlap
 
 /-!
 # EPPA for partial Steiner triple systems
