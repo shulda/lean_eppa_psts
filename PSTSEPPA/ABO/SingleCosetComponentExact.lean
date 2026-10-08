@@ -49,9 +49,9 @@ theorem skeleton_to_singleCoset_B_reachable_iff
     (∃ w : LabelWord ι,
       LabelWord.Uses B w ∧
       (K.singleCosetEGraph B).Follows
-        (K.skeletonToSingleCosetHom B).onVertex x
+        ((K.skeletonToSingleCosetHom B).onVertex x)
         w
-        (K.skeletonToSingleCosetHom B).onVertex y) ↔
+        ((K.skeletonToSingleCosetHom B).onVertex y)) ↔
       K.SubalphabetReachable B x y := by
   rw [K.singleCosetEGraph_B_reachable_iff_index]
   exact K.componentClass_eq_iff B x y
