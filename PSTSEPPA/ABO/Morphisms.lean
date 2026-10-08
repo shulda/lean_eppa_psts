@@ -37,7 +37,7 @@ theorem map_target (f : LabelledGraphHom G H) (e : E₁) :
     H.target (f.onEdge e) = f.onVertex (G.target e) := by
   calc
     H.target (f.onEdge e) = H.source (H.inv (f.onEdge e)) := rfl
-    _ = H.source (f.onEdge (G.inv e)) := by rw [f.map_inv]
+    _ = H.source (f.onEdge (G.inv e)) := by rw [← f.map_inv e]
     _ = f.onVertex (G.source (G.inv e)) := f.map_source _
     _ = f.onVertex (G.target e) := rfl
 
@@ -96,7 +96,8 @@ theorem Follows.map
       refine Follows.cons (f.onEdge e) ?_ ?_ ?_
       · exact (f.map_source e).trans (congrArg f.onVertex hs)
       · exact (f.map_label e).trans hl
-      · simpa [f.map_target e] using ih
+      · rw [f.map_target e]
+        exact ih
 
 end EGraph
 
