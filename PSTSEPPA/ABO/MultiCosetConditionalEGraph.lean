@@ -94,6 +94,7 @@ theorem multiCosetEdgeQuotientInv_inv
   | h e =>
     simp only [K.multiCosetEdgeQuotientInv_mk,
       K.multiCosetRawEdgeInv_inv]
+    rfl
 
 /-- Formal reversal on edge classes has no fixed points. -/
 theorem multiCosetEdgeQuotientInv_ne
