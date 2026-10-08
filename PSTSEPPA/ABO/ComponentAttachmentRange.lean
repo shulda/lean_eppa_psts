@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.ComponentSubgraphIndices
+import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
 # Lifting attached coset points back into an intrinsic B-component
