@@ -178,3 +178,37 @@ then admissibility exactly as in ABO Definition 3.16. The gluing relations for
 coset extensions (3.6)–(3.12), Proposition 3.18, and the equal-parameter
 transitivity repair R5 are **not formalized yet**. A3 (corrected Theorem 4.7)
 and the finite ABO construction are also still open.
+
+## 2026-10-08 — continued A2 checkpoint (post R4)
+
+- Intrinsic subalphabet reachability for arbitrary incomplete Cayley skeletons
+  is now formally an equivalence relation. Actual paths are inverted using
+  formal reverse-edge tokens; this is not ambient-coset connectivity by fiat.
+- The quotient of skeleton vertices by intrinsic B-reachability gives an
+  index for the separately attached B-coset copies. The ambient coset
+  attached to an index is shown independent of its representative. A skeleton
+  vertex embeds injectively into its uniquely tagged component copy even if
+  two distinct indices map to the same group coset.
+- ABO Definition 3.16 is certified in its logically equivalent overlap
+  reflection form, with proper B₁,B₂ ⊂ B ⊂ A (allowing B₁=B₂ and the empty
+  subalphabet). The original disjointness consequence is proved explicitly.
+- Repair R4 (only its admissibility claim): in cardinality at most two,
+  proper B₁,B₂ necessarily are empty. The corresponding group cosets are
+  singletons, so overlap forces equality of base vertices and intrinsic
+  intersection. This has a complete Lean proof independent of retractability
+  and skeleton connectedness.
+
+**Remaining:** ABO Proposition 4.4 also claims the *cluster property*, not
+proved by the rank-two admissibility theorem. Actual CE(G,K;B) graph, gluing
+quotient for families of alphabets, Proposition 3.18, and repair R5 are
+unformalized. Structural graph-data versions of Corollary 3.15 are certified,
+but the bridge to intrinsic connected components still needs a dedicated proof.
+
+**Construction engineering lead (not yet certified):** identify vertices of a
+single B-coset extension with the disjoint union of ambient B-cosets tagged
+by intrinsic skeleton B-component; every original skeleton vertex already
+embeds into exactly one such copy. Extend edge tokens by retaining all
+original non-B edges while supplying each tagged B-coset with its complete
+B-labelled Cayley edges. This may avoid a separate vertex gluing quotient for
+single-B extensions; it must be checked in Lean, and the multi-alphabet
+quotient still requires the equal/degenerate-parameter transitivity repair.
