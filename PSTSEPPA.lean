@@ -31,6 +31,7 @@ import PSTSEPPA.ABO.AugmentedCluster
 import PSTSEPPA.ABO.AugmentedClusterReflection
 import PSTSEPPA.ABO.Stability
 import PSTSEPPA.ABO.ClusterTransport
+import PSTSEPPA.ABO.AugmentedClusterTransport
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
