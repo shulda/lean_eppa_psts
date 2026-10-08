@@ -101,9 +101,7 @@ theorem componentSubgraph_fullCosetAmbient_value_mem
           L.componentAmbientCoset B (L.componentClass B r) :=
         congrArg (L.componentAmbientCoset B) hidx
       _ = generatedLeftCoset gen B root.1 := rfl
-  have hp : p.2.1 ∈ L.componentAmbientCoset B p.1 := p.2.2
-  rw [hcoset] at hp
-  exact hp
+  exact (le_of_eq hcoset) p.2.2
 
 /-- The image of the completed B-extension is exactly the ambient
 left B-coset of the root (on vertices). -/
