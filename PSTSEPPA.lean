@@ -14,6 +14,7 @@ import PSTSEPPA.ABO.ActionGraph
 import PSTSEPPA.ABO.CayleyGraph
 import PSTSEPPA.ABO.Reachability
 import PSTSEPPA.ABO.Morphisms
+import PSTSEPPA.ABO.CanonicalCover
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
