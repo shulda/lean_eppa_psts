@@ -53,6 +53,7 @@ import PSTSEPPA.ABO.Examples
 import PSTSEPPA.ABO.CayleySubgraphAdmissibility
 import PSTSEPPA.ABO.AdmissibleComponentOverlap
 import PSTSEPPA.ABO.AdmissibleComponentIntersections
+import PSTSEPPA.ABO.LocalComponentAdmissibility
 import PSTSEPPA.ABO.AdmissibleAttachedEmbedding
 import PSTSEPPA.ABO.AdmissibleAttachedIntersection
 import PSTSEPPA.ABO.MultiCosetOverlap
