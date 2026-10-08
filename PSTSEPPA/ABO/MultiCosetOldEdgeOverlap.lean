@@ -52,8 +52,10 @@ theorem multiCosetOldEdge_targets_eq
   have hval :
       e.1.1.1 = f.1.1.1 := by
     have h := congrArg (K.multiCosetAmbientValue P hadm hgen hret) hsource
-    simpa only [K.multiCosetAmbientValue_include,
-      K.attachedValue_ofSkeletonVertex] using h
+    simp only [K.multiCosetAmbientValue_include,
+      K.attachedValue_ofSkeletonVertex] at h
+    change e.1.1.1 = f.1.1.1 at h
+    exact h
   have holdsource :
       (K.toEGraph).source e.1 = (K.toEGraph).source f.1 :=
     Subtype.ext hval
