@@ -161,6 +161,47 @@ theorem wordValue_mem (w : LabelWord ι) :
   | cons s w ih =>
       exact (G.transitionGroup).mul_mem (G.signedTransition_mem s) ih
 
+/-- Inverting a signed letter inverts its transition value. -/
+@[simp]
+theorem signedTransition_inv (s : SignedLabel ι) :
+    G.signedTransition (PSTS.SignedLetter.inv s) =
+      (G.signedTransition s)⁻¹ := by
+  cases s <;> simp [signedTransition]
+
+/-- Formal inversion of words agrees with inversion in the transition group. -/
+@[simp]
+theorem wordValue_inv (w : LabelWord ι) :
+    G.wordValue (PSTS.SignedWord.inv w) = (G.wordValue w)⁻¹ := by
+  induction w with
+  | nil =>
+      simp [wordValue, PSTS.SignedWord.inv]
+  | cons s w ih =>
+      rw [PSTS.SignedWord.inv_cons, wordValue_append, ih]
+      simp [wordValue, signedTransition_inv]
+
+/-- Every element of the transition group is the value of some signed word.
+
+This is the algebraic surjectivity needed for the canonical Cayley-to-component
+map; it uses no faithfulness of the generator labelling. -/
+theorem exists_wordValue_eq {g : RightPerm V}
+    (hg : g ∈ G.transitionGroup) :
+    ∃ w : LabelWord ι, G.wordValue w = g := by
+  change g ∈ Subgroup.closure (Set.range G.transitionGenerator) at hg
+  induction hg using Subgroup.closure_induction with
+  | mem x hx =>
+      rcases hx with ⟨i, rfl⟩
+      exact ⟨[PSTS.SignedLetter.pos i], by simp [wordValue]⟩
+  | one =>
+      exact ⟨[], rfl⟩
+  | mul x y hx hy ihx ihy =>
+      rcases ihx with ⟨u, hu⟩
+      rcases ihy with ⟨v, hv⟩
+      exact ⟨u ++ v, by rw [wordValue_append, hu, hv]⟩
+  | inv x hx ih =>
+      rcases ih with ⟨w, hw⟩
+      exact ⟨PSTS.SignedWord.inv w, by rw [wordValue_inv, hw]⟩
+
+
 end CompleteEGraph
 
 end ABO
