@@ -31,7 +31,7 @@ structure LabelledGroupQuotient
 
 namespace LabelledGroupQuotient
 
-variable [Group Γ] [Group Δ]
+variable [Fintype ι] [DecidableEq ι] [Group Γ] [Group Δ]
 variable {genΓ : ι → Γ} {genΔ : ι → Δ}
 variable (Q : LabelledGroupQuotient genΓ genΔ)
 
@@ -69,9 +69,9 @@ theorem hom_mem_generatedSubgroup
   | one =>
       simp
   | mul x y hx hy ihx ihy =>
-      exact (generatedSubgroup genΔ A).mul_mem ihx ihy
+      simpa using (generatedSubgroup genΔ A).mul_mem ihx ihy
   | inv x hx ih =>
-      exact (generatedSubgroup genΔ A).inv_mem ih
+      simpa using (generatedSubgroup genΔ A).inv_mem ih
 
 /-- The labelled quotient restricts to every subalphabet-generated subgroup. -/
 def subgroupHom (A : Finset ι) :
@@ -159,7 +159,6 @@ theorem subgroupHom_bijective {A : Finset ι}
 /-- Equality of A-supported word values downstairs reflects to equality
 upstairs under stability at A. -/
 theorem evalGroup_eq_of_stableAt
-    [Fintype ι] [DecidableEq ι]
     {A : Finset ι} (hA : Q.StableAt A)
     {p q : LabelWord ι}
     (hp : LabelWord.Uses A p)
