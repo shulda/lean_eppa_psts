@@ -45,6 +45,7 @@ import PSTSEPPA.ABO.ComponentSubgraphConnected
 import PSTSEPPA.ABO.ComponentFullCosetEmbedding
 import PSTSEPPA.ABO.ComponentSubgraphAdmissibility
 import PSTSEPPA.ABO.ComponentSubgraphIndices
+import PSTSEPPA.ABO.ComponentSingleCosetHom
 import PSTSEPPA.ABO.ComponentIndexedCosets
 import PSTSEPPA.ABO.ComponentIndexMonotonicity
 import PSTSEPPA.ABO.SingleCosetExtension
