@@ -63,7 +63,7 @@ theorem componentSubgraph_reachable_iff
 
 /-- Inclusion of the B-component graph induces a well-defined map
 on intrinsic D-component indices, for any D⊆B. -/
-def componentSubgraphIndexMap
+noncomputable def componentSubgraphIndexMap
     (B D : Finset ι) (hDB : D ⊆ B)
     (root : K.Vertex) :
     (K.subalphabetComponentSubgraph B root).ComponentIndex D →
@@ -122,7 +122,7 @@ theorem componentSubgraphAmbientCoset_eq
 
 /-- Canonical injection of tagged D-coset vertices from the
 literal B-component subgraph into the original K's D-cosets. -/
-def componentSubgraphAttachedMap
+noncomputable def componentSubgraphAttachedMap
     (B D : Finset ι) (hDB : D ⊆ B)
     (root : K.Vertex) :
     (K.subalphabetComponentSubgraph B root).AttachedCosetVertex D →
