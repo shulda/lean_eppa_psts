@@ -68,13 +68,11 @@ theorem singleCosetSkeletonEdgeMap_label
     (B : Finset ι) (e : K.Edge) :
     (K.singleCosetEGraph B).label (K.singleCosetSkeletonEdgeMap B e) =
       (K.toEGraph).label e := by
+  change K.singleCosetLabel B
+      (K.singleCosetSkeletonEdgeMap B e) = e.1.2
   by_cases he : signedBase e.1.2 ∈ B
-  · simp [singleCosetSkeletonEdgeMap, he, singleCosetEGraph,
-      singleCosetLabelledGraph, singleCosetLabel]
-  · simp [singleCosetSkeletonEdgeMap, he, singleCosetEGraph,
-      singleCosetLabelledGraph, singleCosetLabel]
-  all_goals simp [CayleySubgraphSpec.toEGraph,
-    CayleySubgraphSpec.toLabelledGraph]
+  · simp [singleCosetSkeletonEdgeMap, he, singleCosetLabel]
+  · simp [singleCosetSkeletonEdgeMap, he, singleCosetLabel]
 
 /-- Reversal does not change the unsigned generator of a skeleton edge. -/
 theorem skeletonEdge_inv_signedBase
