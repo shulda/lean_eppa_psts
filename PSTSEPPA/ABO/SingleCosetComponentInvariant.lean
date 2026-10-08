@@ -45,7 +45,7 @@ theorem singleCosetEGraph_follows_B_preserves_index
     (hpath : (K.singleCosetEGraph B).Follows p w q)
     (hw : LabelWord.Uses B w) :
     p.1 = q.1 := by
-  induction hpath generalizing hw with
+  induction hpath with
   | nil u =>
       rfl
   | @cons u v s w e hs hl hrest ih =>
