@@ -1,5 +1,4 @@
 import PSTSEPPA.ABO.CayleySubgraph
-import Mathlib.Tactic
 
 /-!
 # ABO Definition 3.16: admissibility for coset extensions
@@ -122,10 +121,18 @@ theorem admissible_of_card_le_two
   have hBcard : B.card < A.card := Finset.card_lt_card hB
   have hB₁card : B₁.card < B.card := Finset.card_lt_card hB₁
   have hB₂card : B₂.card < B.card := Finset.card_lt_card hB₂
+  have hBle1 : B.card ≤ 1 :=
+    Nat.lt_succ_iff.mp (lt_of_lt_of_le hBcard hA)
+  have hB₁zero : B₁.card = 0 :=
+    Nat.eq_zero_of_le_zero
+      (Nat.lt_succ_iff.mp (lt_of_lt_of_le hB₁card hBle1))
+  have hB₂zero : B₂.card = 0 :=
+    Nat.eq_zero_of_le_zero
+      (Nat.lt_succ_iff.mp (lt_of_lt_of_le hB₂card hBle1))
   have hB₁empty : B₁ = ∅ :=
-    Finset.card_eq_zero.mp (by omega)
+    Finset.card_eq_zero.mp hB₁zero
   have hB₂empty : B₂ = ∅ :=
-    Finset.card_eq_zero.mp (by omega)
+    Finset.card_eq_zero.mp hB₂zero
   rcases hamb with ⟨z, hz₁, hz₂⟩
   have hxz : z = x.1 := by
     simpa [hB₁empty, generatedLeftCoset_empty_eq_singleton] using hz₁
