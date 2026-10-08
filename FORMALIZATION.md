@@ -26,7 +26,12 @@ is on `main` and GitHub Actions is green.
 | T2: quotient automorphism action | `PSTSEPPA/PSTS/DevelopmentAction.lean` | **Formalized** | Right multiplication gives total PSTS automorphisms; distinguished lifts extend the selected partial automorphisms. |
 | T2: conditional EPPA transfer | `PSTSEPPA/PSTS/EPPAFromMax.lean` | **Formalized** | Constructive hard gate: `selectedEPPAWitness` packages finiteness, closed induced base copy, and explicit total extensions. |
 | A1: labelled graphs / transition groups / retractability | `PSTSEPPA/ABO/Graph.lean`, `Transition.lean`, `ActionGraph.lean`, `CayleyGraph.lean`, `Morphisms.lean`, `CanonicalCover.lean`, `Retractability*.lean` | **Formalized** | Includes loops/formal inverse edge tokens, repeated or trivial generators, right-action orientation, canonical Cayley-to-component maps, source-facing cover normalization, and ABO Proposition 3.3. |
-| A2: subgroup/coset intersections, clusters / coset extensions | `PSTSEPPA/ABO/SubgroupIntersections.lean`, further `PSTSEPPA/ABO/...` | **Current target** | First prove `G[A] ∩ G[B] = G[A ∩ B]` and connected coset intersections, then clusters 3.10–3.15, admissibility and coset extensions. Include degenerate/equal-parameter cases explicitly. |
+| A2: retractable subgroup/coset intersections | `PSTSEPPA/ABO/SubgroupIntersections.lean`, `CosetIntersections.lean`, `CosetConnectivity.lean` | **Formalized** | Exact `G[A] ∩ G[B] = G[A ∩ B]`; nonempty left-coset intersections and connectedness in the intersection alphabet. |
+| A2: ordinary clusters, ABO Lemmas 3.10–3.11 and Corollaries 3.12–3.13 | `PSTSEPPA/ABO/Cluster*.lean`, `Stability.lean`, `ClusterTransport.lean` | **Formalized** | Literal vertex/edge unions; common-core projection; full-coset/lower-cluster component slices; intersection identities; stable-quotient graph bijectivity. |
+| A2: augmented clusters and ABO Lemma 3.14 | `PSTSEPPA/ABO/AugmentedCluster.lean`, `AugmentedClusterReflection.lean`, `AugmentedClusterTransport.lean` | **Formalized** | Literal augmented graph and degenerate full-component case; cross-piece reflection; vertex/edge bijective graph morphism under proper-alphabet stability. |
+| A2: structural graph-data layer for ABO Corollary 3.15 | `PSTSEPPA/ABO/AugmentedComponentSlices.lean`, `AugmentedComponentClassification.lean`, `AugmentedComponentSeparation.lean` | **Formalized (structural layer)** | Exact C-slices and edges; full-coset/lower-augmented result when the old slice meets the attachment; disjoint union and absence of crossing edges otherwise. Actual path-component correspondence remains open. |
+| A2: arbitrary Cayley skeletons and intrinsic C-paths | `PSTSEPPA/ABO/CayleySubgraph.lean` | **API formalized** | General A-labelled subgraphs with inverse-edge closure; deterministic E-graph inclusion; every intrinsic C-path stays in an ambient C-coset. |
+| A2: component reachability, admissibility and coset extensions | further `PSTSEPPA/ABO/...` | **Current target** | Prove intrinsic component calculus, formalize Definition 3.16, then the gluing quotient (3.6)–(3.12) and Proposition 3.18. Equal/degenerate alphabet parameters must be explicit (R5). |
 | A3: corrected ABO Theorem 4.7 | `PSTSEPPA/ABO/UpwardInduction.lean` | Planned | Incorporate repairs R1, R7, R8. Highest-risk gate. |
 | A4: corrected Section 5 induction | `PSTSEPPA/ABO/FiniteConstruction.lean` | Planned | Separate repaired `k = 1` base case R2. |
 | A5: corrected ABO Lemma 2.5 | `PSTSEPPA/ABO/MainLemma.lean` | Planned | Include final-group equality and equivariance. |
@@ -124,3 +129,39 @@ The complete E-graph layer now matches the source conventions: formal edge inver
 For every complete E-graph and base vertex, Lean constructs the canonical labelled morphism from the Cayley graph of the transition subgroup and proves that its vertex and directed-edge images are exactly the reachable component.  Retractability is formalized by deletion of all occurrences of a generator and its formal inverse.  Trivial subalphabet completions are encoded by making generators outside the subalphabet act as the identity.
 
 The based cover formulation is proved equivalent to the source-facing unbased one by left-translation normalization; vertex-surjectivity automatically implies directed-edge surjectivity for complete E-graph morphisms.  The resulting theorem is the source-facing form of ABO Proposition 3.3: for a labelled generating family, retractability is equivalent to existence of covers of all trivial subalphabet completions.
+
+### ABO A2 checkpoint: clusters and the next coset-extension gate
+
+The formalized retractability package now includes the exact subgroup
+intersection identity, nonempty coset-intersection formula, and word-level
+connectivity of those ambient intersections.  Ordinary clusters are represented
+literally by their union of subgroup vertices and signed directed edge tokens;
+the canonical retraction projection gives the common point in active pieces.
+The full-coset / translated lower-cluster dichotomy and the corresponding
+intersection result both identify vertices **and** directed edges, not merely
+abstract graph isomorphism types (ABO Corollaries 3.12–3.13).
+
+A labelled quotient that is stable on the proper constituent alphabets induces
+a vertex- and edge-bijective labelled graph morphism on the cluster (Lemma
+3.10).  The difficult mixed overlap for augmented clusters is handled by the
+formal cross-piece coset-reflection argument; adding stability on the attached
+alphabet yields a vertex- and edge-bijective augmented cluster morphism (Lemma
+3.14).  The Lean statement actually needs target retractability plus
+piecewise stability; no extra ambient source retractability is used by this
+particular transport proof.
+
+The current Corollary-3.15 package proves exact graph-data decompositions for
+C-slices of B-augmented clusters. If the attachment meets the old C-slice,
+that slice is either the full C-coset or a translated lower C-cluster augmented
+along B ∩ C. In the disjoint case the original C-slice and the new (B ∩ C)-coset
+have disjoint vertex sets, and every C-labelled directed edge stays entirely
+inside one of those two pieces. These are **not yet** a formal assertion that
+the slices equal their intrinsic path-connected C-components. Do not mark the
+full path-component form of Corollary 3.15 complete until that bridge is proved.
+
+The new general `CayleySubgraphSpec` provides a skeleton representation for
+Definition 3.16, beyond the special case of clusters. Its intrinsic
+subalphabet reachability is defined by actual paths in the skeleton, and the
+ambient-coset containment direction is checked. Next prove the elementary
+intrinsic path-component calculus and then implement admissibility and
+coset-extension quotient/gluing with explicit equal-parameter cases (R5).
