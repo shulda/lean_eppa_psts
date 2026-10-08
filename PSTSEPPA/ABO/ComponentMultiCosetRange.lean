@@ -48,7 +48,7 @@ theorem componentMultiCosetVertexMap_parent_index
       hgen hret) :
     K.attachedIndex B
       (K.multiCosetVertexToParent (P.intoLarger hBA) hadm hgen hret B
-        (K.componentFamily_subset_parent B hBA P)
+        (componentFamily_subset_parent B hBA P)
         (K.componentMultiCosetVertexMap B hBA root P hadm hgen hret x)) =
       K.componentClass B root := by
   induction x using Quotient.inductionOn with
@@ -68,7 +68,7 @@ theorem componentMultiCosetVertexMap_surj_of_parent
     (z : K.MultiCosetVertex (P.intoLarger hBA) hadm hgen hret)
     (hparent : K.attachedIndex B
       (K.multiCosetVertexToParent (P.intoLarger hBA) hadm hgen hret B
-        (K.componentFamily_subset_parent B hBA P) z) =
+        (componentFamily_subset_parent B hBA P) z) =
         K.componentClass B root) :
     ∃ x : (K.subalphabetComponentSubgraph B root).MultiCosetVertex
       P (K.subalphabetComponentSubgraph_admissible hadm B hBA root)
@@ -112,7 +112,7 @@ theorem componentMultiCosetVertexMap_range_iff
         K.componentMultiCosetVertexMap B hBA root P hadm hgen hret x = z) ↔
       K.attachedIndex B
         (K.multiCosetVertexToParent (P.intoLarger hBA) hadm hgen hret B
-          (K.componentFamily_subset_parent B hBA P) z) =
+          (componentFamily_subset_parent B hBA P) z) =
         K.componentClass B root := by
   constructor
   · rintro ⟨x, rfl⟩
