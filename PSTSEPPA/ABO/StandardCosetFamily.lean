@@ -34,7 +34,7 @@ variable {gen : ι → Γ} {A : Finset ι}
 of A, as an actual finite CosetFamilySpec. -/
 def allProperCosetFamily (A : Finset ι) : CosetFamilySpec A where
   alphabets :=
-    (Finset.univ : Finset (Finset ι)).filter (fun B => B ⊂ A)
+    A.powerset.filter (fun B => B ⊂ A)
   proper := by
     intro B hBA
     exact (Finset.mem_filter.mp hBA).2
@@ -43,7 +43,11 @@ def allProperCosetFamily (A : Finset ι) : CosetFamilySpec A where
 theorem mem_allProperCosetFamily
     (A B : Finset ι) :
     B ∈ (allProperCosetFamily A).alphabets ↔ B ⊂ A := by
-  simp [allProperCosetFamily]
+  constructor
+  · intro h
+    exact (Finset.mem_filter.mp h).2
+  · intro h
+    exact Finset.mem_filter.mpr ⟨Finset.mem_powerset.mpr h.1, h⟩
 
 /-- The empty alphabet is selected whenever the ambient
 alphabet A is nonempty. -/
@@ -55,7 +59,7 @@ theorem empty_mem_allProperCosetFamily
   intro hsub
   rcases hA with ⟨i, hi⟩
   have hiEmpty : i ∈ (∅ : Finset ι) := hsub hi
-  exact (Finset.not_mem_empty i) hiEmpty
+  simp at hiEmpty
 
 /-- At rank at least two, a singleton letter is a strictly proper
 subalphabet, even when other letters have trivial/repeated generator
