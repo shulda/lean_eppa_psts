@@ -181,14 +181,15 @@ theorem clusterHom_edge_bijective
         (Q.hom e.1.1, e.1.2) =
           (Q.hom f.1.1, f.1.2) := by
       exact congrArg Subtype.val hef
-    apply Prod.ext
-    · exact
-        Q.hom_injective_on_clusterVertexSet
-          P hgenΔ hretΔ hstable
-          (P.edge_source_mem genΓ e.2)
-          (P.edge_source_mem genΓ f.2)
-          (congrArg Prod.fst hpair)
-    · exact congrArg Prod.snd hpair
+    have hfst : e.1.1 = f.1.1 :=
+      Q.hom_injective_on_clusterVertexSet
+        P hgenΔ hretΔ hstable
+        (P.edge_source_mem genΓ e.2)
+        (P.edge_source_mem genΓ f.2)
+        (congrArg Prod.fst hpair)
+    have hsnd : e.1.2 = f.1.2 :=
+      congrArg Prod.snd hpair
+    exact Prod.ext hfst hsnd
   · intro e
     rcases e with ⟨⟨y, s⟩, he⟩
     rcases he with ⟨B, hBP, hyB, hsB⟩
