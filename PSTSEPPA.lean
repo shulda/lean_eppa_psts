@@ -33,6 +33,7 @@ import PSTSEPPA.ABO.AugmentedComponentSlices
 import PSTSEPPA.ABO.AugmentedComponentClassification
 import PSTSEPPA.ABO.Stability
 import PSTSEPPA.ABO.ClusterTransport
+import PSTSEPPA.ABO.CayleySubgraph
 import PSTSEPPA.ABO.AugmentedClusterTransport
 
 import PSTSEPPA.ABO.Graph
