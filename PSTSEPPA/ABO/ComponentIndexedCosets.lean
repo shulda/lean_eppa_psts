@@ -124,6 +124,45 @@ theorem attachedOfSkeletonVertex_injective
   apply Subtype.ext
   exact congrArg (K.attachedValue B) h
 
+/-- The ambient-coordinate projection is injective within one fixed
+component-tagged coset.  No stability assumption is needed here. -/
+theorem attachedValue_injective_of_same_index
+    (B : Finset ι)
+    {p q : K.AttachedCosetVertex B}
+    (hindex : K.attachedIndex B p = K.attachedIndex B q)
+    (hvalue : K.attachedValue B p = K.attachedValue B q) :
+    p = q := by
+  rcases p with ⟨c, xp⟩
+  rcases q with ⟨d, yq⟩
+  cases hindex
+  have hxy : xp = yq := Subtype.ext hvalue
+  cases hxy
+  rfl
+
+/-- Source-facing warning following ABO Proposition 3.18.
+
+When two different intrinsic B-components occupy the same ambient B-coset,
+the canonical map from the tagged extension to the ambient group is
+necessarily *not* globally injective.  This is precisely why the component
+tags must be retained throughout the coset-extension construction. -/
+theorem attachedValue_not_injective_of_overlapping_components
+    (B : Finset ι)
+    (x y : K.Vertex)
+    (hcomp : K.componentClass B x ≠ K.componentClass B y)
+    (hoverlap : x.1 ∈ generatedLeftCoset gen B y.1) :
+    ¬ Function.Injective (K.attachedValue B) := by
+  intro hinj
+  let p : K.AttachedCosetVertex B :=
+    K.attachedOfSkeletonVertex B x
+  let q : K.AttachedCosetVertex B :=
+    ⟨K.componentClass B y, ⟨x.1, hoverlap⟩⟩
+  have hval : K.attachedValue B p = K.attachedValue B q := rfl
+  have heq := hinj hval
+  have hclass :
+      K.componentClass B x = K.componentClass B y :=
+    congrArg (K.attachedIndex B) heq
+  exact hcomp hclass
+
 end CayleySubgraphSpec
 
 end ABO
