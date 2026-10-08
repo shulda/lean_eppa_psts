@@ -30,7 +30,7 @@ theorem follows_append
   | nil u =>
       simpa using hq
   | @cons u v s w e hs hl hrest ih =>
-      exact EGraph.Follows.cons e hs hl ih
+      exact EGraph.Follows.cons e hs hl (ih hq)
 
 /-- Reverse every directed edge and invert the word, to follow a realised
 path in the opposite direction. The proof uses formal inverse edge tokens,
@@ -55,7 +55,8 @@ theorem follows_inverse
             _ = PSTS.SignedLetter.inv s :=
               congrArg PSTS.SignedLetter.inv hl
         · have ht : G.target (G.inv e) = u := by
-            rw [G.toLabelledGraph.target_inv e]
+            change G.source (G.inv (G.inv e)) = u
+            rw [G.inv_inv]
             exact hs
           rw [ht]
           exact EGraph.Follows.nil u
