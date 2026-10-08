@@ -147,8 +147,9 @@ theorem multiCosetEGraph_B_reachable_iff_parent_index
     have hback : G.Follows p (PSTS.SignedWord.inv wx)
         ((K.skeletonToMultiCosetHom P hadm hgen hret C hCP).onVertex x) :=
       G.follows_inverse hpx
-    have hwhole : G.Follows p (PSTS.SignedWord.inv wx ++ w ++ wy) q :=
-      G.follows_append (G.follows_append hback hmiddle) hpy
+    have hwhole : G.Follows p (PSTS.SignedWord.inv wx ++ w ++ wy) q := by
+      simpa only [List.append_assoc] using
+        (G.follows_append (G.follows_append hback hmiddle) hpy)
     refine ⟨PSTS.SignedWord.inv wx ++ w ++ wy, ?_, hwhole⟩
     exact (LabelWord.uses_append B _ _).2
       ⟨(LabelWord.uses_append B _ _).2
