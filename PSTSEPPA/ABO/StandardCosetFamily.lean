@@ -1,7 +1,6 @@
 import PSTSEPPA.ABO.MultiCosetWeakCompleteness
 import PSTSEPPA.ABO.CayleySubgraphAdmissibility
 import Mathlib.Data.Finset.Card
-import Mathlib.Tactic.Omega
 
 /-!
 # Canonical family of all proper subalphabets for ABO coset extension
@@ -70,7 +69,7 @@ theorem singleton_ssubset_of_card_ge_two
   have hle : A.card ≤ 1 := by
     have h := Finset.card_le_card hAS
     simpa using h
-  omega
+  exact (not_lt_of_ge hcard) (lt_of_le_of_lt hle (by decide))
 
 /-- Every old skeleton edge at rank at least two has its label
 in a selected proper alphabet of P_A. -/
