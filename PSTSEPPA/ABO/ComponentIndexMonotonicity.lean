@@ -137,7 +137,6 @@ theorem attachedSubalphabetMap_ofSkeletonVertex
         (K.attachedOfSkeletonVertex B x) =
       K.attachedOfSkeletonVertex C x := by
   apply Sigma.ext rfl
-  apply Subtype.ext
   rfl
 
 end CayleySubgraphSpec
