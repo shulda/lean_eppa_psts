@@ -61,6 +61,7 @@ import PSTSEPPA.ABO.MultiCosetTransitivity
 import PSTSEPPA.ABO.MultiCosetVertexQuotient
 import PSTSEPPA.ABO.MultiCosetRawEdges
 import PSTSEPPA.ABO.MultiCosetRawEdgeInversion
+import PSTSEPPA.ABO.MultiCosetEdgeQuotient
 
 /-!
 # EPPA for partial Steiner triple systems
