@@ -52,6 +52,7 @@ def subalphabetComponentSubgraph
         signedBase
           ((cayleyGraph gen).label ((cayleyGraph gen).inv f.1)) ∈ B
       rw [(cayleyGraph gen).label_inv_eq]
+      change signedBase (PSTS.SignedLetter.inv f.1.2) ∈ B
       simpa only [signedBase_inv] using hfB
     · exact K.subalphabetReachable_trans B
         href (K.edge_subalphabetReachable B f hfB)
