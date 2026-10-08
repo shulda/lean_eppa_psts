@@ -22,7 +22,7 @@ theorem generatedSubgroup_mono
     (gen : ι → Γ) {A B : Finset ι} (hAB : A ⊆ B) :
     generatedSubgroup gen A ≤ generatedSubgroup gen B := by
   unfold generatedSubgroup
-  apply Subgroup.closure_le.2
+  apply (Subgroup.closure_le _).2
   rintro _ ⟨i, rfl⟩
   apply Subgroup.subset_closure
   exact ⟨⟨i.1, hAB i.2⟩, rfl⟩
