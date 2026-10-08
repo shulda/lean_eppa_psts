@@ -16,7 +16,9 @@ In particular, using only the ambient group edge as its identity would
 prematurely collapse distinct component-tagged copies.
 
 The definitions below are the source-level interface for the remaining
-directed-edge gluing and Proposition 3.18.
+directed-edge gluing and Proposition 3.18. The separately tagged edge
+universe is intentionally retained until congruence under reversal and
+source/target identification has been established.
 -/
 
 namespace PSTSEPPA
