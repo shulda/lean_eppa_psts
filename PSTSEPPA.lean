@@ -72,6 +72,7 @@ import PSTSEPPA.ABO.MultiCosetEdgeQuotient
 import PSTSEPPA.ABO.MultiCosetConditionalEGraph
 import PSTSEPPA.ABO.MultiCosetEGraph
 import PSTSEPPA.ABO.MultiCosetMorphisms
+import PSTSEPPA.ABO.MultiCosetWeakCompleteness
 import PSTSEPPA.ABO.LocalCosetEmbedding
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
