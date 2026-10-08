@@ -177,7 +177,10 @@ theorem clusterHom_edge_bijective
   constructor
   · intro e f hef
     apply Subtype.ext
-    have hpair := congrArg Subtype.val hef
+    have hpair :
+        (Q.hom e.1.1, e.1.2) =
+          (Q.hom f.1.1, f.1.2) := by
+      exact congrArg Subtype.val hef
     apply Prod.ext
     · exact
         Q.hom_injective_on_clusterVertexSet
