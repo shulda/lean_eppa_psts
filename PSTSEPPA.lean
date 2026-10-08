@@ -50,6 +50,7 @@ import PSTSEPPA.ABO.ComponentAttachmentRange
 import PSTSEPPA.ABO.ComponentSingleCosetHom
 import PSTSEPPA.ABO.ComponentCosetNaturality
 import PSTSEPPA.ABO.ComponentMultiCosetVertexMap
+import PSTSEPPA.ABO.ComponentMultiCosetRange
 import PSTSEPPA.ABO.ComponentIndexedCosets
 import PSTSEPPA.ABO.ComponentIndexMonotonicity
 import PSTSEPPA.ABO.SingleCosetExtension
