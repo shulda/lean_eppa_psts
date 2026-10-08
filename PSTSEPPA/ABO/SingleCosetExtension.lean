@@ -98,6 +98,7 @@ theorem cosetStep_inverse
   rcases p with ⟨c, ⟨x, hx⟩⟩
   simp [cosetStep, inverseBLabel,
     PSTS.SignedWord.evalGroupLetter_inv, mul_assoc]
+  rfl
 
 /-- Old skeleton edges with labels outside the completed B-alphabet. -/
 abbrev OutsideEdge (B : Finset ι) :=
