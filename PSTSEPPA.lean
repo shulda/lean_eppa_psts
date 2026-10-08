@@ -17,6 +17,7 @@ import PSTSEPPA.ABO.Morphisms
 import PSTSEPPA.ABO.CanonicalCover
 import PSTSEPPA.ABO.Retractability
 import PSTSEPPA.ABO.RetractabilityCover
+import PSTSEPPA.ABO.RetractabilityRetraction
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
