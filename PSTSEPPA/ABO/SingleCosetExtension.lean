@@ -26,6 +26,8 @@ variable {gen : ι → Γ} {A : Finset ι}
 
 namespace CayleySubgraphSpec
 
+open ClusterSpec
+
 variable (K : CayleySubgraphSpec gen A)
 
 /-- A step by a B-letter stays inside the ambient B-coset associated
@@ -93,12 +95,15 @@ theorem cosetStep_inverse
     (B : Finset ι) (p : K.AttachedCosetVertex B)
     (s : {s : SignedLabel ι // signedBase s ∈ B}) :
     K.cosetStep B (K.cosetStep B p s) (inverseBLabel B s) = p := by
+  rcases p with ⟨c, ⟨x, hx⟩⟩
+  dsimp [cosetStep, inverseBLabel]
   apply Sigma.ext rfl
+  apply HEq.of_eq
   apply Subtype.ext
   change
-    (p.2.1 * PSTS.SignedWord.evalGroupLetter gen s.1) *
+    (x * PSTS.SignedWord.evalGroupLetter gen s.1) *
         PSTS.SignedWord.evalGroupLetter gen
-          (PSTS.SignedLetter.inv s.1) = p.2.1
+          (PSTS.SignedLetter.inv s.1) = x
   simp [PSTS.SignedWord.evalGroupLetter_inv, mul_assoc]
 
 /-- Old skeleton edges with labels outside the completed B-alphabet. -/
@@ -115,7 +120,7 @@ abbrev SingleCosetEdge (B : Finset ι) :=
   (K.OutsideEdge B) ⊕ (K.CosetEdge B)
 
 /-- The source of an extension edge. -/
-def singleCosetSource
+noncomputable def singleCosetSource
     (B : Finset ι) : K.SingleCosetEdge B →
         K.AttachedCosetVertex B
   | .inl e => K.attachedOfSkeletonVertex B ((K.toEGraph).source e.1)
@@ -129,15 +134,17 @@ def singleCosetLabel
 
 /-- Reverse a directed edge token; the two summands are preserved because
 reversal never changes the underlying (unsigned) generator. -/
-def singleCosetInv
+noncomputable def singleCosetInv
     (B : Finset ι) : K.SingleCosetEdge B → K.SingleCosetEdge B
   | .inl e =>
       .inl
         ⟨⟨(cayleyGraph gen).inv e.1.1,
               K.inv_mem e.1.1 e.1.2⟩,
           by
+            change signedBase
+              ((cayleyGraph gen).label ((cayleyGraph gen).inv e.1.1)) ∉ B
             rw [(cayleyGraph gen).label_inv_eq]
-            simpa using e.2⟩
+            simpa only [signedBase_inv] using e.2⟩
   | .inr e =>
       .inr (K.cosetStep B e.1 e.2, inverseBLabel B e.2)
 
@@ -170,7 +177,9 @@ theorem singleCosetInv_ne
       have hinv :
           PSTS.SignedLetter.inv e.2.1 = e.2.1 :=
         congrArg (fun q : K.CosetEdge B => q.2.1) (Sum.inr.inj h)
-      cases e.2.1 <;> cases hinv
+      have hne : PSTS.SignedLetter.inv e.2.1 ≠ e.2.1 := by
+        cases e.2.1 <;> simp [PSTS.SignedLetter.inv]
+      exact hne hinv
 
 theorem singleCosetLabel_inv
     (B : Finset ι) (e : K.SingleCosetEdge B) :
@@ -184,7 +193,7 @@ theorem singleCosetLabel_inv
 
 /-- The single-B coset extension as a labelled graph, with literal
 component-tagged copies even when the ambient B-cosets overlap. -/
-def singleCosetLabelledGraph
+noncomputable def singleCosetLabelledGraph
     (B : Finset ι) :
     LabelledGraph (K.AttachedCosetVertex B) (K.SingleCosetEdge B) ι where
   source := K.singleCosetSource B
@@ -213,7 +222,12 @@ noncomputable def singleCosetAmbientHom
     cases e with
     | inl e => rfl
     | inr e =>
-        cases e.2.1 <;> rfl
+        apply Prod.ext
+        · change
+            e.1.2.1 * PSTS.SignedWord.evalGroupLetter gen e.2.1 =
+              (cayleyGraph gen).target (e.1.2.1, e.2.1)
+          exact (cayleyGraph.target_eq_mul_evalGroupLetter gen e.1.2.1 e.2.1).symm
+        · rfl
   map_label := by
     intro e
     cases e <;> rfl
