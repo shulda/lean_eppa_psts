@@ -62,13 +62,21 @@ theorem attachedSubalphabetMap_common_refinement
   obtain ⟨x, hx⟩ := K.componentClass_surjective C₁ p.1
   obtain ⟨y, hy⟩ := K.componentClass_surjective C₂ q.1
   have hpCoset : p.2.1 ∈ generatedLeftCoset gen C₁ x.1 := by
-    have hh := p.2.2
-    rw [← hx] at hh
-    exact hh
+    have hset :
+        K.componentAmbientCoset C₁ (K.componentClass C₁ x) =
+          K.componentAmbientCoset C₁ p.1 :=
+      congrArg (K.componentAmbientCoset C₁) hx
+    change p.2.1 ∈ K.componentAmbientCoset C₁ (K.componentClass C₁ x)
+    rw [hset]
+    exact p.2.2
   have hqCoset : q.2.1 ∈ generatedLeftCoset gen C₂ y.1 := by
-    have hh := q.2.2
-    rw [← hy] at hh
-    exact hh
+    have hset :
+        K.componentAmbientCoset C₂ (K.componentClass C₂ y) =
+          K.componentAmbientCoset C₂ q.1 :=
+      congrArg (K.componentAmbientCoset C₂) hy
+    change q.2.1 ∈ K.componentAmbientCoset C₂ (K.componentClass C₂ y)
+    rw [hset]
+    exact q.2.2
   have hval : p.2.1 = q.2.1 := by
     have h := congrArg (K.attachedValue B) heq
     exact h
