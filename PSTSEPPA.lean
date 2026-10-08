@@ -57,6 +57,7 @@ import PSTSEPPA.ABO.AdmissibleAttachedIntersection
 import PSTSEPPA.ABO.MultiCosetOverlap
 import PSTSEPPA.ABO.AttachedCosetNaturality
 import PSTSEPPA.ABO.MultiCosetSkeletonRigidity
+import PSTSEPPA.ABO.MultiCosetMixedEdgeOverlap
 import PSTSEPPA.ABO.AdmissibleAttachedIntersectionLe
 import PSTSEPPA.ABO.MultiCosetTransitivity
 import PSTSEPPA.ABO.MultiCosetVertexQuotient
