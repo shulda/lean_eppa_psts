@@ -13,6 +13,9 @@ follows the common signed letter in its own complete (B ∩ C)-coset, and
 uses naturality of coset steps under both alphabet enlargements. Thus
 the new target overlap has an *explicit* (B ∩ C)-tagged witness.
 
+The witness stays in a single tagged intersection component even when
+the common signed generator acts trivially on the ambient group.
+
 This is the fully-completed/fully-completed case of the
 source-and-label target-congruence gate for directed edges; the mixed
 completed/old-skeleton and old/old cases remain separate.
