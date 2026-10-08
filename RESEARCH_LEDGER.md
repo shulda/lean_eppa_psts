@@ -125,3 +125,56 @@ the constructive definition is strictly stronger and avoids that artefact.
 
 **Decision:** Gate T2 is accepted.  Begin ABO only now, starting from the
 finite oriented-labelled-graph/transition-group layer.
+
+## 2026-10-08 — A2 structural cluster checkpoint
+
+### Lean-certified additions on main
+
+- ABO Proposition 3.3 and retractable subgroup/coset intersections.
+- Literal cluster graphs, common-core projection (Lemma 3.11), exact
+  subalphabet component-slice dichotomy (Corollary 3.12), and intersection
+  formulas (Corollary 3.13).
+- Labelled quotient stability and vertex/edge bijectivity of corresponding
+  clusters (Lemma 3.10), including injectivity across different constituents.
+- Literal augmented clusters, the degenerate full-coset case, cross-piece
+  coset-reflection, and vertex/edge bijectivity under stable quotients
+  (Lemma 3.14).
+- Exact vertex/edge formulas for the attached and disjoint branches of
+  Corollary 3.15. These are structural results about ambient C-slices,
+  **not yet** the full intrinsic path-component statement.
+- General `CayleySubgraphSpec` skeleton API with a genuinely intrinsic
+  subalphabet-path relation; each such path lies in its ambient coset.
+
+### Nontrivial mathematical points
+
+The cluster-transport argument cannot infer injectivity on a union merely
+from injectivity on every constituent: two points in different constituents
+could a priori have the same image. The Lean proof uses target retractability
+and subgroup intersections to lift their common image to the intersection
+alphabet and then applies stability on both constituents.
+
+Likewise, the augmented-cluster case cannot be proved by naively gluing the
+bijective cluster map and the bijective coset map. The mixed overlap is
+reflected using the retractable core projection and stability on proper
+constituent alphabets; separate stability on the attached B-alphabet then
+establishes injectivity on the full union.
+
+The new Lemma-3.14 transport statement is somewhat stronger than the
+source-facing hypotheses: target retractability plus the relevant constituent
+and attachment stability are sufficient for the bijective labelled graph
+morphism. This is verified by Lean, not assumed as a simplification.
+
+The Corollary-3.15 work deliberately keeps the path-component obligation
+separate: old C-slice and newly attached coset can be disjoint even when
+both lie inside the same ambient C-coset. The disjoint graph-data lemma proves
+that there are no crossing C-labelled edges, but path-connectedness of each
+piece still needs an explicit skeleton-path argument before declaring the
+full corollary proved in Lean.
+
+### Next substantive A2 gate
+
+Use the generic Cayley-skeleton E-graph to formalize intrinsic C-components,
+then admissibility exactly as in ABO Definition 3.16. The gluing relations for
+coset extensions (3.6)–(3.12), Proposition 3.18, and the equal-parameter
+transitivity repair R5 are **not formalized yet**. A3 (corrected Theorem 4.7)
+and the finite ABO construction are also still open.
