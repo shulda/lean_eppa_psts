@@ -37,6 +37,7 @@ import PSTSEPPA.ABO.ClusterTransport
 import PSTSEPPA.ABO.CayleySubgraph
 import PSTSEPPA.ABO.CayleySubgraphComponents
 import PSTSEPPA.ABO.CayleySubgraphEdgeComponents
+import PSTSEPPA.ABO.ComponentSubgraph
 import PSTSEPPA.ABO.ComponentIndexedCosets
 import PSTSEPPA.ABO.ComponentIndexMonotonicity
 import PSTSEPPA.ABO.SingleCosetExtension
