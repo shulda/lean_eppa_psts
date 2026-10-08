@@ -43,6 +43,7 @@ import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
 import PSTSEPPA.ABO.Examples
 import PSTSEPPA.ABO.CayleySubgraphAdmissibility
+import PSTSEPPA.ABO.AdmissibleComponentOverlap
 
 /-!
 # EPPA for partial Steiner triple systems
