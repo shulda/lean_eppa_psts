@@ -44,8 +44,8 @@ theorem map_target (f : LabelledGraphHom G H) (e : E₁) :
 /-- Identity labelled graph morphism. -/
 def id (G : LabelledGraph V₁ E₁ ι) :
     LabelledGraphHom G G where
-  onVertex := id
-  onEdge := id
+  onVertex := fun x => x
+  onEdge := fun e => e
   map_source _ := rfl
   map_inv _ := rfl
   map_label _ := rfl
@@ -56,22 +56,25 @@ def comp (g : LabelledGraphHom H K) (f : LabelledGraphHom G H) :
   onVertex := g.onVertex ∘ f.onVertex
   onEdge := g.onEdge ∘ f.onEdge
   map_source e := by
+    change K.source (g.onEdge (f.onEdge e)) =
+      g.onVertex (f.onVertex (G.source e))
     rw [g.map_source, f.map_source]
-    rfl
   map_inv e := by
+    change g.onEdge (f.onEdge (G.inv e)) =
+      K.inv (g.onEdge (f.onEdge e))
     rw [f.map_inv, g.map_inv]
-    rfl
   map_label e := by
+    change K.label (g.onEdge (f.onEdge e)) = G.label e
     rw [g.map_label, f.map_label]
 
 @[simp]
 theorem id_onVertex (x : V₁) :
-    (id G).onVertex x = x :=
+    (LabelledGraphHom.id G).onVertex x = x :=
   rfl
 
 @[simp]
 theorem id_onEdge (e : E₁) :
-    (id G).onEdge e = e :=
+    (LabelledGraphHom.id G).onEdge e = e :=
   rfl
 
 end LabelledGraphHom
@@ -96,7 +99,7 @@ theorem Follows.map
       refine Follows.cons (f.onEdge e) ?_ ?_ ?_
       · exact (f.map_source e).trans (congrArg f.onVertex hs)
       · exact (f.map_label e).trans hl
-      · rw [f.map_target e]
+      · change H.Follows (f.onVertex (G.target e)) w (f.onVertex v)
         exact ih
 
 end EGraph
