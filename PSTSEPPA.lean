@@ -70,6 +70,7 @@ import PSTSEPPA.ABO.MultiCosetEdgeQuotient
 import PSTSEPPA.ABO.MultiCosetConditionalEGraph
 import PSTSEPPA.ABO.MultiCosetEGraph
 import PSTSEPPA.ABO.MultiCosetMorphisms
+import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
 # EPPA for partial Steiner triple systems
