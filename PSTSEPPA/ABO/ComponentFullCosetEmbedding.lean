@@ -67,9 +67,8 @@ theorem componentSubgraph_fullCosetAmbient_vertex_injective
     Function.Injective
       ((K.subalphabetComponentSubgraph B root).singleCosetAmbientHom B).onVertex := by
   intro p q hpq
-  exact (K.subalphabetComponentSubgraph B root)
-    .attachedValue_injective_of_same_index B
-      (K.componentSubgraph_attached_index_unique B root p q) hpq
+  exact (K.subalphabetComponentSubgraph B root).attachedValue_injective_of_same_index
+    B (K.componentSubgraph_attached_index_unique B root p q) hpq
 
 /-- Injectivity on signed directed edge tokens follows as well,
 including geometric loops and trivial generators. -/
@@ -78,6 +77,7 @@ theorem componentSubgraph_fullCosetAmbient_edge_injective
     Function.Injective
       ((K.subalphabetComponentSubgraph B root).singleCosetAmbientHom B).onEdge :=
   LabelledGraphHom.edge_injective_of_vertex_injective
+    (G := (K.subalphabetComponentSubgraph B root).singleCosetEGraph B)
     ((K.subalphabetComponentSubgraph B root).singleCosetAmbientHom B)
     (K.componentSubgraph_fullCosetAmbient_vertex_injective B root)
 
@@ -93,8 +93,16 @@ theorem componentSubgraph_fullCosetAmbient_value_mem
   have hidx : p.1 = L.componentClass B r := by
     let q : L.AttachedCosetVertex B := L.attachedOfSkeletonVertex B r
     exact K.componentSubgraph_attached_index_unique B root p q
-  have hp := p.2.2
-  rw [hidx, L.componentAmbientCoset_class] at hp
+  have hcoset :
+      L.componentAmbientCoset B p.1 =
+        generatedLeftCoset gen B root.1 := by
+    calc
+      L.componentAmbientCoset B p.1 =
+          L.componentAmbientCoset B (L.componentClass B r) :=
+        congrArg (L.componentAmbientCoset B) hidx
+      _ = generatedLeftCoset gen B root.1 := rfl
+  have hp : p.2.1 ∈ L.componentAmbientCoset B p.1 := p.2.2
+  rw [hcoset] at hp
   exact hp
 
 /-- The image of the completed B-extension is exactly the ambient
