@@ -385,3 +385,50 @@ Proposition 3.24, rank-two cluster case of Proposition 4.4,
 Theorem 4.7 with repairs R1/R7/R8, Section 5 induction,
 the MAX transport bridge and unconditional PSTS EPPA. No
 final-EPPA claim is warranted by the present graph constructions.
+
+## 2026-10-08 — corrected local multi-CE embedding checkpoint (#105–#115)
+
+This supersedes the preceding “#103 pending” notes. The authoritative
+checkpoint is GitHub `main`, not the historical open-PR descriptions.
+
+### Independently checked and merged
+
+- #108 (the clean main port of the earlier single-C component comparison):
+  `ComponentSingleCosetHom` embeds an intrinsic B-component's single-C
+  extension into the original K's single-C extension.
+- #105 / #110: component-index enlargement and true intersection-support
+  witnesses are natural under component inclusion. The canonical local
+  multi-coset vertex quotient map is well defined, but these results alone
+  made no injectivity claim.
+- #111 / #113: a lower-alphabet tagged coset point from the local component
+  has the selected intrinsic B-parent index, and every global tagged point
+  with that index has a local preimage. #113 is the clean main port of
+  #112, which had a merge conflict following #111; #112 was closed without
+  being merged.
+- #114: the global (C∩D)-intersection-support relation between images of
+  two local tagged coset vertices reflects to the actual local intersection
+  support. A global support witness has the selected B-parent tag and
+  lifts via #113; its images can be compared by the checked injective
+  attached-coset maps. This proves the multi-coset vertex quotient map
+  **injective**, despite the generally noninjective ambient Cayley map.
+- #115: raw local single-C signed edges map to global raw edges. Equal
+  source classes and equal signed labels remain equal, so the edge map
+  descends to the quotient. It preserves sources, labels, formal reversal;
+  the result is a genuine `LabelledGraphHom`, injective on vertices and
+  on directed edge tokens by E-graph determinism.
+
+### Still not proved by these commits
+
+- The precise intrinsic B-path-component identification for a lower
+  multi-CE family, which is stronger than injectivity of a graph morphism;
+  the exact image and component-path bridges are separate gates.
+- The intrinsic path-component statement of ABO Corollary 3.15, complete
+  source-facing Lemma 3.20, Proposition 3.23 cluster property, Proposition
+  3.24, and rank-two *cluster* part of Proposition 4.4.
+- Repaired ABO Theorem 4.7, Section 5 construction, Lemma 2.5, concrete
+  fibre-MAX bridge, unconditional closed-embedding PSTS EPPA.
+
+The original mathematical warnings remain in force: different intrinsic
+components can project onto the same ambient group coset; the coset
+extension is a tagged quotient, and neither equality of ambient values
+nor graph embedding alone supplies intrinsic component correspondence.
