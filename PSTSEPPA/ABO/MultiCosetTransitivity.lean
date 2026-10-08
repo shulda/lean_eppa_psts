@@ -13,7 +13,7 @@ The non-strict common-refinement lemma yields a witness on
 between the endpoints, with all component tags and ambient values
 preserved.
 
-This proof does not use a strict-subalphabet lemma for degenerate cases:
+This proof uses only the actual tagged coset inclusions; the ambient\ncoordinate map is not assumed to be globally injective.\n\nThis proof does not use a strict-subalphabet lemma for degenerate cases:
 B₁ ∩ B₂ or B₂ ∩ B₃ may equal B₂, and the constituent alphabets may
 coincide. It provides the missing transitivity of the literal quotient
 relation (3.10), not merely its transitive closure.
