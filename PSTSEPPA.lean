@@ -43,6 +43,7 @@ import PSTSEPPA.ABO.ComponentSubgraph
 import PSTSEPPA.ABO.ComponentSubgraphPaths
 import PSTSEPPA.ABO.ComponentSubgraphConnected
 import PSTSEPPA.ABO.ComponentSubgraphAdmissibility
+import PSTSEPPA.ABO.ComponentSubgraphIndices
 import PSTSEPPA.ABO.ComponentIndexedCosets
 import PSTSEPPA.ABO.ComponentIndexMonotonicity
 import PSTSEPPA.ABO.SingleCosetExtension
