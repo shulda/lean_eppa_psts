@@ -60,6 +60,41 @@ theorem leftTranslateCayleyHom_vertex_surjective
   refine ⟨d⁻¹ * y, ?_⟩
   simp [leftTranslateCayleyHom, mul_assoc]
 
+/-- For complete deterministic labelled graphs, vertex-surjectivity of a
+labelled morphism forces edge-surjectivity. -/
+theorem CompleteEGraph.hom_edge_surjective
+    {V₁ E₁ V₂ E₂ : Type*}
+    (G : CompleteEGraph V₁ E₁ ι)
+    (H : CompleteEGraph V₂ E₂ ι)
+    (f : LabelledGraphHom
+      G.toEGraph.toLabelledGraph H.toEGraph.toLabelledGraph)
+    (hV : Function.Surjective f.onVertex) :
+    Function.Surjective f.onEdge := by
+  intro e
+  rcases hV (H.source e) with ⟨u, hu⟩
+  let s : SignedLabel ι := H.label e
+  refine ⟨G.edgeAt u s, ?_⟩
+  have hselected :
+      H.edgeAt (f.onVertex u) s = f.onEdge (G.edgeAt u s) :=
+    CompleteEGraph.hom_edgeAt G H f u s
+  have heq : H.edgeAt (H.source e) s = e := by
+    apply H.edgeAt_eq
+    · rfl
+    · rfl
+  rw [hu, heq] at hselected
+  exact hselected.symm
+
+/-- Source-style cover data is genuinely surjective on directed edges as well
+as vertices. -/
+theorem UnbasedTrivialCompletionCover.edge_surjective
+    {gen : ι → Γ} {A : Finset ι}
+    (C : UnbasedTrivialCompletionCover gen A) :
+    Function.Surjective C.hom.onEdge :=
+  CompleteEGraph.hom_edge_surjective
+    (cayleyGraph gen)
+    (cayleyGraph (trivialCompletionGenerator gen A))
+    C.hom C.vertex_surjective
+
 /-- Forget the based normalization. -/
 def TrivialCompletionCover.toUnbased
     {gen : ι → Γ} {A : Finset ι}
