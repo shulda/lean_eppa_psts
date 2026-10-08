@@ -19,6 +19,9 @@ import PSTSEPPA.ABO.Retractability
 import PSTSEPPA.ABO.RetractabilityCover
 import PSTSEPPA.ABO.RetractabilityRetraction
 import PSTSEPPA.ABO.RetractabilitySource
+import PSTSEPPA.ABO.SubgroupIntersections
+import PSTSEPPA.ABO.CosetIntersections
+import PSTSEPPA.ABO.CosetConnectivity
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
