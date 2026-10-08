@@ -143,6 +143,134 @@ theorem exists_componentSlice_activeCosets
     P.componentSlice_eq_activeCosets
       gen hgen hret B v z hzB hzPieces
 
+/-- Left translate of a vertex set, written in the same convention as our
+left subalphabet cosets. -/
+def LeftTranslateSet (z : Γ) (S : Set Γ) : Set Γ :=
+  {x | z⁻¹ * x ∈ S}
+
+/-- The intersection alphabets of all active constituents. -/
+noncomputable def LowerPieces
+    (gen : ι → Γ) (P : ClusterSpec A)
+    (B : Finset ι) (v : Γ) : Finset (Finset ι) := by
+  classical
+  exact (P.ActivePieces gen B v).image (fun C => C ∩ B)
+
+/-- If no active constituent contains all of B, the active intersection
+alphabets form a genuine B-cluster specification. -/
+noncomputable def lowerSpec
+    (gen : ι → Γ) (P : ClusterSpec A)
+    (B : Finset ι) (v : Γ)
+    (hproper :
+      ∀ C ∈ P.ActivePieces gen B v, ¬ B ⊆ C) :
+    ClusterSpec B where
+  pieces := P.LowerPieces gen B v
+  proper := by
+    classical
+    intro D hD
+    rcases Finset.mem_image.mp hD with ⟨C, hC, rfl⟩
+    refine ⟨?_, ?_⟩
+    · intro i hi
+      exact (Finset.mem_inter.mp hi).2
+    · intro hback
+      apply hproper C hC
+      intro i hiB
+      have hiCB : i ∈ C ∩ B := hback hiB
+      exact (Finset.mem_inter.mp hiCB).1
+
+/-- If an active constituent contains B, the whole B-coset lies in the
+cluster slice. -/
+theorem componentSlice_eq_fullCoset_of_active_superset
+    (gen : ι → Γ) (hgen : IsGenerated gen) (hret : Retractable gen)
+    (P : ClusterSpec A) (B : Finset ι) (v : Γ)
+    (hfull :
+      ∃ C ∈ P.ActivePieces gen B v, B ⊆ C) :
+    P.ComponentSlice gen B v =
+      generatedLeftCoset gen B v := by
+  ext x
+  constructor
+  · intro hx
+    exact hx.2
+  · intro hxB
+    rcases hfull with ⟨C, hactive, hBC⟩
+    have hinfo := (P.mem_activePieces_iff gen B v C).1 hactive
+    rcases hinfo.2 with ⟨y, hyC, hyB⟩
+    have hcosetEq :
+        generatedLeftCoset gen B v =
+          generatedLeftCoset gen B y :=
+      generatedLeftCoset_eq_of_mem gen B hyB
+    have hstepB : y⁻¹ * x ∈ generatedSubgroup gen B := by
+      have hxBy : x ∈ generatedLeftCoset gen B y := by
+        rw [← hcosetEq]
+        exact hxB
+      exact hxBy
+    have hstepC : y⁻¹ * x ∈ generatedSubgroup gen C :=
+      generatedSubgroup_mono gen hBC hstepB
+    have hxC : x ∈ generatedSubgroup gen C := by
+      have hmul :=
+        (generatedSubgroup gen C).mul_mem hyC hstepC
+      simpa [mul_assoc] using hmul
+    exact ⟨⟨C, hinfo.1, hxC⟩, hxB⟩
+
+/-- In the absence of a full-B constituent, the cluster slice is a left
+translate of the lower B-cluster formed by the intersection alphabets C ∩ B. -/
+theorem componentSlice_eq_lowerCluster
+    (gen : ι → Γ) (hgen : IsGenerated gen) (hret : Retractable gen)
+    (P : ClusterSpec A) (B : Finset ι) (v z : Γ)
+    (hproper :
+      ∀ C ∈ P.ActivePieces gen B v, ¬ B ⊆ C)
+    (hzB : z ∈ generatedLeftCoset gen B v)
+    (hzPieces :
+      ∀ C ∈ P.ActivePieces gen B v,
+        z ∈ generatedSubgroup gen C) :
+    P.ComponentSlice gen B v =
+      LeftTranslateSet z
+        ((P.lowerSpec gen B v hproper).VertexSet gen) := by
+  rw [P.componentSlice_eq_activeCosets gen hgen hret B v z hzB hzPieces]
+  ext x
+  constructor
+  · rintro ⟨C, hC, hx⟩
+    change z⁻¹ * x ∈ (P.lowerSpec gen B v hproper).VertexSet gen
+    refine ⟨C ∩ B, ?_, ?_⟩
+    · classical
+      exact Finset.mem_image.mpr ⟨C, hC, rfl⟩
+    · exact hx
+  · intro hx
+    change z⁻¹ * x ∈ (P.lowerSpec gen B v hproper).VertexSet gen at hx
+    rcases hx with ⟨D, hD, hxD⟩
+    classical
+    rcases Finset.mem_image.mp hD with ⟨C, hC, rfl⟩
+    exact ⟨C, hC, hxD⟩
+
+/-- Vertex-set form of ABO Corollary 3.12.
+
+Every B-coset slice of an A-cluster is either the full B-coset, or a left
+translate of a lower B-cluster whose constituent alphabets are intersections
+C ∩ B.  The statement also handles an empty slice: then the lower cluster may
+have no constituents. -/
+theorem componentSlice_fullCoset_or_lowerCluster
+    (gen : ι → Γ) (hgen : IsGenerated gen) (hret : Retractable gen)
+    (P : ClusterSpec A) (B : Finset ι) (v : Γ) :
+    P.ComponentSlice gen B v = generatedLeftCoset gen B v ∨
+      ∃ z : Γ, ∃ Q : ClusterSpec B,
+        P.ComponentSlice gen B v =
+          LeftTranslateSet z (Q.VertexSet gen) := by
+  classical
+  by_cases hfull :
+      ∃ C ∈ P.ActivePieces gen B v, B ⊆ C
+  · exact Or.inl
+      (P.componentSlice_eq_fullCoset_of_active_superset
+        gen hgen hret B v hfull)
+  · have hproper :
+        ∀ C ∈ P.ActivePieces gen B v, ¬ B ⊆ C := by
+      intro C hC hBC
+      exact hfull ⟨C, hC, hBC⟩
+    rcases P.activePieces_common_point gen hgen hret B v with
+      ⟨z, hzB, hzPieces⟩
+    refine Or.inr ⟨z, P.lowerSpec gen B v hproper, ?_⟩
+    exact
+      P.componentSlice_eq_lowerCluster
+        gen hgen hret B v z hproper hzB hzPieces
+
 end ClusterSpec
 
 end ABO
