@@ -45,27 +45,53 @@ theorem attachedSubalphabetMap_common_refinement_le
           Finset.inter_subset_right r = q := by
   by_cases hEq₁ : C₁ = B
   · subst C₁
-    have hmeet : B ∩ C₂ = C₂ :=
-      Finset.inter_eq_right.mpr hC₂
-    rw [hmeet]
-    refine ⟨q, ?_, ?_⟩
-    · have hfirst : p = K.attachedSubalphabetMap C₂ B hC₂ q := by
-        calc
-          p = K.attachedSubalphabetMap B B hC₁ p :=
-            (K.attachedSubalphabetMap_self B p).symm
-          _ = K.attachedSubalphabetMap C₂ B hC₂ q := heq
-      exact hfirst.symm
-    · exact K.attachedSubalphabetMap_self C₂ q
+    have hinto : C₂ ⊆ B ∩ C₂ := by
+      intro i hi
+      exact Finset.mem_inter.mpr ⟨hC₂ hi, hi⟩
+    let r : K.AttachedCosetVertex (B ∩ C₂) :=
+      K.attachedSubalphabetMap C₂ (B ∩ C₂) hinto q
+    refine ⟨r, ?_, ?_⟩
+    · calc
+        K.attachedSubalphabetMap (B ∩ C₂) B
+            Finset.inter_subset_left r =
+            K.attachedSubalphabetMap C₂ B
+              (hinto.trans Finset.inter_subset_left) q :=
+          K.attachedSubalphabetMap_comp
+            C₂ (B ∩ C₂) B hinto Finset.inter_subset_left q
+        _ = K.attachedSubalphabetMap B B hC₁ p := heq.symm
+        _ = p := K.attachedSubalphabetMap_self B p
+    · calc
+        K.attachedSubalphabetMap (B ∩ C₂) C₂
+            Finset.inter_subset_right r =
+            K.attachedSubalphabetMap C₂ C₂
+              (hinto.trans Finset.inter_subset_right) q :=
+          K.attachedSubalphabetMap_comp
+            C₂ (B ∩ C₂) C₂ hinto Finset.inter_subset_right q
+        _ = q := K.attachedSubalphabetMap_self C₂ q
   · by_cases hEq₂ : C₂ = B
     · subst C₂
-      have hmeet : C₁ ∩ B = C₁ :=
-        Finset.inter_eq_left.mpr hC₁
-      rw [hmeet]
-      refine ⟨p, ?_, ?_⟩
-      · exact K.attachedSubalphabetMap_self C₁ p
+      have hinto : C₁ ⊆ C₁ ∩ B := by
+        intro i hi
+        exact Finset.mem_inter.mpr ⟨hi, hC₁ hi⟩
+      let r : K.AttachedCosetVertex (C₁ ∩ B) :=
+        K.attachedSubalphabetMap C₁ (C₁ ∩ B) hinto p
+      refine ⟨r, ?_, ?_⟩
       · calc
-          K.attachedSubalphabetMap C₁ B hC₁ p =
-              K.attachedSubalphabetMap B B hC₂ q := heq
+          K.attachedSubalphabetMap (C₁ ∩ B) C₁
+              Finset.inter_subset_left r =
+              K.attachedSubalphabetMap C₁ C₁
+                (hinto.trans Finset.inter_subset_left) p :=
+            K.attachedSubalphabetMap_comp
+              C₁ (C₁ ∩ B) C₁ hinto Finset.inter_subset_left p
+          _ = p := K.attachedSubalphabetMap_self C₁ p
+      · calc
+          K.attachedSubalphabetMap (C₁ ∩ B) B
+              Finset.inter_subset_right r =
+              K.attachedSubalphabetMap C₁ B
+                (hinto.trans Finset.inter_subset_right) p :=
+            K.attachedSubalphabetMap_comp
+              C₁ (C₁ ∩ B) B hinto Finset.inter_subset_right p
+          _ = K.attachedSubalphabetMap B B hC₂ q := heq
           _ = q := K.attachedSubalphabetMap_self B q
     · have hstrict₁ : C₁ ⊂ B := by
         refine ⟨hC₁, ?_⟩
