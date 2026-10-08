@@ -42,6 +42,7 @@ import PSTSEPPA.ABO.AugmentedClusterTransport
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
 import PSTSEPPA.ABO.Examples
+import PSTSEPPA.ABO.CayleySubgraphAdmissibility
 
 /-!
 # EPPA for partial Steiner triple systems
