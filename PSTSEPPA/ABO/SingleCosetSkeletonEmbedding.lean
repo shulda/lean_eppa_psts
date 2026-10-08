@@ -73,7 +73,8 @@ theorem singleCosetSkeletonEdgeMap_label
       singleCosetLabelledGraph, singleCosetLabel]
   · simp [singleCosetSkeletonEdgeMap, he, singleCosetEGraph,
       singleCosetLabelledGraph, singleCosetLabel]
-  all_goals rfl
+  all_goals simp [CayleySubgraphSpec.toEGraph,
+    CayleySubgraphSpec.toLabelledGraph]
 
 /-- Reversal does not change the unsigned generator of a skeleton edge. -/
 theorem skeletonEdge_inv_signedBase
