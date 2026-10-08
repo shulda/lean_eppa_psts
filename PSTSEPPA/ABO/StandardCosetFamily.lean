@@ -1,6 +1,7 @@
 import PSTSEPPA.ABO.MultiCosetWeakCompleteness
 import PSTSEPPA.ABO.CayleySubgraphAdmissibility
 import Mathlib.Data.Finset.Card
+import Mathlib.Data.Finset.Powerset
 
 /-!
 # Canonical family of all proper subalphabets for ABO coset extension
