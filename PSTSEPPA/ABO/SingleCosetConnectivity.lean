@@ -11,7 +11,9 @@ and prove that the endpoint equals right multiplication by the original
 word value.  For any two vertices in one component-tagged coset, their
 relative group value lies in G[B], hence a B-word connects them inside
 the extension.  This is the positive direction of the B-component
-classification needed in the coset-extension construction.
+classification needed in the coset-extension construction. The converse,
+that every B-path preserves the component tag, is a separate lemma in
+SingleCosetComponentInvariant; this file does not assume it.
 -/
 
 namespace PSTSEPPA
