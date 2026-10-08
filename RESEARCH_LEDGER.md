@@ -277,3 +277,47 @@ LabelledGraph or EGraph. This distinction is intentional.
 No claim that ordinary PSTS EPPA is Lean-formalized follows from this
 checkpoint: the T2 transfer remains conditional on the fibre-MAX group
 extension and A3/A4/A5/C1 remain open.
+
+## 2026-10-08 — A2 edge quotient E-graph certified
+
+### Mathematically substantial Lean-certified results
+
+The proof of target congruence for multi-alphabet coset-extension edge
+identifications is now merged into main (PR #74, commit
+`4ea8b05cab6a2dfab4a548bf2a39aba7c0900924`). It treats all four
+ordered combinations of original outside-alphabet and completed coset
+edges. The completed/completed case moves a real (B ∩ C)-support witness
+by the common signed generator. The old/old case uses determinism of
+the original skeleton. The mixed case uses literal skeleton-point
+reflection rather than falsely assuming injectivity of the ambient
+group projection. The symmetric mixed orientation follows by reversal
+of equality. All three constituent proofs were independently CI-green.
+
+As a result, the previously conditional multi-coset edge construction
+is an actual deterministic E-graph, not just an incidence quotient:
+formal reversal descends to classes, has order two and no fixed edge
+tokens, and reverses signed labels, even for geometric loops and
+trivial or repeated generators. Each single-B constituent maps in
+with injective vertex and directed-edge maps. The assumptions remain
+those of the source construction: admissible skeleton and retractable,
+generated labelled group. This is **not** a final PSTS EPPA witness.
+
+### Remaining tasks
+
+The candidate `MultiCosetMorphisms.lean` on PR #76 constructs the
+canonical morphism into the ambient Cayley graph and injective,
+alphabet-independent skeleton embeddings. It is **not yet accepted**
+until the combined Lean CI and axiom audit pass and it is merged.
+
+Source-facing ABO Proposition 3.18 and all later Section 3 preservation
+properties still require exact statement-level audit. In particular,
+full intrinsic C-component classification (rather than only exact
+vertex/edge slices) for Corollary 3.15 and the rank-two cluster
+property of Proposition 4.4 remain separate obligations. The corrected
+Theorem 4.7 (A3), Section 5 induction, main ABO Lemma 2.5,
+Cayley/semidirect fibre-MAX bridge, and unconditional PSTS EPPA are open.
+
+**Scope discipline:** 'unconditional multi-coset EGraph' means no *extra*
+unknown edge-congruence hypothesis is left in the Lean statement; it
+still takes admissibility, retractability and generation as explicit
+hypotheses and does not prove the overarching theorem.
