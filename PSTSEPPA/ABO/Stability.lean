@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.CosetConnectivity
+import Mathlib.Data.Finset.Card
 
 /-!
 # Stable labelled group quotients
@@ -54,22 +55,29 @@ theorem map_evalGroup (w : LabelWord ι) :
   | cons s w ih =>
       simp [PSTS.SignedWord.evalGroup, Q.map_evalGroupLetter, ih]
 
+/-- The ambient quotient sends every subalphabet-generated
+subgroup into the corresponding subgroup downstairs. -/
+theorem hom_mem_generatedSubgroup
+    (A : Finset ι) {x : Γ}
+    (hx : x ∈ generatedSubgroup genΓ A) :
+    Q.hom x ∈ generatedSubgroup genΔ A := by
+  induction hx using Subgroup.closure_induction with
+  | mem y hy =>
+      rcases hy with ⟨i, rfl⟩
+      rw [Q.map_gen]
+      exact generator_mem_generatedSubgroup genΔ A i.2
+  | one =>
+      simp
+  | mul x y hx hy ihx ihy =>
+      exact (generatedSubgroup genΔ A).mul_mem ihx ihy
+  | inv x hx ih =>
+      exact (generatedSubgroup genΔ A).inv_mem ih
+
 /-- The labelled quotient restricts to every subalphabet-generated subgroup. -/
 def subgroupHom (A : Finset ι) :
     generatedSubgroup genΓ A →* generatedSubgroup genΔ A where
   toFun x :=
-    ⟨Q.hom x.1, by
-      induction x.2 using Subgroup.closure_induction with
-      | mem y hy =>
-          rcases hy with ⟨i, rfl⟩
-          rw [Q.map_gen]
-          exact generator_mem_generatedSubgroup genΔ A i.2
-      | one =>
-          simp
-      | mul x y hx hy ihx ihy =>
-          simpa using (generatedSubgroup genΔ A).mul_mem ihx ihy
-      | inv x hx ih =>
-          simpa using (generatedSubgroup genΔ A).inv_mem ih⟩
+    ⟨Q.hom x.1, Q.hom_mem_generatedSubgroup A x.2⟩
   map_one' := by
     apply Subtype.ext
     simp
@@ -84,30 +92,41 @@ theorem subgroupHom_val (A : Finset ι)
       Q.hom x.1 :=
   rfl
 
+/-- Every element of a generated subgroup downstairs has a preimage in
+the equally generated subgroup upstairs. -/
+theorem exists_subgroup_preimage
+    (A : Finset ι) {y : Δ}
+    (hy : y ∈ generatedSubgroup genΔ A) :
+    ∃ x : Γ,
+      x ∈ generatedSubgroup genΓ A ∧ Q.hom x = y := by
+  induction hy using Subgroup.closure_induction with
+  | mem z hz =>
+      rcases hz with ⟨i, rfl⟩
+      exact
+        ⟨genΓ i.1,
+          generator_mem_generatedSubgroup genΓ A i.2,
+          Q.map_gen i.1⟩
+  | one =>
+      exact ⟨1, by simp, by simp⟩
+  | mul x y hx hy ihx ihy =>
+      rcases ihx with ⟨x', hxA, hx'⟩
+      rcases ihy with ⟨y', hyA, hy'⟩
+      refine ⟨x' * y', (generatedSubgroup genΓ A).mul_mem hxA hyA, ?_⟩
+      simp [hx', hy']
+  | inv x hx ih =>
+      rcases ih with ⟨x', hxA, hx'⟩
+      refine ⟨x'⁻¹, (generatedSubgroup genΓ A).inv_mem hxA, ?_⟩
+      simp [hx']
+
 /-- Generator preservation alone already makes every induced subalphabet map
 surjective. -/
 theorem subgroupHom_surjective (A : Finset ι) :
     Function.Surjective (Q.subgroupHom A) := by
   intro y
-  induction y.2 using Subgroup.closure_induction with
-  | mem z hz =>
-      rcases hz with ⟨i, rfl⟩
-      let x : generatedSubgroup genΓ A :=
-        ⟨genΓ i.1, generator_mem_generatedSubgroup genΓ A i.2⟩
-      refine ⟨x, ?_⟩
-      apply Subtype.ext
-      exact Q.map_gen i.1
-  | one =>
-      exact ⟨1, by simp⟩
-  | mul x y hx hy ihx ihy =>
-      rcases ihx with ⟨x', hx'⟩
-      rcases ihy with ⟨y', hy'⟩
-      refine ⟨x' * y', ?_⟩
-      simpa [hx', hy']
-  | inv x hx ih =>
-      rcases ih with ⟨x', hx'⟩
-      refine ⟨x'⁻¹, ?_⟩
-      simpa [hx']
+  rcases Q.exists_subgroup_preimage A y.2 with ⟨x, hxA, hxy⟩
+  refine ⟨⟨x, hxA⟩, ?_⟩
+  apply Subtype.ext
+  exact hxy
 
 /-- Stability on one specified subalphabet. -/
 def StableAt (A : Finset ι) : Prop :=
@@ -152,10 +171,10 @@ theorem evalGroup_eq_of_stableAt
       PSTS.SignedWord.evalGroup genΓ q := by
   let xp : generatedSubgroup genΓ A :=
     ⟨PSTS.SignedWord.evalGroup genΓ p,
-      LabelWord.evalGroup_mem_generatedSubgroup genΓ A hp⟩
+      evalGroup_mem_generatedSubgroup_of_uses genΓ A hp⟩
   let xq : generatedSubgroup genΓ A :=
     ⟨PSTS.SignedWord.evalGroup genΓ q,
-      LabelWord.evalGroup_mem_generatedSubgroup genΓ A hq⟩
+      evalGroup_mem_generatedSubgroup_of_uses genΓ A hq⟩
   have himage : Q.subgroupHom A xp = Q.subgroupHom A xq := by
     apply Subtype.ext
     change
