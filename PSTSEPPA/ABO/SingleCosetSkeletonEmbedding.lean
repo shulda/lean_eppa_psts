@@ -73,6 +73,7 @@ theorem singleCosetSkeletonEdgeMap_label
       singleCosetLabelledGraph, singleCosetLabel]
   · simp [singleCosetSkeletonEdgeMap, he, singleCosetEGraph,
       singleCosetLabelledGraph, singleCosetLabel]
+  all_goals rfl
 
 /-- Reversal does not change the unsigned generator of a skeleton edge. -/
 theorem skeletonEdge_inv_signedBase
@@ -135,8 +136,12 @@ theorem singleCosetSkeletonEdgeMap_ambient
     (K.singleCosetAmbientHom B).onEdge
       (K.singleCosetSkeletonEdgeMap B e) = e.1 := by
   by_cases he : signedBase e.1.2 ∈ B
-  · simp [singleCosetSkeletonEdgeMap, he, singleCosetAmbientHom]
-  · simp [singleCosetSkeletonEdgeMap, he, singleCosetAmbientHom]
+  · simp only [singleCosetSkeletonEdgeMap, dif_pos he]
+    change (((K.toEGraph).source e).1, e.1.2) = e.1
+    rfl
+  · simp only [singleCosetSkeletonEdgeMap, dif_neg he]
+    change e.1 = e.1
+    rfl
 
 /-- The old skeleton is also embedded injectively on directed edges.
 This is *not* a claim that the whole extension-to-ambient map is injective. -/
@@ -145,6 +150,11 @@ theorem skeletonToSingleCosetHom_edge_injective
     Function.Injective (K.skeletonToSingleCosetHom B).onEdge := by
   intro e f hef
   have h := congrArg (K.singleCosetAmbientHom B).onEdge hef
+  change
+    (K.singleCosetAmbientHom B).onEdge
+        (K.singleCosetSkeletonEdgeMap B e) =
+      (K.singleCosetAmbientHom B).onEdge
+        (K.singleCosetSkeletonEdgeMap B f) at h
   rw [K.singleCosetSkeletonEdgeMap_ambient B e,
     K.singleCosetSkeletonEdgeMap_ambient B f] at h
   exact Subtype.ext h
