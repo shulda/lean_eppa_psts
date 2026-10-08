@@ -81,7 +81,11 @@ theorem retractHom_generator
     (A : Finset ι) (i : ι) :
     retractHom gen hgen hret A (gen i) =
       trivialCompletionGenerator gen A i := by
-  unfold retractHom
+  change
+    PSTS.SignedWord.evalGroup
+        (trivialCompletionGenerator gen A)
+        (wordRep gen hgen (gen i)) =
+      trivialCompletionGenerator gen A i
   have hsource :
       PSTS.SignedWord.evalGroup gen (wordRep gen hgen (gen i)) =
         PSTS.SignedWord.evalGroup gen [PSTS.SignedLetter.pos i] := by
@@ -95,21 +99,24 @@ theorem retractHom_on_generatedSubgroup
     (gen : ι → Γ) (hgen : IsGenerated gen) (hret : Retractable gen)
     (A : Finset ι) (x : generatedSubgroup gen A) :
     retractHom gen hgen hret A x.1 = x := by
+  have hfix :
+      ∀ g : Γ, g ∈ generatedSubgroup gen A →
+        ((retractHom gen hgen hret A g :
+            generatedSubgroup gen A) : Γ) = g := by
+    intro g hg
+    induction hg using Subgroup.closure_induction with
+    | mem y hy =>
+        rcases hy with ⟨i, rfl⟩
+        rw [retractHom_generator]
+        simp [trivialCompletionGenerator, i.property]
+    | one =>
+        simp
+    | mul y z hy hz ihy ihz =>
+        simp [ihy, ihz]
+    | inv y hy ih =>
+        simp [ih]
   apply Subtype.ext
-  change
-    ((retractHom gen hgen hret A x.1 :
-        generatedSubgroup gen A) : Γ) = x.1
-  induction x.property using Subgroup.closure_induction with
-  | mem y hy =>
-      rcases hy with ⟨i, rfl⟩
-      rw [retractHom_generator]
-      simp [trivialCompletionGenerator, i.property]
-  | one =>
-      simp
-  | mul y z hy hz ihy ihz =>
-      simp [ihy, ihz]
-  | inv y hy ih =>
-      simp [ih]
+  exact hfix x.1 x.2
 
 /-- Hence the retraction is onto the subalphabet subgroup. -/
 theorem retractHom_surjective
@@ -169,19 +176,26 @@ noncomputable def trivialCompletionCover_of_retractable
   vertex_surjective :=
     retractHom_surjective gen hgen hret A
 
+/-- Existence, rather than chosen data, of a trivial-completion
+cover. -/
+def HasTrivialCompletionCover (gen : ι → Γ) (A : Finset ι) : Prop :=
+  Nonempty (TrivialCompletionCover gen A)
+
 /-- ABO Proposition 3.3, in based form.
 
 For a labelled family which generates the ambient group, retractability is
-equivalent to the existence of a based surjective Cayley cover onto every
-trivial subalphabet completion. -/
+equivalent to existence of a based surjective Cayley cover onto every trivial
+subalphabet completion. -/
 theorem retractable_iff_trivialCompletionCovers
     (gen : ι → Γ) (hgen : IsGenerated gen) :
     Retractable gen ↔
-      ∀ A : Finset ι, TrivialCompletionCover gen A := by
+      ∀ A : Finset ι, HasTrivialCompletionCover gen A := by
   constructor
   · intro hret A
-    exact trivialCompletionCover_of_retractable gen hgen hret A
-  · exact retractable_of_trivialCompletionCovers gen
+    exact ⟨trivialCompletionCover_of_retractable gen hgen hret A⟩
+  · intro hcovers
+    exact retractable_of_trivialCompletionCovers gen
+      (fun A => Classical.choice (hcovers A))
 
 end ABO
 end PSTSEPPA
