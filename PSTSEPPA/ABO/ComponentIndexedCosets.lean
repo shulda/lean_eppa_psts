@@ -32,8 +32,8 @@ def subalphabetSetoid (B : Finset ι) : Setoid K.Vertex where
   r := K.SubalphabetReachable B
   iseqv := {
     refl := fun x => K.subalphabetReachable_refl B x
-    symm := fun _ _ h => K.subalphabetReachable_symm B h
-    trans := fun _ _ _ hxy hyz =>
+    symm := fun h => K.subalphabetReachable_symm B h
+    trans := fun hxy hyz =>
       K.subalphabetReachable_trans B hxy hyz
   }
 
