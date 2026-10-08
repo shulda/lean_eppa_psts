@@ -107,7 +107,7 @@ theorem componentSlice_eq_activeCosets
       exact ⟨hCP, ⟨x, hxC, hxB⟩⟩
     refine ⟨C, hactive, ?_⟩
     have hinter :=
-      P.constituent_inter_coset_eq
+      constituent_inter_coset_eq
         gen hgen hret C B v z (hzPieces C hactive) hzB
     rw [← hinter]
     exact ⟨hxC, hxB⟩
@@ -115,7 +115,7 @@ theorem componentSlice_eq_activeCosets
     have hinfo :=
       (P.mem_activePieces_iff gen B v C).1 hactive
     have hinter :=
-      P.constituent_inter_coset_eq
+      constituent_inter_coset_eq
         gen hgen hret C B v z (hzPieces C hactive) hzB
     have hxinter :
         x ∈ (generatedSubgroup gen C : Set Γ) ∩
