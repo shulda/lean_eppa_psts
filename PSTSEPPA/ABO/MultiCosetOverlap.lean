@@ -67,10 +67,28 @@ empty alphabet. -/
 theorem shareIntersectionSupport_refl
     (B : Finset ι) (p : K.AttachedCosetVertex B) :
     K.ShareIntersectionSupport B B p p := by
-  unfold ShareIntersectionSupport
-  simp only [Finset.inter_self]
-  exact ⟨p, K.attachedSubalphabetMap_self B p,
-    K.attachedSubalphabetMap_self B p⟩
+  have hBB : B ⊆ B ∩ B := by
+    intro i hi
+    exact Finset.mem_inter.mpr ⟨hi, hi⟩
+  let r : K.AttachedCosetVertex (B ∩ B) :=
+    K.attachedSubalphabetMap B (B ∩ B) hBB p
+  refine ⟨r, ?_, ?_⟩
+  · calc
+      K.attachedSubalphabetMap (B ∩ B) B
+          Finset.inter_subset_left r =
+          K.attachedSubalphabetMap B B
+            (hBB.trans Finset.inter_subset_left) p :=
+        K.attachedSubalphabetMap_comp B (B ∩ B) B
+          hBB Finset.inter_subset_left p
+      _ = p := K.attachedSubalphabetMap_self B p
+  · calc
+      K.attachedSubalphabetMap (B ∩ B) B
+          Finset.inter_subset_right r =
+          K.attachedSubalphabetMap B B
+            (hBB.trans Finset.inter_subset_right) p :=
+        K.attachedSubalphabetMap_comp B (B ∩ B) B
+          hBB Finset.inter_subset_right p
+      _ = p := K.attachedSubalphabetMap_self B p
 
 /-- Symmetry just swaps the two supports and their intersection factors. -/
 theorem shareIntersectionSupport_symm
@@ -80,9 +98,33 @@ theorem shareIntersectionSupport_symm
     (h : K.ShareIntersectionSupport B C p q) :
     K.ShareIntersectionSupport C B q p := by
   rcases h with ⟨r, hrp, hrq⟩
-  unfold ShareIntersectionSupport
-  rw [Finset.inter_comm C B]
-  exact ⟨r, hrq, hrp⟩
+  have hswap : B ∩ C ⊆ C ∩ B := by
+    intro i hi
+    exact Finset.mem_inter.mpr
+      ⟨(Finset.mem_inter.mp hi).2, (Finset.mem_inter.mp hi).1⟩
+  let r' : K.AttachedCosetVertex (C ∩ B) :=
+    K.attachedSubalphabetMap (B ∩ C) (C ∩ B) hswap r
+  refine ⟨r', ?_, ?_⟩
+  · calc
+      K.attachedSubalphabetMap (C ∩ B) C
+          Finset.inter_subset_left r' =
+          K.attachedSubalphabetMap (B ∩ C) C
+            (hswap.trans Finset.inter_subset_left) r :=
+        K.attachedSubalphabetMap_comp
+          (B ∩ C) (C ∩ B) C hswap Finset.inter_subset_left r
+      _ = K.attachedSubalphabetMap (B ∩ C) C
+            Finset.inter_subset_right r := rfl
+      _ = q := hrq
+  · calc
+      K.attachedSubalphabetMap (C ∩ B) B
+          Finset.inter_subset_right r' =
+          K.attachedSubalphabetMap (B ∩ C) B
+            (hswap.trans Finset.inter_subset_right) r :=
+        K.attachedSubalphabetMap_comp
+          (B ∩ C) (C ∩ B) B hswap Finset.inter_subset_right r
+      _ = K.attachedSubalphabetMap (B ∩ C) B
+            Finset.inter_subset_left r := rfl
+      _ = p := hrp
 
 /-- Two points with equal alphabet admit a common intersection support
 if and only if they are literally equal as component-tagged points.
@@ -126,12 +168,28 @@ theorem shareIntersectionSupport_of_subset
     (p : K.AttachedCosetVertex B) :
     K.ShareIntersectionSupport B C p
       (K.attachedSubalphabetMap B C hBC p) := by
-  unfold ShareIntersectionSupport
-  have hBCinter : B ∩ C = B := Finset.inter_eq_left.mpr hBC
-  rw [hBCinter]
-  refine ⟨p, ?_, ?_⟩
-  · exact K.attachedSubalphabetMap_self B p
-  · rfl
+  have hinto : B ⊆ B ∩ C := by
+    intro i hi
+    exact Finset.mem_inter.mpr ⟨hi, hBC hi⟩
+  let r : K.AttachedCosetVertex (B ∩ C) :=
+    K.attachedSubalphabetMap B (B ∩ C) hinto p
+  refine ⟨r, ?_, ?_⟩
+  · calc
+      K.attachedSubalphabetMap (B ∩ C) B
+          Finset.inter_subset_left r =
+          K.attachedSubalphabetMap B B
+            (hinto.trans Finset.inter_subset_left) p :=
+        K.attachedSubalphabetMap_comp
+          B (B ∩ C) B hinto Finset.inter_subset_left p
+      _ = p := K.attachedSubalphabetMap_self B p
+  · calc
+      K.attachedSubalphabetMap (B ∩ C) C
+          Finset.inter_subset_right r =
+          K.attachedSubalphabetMap B C
+            (hinto.trans Finset.inter_subset_right) p :=
+        K.attachedSubalphabetMap_comp
+          B (B ∩ C) C hinto Finset.inter_subset_right p
+      _ = K.attachedSubalphabetMap B C hBC p := rfl
 
 end CayleySubgraphSpec
 end ABO
