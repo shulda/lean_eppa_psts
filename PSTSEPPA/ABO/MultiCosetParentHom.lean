@@ -68,7 +68,12 @@ theorem multiCosetRawEdgeToParent_congr
           ((K.singleCosetEGraph C.1).source e) =
       K.attachedSubalphabetMap D.1 B (hPsub D.1 D.2)
           ((K.singleCosetEGraph D.1).source f) := by
-    simpa only [K.multiCosetVertexToParent_include] using hfold
+    change
+      K.attachedSubalphabetMap C.1 B (hPsub C.1 C.2)
+          ((K.singleCosetEGraph C.1).source e) =
+        K.attachedSubalphabetMap D.1 B (hPsub D.1 D.2)
+          ((K.singleCosetEGraph D.1).source f) at hfold
+    exact hfold
   apply (K.singleCosetEGraph B).deterministic
   · calc
       (K.singleCosetEGraph B).source
@@ -195,10 +200,10 @@ theorem multiCosetToParentHom_edge_injective
     (hPsub : ∀ C ∈ P.alphabets, C ⊆ B) :
     Function.Injective
       (K.multiCosetToParentHom P hadm hgen hret B hPsub).onEdge :=
-  (K.multiCosetToParentHom P hadm hgen hret B hPsub)
-    .edge_injective_of_vertex_injective
-      (K.multiCosetToParentHom_vertex_injective
-        P hadm hgen hret B hBA hPsub)
+  LabelledGraphHom.edge_injective_of_vertex_injective
+    (K.multiCosetToParentHom P hadm hgen hret B hPsub)
+    (K.multiCosetToParentHom_vertex_injective
+      P hadm hgen hret B hBA hPsub)
 
 /-- The constituent C→B morphism factors through the multi-CE
 inclusion and family-to-parent folding, on vertices. -/
