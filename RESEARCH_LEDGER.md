@@ -212,3 +212,68 @@ original non-B edges while supplying each tagged B-coset with its complete
 B-labelled Cayley edges. This may avoid a separate vertex gluing quotient for
 single-B extensions; it must be checked in Lean, and the multi-alphabet
 quotient still requires the equal/degenerate-parameter transitivity repair.
+
+## 2026-10-08 — A2 coset-extension and gluing checkpoint (late)
+
+### Lean-certified and merged
+
+- Single-B coset extension is a literal deterministic labelled E-graph:
+  old signed edges outside B are retained; complete signed B-edges are
+  added separately to each intrinsic B-component; formal inverse tokens
+  remain distinct even for geometric loops and trivial generators.
+- The original skeleton has a vertex- and edge-injective labelled
+  embedding into the single-B extension. Every added B-copy is genuinely
+  B-path connected, every B-path preserves its component tag, and
+  therefore the intrinsic B-components of the extension are exactly the
+  attached B-coset copies. Original B-connectivity is reflected.
+- For multi-alphabet gluing, the exact overlap relation is witnessed by
+  a tagged (B ∩ C)-coset point, not equality of ambient group coordinates.
+  Under admissibility and retractability it is an actual equivalence
+  relation; the transitivity proof handles equal, nested and empty
+  alphabets explicitly (repair R5, **vertex level**).
+- The quotient of raw tagged vertices is constructed, and each individual
+  alphabet-summand embeds injectively. Original skeleton vertices have
+  an alphabet-independent image. Glued original skeleton points also
+  reflect correctly into the individual attached B-summands.
+- Raw directed edge tokens, their signed labels, sources/targets,
+  projection to the ambient Cayley graph, inverse tokens and reversal
+  laws are formalized. The separate edge-token quotient by equal glued
+  source and signed label has well-defined source and label and injective
+  injections of constituent edge sets. The ambient projection is deliberately
+  not treated as globally injective.
+
+### Exact remaining edge gluing gate
+
+Define `MultiCosetTargetCongruent`: whenever two raw directed edges have
+**equal sources in the quotient of vertices** and the same signed label,
+their **targets are equal in that same quotient**. Equal ambient group
+coordinates alone are insufficient. This has three constituent cases:
+
+1. Both edges completed in attached cosets: move the common
+   (B ∩ C)-support witness by the shared signed generator.
+2. Both edges originally in K: use source projection and determinism of
+   the old skeleton, followed by alphabet-independent skeleton inclusion.
+3. Exactly one edge completed: use literal skeleton-point reflection to
+   identify the completed source and the old skeleton edge, then compare
+   their targets.
+
+These case lemmas and a separate conditional construction of the full
+multi-coset E-graph are in review; only a successful full Lean build and
+axiom audit on merged `main` may promote them to formalized. Until
+`MultiCosetTargetCongruent` is proved, the edge quotient is not a
+LabelledGraph or EGraph. This distinction is intentional.
+
+### Further obligations and boundary
+
+- Actual multi-alphabet edge gluing and Proposition 3.18, including
+  compatibility with formal inversion and an injective skeleton embedding;
+- the intrinsic path-component formulation of Corollary 3.15 (current
+  results cover exact graph-data slices, not yet all connected components);
+- the cluster property of low-rank Proposition 4.4 (admissibility alone
+  was certified earlier, not the entire proposition);
+- Section 3 coset-extension preservation lemmas, corrected Theorem 4.7,
+  finite induction and the eventual unconditional PSTS EPPA theorem.
+
+No claim that ordinary PSTS EPPA is Lean-formalized follows from this
+checkpoint: the T2 transfer remains conditional on the fibre-MAX group
+extension and A3/A4/A5/C1 remain open.
