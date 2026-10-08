@@ -35,6 +35,7 @@ import PSTSEPPA.ABO.AugmentedComponentSeparation
 import PSTSEPPA.ABO.Stability
 import PSTSEPPA.ABO.ClusterTransport
 import PSTSEPPA.ABO.CayleySubgraph
+import PSTSEPPA.ABO.CayleySubgraphComponents
 import PSTSEPPA.ABO.AugmentedClusterTransport
 
 import PSTSEPPA.ABO.Graph
