@@ -48,6 +48,7 @@ import PSTSEPPA.ABO.ComponentSubgraphIndices
 import PSTSEPPA.ABO.ComponentParentIndexControl
 import PSTSEPPA.ABO.ComponentAttachmentRange
 import PSTSEPPA.ABO.ComponentMultiCosetEmbedding
+import PSTSEPPA.ABO.ComponentMultiCosetHom
 import PSTSEPPA.ABO.ComponentSingleCosetHom
 import PSTSEPPA.ABO.ComponentCosetNaturality
 import PSTSEPPA.ABO.ComponentMultiCosetVertexMap
