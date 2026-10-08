@@ -57,6 +57,9 @@ variable {Γ ι : Type*} [Group Γ] (gen : ι → Γ)
 theorem target_pos (x : Γ) (i : ι) :
     (cayleyGraph gen).target (x, PSTS.SignedLetter.pos i) =
       x * gen i := by
+  change
+    (actionGraph (fun j => rightMulPerm (gen j))).target
+      (x, PSTS.SignedLetter.pos i) = x * gen i
   rw [actionGraph.target]
   rfl
 
@@ -64,6 +67,9 @@ theorem target_pos (x : Γ) (i : ι) :
 theorem target_neg (x : Γ) (i : ι) :
     (cayleyGraph gen).target (x, PSTS.SignedLetter.neg i) =
       x * (gen i)⁻¹ := by
+  change
+    (actionGraph (fun j => rightMulPerm (gen j))).target
+      (x, PSTS.SignedLetter.neg i) = x * (gen i)⁻¹
   rw [actionGraph.target]
   rfl
 
@@ -86,8 +92,12 @@ theorem followWord_eq_mul_evalGroup
       simp
   | cons s w ih =>
       rw [CompleteEGraph.followWord_cons]
-      rw [actionGraph.edgeAt, target_eq_mul_evalGroupLetter]
-      rw [ih]
+      have hedge :
+          (cayleyGraph gen).edgeAt x s = (x, s) := by
+        change
+          (actionGraph (fun j => rightMulPerm (gen j))).edgeAt x s = (x, s)
+        exact actionGraph.edgeAt (fun j => rightMulPerm (gen j)) x s
+      rw [hedge, target_eq_mul_evalGroupLetter, ih]
       simp [PSTS.SignedWord.evalGroup, mul_assoc]
 
 /-- The transition generator of the Cayley graph is right multiplication by
