@@ -102,8 +102,10 @@ theorem follows_lift_component
       have hsource :
           ((K.subalphabetComponentSubgraph B root).toEGraph).source newEdge =
             K.componentLiftVertex B root u hu := by
+        have hv : ((K.toEGraph).source e).1 = u.1 :=
+          congrArg (fun q : K.Vertex => q.1) hs
         apply Subtype.ext
-        exact congrArg Subtype.val hs
+        exact hv
       have htarget :
           ((K.subalphabetComponentSubgraph B root).toEGraph).target newEdge =
             K.componentLiftVertex B root ((K.toEGraph).target e) htgt := by
