@@ -105,7 +105,7 @@ theorem componentEdgeSlice_eq_lowerCluster
       apply (P.mem_activePieces_iff gen B v C).2
       exact ⟨hCP, ⟨x, hxC, hxB⟩⟩
     have hinter :=
-      P.constituent_inter_coset_eq
+      constituent_inter_coset_eq
         gen hgen hret C B v z (hzPieces C hactive) hzB
     have hxInter :
         x ∈ (generatedSubgroup gen C : Set Γ) ∩
