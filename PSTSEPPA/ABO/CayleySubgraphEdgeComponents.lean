@@ -1,4 +1,4 @@
-import PSTSEPPA.ABO.CayleySubgraphComponents
+import PSTSEPPA.ABO.ComponentIndexedCosets
 
 /-!
 # Signed skeleton edges and intrinsic subalphabet components
