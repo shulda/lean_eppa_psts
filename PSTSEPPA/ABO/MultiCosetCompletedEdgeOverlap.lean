@@ -73,8 +73,6 @@ theorem multiCosetCompletedEdge_targets_eq
           (B ∩ C) B Finset.inter_subset_left r s
       _ = K.cosetStep B e.1 e.2 := by
         rw [hrB]
-        apply congrArg (K.cosetStep B e.1)
-        exact Subtype.ext rfl
   have hrC' :
       K.attachedSubalphabetMap (B ∩ C) C
           Finset.inter_subset_right r' =
