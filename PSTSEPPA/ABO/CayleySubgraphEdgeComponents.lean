@@ -47,7 +47,7 @@ ambient B-coset copy. -/
 theorem edge_endpoint_mem_componentAmbientCoset
     (B : Finset ι) (e : K.Edge)
     (he : signedBase ((K.toEGraph).label e) ∈ B) :
-    (K.toEGraph).target e |>.1 ∈
+    ((K.toEGraph).target e).1 ∈
       K.componentAmbientCoset B
         (K.componentClass B ((K.toEGraph).source e)) := by
   have hreach := K.edge_subalphabetReachable B e he
