@@ -41,6 +41,7 @@ import PSTSEPPA.ABO.ComponentIndexedCosets
 import PSTSEPPA.ABO.ComponentIndexMonotonicity
 import PSTSEPPA.ABO.SingleCosetExtension
 import PSTSEPPA.ABO.SingleCosetEGraph
+import PSTSEPPA.ABO.SingleCosetConnectivity
 import PSTSEPPA.ABO.SingleCosetSkeletonEmbedding
 import PSTSEPPA.ABO.AugmentedClusterTransport
 
