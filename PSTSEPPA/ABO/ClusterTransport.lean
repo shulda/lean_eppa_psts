@@ -186,9 +186,9 @@ theorem clusterHom_edge_bijective
         P hgenΔ hretΔ hstable
         (P.edge_source_mem genΓ e.2)
         (P.edge_source_mem genΓ f.2)
-        (congrArg Prod.fst hpair)
+        (congrArg (fun p : Δ × SignedLabel ι => p.1) hpair)
     have hsnd : e.1.2 = f.1.2 :=
-      congrArg Prod.snd hpair
+      congrArg (fun p : Δ × SignedLabel ι => p.2) hpair
     exact Prod.ext hfst hsnd
   · intro e
     rcases e with ⟨⟨y, s⟩, he⟩
