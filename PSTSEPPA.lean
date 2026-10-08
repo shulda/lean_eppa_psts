@@ -67,6 +67,7 @@ import PSTSEPPA.ABO.MultiCosetOldEdgeOverlap
 import PSTSEPPA.ABO.MultiCosetRawEdgeInversion
 import PSTSEPPA.ABO.MultiCosetEdgeQuotient
 import PSTSEPPA.ABO.MultiCosetConditionalEGraph
+import PSTSEPPA.ABO.MultiCosetEGraph
 
 /-!
 # EPPA for partial Steiner triple systems
