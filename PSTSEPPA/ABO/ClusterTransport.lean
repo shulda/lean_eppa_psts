@@ -1,7 +1,5 @@
 import PSTSEPPA.ABO.ClusterComponentGraph
 import PSTSEPPA.ABO.Stability
-import Mathlib.Tactic
-
 /-!
 # Stability transport for ABO clusters
 
@@ -232,7 +230,8 @@ theorem clusterHom_bijective_of_kStable
   apply hk B
   have hlt : B.card < A.card :=
     Finset.card_lt_card (P.proper B hBP)
-  omega
+  rw [hcard] at hlt
+  exact Nat.le_sub_one_of_lt hlt
 
 end LabelledGroupQuotient
 
