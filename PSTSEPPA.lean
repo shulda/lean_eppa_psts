@@ -80,6 +80,7 @@ import PSTSEPPA.ABO.MultiCosetMorphisms
 import PSTSEPPA.ABO.MultiCosetWeakCompleteness
 import PSTSEPPA.ABO.LocalCosetEmbedding
 import PSTSEPPA.ABO.MultiCosetParentFold
+import PSTSEPPA.ABO.MultiCosetParentHom
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
