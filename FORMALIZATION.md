@@ -40,12 +40,13 @@ is on `main` and GitHub Actions is green.
 | A2: canonical morphisms / ABO Proposition 3.18 | `MultiCosetMorphisms.lean`, `MultiCosetMorphismsUnique.lean` | **Formalized (nonempty-family scope)** | Canonical labelled graph morphism CE(G,K;P)→Cayley(G), injective and alphabet-independent skeleton embeddings, unique morphism extending skeleton values when P is nonempty. The ambient morphism need not be globally injective; P=∅ is excluded from the literal skeleton-containing model. |
 | A2: actual component intersections (ABO Lemma 3.21) | `AdmissibleComponentIntersections.lean` | **Formalized (intrinsic paths)** | For B,C⊂A, admissibility+retractability imply simultaneous B/C path reachability iff (B∩C)-reachability; any nonempty intersection of intrinsic B/C skeleton components is exactly one (B∩C)-component, including nested and equal cases. |
 | A2: lower-component skeleton and admissibility (ABO Lemma 3.20) | `LocalComponentAdmissibility.lean`, `ComponentSubgraph.lean`, `ComponentSubgraphPaths.lean`, `ComponentSubgraphAdmissibility.lean`, `ComponentSubgraphConnected.lean`, `ComponentSubgraphIndices.lean` | **Formalized (local core)** | Actual B-component as a Cayley subgraph, B-path connected; D⊆B paths reflect both ways, D-component indices and attached D-cosets inject into those of K. The lower B-component inherits admissibility. |
-| A2: local coset embeddings and lower-family folding | `LocalCosetEmbedding.lean`, `SingleCosetEnlargement.lean`, `GraphHomInjectivity.lean`, `MultiCosetParentFold.lean`, `MultiCosetParentHom.lean`, `ComponentFullCosetEmbedding.lean` | **Formalized (specified embeddings)** | Injective CE(G,K;C)→CE(G,K;B) for C⊆B⊂A, whole family CE(G,K;P)→CE(G,K;B) for P⊆P(B); bijection if B∈P. A single actual B-component's full B-extension embeds in ambient Cayley with vertex image exactly root·G[B]. The local multi-CE embedding is now formalized separately below; exact intrinsic path-component classification remains open. |
+| A2: local coset embeddings and lower-family folding | `LocalCosetEmbedding.lean`, `SingleCosetEnlargement.lean`, `GraphHomInjectivity.lean`, `MultiCosetParentFold.lean`, `MultiCosetParentHom.lean`, `ComponentFullCosetEmbedding.lean` | **Formalized (specified embeddings)** | Injective CE(G,K;C)→CE(G,K;B) for C⊆B⊂A, whole family CE(G,K;P)→CE(G,K;B) for P⊆P(B); bijection if B∈P. A single actual B-component's full B-extension embeds in ambient Cayley with vertex image exactly root·G[B]. The local multi-CE embedding and the lower-family intrinsic B-component comparison on vertices and B-labelled edges are formalized separately below; extending to unrestricted coset families remains open. |
 | A2: canonical full proper-alphabet family | `StandardCosetFamily.lean`, `MultiCosetWeakCompleteness.lean` | **Formalized (rank ≥ 2)** | P_A consists of all proper subsets of A. If |A|≥2, every old edge label lies in some proper singleton alphabet and the standard multi-CE is weakly complete. The rank-one exception is explicit; weak completeness is not global edge completeness. |
 | A2: local single-C extension comparison | `ComponentSingleCosetHom.lean` | **Formalized** | Injective labelled graph embedding of the single-C extension of a literal B-component into the corresponding extension of K; ported by PR #108. |
-| A2: local multi-alphabet extension embedding | `ComponentCosetNaturality.lean`, `ComponentMultiCosetVertexMap.lean`, `ComponentParentIndexControl.lean`, `ComponentAttachmentRange.lean`, `ComponentMultiCosetEmbedding.lean`, `ComponentMultiCosetHom.lean` | **Formalized (injective labelled E-graph morphism)** | PRs #105/#110/#111/#113/#114/#115. Component-tagged intersection supports preserve **and reflect** actual gluing within an intrinsic B-component; the quotient vertex map is injective and extends to a labelled graph morphism injective on vertices and signed directed edges. No global ambient-Cayley injectivity and no path-component classification yet. |
-| A2: exact intrinsic B-components for lower-family multi-CE | `ComponentMultiCosetRange.lean`, `MultiCosetParentPathInvariant.lean`, `MultiCosetParentComponentExact.lean`, `ComponentMultiCosetPathImage.lean` | **Formalized (vertex and actual B-path level)** | PRs #117/#118/#119/#121. The local vertex image is exactly the selected parent-B-index fibre; two global points are genuinely B-connected iff their B-parent indices coincide; for a nonempty lower family the local image is precisely the intrinsic B-path-component of the embedded root. No claim yet of edge-surjectivity onto a restricted B-component graph. |
-| A2: remaining Section 3/cluster gates | `AugmentedComponent*.lean` and later coset-extension refinements | **Open** | Precise local edge image (particularly all B-labelled edge tokens) and full source-facing graph-component identification in Lemma 3.20; Lemma 3.21 on expanded components; Proposition 3.23 cluster property; Proposition 3.24 augmented classification; intrinsic path-component layer for Corollary 3.15. The vertex-image-as-B-component claim is now checked separately. |
+| A2: local multi-alphabet extension embedding | `ComponentCosetNaturality.lean`, `ComponentMultiCosetVertexMap.lean`, `ComponentParentIndexControl.lean`, `ComponentAttachmentRange.lean`, `ComponentMultiCosetEmbedding.lean`, `ComponentMultiCosetHom.lean` | **Formalized (injective labelled E-graph morphism)** | PRs #105/#110/#111/#113/#114/#115. Component-tagged intersection supports preserve **and reflect** actual gluing within an intrinsic B-component; the quotient vertex map is injective and extends to a labelled graph morphism injective on vertices and signed directed edges. No global ambient-Cayley injectivity is claimed; the later lower-family component/path/edge statements are separate checked theorems. |
+| A2: exact intrinsic B-components for lower-family multi-CE | `ComponentMultiCosetRange.lean`, `MultiCosetParentPathInvariant.lean`, `MultiCosetParentComponentExact.lean`, `ComponentMultiCosetPathImage.lean` | **Formalized (vertex and actual B-path level)** | PRs #117/#118/#119/#121. The local vertex image is exactly the selected parent-B-index fibre; two global points are genuinely B-connected iff their B-parent indices coincide; for a nonempty lower family the local image is precisely the intrinsic B-path-component of the embedded root. The corresponding exact B-labelled signed-edge image is now formalized separately below. |
+| A2: lower-family local B-component as a labelled graph | `ComponentMultiCosetConnected.lean`, `ComponentMultiCosetEdgeRange.lean`, `ComponentMultiCosetBComponentEdges.lean` | **Formalized (all vertices and B-labelled signed edges)** | PRs #124/#127/#129 (clean ports of earlier green work). Every local edge has B-label; a global B-edge has a local preimage iff its source lies in the local vertex image. For nonempty family the local image agrees with the intrinsic B-component of the root on both vertices and B-labelled oriented edges. This does **not** include old edges with labels outside B, or a global family containing alphabets not below B. |
+| A2: remaining Section 3/cluster gates | `AugmentedComponent*.lean` and later coset-extension refinements | **Open** | Full source-facing Section 3 scope beyond the checked **lower-family** component comparison (e.g. unrestricted selected families, expanded-component intersection uses); intrinsic path-component layer for Corollary 3.15; Proposition 3.23 cluster property; Proposition 3.24 augmented classification; rank-two cluster property. |
 | A3: corrected ABO Theorem 4.7 | `PSTSEPPA/ABO/UpwardInduction.lean` | Planned | Incorporate repairs R1, R7, R8. Highest-risk gate. |
 | A4: corrected Section 5 induction | `PSTSEPPA/ABO/FiniteConstruction.lean` | Planned | Separate repaired `k = 1` base case R2. |
 | A5: corrected ABO Lemma 2.5 | `PSTSEPPA/ABO/MainLemma.lean` | Planned | Include final-group equality and equivariance. |
@@ -264,3 +265,37 @@ separate remaining obligation; outside-B old skeleton edges can remain in
 the global multi-CE and are not automatically part of the local graph.
 Neither this nor the earlier completed multi-coset constructions proves the
 ABO upward induction, fibre-MAX extension, or final PSTS EPPA result.
+
+### 2026-10-09 — local multi-coset B-component graph comparison
+
+This checkpoint supersedes the previous notes that the lower-family
+multi-CE component correspondence was only checked on vertices.
+
+The following were merged on green full Lean CI with axiom audit:
+
+- **#124**, `ComponentMultiCosetConnected.lean`: the multi-coset
+  extension of a single actual B-connected skeleton component is
+  itself B-path-connected, for any lower proper alphabet family
+  (the empty family case is vacuous).
+- **#127**, `ComponentMultiCosetEdgeRange.lean`: in the global
+  lower-family multi-CE, a directed edge is in the image of the
+  local component morphism iff its signed label is based in B
+  **and** its source vertex is in the local vertex image. The
+  nontrivial surjection uses separate proofs for completed tagged
+  C-edges and old B-labelled skeleton edges.
+- **#129**, `ComponentMultiCosetBComponentEdges.lean`: combine
+  the exact edge range with the already checked actual B-reachability
+  classification (#121). Thus for a nonempty selected family the
+  local image is the root's intrinsic B-component on **vertices
+  and B-labelled signed directed edges**.
+
+No global Cayley projection is assumed injective; equal ambient
+coordinates do not collapse distinct component tags. The result is
+a graph-data characterization and injective labelled graph morphism,
+not yet a separately packaged type-level EGraph equivalence.
+
+**Next mathematical scope:** the unrestricted full proper-alphabet
+family (some members may not lie below B), Corollary 3.15's intrinsic
+path-component interpretation, the cluster property (3.23),
+augmented classification (3.24), then corrected Section 4/5 inductions.
+No unconditional PSTS EPPA follows yet.

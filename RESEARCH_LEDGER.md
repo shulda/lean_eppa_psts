@@ -466,3 +466,55 @@ ABO Lemma 3.20, intrinsic component version of Corollary 3.15,
 Propositions 3.23/3.24, rank-two cluster property, corrected Theorem 4.7,
 Section 5 induction, MAX bridge and unconditional PSTS EPPA. The current
 record does not silently close these.
+
+## 2026-10-09 — exact lower-family B-component graph-data theorem
+
+This supersedes the preceding statement that B-edge image-surjectivity
+in the local multi-coset comparison remains open.
+
+### Accepted on green main
+
+- **#124**: the actual B-component's own lower-family multi-coset
+  E-graph is B-connected. The proof reduces B-path reachability to
+  equality of its parent B-component tags and uses actual B-connectivity
+  of the original literal subgraph. This includes the empty family
+  vacuously; no skeleton embedding is claimed for an empty family.
+- **#127**: for a local component L of K and a proper family
+  `P` of alphabets all contained in B, the canonical injective
+  E-graph morphism `CE(G,L;P) → CE(G,K;P)` has directed-edge image
+  **exactly** the global edges whose label belongs to B and whose
+  source is in the vertex image.
+  * For a completed C-edge, source membership determines the
+    selected parent B-component tag; the actual tagged C-coset point
+    lifts via the earlier attachment range theorem.
+  * For a surviving old K-edge labelled in B but outside its
+    presenting C, membership of the source in the parent
+    B-component yields an actual B-path from the root and a literal
+    lifted skeleton edge.
+  * All local edges have B-label because the local old skeleton
+    has only B-edges and every attached alphabet C is a subset of B.
+- **#129**: combining #127 with the true B-path component theorem
+  #121 identifies the local image with the global intrinsic
+  B-component *simultaneously on vertices and all B-labelled
+  oriented edge tokens*. Formal edge inversion is already respected
+  by the labelled graph morphism (#115).
+
+All three were checked via full Lean build and permitted axiom audit.
+The superseded historical branches #122/#125/#126/#128 were not merged
+(the clean main ports #124/#127/#129 are authoritative).
+
+### Explicitly outstanding
+
+This theorem does not extend automatically to arbitrary selected
+coset-alphabet families: if some selected D is not contained in B,
+the global B-component can interact with that D-attachment through
+its D∩B slice. Nor does the theorem identify old edges outside B,
+which are correctly excluded from the B-component graph. Remaining
+gates: unrestricted coset-extension component/cluster interaction,
+Corollary 3.15 actual path components, cluster property Proposition
+3.23, augmented Proposition 3.24, rank-two cluster property,
+corrected upward induction, Section 5, the main ABO group lemma,
+MAX bridge, and final PSTS EPPA.
+
+No global injectivity of the ambient Cayley morphism is assumed or
+derived by the present component theorem.
