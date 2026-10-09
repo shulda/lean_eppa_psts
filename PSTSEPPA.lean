@@ -108,6 +108,7 @@ import PSTSEPPA.ABO.ComponentMultiCosetPathImage
 import PSTSEPPA.ABO.ComponentMultiCosetEdgeRange
 import PSTSEPPA.ABO.ComponentMultiCosetBComponentEdges
 import PSTSEPPA.ABO.MultiCosetVertexSupport
+import PSTSEPPA.ABO.MultiCosetMinimalSupport
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
