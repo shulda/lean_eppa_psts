@@ -616,15 +616,17 @@ unconditional finite PSTS EPPA.
   higher-rank cluster property. Its CI/axiom audit passed; merged
   as 4fef62f.
 
-### Green but not yet authoritative on main at this checkpoint
+### Main-certified component-wide support invariance
 
-- Source PR **#179** passed a complete Lean build and permitted axiom
-  audit. It proves that selected C-support is invariant along actual
-  B-paths for B⊆C; consequently the no-selected-superset-support
+- **#181** (clean port of individually green #179) passed its own
+  full Lean build and permitted axiom audit and merged as afe6794.
+  Support by any selected complete C-coset is invariant along genuine
+  B-paths whenever B⊆C. Hence the no-selected-superset-support
   hypothesis for the strict lower-rank patch cover need only be
   checked at a *single* starting vertex, not universally throughout
-  the component. A clean main port is PR **#181**, which must pass
-  its own CI before merge. Treat it as pending until then.
+  the component. This also implies the entire component is disjoint
+  from the embedded skeleton. Neither global Cayley injectivity nor
+  the higher-rank cluster property is assumed.
 
 Historical conflicting/stacked versions #163/#164/#166/#168/#170/
 #171/#173/#174/#176/#177 are superseded and closed; check the main
