@@ -39,6 +39,7 @@ import PSTSEPPA.ABO.ClusterTransport
 import PSTSEPPA.ABO.CayleySubgraph
 import PSTSEPPA.ABO.CayleySubgraphComponents
 import PSTSEPPA.ABO.CayleySubgraphFullCosetPaths
+import PSTSEPPA.ABO.ClusterComponentPaths
 import PSTSEPPA.ABO.CayleySubgraphEdgeComponents
 import PSTSEPPA.ABO.ComponentSubgraph
 import PSTSEPPA.ABO.ComponentSubgraphPaths
