@@ -506,3 +506,61 @@ R1--R8 remain active, particularly the k=1 base and full-coset
 alternative. Do not conflate group-content minimization with
 same-endpoint *path* minimization or conditional EPPA with the
 unconditional target.
+
+### 2026-10-09 — source-exact Section 5 / Lemma 5.6 continuation (green main a7e6383)
+
+This section supersedes earlier descriptions of R1 and Corollary 5.7
+as unformalized; **the final reflecting-group existence is still open**.
+
+Certified and merged after independent full Lean builds and permitted-axioms
+audits:
+
+- **#251** (`EndpointContentReduction.lean`, 4008101): corrected
+  Corollary 5.7, assuming the *separately named* endpoint-preserving
+  one-edge path replacement theorem. Minimal support-cardinality descent
+  yields a REAL path with identical endpoints, exactly the same FINAL
+  group value, and positive support **equal** to the canonical group
+  content. Empty content forces equal endpoints. Does NOT prove the
+  one-edge geometric deletion lemma.
+- **#252** (`StabilityRetractability.lean`, 6f2d7ba): the missing
+  algebraic R1 implication in corrected Theorem 4.7:
+  k-stability of G→H plus (k+1)-retractability of H gives
+  (k+1)-retractability of G. Includes a∉A, k=0, total-alphabet
+  specialization, and composition of k-stability down quotient chains.
+- **#254** (`CayleyStageProjection.lean`, 3cb95c8): a labelled
+  homomorphism from the final group G into the transition group of a
+  complete stage gives an actual Cayley graph projection based at
+  any vertex. Equal FINAL G-word values have the SAME projected
+  terminal stage vertex, without map injectivity. The existence
+  of that labelled hom at each required stage is not established.
+- **#255** (`SelectedCosetStablePathReplacement.lean`, a7e6383):
+  if a B-labelled path joins two embedded skeleton vertices in the
+  selected complete B-coset constituent of an admissible multi-CE,
+  the earlier A2 theorem reflects it to a genuine skeleton B-path.
+  The two paths have equal intermediate H_k-values by same-endpoint
+  Cayley mapping, and k-stability on |B|≤k upgrades their equality to
+  the FINAL G-value. This is the actual C4/C5 step of Lemma 5.6
+  and uses no global CE→ambient Cayley injectivity.
+
+Further current branches, not yet accepted until CI and merge:
+- **#256**: once individual left Q-translation automorphisms of an
+  E-generated finite G exist, generator uniqueness makes them an
+  automatically coherent action Q→*MulAut G (Prop. 5.5 bridge).
+- **#257**: finite synchronized subgroups of products of labelled
+  groups, with explicit surjective labelled quotient projections;
+  candidate algebraic model for transition groups on disjoint
+  finite complete E-graph components. No graph-transition-group
+  isomorphism asserted yet.
+
+**Remaining mathematical content of Section 5 and Lemma 5.6:**
+construct the actual finite tower G₁←H₁←G₂←⋯, the H_k-cover
+skeleton and complete coset extension, the final-G projection to
+its trivial completion, stagewise ranks/stabilities and the
+source's repaired k=1 Proposition 5.4. The higher-rank
+whole-component cluster/bridge-free induction (Def. 3.22,
+Props. 3.23–3.24, Thms. 4.5/4.7) remains OPEN. Then the
+green-main Lemma-5.6 bridges + one-edge deletion + Corollary 5.7
+can complete the finite Cayley reflecting-group theorem, H⋊Q/MAX,
+and finite PSTS EPPA. Do NOT label the conditional final PSTS theorem
+as unconditional or treat independently audited source proofs as
+Lean-certified.
