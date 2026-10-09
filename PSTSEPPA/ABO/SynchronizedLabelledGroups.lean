@@ -126,7 +126,7 @@ theorem fstHom_surjective
     (hgenΓ : IsGenerated genΓ) :
     Function.Surjective (fstHom genΓ genΔ) := by
   intro x
-  obtain ⟨w, hw⟩ := hgenΓ.exists_evalGroup_eq x
+  obtain ⟨w, hw⟩ := IsGenerated.exists_evalGroup_eq hgenΓ x
   refine ⟨PSTS.SignedWord.evalGroup (generator genΓ genΔ) w, ?_⟩
   exact (fstHom_evalGroup genΓ genΔ w).trans hw
 
@@ -136,7 +136,7 @@ theorem sndHom_surjective
     (hgenΔ : IsGenerated genΔ) :
     Function.Surjective (sndHom genΓ genΔ) := by
   intro y
-  obtain ⟨w, hw⟩ := hgenΔ.exists_evalGroup_eq y
+  obtain ⟨w, hw⟩ := IsGenerated.exists_evalGroup_eq hgenΔ y
   refine ⟨PSTS.SignedWord.evalGroup (generator genΓ genΔ) w, ?_⟩
   exact (sndHom_evalGroup genΓ genΔ w).trans hw
 
