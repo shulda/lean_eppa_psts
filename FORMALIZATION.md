@@ -341,3 +341,28 @@ Proposition 3.24 concerns B-augmentations of **full coset extensions**,
 not the earlier Corollary 3.15 about augmentations of ordinary clusters.
 
 The A3/A4/A5/C1 gates and unconditional PSTS EPPA are not yet proved.
+
+
+### 2026-10-09 — rank-two base and first unrestricted-rank component alternatives
+
+This supersedes the earlier description of the rank-two cluster
+property as unformalized. The actual-path base for |A|≤2 is now
+certified on main (#172): every full proper-family B-component is a
+completed tagged full B-coset or a singleton with one least whole-
+component tagged support. The proof supplies low-rank admissibility.
+
+For arbitrary rank, #175 identifies the completed B∩C-edge patches
+of any off-skeleton B-component avoiding all selected C⊇B,
+with **strict** B∩C ⊊ B. PRs #178 and #180 establish, in genuine
+tagged B-path geometry, that a component meeting any selected
+C⊇B is a *whole* complete B-coset with the same C tag.
+All three are merged after green full Lean CI and axiom audit.
+
+The complementary pointwise criterion (green source #179, clean
+port #181) is not authoritative until its clean PR is merged.
+Most importantly, the lower-rank patch cover does **not** imply
+the missing higher-rank common-core/lower-cluster alternative
+or uniform whole-component minimal tagged support. Thus the
+source Definition 3.22 cluster property, complete Proposition 3.23
+and 3.24, corrected Sections 4--5, and the unconditional PSTS EPPA
+statement remain explicitly open.
