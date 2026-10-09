@@ -847,3 +847,68 @@ original corrected ABO I Section 5 stage H_k, plain full
 coset-extension covering, and final-to-H_k k-stability, treating
 the k=1 gap separately (R2). The corrected source is the fallback
 if a proposed shortcut is not provable in Lean.
+
+## 2026-10-09 — corrected ABO Lemma 5.6 stage/reflection interfaces
+
+Main checkpoint `a7e6383` after green full Lean CI and allowed-axiom
+audits on #251, #252, #254, and the clean re-port #255 of
+independently green source #253.
+
+**#251 (4008101):** source-exact Corollary 5.7 is now an internally
+checked theorem conditioned only on endpoint-preserving one-edge
+geometric path replacement in an E-graph. It computes the genuine,
+represented content from Proposition 3.5, minimizes path support
+cardinality at fixed endpoints + FINAL Γ-value, and excludes any
+extraneous generator using retractability plus the one-edge path
+replacement. This yields exact equality of the terminal path
+support with canonical group content, not merely inclusion, and
+the empty-content case forces the endpoints to coincide.
+
+**#252 (6f2d7ba):** R1 in the independently audited Theorem 4.7 is
+formally repaired. If G→H is k-stable and H is (k+1)-retractable
+(on all relevant alphabets), G is (k+1)-retractable: deletion of
+a generator in A lowers rank to ≤k, H-retractability gives the
+equality downstairs and stability reflects it upstairs; for a∉A
+erasure is the identity. Proved as a ranked theorem without assuming
+global retractability of G, plus lower-rank/global specializations
+and KStable composition along labelled quotient chains.
+
+**#254 (3cb95c8):** the FINAL G-value projection step C3 of
+corrected Lemma 5.6 is checked: an explicit generator-preserving
+group map G→Transition(stage) induces a canonical Cayley-to-stage
+labelled morphism, normalized at a chosen basepoint; two words
+with equal G-values have identical projected endpoints. No
+injectivity of this projection is needed.
+
+**#255 (a7e6383; source #253):** the C4/C5 selected-coset step is
+also checked. Using the preexisting A2 theorem on genuine B-path
+reflection between embedded skeleton points in a selected B-copy,
+extract a REAL B-skeleton path; compare its intermediate H-value
+to the competing B-word through the multi-CE ambient Cayley
+homomorphism, then reflect to the FINAL group G through stability
+at |B|≤k. The quotient tags are retained; ambient coordinates
+are not wrongly assumed globally injective.
+
+**Current candidate #256:** automatically coherent Q-action on
+a generated reflecting group from individual left-translation
+automorphisms. This supports Proposition 5.5 but does not produce
+the individual automorphisms. Pending CI.
+
+**Current candidate #257:** explicit finite synchronized product
+of two labelled groups with canonical surjective projections,
+motivated by source transition groups of finite disjoint unions.
+It is a preparatory method, not the finite reflecting group.
+Pending CI.
+
+**Genuine remaining gap:** Stage existence and construction,
+not the formal deduction from Cayley-GRL to PSTS EPPA. In
+particular the H_k-cover and its actual full CE must occur in
+the Section-5 tower with the correct generator-preserving
+projection from final G; the higher-rank whole-component
+cluster property, Proposition 3.24, bridge-free induction,
+k-stability of the G_{k+1}→H_k stage, and the independent
+k=1 repair R2 remain unproved in Lean. The audited source
+(Project 2A/2B) argues these are correct with repairs R1–R8;
+that is advisory mathematical evidence, NOT proof-kernel
+certification. Follow this dependency order rather than
+silently assuming the reflection group exists.
