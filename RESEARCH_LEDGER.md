@@ -518,3 +518,53 @@ MAX bridge, and final PSTS EPPA.
 
 No global injectivity of the ambient Cayley morphism is assumed or
 derived by the present component theorem.
+
+## 2026-10-09 — source-exact A2 component/support checkpoint
+
+### Fully checked and merged
+
+- **#147**: Actual intrinsic C-path-component trichotomy for
+  augmentations of **ordinary retractable clusters** (meeting,
+  disjoint old/new, and no attachment in the ambient C-coset),
+  combining earlier verified vertex and oriented-edge data.
+- **#154**: Corollary 3.13 for ordinary clusters upgraded from
+  ambient coset slices to actual paths: whenever genuine B/C
+  components intersect, the intersection is exactly one intrinsic
+  (B∩C)-component.
+- **#148**: each full proper-family multi-coset quotient vertex has
+  a component-tagged supporting alphabet; simultaneous B/C
+  presentations have exact B∩C support, retaining intrinsic tags.
+- **#151**: every quotient vertex has a unique least supporting
+  alphabet, whose tagged point maps to every other constituent
+  presentation. This follows from finite intersection closure.
+- **#155**: the least tagged point comes from a real skeleton
+  anchor via an actual word using only the least alphabet.
+- **#153**: an arbitrarily selected complete B-coset constituent
+  is precisely one genuine B-component of the *whole* multi-CE;
+  other members of P may be incomparable to B. Proof by global
+  EGraph determinism and B-label edge completeness of the
+  constituent, not by ambient-group-map injectivity.
+
+### Source-scope correction and open obligations
+
+The exact ABO arXiv source §3.3.3 distinguishes three levels:
+(1) singleton-vertex minimal support is an observation preceding
+Definition 3.22; (2) **Definition 3.22** demands that every
+**off-skeleton entire B-component** be a B-cluster or full coset
+and have a unique minimal component support attained at a core
+vertex; (3) **Proposition 3.23 assumes (2)** and derives that every
+nonempty B/C-component intersection is a (B∩C)-component.
+The present #148/#151/#155 certify (1), not (2).
+
+The both-skeleton-meeting / selected-full-coset case (3) is an
+active separate subgoal in PRs #156/#157/#158 and must remain
+**UNCERTIFIED** until full Lean CI/axiom audit and main merge.
+The two off-skeleton cases of Prop 3.23 require the genuine
+whole-component cluster property and are still OPEN.
+
+Proposition 3.24 concerns augmentations of **full multi-coset
+extensions**, not ordinary cluster augmentation Corollary 3.15.
+This scope difference must not be conflated. Further open gates:
+cluster property of rank-two Proposition 4.4, repaired Theorem 4.7,
+Section 5 induction, Lemma 2.5, concrete fibre-MAX bridge,
+unconditional finite PSTS EPPA.
