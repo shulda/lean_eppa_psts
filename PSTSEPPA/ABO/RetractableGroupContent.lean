@@ -145,13 +145,17 @@ namespace RetractableGroupContent
 
 variable (gen : ι → Γ) (hgen : IsGenerated gen)
 
+-- The witness of generatedness must remain an explicit theorem parameter
+-- even when the target type mentions only the generator map.
+include hgen
+
 /-- There is at least one word in every group fibre and hence
 at least one (natural-valued) support cardinality. -/
 theorem exists_support_card (g : Γ) :
     ∃ n : ℕ, ∃ w : LabelWord ι,
       PSTS.SignedWord.evalGroup gen w = g ∧
       (LabelWord.positiveSupport w).card = n := by
-  obtain ⟨w, hw⟩ := hgen.exists_evalGroup_eq g
+  obtain ⟨w, hw⟩ := IsGenerated.exists_evalGroup_eq hgen g
   exact ⟨(LabelWord.positiveSupport w).card, w, hw, rfl⟩
 
 /-- Least cardinality among supports representing the group element g. -/
