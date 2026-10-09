@@ -70,6 +70,7 @@ import PSTSEPPA.ABO.AugmentedIntersectionCosetPaths
 import PSTSEPPA.ABO.AugmentedDisjointPathSeparation
 import PSTSEPPA.ABO.AugmentedMeetingComponentPaths
 import PSTSEPPA.ABO.AugmentedDisjointComponentExact
+import PSTSEPPA.ABO.AugmentedComponentTrichotomy
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
