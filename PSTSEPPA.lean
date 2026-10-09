@@ -28,6 +28,7 @@ import PSTSEPPA.ABO.CayleyLeftTranslations
 import PSTSEPPA.ABO.CayleyPositivePathSupport
 import PSTSEPPA.ABO.CayleySemidirectWordValue
 import PSTSEPPA.ABO.RetractableGroupContent
+import PSTSEPPA.ABO.EndpointContentReduction
 import PSTSEPPA.ABO.CayleyEdgeWords
 import PSTSEPPA.ABO.CayleyEdgeRetraction
 import PSTSEPPA.ABO.Reachability
