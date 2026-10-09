@@ -72,8 +72,8 @@ theorem multiCosetBridgeFree_ambient_graph_embedding
     Function.Injective
       (K.multiCosetAmbientHom P hadm hgen hret).onEdge := by
   exact
-    (K.multiCosetAmbientHom P hadm hgen hret)
-      .bijective_on_image_of_vertex_injective hBridge.1
+    (K.multiCosetAmbientHom P hadm hgen hret).bijective_on_image_of_vertex_injective
+      hBridge.1
 
 /-- Under bridge freeness, *intrinsic* B-connectivity in the
 extension is equivalent to ambient B-coset connectivity, for
