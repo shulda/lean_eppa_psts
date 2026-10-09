@@ -6,6 +6,7 @@ import PSTSEPPA.PSTS.WordEval
 import PSTSEPPA.PSTS.WordExamples
 import PSTSEPPA.PSTS.MaxTransporter
 import PSTSEPPA.PSTS.TotalPermutationLifts
+import PSTSEPPA.PSTS.SelectedFinitePermutationGroup
 import PSTSEPPA.PSTS.Development
 import PSTSEPPA.PSTS.DevelopmentOperation
 import PSTSEPPA.PSTS.DevelopmentBase
