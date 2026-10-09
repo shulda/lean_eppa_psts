@@ -398,3 +398,63 @@ ONE vertex.
 OPEN: the whole-component common-core/cluster property, corrected
 Sections 4–5 needed for Cayley-GRL, finite fibre-MAX and unconditional
 PSTS EPPA. No broader ABO claim follows automatically.
+
+### 2026-10-09 — authoritative C1/C2 restart (supersedes the earlier open-C1 notes)
+
+The latest **green main** is merge commit `d874283` (PR #241; complete
+GitHub Actions Lean build and permitted-axioms audit succeeded). This
+checkpoint is substantially newer than the preceding A2-only summaries.
+
+**Green-main PSTS/Cayley steps:**
+
+- #222/#226/#228: selected partial words agree with auxiliary
+  total-permutation values, actual Cayley left-Q symmetries, and the
+  positive-edge traces of SIGNED paths (negative edges use the positive
+  edge at the inverse-step endpoint).
+- #230/#231: the actual finite generated permutation subgroup
+  `Q ≤ Perm(V)ᵒᵖ`, its complete oriented Cayley graph
+  `Cay(Q,PartialAut A)`, word-representability of every Q element,
+  and exact signed-word endpoints.
+- #234: the genuine *PSTS Cayley path-inclusion lemma*: equal Q
+  endpoints and contained positive-edge traces imply the correct
+  restriction inequality between partial words, even with inverse
+  letters and degenerate generators.
+- #237: an explicitly named finite H content-minimal certificate
+  yields fibre-MAX. This is CONDITIONAL, not the reflecting-group
+  existence theorem.
+- #239: construct total permutation lifts of ALL partial PSTS
+  automorphisms and a finite closed-EPPA witness conditional on
+  that ONE finite Cayley content certificate.
+- #241: `AllPartialAutFinite.lean` proves the FULL generator alphabet
+  `PartialAut A` and positive edge alphabet `Q × PartialAut A`
+  are finite; `CayleySemidirectWordValue.lean` proves the
+  complete signed formula for path values in `G ⋊ Q` under
+  only left-Q equivariance. This was merged after green CI.
+
+**Current independent candidate work (NOT yet green-main):**
+
+- #242: pairwise intersection-content reduction for same-H-value
+  paths implies a globally minimum-positive-edge-content word,
+  and hence the existing fibre-MAX interface. CI is the gate.
+- #243 (stacked on #242): start from an ACTUAL finite Q-equivariant
+  reflecting group G on positive Cayley edges, construct
+  `H = ⟨(edge(1,p),generator(p))⟩ ≤ G ⋊ Q`, deduce pairwise
+  H-fibre reduction and therefore fibre-MAX; express the
+  conditional full-PSTS EPPA theorem directly from reflecting G.
+  CI is the gate. These are reductions, not existence proofs.
+
+**One genuine remaining mathematics problem:** construct a finite
+Q-equivariant Cayley edge group `G` satisfying same-G-value,
+same-Q-endpoint path reduction with positive-edge content in the
+intersection of the two original traces. This is the specialised
+corrected ABO finite group-reflection theorem. The preexisting A2
+geometry is substantial, but whole B-component common core
+(Definition 3.22) and the repaired Section 4/5 induction are not
+yet available; vertexwise anchors and strict lower edge patches
+do NOT give those theorems for free. General arbitrary-graph
+Lemma 2.5 or F-inverse covers remain optional proof methods,
+not independent formalisation deliverables.
+
+**Discipline:** only promote #242/#243 and subsequent gates after
+complete CI and axiom audits; do not conflate the conditional
+closed-EPPA theorem with unconditional finite PSTS EPPA.
