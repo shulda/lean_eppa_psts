@@ -1,6 +1,6 @@
 import PSTSEPPA.ABO.MultiCosetSupportSkeletonMeet
 import PSTSEPPA.ABO.MultiCosetMorphisms
-import Mathlib.Tactic.Omega
+import Mathlib.Tactic
 
 /-!
 # Rank-two base case for the source ABO cluster property
