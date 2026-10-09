@@ -68,53 +68,56 @@ theorem groupValue_mem (w : SignedWord ι) :
 def valueQ (w : SignedWord ι) : L.generatedQ :=
   ⟨L.groupValue w, L.groupValue_mem w⟩
 
-/-- The selected permutations generate precisely Q: every q∈Q
-has a signed word representation, including formal inverses. -/
-theorem exists_word_valueQ (q : L.generatedQ) :
-    ∃ w : SignedWord ι, L.valueQ w = q := by
-  have hq : (q : ABO.RightPerm V) ∈
-      Subgroup.closure (Set.range L.groupGenerator) :=
-    q.property
-  induction hq using Subgroup.closure_induction with
+/-- Selected generators generate Q: every ambient permutation in Q
+has a signed-word representation. This proof mirrors the actual
+closure induction rather than assuming the generating alphabet
+maps injectively into the permutation group. -/
+theorem exists_word_groupValue_of_mem
+    {g : ABO.RightPerm V} (hg : g ∈ L.generatedQ) :
+    ∃ w : SignedWord ι, L.groupValue w = g := by
+  change g ∈ Subgroup.closure (Set.range L.groupGenerator) at hg
+  induction hg using Subgroup.closure_induction with
   | mem x hx =>
       rcases hx with ⟨i, rfl⟩
-      refine ⟨[SignedLetter.pos i], ?_⟩
-      apply Subtype.ext
-      simp [valueQ, groupValue, SignedWord.evalGroup]
+      exact ⟨[SignedLetter.pos i], by
+        simp [groupValue, SignedWord.evalGroup]⟩
   | one =>
-      refine ⟨[], ?_⟩
-      apply Subtype.ext
-      rfl
+      exact ⟨[], rfl⟩
   | mul x y hx hy ihx ihy =>
       obtain ⟨u, hu⟩ := ihx
       obtain ⟨v, hv⟩ := ihy
       refine ⟨u ++ v, ?_⟩
-      apply Subtype.ext
-      have hxu : L.groupValue u = x :=
-        congrArg Subtype.val hu
-      have hyv : L.groupValue v = y :=
-        congrArg Subtype.val hv
-      change L.groupValue (u ++ v) = x * y
-      rw [show L.groupValue (u ++ v) =
-        L.groupValue u * L.groupValue v from
-          SignedWord.evalGroup_append L.groupGenerator u v]
-      rw [hxu, hyv]
+      calc
+        L.groupValue (u ++ v) =
+          L.groupValue u * L.groupValue v :=
+            SignedWord.evalGroup_append L.groupGenerator u v
+        _ = x * y := by rw [hu, hv]
   | inv x hx ih =>
       obtain ⟨u, hu⟩ := ih
       refine ⟨SignedWord.inv u, ?_⟩
-      apply Subtype.ext
-      have hxu : L.groupValue u = x :=
-        congrArg Subtype.val hu
-      change L.groupValue (SignedWord.inv u) = x⁻¹
-      rw [show L.groupValue (SignedWord.inv u) =
-        (L.groupValue u)⁻¹ from
-          SignedWord.evalGroup_inv L.groupGenerator u, hxu]
+      calc
+        L.groupValue (SignedWord.inv u) =
+          (L.groupValue u)⁻¹ :=
+            SignedWord.evalGroup_inv L.groupGenerator u
+        _ = x⁻¹ := congrArg Inv.inv hu
 
-/-- A finite PSTS carrier has only finitely many total
-permutations and therefore a finite selected permutation group Q. -/
+/-- Every element of the actual selected subgroup Q has a word
+representative in the original signed generator alphabet. -/
+theorem exists_word_valueQ (q : L.generatedQ) :
+    ∃ w : SignedWord ι, L.valueQ w = q := by
+  obtain ⟨w, hw⟩ := L.exists_word_groupValue_of_mem q.property
+  refine ⟨w, ?_⟩
+  apply Subtype.ext
+  exact hw
+
+/-- On a finite PSTS carrier, Q is finite as a subgroup of the
+finite group of total permutations. DecidableEq on the carrier
+is installed classically; no algorithmic enumeration is required. -/
 noncomputable instance [Fintype V] : Fintype L.generatedQ := by
   classical
-  infer_instance
+  letI : Fintype (Equiv.Perm V) := inferInstance
+  letI : Fintype (ABO.RightPerm V) := inferInstance
+  exact Fintype.ofFinite _
 
 /-- The actual complete oriented Cayley EGraph used by the
 specialized ABO-to-fibre-MAX argument. Its positive edge alphabet
