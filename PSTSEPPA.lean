@@ -9,6 +9,7 @@ import PSTSEPPA.PSTS.TotalPermutationLifts
 import PSTSEPPA.PSTS.SelectedFinitePermutationGroup
 import PSTSEPPA.PSTS.FinitePermutationCompletion
 import PSTSEPPA.PSTS.SelectedCayleyWordGeometry
+import PSTSEPPA.PSTS.CayleyPathInclusion
 import PSTSEPPA.PSTS.Development
 import PSTSEPPA.PSTS.DevelopmentOperation
 import PSTSEPPA.PSTS.DevelopmentBase
