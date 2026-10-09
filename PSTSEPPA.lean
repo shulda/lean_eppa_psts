@@ -137,6 +137,8 @@ import PSTSEPPA.ABO.MultiCosetLowerSupportSkeletonAnchor
 import PSTSEPPA.ABO.MultiCosetWholeComponentBoundarySupport
 import PSTSEPPA.ABO.CoatomConstituentCover
 import PSTSEPPA.ABO.NoLargeCoatomSupport
+import PSTSEPPA.ABO.CoatomEdgeCover
+import PSTSEPPA.ABO.TwoCoatomCommonAnchor
 
 /-!
 # EPPA for partial Steiner triple systems
