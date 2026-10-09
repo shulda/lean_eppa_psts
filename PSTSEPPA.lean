@@ -11,6 +11,7 @@ import PSTSEPPA.PSTS.FinitePermutationCompletion
 import PSTSEPPA.PSTS.SelectedCayleyWordGeometry
 import PSTSEPPA.PSTS.CayleyPathInclusion
 import PSTSEPPA.PSTS.CayleyMinimalContentToMax
+import PSTSEPPA.PSTS.CayleyPairwiseReductionToMax
 import PSTSEPPA.PSTS.CayleyContentConditionalPSTSTheorem
 import PSTSEPPA.PSTS.AllPartialAutFinite
 import PSTSEPPA.PSTS.Development
