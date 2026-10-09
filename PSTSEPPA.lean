@@ -12,6 +12,7 @@ import PSTSEPPA.PSTS.SelectedCayleyWordGeometry
 import PSTSEPPA.PSTS.CayleyPathInclusion
 import PSTSEPPA.PSTS.CayleyMinimalContentToMax
 import PSTSEPPA.PSTS.CayleyContentConditionalPSTSTheorem
+import PSTSEPPA.PSTS.AllPartialAutFinite
 import PSTSEPPA.PSTS.Development
 import PSTSEPPA.PSTS.DevelopmentOperation
 import PSTSEPPA.PSTS.DevelopmentBase
@@ -21,6 +22,7 @@ import PSTSEPPA.ABO.ActionGraph
 import PSTSEPPA.ABO.CayleyGraph
 import PSTSEPPA.ABO.CayleyLeftTranslations
 import PSTSEPPA.ABO.CayleyPositivePathSupport
+import PSTSEPPA.ABO.CayleySemidirectWordValue
 import PSTSEPPA.ABO.Reachability
 import PSTSEPPA.ABO.Morphisms
 import PSTSEPPA.ABO.GraphHomInjectivity
