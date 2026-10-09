@@ -85,6 +85,9 @@ theorem allProperCosetVertex_universal_tagged_skeleton_anchor
       G.Follows
         (K.multiCosetInclude P hadm hgen hret
           C hCP (K.attachedOfSkeletonVertex C x)) w z := by
+    change G.Follows
+      ((K.skeletonToMultiCosetHom P hadm hgen hret
+        C hCP).onVertex x) w z
     rw [← hSkeleton]
     exact hPath
   obtain ⟨q, hqIdx, hqz⟩ :=
