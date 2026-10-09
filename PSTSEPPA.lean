@@ -143,6 +143,7 @@ import PSTSEPPA.ABO.MultiCosetFamilyInclusion
 import PSTSEPPA.ABO.CoatomFamilyGraphEquivalence
 import PSTSEPPA.ABO.CoatomFamilyPathEquivalence
 import PSTSEPPA.ABO.BridgeFreenessInterface
+import PSTSEPPA.ABO.BridgeFreenessCoatomTransfer
 
 /-!
 # EPPA for partial Steiner triple systems
