@@ -432,3 +432,37 @@ The original mathematical warnings remain in force: different intrinsic
 components can project onto the same ambient group coset; the coset
 extension is a tagged quotient, and neither equality of ambient values
 nor graph embedding alone supplies intrinsic component correspondence.
+
+## 2026-10-08 — B-components of lower-family multi-CE: checked (#117–#121)
+
+**This section supersedes earlier notes that the lower-family intrinsic
+B-path-component classification was still open.** The following have all
+passed full Lean build and permitted axiom audit and been merged to main:
+
+1. #117 (`MultiCosetParentPathInvariant`): a realised B-supported path
+   preserves the B-index after folding lower-family extensions into the
+   single-B extension; different parent tags preclude a B-path.
+2. #118 (clean port of checked #116, `ComponentMultiCosetRange`): the
+   global multi-CE vertices in the image of a chosen local B-component
+   are exactly the fibre over that parent B-component tag. No global
+   ambient-Cayley projection injectivity is used.
+3. #119 (`MultiCosetParentComponentExact`): parent-index equality also
+   implies an actual B-path, through selected coset to skeleton anchors,
+   an old B-path in K and a second coset-to-skeleton anchor. It establishes
+   the **iff** for realised B-path reachability.
+4. #121 (`ComponentMultiCosetPathImage`): for any nonempty selected
+   family, the image of the local B-component multi-CE in the global
+   multi-CE is exactly the *vertex set* of the intrinsic B-component
+   containing the embedded original root.
+
+The checked local morphism on all oriented edges remains injective (#115),
+but the combined claims above do **not** assert that its edge image is all
+B-labelled edges on the corresponding global component. In particular,
+old outside-B edges can persist in the global graph; component *vertex*
+images and subgraph edge universes must not be conflated.
+
+Open: formal full B-edge image/graph-component correspondence for source
+ABO Lemma 3.20, intrinsic component version of Corollary 3.15,
+Propositions 3.23/3.24, rank-two cluster property, corrected Theorem 4.7,
+Section 5 induction, MAX bridge and unconditional PSTS EPPA. The current
+record does not silently close these.
