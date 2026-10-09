@@ -85,7 +85,13 @@ theorem respectsPositiveEdge_of_signed_letter
   | pos i =>
       exact hs
   | neg i =>
-      exact ((gen i).toPEquiv.eq_some_iff).mp hs
+      have hs' :
+          (gen i).toPEquiv
+            (L.atCayleyVertex x (q * (L.cayleyGenerator i)⁻¹)) =
+          some (L.atCayleyVertex x q) :=
+        ((gen i).toPEquiv.eq_some_iff).mp hs
+      simpa [respectsPositiveEdge, ABO.cayleyPositiveEdgeOfSigned,
+        mul_assoc] using hs'
 
 /-- Conversely, if the underlying positive edge is validated,
 its partial generator can be followed in EITHER signed direction. -/
@@ -100,7 +106,13 @@ theorem signed_letter_of_respectsPositiveEdge
   cases s with
   | pos i => exact hs
   | neg i =>
-      exact ((gen i).toPEquiv.eq_some_iff).mpr hs
+      have hs' :
+          (gen i).toPEquiv
+            (L.atCayleyVertex x (q * (L.cayleyGenerator i)⁻¹)) =
+          some (L.atCayleyVertex x q) := by
+        simpa [respectsPositiveEdge, ABO.cayleyPositiveEdgeOfSigned,
+          mul_assoc] using hs
+      exact ((gen i).toPEquiv.eq_some_iff).mpr hs'
 
 /-- Every oriented positive edge appearing in a realised signed
 Cayley path of a DEFINED partial word v is validated at the
@@ -158,7 +170,7 @@ theorem respectsPositiveEdge_of_defined_word
       · subst e
         exact L.respectsPositiveEdge_of_signed_letter x q s hs'
       · exact ih (q := ABO.cayleySignedStep L.cayleyGenerator q s)
-          (y := y) htail e hrest
+          (y := y) htail hrest
 
 /-- Conversely, if every positive edge traversed by a signed
 word u is validated at x, the ENTIRE signed partial u-word
