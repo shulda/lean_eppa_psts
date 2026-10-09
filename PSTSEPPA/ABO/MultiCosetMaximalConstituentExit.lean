@@ -58,8 +58,8 @@ theorem allProperCoset_maximal_support_exit_label_lower
     (hSourceC :
       K.MultiCosetVertexSupported
         (allProperCosetFamily A) hadm hgen hret C
-        (K.multiCosetEGraph
-          (allProperCosetFamily A) hadm hgen hret).source e)
+        ((K.multiCosetEGraph
+          (allProperCosetFamily A) hadm hgen hret).source e))
     (hOutside :
       signedBase
         ((K.multiCosetEGraph
@@ -69,8 +69,8 @@ theorem allProperCoset_maximal_support_exit_label_lower
       D ⊂ C ∧
       K.MultiCosetVertexSupported
         (allProperCosetFamily A) hadm hgen hret D
-        (K.multiCosetEGraph
-          (allProperCosetFamily A) hadm hgen hret).source e := by
+        ((K.multiCosetEGraph
+          (allProperCosetFamily A) hadm hgen hret).source e) := by
   let P := allProperCosetFamily A
   let G := K.multiCosetEGraph P hadm hgen hret
   induction e using Quotient.inductionOn with
@@ -160,19 +160,19 @@ theorem allProperCoset_maximal_support_exit_step_lower
     (hSourceC :
       K.MultiCosetVertexSupported
         (allProperCosetFamily A) hadm hgen hret C
-        (K.multiCosetEGraph
-          (allProperCosetFamily A) hadm hgen hret).source e)
+        ((K.multiCosetEGraph
+          (allProperCosetFamily A) hadm hgen hret).source e))
     (hTargetOff :
       ¬ K.MultiCosetVertexSupported
         (allProperCosetFamily A) hadm hgen hret C
-        (K.multiCosetEGraph
-          (allProperCosetFamily A) hadm hgen hret).target e) :
+        ((K.multiCosetEGraph
+          (allProperCosetFamily A) hadm hgen hret).target e)) :
     ∃ D : Finset ι,
       D ⊂ C ∧
       K.MultiCosetVertexSupported
         (allProperCosetFamily A) hadm hgen hret D
-        (K.multiCosetEGraph
-          (allProperCosetFamily A) hadm hgen hret).source e := by
+        ((K.multiCosetEGraph
+          (allProperCosetFamily A) hadm hgen hret).source e) := by
   let P := allProperCosetFamily A
   let G := K.multiCosetEGraph P hadm hgen hret
   have hOutside : signedBase (G.label e) ∉ C := by
