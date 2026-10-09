@@ -58,8 +58,9 @@ structure CayleyOneEdgeContentCertificate where
         e ∉ L.finitePositiveSupport v →
         ∃ w : SignedWord ι,
           SignedWord.evalGroup lift w = SignedWord.evalGroup lift u ∧
-          L.finitePositiveSupport w ⊆
-            (L.finitePositiveSupport u).erase e
+          ∀ x : L.generatedQ × ι,
+            x ∈ L.finitePositiveSupport w →
+            x ∈ L.finitePositiveSupport u ∧ x ≠ e
 
 namespace CayleyOneEdgeContentCertificate
 
@@ -93,7 +94,8 @@ theorem pairwise_reduce
       (supp w \ supp v).card = n
   have hex : ∃ n : ℕ, P n := by
     refine ⟨(supp u \ supp v).card, u, rfl, ?_, rfl⟩
-    exact Subset.rfl
+    intro x hx
+    exact hx
   obtain ⟨w, hwVal, hwSub, hwCard⟩ := Nat.find_spec hex
   refine ⟨w, hwVal, ?_⟩
   intro e heTrace
@@ -111,12 +113,12 @@ theorem pairwise_reduce
       hw'Val.trans hwVal
     have hw'SubU : supp w' ⊆ supp u := by
       intro x hx
-      exact hwSub ((Finset.mem_erase.mp (hw'Erase hx)).2)
+      exact hwSub (hw'Erase x hx).1
     have hForeignSub : (supp w' \ supp v) ⊆ (supp w \ supp v) := by
       intro x hx
       obtain ⟨hxW', hxNotV⟩ := Finset.mem_sdiff.mp hx
       have hxW : x ∈ supp w :=
-        (Finset.mem_erase.mp (hw'Erase hxW')).2
+        (hw'Erase x hxW').1
       exact Finset.mem_sdiff.mpr ⟨hxW, hxNotV⟩
     have heForeign : e ∈ supp w \ supp v :=
       Finset.mem_sdiff.mpr ⟨heW, heV⟩
@@ -124,7 +126,7 @@ theorem pairwise_reduce
       intro heWrong
       have heW' : e ∈ supp w' :=
         (Finset.mem_sdiff.mp heWrong).1
-      exact (Finset.mem_erase.mp (hw'Erase heW')).1 rfl
+      exact (hw'Erase e heW').2 rfl
     have hProper : (supp w' \ supp v) ⊂ (supp w \ supp v) := by
       apply Finset.ssubset_iff_subset_ne.mpr
       refine ⟨hForeignSub, ?_⟩
@@ -194,8 +196,7 @@ noncomputable def toOneEdgeContent :
       intro hxe
       subst x
       exact heNotV ((L.mem_finitePositiveSupport v e).2 hxV)
-    exact Finset.mem_erase.mpr
-      ⟨hxNotE, (L.mem_finitePositiveSupport u x).2 hxU⟩
+    exact ⟨(L.mem_finitePositiveSupport u x).2 hxU, hxNotE⟩
 
 end CayleyPairwiseContentCertificate
 end PSTS
