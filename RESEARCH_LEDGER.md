@@ -577,3 +577,82 @@ This scope difference must not be conflated. Further open gates:
 cluster property of rank-two Proposition 4.4, repaired Theorem 4.7,
 Section 5 induction, Lemma 2.5, concrete fibre-MAX bridge,
 unconditional finite PSTS EPPA.
+
+
+## 2026-10-09 — rank-two base and genuine higher-rank component split
+
+### Main-certified structural steps
+
+- **#162** identifies the criterion for a full proper-family vertex's
+  actual B-component to meet the embedded skeleton, using its inclusion-least
+  component-tagged vertex support. **#165** proves that this criterion is
+  invariant along actual B-paths; it does **not** assert that the least
+  supporting alphabet remains equal from vertex to vertex.
+- **#167/#169** prove that any signed B-edge anywhere in an entire
+  off-skeleton B-component is a *completed* edge of some selected C-copy,
+  with its signed generator in B∩C. No old skeleton edge can witness
+  an off-skeleton B-component edge.
+- **#172** closes the rank-|A|≤2 base: each actual B-component of the
+  full proper-family coset extension is a selected full B-coset or a
+  singleton. The latter carries a unique least component-tagged
+  support, universally minimal over its entire B-component, and
+  admissibility is supplied by the previously proved rank-two lemma.
+  This does not prove the higher-rank cluster-property induction.
+- **#175** sharpens the general off-skeleton patch cover: if no B-reachable
+  point is supported by a selected C with B⊆C, all signed B-edges of the
+  component are completed in *strictly lower* intersection alphabets
+  C∩B ⊊ B. Its CI and axiom audit passed; merged as b95f162.
+- **#178** proves exact intrinsic B-component geometry inside a selected
+  C-copy when B⊆C, *including the case B is not itself selected*: a
+  real B-path from a tagged C-point reaches precisely the same C-tag
+  and ambient left B-coset. The proof uses EGraph determinism and real
+  paths, not ambient projection injectivity. Its CI/axiom audit passed;
+  merged as f599cd6.
+- **#180** extends #178 to an **entire** B-component of an arbitrary
+  admissible multi-CE that meets some selected completed C-coset
+  with B⊆C. It is exactly the corresponding tagged full B-coset.
+  This establishes the unrestricted-rank *full-coset alternative* of
+  the geometric component-shape dichotomy, without assuming the
+  higher-rank cluster property. Its CI/axiom audit passed; merged
+  as 4fef62f.
+
+### Green but not yet authoritative on main at this checkpoint
+
+- Source PR **#179** passed a complete Lean build and permitted axiom
+  audit. It proves that selected C-support is invariant along actual
+  B-paths for B⊆C; consequently the no-selected-superset-support
+  hypothesis for the strict lower-rank patch cover need only be
+  checked at a *single* starting vertex, not universally throughout
+  the component. A clean main port is PR **#181**, which must pass
+  its own CI before merge. Treat it as pending until then.
+
+Historical conflicting/stacked versions #163/#164/#166/#168/#170/
+#171/#173/#174/#176/#177 are superseded and closed; check the main
+HEAD and CI for the definitive state rather than relying on their
+old PR titles or their obsolete unmerged branches.
+
+### The genuine next mathematical gate
+
+The two branches above must **not** be conflated with the full
+ABO Definition 3.22 cluster property. In the no-large-coset branch,
+a cover of B-edges by lower-alphabet C∩B patches has been proved;
+it does **not** establish that the patches assemble into a single
+translated B-cluster with a common core, nor that the entire
+off-skeleton B-component has one least tagged support attained
+at a core vertex. Those are still nontrivial obligations.
+
+For higher rank, preserve the source's logical structure:
+Definition 3.22 is an additional *cluster property*, Proposition
+3.23 uses it to deduce exact B/C-component intersections, and
+Proposition 3.24 concerns augmentation of the *full multi-coset
+extension*, not Corollary 3.15's ordinary-cluster augmentation.
+Do not assert that an arbitrary admissible skeleton automatically
+has the entire higher-rank cluster property without proof.
+
+Research order: formalize the conditional cluster-property interface,
+prove the missing off-skeleton intersection cases of Proposition 3.23,
+and then the preservation/augmented extension theorem needed in the
+corrected Section 4 induction (including R1/R7/R8). Section 5,
+ABO Lemma 2.5, its concrete fibre-MAX instantiation, and
+unconditional finite PSTS EPPA remain open. The pre-existing T2
+fibre-MAX => PSTS-EPPA transfer is a certified conditional theorem.
