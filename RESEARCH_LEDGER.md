@@ -896,11 +896,14 @@ Equality on generator images forces uniqueness, identity and
 multiplication. This proves a Proposition-5.5 *consequence*,
 not existence of those automorphisms or the finite reflecting G.
 
-**Current candidate #257:** explicit finite synchronized product
-of two labelled groups with canonical surjective projections,
-motivated by source transition groups of finite disjoint unions.
-It is a preparatory method, not the finite reflecting group.
-Pending CI.
+**#257 (d2e2e3a; certified and merged):** the finite
+synchronized product subgroup of two E-generated labelled groups
+with surjective label-preserving quotient projections onto each
+factor and exact signed word coordinate values. Full Lean and
+permitted-axioms audit passed. This is preparatory algebra for
+finite-stage transition groups, NOT the missing finite reflecting
+group or a proved identification with any literal disjoint-union
+transition group.
 
 **Genuine remaining gap:** Stage existence and construction,
 not the formal deduction from Cayley-GRL to PSTS EPPA. In
