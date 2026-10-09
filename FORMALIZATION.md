@@ -29,7 +29,7 @@ is on `main` and GitHub Actions is green.
 | A2: retractable subgroup/coset intersections | `PSTSEPPA/ABO/SubgroupIntersections.lean`, `CosetIntersections.lean`, `CosetConnectivity.lean` | **Formalized** | Exact `G[A] ∩ G[B] = G[A ∩ B]`; nonempty left-coset intersections and connectedness in the intersection alphabet. |
 | A2: ordinary clusters, ABO Lemmas 3.10–3.11 and Corollaries 3.12–3.13 | `PSTSEPPA/ABO/Cluster*.lean`, `Stability.lean`, `ClusterTransport.lean` | **Formalized** | Literal vertex/edge unions; common-core projection; full-coset/lower-cluster component slices; intersection identities; stable-quotient graph bijectivity. |
 | A2: augmented clusters and ABO Lemma 3.14 | `PSTSEPPA/ABO/AugmentedCluster.lean`, `AugmentedClusterReflection.lean`, `AugmentedClusterTransport.lean` | **Formalized** | Literal augmented graph and degenerate full-component case; cross-piece reflection; vertex/edge bijective graph morphism under proper-alphabet stability. |
-| A2: structural graph-data layer for ABO Corollary 3.15 | `PSTSEPPA/ABO/AugmentedComponentSlices.lean`, `AugmentedComponentClassification.lean`, `AugmentedComponentSeparation.lean` | **Formalized (structural layer)** | Exact C-slices and edges; full-coset/lower-augmented result when the old slice meets the attachment; disjoint union and absence of crossing edges otherwise. Actual path-component correspondence remains open. |
+| A2: ABO Corollary 3.15 — augmented clusters | `AugmentedComponentSlices.lean`, `AugmentedComponentClassification.lean`, `AugmentedComponentSeparation.lean`, `AugmentedComponentTrichotomy.lean`, `AugmentedMeetingComponentPaths.lean`, `AugmentedDisjointComponentExact.lean` | **Formalized (graph data and intrinsic components)** | PRs #131/#132/#134/#137/#144/#147. Actual signed C-path trichotomy for each ambient C-coset slice: old/attachment meeting gives one connected piece; disjoint old and new pieces yield two disconnected components; no attachment intersection retains old cluster's component. Exact graph-data identities also checked. This is the *cluster* augmentation result, not Prop 3.24 for augmented **full coset extensions**. |
 | A2: Cayley skeletons and intrinsic C-components | `PSTSEPPA/ABO/CayleySubgraph.lean`, `CayleySubgraphComponents.lean` | **Formalized** | Arbitrary incomplete skeletons; path concatenation/reversal; intrinsic component equivalence classes; containment in ambient group cosets. |
 | A2: admissibility and rank-two base | `PSTSEPPA/ABO/CayleySubgraphAdmissibility.lean` | **Formalized** | ABO Definition 3.16, equivalent ambient-overlap reflection and original disjointness implication; automatic admissibility for |A|≤2 (R4, admissibility part only). |
 | A2: component-indexed coset copies | `PSTSEPPA/ABO/ComponentIndexedCosets.lean` | **Formalized (preparatory API)** | Intrinsic B-component quotient indices and separately tagged ambient B-coset copies; original skeleton vertices inject into the copies, with no premature identifications. |
@@ -46,7 +46,11 @@ is on `main` and GitHub Actions is green.
 | A2: local multi-alphabet extension embedding | `ComponentCosetNaturality.lean`, `ComponentMultiCosetVertexMap.lean`, `ComponentParentIndexControl.lean`, `ComponentAttachmentRange.lean`, `ComponentMultiCosetEmbedding.lean`, `ComponentMultiCosetHom.lean` | **Formalized (injective labelled E-graph morphism)** | PRs #105/#110/#111/#113/#114/#115. Component-tagged intersection supports preserve **and reflect** actual gluing within an intrinsic B-component; the quotient vertex map is injective and extends to a labelled graph morphism injective on vertices and signed directed edges. No global ambient-Cayley injectivity is claimed; the later lower-family component/path/edge statements are separate checked theorems. |
 | A2: exact intrinsic B-components for lower-family multi-CE | `ComponentMultiCosetRange.lean`, `MultiCosetParentPathInvariant.lean`, `MultiCosetParentComponentExact.lean`, `ComponentMultiCosetPathImage.lean` | **Formalized (vertex and actual B-path level)** | PRs #117/#118/#119/#121. The local vertex image is exactly the selected parent-B-index fibre; two global points are genuinely B-connected iff their B-parent indices coincide; for a nonempty lower family the local image is precisely the intrinsic B-path-component of the embedded root. The corresponding exact B-labelled signed-edge image is now formalized separately below. |
 | A2: lower-family local B-component as a labelled graph | `ComponentMultiCosetConnected.lean`, `ComponentMultiCosetEdgeRange.lean`, `ComponentMultiCosetBComponentEdges.lean` | **Formalized (all vertices and B-labelled signed edges)** | PRs #124/#127/#129 (clean ports of earlier green work). Every local edge has B-label; a global B-edge has a local preimage iff its source lies in the local vertex image. For nonempty family the local image agrees with the intrinsic B-component of the root on both vertices and B-labelled oriented edges. This does **not** include old edges with labels outside B, or a global family containing alphabets not below B. |
-| A2: remaining Section 3/cluster gates | `AugmentedComponent*.lean` and later coset-extension refinements | **Open** | Full source-facing Section 3 scope beyond the checked **lower-family** component comparison (e.g. unrestricted selected families, expanded-component intersection uses); intrinsic path-component layer for Corollary 3.15; Proposition 3.23 cluster property; Proposition 3.24 augmented classification; rank-two cluster property. |
+| A2: intrinsic connectedness of ordinary clusters | `ClusterCayleySkeleton.lean`, `CayleySubgraphFullCosetPaths.lean`, `ClusterComponentPaths.lean`, `ClusterIntrinsicComponentIntersections.lean` | **Formalized** | PRs #131/#132/#137/#154. Retraction plus common-core coset intersection yields genuine C-labelled paths; intrinsic C-components of clusters are ambient C-coset slices, and intersections of actual B/C-components are intrinsic (B∩C)-components. |
+| A2: full-proper-family singleton minimal support | `MultiCosetVertexSupport.lean`, `MultiCosetMinimalSupport.lean`, `MultiCosetMinimalSupportPaths.lean` | **Formalized (single vertices only)** | PRs #148/#151/#155. Each vertex of CE(G,K;P_A) admits a unique least support alphabet and compatible *component-tagged* supporting coset point. It is reachable from an original skeleton anchor by a word over exactly that supporting alphabet (i.e. uses no other letters). This does **not** prove uniform minimal support for whole off-skeleton B-components, as required by Definition 3.22. |
+| A2: full-family selected B-coset component | `MultiCosetSelectedComponentExact.lean` | **Formalized** | PR #153. If B is selected, each intrinsic-component-tagged full B-coset is exactly one genuine B-path component of CE(G,K;P), even when P contains other alphabets not below B. Derives from B-edge completeness of the B constituent plus global EGraph determinism; no global ambient injectivity. |
+| A2: Proposition 3.23 skeleton-skeleton case | `MultiCosetSkeletonComponentIntersections.lean`, `ComponentIndexPairInjectivity.lean`, `MultiCosetSelectedComponentIntersections.lean` | **Current target / NOT YET ACCEPTED** | Candidate PRs #156/#157/#158. The exact B/C-to-B∩C reachability of skeleton-meeting selected coset components is under CI and must not be counted before green merged main. Remaining off-skeleton cases are strictly stronger and use the whole-component cluster property. |
+| A2: remaining Section 3/cluster gates | `MultiCosetSelectedComponentExact.lean`, `MultiCosetMinimalSupport.lean` and pending refinements | **Partially formalized; main induction open** | Correct source scope: Definition 3.22 **assumes/defines** the off-skeleton *whole-component* cluster property; Proposition 3.23 **assumes** this property and proves actual B/C-component intersection connectivity. Singleton minimal supports and all selected complete B-cosets are checked; off-skeleton whole-component minimal supports, remaining cases of Prop 3.23, Prop 3.24 augmented full coset extensions and the rank-two cluster property remain OPEN. |
 | A3: corrected ABO Theorem 4.7 | `PSTSEPPA/ABO/UpwardInduction.lean` | Planned | Incorporate repairs R1, R7, R8. Highest-risk gate. |
 | A4: corrected Section 5 induction | `PSTSEPPA/ABO/FiniteConstruction.lean` | Planned | Separate repaired `k = 1` base case R2. |
 | A5: corrected ABO Lemma 2.5 | `PSTSEPPA/ABO/MainLemma.lean` | Planned | Include final-group equality and equivariance. |
@@ -294,8 +298,43 @@ coordinates do not collapse distinct component tags. The result is
 a graph-data characterization and injective labelled graph morphism,
 not yet a separately packaged type-level EGraph equivalence.
 
-**Next mathematical scope:** the unrestricted full proper-alphabet
-family (some members may not lie below B), Corollary 3.15's intrinsic
-path-component interpretation, the cluster property (3.23),
-augmented classification (3.24), then corrected Section 4/5 inductions.
+**Next mathematical scope:** the off-skeleton whole-component cluster
+property (Definition 3.22), the full conditional Proposition 3.23,
+Proposition 3.24 for augmented *full coset extensions*, the rank-two
+cluster property, then corrected Section 4/5 inductions. Corollary 3.15's
+intrinsic path-component theorem is already checked (#147).
 No unconditional PSTS EPPA follows yet.
+
+### 2026-10-09 — actual cluster C-components, tagged singleton supports, selected constituents
+
+**Supersedes** earlier notes that Corollary 3.15 only gives graph-data
+slices. PR #147 (clean main port of #145/#146) proves the full real
+C-path trichotomy for augmented **ordinary clusters**: meeting, disjoint,
+and no-attachment-intersection. The predecessor path/coset lemmas were
+integrated through #131/#132/#134/#137/#144. The proof uses genuine
+signed directed-edge paths and does not infer connectivity from ambient
+coset equality alone. PR #154 additionally upgrades Corollary 3.13's
+ordinary-cluster component intersections to intrinsic (B∩C) paths.
+
+PRs #148/#151/#155 introduce a component-tagged vertex-support API
+for full proper-subalphabet multi-coset extensions. Every quotient vertex
+has an inclusion-least supporting alphabet and exact tagged support
+which maps to all its other presentations. It has a genuine supporting
+alphabet path from a skeleton anchor. This proves the **singleton**
+minimal-support observation immediately before Definition 3.22, but
+is not the whole-component cluster-property assumption.
+
+PR #153 proves that any selected tagged full B-coset is precisely one
+intrinsic B-path component of the global multi-CE, even with other
+incomparable alphabets. CI candidate PRs #156–#158 now target the
+both-skeleton-meeting case of Proposition 3.23; pending PRs are not
+promoted to formalized until they pass full CI and merge.
+
+**Source-scope correction:** The cluster property is **Definition 3.22**
+(two conditions on every off-skeleton B-component). **Proposition 3.23
+assumes that property** and derives connectivity of nonempty B/C-component
+intersections; it does not prove the cluster property. The stronger
+Proposition 3.24 concerns B-augmentations of **full coset extensions**,
+not the earlier Corollary 3.15 about augmentations of ordinary clusters.
+
+The A3/A4/A5/C1 gates and unconditional PSTS EPPA are not yet proved.
