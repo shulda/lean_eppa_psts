@@ -133,6 +133,7 @@ import PSTSEPPA.ABO.RankOneArbitraryAmbientCore
 import PSTSEPPA.ABO.MultiCosetMaximalConstituentExit
 import PSTSEPPA.ABO.MaximalProperAlphabets
 import PSTSEPPA.ABO.MultiCosetMaximalConstituentPathExit
+import PSTSEPPA.ABO.MultiCosetWholeComponentBoundarySupport
 
 /-!
 # EPPA for partial Steiner triple systems
