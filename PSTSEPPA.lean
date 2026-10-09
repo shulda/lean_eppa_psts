@@ -144,6 +144,7 @@ import PSTSEPPA.ABO.CoatomFamilyGraphEquivalence
 import PSTSEPPA.ABO.CoatomFamilyPathEquivalence
 import PSTSEPPA.ABO.StrictCoatomEdgePatches
 import PSTSEPPA.ABO.SelectedCosetSliceConnectivity
+import PSTSEPPA.ABO.ComponentSelectedSliceExact
 
 /-!
 # EPPA for partial Steiner triple systems
