@@ -13,6 +13,7 @@ import PSTSEPPA.PSTS.CayleyPathInclusion
 import PSTSEPPA.PSTS.CayleyMinimalContentToMax
 import PSTSEPPA.PSTS.CayleyPairwiseReductionToMax
 import PSTSEPPA.PSTS.CayleyReflectingSemidirectToMax
+import PSTSEPPA.PSTS.CayleyReflectingToEPPA
 import PSTSEPPA.PSTS.CayleyContentConditionalPSTSTheorem
 import PSTSEPPA.PSTS.AllPartialAutFinite
 import PSTSEPPA.PSTS.Development
