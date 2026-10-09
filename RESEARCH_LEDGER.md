@@ -817,11 +817,16 @@ Do not introduce a global reflecting group as a Lean axiom.
   This does NOT make the deleted word into a valid path; the
   source's Lemma 5.6 still needs its geometric replacement argument.
 
-### Independently active candidate
+### Certified algebraic group-content closure
 
-- PR #249 develops canonical group-generator content from
-  retractability (the source's algebraic Proposition 3.5).
-  Its merge and CI must be inspected before promoting it to main.
+- PR #249 (a84a802) has passed the complete Lean build and
+  permitted-axioms audit and merged to main. It proves the source's
+  group-only Proposition 3.5 content realization: subgroup intersection
+  for a retractable, generated finite-alphabet group yields a
+  same-value word supported in the intersection of any two
+  representing supports; a least-cardinality word therefore has
+  support included in **every** competing support. This must not be
+  conflated with endpoint-preserving path reduction.
 
 ### Exact next substantive mathematical task
 
