@@ -52,7 +52,7 @@ theorem exists_total_permutation_extending
     ∃ σ : Equiv.Perm V,
       ∀ {x y : V}, p x = some y → σ x = y := by
   classical
-  let D : Type := {x : V // ∃ y : V, p x = some y}
+  let D := {x : V // ∃ y : V, p x = some y}
   let f : D → V := Subtype.val
   let g : D → V := fun x => partialImage p x
   have hf : Function.Injective f := Subtype.val_injective
