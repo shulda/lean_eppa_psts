@@ -56,8 +56,8 @@ theorem allProperCosetEdge_exists_coatom_completed_presentation
   let P := allProperCosetFamily A
   let G := K.multiCosetEGraph P hadm hgen hret
   obtain ⟨D, hDP, p, s, he⟩ :=
-    K.allProperCosetFamily_weaklyComplete
-      hadm hgen hret hcard e
+    (allProperCosetFamily_weaklyComplete K
+      hadm hgen hret hcard) e
   obtain ⟨C, hCP, hDC, hCcard, hsource⟩ :=
     K.allProperCoset_constituent_extend_to_coatom
       hadm hgen hret D hDP p
