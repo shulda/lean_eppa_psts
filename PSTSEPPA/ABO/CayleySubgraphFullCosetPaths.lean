@@ -62,6 +62,10 @@ theorem follows_word_in_fullCoset
           y.1 = next.1 * PSTS.SignedWord.evalGroup gen w := hvalue
           _ = (x.1 * PSTS.SignedWord.evalGroupLetter gen s) *
                 PSTS.SignedWord.evalGroup gen w := by
+                  change (cayleyGraph gen).target (x.1, s) *
+                    PSTS.SignedWord.evalGroup gen w =
+                      (x.1 * PSTS.SignedWord.evalGroupLetter gen s) *
+                        PSTS.SignedWord.evalGroup gen w
                   rw [cayleyGraph.target_eq_mul_evalGroupLetter]
           _ = x.1 * PSTS.SignedWord.evalGroup gen (s :: w) := by
                   simp [PSTS.SignedWord.evalGroup, mul_assoc]
