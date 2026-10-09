@@ -65,6 +65,9 @@ import PSTSEPPA.ABO.AugmentedClusterTransport
 import PSTSEPPA.ABO.ClusterCayleySkeleton
 import PSTSEPPA.ABO.CayleySubgraphFullCosetPaths
 import PSTSEPPA.ABO.ClusterComponentPaths
+import PSTSEPPA.ABO.AugmentedClusterPathInclusion
+import PSTSEPPA.ABO.AugmentedIntersectionCosetPaths
+import PSTSEPPA.ABO.AugmentedMeetingComponentPaths
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
