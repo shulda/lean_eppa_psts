@@ -148,6 +148,7 @@ import PSTSEPPA.ABO.BridgeFreenessInterface
 import PSTSEPPA.ABO.BridgeFreenessCoatomTransfer
 import PSTSEPPA.ABO.ComponentSelectedSliceExact
 import PSTSEPPA.ABO.ComponentGeometricDichotomy
+import PSTSEPPA.ABO.UniversalTaggedSkeletonAnchor
 
 /-!
 # EPPA for partial Steiner triple systems
