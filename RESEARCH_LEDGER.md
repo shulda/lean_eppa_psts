@@ -658,3 +658,68 @@ corrected Section 4 induction (including R1/R7/R8). Section 5,
 ABO Lemma 2.5, its concrete fibre-MAX instantiation, and
 unconditional finite PSTS EPPA remain open. The pre-existing T2
 fibre-MAX => PSTS-EPPA transfer is a certified conditional theorem.
+
+
+## 2026-10-09 — scope guard: PSTS EPPA, not unrestricted ABO
+
+User-reconfirmed primary goal: ordinary EPPA for finite partial Steiner
+triple systems with CLOSED embeddings. Do not treat formalization of all
+stronger general ABO statements as an independent objective.
+
+The supplied PSTS_EPPA_LEAN_ADVICE_2026-10-07 archive is the main
+advisory roadmap, especially its target/scope file, recommended plan,
+dependency DAG, the audited transfer note and the Project-2 ABO audit.
+The original ABO paper can clarify details but must not override the
+independently audited local repairs R1–R8. Neither source shortcuts nor
+the audits count as Lean proofs.
+
+### Minimal sufficient final route
+
+1. Gate T2 is ALREADY Lean-certified: the concrete fibre-MAX interface
+   yields a finite PSTS EPPA witness for selected partial automorphisms.
+   Do not reopen the abstract inverse-monoid or general partial-algebra
+   development just to reproduce this transfer.
+2. The missing input is a FINITE group satisfying fibre-MAX. A
+   sufficient intermediary is the CAYLEY specialization (Cayley-GRL)
+   of the ABO graph lemma on Cay(Q,P), with E = Q x P, requiring only
+   (a) the group action induced by LEFT Q-translations,
+   (b) generator deletion/retractability and minimum content,
+   (c) same-endpoint, same-group-value CONTENT-REDUCED paths,
+   including the empty-content case.
+3. Derive the group H inside the semidirect product G ⋊ Q using the
+   chosen permutation extensions of the partial automorphisms;
+   prove the concrete path-inclusion order lemma, fibre-MAX and then
+   instantiate the already-certified Gate T2.
+4. The full general arbitrary-graph ABO Lemma 2.5 may be a useful
+   proof METHOD, not a required final deliverable. If the Cayley
+   specialization avoids full arbitrary-graph equivariance, complete
+   F-inverse covers or other stronger claims, do not formalize them
+   merely for their own sake.
+
+### Source repairs and continuation discipline
+
+Respect R1 (derived retractability), R2 (separate k=1 base),
+R3 low-rank domains, R4 two-letter admissibility, R5 equal/degenerate
+coset parameters, R6/R7 notation corrections, R8 full-coset alternative.
+Before opening a new general ABO theorem, identify its concrete
+dependency in the Cayley-GRL -> fibre-MAX -> PSTS EPPA route.
+If a proposed shortcut fails in Lean, return to the audited
+corrected statement rather than silently adding a hypothesis.
+
+### Accepted latest A2 structural checkpoint
+
+After passing full GitHub Lean CI plus the permitted-axiom audit
+and merging on main: PR #183/#188 (arbitrary-ambient rank-one component
+base and whole-singleton support), #186/#194 (actual boundary/exit
+and support descent), #195/#198 (coatom support reduction), #200
+(exact coatom signed-edge cover and pairwise tagged anchors),
+#202/#205/#206 (coatom-only/full graph isomorphism and signed
+path equivalence), #207/#210/#216/#217 (strict lower coatom
+edge patches and complete B∩C slices of actual B-components),
+#219 (ONE universal skeleton anchor for ALL presentations of
+ONE quotient vertex).
+
+The higher-rank common-core property for the ENTIRE B-component,
+the corrected Section 4/5 induction, finite Cayley-GRL/MAX and
+unconditional PSTS EPPA remain OPEN. Do not conflate vertexwise
+common anchors or lower-patch cover with the full cluster property.
