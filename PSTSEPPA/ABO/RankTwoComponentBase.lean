@@ -1,6 +1,5 @@
 import PSTSEPPA.ABO.MultiCosetSupportSkeletonMeet
 import PSTSEPPA.ABO.MultiCosetMorphisms
-import Mathlib.Tactic
 
 /-!
 # Rank-two base case for the source ABO cluster property
@@ -35,12 +34,12 @@ theorem proper_alphabets_shared_letter_eq_rank_two
     (s : ι) (hsB : s ∈ B) (hsC : s ∈ C) :
     B = C := by
   classical
-  have hBcard : B.card ≤ 1 := by
-    have h := Finset.card_lt_card hBA
-    omega
-  have hCcard : C.card ≤ 1 := by
-    have h := Finset.card_lt_card hCA
-    omega
+  have hBcard : B.card ≤ 1 :=
+    Nat.lt_succ_iff.mp
+      (lt_of_lt_of_le (Finset.card_lt_card hBA) hcard)
+  have hCcard : C.card ≤ 1 :=
+    Nat.lt_succ_iff.mp
+      (lt_of_lt_of_le (Finset.card_lt_card hCA) hcard)
   have hBs : B = {s} := by
     apply Finset.Subset.antisymm
     · intro t ht
