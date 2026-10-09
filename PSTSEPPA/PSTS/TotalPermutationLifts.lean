@@ -40,7 +40,7 @@ globally; they are merely permutations of its finite vertex set. -/
 structure TotalPermutationLifts (A : PSTS V)
     (gen : ι → PartialAut A) where
   perm : ι → Equiv.Perm V
-  extends : ∀ (i : ι) {x y : V},
+  agrees : ∀ (i : ι) {x y : V},
     (gen i).toPEquiv x = some y → perm i x = y
 
 namespace TotalPermutationLifts
@@ -84,11 +84,11 @@ theorem signedLetter_extends (s : SignedLetter ι)
     ABO.signedPerm L.perm s x = y := by
   cases s with
   | pos i =>
-      exact L.extends i h
+      exact L.agrees i h
   | neg i =>
       have hforward : (gen i).toPEquiv y = some x :=
         ((gen i).toPEquiv.eq_some_iff).mp h
-      have hf : L.perm i y = x := L.extends i hforward
+      have hf : L.perm i y = x := L.agrees i hforward
       change (L.perm i).symm x = y
       rw [← hf]
       exact (L.perm i).left_inv y
