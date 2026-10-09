@@ -26,6 +26,8 @@ variable {gen : ι → Γ} {A : Finset ι}
 
 namespace CayleySubgraphSpec
 
+open ClusterSpec
+
 variable (K : CayleySubgraphSpec gen A)
 
 /-- Every D-supported word can be realised by actual edges of K
