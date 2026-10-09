@@ -543,9 +543,12 @@ audits:
   and uses no global CE→ambient Cayley injectivity.
 
 Further current branches, not yet accepted until CI and merge:
-- **#256**: once individual left Q-translation automorphisms of an
-  E-generated finite G exist, generator uniqueness makes them an
-  automatically coherent action Q→*MulAut G (Prop. 5.5 bridge).
+- **#256** (`CayleyCoherentAction.lean`, merged as `466d38e`):
+  generator uniqueness in any E-generated group forces individual
+  extensions of left Q-translations to satisfy the action laws;
+  constructs the coherent hom Q→*MulAut G and proves uniqueness.
+  Complete Lean build and permitted-axioms audit passed. **The
+  existence of the individual automorphisms and finite G is OPEN.**
 - **#257**: finite synchronized subgroups of products of labelled
   groups, with explicit surjective labelled quotient projections;
   candidate algebraic model for transition groups on disjoint
