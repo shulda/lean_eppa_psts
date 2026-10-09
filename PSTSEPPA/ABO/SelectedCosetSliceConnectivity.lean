@@ -94,14 +94,13 @@ theorem multiCoset_selected_C_slice_B_reachable_iff_inter_coset
       rwa [generatedSubgroup_inf gen hgen hret B C]
     exact hInter
   · intro hInter
-    exact
+    obtain ⟨w, hw, hpath⟩ :=
       (K.multiCoset_selected_C_subalphabet_B_component_exact
         P hadm hgen hret C hCP (B ∩ C)
         Finset.inter_subset_right p
         (K.multiCosetInclude P hadm hgen hret C hCP q)).mpr
           ⟨q, hIdx.symm, hInter, rfl⟩
-      |>.elim (fun w hw hpath =>
-        ⟨w, hw.mono Finset.inter_subset_left, hpath⟩)
+    exact ⟨w, hw.mono Finset.inter_subset_left, hpath⟩
 
 /-- The same result stated purely in realised signed-word paths:
 between two points of one selected tagged C-copy, allowing
