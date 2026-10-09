@@ -49,7 +49,7 @@ is on `main` and GitHub Actions is green.
 | A2: intrinsic connectedness of ordinary clusters | `ClusterCayleySkeleton.lean`, `CayleySubgraphFullCosetPaths.lean`, `ClusterComponentPaths.lean`, `ClusterIntrinsicComponentIntersections.lean` | **Formalized** | PRs #131/#132/#137/#154. Retraction plus common-core coset intersection yields genuine C-labelled paths; intrinsic C-components of clusters are ambient C-coset slices, and intersections of actual B/C-components are intrinsic (B∩C)-components. |
 | A2: full-proper-family singleton minimal support | `MultiCosetVertexSupport.lean`, `MultiCosetMinimalSupport.lean`, `MultiCosetMinimalSupportPaths.lean` | **Formalized (single vertices only)** | PRs #148/#151/#155. Each vertex of CE(G,K;P_A) admits a unique least support alphabet and compatible *component-tagged* supporting coset point. It is reachable from an original skeleton anchor by a word over exactly that supporting alphabet (i.e. uses no other letters). This does **not** prove uniform minimal support for whole off-skeleton B-components, as required by Definition 3.22. |
 | A2: full-family selected B-coset component | `MultiCosetSelectedComponentExact.lean` | **Formalized** | PR #153. If B is selected, each intrinsic-component-tagged full B-coset is exactly one genuine B-path component of CE(G,K;P), even when P contains other alphabets not below B. Derives from B-edge completeness of the B constituent plus global EGraph determinism; no global ambient injectivity. |
-| A2: Proposition 3.23 skeleton-skeleton case | `MultiCosetSkeletonComponentIntersections.lean`, `ComponentIndexPairInjectivity.lean`, `MultiCosetSelectedComponentIntersections.lean` | **Current target / NOT YET ACCEPTED** | Candidate PRs #156/#157/#158. The exact B/C-to-B∩C reachability of skeleton-meeting selected coset components is under CI and must not be counted before green merged main. Remaining off-skeleton cases are strictly stronger and use the whole-component cluster property. |
+| A2: Proposition 3.23 skeleton-skeleton case | `MultiCosetSkeletonComponentIntersections.lean`, `ComponentIndexPairInjectivity.lean`, `MultiCosetSelectedComponentIntersections.lean`, `MultiCosetSelectedComponentInterExact.lean` | **Partially formalized; final component intersection candidate pending** | PRs #156/#157 (merged, full Lean CI): B/C paths between embedded skeleton vertices reflect to old skeleton and admit true B∩C paths; a (B∩C)-component tag is determined by its B/C parent tags. Candidate #158 is separately Lean-green but not integrated; #160/#161 target the exact full-selected-coset component intersection and await CI/main merger. Off-skeleton cases require whole-component cluster property. |
 | A2: remaining Section 3/cluster gates | `MultiCosetSelectedComponentExact.lean`, `MultiCosetMinimalSupport.lean` and pending refinements | **Partially formalized; main induction open** | Correct source scope: Definition 3.22 **assumes/defines** the off-skeleton *whole-component* cluster property; Proposition 3.23 **assumes** this property and proves actual B/C-component intersection connectivity. Singleton minimal supports and all selected complete B-cosets are checked; off-skeleton whole-component minimal supports, remaining cases of Prop 3.23, Prop 3.24 augmented full coset extensions and the rank-two cluster property remain OPEN. |
 | A3: corrected ABO Theorem 4.7 | `PSTSEPPA/ABO/UpwardInduction.lean` | Planned | Incorporate repairs R1, R7, R8. Highest-risk gate. |
 | A4: corrected Section 5 induction | `PSTSEPPA/ABO/FiniteConstruction.lean` | Planned | Separate repaired `k = 1` base case R2. |
@@ -326,9 +326,12 @@ is not the whole-component cluster-property assumption.
 
 PR #153 proves that any selected tagged full B-coset is precisely one
 intrinsic B-path component of the global multi-CE, even with other
-incomparable alphabets. CI candidate PRs #156–#158 now target the
-both-skeleton-meeting case of Proposition 3.23; pending PRs are not
-promoted to formalized until they pass full CI and merge.
+incomparable alphabets. **#156/#157 are now checked and merged:**
+B/C paths between original embedded skeleton vertices reflect to K
+and (B∩C) is determined by its pair of B/C parent indices.
+Candidate #158 is separately CI-green but not integrated; #160/#161
+attempt the full selected-coset component intersection and still
+require their combined green build and main merge.
 
 **Source-scope correction:** The cluster property is **Definition 3.22**
 (two conditions on every off-skeleton B-component). **Proposition 3.23
