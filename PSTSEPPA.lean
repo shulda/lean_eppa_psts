@@ -57,6 +57,7 @@ import PSTSEPPA.ABO.ComponentCosetNaturality
 import PSTSEPPA.ABO.ComponentMultiCosetVertexMap
 import PSTSEPPA.ABO.ComponentIndexedCosets
 import PSTSEPPA.ABO.ComponentIndexMonotonicity
+import PSTSEPPA.ABO.ComponentIndexPairInjectivity
 import PSTSEPPA.ABO.SingleCosetExtension
 import PSTSEPPA.ABO.SingleCosetEGraph
 import PSTSEPPA.ABO.SingleCosetConnectivity
