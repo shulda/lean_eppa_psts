@@ -120,6 +120,9 @@ import PSTSEPPA.ABO.MultiCosetSupportSkeletonMeet
 import PSTSEPPA.ABO.MultiCosetComponentSupportInvariant
 import PSTSEPPA.ABO.MultiCosetOffSkeletonEdgeSupport
 import PSTSEPPA.ABO.MultiCosetOffComponentPatches
+import PSTSEPPA.ABO.RankTwoComponentBase
+import PSTSEPPA.ABO.RankTwoClusterSupportBase
+import PSTSEPPA.ABO.RankTwoClusterPropertyBase
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
