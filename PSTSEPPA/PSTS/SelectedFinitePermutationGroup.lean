@@ -116,7 +116,13 @@ is installed classically; no algorithmic enumeration is required. -/
 noncomputable instance [Fintype V] : Fintype L.generatedQ := by
   classical
   letI : Fintype (Equiv.Perm V) := inferInstance
-  letI : Fintype (ABO.RightPerm V) := inferInstance
+  let e : Equiv.Perm V ≃ ABO.RightPerm V :=
+    { toFun := MulOpposite.op
+      invFun := MulOpposite.unop
+      left_inv := fun _ => rfl
+      right_inv := fun _ => rfl }
+  letI : Fintype (ABO.RightPerm V) :=
+    Fintype.ofEquiv (Equiv.Perm V) e
   exact Fintype.ofFinite _
 
 /-- The actual complete oriented Cayley EGraph used by the
