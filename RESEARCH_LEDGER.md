@@ -889,10 +889,12 @@ homomorphism, then reflect to the FINAL group G through stability
 at |B|≤k. The quotient tags are retained; ambient coordinates
 are not wrongly assumed globally injective.
 
-**Current candidate #256:** automatically coherent Q-action on
-a generated reflecting group from individual left-translation
-automorphisms. This supports Proposition 5.5 but does not produce
-the individual automorphisms. Pending CI.
+**#256 (466d38e; certified and merged):** automatic coherence
+of the Cayley left Q-action, once individual automorphisms of the
+E-generated reflecting G extending each translation are provided.
+Equality on generator images forces uniqueness, identity and
+multiplication. This proves a Proposition-5.5 *consequence*,
+not existence of those automorphisms or the finite reflecting G.
 
 **Current candidate #257:** explicit finite synchronized product
 of two labelled groups with canonical surjective projections,
