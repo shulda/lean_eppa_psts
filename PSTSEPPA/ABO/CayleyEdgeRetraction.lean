@@ -50,7 +50,8 @@ theorem eraseGenerator_eq_self_of_all_base_ne (e : E) :
         exact h t (List.mem_cons_of_mem s ht)
       have hnot : signedBase s ∉ ({e} : Finset E) := by
         simpa using hs
-      simp [eraseGenerator, deleteGenerators, hnot, ih hw]
+      have htail : deleteGenerators ({e} : Finset E) w = w := ih hw
+      simp [eraseGenerator, deleteGenerators, hnot, htail]
 
 end LabelWord
 
