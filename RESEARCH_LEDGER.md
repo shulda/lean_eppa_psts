@@ -794,3 +794,56 @@ repaired induction. If the source's general proof is needed,
 use the independently audited R1--R8 corrections and respect
 Definition 3.22/Propositions 3.23--3.24 logical dependencies.
 Do not introduce a global reflecting group as a Lean axiom.
+
+## 2026-10-09 — actual G ⋊ Q / single-edge deletion checkpoint
+
+### Lean-checked main advances
+
+- PR #243 (bd99fa1) proves the full **conditional** semidirect
+  realisation, finite generated H, signed word-value and projection,
+  from an explicit finite left-Q-equivariant group G satisfying
+  intersection-supported Cayley path reflection. It packages the
+  actual finite, closed-PSTS EPPA witness via already-green T2.
+- PR #246 (d3b06fb) proves same-H-value one-edge positive content
+  deletion is *equivalent* to pairwise positive content reflection,
+  by minimizing the number of edges in one path outside the other's
+  support. This is fully Lean-checked and does NOT produce the
+  source's finite reflecting group.
+- PR #247 (07ecc55) proves the correct signed E-edge word of a
+  Cayley P-word, with its exact G-evaluation and positive edge list.
+- PR #248 (a6a5e84) proves the **algebraic** retractability step:
+  equality with a competing path omitting e ensures deletion of
+  signed E-letter e from the current path word preserves its G-value.
+  This does NOT make the deleted word into a valid path; the
+  source's Lemma 5.6 still needs its geometric replacement argument.
+
+### Certified algebraic group-content closure
+
+- PR #249 (a84a802) has passed the complete Lean build and
+  permitted-axioms audit and merged to main. It proves the source's
+  group-only Proposition 3.5 content realization: subgroup intersection
+  for a retractable, generated finite-alphabet group yields a
+  same-value word supported in the intersection of any two
+  representing supports; a least-cardinality word therefore has
+  support included in **every** competing support. This must not be
+  conflated with endpoint-preserving path reduction.
+
+### Exact next substantive mathematical task
+
+Establish the **geometric one-edge replacement theorem**: under
+the finite group G eventually built by corrected ABO Section 4/5,
+whenever a path's E-generator deletion has unchanged group value,
+find another ACTUAL Cayley path between the SAME endpoints, with
+exactly the SAME G-value and positive-edge support contained in
+the original support minus the specified edge. The presently
+certified arithmetic/semidirect/PSTS bridges then deliver full EPPA.
+
+One must construct the finite reflecting G, retractability and
+coherent Q-action rather than postulate them. The existing
+whole-component cluster/bridge-free induction obligations are not
+settled by the coatom lower-edge patch cover or a universal anchor
+for an individual quotient vertex. Match Lemma 5.6 to the
+original corrected ABO I Section 5 stage H_k, plain full
+coset-extension covering, and final-to-H_k k-stability, treating
+the k=1 gap separately (R2). The corrected source is the fallback
+if a proposed shortcut is not provable in Lean.
