@@ -58,10 +58,13 @@ noncomputable def cayleyLeftTranslateHom
   map_inv := by
     rintro ⟨x, s⟩
     apply Prod.ext
-    · change
-        q * (x * PSTS.SignedWord.evalGroupLetter gen s) =
-          (q * x) * PSTS.SignedWord.evalGroupLetter gen s
-      rw [mul_assoc]
+    · cases s with
+      | pos i =>
+          change q * (x * gen i) = (q * x) * gen i
+          rw [mul_assoc]
+      | neg i =>
+          change q * (x * (gen i)⁻¹) = (q * x) * (gen i)⁻¹
+          rw [mul_assoc]
     · rfl
   map_label := by
     intro e
