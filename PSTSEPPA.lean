@@ -13,6 +13,7 @@ import PSTSEPPA.PSTS.DevelopmentAction
 import PSTSEPPA.PSTS.EPPAFromMax
 import PSTSEPPA.ABO.ActionGraph
 import PSTSEPPA.ABO.CayleyGraph
+import PSTSEPPA.ABO.CayleyLeftTranslations
 import PSTSEPPA.ABO.Reachability
 import PSTSEPPA.ABO.Morphisms
 import PSTSEPPA.ABO.GraphHomInjectivity
