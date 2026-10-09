@@ -556,13 +556,18 @@ vertex; (3) **Proposition 3.23 assumes (2)** and derives that every
 nonempty B/C-component intersection is a (B∩C)-component.
 The present #148/#151/#155 certify (1), not (2).
 
-The skeleton-anchored part of case (3) is now **CERTIFIED**:
-#156 reflects genuine B/C paths between embedded old skeleton points
-and proves B∩C connectivity; #157 shows intrinsic B∩C-component
-indices are injectively determined by B- and C-parent indices.
-The full selected-coset component case has CI-green candidate #158
-and awaiting CI/merge #160/#161; it remains **UNCERTIFIED on main**
-until the exact combined component-intersection theorem is accepted.
+The complete **both-skeleton-meeting case of Proposition 3.23 is
+CERTIFIED on main** by #156, #157 and #161 (clean port of individually
+green #158/#160): B/C paths between embedded old skeleton vertices
+reflect to K, intrinsic B∩C tags are determined injectively by their
+B/C parent tags, and any nonempty intersection of two selected
+full B- and C-coset components of the global full proper-family
+extension is precisely one intrinsic (B∩C)-component with realised
+signed-word connectivity. This relies on the completed B/C constituent
+EGraph determinism, exact gluing support and admissibility, not on
+injectivity of ambient Cayley coordinates.
+The two remaining off-skeleton component cases of Proposition 3.23
+still require the whole-component cluster property (Definition 3.22).
 The two off-skeleton cases of Prop 3.23 require the genuine
 whole-component cluster property and are still OPEN.
 
