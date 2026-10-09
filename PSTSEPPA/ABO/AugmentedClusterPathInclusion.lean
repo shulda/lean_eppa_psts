@@ -50,7 +50,10 @@ theorem clusterSkeletonToAugmentedHom_vertex_injective
       (P.clusterSkeletonToAugmentedHom gen B hBA v).onVertex := by
   intro x y h
   apply Subtype.ext
-  exact congrArg Subtype.val h
+  have hv := congrArg
+    (fun t : (P.augmentedCayleySubgraph gen B hBA v).Vertex => t.1) h
+  change x.1 = y.1 at hv
+  exact hv
 
 /-- It also retains the actual signed directed edge tokens, including
 formal inverses and the two directed tokens of geometric loops. -/
@@ -61,7 +64,10 @@ theorem clusterSkeletonToAugmentedHom_edge_injective
       (P.clusterSkeletonToAugmentedHom gen B hBA v).onEdge := by
   intro e f h
   apply Subtype.ext
-  exact congrArg Subtype.val h
+  have hv := congrArg
+    (fun t : (P.augmentedCayleySubgraph gen B hBA v).Edge => t.1) h
+  change e.1 = f.1 at hv
+  exact hv
 
 /-- Every actual C-labelled word path of the original cluster is
 still a path of the augmented cluster between the included vertices. -/
@@ -75,8 +81,12 @@ theorem cluster_reachable_in_augmented
       ((P.clusterSkeletonToAugmentedHom gen B hBA v).onVertex x)
       ((P.clusterSkeletonToAugmentedHom gen B hBA v).onVertex y) := by
   obtain ⟨w, hw, hpath⟩ := hxy
-  exact ⟨w, hw,
-    hpath.map (P.clusterSkeletonToAugmentedHom gen B hBA v)⟩
+  have hMapped :=
+    EGraph.Follows.map
+      (G := (P.toCayleySubgraph gen).toEGraph)
+      (H := (P.augmentedCayleySubgraph gen B hBA v).toEGraph)
+      (P.clusterSkeletonToAugmentedHom gen B hBA v) hpath
+  exact ⟨w, hw, hMapped⟩
 
 /-- Every completed B-labelled edge in the attached coset belongs
 literally to the augmented Cayley subgraph, with no quotienting. -/
