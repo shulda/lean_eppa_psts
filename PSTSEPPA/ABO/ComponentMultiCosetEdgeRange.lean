@@ -178,10 +178,10 @@ theorem componentMultiCoset_B_edge_in_range_of_parent
       | inr completed =>
           have hp :
               K.componentIndexMap C.1 B
-                (P.proper C.1 C.2).subset completed.1 =
+                (P.proper C.1 C.2).subset completed.1.1 =
                 K.componentClass B root := by
             change K.componentIndexMap C.1 B
-                (P.proper C.1 C.2).subset completed.1 =
+                (P.proper C.1 C.2).subset completed.1.1 =
                   K.componentClass B root at hparent
             exact hparent
           exact K.componentMultiCoset_completed_edge_in_range
