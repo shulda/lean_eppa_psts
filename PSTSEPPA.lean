@@ -63,6 +63,7 @@ import PSTSEPPA.ABO.SingleCosetComponentExact
 import PSTSEPPA.ABO.SingleCosetSkeletonEmbedding
 import PSTSEPPA.ABO.AugmentedClusterTransport
 import PSTSEPPA.ABO.ClusterCayleySkeleton
+import PSTSEPPA.ABO.AugmentedClusterPathInclusion
 
 import PSTSEPPA.ABO.Graph
 import PSTSEPPA.ABO.Transition
