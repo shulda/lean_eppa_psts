@@ -86,9 +86,9 @@ theorem cayleyLeftTranslateHom_positive_edge
     (gen : ι → Q) (q x : Q) (i : ι) :
     (cayleyLeftTranslateHom gen q).onEdge
         (x, PSTS.SignedLetter.pos i) =
-      (cayleyPositiveLeftTranslate q (x, i)).1,
+      ((cayleyPositiveLeftTranslate q (x, i)).1,
         PSTS.SignedLetter.pos
-          (cayleyPositiveLeftTranslate q (x, i)).2 :=
+          (cayleyPositiveLeftTranslate q (x, i)).2) :=
   rfl
 
 /-- All left-translation graph morphisms are injective on the
