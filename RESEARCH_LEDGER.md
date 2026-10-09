@@ -556,9 +556,13 @@ vertex; (3) **Proposition 3.23 assumes (2)** and derives that every
 nonempty B/C-component intersection is a (B∩C)-component.
 The present #148/#151/#155 certify (1), not (2).
 
-The both-skeleton-meeting / selected-full-coset case (3) is an
-active separate subgoal in PRs #156/#157/#158 and must remain
-**UNCERTIFIED** until full Lean CI/axiom audit and main merge.
+The skeleton-anchored part of case (3) is now **CERTIFIED**:
+#156 reflects genuine B/C paths between embedded old skeleton points
+and proves B∩C connectivity; #157 shows intrinsic B∩C-component
+indices are injectively determined by B- and C-parent indices.
+The full selected-coset component case has CI-green candidate #158
+and awaiting CI/merge #160/#161; it remains **UNCERTIFIED on main**
+until the exact combined component-intersection theorem is accepted.
 The two off-skeleton cases of Prop 3.23 require the genuine
 whole-component cluster property and are still OPEN.
 
