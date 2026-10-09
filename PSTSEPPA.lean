@@ -56,6 +56,7 @@ import PSTSEPPA.ABO.AugmentedComponentSlices
 import PSTSEPPA.ABO.AugmentedComponentClassification
 import PSTSEPPA.ABO.AugmentedComponentSeparation
 import PSTSEPPA.ABO.Stability
+import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.StabilityRetractability
 import PSTSEPPA.ABO.SelectedCosetStablePathReplacement
 import PSTSEPPA.ABO.ClusterTransport
