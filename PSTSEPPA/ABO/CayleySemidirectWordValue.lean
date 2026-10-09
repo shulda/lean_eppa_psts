@@ -41,9 +41,9 @@ direction i uses the inverse of the edge based at q*gen(i)^-1. -/
 def cayleyPathGroupValue (gen : ι → Q) (edge : Q × ι → G)
     (q : Q) : LabelWord ι → G
   | [] => 1
-  | SignedLabel.pos i :: w =>
+  | PSTS.SignedLetter.pos i :: w =>
       edge (q, i) * cayleyPathGroupValue gen edge (q * gen i) w
-  | SignedLabel.neg i :: w =>
+  | PSTS.SignedLetter.neg i :: w =>
       (edge (q * (gen i)⁻¹, i))⁻¹ *
         cayleyPathGroupValue gen edge (q * (gen i)⁻¹) w
 
