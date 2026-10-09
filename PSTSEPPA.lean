@@ -150,6 +150,7 @@ import PSTSEPPA.ABO.ComponentSelectedSliceExact
 import PSTSEPPA.ABO.ComponentGeometricDichotomy
 import PSTSEPPA.ABO.CoatomComponentSliceExact
 import PSTSEPPA.ABO.UniversalTaggedSkeletonAnchor
+import PSTSEPPA.ABO.FiniteTaggedIntersectionPaths
 
 /-!
 # EPPA for partial Steiner triple systems
