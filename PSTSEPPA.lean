@@ -139,6 +139,7 @@ import PSTSEPPA.ABO.CoatomConstituentCover
 import PSTSEPPA.ABO.NoLargeCoatomSupport
 import PSTSEPPA.ABO.CoatomEdgeCover
 import PSTSEPPA.ABO.TwoCoatomCommonAnchor
+import PSTSEPPA.ABO.MultiCosetFamilyInclusion
 
 /-!
 # EPPA for partial Steiner triple systems
