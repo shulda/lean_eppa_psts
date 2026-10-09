@@ -95,6 +95,7 @@ import PSTSEPPA.ABO.MultiCosetParentHom
 import PSTSEPPA.ABO.MultiCosetParentPathInvariant
 import PSTSEPPA.ABO.MultiCosetParentComponentExact
 import PSTSEPPA.ABO.ComponentMultiCosetPathImage
+import PSTSEPPA.ABO.ComponentMultiCosetEdgeRange
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
