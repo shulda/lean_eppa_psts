@@ -69,6 +69,11 @@ theorem multiCoset_selected_C_subalphabet_B_component_exact
         (cayleyGraph gen).toEGraph.Follows p.2.1 w q.2.1 := by
       have hmapped :=
         hpath.map (K.multiCosetAmbientHom P hadm hgen hret)
+      change (cayleyGraph gen).toEGraph.Follows
+        (K.multiCosetAmbientValue P hadm hgen hret
+          (K.multiCosetInclude P hadm hgen hret C hCP p))
+        w
+        (K.multiCosetAmbientValue P hadm hgen hret z) at hmapped
       rw [hq] at hmapped
       simpa only [K.multiCosetAmbientValue_include] using hmapped
     have hcanonical :=
