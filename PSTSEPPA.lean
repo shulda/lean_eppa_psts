@@ -119,6 +119,7 @@ import PSTSEPPA.ABO.MultiCosetMinimalSupportPaths
 import PSTSEPPA.ABO.MultiCosetSupportSkeletonMeet
 import PSTSEPPA.ABO.MultiCosetComponentSupportInvariant
 import PSTSEPPA.ABO.MultiCosetOffSkeletonEdgeSupport
+import PSTSEPPA.ABO.MultiCosetOffComponentPatches
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
