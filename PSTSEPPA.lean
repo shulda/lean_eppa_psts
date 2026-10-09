@@ -135,6 +135,7 @@ import PSTSEPPA.ABO.MultiCosetMaximalConstituentPathExit
 import PSTSEPPA.ABO.MaximalProperAlphabets
 import PSTSEPPA.ABO.MultiCosetLowerSupportSkeletonAnchor
 import PSTSEPPA.ABO.MultiCosetWholeComponentBoundarySupport
+import PSTSEPPA.ABO.CoatomConstituentCover
 
 /-!
 # EPPA for partial Steiner triple systems
