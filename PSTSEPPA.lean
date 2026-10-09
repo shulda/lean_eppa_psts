@@ -28,6 +28,7 @@ import PSTSEPPA.ABO.CayleyLeftTranslations
 import PSTSEPPA.ABO.CayleyPositivePathSupport
 import PSTSEPPA.ABO.CayleySemidirectWordValue
 import PSTSEPPA.ABO.CayleyEdgeWords
+import PSTSEPPA.ABO.CayleyEdgeRetraction
 import PSTSEPPA.ABO.Reachability
 import PSTSEPPA.ABO.Morphisms
 import PSTSEPPA.ABO.GraphHomInjectivity
