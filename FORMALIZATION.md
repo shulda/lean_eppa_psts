@@ -358,8 +358,11 @@ tagged B-path geometry, that a component meeting any selected
 C⊇B is a *whole* complete B-coset with the same C tag.
 All three are merged after green full Lean CI and axiom audit.
 
-The complementary pointwise criterion (green source #179, clean
-port #181) is not authoritative until its clean PR is merged.
+The complementary pointwise criterion is now likewise
+Lean-certified and merged (#181, clean port of source #179): selected
+C-support is invariant along true B-paths for B⊆C, so one root
+vertex's lack of every selected C⊇B support suffices for the whole
+component's strict lower-rank edge-patch cover.
 Most importantly, the lower-rank patch cover does **not** imply
 the missing higher-rank common-core/lower-cluster alternative
 or uniform whole-component minimal tagged support. Thus the
