@@ -43,13 +43,13 @@ theorem proper_alphabets_shared_letter_eq_rank_two
   have hBs : B = {s} := by
     apply Finset.Subset.antisymm
     · intro t ht
-      have hts := (Finset.card_le_one.mp hBcard) t s ht hsB
+      have hts := (Finset.card_le_one.mp hBcard) t ht s hsB
       simpa using hts
     · exact Finset.singleton_subset_iff.mpr hsB
   have hCs : C = {s} := by
     apply Finset.Subset.antisymm
     · intro t ht
-      have hts := (Finset.card_le_one.mp hCcard) t s ht hsC
+      have hts := (Finset.card_le_one.mp hCcard) t ht s hsC
       simpa using hts
     · exact Finset.singleton_subset_iff.mpr hsC
   exact hBs.trans hCs.symm
