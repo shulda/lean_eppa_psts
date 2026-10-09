@@ -68,7 +68,8 @@ theorem multiCoset_selected_C_slice_B_reachable_iff_inter_coset
         w
         (K.multiCosetAmbientValue P hadm hgen hret
           (K.multiCosetInclude P hadm hgen hret C hCP q)) at hmapped
-      simpa only [K.multiCosetAmbientValue_include] using hmapped
+      simp only [K.multiCosetAmbientValue_include] at hmapped
+      exact hmapped
     have hCanonical :=
       (cayleyGraph gen).follows_followWord p.2.1 w
     have hVal :
@@ -91,7 +92,8 @@ theorem multiCoset_selected_C_slice_B_reachable_iff_inter_coset
           p.2.1⁻¹ * q.2.1 ∈
             generatedSubgroup gen B ⊓ generatedSubgroup gen C :=
         ⟨hB, hC⟩
-      rwa [generatedSubgroup_inf gen hgen hret B C]
+      rw [← generatedSubgroup_inf gen hgen hret B C]
+      exact hinf
     exact hInter
   · intro hInter
     obtain ⟨w, hw, hpath⟩ :=
