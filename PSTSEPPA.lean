@@ -37,6 +37,7 @@ import PSTSEPPA.ABO.Morphisms
 import PSTSEPPA.ABO.GraphHomInjectivity
 import PSTSEPPA.ABO.SingleCosetEnlargement
 import PSTSEPPA.ABO.CanonicalCover
+import PSTSEPPA.ABO.DisjointUnionEGraphs
 import PSTSEPPA.ABO.CayleyStageProjection
 import PSTSEPPA.ABO.Retractability
 import PSTSEPPA.ABO.RetractabilityCover
