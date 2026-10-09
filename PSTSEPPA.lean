@@ -12,6 +12,7 @@ import PSTSEPPA.PSTS.SelectedCayleyWordGeometry
 import PSTSEPPA.PSTS.CayleyPathInclusion
 import PSTSEPPA.PSTS.CayleyMinimalContentToMax
 import PSTSEPPA.PSTS.CayleyContentConditionalPSTSTheorem
+import PSTSEPPA.PSTS.AllPartialAutFinite
 import PSTSEPPA.PSTS.Development
 import PSTSEPPA.PSTS.DevelopmentOperation
 import PSTSEPPA.PSTS.DevelopmentBase
