@@ -129,6 +129,7 @@ import PSTSEPPA.ABO.RankTwoClusterPropertyBase
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 import PSTSEPPA.ABO.MultiCosetComponentSupportDichotomy
 import PSTSEPPA.ABO.RankOneArbitraryAmbient
+import PSTSEPPA.ABO.RankOneArbitraryAmbientCore
 import PSTSEPPA.ABO.MultiCosetMaximalConstituentExit
 
 /-!
