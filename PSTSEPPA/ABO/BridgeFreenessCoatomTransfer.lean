@@ -126,6 +126,11 @@ theorem coatomCoset_bridgeFree_iff_allProper
     · intro u v huv
       apply hvinj
       apply hBridgeFull.1
+      change
+        K.multiCosetAmbientValue (allProperCosetFamily A)
+          hadm hgen hret (F.onVertex u) =
+        K.multiCosetAmbientValue (allProperCosetFamily A)
+          hadm hgen hret (F.onVertex v)
       rw [hamb u, hamb v]
       exact huv
     · intro B hBA u v hAmbient
