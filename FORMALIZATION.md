@@ -461,7 +461,7 @@ closed-EPPA theorem with unconditional finite PSTS EPPA.
 
 ### 2026-10-09 — C2/C3 finite-reflection bridge (supersedes earlier C1/C2 checkpoints)
 
-The latest code checkpoint here is main merge `a6a5e84`, after
+The latest code checkpoint here is main merge `a84a802`, after
 independently green full Lean CI and permitted-axioms audits for each
 integrated PR.
 
@@ -488,10 +488,11 @@ integrated PR.
   original path, deleting e (both signs) from the literal signed E-word
   of u preserves the exact final G-value. **This erased edge word need
   not be an actual path.**
-- **#249** is a separate candidate for the source's purely algebraic
-  Proposition 3.5: retractability plus generatedness gives a genuine,
-  represented least group-generator content. Check PR/CI state before
-  calling it formalized.
+- **#249** (`RetractableGroupContent.lean`, merged as `a84a802`):
+  formalizes the source's purely algebraic Proposition 3.5. For any
+  finite generating alphabet, generatedness plus retractability gives
+  a **realized, inclusion-least generator content** for every group
+  element. The complete Lean build and permitted-axioms audit passed.
 
 **Remaining geometric hard gate:** construct finite G, its coherent
 left-Q action and retractability, and prove the endpoint-preserving
