@@ -146,7 +146,7 @@ theorem componentMultiCoset_B_edge_in_range_of_parent
         hadm hgen hret).label e) ∈ B)
     (hparent :
       (K.multiCosetVertexToParent (P.intoLarger hBA)
-        hadm hgen hret B (K.componentFamily_subset_parent B hBA P)
+        hadm hgen hret B (componentFamily_subset_parent B hBA P)
         ((K.multiCosetEGraph (P.intoLarger hBA)
           hadm hgen hret).source e)).1 =
         K.componentClass B root) :
@@ -228,7 +228,7 @@ theorem componentMultiCoset_edge_range_iff
   · rintro ⟨hlabel, ⟨localVertex, hVertex⟩⟩
     have hparent :
         (K.multiCosetVertexToParent (P.intoLarger hBA)
-          hadm hgen hret B (K.componentFamily_subset_parent B hBA P)
+          hadm hgen hret B (componentFamily_subset_parent B hBA P)
           ((K.multiCosetEGraph (P.intoLarger hBA)
             hadm hgen hret).source e)).1 =
           K.componentClass B root := by
