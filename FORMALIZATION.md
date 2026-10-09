@@ -369,3 +369,32 @@ or uniform whole-component minimal tagged support. Thus the
 source Definition 3.22 cluster property, complete Proposition 3.23
 and 3.24, corrected Sections 4--5, and the unconditional PSTS EPPA
 statement remain explicitly open.
+
+
+### 2026-10-09 — PSTS-targeted scope and latest certified structural checkpoint
+
+The final deliverable is ordinary finite PSTS EPPA for CLOSED embeddings,
+not unrestricted ABO as a separate result. The finite fibre-MAX ->
+PSTS EPPA transfer (Gate T2) is already certified. The minimum
+remaining group result is the Cayley-GRL specialization on Cay(Q,P),
+including left Q-translation equivariance, minimum-content/retraction,
+and content-reduced Cayley paths with the same group value and endpoints.
+This suffices for the concrete H ≤ G ⋊ Q fibre-MAX construction and
+instantiation of Gate T2. General arbitrary-graph Lemma 2.5 is an
+optional intermediate method, never an independent scope requirement.
+Follow the project advice archive and independently audited
+repairs R1–R8 rather than uncritically the printed paper.
+
+Green-main checkpoint: #183/#188 rank-one B-component and least
+singleton support; #186/#194 exact maximal-constituent exit geometry;
+#195/#198 coatom support and root no-large criterion;
+#200 tagged coatom edge cover and pairwise skeleton anchors;
+#202/#205/#206 exact coatom/full-labelled-graph and path equivalence;
+#207/#210/#216/#217 exact lower patches and B∩C coatom component
+slices, explicit nonautomatic bridge-freeness interface/transfer;
+#219 universal tagged skeleton anchor for every presentation of
+ONE vertex.
+
+OPEN: the whole-component common-core/cluster property, corrected
+Sections 4–5 needed for Cayley-GRL, finite fibre-MAX and unconditional
+PSTS EPPA. No broader ABO claim follows automatically.
