@@ -11,7 +11,7 @@ locate the FIRST exit along a genuine signed B-word path.
 
 Fix a particular tagged full C-coset (not merely the union
 of all C-constituents). If a realised B-path begins in
-that copy and ends outside it, a vertex x on a B-prefix
+that copy and ends outside it, a vertex x on a B-pref
 of the path is:
   * still in the SAME tagged C-copy;
   * supported by a proper D⊊C; and
@@ -122,8 +122,8 @@ theorem allProperCoset_maximal_constituent_path_exit_lower
         S u → ¬ S v →
         ∃ x : K.MultiCosetVertex P hadm hgen hret,
           S x ∧
-          (∃ prefix : LabelWord ι,
-            LabelWord.Uses B prefix ∧ G.Follows u prefix x) ∧
+          (∃ pref : LabelWord ι,
+            LabelWord.Uses B pref ∧ G.Follows u pref x) ∧
           ∃ D : Finset ι,
             D ⊂ C ∧
             K.MultiCosetVertexSupported
@@ -140,10 +140,10 @@ theorem allProperCoset_maximal_constituent_path_exit_lower
         cases hp with
         | cons e hsrc hl hrest =>
             by_cases hTarget : S (G.target e)
-            · obtain ⟨x, hx, ⟨prefix, hPrefix, hPrefixPath⟩,
+            · obtain ⟨x, hx, ⟨pref, hPrefix, hPrefixPath⟩,
                   D, hD, hSupp⟩ :=
                 ih (G.target e) v hw.2 hrest hTarget hv
-              refine ⟨x, hx, ⟨s :: prefix, ?_, ?_⟩,
+              refine ⟨x, hx, ⟨s :: pref, ?_, ?_⟩,
                 D, hD, hSupp⟩
               · exact ⟨hw.1, hPrefix⟩
               · exact EGraph.Follows.cons e hsrc hl hPrefixPath
