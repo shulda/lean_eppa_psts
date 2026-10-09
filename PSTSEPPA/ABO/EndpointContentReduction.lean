@@ -211,7 +211,8 @@ theorem endpoint_eq_of_empty_groupContent
               LabelWord.positiveSupport (s :: tail) := by
           simp [LabelWord.positiveSupport]
         rw [hqEmpty] at hSome
-        exact False.elim (Finset.not_mem_empty _ hSome)
+        have hFalse : False := by simpa using hSome
+        exact hFalse.elim
   subst q
   exact K.follows_nil_iff.mp hqPath
 
