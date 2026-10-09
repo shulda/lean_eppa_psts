@@ -66,7 +66,8 @@ theorem multiCoset_selected_C_subalphabet_B_component_exact
         P hadm hgen hret C hCP w (hwB.mono hBC)
         p z hpath
     have hambient :
-        (cayleyGraph gen).toEGraph.Follows p.2.1 w q.2.1 := by
+        (cayleyGraph gen).toEGraph.Follows
+          (K.attachedValue C p) w (K.attachedValue C q) := by
       have hmapped :=
         hpath.map (K.multiCosetAmbientHom P hadm hgen hret)
       change (cayleyGraph gen).toEGraph.Follows
