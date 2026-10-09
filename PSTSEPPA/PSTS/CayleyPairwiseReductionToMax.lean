@@ -88,6 +88,13 @@ theorem exists_support_card (h : C.H) :
   obtain ⟨w, hw⟩ := C.word_surjective h
   exact ⟨(L.finitePositiveSupport w).card, w, hw, rfl⟩
 
+/-- The well-ordered minimum of the support cardinalities of words
+representing the same H-value. Keeping Nat.find inside this definition
+avoids requiring a classical DecidablePred in later theorem TYPES. -/
+noncomputable def leastSupportCard (h : C.H) : ℕ := by
+  classical
+  exact Nat.find (C.exists_support_card h)
+
 /-- A representative with least CARDINALITY of positive-edge
 support among all representatives of a prescribed H-value. -/
 noncomputable def leastWord (h : C.H) : SignedWord ι := by
@@ -97,7 +104,7 @@ noncomputable def leastWord (h : C.H) : SignedWord ι := by
 theorem leastWord_spec (h : C.H) :
     SignedWord.evalGroup C.lift (C.leastWord h) = h ∧
     (L.finitePositiveSupport (C.leastWord h)).card =
-      Nat.find (C.exists_support_card h) := by
+      C.leastSupportCard h := by
   classical
   exact Classical.choose_spec (Nat.find_spec (C.exists_support_card h))
 
@@ -109,7 +116,7 @@ theorem leastWord_le_card (h : C.H)
   classical
   calc
     (L.finitePositiveSupport (C.leastWord h)).card =
-        Nat.find (C.exists_support_card h) := (C.leastWord_spec h).2
+        C.leastSupportCard h := (C.leastWord_spec h).2
     _ ≤ (L.finitePositiveSupport v).card :=
         Nat.find_min' (C.exists_support_card h) ⟨v, hv, rfl⟩
 
