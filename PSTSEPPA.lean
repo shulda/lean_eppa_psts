@@ -121,6 +121,7 @@ import PSTSEPPA.ABO.MultiCosetComponentSupportInvariant
 import PSTSEPPA.ABO.MultiCosetOffSkeletonEdgeSupport
 import PSTSEPPA.ABO.MultiCosetOffComponentPatches
 import PSTSEPPA.ABO.MultiCosetSelectedSubalphabetComponents
+import PSTSEPPA.ABO.MultiCosetFullComponentFromSuperset
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 
 /-!
