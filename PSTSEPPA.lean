@@ -130,6 +130,7 @@ import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 import PSTSEPPA.ABO.MultiCosetComponentSupportDichotomy
 import PSTSEPPA.ABO.RankOneArbitraryAmbient
 import PSTSEPPA.ABO.MultiCosetMaximalConstituentExit
+import PSTSEPPA.ABO.MaximalProperAlphabets
 
 /-!
 # EPPA for partial Steiner triple systems
