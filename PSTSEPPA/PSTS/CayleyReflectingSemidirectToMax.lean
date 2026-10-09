@@ -147,7 +147,7 @@ theorem exists_word_semidirect
   | mem x hx =>
       obtain ⟨i, rfl⟩ := hx
       exact ⟨[SignedLetter.pos i], by
-        simp [SignedWord.evalGroup, R.semidirectGenerator]⟩
+        simp [SignedWord.evalGroup]⟩
   | one =>
       exact ⟨[], rfl⟩
   | mul x y hx hy ihx ihy =>
@@ -234,6 +234,12 @@ theorem pairwise_H
         SignedWord.evalGroup R.semidirectGenerator w :=
           R.evalWord_coe w
     _ = SignedWord.evalGroup R.semidirectGenerator u := by
+      change SignedWord.evalGroup
+          (ABO.cayleySemidirectGenerator R.action
+            L.cayleyGenerator R.edge) w =
+        SignedWord.evalGroup
+          (ABO.cayleySemidirectGenerator R.action
+            L.cayleyGenerator R.edge) u
       rw [ABO.cayleySemidirect_wordValue R.action
         L.cayleyGenerator R.edge R.edge_left w,
         ABO.cayleySemidirect_wordValue R.action
