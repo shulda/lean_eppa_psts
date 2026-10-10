@@ -61,6 +61,7 @@ import PSTSEPPA.ABO.AugmentedComponentSeparation
 import PSTSEPPA.ABO.Stability
 import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.StabilityRetractability
+import PSTSEPPA.ABO.StageStabilityWordKernel
 import PSTSEPPA.ABO.RankOneRetractability
 import PSTSEPPA.ABO.SelectedCosetStablePathReplacement
 import PSTSEPPA.ABO.ClusterTransport
