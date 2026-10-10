@@ -69,14 +69,14 @@ namespace SynchronizedProduct
 labelled group with a complete EGraph's transition SUBGROUP.
 This is a subtype of Γ × Transition(T); its generators are
 the literal pairs of ambient and stage generators. -/
-abbrev stageCover
+noncomputable abbrev stageCover
     (gen : ι → Γ) (T : CompleteEGraph V Edge ι) :=
   subgroup gen T.transitionSubgroupGenerator
 
 /-- Surjective, letter-preserving quotient of the actual
 synchronized group onto the ambient Γ. Surjectivity uses
 generation of Γ, not any faithfulness of stage actions. -/
-def stageCoverQuotient
+noncomputable def stageCoverQuotient
     (gen : ι → Γ) (T : CompleteEGraph V Edge ι)
     (hgen : IsGenerated gen) :
     LabelledGroupQuotient
