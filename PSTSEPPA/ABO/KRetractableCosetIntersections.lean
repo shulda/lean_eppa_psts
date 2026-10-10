@@ -121,7 +121,7 @@ theorem KRetractable.restrictTo_eq_of_uses
       PSTS.SignedWord.evalGroup gen q) :
     PSTS.SignedWord.evalGroup gen (LabelWord.restrictTo B p) =
       PSTS.SignedWord.evalGroup gen (LabelWord.restrictTo B q) := by
-  exact hret.deleteGenerators_eq_of_uses gen D hD
+  exact KRetractable.deleteGenerators_eq_of_uses gen hret D hD
     (Finset.univ \ B) p q hp hq heq
 
 /-- LOCAL version of the subgroup-intersection identity:
@@ -145,7 +145,7 @@ theorem generatedSubgroup_inf_of_kRetractable
     have hEq : PSTS.SignedWord.evalGroup gen p =
         PSTS.SignedWord.evalGroup gen q := hpval.trans hqval.symm
     have hRestricted :=
-      hret.restrictTo_eq_of_uses gen (A ∪ B) hcard B
+      KRetractable.restrictTo_eq_of_uses gen hret (A ∪ B) hcard B
         p q hpD hqD hEq
     have hVal :
         PSTS.SignedWord.evalGroup gen (LabelWord.restrictTo B p) = x := by
