@@ -87,8 +87,8 @@ theorem gluePoint_injective
     · simp [gluePoint, hp, hq] at hpq
     · have hsub :
           (⟨p.1, p.2, hp⟩ : FreshPoint gen B g) =
-            (⟨q.1, q.2, hq⟩ : FreshPoint gen B g) :=
-        Sum.inr.inj (by simpa [gluePoint, hp, hq] using hpq)
+            (⟨q.1, q.2, hq⟩ : FreshPoint gen B g) := by
+        simpa [gluePoint, hp, hq] using hpq
       exact Subtype.ext (congrArg Subtype.val hsub)
 
 /-- The actual full B-coset as an oriented labelled
@@ -186,14 +186,16 @@ noncomputable def gluedEGraph
               exact e.2.2
             exact False.elim (hMissing f hroot hb)
         | inr f =>
+            have hpoints :
+                (⟨(cayleyGraph gen).source e.1, e.2.1⟩ :
+                  CosetPoint gen B g) =
+                (⟨(cayleyGraph gen).source f.1, f.2.1⟩ :
+                  CosetPoint gen B g) :=
+              (gluePoint_injective gen B g root) hs
             have hsrc :
                 (cayleyGraph gen).source e.1 =
                   (cayleyGraph gen).source f.1 :=
-              congrArg Subtype.val
-                ((gluePoint_injective gen B g root)
-                  (p := ⟨(cayleyGraph gen).source e.1, e.2.1⟩)
-                  (q := ⟨(cayleyGraph gen).source f.1, f.2.1⟩)
-                  hs)
+              congrArg Subtype.val hpoints
             have hedge : e.1 = f.1 :=
               (cayleyGraph gen).toEGraph.deterministic hsrc hl
             exact congrArg Sum.inr (Subtype.ext hedge)
