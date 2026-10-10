@@ -52,7 +52,7 @@ theorem localCayley_inv_leftTranslate
             generatedSubgroup gen A) : Γ) =
             (g * (x : Γ)) * gen i
         rw [Subgroup.coe_mul, trivialCompletionGenerator_mem gen A he]
-        exact mul_assoc _ _ _
+        simp only [mul_assoc]
       · rfl
   | neg i =>
       change i ∈ A at he
@@ -63,7 +63,7 @@ theorem localCayley_inv_leftTranslate
             (g * (x : Γ)) * (gen i)⁻¹
         rw [Subgroup.coe_mul, Subgroup.coe_inv,
           trivialCompletionGenerator_mem gen A he]
-        exact mul_assoc _ _ _
+        simp only [mul_assoc]
       · rfl
 
 namespace CayleySubgraphSpec
