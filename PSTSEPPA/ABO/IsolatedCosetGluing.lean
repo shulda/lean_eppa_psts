@@ -1,5 +1,6 @@
 import PSTSEPPA.ABO.AugmentedCluster
 import PSTSEPPA.ABO.Morphisms
+import PSTSEPPA.ABO.CayleySubgraph
 
 /-!
 # Attaching a literal full coset to an isolated E-graph vertex
@@ -89,7 +90,9 @@ theorem gluePoint_injective
           (⟨p.1, p.2, hp⟩ : FreshPoint gen B g) =
             (⟨q.1, q.2, hq⟩ : FreshPoint gen B g) := by
         simpa [gluePoint, hp, hq] using hpq
-      exact Subtype.ext (congrArg Subtype.val hsub)
+      have hval : p.1 = q.1 :=
+        congrArg (fun z : FreshPoint gen B g => z.1) hsub
+      exact Subtype.ext hval
 
 /-- The actual full B-coset as an oriented labelled
 Cayley subgraph. Both formal edge directions survive. -/
@@ -170,8 +173,10 @@ noncomputable def gluedEGraph
                 (G.source e)
                 ⟨(cayleyGraph gen).source f.1, f.2.1⟩
                 hs.symm)
+            have hlabel :
+                G.label e = (cayleyGraph gen).label f.1 := hl
             have hb : signedBase (G.label e) ∈ B := by
-              rw [hl]
+              rw [hlabel]
               exact f.2.2
             exact False.elim (hMissing e hroot hb)
     | inr e =>
@@ -181,8 +186,10 @@ noncomputable def gluedEGraph
               gluePoint_inl_eq_root gen B g root
                 (G.source f)
                 ⟨(cayleyGraph gen).source e.1, e.2.1⟩ hs
+            have hlabel :
+                (cayleyGraph gen).label e.1 = G.label f := hl
             have hb : signedBase (G.label f) ∈ B := by
-              rw [← hl]
+              rw [← hlabel]
               exact e.2.2
             exact False.elim (hMissing f hroot hb)
         | inr f =>
