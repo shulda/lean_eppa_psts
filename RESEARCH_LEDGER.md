@@ -1092,3 +1092,67 @@ or assume its singleton classification without Lean proof.
 The fibre-MAX → PSTS-EPPA transfer on green main remains
 **conditional on the finite reflecting group**; no
 unconditional PSTS EPPA has been certified.
+
+
+## 2026-10-10 — R2 genuine type-(2) rank-one kernel certified; finite-stage construction frontier
+
+GitHub authoritative **main merge `89ea31c4`**, via PR #299,
+full Lean compile plus permitted-axioms audit **SUCCESS** on PR
+CI run `38051990893`. The post-merge `main` CI is separate.
+
+**New certified stage geometry and action:**
+
+1. #280/281/285: for a genuine rank-two all-proper multi-coset
+   EGraph, an off-selected-B singleton has NO original signed
+   B-edge. This discharges the actual deterministic full B-coset
+   gluing with root identified, all other coset points fresh,
+   true formal inverse edge tokens, and original old-edge inclusion.
+2. #282: the same rank-two singleton base has the full *off-skeleton
+   B-component* statement from Definition 3.22 and component-tagged
+   least support over its entire one-vertex component.
+3. #283/287: locally paired old/new signed availability gives an
+   actual COMPLETE loop-only augmented type-(2) stage; ambient
+   identity-valued attached B-words fix the entire attached coset
+   including the old root.
+4. #284/286/288: complementary true path and completed-action
+   transport: C disjoint B paths between old vertices unchanged,
+   old nonroot B-paths cannot reach the new root, and the
+   *whole signed B-word action* at old off-root points agrees
+   literally with the old completed stage.
+5. #299: the formalized
+   `rankTwoOffComponentCompletedStage_rankOne_wordValue_eq_one`
+   states: for arbitrary finite-label subset C with |C|≤1
+   and signed word w using C, ambient eval(w)=1 forces the
+   **actual augmented completed stage's transition-group**
+   wordValue(w)=1. THIS IS FOR ALL SINGLETON GENERATORS,
+   including those outside A; the rank-two proper-or-disjoint
+   C dichotomy, actual all-proper multi-CE edge-label support
+   and outside-A fixed-loop theorem establish the final case.
+   In particular it is stronger than earlier results for
+   only the attached B. The 11 underlying modules and all
+   assertions are integrated in the green-tested #299 merge.
+   Component PRs #289–#298 have been marked superseded and
+   closed; nothing essential remains only in those branches.
+
+**Research boundary (important for handoff):** the above is
+one concrete class of stage in the R2 catalogue, NOT existence
+of the full finite `H₁` and `Z₁` from the source,
+and does NOT automatically give an actual 1-stable labelled
+quotient `G₂→H₁`. The surviving hard construction work is:
+(A) verify all Definition-5.3 stage variants and their relation
+to the H₁-cover; (B) obtain actual finite stage carriers and an
+explicit finite indexed family; (C) prove the common-target
+generator-preserving transition-group quotient; (D) combine
+the per-stage rank-one kernels via the previously certified
+dependent-disjoint-stage kernel #277 and exact k-stability
+word-test #268. The higher-rank Section 4 construction,
+endpoint-preserving geometric path replacement, and final
+finite reflecting group remain open.
+
+**#300 pending / failed first build:** real finite-carrier
+certificate for type-(2) stages under a finite Γ. First run
+`38051912898` failed because simply calling `infer_instance`
+did not synthesize dependent/quotient `Finite` certificates.
+The current revision explicitly constructs finiteness from
+finite components and quotient surjections. **Do not mark
+#300 accepted until its updated CI turns green and merges.**
