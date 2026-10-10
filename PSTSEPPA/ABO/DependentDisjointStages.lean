@@ -78,7 +78,10 @@ theorem dependentDisjointStage_letterPerm
       change
         (⟨j, ((T j).letterPerm (.pos i)).symm x⟩ : Sigma V) =
           ⟨j, (T j).letterPerm (.neg i) x⟩
-      rw [(T j).letterPerm_inv (.pos i)]
+      have hneg : (T j).letterPerm (.neg i) =
+          ((T j).letterPerm (.pos i)).symm :=
+        (T j).letterPerm_inv (.pos i)
+      rw [hneg]
 
 /-- Exactly the same signed word is followed in the selected
 stage as in the whole dependent assembly, with the same
