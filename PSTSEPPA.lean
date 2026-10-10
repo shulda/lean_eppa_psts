@@ -68,6 +68,7 @@ import PSTSEPPA.ABO.AugmentedComponentClassification
 import PSTSEPPA.ABO.AugmentedComponentSeparation
 import PSTSEPPA.ABO.Stability
 import PSTSEPPA.ABO.SynchronizedLabelledGroups
+import PSTSEPPA.ABO.SynchronizedGeneratedGroup
 import PSTSEPPA.ABO.StabilityRetractability
 import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
 import PSTSEPPA.ABO.KRetractableCosetIntersections
