@@ -87,6 +87,7 @@ import PSTSEPPA.ABO.ClusterComponentPaths
 import PSTSEPPA.ABO.CayleySubgraphEdgeComponents
 import PSTSEPPA.ABO.ComponentSubgraph
 import PSTSEPPA.ABO.ComponentSubgraphPaths
+import PSTSEPPA.ABO.AmbientSkeletonAlphabetRestriction
 import PSTSEPPA.ABO.ComponentSubgraphConnected
 import PSTSEPPA.ABO.ComponentFullCosetEmbedding
 import PSTSEPPA.ABO.ComponentSubgraphAdmissibility
