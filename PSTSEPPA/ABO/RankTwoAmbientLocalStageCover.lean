@@ -52,6 +52,8 @@ theorem evalGroup_trivialCompletion_eq_one_of_kRetractable
       (trivialCompletionGenerator gen A) w :
         generatedSubgroup gen A) : Γ) = 1
   rw [coe_evalGroup_trivialCompletionGenerator]
+  have hNil : LabelWord.restrictTo A ([] : LabelWord ι) = [] := rfl
+  rw [hNil] at hRestrict
   simpa using hRestrict
 
 namespace CayleySubgraphSpec
