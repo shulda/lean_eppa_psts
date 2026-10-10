@@ -68,9 +68,9 @@ theorem restrictTo_eq_self_of_uses (B : Finset ι) :
   | nil => intro _; rfl
   | cons s w ih =>
       intro hw
-      have hs : signedBase s ∉ Finset.univ \\ B := by
+      have hs : signedBase s ∉ Finset.univ \ B := by
         simpa using hw.1
-      change LabelWord.deleteGenerators (Finset.univ \\ B) (s :: w) = s :: w
+      change LabelWord.deleteGenerators (Finset.univ \ B) (s :: w) = s :: w
       rw [LabelWord.deleteGenerators_cons, if_neg hs]
       exact congrArg (List.cons s) (ih hw.2)
 
