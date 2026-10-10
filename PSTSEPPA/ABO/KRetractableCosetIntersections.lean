@@ -43,19 +43,22 @@ theorem Uses.mono (A B : Finset ι) (hAB : A ⊆ B) :
       exact ⟨hAB hw.1, ih hw.2⟩
 
 /-- Erasing arbitrary signed letters never introduces new support. -/
-theorem Uses.deleteGenerators (A E : Finset ι) :
+theorem Uses.of_deleteGenerators (A E : Finset ι) :
     ∀ (w : LabelWord ι), Uses A w →
-      Uses A (deleteGenerators E w) := by
+      Uses A (LabelWord.deleteGenerators E w) := by
   intro w
   induction w with
   | nil => intro _; trivial
   | cons s w ih =>
       intro hw
+      change Uses A
+        (if signedBase s ∈ E then LabelWord.deleteGenerators E w
+         else s :: LabelWord.deleteGenerators E w)
       by_cases hs : signedBase s ∈ E
-      · simpa [deleteGenerators, hs] using ih hw.2
-      · simpa [deleteGenerators, hs, Uses] using
-          (show signedBase s ∈ A ∧ Uses A (deleteGenerators E w)
-            from ⟨hw.1, ih hw.2⟩)
+      · rw [if_pos hs]
+        exact ih hw.2
+      · rw [if_neg hs]
+        exact ⟨hw.1, ih hw.2⟩
 
 /-- A word which already uses only B is unchanged by B-restriction. -/
 theorem restrictTo_eq_self_of_uses (B : Finset ι) :
@@ -65,9 +68,11 @@ theorem restrictTo_eq_self_of_uses (B : Finset ι) :
   | nil => intro _; rfl
   | cons s w ih =>
       intro hw
-      have hs : signedBase s ∉ Finset.univ \ B := by
+      have hs : signedBase s ∉ Finset.univ \\ B := by
         simpa using hw.1
-      simp [restrictTo, deleteGenerators, hs, ih hw.2]
+      change LabelWord.deleteGenerators (Finset.univ \\ B) (s :: w) = s :: w
+      rw [LabelWord.deleteGenerators_cons, if_neg hs]
+      exact congrArg (List.cons s) (ih hw.2)
 
 /-- Two support conditions combine to support in the intersection. -/
 theorem Uses.inter (A B : Finset ι) :
@@ -102,9 +107,9 @@ theorem KRetractable.deleteGenerators_eq_of_uses
   | @insert a E ha ih =>
       intro p q hp hq heq
       have hp' : LabelWord.Uses D (LabelWord.eraseGenerator a p) :=
-        LabelWord.Uses.deleteGenerators D {a} p hp
+        LabelWord.Uses.of_deleteGenerators D {a} p hp
       have hq' : LabelWord.Uses D (LabelWord.eraseGenerator a q) :=
-        LabelWord.Uses.deleteGenerators D {a} q hq
+        LabelWord.Uses.of_deleteGenerators D {a} q hq
       rw [LabelWord.deleteGenerators_insert,
         LabelWord.deleteGenerators_insert]
       exact ih _ _ hp' hq' (hret D hD a p q hp hq heq)
@@ -158,7 +163,7 @@ theorem generatedSubgroup_inf_of_kRetractable
         _ = x := hqval
     have hpA :
         LabelWord.Uses A (LabelWord.restrictTo B p) :=
-      LabelWord.Uses.deleteGenerators A (Finset.univ \ B) p hp
+      LabelWord.Uses.of_deleteGenerators A (Finset.univ \ B) p hp
     have hpB : LabelWord.Uses B (LabelWord.restrictTo B p) :=
       LabelWord.uses_restrictTo B p
     have hpAB : LabelWord.Uses (A ∩ B) (LabelWord.restrictTo B p) :=
