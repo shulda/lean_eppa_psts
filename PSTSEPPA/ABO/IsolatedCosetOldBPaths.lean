@@ -66,8 +66,8 @@ theorem old_B_path_avoids_root
           have hB : signedBase (G.label e) ∈ B := by
             rw [hlab]
             exact hw.1
-          exact ih hw.2 (G.old_B_edge_target_ne_root B root
-            hMissing e hB) htail
+          exact ih (x := G.target e) hw.2
+            (old_B_edge_target_ne_root G B root hMissing e hB) htail
 
 /-- A glued B-edge whose source is an old vertex away from
 the root must literally be an original B-edge. Its target
@@ -91,7 +91,7 @@ theorem glued_B_edge_from_old_ne_root
       have hsrc : G.source f = x := Sum.inl.inj hsource
       have hlabel : signedBase (G.label f) ∈ B := hB
       exact ⟨f, rfl, hsrc,
-        G.old_B_edge_target_ne_root B root hMissing f hlabel⟩
+        old_B_edge_target_ne_root G B root hMissing f hlabel⟩
   | inr f =>
       have hr : x = root :=
         gluePoint_inl_eq_root gen B g root x
@@ -134,7 +134,7 @@ theorem glued_B_path_from_old_ne_root_reflect
           have htail :
               H.Follows (Sum.inl (G.target f)) w z := hrest
           obtain ⟨y, hyroot, hz, hp⟩ :=
-            ih hw.2 hTarget htail
+            ih (x := G.target f) hw.2 hTarget htail
           refine ⟨y, hyroot, hz, ?_⟩
           exact EGraph.Follows.cons f hSource hlab hp
 
