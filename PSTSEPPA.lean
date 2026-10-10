@@ -81,6 +81,7 @@ import PSTSEPPA.ABO.SelectedCosetStablePathReplacement
 import PSTSEPPA.ABO.ClusterTransport
 import PSTSEPPA.ABO.CayleySubgraph
 import PSTSEPPA.ABO.CayleySubgraphComponents
+import PSTSEPPA.ABO.LabelledQuotientSkeletonPullback
 import PSTSEPPA.ABO.CayleySubgraphFullCosetPaths
 import PSTSEPPA.ABO.ClusterComponentPaths
 import PSTSEPPA.ABO.CayleySubgraphEdgeComponents
