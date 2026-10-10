@@ -134,7 +134,7 @@ theorem glued_B_path_from_old_ne_root_reflect
           have htail :
               H.Follows (Sum.inl (G.target f)) w z := hrest
           obtain ⟨y, hyroot, hz, hp⟩ :=
-            ih (x := G.target f) hTarget hw.2 htail
+            ih (x := G.target f) (z := z) hTarget hw.2 htail
           refine ⟨y, hyroot, hz, ?_⟩
           exact EGraph.Follows.cons f hSource hlab hp
 
