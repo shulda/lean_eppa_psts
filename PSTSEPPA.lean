@@ -133,6 +133,7 @@ import PSTSEPPA.ABO.MultiCosetWeakCompleteness
 import PSTSEPPA.ABO.WeakCompletePairedEdges
 import PSTSEPPA.ABO.TrivialLoopCompletion
 import PSTSEPPA.ABO.TrivialCompletionPaths
+import PSTSEPPA.ABO.AugmentedClusterTrivialStage
 import PSTSEPPA.ABO.CompletedFullCosetStage
 import PSTSEPPA.ABO.StandardCosetFamily
 import PSTSEPPA.ABO.RankTwoSingletonEdgeDichotomy
