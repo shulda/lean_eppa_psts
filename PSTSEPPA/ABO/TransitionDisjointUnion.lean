@@ -216,7 +216,10 @@ theorem synchronizedToDisjointTransition_surjective
         refine ⟨a⁻¹, ?_⟩
         calc
           rightPermSumHom V₁ V₂ ((a⁻¹).1) =
-              rightPermSumHom V₁ V₂ (a.1)⁻¹ := map_inv _
+              rightPermSumHom V₁ V₂ (a.1)⁻¹ := by
+                change rightPermSumHom V₁ V₂ (a.1⁻¹) =
+                  (rightPermSumHom V₁ V₂ a.1)⁻¹
+                exact map_inv (rightPermSumHom V₁ V₂) a.1
           _ = x⁻¹ := congrArg Inv.inv ha
   intro x
   obtain ⟨y, hy⟩ := hsur x.1 x.2
