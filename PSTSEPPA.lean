@@ -60,6 +60,8 @@ import PSTSEPPA.ABO.AugmentedCluster
 import PSTSEPPA.ABO.IsolatedCosetGluing
 import PSTSEPPA.ABO.IsolatedCosetOldBPaths
 import PSTSEPPA.ABO.IsolatedCosetOldBCompletedWords
+import PSTSEPPA.ABO.IsolatedCosetCompletion
+import PSTSEPPA.ABO.IsolatedCosetDisjointPaths
 import PSTSEPPA.ABO.AugmentedClusterReflection
 import PSTSEPPA.ABO.AugmentedComponentSlices
 import PSTSEPPA.ABO.AugmentedComponentClassification
@@ -169,7 +171,10 @@ import PSTSEPPA.ABO.MultiCosetFullComponentFromSuperset
 import PSTSEPPA.ABO.RankTwoComponentBase
 import PSTSEPPA.ABO.RankTwoClusterSupportBase
 import PSTSEPPA.ABO.RankTwoClusterPropertyBase
+import PSTSEPPA.ABO.RankTwoOffSkeletonClusterProperty
 import PSTSEPPA.ABO.RankTwoSingletonAugmentationInput
+import PSTSEPPA.ABO.RankTwoOffComponentAugmentation
+import PSTSEPPA.ABO.RankTwoOffComponentCompletedStage
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
