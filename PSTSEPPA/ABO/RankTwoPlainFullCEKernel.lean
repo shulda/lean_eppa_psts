@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
+import PSTSEPPA.ABO.StageStabilityWordKernel
 import PSTSEPPA.ABO.AllProperCosetEdgeSupport
 import PSTSEPPA.ABO.RankOneAlphabetDichotomy
 
