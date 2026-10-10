@@ -1,5 +1,6 @@
 import PSTSEPPA.ABO.CanonicalCover
 import Mathlib.Data.Fintype.Sum
+import Mathlib.Data.Fintype.Prod
 import Mathlib.Data.Fintype.Perm
 
 /-!
