@@ -624,3 +624,66 @@ The finite reflected group G, its actual stage tower and
 the endpoint-preserving geometric Lemma 5.6 are STILL OPEN.
 Do not confuse the synchronized transition-group isomorphism
 with the full reflecting-group existence theorem.
+
+### 2026-10-10 — canonical trivial-loop stages and rank-two R2 progress
+
+**Authoritative CI-green main at this checkpoint:** merge
+`0032853` (updating earlier 2026-10-10 checkpoints).
+These statements were each included after successful full Lean
+compilation and permitted-axioms audit on the corresponding PR:
+
+- **#263** (`TrivialLoopCompletion.lean`, merge `71bfd8e`):
+  under LOCAL PAIRED ±-generator availability, complete the
+  original EGraph by keeping its vertices and all existing
+  signed transitions, fixing a vertex when a signed transition
+  is missing. The resulting positive/negative maps are actual
+  inverse permutations. The graph inclusion is injective on
+  genuine old directed edge tokens. **Every new edge is a loop.**
+  Pairing is itself verified for actual weakly complete coset
+  extensions in #262; it is NOT automatic for arbitrary EGraphs.
+- **#264** (`TrivialCompletionPaths.lean`, merge `5aaffcc`):
+  the literal loop completion preserves and reflects
+  **every** B-labelled path-reachability relation for all B,
+  by deleting exactly the newly inserted loops from real
+  completed paths. This includes B=∅ and reverse letters.
+- **#267** (`CompletedFullCosetStage.lean`, merge `d481438`):
+  construct a genuine complete action EGraph on the SAME
+  tagged multi-coset vertices. For the all-proper family and
+  |A|≥2, B-connectivity BETWEEN EMBEDDED ORIGINAL SKELETON
+  VERTICES agrees exactly with intrinsic skeleton B-connectivity
+  for every proper B⊂A. This is not yet a statement about
+  all off-skeleton vertices of augmented extensions.
+- **#269** (`RankTwoSingletonEdgeDichotomy.lean`, merge
+  `0032853`): in a rank-two full proper multi-coset
+  extension, every signed edge with base generator i
+  has source in a selected complete tagged {i}-coset.
+  A vertex outside the {i}-coset images has NO old
+  +i or -i edge. The conclusion uses literal tagged
+  edge representatives, not an unjustified globally
+  injective ambient Cayley projection.
+
+**Current candidate work, NOT yet certified or merged:**
+
+- **#266**: explicit signed alphabet and transition-group
+  finiteness certificate; corrected missing Fintype.product
+  import and rerunning CI.
+- **#268**: precise equivalence between KStable k and the
+  signed group-word kernel criterion, plus transition action
+  moved-vertex witness criterion; corrected an elaboration
+  mistake and rerunning CI.
+- **#270**: transfer the already-certified rank-two full
+  B-coset vs isolated singleton classification to the
+  ACTUAL complete all-proper stage (not just original CE).
+- **#271** (stacked on #270): every ambient identity-valued
+  B-word fixes EVERY vertex of that completed rank-two
+  full-coset stage, proved by full tagged coset word
+  evaluation or the singleton component alternative.
+
+**OPEN substantive obstruction:** complete the finite ABO
+tower, including H₁, Z₁ augmented objects, their actual
+transition groups and 1-stability G₂→H₁ (R2); prove the
+higher-rank whole-component cluster property / bridge-free
+induction and source-corrected endpoint-preserving geometric
+path replacement. Main's conditional Cayley reflecting-group
+⇒ fibre-MAX ⇒ PSTS EPPA chain is Lean-certified, but the
+existence of the reflecting group is NOT.
