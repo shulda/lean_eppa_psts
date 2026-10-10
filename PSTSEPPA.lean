@@ -189,6 +189,7 @@ import PSTSEPPA.ABO.RankTwoThreeFamilyTwoRetractable
 import PSTSEPPA.ABO.RankTwoLocalThreeFamilyCover
 import PSTSEPPA.ABO.RankTwoAmbientLocalStageCover
 import PSTSEPPA.ABO.RankTwoIndexedAmbientStageCover
+import PSTSEPPA.ABO.RankTwoAllAmbientCosetSliceCover
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
 import PSTSEPPA.ABO.RankTwoPlainFullCEKernel
