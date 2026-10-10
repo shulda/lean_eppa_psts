@@ -61,6 +61,7 @@ import PSTSEPPA.ABO.IsolatedCosetGluing
 import PSTSEPPA.ABO.IsolatedCosetCompletion
 import PSTSEPPA.ABO.IsolatedCosetGlobalWordKernel
 import PSTSEPPA.ABO.RankTwoType2GlobalWordKernel
+import PSTSEPPA.ABO.RankTwoType2TransitionKernel
 import PSTSEPPA.ABO.IsolatedCosetDisjointPaths
 import PSTSEPPA.ABO.AugmentedClusterReflection
 import PSTSEPPA.ABO.AugmentedComponentSlices
