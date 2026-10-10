@@ -132,9 +132,8 @@ theorem wordValue_eq_one_iff_all_vertices_fixed
     apply Equiv.ext
     intro u
     have hWord := T.rightApply_wordValue w u
-    change (MulOpposite.unop (T.wordValue w)) u = u
-    rw [hWord]
-    exact h u
+    change rightApply (T.wordValue w) u = u
+    exact hWord.trans (h u)
 
 /-- Contrapositive witness form used in corrected Proposition 5.4:
 a nonidentity transition word value moves a concrete vertex. -/
