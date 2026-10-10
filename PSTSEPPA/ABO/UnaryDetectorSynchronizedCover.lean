@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.UnaryDetectorGroup
+import PSTSEPPA.ABO.RankTwoLocalThreeFamilyCover
 import PSTSEPPA.ABO.KRetractableCosetIntersections
 import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.StageStabilityWordKernel
@@ -64,6 +65,12 @@ theorem coe_evalGroup_unaryGeneratedDetector
        (unaryGeneratedDetectorGenerator gen) w :
           UnaryGeneratedDetectorGroup gen) : UnaryDetectorGroup gen) =
       PSTS.SignedWord.evalGroup (unaryDetectorGenerator gen) w := by
+  change
+    ((PSTS.SignedWord.evalGroup
+      (trivialCompletionGenerator (unaryDetectorGenerator gen) Finset.univ) w :
+        generatedSubgroup (unaryDetectorGenerator gen) Finset.univ) :
+      UnaryDetectorGroup gen) =
+        PSTS.SignedWord.evalGroup (unaryDetectorGenerator gen) w
   rw [coe_evalGroup_trivialCompletionGenerator,
     LabelWord.restrictTo_univ]
 
@@ -143,13 +150,15 @@ theorem ambient_word_eq_one_of_unaryDetector
       have hji : j = i := (Finset.card_le_one.mp hC) j hj i hi
       simpa [hji]
     have hwI : LabelWord.Uses ({i} : Finset ι) w :=
-      hw.mono hCi
+      LabelWord.Uses.mono_explicit C ({i} : Finset ι) hCi w hw
     have hCoord :
         PSTS.SignedWord.evalGroup
           (trivialCompletionGenerator gen ({i} : Finset ι)) w = 1 := by
       have hAt := congrArg
         (fun x : UnaryDetectorGroup gen => x i) hdet
-      simpa only [evalGroup_unaryDetector_apply] using hAt
+      change PSTS.SignedWord.evalGroup
+        (trivialCompletionGenerator gen ({i} : Finset ι)) w = 1 at hAt
+      exact hAt
     have hCoe := congrArg
       (fun x : generatedSubgroup gen {i} => (x : Γ)) hCoord
     rw [coe_evalGroup_trivialCompletionGenerator,
@@ -231,7 +240,8 @@ theorem unarySynchronizedDetectorQuotient_oneStable
     have h := congrArg
       (fun x : UnaryGeneratedDetectorGroup gen =>
         (x : UnaryDetectorGroup gen)) hval
-    simpa only [coe_evalGroup_unaryGeneratedDetector] using h
+    change PSTS.SignedWord.evalGroup (unaryDetectorGenerator gen) w = 1 at h
+    exact h
   have hAmbient :
       PSTS.SignedWord.evalGroup gen w = 1 :=
     ambient_word_eq_one_of_unaryDetector gen C hC w hw hFull
