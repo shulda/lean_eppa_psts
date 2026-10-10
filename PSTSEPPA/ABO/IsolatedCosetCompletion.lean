@@ -101,7 +101,9 @@ theorem glued_locallyPairedLabels
       let f : CosetEdge gen B g :=
         ⟨(e.1.1, PSTS.SignedLetter.inv e.1.2), by
           refine ⟨e.2.1, ?_⟩
-          simpa only [signedBase_inv] using e.2.2⟩
+          change signedBase (PSTS.SignedLetter.inv e.1.2) ∈ B
+          have hlabel : signedBase e.1.2 ∈ B := e.2.2
+          simpa only [signedBase_inv] using hlabel⟩
       refine ⟨Sum.inr f, ?_, ?_⟩
       · rfl
       · rfl
