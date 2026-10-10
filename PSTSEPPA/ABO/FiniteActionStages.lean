@@ -58,10 +58,10 @@ theorem finite_actionEdge
     {V ι : Type*} [Fintype V] [Fintype ι] :
     Finite (ActionEdge V ι) := by
   classical
-  letI : Fintype (SignedLabel ι) :=
-    Fintype.ofEquiv (ι ⊕ ι) (signedLabelEquivSum ι).symm
   change Finite (V × SignedLabel ι)
-  infer_instance
+  exact Fintype.finite <|
+    Fintype.ofEquiv (V × (ι ⊕ ι))
+      (Equiv.prodCongr (Equiv.refl V) (signedLabelEquivSum ι).symm)
 
 namespace CompleteEGraph
 
