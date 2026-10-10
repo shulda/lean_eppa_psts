@@ -71,6 +71,7 @@ import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.StabilityRetractability
 import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
 import PSTSEPPA.ABO.KRetractableCosetIntersections
+import PSTSEPPA.ABO.LocalCosetCayleySlice
 import PSTSEPPA.ABO.StageStabilityWordKernel
 import PSTSEPPA.ABO.SynchronizedProductStability
 import PSTSEPPA.ABO.SynchronizedStageStableCover
@@ -188,7 +189,6 @@ import PSTSEPPA.ABO.RankTwoThreeFamilyTwoRetractable
 import PSTSEPPA.ABO.RankTwoLocalThreeFamilyCover
 import PSTSEPPA.ABO.RankTwoAmbientLocalStageCover
 import PSTSEPPA.ABO.RankTwoIndexedAmbientStageCover
-import PSTSEPPA.ABO.LocalCosetCayleySlice
 import PSTSEPPA.ABO.RankTwoAllAmbientCosetSliceCover
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
