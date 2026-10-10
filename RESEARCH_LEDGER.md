@@ -917,3 +917,47 @@ k=1 repair R2 remain unproved in Lean. The audited source
 that is advisory mathematical evidence, NOT proof-kernel
 certification. Follow this dependency order rather than
 silently assuming the reflection group exists.
+
+## 2026-10-10 — disjoint-stage transition groups and loop-completion invariant
+
+GitHub green-main substantive checkpoint: `07d28a0`. The following
+declarations are independently Lean-checked after full CI and
+allowed-axiom audit, not imported as asserted source claims:
+
+1. **#259 / 4c629d1:** automatic 1-retractability of every
+   labelled group, plus rank-zero version. This covers precisely
+   the elementary low-rank deletion fact of audit repair R2,
+   *not* the unresolved 1-stability G₂→H₁ or full Proposition 5.4.
+2. **#260 / 9117d3a:** actual disjoint unions of complete
+   oriented E-graphs with true inverse-edge tokens and paths,
+   and reflection of componentwise paths.
+3. **#261 / 07d28a0:** identification of the transition group
+   of that literal disjoint complete E-graph with the
+   synchronized subgroup of the direct product of both component
+   transition groups. The proof constructs an injective
+   right-permutation sum hom respecting chronological products
+   and each literal transition generator, and proves subgroup
+   image-surjectivity by generator-closure induction.
+   This DISCHARGES the earlier open transition-group-product
+   identification in the ledger; it does not prove any stability
+   rank of later quotient maps.
+4. **#262 / bf9c850:** paired outgoing positive/negative labels
+   for weakly complete full multi-coset extensions: a completed
+   tagged B-coset edge at source p has a companion of reverse
+   signed label at the same source. General E-graphs do NOT
+   have this property, so loop-only completion must rely on
+   this proof, not be declared for arbitrary E-graphs.
+
+Active unmerged candidates: **#263** proves construction of
+loop-only trivial completion for graphs with locally paired
+outgoing labels; **#264** proves such completion cannot create
+new B-labelled path connectivity. Both need full Lean/axiom CI
+and can still change. Preserve this status on handoff.
+
+Main remaining mathematical gates are the finite Section 5
+tower's actual covering and stability inductions, the R2
+k=1 stability case, and the higher-rank Definition 3.22
+whole-component cluster property/Propositions 3.23--3.24
+and Theorems 4.5/4.7. Corrected ABO Lemma 5.6 still requires
+its true geometric path replacement; the already certified
+ABO-to-PSTS fibre-MAX transfer remains conditional.
