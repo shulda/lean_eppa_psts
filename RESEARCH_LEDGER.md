@@ -964,7 +964,7 @@ ABO-to-PSTS fibre-MAX transfer remains conditional.
 
 ## 2026-10-10 — R2 full coset stages, loop completion, and CI status
 
-**Main checkpoint:** `0032853`. For #263/#264/#267/#269
+**Main checkpoint:** `36d42a0`. For #263/#264/#267/#269
 the actual full GitHub Actions Lean build and permitted-axioms
 audit were SUCCESSFUL before each merge.
 
@@ -994,15 +994,30 @@ audit were SUCCESSFUL before each merge.
    full-coset vs isolated singleton component base
    and avoids ambient-coordinate injection.
 
-**Candidates, not claims of established theorems:**
-#266 signed-label/transition-group finiteness,
-#268 k-stability iff group-word kernel and moved
-vertex, #270 rank-two full-or-singleton component
-classification AFTER trivial completion,
-#271 (stacked on #270) identity-valued B-word
-fixes every vertex of that rank-two complete stage.
-Respect the current GitHub CI for each, which may
-still fail or require refinement.
+**Additional accepted mathematical claims (each green after
+complete Lean + permitted-axioms audit):**
+
+- **#266, 0ab7e5a**: explicit signed-alphabet finiteness
+  and finiteness of every complete finite-carrier EGraph's
+  actual generated opposite-permutation transition group.
+- **#268, 57201f3**: exact equivalence of k-stability
+  with kernel of all ≤k-alphabet labelled words, plus
+  the genuinely moved-vertex test for nonidentity
+  transition values in complete stage EGraphs.
+- **#270, a2579c0**: source's rank-two exact full
+  tagged B-coset versus singleton alternative persists
+  through the literal trivial-loop completion.
+- **#271, 36d42a0**: word-kernel theorem for
+  completed unaugmented rank-two full coset stages:
+  a B-word of ambient group value 1 fixes every
+  completed stage vertex (whether in tagged B-coset
+  or isolated singleton). This is a concrete part
+  of the corrected k=1 R2 argument.
+
+**Not yet certified:** #273 literal augmented-cluster
+trivial stage and no-new-C-path theorem, plus stacked
+#274 singleton group-identity word-kernel for these
+augmented stages. Their current GitHub CI governs the claims.
 
 **Next actual mathematical gate:** R2 for the WHOLE
 Definition 5.3 Z₁ family, including augmented
