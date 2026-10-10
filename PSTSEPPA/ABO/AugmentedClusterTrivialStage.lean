@@ -91,8 +91,10 @@ theorem clusterEdgeSet_sameSourceOpposite
     (he : e ∈ P.EdgeSet gen) :
     (e.1, PSTS.SignedLetter.inv e.2) ∈ P.EdgeSet gen := by
   obtain ⟨C, hCP, hSource, hLabel⟩ := he
-  exact ⟨C, hCP, hSource,
-    by simpa only [signedBase_inv] using hLabel⟩
+  refine ⟨C, hCP, hSource, ?_⟩
+  change signedBase (PSTS.SignedLetter.inv e.2) ∈ C
+  change signedBase e.2 ∈ C at hLabel
+  simpa only [signedBase_inv] using hLabel
 
 /-- The same property survives augmentation by an entire full
 B-coset, whether or not it meets the original cluster.
@@ -104,10 +106,11 @@ theorem augmentedEdgeSet_sameSourceOpposite
     (e.1, PSTS.SignedLetter.inv e.2) ∈
       P.AugmentedEdgeSet gen B v := by
   rcases he with hOld | hNew
-  · exact Or.inl (P.clusterEdgeSet_sameSourceOpposite hOld)
-  · exact Or.inr
-      ⟨hNew.1, by
-        simpa only [signedBase_inv] using hNew.2⟩
+  · exact Or.inl (P.clusterEdgeSet_sameSourceOpposite e hOld)
+  · refine Or.inr ⟨hNew.1, ?_⟩
+    change signedBase (PSTS.SignedLetter.inv e.2) ∈ B
+    change signedBase e.2 ∈ B at hNew
+    simpa only [signedBase_inv] using hNew.2
 
 /-- The literal cluster, represented as the already-checked
 incomplete Cayley skeleton, satisfies paired signed labels. -/
