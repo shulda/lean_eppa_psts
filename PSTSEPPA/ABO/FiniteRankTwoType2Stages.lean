@@ -1,6 +1,8 @@
 import PSTSEPPA.ABO.RankTwoOffComponentCompletedStage
 import PSTSEPPA.ABO.FiniteActionStages
 import Mathlib.Data.Fintype.Quotient
+import Mathlib.Basic.Finite.Sigma
+import Mathlib.Basic.Finite.Sum
 
 /-!
 # The genuine augmented full-coset stages are finite over a finite ambient group
