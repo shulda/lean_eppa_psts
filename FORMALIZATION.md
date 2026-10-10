@@ -624,3 +624,77 @@ The finite reflected group G, its actual stage tower and
 the endpoint-preserving geometric Lemma 5.6 are STILL OPEN.
 Do not confuse the synchronized transition-group isomorphism
 with the full reflecting-group existence theorem.
+
+### 2026-10-10 — canonical trivial-loop stages and rank-two R2 progress
+
+**Authoritative CI-green main at this checkpoint:** merge
+`36d42a0` (updating earlier 2026-10-10 checkpoints).
+These statements were each included after successful full Lean
+compilation and permitted-axioms audit on the corresponding PR:
+
+- **#263** (`TrivialLoopCompletion.lean`, merge `71bfd8e`):
+  under LOCAL PAIRED ±-generator availability, complete the
+  original EGraph by keeping its vertices and all existing
+  signed transitions, fixing a vertex when a signed transition
+  is missing. The resulting positive/negative maps are actual
+  inverse permutations. The graph inclusion is injective on
+  genuine old directed edge tokens. **Every new edge is a loop.**
+  Pairing is itself verified for actual weakly complete coset
+  extensions in #262; it is NOT automatic for arbitrary EGraphs.
+- **#264** (`TrivialCompletionPaths.lean`, merge `5aaffcc`):
+  the literal loop completion preserves and reflects
+  **every** B-labelled path-reachability relation for all B,
+  by deleting exactly the newly inserted loops from real
+  completed paths. This includes B=∅ and reverse letters.
+- **#267** (`CompletedFullCosetStage.lean`, merge `d481438`):
+  construct a genuine complete action EGraph on the SAME
+  tagged multi-coset vertices. For the all-proper family and
+  |A|≥2, B-connectivity BETWEEN EMBEDDED ORIGINAL SKELETON
+  VERTICES agrees exactly with intrinsic skeleton B-connectivity
+  for every proper B⊂A. This is not yet a statement about
+  all off-skeleton vertices of augmented extensions.
+- **#269** (`RankTwoSingletonEdgeDichotomy.lean`, merge
+  `0032853`): in a rank-two full proper multi-coset
+  extension, every signed edge with base generator i
+  has source in a selected complete tagged {i}-coset.
+  A vertex outside the {i}-coset images has NO old
+  +i or -i edge. The conclusion uses literal tagged
+  edge representatives, not an unjustified globally
+  injective ambient Cayley projection.
+
+**Further certified and merged after full Lean/axiom CI:**
+
+- **#266**, `0ab7e5a`: finite signed label alphabet and
+  actual finite transition groups of complete E-graphs
+  on finite carriers, including noninjective/trivial generators.
+- **#268**, `57201f3`: k-stability is equivalent to its
+  group-word kernel test on each ≤k alphabet; nontrivial
+  complete-EGraph word values move an actual vertex.
+  These are exact criteria, not a proof of tower stability.
+- **#270**, `a2579c0`: the already-certified rank-two
+  full B-coset OR singleton dichotomy is preserved under
+  the ACTUAL trivial loop completion, for all selected B.
+- **#271**, `36d42a0`: in the completed rank-two full coset
+  stage, any B-supported word of ambient group value 1
+  fixes EVERY vertex. This proves the unaugmented
+  full-coset word-kernel ingredient of R2, not all of G₂→H₁.
+
+**Independently active candidates, pending CI:**
+
+- **#273**: construct a real loop-completed stage for literal
+  augmented clusters (Definition 5.3 Z₁ type 1), with
+  paired sign availability and unchanged all-C reachability.
+- **#274** (stacked on #273): every ambient identity-valued
+  singleton-supported word fixes the action of a complete
+  AUGMENTED cluster stage, using the genuine full-coset
+  versus no-old-edge alternative. Do not mark accepted
+  before its own full Lean build and axiom audit.
+
+**OPEN substantive obstruction:** complete the finite ABO
+tower, including H₁, Z₁ augmented objects, their actual
+transition groups and 1-stability G₂→H₁ (R2); prove the
+higher-rank whole-component cluster property / bridge-free
+induction and source-corrected endpoint-preserving geometric
+path replacement. Main's conditional Cayley reflecting-group
+⇒ fibre-MAX ⇒ PSTS EPPA chain is Lean-certified, but the
+existence of the reflecting group is NOT.

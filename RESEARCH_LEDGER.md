@@ -961,3 +961,70 @@ whole-component cluster property/Propositions 3.23--3.24
 and Theorems 4.5/4.7. Corrected ABO Lemma 5.6 still requires
 its true geometric path replacement; the already certified
 ABO-to-PSTS fibre-MAX transfer remains conditional.
+
+## 2026-10-10 — R2 full coset stages, loop completion, and CI status
+
+**Main checkpoint:** `36d42a0`. For #263/#264/#267/#269
+the actual full GitHub Actions Lean build and permitted-axioms
+audit were SUCCESSFUL before each merge.
+
+1. **#263, 71bfd8e**: locally paired availability of
+   positive/negative signed edges permits the actual
+   `trivialLoopCompletion` construction by extending
+   each partial generator transition with fixed points.
+   Old directed edges embed injectively, and all added
+   edges are geometric loops. This uses the genuine
+   paired-label invariant certified in #262 for weakly
+   complete multi-coset extensions.
+2. **#264, 5aaffcc**: exactly NO new subalphabet B-path
+   relations under trivial completion, for every B.
+   This is a real path induction, deleting only newly
+   inserted loops, not merely an abstract set-level
+   connectedness statement.
+3. **#267, d481438**: instantiate those results on
+   weakly complete tagged multi-coset extensions and,
+   with full all-proper family |A|≥2, prove exact
+   B-skeleton connectivity in the completed EGraph
+   for all selected B⊂A.
+4. **#269, 0032853**: rank-two signed-edge source
+   dichotomy. Any original i-labelled edge in a
+   full proper-coset CE at |A|=2 necessarily has
+   source in the selected complete tagged singleton
+   {i}-constituent. This strengthens the older
+   full-coset vs isolated singleton component base
+   and avoids ambient-coordinate injection.
+
+**Additional accepted mathematical claims (each green after
+complete Lean + permitted-axioms audit):**
+
+- **#266, 0ab7e5a**: explicit signed-alphabet finiteness
+  and finiteness of every complete finite-carrier EGraph's
+  actual generated opposite-permutation transition group.
+- **#268, 57201f3**: exact equivalence of k-stability
+  with kernel of all ≤k-alphabet labelled words, plus
+  the genuinely moved-vertex test for nonidentity
+  transition values in complete stage EGraphs.
+- **#270, a2579c0**: source's rank-two exact full
+  tagged B-coset versus singleton alternative persists
+  through the literal trivial-loop completion.
+- **#271, 36d42a0**: word-kernel theorem for
+  completed unaugmented rank-two full coset stages:
+  a B-word of ambient group value 1 fixes every
+  completed stage vertex (whether in tagged B-coset
+  or isolated singleton). This is a concrete part
+  of the corrected k=1 R2 argument.
+
+**Not yet certified:** #273 literal augmented-cluster
+trivial stage and no-new-C-path theorem, plus stacked
+#274 singleton group-identity word-kernel for these
+augmented stages. Their current GitHub CI governs the claims.
+
+**Next actual mathematical gate:** R2 for the WHOLE
+Definition 5.3 Z₁ family, including augmented
+clusters and augmented full coset extensions,
+then 1-stability of G₂→H₁. Group finiteness,
+unaugmented full-coset geometry and word-kernel
+conditions are necessary but insufficient.
+The higher-rank Section-4 cluster/bridge-free
+induction and final Cayley finite reflection
+remain open; do not assert unconditional PSTS EPPA.
