@@ -69,6 +69,7 @@ import PSTSEPPA.ABO.AugmentedComponentSeparation
 import PSTSEPPA.ABO.Stability
 import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.StabilityRetractability
+import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
 import PSTSEPPA.ABO.StageStabilityWordKernel
 import PSTSEPPA.ABO.SynchronizedProductStability
 import PSTSEPPA.ABO.SynchronizedStageStableCover
@@ -180,6 +181,7 @@ import PSTSEPPA.ABO.RankTwoOffComponentAugmentation
 import PSTSEPPA.ABO.RankTwoOffComponentCompletedStage
 import PSTSEPPA.ABO.FiniteRankTwoType2Stages
 import PSTSEPPA.ABO.RankTwoType2IndexedFamily
+import PSTSEPPA.ABO.RankTwoType2StableCover
 import PSTSEPPA.ABO.RankTwoThreeFamilyStableCover
 import PSTSEPPA.ABO.RankTwoThreeFamilyTwoRetractable
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
