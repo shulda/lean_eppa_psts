@@ -113,7 +113,9 @@ theorem glued_C_reachable_old_iff
       glued_C_path_from_old_reflect
         G gen B g root hMissing C hdis x
         (Sum.inl y) w hw hp
-    exact ⟨w, hw, by simpa only [Sum.inl.injEq] using (hzy ▸ hzPath)⟩
+    have hyz : y = z := Sum.inl.inj hzy
+    subst z
+    exact ⟨w, hw, hzPath⟩
   · rintro ⟨w, hw, hp⟩
     exact ⟨w, hw,
       hp.map (oldHom G gen B g root hMissing)⟩
