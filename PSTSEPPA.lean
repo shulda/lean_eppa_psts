@@ -71,6 +71,7 @@ import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.StabilityRetractability
 import PSTSEPPA.ABO.StageStabilityWordKernel
 import PSTSEPPA.ABO.SynchronizedProductStability
+import PSTSEPPA.ABO.SynchronizedStageStableCover
 import PSTSEPPA.ABO.RankOneRetractability
 import PSTSEPPA.ABO.SelectedCosetStablePathReplacement
 import PSTSEPPA.ABO.ClusterTransport
@@ -144,6 +145,8 @@ import PSTSEPPA.ABO.TrivialLoopCompletion
 import PSTSEPPA.ABO.TrivialCompletionPaths
 import PSTSEPPA.ABO.AugmentedClusterTrivialStage
 import PSTSEPPA.ABO.AugmentedClusterSingletonKernel
+import PSTSEPPA.ABO.AugmentedClusterRankOneKernel
+import PSTSEPPA.ABO.AugmentedClusterIndexedFamily
 import PSTSEPPA.ABO.CompletedFullCosetStage
 import PSTSEPPA.ABO.StandardCosetFamily
 import PSTSEPPA.ABO.RankTwoSingletonEdgeDichotomy
@@ -177,10 +180,11 @@ import PSTSEPPA.ABO.RankTwoOffComponentAugmentation
 import PSTSEPPA.ABO.RankTwoOffComponentCompletedStage
 import PSTSEPPA.ABO.FiniteRankTwoType2Stages
 import PSTSEPPA.ABO.RankTwoType2IndexedFamily
-import PSTSEPPA.ABO.SynchronizedStageStableCover
 import PSTSEPPA.ABO.RankTwoType2StableCover
+import PSTSEPPA.ABO.RankTwoThreeFamilyStableCover
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
+import PSTSEPPA.ABO.RankTwoPlainFullCEKernel
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 import PSTSEPPA.ABO.MultiCosetComponentSupportDichotomy
 import PSTSEPPA.ABO.RankOneArbitraryAmbient
