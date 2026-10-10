@@ -76,6 +76,7 @@ import PSTSEPPA.ABO.StageStabilityWordKernel
 import PSTSEPPA.ABO.SynchronizedProductStability
 import PSTSEPPA.ABO.SynchronizedStageStableCover
 import PSTSEPPA.ABO.RankOneRetractability
+import PSTSEPPA.ABO.UnaryDetectorGroup
 import PSTSEPPA.ABO.SelectedCosetStablePathReplacement
 import PSTSEPPA.ABO.ClusterTransport
 import PSTSEPPA.ABO.CayleySubgraph
