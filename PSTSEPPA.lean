@@ -58,8 +58,10 @@ import PSTSEPPA.ABO.ClusterComponentGraph
 import PSTSEPPA.ABO.ClusterComponentIntersections
 import PSTSEPPA.ABO.AugmentedCluster
 import PSTSEPPA.ABO.IsolatedCosetGluing
-import PSTSEPPA.ABO.IsolatedCosetCompletion
+import PSTSEPPA.ABO.IsolatedCosetOldBPaths
+import PSTSEPPA.ABO.IsolatedCosetOldBCompletedWords
 import PSTSEPPA.ABO.IsolatedCosetGlobalWordKernel
+import PSTSEPPA.ABO.IsolatedCosetCompletion
 import PSTSEPPA.ABO.IsolatedCosetDisjointPaths
 import PSTSEPPA.ABO.AugmentedClusterReflection
 import PSTSEPPA.ABO.AugmentedComponentSlices
