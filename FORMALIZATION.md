@@ -738,3 +738,62 @@ Definition-5.3 family `Z₁`, and the quotient/stability proof
 Theorems 4.5/4.7 and finite reflection also remain open. Do not
 identify the assembled action or word-kernel lemmas with the completed
 ABO tower or with unconditional EPPA for PSTS.
+
+
+### 2026-10-10 — CERTIFIED full rank-one word kernel on genuine rank-two type-(2) completed stages
+
+**Authoritative merged checkpoint:** #299, main merge commit `89ea31c4`.
+Its actual GitHub Actions run `38051990893` succeeded for the complete Lean project and
+permitted-axioms audit. Main CI after the squash merge is checked separately.
+This update SUPERSEDES the preceding 2026-10-10 notes which describe type-(2)
+augmented full coset extensions and the exact rank-two cluster-property base as OPEN.
+
+The geometric and action-kernel progression, all integrated into `main`:
+
+- **#280, #281, #282, #285**: the true rank-two multi-CE off-selected-B
+  vertex has NO original B-signed edge, even a loop; the literal
+  deterministic full B-coset gluing and canonical old/new labelled
+  morphisms exist. The off-skeleton rank-two B-component is exactly a
+  singleton with its unique least component-tagged core support (source
+  Definition 3.22), not merely two-letter admissibility.
+- **#283, #284, #286, #287, #288**: legal trivial-loop completion of
+  singleton type-(2) gluing, attached-coset identity-B-word kernel,
+  exact C-path preservation for C disjoint B, original off-root B-path
+  preservation, and *completed action* transport for B-supported words
+  at every old off-root vertex. All of these individual PRs passed Lean
+  and axiom CI before merge.
+- **#299 (incorporating exact modules from #289–#298)**: the whole
+  singleton type-(2) augmented stage now has the full **rank-one
+  word-kernel property**. The case split is an essential audited point:
+  for EVERY `C : Finset ι` with `C.card ≤ 1`, if a signed word `w`
+  uses only `C` and `SignedWord.evalGroup gen w = 1`, the actual
+  `rankTwoOffComponentCompletedStage` follows `w` to the SAME vertex
+  for EVERY old and fresh vertex. Its genuine transition-group
+  `wordValue w` therefore equals identity.
+  For `C ⊂ A`, the rank-two proper-alphabet dichotomy treats the
+  newly attached B and C disjoint B cases. For `C ∩ A = ∅`,
+  the all-proper multi-coset quotient's actual raw edge labels and
+  the new attached B-edges lie in A, hence outside-A signed labels
+  act ONLY via new loops, irrespective of ambient group values.
+  The elementary `|A|=2`, `|C|≤1` dichotomy ensures exhaustiveness.
+  The underlying 11 source files are present in `main` with Git
+  blob SHAs matching the checked #299 branch. The duplicate component
+  PRs #289–#298 were closed as already integrated by #299.
+
+**Exactly what is NOT proved:** this is a genuine completed type-(2)
+**singleton off-component stage** over an already supplied finite-group
+skeleton. It is not a construction of the finite labelled H₁-cover,
+the full source Definition-5.3 family Z₁ of all required stages,
+nor an actual labelled quotient `G₂→H₁` with `1`-stability.
+Type-(1) augmented-cluster kernel (#274) and ordinary full-CE
+kernel (#271), and dependent-stage disjoint action assembly (#277),
+remain separately certified inputs. Higher-rank cluster geometry,
+bridge-free Section 4 induction, finite reflecting group and final
+unconditional PSTS EPPA remain OPEN.
+
+**Pending, NOT yet certified:** #300, `FiniteRankTwoType2Stages.lean`,
+aims to show finiteness of the concrete tagged quotient, completed
+augmented carrier and transition group when Γ is finite; its first CI
+failed at explicit `Finite` instance synthesis, and the revised
+branch is awaiting its own independent CI. A failed or pending CI
+must NOT be recorded as a formalized result.
