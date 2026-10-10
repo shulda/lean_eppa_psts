@@ -166,6 +166,7 @@ import PSTSEPPA.ABO.MultiCosetFullComponentFromSuperset
 import PSTSEPPA.ABO.RankTwoComponentBase
 import PSTSEPPA.ABO.RankTwoClusterSupportBase
 import PSTSEPPA.ABO.RankTwoClusterPropertyBase
+import PSTSEPPA.ABO.RankTwoOffSkeletonClusterProperty
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
