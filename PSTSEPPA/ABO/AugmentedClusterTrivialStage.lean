@@ -9,7 +9,7 @@ Corrected ABO Section 5 / Definition 5.3 constructs the finite
 family Z_k not only from full coset extensions but also from
 augmented clusters. The earlier completion modules certify that an
 incomplete EGraph may be completed by adding *only loops* when
-its available +i/-i signs are paired at every vertex.
+its available positive and negative signs are paired at every vertex.
 
 Unlike an arbitrary incomplete EGraph, the literal ABO cluster
 and its augmentation are unions of COMPLETE constituent coset
