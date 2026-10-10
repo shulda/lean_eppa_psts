@@ -143,6 +143,7 @@ import PSTSEPPA.ABO.TrivialLoopCompletion
 import PSTSEPPA.ABO.TrivialCompletionOutsideSupport
 import PSTSEPPA.ABO.AllProperCosetEdgeSupport
 import PSTSEPPA.ABO.IsolatedCosetOutsideSupport
+import PSTSEPPA.ABO.RankTwoType2OutsideAlphabet
 import PSTSEPPA.ABO.TrivialCompletionPaths
 import PSTSEPPA.ABO.AugmentedClusterTrivialStage
 import PSTSEPPA.ABO.AugmentedClusterSingletonKernel
