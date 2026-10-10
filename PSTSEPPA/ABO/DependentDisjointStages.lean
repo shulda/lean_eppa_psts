@@ -68,6 +68,9 @@ theorem dependentDisjointStage_letterPerm
     (dependentDisjointStage T).letterPerm s
         (⟨j, x⟩ : Sigma V) =
       ⟨j, (T j).letterPerm s x⟩ := by
+  change (actionGraph (dependentStagePerm T)).letterPerm s
+    (⟨j, x⟩ : Sigma V) = ⟨j, (T j).letterPerm s x⟩
+  rw [actionGraph.letterPerm]
   cases s with
   | pos i =>
       rfl
@@ -111,7 +114,7 @@ theorem dependentDisjointStage_wordValue_eq_one_iff
       ((dependentDisjointStage T).wordValue_eq_one_iff_all_vertices_fixed w).mp
         h (⟨j, x⟩ : Sigma V)
     rw [dependentDisjointStage_followWord] at hfixed
-    exact (Sigma.mk.inj_iff.mp hfixed)
+    exact eq_of_heq (Sigma.mk.inj_iff.mp hfixed).2
   · intro h
     apply ((dependentDisjointStage T).wordValue_eq_one_iff_all_vertices_fixed w).mpr
     rintro ⟨j, x⟩
