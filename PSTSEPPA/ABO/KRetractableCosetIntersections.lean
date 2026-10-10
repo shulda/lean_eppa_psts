@@ -33,7 +33,7 @@ variable {ι Γ : Type*} [Fintype ι] [DecidableEq ι] [Group Γ]
 namespace LabelWord
 
 /-- Inclusion of support alphabets preserves word support, with both signs. -/
-theorem Uses.mono (A B : Finset ι) (hAB : A ⊆ B) :
+theorem Uses.mono_explicit (A B : Finset ι) (hAB : A ⊆ B) :
     ∀ (w : LabelWord ι), Uses A w → Uses B w := by
   intro w
   induction w with
@@ -144,9 +144,9 @@ theorem generatedSubgroup_inf_of_kRetractable
     obtain ⟨q, hq, hqval⟩ :=
       exists_word_uses_eq_of_mem_generatedSubgroup gen B hx.2
     have hpD : LabelWord.Uses (A ∪ B) p :=
-      LabelWord.Uses.mono A (A ∪ B) Finset.subset_union_left p hp
+      LabelWord.Uses.mono_explicit A (A ∪ B) Finset.subset_union_left p hp
     have hqD : LabelWord.Uses (A ∪ B) q :=
-      LabelWord.Uses.mono B (A ∪ B) Finset.subset_union_right q hq
+      LabelWord.Uses.mono_explicit B (A ∪ B) Finset.subset_union_right q hq
     have hEq : PSTS.SignedWord.evalGroup gen p =
         PSTS.SignedWord.evalGroup gen q := hpval.trans hqval.symm
     have hRestricted :=
