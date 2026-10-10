@@ -44,7 +44,13 @@ signed-path equivalence class. -/
 theorem finite_componentIndex (C : Finset ι) :
     Finite (K.ComponentIndex C) := by
   classical
-  infer_instance
+  letI : Finite K.Vertex :=
+    Finite.of_injective (fun x : K.Vertex => x.1)
+      (fun _ _ h => Subtype.ext h)
+  apply Finite.of_surjective (K.componentClass C)
+  intro q
+  induction q using Quotient.inductionOn with
+  | h x => exact ⟨x, rfl⟩
 
 /-- Component-tagged copies of ambient cosets are finite when
 their ambient group Γ is finite. No global coset-map injectivity
@@ -52,6 +58,10 @@ is required. -/
 theorem finite_attachedCosetVertex (C : Finset ι) :
     Finite (K.AttachedCosetVertex C) := by
   classical
+  letI : Finite (K.ComponentIndex C) := K.finite_componentIndex C
+  change Finite
+    (Σ c : K.ComponentIndex C,
+      {x : Γ // x ∈ K.componentAmbientCoset C c})
   infer_instance
 
 /-- The genuine all-proper multi-coset vertex QUOTIENT is finite,
@@ -62,7 +72,21 @@ theorem finite_allProperMultiCosetVertex
     Finite (K.MultiCosetVertex (allProperCosetFamily A)
       hadm hgen hret) := by
   classical
-  infer_instance
+  let P := allProperCosetFamily A
+  letI : Finite (K.MultiCosetRawVertex P) := by
+    change Finite
+      (Σ b : {B : Finset ι // B ∈ P.alphabets},
+        K.AttachedCosetVertex b.1)
+    exact @Finite.instSigma
+      _ _ (inferInstance : Finite {B : Finset ι // B ∈ P.alphabets})
+      (fun b => K.finite_attachedCosetVertex b.1)
+  apply Finite.of_surjective
+    (fun p : K.MultiCosetRawVertex P =>
+      (Quotient.mk (K.multiCosetSetoid P hadm hgen hret) p :
+        K.MultiCosetVertex P hadm hgen hret))
+  intro q
+  induction q using Quotient.inductionOn with
+  | h p => exact ⟨p, rfl⟩
 
 /-- The actual singleton-augmented full B-coset carrier is finite,
 including the original multi-coset quotient and every fresh point. -/
@@ -80,6 +104,22 @@ theorem finite_rankTwoOffComponentCarrier
         (K.admissible_of_card_le_two hcard.le)
         hgen hret z)) := by
   classical
+  letI : Finite
+      (K.MultiCosetVertex (allProperCosetFamily A)
+        (K.admissible_of_card_le_two hcard.le) hgen hret) :=
+    K.finite_allProperMultiCosetVertex
+      (K.admissible_of_card_le_two hcard.le) hgen hret
+  change Finite
+    ((K.MultiCosetVertex (allProperCosetFamily A)
+        (K.admissible_of_card_le_two hcard.le) hgen hret) ⊕
+      {x : Γ //
+        x ∈ generatedLeftCoset gen B
+          (K.multiCosetAmbientValue (allProperCosetFamily A)
+            (K.admissible_of_card_le_two hcard.le)
+            hgen hret z) ∧
+          x ≠ K.multiCosetAmbientValue (allProperCosetFamily A)
+            (K.admissible_of_card_le_two hcard.le)
+            hgen hret z})
   infer_instance
 
 /-- Consequently, every actual legal type-(2) rank-two complete
@@ -99,6 +139,15 @@ theorem finite_rankTwoOffComponent_transitionGroup
     Finite (K.rankTwoOffComponentCompletedStage
       hcard hgen hret B hBP z hOff).transitionGroup := by
   classical
+  letI : Finite
+      (IsolatedCosetGluing.Vertex
+        (K.MultiCosetVertex (allProperCosetFamily A)
+          (K.admissible_of_card_le_two hcard.le) hgen hret)
+        gen B
+        (K.multiCosetAmbientValue (allProperCosetFamily A)
+          (K.admissible_of_card_le_two hcard.le)
+          hgen hret z)) :=
+    K.finite_rankTwoOffComponentCarrier hcard hgen hret B z
   letI : Fintype
       (IsolatedCosetGluing.Vertex
         (K.MultiCosetVertex (allProperCosetFamily A)
