@@ -169,6 +169,7 @@ import PSTSEPPA.ABO.MultiCosetOffComponentProperPatches
 import PSTSEPPA.ABO.MultiCosetSelectedSubalphabetComponents
 import PSTSEPPA.ABO.MultiCosetFullComponentFromSuperset
 import PSTSEPPA.ABO.RankTwoComponentBase
+import PSTSEPPA.ABO.RankOneAlphabetDichotomy
 import PSTSEPPA.ABO.RankTwoClusterSupportBase
 import PSTSEPPA.ABO.RankTwoClusterPropertyBase
 import PSTSEPPA.ABO.RankTwoOffSkeletonClusterProperty
