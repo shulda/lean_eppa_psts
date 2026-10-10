@@ -87,6 +87,7 @@ import PSTSEPPA.ABO.ClusterTransport
 import PSTSEPPA.ABO.CayleySubgraph
 import PSTSEPPA.ABO.CayleySubgraphComponents
 import PSTSEPPA.ABO.LabelledQuotientSkeletonPullback
+import PSTSEPPA.ABO.ConnectedCayleyCoverTranslation
 import PSTSEPPA.ABO.LabelledQuotientSkeletonPathLifting
 import PSTSEPPA.ABO.CayleySubgraphFullCosetPaths
 import PSTSEPPA.ABO.ClusterComponentPaths
