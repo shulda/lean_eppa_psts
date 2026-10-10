@@ -203,6 +203,18 @@ import PSTSEPPA.ABO.CoatomComponentSliceExact
 import PSTSEPPA.ABO.UniversalTaggedSkeletonAnchor
 import PSTSEPPA.ABO.FiniteTaggedIntersectionPaths
 
+import PSTSEPPA.ABO.IsolatedCosetGlobalWordKernel
+import PSTSEPPA.ABO.RankTwoType2GlobalWordKernel
+import PSTSEPPA.ABO.RankTwoType2TransitionKernel
+import PSTSEPPA.ABO.IsolatedCosetDisjointCompletedWords
+import PSTSEPPA.ABO.RankTwoType2AllProperKernel
+import PSTSEPPA.ABO.TrivialCompletionOutsideSupport
+import PSTSEPPA.ABO.AllProperCosetEdgeSupport
+import PSTSEPPA.ABO.IsolatedCosetOutsideSupport
+import PSTSEPPA.ABO.RankTwoType2OutsideAlphabet
+import PSTSEPPA.ABO.RankOneAlphabetDichotomy
+import PSTSEPPA.ABO.RankTwoType2RankOneKernel
+
 /-!
 # EPPA for partial Steiner triple systems
 
