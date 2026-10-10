@@ -37,6 +37,7 @@ import PSTSEPPA.ABO.Morphisms
 import PSTSEPPA.ABO.GraphHomInjectivity
 import PSTSEPPA.ABO.SingleCosetEnlargement
 import PSTSEPPA.ABO.CanonicalCover
+import PSTSEPPA.ABO.TransitionGroupGenerated
 import PSTSEPPA.ABO.FiniteActionStages
 import PSTSEPPA.ABO.DisjointUnionEGraphs
 import PSTSEPPA.ABO.TransitionDisjointUnion
