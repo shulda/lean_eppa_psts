@@ -1156,3 +1156,106 @@ did not synthesize dependent/quotient `Finite` certificates.
 The current revision explicitly constructs finiteness from
 finite components and quotient surjections. **Do not mark
 #300 accepted until its updated CI turns green and merges.**
+
+
+## 2026-10-10 — AUTHORITATIVE post-#334 checkpoint: explicit finite algebraic rank lift and connected-cover factorization
+
+**Repository cutoff:** \`main\` merge \`509636b86531f7d8c43b1ab274dcdf3c1800e0cd\`
+(#334), itself stacked on green merges #328 (\`3b8307e8\`), #329
+(\`2f889cff\`) and #331 (\`4e4af178\`). Each integration PR passed
+a fresh whole-project Lean build and permitted-axiom audit before merge.
+The separate post-merge \`main\` CI must be checked on its own.
+
+**Older entries through #299/#300 above are historical snapshots, NOT
+current open-item lists.** In particular, their statements that finite
+type-(2) carriers, rank-one stage kernels and the rank-two cluster base
+are pending were superseded by later merged source files. The items
+listed as still open below are the *current* conservative boundary.
+
+### A. What is actually formalized
+
+1. **Rank-bounded group calculus:** #310–312, including local-to-global
+   retractability on generated ≤k subalphabet completions and literal
+   subgroup/coset intersections under |A∪B|≤k
+   (\`KRetractableCosetIntersections.lean\`).
+2. **Actual rank-two augmented action and stable finite assembly:**
+   #299–309, #313–316, #318 and consolidated #325. Includes actual
+   finite type-(1), singleton type-(2) augmented full-coset and plain
+   coset-extension completed stages, their complete singleton signed
+   word kernels, one finite dependent stage union and an actual
+   generator-preserving 1-stable synchronous quotient. The source
+   rank-two subgraphs can be literal slices of a SINGLE incomplete
+   ambient Cayley skeleton, not a hypothesized family.
+3. **Concrete finite low-rank tower:** #328 (integrating #324/#326/#327)
+   constructs, for each finite generated labelled Γ and genuine
+   incomplete Γ-Cayley skeleton K, finite groups
+   \`G₂ → H₁ → Γ\`, actual surjective generator-preserving 1-stable
+   quotient maps, 2-retractability of the new groups, composition and
+   1-stability of the composite. Its H₁ skeleton is a TRUE finite
+   graph pullback with actual signed-edge surjectivity and unique
+   signed-path lifting, not an arbitrary finite abstract graph.
+4. **Connected-Cayley normalization and pullback factorization:**
+   #329 and #331 show that, over any FIXED labelled group quotient
+   Q:H→Γ, the coordinates of an actual labelled Cayley-skeleton
+   morphism are left translations of Q on each intrinsic component.
+   Each component then INJECTS as a genuine labelled subgraph of
+   the corresponding translated canonical pullback. Factorization
+   commutes with the original morphism on BOTH vertices and signed
+   oriented edge tokens; it is not merely an ambient-coset identity.
+5. **NEW all-rank algebraic detector theorem:** #334 integrates
+   \`RankDetectorGroup.lean\` and \`RankDetectorSynchronizedLift.lean\`.
+   With finite label set E and arbitrary labelled Γ, let
+   \`D_k = ∏_{A⊆E, |A|≤k} Γ[A]\`, with all labels outside A trivial
+   in each genuine generated-subgroup coordinate, and put
+   \`H_{k+1}=⟨(gen(e),detector(e)):e∈E⟩≤Γ×D_k\`.
+   The actual synchronously generated \`H_{k+1}\` is
+   **(k+1)-retractable for every Γ**, with NO k-retractability
+   assumption on Γ. If Γ is generated and k-retractable, the
+   generator-preserving quotient \`H_{k+1}↠Γ\` is **k-stable**.
+   For finite Γ, \`H_{k+1}\` is finite.
+   The proof checks equality of arbitrary PAIRS of signed words
+   through the corresponding lower-rank detector coordinate after
+   erasure; it neither postulates a group quotient nor assumes
+   generator independence. This is a candidate simplification of
+   the ALGEBRAIC part of corrected ABO Theorem 3.8, not a claim of
+   complete replacement of its finite graph-action family.
+
+### B. Exactly what remains OPEN
+
+- **Source-faithful Y₁/Z₁ and Y_k/Z_k completeness.** Our finite
+  detector and rank-two stage families need not equal, or be proved
+  sufficient for, every H_k-cover \`C_H\` and augmentation indexed
+  by source Definition 5.3, including B=∅. Do not equate a redundant
+  all-coset-stage superfamily or an arbitrary pullback with the
+  actual entire source catalogue without a covering/simulation lemma.
+- **Cover component surjectivity:** #331 proves an INJECTIVE
+  factorization of any intrinsic component into a translated
+  pullback. It does NOT prove its image equals the ENTIRE connected
+  pullback component. A promising next lemma assumes that the
+  original morphism locally lifts every actual target edge and
+  proves surjectivity onto that component by path lifting.
+- **Geometric closure and propagation:** Definition 3.16
+  admissibility, source Definition 3.22 cluster property, whole
+  augmented CE/component classification, embeddedness and
+  bridge-freeness must be verified for the actual chosen stage
+  families at higher ranks, and then Condition 5.2 and
+  corrected Theorem 4.7 / Proposition 5.4 must run without
+  silently strengthening the inductive assumptions.
+- **Naturality/equivariance:** Proposition 5.5's left-translation
+  symmetry through the entire finite stage tower and the eventual
+  finite reflecting group still require proof, followed by the
+  already certified conditional fibre-MAX → PSTS-EPPA transfer.
+
+**Suggested order:** (i) formalize generic genuine signed-path lifting
+from local edge-covering data; (ii) upgrade #331's component embedding
+to image equality for true connected covers; (iii) audit source
+Definition 5.3's precise index set against the proposed canonical
+pullback/slice construction; (iv) prove the exact geometric
+admissibility/cluster/bridge-free induction or fall back to the
+source-specific stage family wherever the shortcut is false.
+
+**Non-claim:** no complete finite reflecting-group construction and
+no unconditional ordinary EPPA theorem for finite partial Steiner
+triple systems is currently certified. The progress above is a
+real group-theoretic and low-rank graph-theoretic formalization
+milestone, not a completion of the project.
