@@ -144,6 +144,7 @@ import PSTSEPPA.ABO.TrivialLoopCompletion
 import PSTSEPPA.ABO.TrivialCompletionPaths
 import PSTSEPPA.ABO.AugmentedClusterTrivialStage
 import PSTSEPPA.ABO.AugmentedClusterSingletonKernel
+import PSTSEPPA.ABO.AugmentedClusterRankOneKernel
 import PSTSEPPA.ABO.CompletedFullCosetStage
 import PSTSEPPA.ABO.StandardCosetFamily
 import PSTSEPPA.ABO.RankTwoSingletonEdgeDichotomy
