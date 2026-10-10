@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
+import PSTSEPPA.ABO.KRetractableCosetIntersections
 import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import Mathlib.Data.Fintype.Pi
 
@@ -75,7 +76,7 @@ theorem coe_evalGroup_rankDetector
 
 /-- Erasing a generator from the selected subalphabet never
 increases its rank: the output remains an ACTUAL detector index. -/
-def RankDetectorIndex.erase (j : RankDetectorIndex ι k) (a : ι) :
+def RankDetectorIndex.erase {k : ℕ} (j : RankDetectorIndex ι k) (a : ι) :
     RankDetectorIndex ι k :=
   ⟨j.1.erase a,
     (Finset.card_le_card (Finset.erase_subset a j.1)).trans j.2⟩
@@ -134,9 +135,24 @@ theorem coe_evalGroup_rankDetector_erase
       (((PSTS.SignedWord.evalGroup
         (rankDetectorGenerator gen k) w) (j.erase a) :
           generatedSubgroup gen (j.erase a).1) : Γ) := by
-  rw [coe_evalGroup_rankDetector, coe_evalGroup_rankDetector,
-    LabelWord.restrictTo_eraseGenerator,
-    LabelWord.restrictTo_erase]
+  have hFilter :
+      LabelWord.restrictTo j.1 (LabelWord.eraseGenerator a w) =
+        LabelWord.restrictTo (j.1.erase a) w := by
+    rw [LabelWord.restrictTo_eraseGenerator,
+      LabelWord.restrictTo_erase]
+  calc
+    (((PSTS.SignedWord.evalGroup (rankDetectorGenerator gen k)
+      (LabelWord.eraseGenerator a w)) j :
+        generatedSubgroup gen j.1) : Γ) =
+      PSTS.SignedWord.evalGroup gen
+        (LabelWord.restrictTo j.1 (LabelWord.eraseGenerator a w)) :=
+      coe_evalGroup_rankDetector gen k (LabelWord.eraseGenerator a w) j
+    _ = PSTS.SignedWord.evalGroup gen
+          (LabelWord.restrictTo (j.1.erase a) w) :=
+      congrArg (PSTS.SignedWord.evalGroup gen) hFilter
+    _ = (((PSTS.SignedWord.evalGroup (rankDetectorGenerator gen k) w)
+          (j.erase a) : generatedSubgroup gen (j.erase a).1) : Γ) :=
+      (coe_evalGroup_rankDetector gen k w (j.erase a)).symm
 
 variable [Finite Γ]
 
