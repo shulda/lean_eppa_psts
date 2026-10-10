@@ -170,7 +170,12 @@ theorem rankDetectorSynchronized_kSuccRetractable
       rw [SynchronizedProduct.sndHom_evalGroup,
         SynchronizedProduct.sndHom_evalGroup]
       exact hDetectorErase
-  · have hc : C.erase a = C := Finset.erase_eq_of_not_mem ha
+  · have hc : C.erase a = C := by
+      ext i
+      by_cases hi : i = a
+      · subst i
+        simp [ha]
+      · simp [Finset.mem_erase, hi]
     have hpNo : LabelWord.eraseGenerator a p = p := by
       rw [LabelWord.eraseGenerator_eq_restrictTo_erase_of_uses C a p hp,
         hc, LabelWord.restrictTo_eq_self_of_uses C p hp]
