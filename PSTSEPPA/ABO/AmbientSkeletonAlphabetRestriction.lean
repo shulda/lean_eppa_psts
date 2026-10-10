@@ -79,7 +79,7 @@ theorem restrictAlphabetHom_edge_injective (B : Finset ι) :
     Function.Injective (K.restrictAlphabetHom B).onEdge := by
   intro e f h
   apply Subtype.ext
-  exact congrArg Subtype.val h
+  exact congrArg (fun t : K.Edge => t.1) h
 
 /-- Lift a realised ambient path whose ACTUAL signed word uses
 only B into the edge-filtered B-skeleton. Every step is the
