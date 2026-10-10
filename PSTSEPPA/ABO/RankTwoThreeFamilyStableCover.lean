@@ -116,6 +116,25 @@ noncomputable def rankTwoThreeFamilyCoverQuotient
   SynchronizedProduct.stageCoverQuotient gen
     (K.rankTwoThreeFamilyStage hcard hgen hret) hgen
 
+/-- The same actual synchronized group projects
+SURJECTIVELY, preserving every positive generator,
+onto the transition group of the WHOLE three-summand
+complete stage. Thus this candidate group really
+realizes all three assembled stage actions, rather
+than merely satisfying a vacuous rank-one stable
+quotient to Γ. -/
+noncomputable def rankTwoThreeFamilyCoverStageQuotient
+    (hcard : A.card = 2)
+    (hgen : IsGenerated gen) (hret : Retractable gen) :
+    LabelledGroupQuotient
+      (SynchronizedProduct.generator gen
+        (K.rankTwoThreeFamilyStage hcard hgen hret).transitionSubgroupGenerator)
+      (K.rankTwoThreeFamilyStage hcard hgen hret).transitionSubgroupGenerator :=
+  SynchronizedProduct.sndQuotient gen
+    (K.rankTwoThreeFamilyStage hcard hgen hret).transitionSubgroupGenerator
+    (K.rankTwoThreeFamilyStage
+      hcard hgen hret).transitionSubgroupGenerator_isGenerated
+
 /-- Rank-one stability of the true finite-stage candidate
 group onto Γ, from the three checked component kernels.
 This is an actual KStable 1 proof about the concrete
