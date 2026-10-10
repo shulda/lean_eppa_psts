@@ -190,6 +190,8 @@ import PSTSEPPA.ABO.RankTwoAmbientLocalStageCover
 import PSTSEPPA.ABO.RankTwoIndexedAmbientStageCover
 import PSTSEPPA.ABO.LocalCosetCayleySlice
 import PSTSEPPA.ABO.RankTwoAllAmbientCosetSliceCover
+import PSTSEPPA.ABO.AmbientSkeletonAlphabetRestriction
+import PSTSEPPA.ABO.RankTwoGlobalSkeletonCover
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
 import PSTSEPPA.ABO.RankTwoPlainFullCEKernel
