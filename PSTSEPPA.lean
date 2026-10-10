@@ -182,6 +182,7 @@ import PSTSEPPA.ABO.FiniteRankTwoType2Stages
 import PSTSEPPA.ABO.RankTwoType2IndexedFamily
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
+import PSTSEPPA.ABO.RankTwoPlainFullCEKernel
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 import PSTSEPPA.ABO.MultiCosetComponentSupportDichotomy
 import PSTSEPPA.ABO.RankOneArbitraryAmbient
