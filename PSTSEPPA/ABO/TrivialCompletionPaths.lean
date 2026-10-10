@@ -56,7 +56,7 @@ theorem trivialLoopCompletion_B_path_reflect
   | nil =>
       have huv : u = v := T.toEGraph.follows_nil_iff.mp hPath
       subst v
-      exact ⟨[], LabelWord.uses_nil B, EGraph.Follows.nil u⟩
+      exact ⟨[], by trivial, EGraph.Follows.nil u⟩
   | cons s w ih =>
       cases hPath with
       | cons e hsrc hlab hrest =>
@@ -78,7 +78,7 @@ theorem trivialLoopCompletion_B_path_reflect
               rw [← htgt]
               exact hrest
             obtain ⟨q, hqUses, hqPath⟩ :=
-              ih hUses.2 htail
+              ih (u := G.target eOld) (v := v) hUses.2 htail
             refine ⟨s :: q, ⟨hUses.1, hqUses⟩, ?_⟩
             exact EGraph.Follows.cons eOld hOldSource hOldLabel hqPath
           · have htgt : T.target e = u := by
@@ -88,7 +88,7 @@ theorem trivialLoopCompletion_B_path_reflect
             have htail : T.toEGraph.Follows u w v := by
               rw [← htgt]
               exact hrest
-            exact ih hUses.2 htail
+            exact ih (u := u) (v := v) hUses.2 htail
 
 /-- Trivial loop completion preserves and reflects the EXISTENCE
 of genuine B-paths between old vertices. All vertices are old,
