@@ -1028,3 +1028,67 @@ conditions are necessary but insufficient.
 The higher-rank Section-4 cluster/bridge-free
 induction and final Cayley finite reflection
 remain open; do not assert unconditional PSTS EPPA.
+
+## 2026-10-10 — repaired Proposition 5.4 R2: augmented type-(1) and assembly checkpoint
+
+All of PRs **#273, #274, #275, #276, #277, #278** were merged following
+green full Lean builds and allowed-axioms audits of their PRs.
+
+**Certified results and exact source scope:**
+
+1. #273: genuine loop-completed *augmented clusters*, preserving all
+   actual labelled-component reachability.
+2. #274: for any signed singleton-supported word w of ambient group
+   value 1, every vertex of an actual completed augmented-cluster
+   stage is fixed by w. The proof splits real full-coset coverage
+   from complete absence of old edges for that singleton label.
+   This discharges the word-kernel aspect of Definition 5.3
+   type-(1) objects (the augmented cluster stages).
+3. #275: synchronous product over two k-stable quotients to one
+   labelled target remains k-stable; this uses BOTH coordinate
+   word-value identities and never assumes joint generator
+   injectivity.
+4. #276: the transition word kernel on the LITERAL disjoint
+   union of two complete E-graphs is the intersection of their
+   kernels, including inverse letters and empty carriers.
+5. #277: an actionGraph on dependent tagged vertex fibres
+   (a sigma-type) has exactly componentwise signed-word
+   evaluations, and hence for any indexed family its transition
+   word kernel is the intersection over all stages. This is an
+   ACTION RE-ENCODING, not a claim that pre-existing edge-token
+   types are literally the same.
+6. #278: the true generated transition subgroup of any complete
+   E-graph satisfies `IsGenerated` for the labelled generators.
+   This supplies the generation hypothesis when applying #275
+   to actual stage transition groups.
+
+**Outstanding hard gate, not a corollary of the six results:**
+The corrected source audit (Project 2A, §8.3) first constructs
+`H₁` and the finite `Z₁`, then analyzes BOTH (1) augmented clusters
+and (2) augmented full coset extensions of `H₁`-covers.
+The formalization now has the word-kernel step for (1) and the
+algebraic disjoint/synchronized assembly. It does **NOT** have:
+
+- the complete rank-two cluster-property conclusion of source
+  Proposition 4.4 (the checked two-letter admissibility alone
+  is insufficient);
+- a literal augmented **full coset extension** stage with the
+  Proposition 3.24 singleton-component classification, or its
+  corresponding completed-stage word-kernel;
+- the real `H₁` cover and finite indexed `Z₁` family with the
+  generator-preserving quotient `G₂→H₁`;
+- a Lean proof that this quotient is `1`-stable, or the later
+  higher-rank Section 4–5 induction and reflecting finite group.
+
+**Recommended next route:** finish the rank-two whole-component
+cluster property, implement the type-(2) augmented full-CE
+construction and singleton full-coset/isolated-component split,
+prove its word-kernel on the genuine completed stage, and combine
+with #274/#277/#278 (and #275 where suitable) to assemble
+`Z₁` and prove the actual corrected R2 `G₂→H₁` 1-stability.
+Do not replace type (2) by an arbitrary augmented cluster,
+or assume its singleton classification without Lean proof.
+
+The fibre-MAX → PSTS-EPPA transfer on green main remains
+**conditional on the finite reflecting group**; no
+unconditional PSTS EPPA has been certified.
