@@ -59,7 +59,7 @@ stage families built from the actual H₁-pullback skeleton
 of the original K, over the finitely generated local H₁-subgroups. -/
 noncomputable abbrev unaryRankTwoStage
     (hgen : IsGenerated gen) :=
-  (K.unaryH1CoverSkeleton hgen).rankTwoGlobalSkeletonStage
+  rankTwoGlobalSkeletonStage (K.unaryH1CoverSkeleton hgen)
     (unarySynchronizedCover_twoRetractable gen)
 
 /-- The ACTUAL G₂ covering group: generated synchronously by
@@ -79,7 +79,7 @@ noncomputable def unaryRankTwoToH1
         (unaryH1Generator gen)
         (K.unaryRankTwoStage hgen).transitionSubgroupGenerator)
       (unaryH1Generator gen) :=
-  (K.unaryH1CoverSkeleton hgen).rankTwoGlobalSkeletonCoverQuotient
+  rankTwoGlobalSkeletonCoverQuotient (K.unaryH1CoverSkeleton hgen)
     (unarySynchronizedCover_twoRetractable gen)
     (unaryH1Generator_isGenerated gen)
 
@@ -88,7 +88,7 @@ the actual rank-two augmented completed stage action. -/
 theorem unaryRankTwoToH1_oneStable
     (hgen : IsGenerated gen) :
     (K.unaryRankTwoToH1 hgen).KStable 1 :=
-  (K.unaryH1CoverSkeleton hgen).rankTwoGlobalSkeletonCoverQuotient_oneStable
+  rankTwoGlobalSkeletonCoverQuotient_oneStable (K.unaryH1CoverSkeleton hgen)
     (unarySynchronizedCover_twoRetractable gen)
     (unaryH1Generator_isGenerated gen)
 
@@ -100,7 +100,7 @@ theorem unaryRankTwoGroup_twoRetractable
         (unaryH1Generator gen)
         (K.unaryRankTwoStage hgen).transitionSubgroupGenerator)
       2 :=
-  (K.unaryH1CoverSkeleton hgen).rankTwoGlobalSkeletonCover_twoRetractable
+  rankTwoGlobalSkeletonCover_twoRetractable (K.unaryH1CoverSkeleton hgen)
     (unarySynchronizedCover_twoRetractable gen)
     (unaryH1Generator_isGenerated gen)
 
@@ -138,7 +138,7 @@ theorem finite_unaryRankTwoGroup
   classical
   letI : Finite (UnarySynchronizedCover gen) :=
     finite_unarySynchronizedCover gen
-  exact (K.unaryH1CoverSkeleton hgen).finite_rankTwoGlobalSkeletonCover
+  exact finite_rankTwoGlobalSkeletonCover (K.unaryH1CoverSkeleton hgen)
     (unarySynchronizedCover_twoRetractable gen)
 
 end CayleySubgraphSpec
