@@ -128,8 +128,8 @@ theorem glued_B_completed_followWord_old_ne_root
     (x : V) (hne : x ≠ root)
     (w : LabelWord ι)
     (hw : LabelWord.Uses B w) :
-    (gluedEGraph G gen B g root hMissing).trivialLoopCompletion hpairedNew |>.followWord
-        (Sum.inl x) w =
+    ((gluedEGraph G gen B g root hMissing).trivialLoopCompletion
+      hpairedNew).followWord (Sum.inl x) w =
       Sum.inl ((G.trivialLoopCompletion hpairedOld).followWord x w) ∧
     (G.trivialLoopCompletion hpairedOld).followWord x w ≠ root := by
   let H := gluedEGraph G gen B g root hMissing
