@@ -64,6 +64,27 @@ noncomputable def rankTwoType2SingletonCoverQuotient
   SynchronizedProduct.stageCoverQuotient gen
     (K.rankTwoType2SingletonFamilyStage hcard hgen hret) hgen
 
+/-- The SAME generated synchronized group also maps
+SURJECTIVELY, preserving every generator, onto the actual
+transition subgroup of the entire dependent type-(2)
+stage family. This is essential: the cover does not just
+project to Γ, it simultaneously REALIZES every stage
+transition through the checked componentwise action. -/
+noncomputable def rankTwoType2SingletonCoverStageQuotient
+    (hcard : A.card = 2)
+    (hgen : IsGenerated gen) (hret : Retractable gen) :
+    LabelledGroupQuotient
+      (SynchronizedProduct.generator gen
+        (K.rankTwoType2SingletonFamilyStage
+          hcard hgen hret).transitionSubgroupGenerator)
+      (K.rankTwoType2SingletonFamilyStage
+        hcard hgen hret).transitionSubgroupGenerator :=
+  SynchronizedProduct.sndQuotient gen
+    (K.rankTwoType2SingletonFamilyStage
+      hcard hgen hret).transitionSubgroupGenerator
+    (K.rankTwoType2SingletonFamilyStage
+      hcard hgen hret).transitionSubgroupGenerator_isGenerated
+
 /-- The concrete synchronized group quotient Γ is
 1-STABLE: it reflects equality of all words on any
 single generator, including inverse letters and labels
