@@ -46,7 +46,7 @@ variable (K : CayleySubgraphSpec gen A)
 /-- The actual generated synchronous group formed from
 the ambient Γ and the transition subgroup of the entire
 dependent disjoint family of genuine type-(2) stages. -/
-abbrev rankTwoType2SingletonCover
+noncomputable abbrev rankTwoType2SingletonCover
     (hcard : A.card = 2)
     (hgen : IsGenerated gen) (hret : Retractable gen) :=
   SynchronizedProduct.stageCover gen
