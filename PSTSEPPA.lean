@@ -64,6 +64,12 @@ import PSTSEPPA.ABO.RankTwoType2GlobalWordKernel
 import PSTSEPPA.ABO.RankTwoType2TransitionKernel
 import PSTSEPPA.ABO.IsolatedCosetDisjointCompletedWords
 import PSTSEPPA.ABO.RankTwoType2AllProperKernel
+import PSTSEPPA.ABO.TrivialCompletionOutsideSupport
+import PSTSEPPA.ABO.AllProperCosetEdgeSupport
+import PSTSEPPA.ABO.IsolatedCosetOutsideSupport
+import PSTSEPPA.ABO.RankTwoType2OutsideAlphabet
+import PSTSEPPA.ABO.RankOneAlphabetDichotomy
+import PSTSEPPA.ABO.RankTwoType2RankOneKernel
 import PSTSEPPA.ABO.IsolatedCosetDisjointPaths
 import PSTSEPPA.ABO.AugmentedClusterReflection
 import PSTSEPPA.ABO.AugmentedComponentSlices
