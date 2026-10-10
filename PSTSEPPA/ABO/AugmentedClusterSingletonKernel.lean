@@ -82,7 +82,7 @@ theorem augmented_singleton_fullCoset_or_missing
         have hfC :
             f.1 ∈ generatedSubgroup gen C := by
           change (cayleyGraph gen).source f ∈ generatedSubgroup gen C
-          simpa only [generatedLeftCoset_one] using hf.1
+          simpa only [generatedLeftCoset_one, SetLike.mem_coe] using hf.1
         exact Or.inl ⟨C, hCP, hfC, hf.2⟩
     · have hxD : x.1 ∈ generatedLeftCoset gen D v :=
         hSrc ▸ hAdded.1
