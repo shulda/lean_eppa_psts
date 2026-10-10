@@ -180,7 +180,11 @@ theorem componentToTranslatedPullback_vertex_injective
     Function.Injective
       (L.componentToTranslatedPullback K Q f B root).onVertex := by
   intro x y hxy
-  exact Subtype.ext (congrArg Subtype.val hxy)
+  have hv : x.1 = y.1 :=
+    congrArg (fun z :
+      (K.translatedPullbackQuotient Q
+        (L.componentTranslationConstant K Q f root)).Vertex => z.1) hxy
+  exact Subtype.ext hv
 
 /-- The factorization is also injective on signed directed edge tokens,
 including formal inverse tokens of loops. -/
@@ -189,7 +193,11 @@ theorem componentToTranslatedPullback_edge_injective
     Function.Injective
       (L.componentToTranslatedPullback K Q f B root).onEdge := by
   intro e₁ e₂ heq
-  exact Subtype.ext (congrArg Subtype.val heq)
+  have hv : e₁.1 = e₂.1 :=
+    congrArg (fun z :
+      (K.translatedPullbackQuotient Q
+        (L.componentTranslationConstant K Q f root)).Edge => z.1) heq
+  exact Subtype.ext hv
 
 /-- Vertexwise commutation of the genuine graph factorization:
 the translated-pullback cover composed with the injected
