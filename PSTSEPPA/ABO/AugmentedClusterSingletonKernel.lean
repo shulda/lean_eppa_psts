@@ -72,6 +72,7 @@ theorem augmented_singleton_fullCoset_or_missing
     · obtain ⟨C, hCP, hOldSrc, hOldLabel⟩ := hCluster
       have hxC : x.1 ∈ generatedSubgroup gen C := hSrc ▸ hOldSrc
       have hiC : i ∈ C := by
+        change signedBase e.1.2 ∈ C at hOldLabel
         rw [hBase] at hOldLabel
         exact hOldLabel
       left
@@ -80,13 +81,15 @@ theorem augmented_singleton_fullCoset_or_missing
       · intro f hf
         have hfC :
             f.1 ∈ generatedSubgroup gen C := by
-          simpa [generatedLeftCoset_one] using hf.1
+          change (cayleyGraph gen).source f ∈ generatedSubgroup gen C
+          simpa only [generatedLeftCoset_one] using hf.1
         exact Or.inl ⟨C, hCP, hfC, hf.2⟩
     · have hxD : x.1 ∈ generatedLeftCoset gen D v :=
         hSrc ▸ hAdded.1
       have hiD : i ∈ D := by
-        rw [hBase] at hAdded
-        exact hAdded.2
+        have hAddedLabel : signedBase e.1.2 ∈ D := hAdded.2
+        rw [hBase] at hAddedLabel
+        exact hAddedLabel
       left
       refine ⟨D, v, hxD, hiD, ?_⟩
       intro f hf
@@ -108,7 +111,7 @@ theorem augmentedTrivialStage_singleton_identity_word_fixes
   let K := P.augmentedCayleySubgraph gen D hDA v
   let paired : K.toEGraph.LocallyPairedLabels :=
     P.augmentedCayleySubgraph_locallyPairedLabels D hDA v
-  let T := P.augmentedTrivialStage D hDA v
+  let T := P.augmentedTrivialStage (gen := gen) D hDA v
   rcases P.augmented_singleton_fullCoset_or_missing D hDA v x i with
     ⟨C, g, hxC, hiC, hfull⟩ | hMissing
   · have hsub : ({i} : Finset ι) ⊆ C :=
