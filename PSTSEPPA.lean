@@ -158,6 +158,7 @@ import PSTSEPPA.ABO.RankTwoComponentBase
 import PSTSEPPA.ABO.RankTwoClusterSupportBase
 import PSTSEPPA.ABO.RankTwoClusterPropertyBase
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
+import PSTSEPPA.ABO.RankTwoCompletedWordKernel
 import PSTSEPPA.ABO.MultiCosetMorphismsUnique
 import PSTSEPPA.ABO.MultiCosetComponentSupportDichotomy
 import PSTSEPPA.ABO.RankOneArbitraryAmbient
