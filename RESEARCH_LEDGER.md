@@ -961,3 +961,55 @@ whole-component cluster property/Propositions 3.23--3.24
 and Theorems 4.5/4.7. Corrected ABO Lemma 5.6 still requires
 its true geometric path replacement; the already certified
 ABO-to-PSTS fibre-MAX transfer remains conditional.
+
+## 2026-10-10 — R2 full coset stages, loop completion, and CI status
+
+**Main checkpoint:** `0032853`. For #263/#264/#267/#269
+the actual full GitHub Actions Lean build and permitted-axioms
+audit were SUCCESSFUL before each merge.
+
+1. **#263, 71bfd8e**: locally paired availability of
+   positive/negative signed edges permits the actual
+   `trivialLoopCompletion` construction by extending
+   each partial generator transition with fixed points.
+   Old directed edges embed injectively, and all added
+   edges are geometric loops. This uses the genuine
+   paired-label invariant certified in #262 for weakly
+   complete multi-coset extensions.
+2. **#264, 5aaffcc**: exactly NO new subalphabet B-path
+   relations under trivial completion, for every B.
+   This is a real path induction, deleting only newly
+   inserted loops, not merely an abstract set-level
+   connectedness statement.
+3. **#267, d481438**: instantiate those results on
+   weakly complete tagged multi-coset extensions and,
+   with full all-proper family |A|≥2, prove exact
+   B-skeleton connectivity in the completed EGraph
+   for all selected B⊂A.
+4. **#269, 0032853**: rank-two signed-edge source
+   dichotomy. Any original i-labelled edge in a
+   full proper-coset CE at |A|=2 necessarily has
+   source in the selected complete tagged singleton
+   {i}-constituent. This strengthens the older
+   full-coset vs isolated singleton component base
+   and avoids ambient-coordinate injection.
+
+**Candidates, not claims of established theorems:**
+#266 signed-label/transition-group finiteness,
+#268 k-stability iff group-word kernel and moved
+vertex, #270 rank-two full-or-singleton component
+classification AFTER trivial completion,
+#271 (stacked on #270) identity-valued B-word
+fixes every vertex of that rank-two complete stage.
+Respect the current GitHub CI for each, which may
+still fail or require refinement.
+
+**Next actual mathematical gate:** R2 for the WHOLE
+Definition 5.3 Z₁ family, including augmented
+clusters and augmented full coset extensions,
+then 1-stability of G₂→H₁. Group finiteness,
+unaugmented full-coset geometry and word-kernel
+conditions are necessary but insufficient.
+The higher-rank Section-4 cluster/bridge-free
+induction and final Cayley finite reflection
+remain open; do not assert unconditional PSTS EPPA.
