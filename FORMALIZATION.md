@@ -628,7 +628,7 @@ with the full reflecting-group existence theorem.
 ### 2026-10-10 — canonical trivial-loop stages and rank-two R2 progress
 
 **Authoritative CI-green main at this checkpoint:** merge
-`0032853` (updating earlier 2026-10-10 checkpoints).
+`36d42a0` (updating earlier 2026-10-10 checkpoints).
 These statements were each included after successful full Lean
 compilation and permitted-axioms audit on the corresponding PR:
 
@@ -662,22 +662,33 @@ compilation and permitted-axioms audit on the corresponding PR:
   edge representatives, not an unjustified globally
   injective ambient Cayley projection.
 
-**Current candidate work, NOT yet certified or merged:**
+**Further certified and merged after full Lean/axiom CI:**
 
-- **#266**: explicit signed alphabet and transition-group
-  finiteness certificate; corrected missing Fintype.product
-  import and rerunning CI.
-- **#268**: precise equivalence between KStable k and the
-  signed group-word kernel criterion, plus transition action
-  moved-vertex witness criterion; corrected an elaboration
-  mistake and rerunning CI.
-- **#270**: transfer the already-certified rank-two full
-  B-coset vs isolated singleton classification to the
-  ACTUAL complete all-proper stage (not just original CE).
-- **#271** (stacked on #270): every ambient identity-valued
-  B-word fixes EVERY vertex of that completed rank-two
-  full-coset stage, proved by full tagged coset word
-  evaluation or the singleton component alternative.
+- **#266**, `0ab7e5a`: finite signed label alphabet and
+  actual finite transition groups of complete E-graphs
+  on finite carriers, including noninjective/trivial generators.
+- **#268**, `57201f3`: k-stability is equivalent to its
+  group-word kernel test on each ≤k alphabet; nontrivial
+  complete-EGraph word values move an actual vertex.
+  These are exact criteria, not a proof of tower stability.
+- **#270**, `a2579c0`: the already-certified rank-two
+  full B-coset OR singleton dichotomy is preserved under
+  the ACTUAL trivial loop completion, for all selected B.
+- **#271**, `36d42a0`: in the completed rank-two full coset
+  stage, any B-supported word of ambient group value 1
+  fixes EVERY vertex. This proves the unaugmented
+  full-coset word-kernel ingredient of R2, not all of G₂→H₁.
+
+**Independently active candidates, pending CI:**
+
+- **#273**: construct a real loop-completed stage for literal
+  augmented clusters (Definition 5.3 Z₁ type 1), with
+  paired sign availability and unchanged all-C reachability.
+- **#274** (stacked on #273): every ambient identity-valued
+  singleton-supported word fixes the action of a complete
+  AUGMENTED cluster stage, using the genuine full-coset
+  versus no-old-edge alternative. Do not mark accepted
+  before its own full Lean build and axiom audit.
 
 **OPEN substantive obstruction:** complete the finite ABO
 tower, including H₁, Z₁ augmented objects, their actual
