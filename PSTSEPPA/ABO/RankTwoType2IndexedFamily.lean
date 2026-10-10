@@ -110,7 +110,7 @@ theorem rankTwoType2SingletonFamily_rankOne_wordValue_eq_one
     (hw : LabelWord.Uses C w)
     (hval : PSTS.SignedWord.evalGroup gen w = 1) :
     (K.rankTwoType2SingletonFamilyStage hcard hgen hret).wordValue w = 1 := by
-  apply (dependentDisjointStage_wordValue_eq_one
+  apply (dependentDisjointStage_wordValue_eq_one_iff
     (fun j => K.rankTwoType2SingletonStage hcard hgen hret j) w).mpr
   intro j
   exact K.rankTwoOffComponentCompletedStage_rankOne_wordValue_eq_one
