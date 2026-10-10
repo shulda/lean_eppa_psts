@@ -72,6 +72,7 @@ import PSTSEPPA.ABO.StabilityRetractability
 import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
 import PSTSEPPA.ABO.KRetractableCosetIntersections
 import PSTSEPPA.ABO.LocalCosetCayleySlice
+import PSTSEPPA.ABO.LocalCosetCayleyPaths
 import PSTSEPPA.ABO.StageStabilityWordKernel
 import PSTSEPPA.ABO.SynchronizedProductStability
 import PSTSEPPA.ABO.SynchronizedStageStableCover
