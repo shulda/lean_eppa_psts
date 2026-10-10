@@ -42,8 +42,10 @@ variable (G : EGraph V Edge ι)
 otherwise stay at u. This is a partial action extended by the
 identity, but is a permutation only under locally paired labels. -/
 noncomputable def loopCompletedStep
-    (s : SignedLabel ι) (u : V) : V :=
-  if h : ∃ e : Edge, G.source e = u ∧ G.label e = s then
+    (G : EGraph V Edge ι)
+    (s : SignedLabel ι) (u : V) : V := by
+  classical
+  exact if h : ∃ e : Edge, G.source e = u ∧ G.label e = s then
     G.target (Classical.choose h)
   else u
 
