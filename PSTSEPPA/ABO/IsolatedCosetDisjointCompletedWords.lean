@@ -132,9 +132,8 @@ theorem glued_disjoint_C_completed_followWord_old
           G gen B g root hMissing C hdis x s hw.1
       have hTStep :
           T.target (T.edgeAt (Sum.inl x) s) =
-            Sum.inl (G.loopCompletedStep s x) := by
-        rw [loopCompletion_target_edgeAt H hpNew]
-        exact hStep
+            Sum.inl (G.loopCompletedStep s x) :=
+        (loopCompletion_target_edgeAt H hpNew (Sum.inl x) s).trans hStep
       have hSStep :
           S.target (S.edgeAt x s) =
             G.loopCompletedStep s x :=
@@ -164,10 +163,10 @@ theorem glued_disjoint_C_completed_followWord_fresh
   | nil => rfl
   | cons s w ih =>
       have hTStep :
-          T.target (T.edgeAt (Sum.inr q) s) = Sum.inr q := by
-        rw [loopCompletion_target_edgeAt H hpNew]
-        exact glued_disjoint_C_loopCompletedStep_fresh
-          G gen B g root hMissing C hdis q s hw.1
+          T.target (T.edgeAt (Sum.inr q) s) = Sum.inr q :=
+        (loopCompletion_target_edgeAt H hpNew (Sum.inr q) s).trans
+          (glued_disjoint_C_loopCompletedStep_fresh
+            G gen B g root hMissing C hdis q s hw.1)
       rw [T.followWord_cons, hTStep]
       exact ih hw.2
 
