@@ -156,9 +156,7 @@ theorem ambient_word_eq_one_of_unaryDetector
           (trivialCompletionGenerator gen ({i} : Finset ι)) w = 1 := by
       have hAt := congrArg
         (fun x : UnaryDetectorGroup gen => x i) hdet
-      change PSTS.SignedWord.evalGroup
-        (trivialCompletionGenerator gen ({i} : Finset ι)) w = 1 at hAt
-      exact hAt
+      simpa [evalGroup_unaryDetector_apply] using hAt
     have hCoe := congrArg
       (fun x : generatedSubgroup gen {i} => (x : Γ)) hCoord
     rw [coe_evalGroup_trivialCompletionGenerator,
@@ -240,8 +238,7 @@ theorem unarySynchronizedDetectorQuotient_oneStable
     have h := congrArg
       (fun x : UnaryGeneratedDetectorGroup gen =>
         (x : UnaryDetectorGroup gen)) hval
-    change PSTS.SignedWord.evalGroup (unaryDetectorGenerator gen) w = 1 at h
-    exact h
+    simpa only [coe_evalGroup_unaryGeneratedDetector, Subgroup.coe_one] using h
   have hAmbient :
       PSTS.SignedWord.evalGroup gen w = 1 :=
     ambient_word_eq_one_of_unaryDetector gen C hC w hw hFull
