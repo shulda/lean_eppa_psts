@@ -28,6 +28,7 @@ namespace ABO
 
 variable {J ι : Type*}
 variable {V Edge : J → Type*}
+variable [Fintype ι] [DecidableEq ι]
 
 /-- The complete signed action on the dependent disjoint
 union of all stage vertex types. A positive letter preserves
