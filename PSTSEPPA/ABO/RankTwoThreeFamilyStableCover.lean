@@ -101,7 +101,7 @@ theorem rankTwoThreeFamilyStage_rankOne_wordValue_eq_one
 /-- A concrete generated synchronized group with ambient
 Γ as its first coordinate and the literal three-family
 transition subgroup as its second coordinate. -/
-abbrev rankTwoThreeFamilyCover
+noncomputable abbrev rankTwoThreeFamilyCover
     (hcard : A.card = 2)
     (hgen : IsGenerated gen) (hret : Retractable gen) :=
   SynchronizedProduct.stageCover gen
