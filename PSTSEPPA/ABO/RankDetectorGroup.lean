@@ -134,8 +134,9 @@ theorem coe_evalGroup_rankDetector_erase
       (((PSTS.SignedWord.evalGroup
         (rankDetectorGenerator gen k) w) (j.erase a) :
           generatedSubgroup gen (j.erase a).1) : Γ) := by
-  rw [coe_evalGroup_rankDetector, coe_evalGroup_rankDetector]
-  exact (LabelWord.restrictTo_erase j.1 a w).symm ▸ rfl
+  rw [coe_evalGroup_rankDetector, coe_evalGroup_rankDetector,
+    LabelWord.restrictTo_eraseGenerator,
+    LabelWord.restrictTo_erase]
 
 variable [Finite Γ]
 
