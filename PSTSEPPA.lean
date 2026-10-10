@@ -71,6 +71,7 @@ import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.SynchronizedGeneratedGroup
 import PSTSEPPA.ABO.StabilityRetractability
 import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
+import PSTSEPPA.ABO.RankDetectorGroup
 import PSTSEPPA.ABO.KRetractableCosetIntersections
 import PSTSEPPA.ABO.LocalCosetCayleySlice
 import PSTSEPPA.ABO.LocalCosetCayleyPaths
