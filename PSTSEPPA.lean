@@ -133,6 +133,7 @@ import PSTSEPPA.ABO.TrivialLoopCompletion
 import PSTSEPPA.ABO.TrivialCompletionPaths
 import PSTSEPPA.ABO.CompletedFullCosetStage
 import PSTSEPPA.ABO.StandardCosetFamily
+import PSTSEPPA.ABO.RankTwoSingletonEdgeDichotomy
 import PSTSEPPA.ABO.LocalCosetEmbedding
 import PSTSEPPA.ABO.MultiCosetParentFold
 import PSTSEPPA.ABO.MultiCosetParentHom
