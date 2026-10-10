@@ -109,8 +109,8 @@ theorem augmentedEdgeSet_sameSourceOpposite
   · exact Or.inl (P.clusterEdgeSet_sameSourceOpposite e hOld)
   · refine Or.inr ⟨hNew.1, ?_⟩
     change signedBase (PSTS.SignedLetter.inv e.2) ∈ B
-    change signedBase e.2 ∈ B at hNew
-    simpa only [signedBase_inv] using hNew.2
+    have hb : signedBase e.2 ∈ B := hNew.2
+    simpa only [signedBase_inv] using hb
 
 /-- The literal cluster, represented as the already-checked
 incomplete Cayley skeleton, satisfies paired signed labels. -/
