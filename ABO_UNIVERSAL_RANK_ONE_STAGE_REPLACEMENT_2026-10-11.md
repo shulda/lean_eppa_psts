@@ -146,6 +146,46 @@ in place of that reverse edge.
 Thus \`(T.e)^{m_e}=\mathrm{id}\` on every type-(1)
 and type-(2) completed stage, including B=∅.
 
+**Why component tags cannot create longer e-cycles.**
+This is the potential loophole in the informal argument and must
+be addressed explicitly when formalizing the source lemma.
+
+For A={e,f} and the plain type-(2) full CE, each intrinsic
+old {e}-component is either a full two-vertex e-orbit
+(or the one-vertex orbit if m_e=1), or a singleton. The
+e-coset attachment completes exactly that ONE old component
+to a full H1[{e}]-orbit, without joining it to another
+old {e}-component. The source gluing relation (3.10)
+identifies constituent points across different labels
+only through a shared point over their INTERSECTION alphabet.
+At rank two, {e}∩{f}=∅, whose only component representatives
+are anchored in the OLD skeleton. Thus an attached NEW
+{e}-point is never identified with a distinct attached
+{f}-point merely because their ambient H1 coordinate agrees.
+The resulting true e-orbits remain of size at most m_e,
+even if ambient coordinates collide.
+
+In a B-augmentation, Proposition 4.4 and the rank-two
+component classification imply that the chosen B-component
+is either already a full unary B-coset (augmentation
+redundant) or a singleton. With B={e}, the latter is
+completed to one new full e-orbit, while all other e-orbits
+are unaffected. With B={f}, any new vertex has no old
+e-edge and trivial completion gives an e-loop. For B=∅,
+no new point is introduced. The type-(1) augmented
+clusters have an even simpler identical orbit argument:
+their constituent e-components are already full unary
+cosets and any B= {e} augmentation completes at most
+one singleton.
+
+This checks the period statement on the ACTUAL tagged
+quotient graph, not on the possibly noninjective map
+to ambient Cayley H1. Positive e-action on all T is
+therefore a disjoint union of 1-cycles and m_e-cycles
+(m_e∈{1,2}). The missing-edge trivial completion
+does not change any nonloop orbit, only adds 1-cycles.
+
+
 ## C. Explicit universal finite complete E-graph
 
 Let \`[M]={0,\ldots,M-1}\`. Define
