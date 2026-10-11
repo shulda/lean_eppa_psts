@@ -38,11 +38,19 @@ On the other hand:
   either already present in the plain completed full extension or a
   singleton off-B augmentation. THIS DOES NOT identify K with every
   genuine H₁-cover of a source component.
-* The hardest genuinely missing proposition is source-faithful
-  construction of ALL C_H from the canonical H_k→X₁ action, followed by
-  the **COMPLETE k-STABILITY of X_{k+1}=Y_k ⊔ overline(Z_k)** and
-  Theorem-4.7 geometric induction. These use the PREVIOUS stage history;
-  they do not follow from k-retractability alone.
+* The later §§4b–4c give a **paper proof outline and a precise
+  componentwise coset-quotient decomposition argument** showing how
+  every source H₁-cover C_H and every completed Z₁ action is simulated
+  by rank-two stages of a SINGLE canonical inverse-image Cayley
+  skeleton K_E. The full source index matching is **not yet a
+  Lean theorem** and depends on building that specific φ:H₁→X₁,
+  source E-preimage and quotient isomorphisms, but there is no
+  remaining unexplained combinatorial case in the rank-one
+  decomposition argument.
+* The genuinely hard high-rank obligations remain the **COMPLETE
+  k-STABILITY of X_{k+1}=Y_k ⊔ overline(Z_k)** via the previous
+  stage-action history and the Theorem-4.7 geometric induction.
+  They do not follow from k-retractability alone.
 
 ## 1. What the source *literally* asks us to index
 
