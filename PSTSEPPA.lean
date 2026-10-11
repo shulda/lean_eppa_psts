@@ -84,6 +84,7 @@ import PSTSEPPA.ABO.UnaryDetectorGroup
 import PSTSEPPA.ABO.UnaryDetectorSynchronizedCover
 import PSTSEPPA.ABO.UnaryH1FiniteGraphCover
 import PSTSEPPA.ABO.UnaryH1RankTwoTower
+import PSTSEPPA.ABO.SourceX1ConcreteH1
 import PSTSEPPA.ABO.SelectedCosetStablePathReplacement
 import PSTSEPPA.ABO.ClusterTransport
 import PSTSEPPA.ABO.CayleySubgraph
