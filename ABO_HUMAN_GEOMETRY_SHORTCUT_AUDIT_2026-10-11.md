@@ -57,6 +57,29 @@ four singleton-alphabet intrinsic components of \(K\) are
 \(\{a,ab\}\) for label \(b\). Exactly two new tagged points are
 added, each with ambient value \(b\), and they remain distinct.
 
+## Even simpler: the ordinary two-piece cluster already separates commuting words
+
+The **genuine rank-two cluster**
+\[
+\operatorname{CL}(\Gamma;\{\{a\},\{b\}\})
+=\Gamma[\{a\}]\cup\Gamma[\{b\}]
+\]
+has precisely three vertices \(1,a,b\), with full \(a\)-coset
+edges between \(1,a\) and full \(b\)-coset edges between \(1,b\).
+It is a literal Cayley-embedded cluster (Lean
+`ClusterSpec.VertexSet/EdgeSet`).
+
+Its **trivial completion**, however, adds a \(b\)-loop at \(a\)
+and an \(a\)-loop at \(b\). Starting at \(1\), the signed words
+\(\mathtt{ab}\) and \(\mathtt{ba}\) then end respectively at \(a\)
+and \(b\), despite \([ab]_\Gamma=[ba]_\Gamma\). So even the
+trivial completion of an **already embedded cluster** does not
+have a rooted cover by the Cayley graph of a globally retractable
+group \(\Gamma\). This phenomenon is easier than the 5-vertex
+full-coset-extension counterexample above, and demonstrates
+why actual completed-stage TRANSITION actions are genuinely
+necessary rather than mere algebraic content projections.
+
 ## What this actually rules out
 
 - It disproves the general shortcut **"the all-rank algebraic detector
