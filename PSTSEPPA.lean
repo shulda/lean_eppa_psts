@@ -216,6 +216,7 @@ import PSTSEPPA.ABO.AllFiniteRankTwoCayleySkeletons
 import PSTSEPPA.ABO.IntrinsicComponentLocalSliceIso
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.SourceH1AllLocalG2
+import PSTSEPPA.ABO.SourceG2LocalCayleyCovers
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
 import PSTSEPPA.ABO.RankTwoPlainFullCEKernel
