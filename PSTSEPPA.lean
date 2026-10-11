@@ -214,6 +214,9 @@ import PSTSEPPA.ABO.UniversalFiniteStageCayleyCover
 import PSTSEPPA.ABO.UniversalStageRealCayleyCover
 import PSTSEPPA.ABO.AllFiniteRankTwoCayleySkeletons
 import PSTSEPPA.ABO.IntrinsicComponentLocalSliceIso
+import PSTSEPPA.ABO.BijectiveGraphPathReflection
+import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
+import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.SourceH1AllLocalG2
 import PSTSEPPA.ABO.SourceG2LocalCayleyCovers
