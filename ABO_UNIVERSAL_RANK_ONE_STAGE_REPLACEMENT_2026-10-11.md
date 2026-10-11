@@ -83,6 +83,36 @@ checked complete two-label source-cover
 classification. For the shortest formalization,
 use M=3|H₁|+1 first and improve later.
 
+### A2. Optional sharper universal bound M=6
+
+The complete source-specific classification in the accompanying
+audit §4e gives these MAXIMUM sizes over one genuine connected
+H₁-cover of a component of E[{e,f}]:
+
+| Original two-label configuration | Plain full CE | Any B-augmentation |
+|---|---:|---:|
+| Two disjoint nonloop edges | 4 | 5 |
+| Two incident, nonparallel nonloop edges | 5 | 6 |
+| Two parallel nonloop edges | 4 | 4 |
+| One loop and one nonloop edge | 2 | 2 |
+| Two loops | 1 | 1 |
+
+All type-(1) augmented clusters have ≤4 vertices. Consequently
+\`M=6\` is sufficient for EVERY actual rank-one Z₁ completed
+stage, provided each source positive generator labels one
+original edge, as in the source initial graph construction.
+A separate exhaustive 83-pattern/177-cover finite census
+independently checked this maximum, including loops and
+parallel edges. The proof is by the finite two-transposition
+source classification, NOT just by relying on the census.
+
+For the cheapest **robust Lean path**, retain the simpler
+classification-free \`M=3|H₁|+1\` bound and prove the whole
+universal stage cover from that. The uniform 6-point
+optimization can be formalized later, if beneficial.
+It is an optional performance/size simplification, not
+a premise of the universal rank-one replacement theorem.
+
 ## B. The other key fact: unary PERIOD PRESERVATION
 
 Every source stage T in Definition 5.3 has its missing edges
