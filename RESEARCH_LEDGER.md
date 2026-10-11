@@ -1160,11 +1160,11 @@ finite components and quotient surjections. **Do not mark
 
 ## 2026-10-10 — AUTHORITATIVE post-#334 checkpoint: explicit finite algebraic rank lift and connected-cover factorization
 
-**Repository cutoff:** \`main\` merge \`509636b86531f7d8c43b1ab274dcdf3c1800e0cd\`
-(#334), itself stacked on green merges #328 (\`3b8307e8\`), #329
-(\`2f889cff\`) and #331 (\`4e4af178\`). Each integration PR passed
+**Repository cutoff:** `main` merge `509636b86531f7d8c43b1ab274dcdf3c1800e0cd`
+(#334), itself stacked on green merges #328 (`3b8307e8`), #329
+(`2f889cff`) and #331 (`4e4af178`). Each integration PR passed
 a fresh whole-project Lean build and permitted-axiom audit before merge.
-The separate post-merge \`main\` CI must be checked on its own.
+The separate post-merge `main` CI must be checked on its own.
 
 **Older entries through #299/#300 above are historical snapshots, NOT
 current open-item lists.** In particular, their statements that finite
@@ -1177,7 +1177,7 @@ listed as still open below are the *current* conservative boundary.
 1. **Rank-bounded group calculus:** #310–312, including local-to-global
    retractability on generated ≤k subalphabet completions and literal
    subgroup/coset intersections under |A∪B|≤k
-   (\`KRetractableCosetIntersections.lean\`).
+   (`KRetractableCosetIntersections.lean`).
 2. **Actual rank-two augmented action and stable finite assembly:**
    #299–309, #313–316, #318 and consolidated #325. Includes actual
    finite type-(1), singleton type-(2) augmented full-coset and plain
@@ -1189,7 +1189,7 @@ listed as still open below are the *current* conservative boundary.
 3. **Concrete finite low-rank tower:** #328 (integrating #324/#326/#327)
    constructs, for each finite generated labelled Γ and genuine
    incomplete Γ-Cayley skeleton K, finite groups
-   \`G₂ → H₁ → Γ\`, actual surjective generator-preserving 1-stable
+   `G₂ → H₁ → Γ`, actual surjective generator-preserving 1-stable
    quotient maps, 2-retractability of the new groups, composition and
    1-stability of the composite. Its H₁ skeleton is a TRUE finite
    graph pullback with actual signed-edge surjectivity and unique
@@ -1203,16 +1203,16 @@ listed as still open below are the *current* conservative boundary.
    commutes with the original morphism on BOTH vertices and signed
    oriented edge tokens; it is not merely an ambient-coset identity.
 5. **NEW all-rank algebraic detector theorem:** #334 integrates
-   \`RankDetectorGroup.lean\` and \`RankDetectorSynchronizedLift.lean\`.
+   `RankDetectorGroup.lean` and `RankDetectorSynchronizedLift.lean`.
    With finite label set E and arbitrary labelled Γ, let
-   \`D_k = ∏_{A⊆E, |A|≤k} Γ[A]\`, with all labels outside A trivial
+   `D_k = ∏_{A⊆E, |A|≤k} Γ[A]`, with all labels outside A trivial
    in each genuine generated-subgroup coordinate, and put
-   \`H_{k+1}=⟨(gen(e),detector(e)):e∈E⟩≤Γ×D_k\`.
-   The actual synchronously generated \`H_{k+1}\` is
+   `H_{k+1}=⟨(gen(e),detector(e)):e∈E⟩≤Γ×D_k`.
+   The actual synchronously generated `H_{k+1}` is
    **(k+1)-retractable for every Γ**, with NO k-retractability
    assumption on Γ. If Γ is generated and k-retractable, the
-   generator-preserving quotient \`H_{k+1}↠Γ\` is **k-stable**.
-   For finite Γ, \`H_{k+1}\` is finite.
+   generator-preserving quotient `H_{k+1}↠Γ` is **k-stable**.
+   For finite Γ, `H_{k+1}` is finite.
    The proof checks equality of arbitrary PAIRS of signed words
    through the corresponding lower-rank detector coordinate after
    erasure; it neither postulates a group quotient nor assumes
@@ -1224,7 +1224,7 @@ listed as still open below are the *current* conservative boundary.
 
 - **Source-faithful Y₁/Z₁ and Y_k/Z_k completeness.** Our finite
   detector and rank-two stage families need not equal, or be proved
-  sufficient for, every H_k-cover \`C_H\` and augmentation indexed
+  sufficient for, every H_k-cover `C_H` and augmentation indexed
   by source Definition 5.3, including B=∅. Do not equate a redundant
   all-coset-stage superfamily or an arbitrary pullback with the
   actual entire source catalogue without a covering/simulation lemma.
@@ -1259,3 +1259,35 @@ no unconditional ordinary EPPA theorem for finite partial Steiner
 triple systems is currently certified. The progress above is a
 real group-theoretic and low-rank graph-theoretic formalization
 milestone, not a completion of the project.
+
+
+### 2026-10-11 — HUMAN FALSIFICATION OF THE ALGEBRA-ONLY GEOMETRY SHORTCUT
+
+**Read before starting another high-rank Lean lemma:**
+[ABO_HUMAN_GEOMETRY_SHORTCUT_AUDIT_2026-10-11.md](ABO_HUMAN_GEOMETRY_SHORTCUT_AUDIT_2026-10-11.md).
+
+Explicit two-letter counterexample: Γ=C₂×C₂ globally retractable;
+K is the signed Cayley path 1–a–ab. Its **admissible**
+full proper-alphabet coset extension has two different new vertices
+with ambient coordinate b: the realised words b and aba starting
+at old 1 end at different points, despite [b]Γ=[aba]Γ.
+The extension has 5 vertices; Cayley Γ has only 4.
+For a globally retractable Γ the bounded-detector synchronous
+group is isomorphic to Γ, hence cannot supply the missing labelled
+cover of this completed stage.
+
+This **does not refute** the source ABO theorem, PSTS EPPA,
+the Lean-certified rank detector theorem #334 or the genuinely
+augmented stage factors formalized earlier. It **does refute**
+any proposal to replace every Definition-5.3 completed
+coset-extension action using only the algebraic rank lift plus
+pullbacks of the OLD Cayley-embedded skeleton. The #331 factorization
+assumes both input graphs already Cayley-embedded and cannot be
+applied to non-embedded augmented coset extensions without circularity.
+
+**Revised urgent human gate:** before major higher-rank Lean work,
+audit ALL source-indexed completed stage transition word kernels,
+particularly the plain B=∅ full CE and augmentations, against the
+chosen construction. Only THEN study source Theorem-4.7 bridge
+freeness and cluster preservation. Component-surjectivity alone
+is insufficient to settle this issue.
