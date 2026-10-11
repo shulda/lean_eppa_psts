@@ -2,7 +2,7 @@
 2026-10-11 · scope: the corrected ABO-I path to finite reflecting groups and PSTS EPPA
 
 **Status: HUMAN CHECK, NOT A NEW LEAN THEOREM.**
-Authoritative Lean baseline: main #334, `5 group detector lift; geometric
+Authoritative Lean baseline: main #334, the all-rank group detector lift; geometric
 normalization #331. Primary source: Auinger–Bitterlich–Otto,
 *Finite approximation of free groups I: the F-inverse cover problem*
 (arXiv:2208.03273v6; final PDF at
@@ -11,7 +11,7 @@ especially Theorem 3.8 (PDF p.19), Theorem 4.7 (p.39–43),
 Definition 5.3 (p.46–47), Proposition 5.4 (p.47–48), Condition 5.2 (p.45)
 and Proposition 3.24 (p.33–34).
 The independent corrected source review is
-``6–8 of `sources/PROJECT2_ABO_AUDIT.md` in the October-7 advisory bundle.
+§§6–8 of `sources/PROJECT2_ABO_AUDIT.md` in the October-7 advisory bundle.
 The specific earlier two-letter counterexamples are in
 `ABO_HUMAN_GEOMETRY_SHORTCUT_AUDIT_2026-10-11.md`.
 
@@ -464,7 +464,7 @@ chosen **canonically from the true initial graph**, rather than arbitrarily.
 
 Let G₁=T(X₁) be the source first transition group and
 H₁=T(Y₁) its actual rank-one unary-detector synchronization
-(algebraically as in ``2 and 4a). Choose the source canonical
+(algebraically as in §§2 and 4a). Choose the source canonical
 covering morphism φ:H₁→X₁, induced from H₁↠G₁ and the
 G₁-action on the vertices of X₁. Let **K_E** be the literal
 INCOMPLETE H₁-Cayley skeleton obtained as the complete inverse
@@ -554,7 +554,7 @@ counterexample has been found to these steps.
 At k≥2, off-skeleton B-components need not be singletons and the
 rank-two type-(2) family ceases to be exhaustive. Also replacing
 X_k and its historical Z_{k-1} action by an arbitrary detector
-group would violate k-stability, as proved in `3.
+group would violate k-stability, as proved in §3.
 
 ## 4d. Explicit first higher-rank geometric obstruction: off-skeleton B-component can be THREE vertices
 
