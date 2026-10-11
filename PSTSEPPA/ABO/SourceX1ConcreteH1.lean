@@ -73,8 +73,7 @@ theorem sourceG1Generator_sq
   change (sourceX1 src dst).transitionGenerator i ^ 2 =
     (1 : RightPerm V)
   change
-    (actionGraph (fun j => Equiv.swap (src j) (dst j))).
-      transitionGenerator i ^ 2 = (1 : RightPerm V)
+    (actionGraph (fun j => Equiv.swap (src j) (dst j))).transitionGenerator i ^ 2 = (1 : RightPerm V)
   rw [actionGraph.transitionGenerator]
   apply MulOpposite.unop_injective
   exact hswap
@@ -89,8 +88,7 @@ theorem sourceG1Generator_loop
   change (sourceX1 src dst).transitionGenerator i =
     (1 : RightPerm V)
   change
-    (actionGraph (fun j => Equiv.swap (src j) (dst j))).
-      transitionGenerator i = (1 : RightPerm V)
+    (actionGraph (fun j => Equiv.swap (src j) (dst j))).transitionGenerator i = (1 : RightPerm V)
   rw [actionGraph.transitionGenerator]
   rw [hloop]
   simp
