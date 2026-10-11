@@ -1341,3 +1341,54 @@ simplifications are impossible.
 source-specific K_E cover decomposition in §4b of the
 new audit. Do NOT start generic higher-rank Lean geometry
 while exact Z1 source-cover matching is unresolved.
+
+### 2026-10-11 — source-faithful followup: exact rank-one reduction, first rank-three obstruction
+
+Full details/proofs and source references in
+[ABO_STAGE_FAMILY_HUMAN_AUDIT_2026-10-11.md](ABO_STAGE_FAMILY_HUMAN_AUDIT_2026-10-11.md)
+(§§3a, 4b–4d, 6a).
+
+**Rank-one GO (HUMAN, not Lean):** Fix canonical H₁→X₁ based graph
+morphism φ and form genuine H₁-Cayley skeleton K_E=φ⁻¹(original E).
+Every actual source H₁-cover of any component of E[A], |A|=2,
+is an intrinsic A-component of K_E contained in a left coset of
+H₁[A]. All changes of canonical source basepoint act by
+left translation, so no extra hidden cover indices remain.
+The **actual component-tagged quotient definition** shows that
+full proper coset extension of a disconnected A-skeleton splits
+canonically as the disjoint union of the full CEs of its true
+A-components, on both vertices AND directed signed edges;
+a B-augmentation affects only its selected component. Thus
+every source Z₁ type-(2) completed stage is an invariant complete
+component of a stage in our rank-two three-family action on
+the appropriate global K_E slice. All type-(1) clusters are
+already exhaustively indexed. This gives the correct **source
+stage-kernel simulation direction** on paper but requires Lean
+formalization of φ/K_E, component quotient isomorphisms, and
+transition action restriction. Do not call source Z₁ closed in
+Lean until these are compiled and audited.
+
+**Rank-two-history test (actual input):** Original E=path
+0--a--1--c--2--b--3 gives G₁=S₄ and H₁ in which disjoint a,b
+commute. Source Z₁ contains the three-vertex two-label cluster
+whose completed a,b actions do not commute. The resulting G₂
+kills the commutation relation before stage k=2, so H₂
+can be 2-stable into G₂ while permitting the same cluster
+in Z₂. This is how historical completed-stage action matters.
+
+**Rank-three NO-GO for singleton extrapolation:** In
+Γ=C₂³, A={a,b,c}, K={1}, the full proper-coset extension
+is the seven-vertex union of the three coordinate planes
+Γ[ab]∪Γ[ac]∪Γ[bc]. At z=c the actual B={a,b}
+component is {c,ac,bc}, a proper three-vertex B-cluster,
+not a singleton nor a full B-coset. Augmenting adds abc.
+This disproves using only our rank-two singleton-off-B
+stage catalogue as a generic higher-rank catalogue. It
+is not asserted that this particular K is a true
+source-H₂-cover.
+
+**Priority:** source-specific K_E exact Z₁ simulation is
+now the next tightly scoped Lean work. Higher ranks must
+reuse the **full previous Z_{k−1} action history** and the
+non-singleton cluster classification (Proposition 3.24);
+the algebraic #334 H-step alone does not suffice.
