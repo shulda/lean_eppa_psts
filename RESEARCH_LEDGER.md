@@ -1291,3 +1291,217 @@ particularly the plain B=∅ full CE and augmentations, against the
 chosen construction. Only THEN study source Theorem-4.7 bridge
 freeness and cluster preservation. Component-surjectivity alone
 is insufficient to settle this issue.
+
+## 2026-10-11 — Paper-level Definition-5.3 human audit (before more Lean)
+
+See [ABO_STAGE_FAMILY_HUMAN_AUDIT_2026-10-11.md](ABO_STAGE_FAMILY_HUMAN_AUDIT_2026-10-11.md)
+for exact source indices, human proofs, finite examples and open obligations.
+
+**Negative result:** For ANY k≥2, arbitrary globally retractable
+Γ=(C₂)^E does not admit a k-stable expansion covering ALL
+source-shaped A-cluster stages for |A|=k+1: the permitted
+3-vertex stage with P={{a},{b}} has noncommuting a,b transitions
+although [a,b]=1 in Γ. Therefore k-retractability and #334
+algebraic detector lift ALONE cannot ensure Definition 5.3's
+completed stage covers with k-stability. Source history
+Z_{k-1} is a mathematically essential additional assumption.
+Do not replace the source Z_k by arbitrary extra action
+superfamilies: additional actions can DESTROY k-stability.
+
+**Positive human lemma, not Lean-certified as equivalence:**
+Under source 1≤k<|E| and k-retractability, our synchronized
+detector group with all |B|≤k is canonically isomorphic as a
+labelled group to the source Theorem-3.8 H_k using exactly
+|A|=k: erasure retractions Γ[A]→Γ[B] make lower detectors
+redundant. In particular our unary algebraic H1 is the
+source H1 group from Y1, once G1=T(X1) is fixed.
+
+**Positive conditional rank-one plan:** For a FIXED rank-two
+K, our three completed families exhaust the stage shapes
+of source Z1: type1 arbitrary clusters; type2 B=∅ plain;
+type2 singleton-B roots either in a completed B-coset
+(augmentation redundant) or singleton (our actual off-component
+augmentation). A canonical way to supply all genuine H1
+covers is to pull back the ORIGINAL E⊆X1 through the
+canonical H1 action map, then extract all intrinsic two-letter
+components in every left H1[A] coset. An actual component-level
+decomposition lemma for the disjoint, tagged full CE quotient
+is still required before this becomes a source-faithful
+certified Z1 stage kernel result.
+
+**Higher ranks:** full Z_k and Proposition 5.4 stage-kernel
+transport, then corrected Theorem 4.7 bridge-freeness,
+remain open. The source's own end-of-Lemma-5.6 discussion
+says the authors tried a reduced family of basic coset
+extensions and could not establish the needed k-stability.
+This is a researched barrier, not proof that all
+simplifications are impossible.
+
+**Next human-first gate:** prove or falsify the five-step
+source-specific K_E cover decomposition in §4b of the
+new audit. Do NOT start generic higher-rank Lean geometry
+while exact Z1 source-cover matching is unresolved.
+
+### 2026-10-11 — source-faithful followup: exact rank-one reduction, first rank-three obstruction
+
+Full details/proofs and source references in
+[ABO_STAGE_FAMILY_HUMAN_AUDIT_2026-10-11.md](ABO_STAGE_FAMILY_HUMAN_AUDIT_2026-10-11.md)
+(§§3a, 4b–4d, 6a).
+
+**Rank-one GO (HUMAN, not Lean):** Fix canonical H₁→X₁ based graph
+morphism φ and form genuine H₁-Cayley skeleton K_E=φ⁻¹(original E).
+Every actual source H₁-cover of any component of E[A], |A|=2,
+is an intrinsic A-component of K_E contained in a left coset of
+H₁[A]. All changes of canonical source basepoint act by
+left translation, so no extra hidden cover indices remain.
+The **actual component-tagged quotient definition** shows that
+full proper coset extension of a disconnected A-skeleton splits
+canonically as the disjoint union of the full CEs of its true
+A-components, on both vertices AND directed signed edges;
+a B-augmentation affects only its selected component. Thus
+every source Z₁ type-(2) completed stage is an invariant complete
+component of a stage in our rank-two three-family action on
+the appropriate global K_E slice. All type-(1) clusters are
+already exhaustively indexed. This gives the correct **source
+stage-kernel simulation direction** on paper but requires Lean
+formalization of φ/K_E, component quotient isomorphisms, and
+transition action restriction. Do not call source Z₁ closed in
+Lean until these are compiled and audited.
+
+**Rank-two-history test (actual input):** Original E=path
+0--a--1--c--2--b--3 gives G₁=S₄ and H₁ in which disjoint a,b
+commute. Source Z₁ contains the three-vertex two-label cluster
+whose completed a,b actions do not commute. The resulting G₂
+kills the commutation relation before stage k=2, so H₂
+can be 2-stable into G₂ while permitting the same cluster
+in Z₂. This is how historical completed-stage action matters.
+
+**Rank-three NO-GO for singleton extrapolation:** In
+Γ=C₂³, A={a,b,c}, K={1}, the full proper-coset extension
+is the seven-vertex union of the three coordinate planes
+Γ[ab]∪Γ[ac]∪Γ[bc]. At z=c the actual B={a,b}
+component is {c,ac,bc}, a proper three-vertex B-cluster,
+not a singleton nor a full B-coset. Augmenting adds abc.
+This disproves using only our rank-two singleton-off-B
+stage catalogue as a generic higher-rank catalogue. It
+is not asserted that this particular K is a true
+source-H₂-cover.
+
+**Equivariance correction (HUMAN):** One chosen basepoint v₀
+for the canonical H₁→X₁ covering map gives stage isomorphism
+types via left translations, but is NOT automatically invariant
+under graph automorphisms moving v₀. To preserve source
+Proposition 5.5 naturally, use the finite **ALL-BASEPOINT**
+family K_E^v=φ_v⁻¹(E), v∈V(X₁), together with every
+rank-two A and left coset representative g∈H₁.
+Input automorphisms carry indices (v,A,g) to
+(τ(v),τ(A),τ_H(g)), coherently. The extra rank-one
+completed stages all have individually certified singleton
+word kernels, so the added redundancy is harmless for
+1-stability. This is the preferred source-faithful
+implementation; it does not yet prove Lean-equivariance
+of the complete stage action or the final finite group.
+
+**Priority:** source-specific K_E exact Z₁ simulation is
+now the next tightly scoped Lean work. Higher ranks must
+reuse the **full previous Z_{k−1} action history** and the
+non-singleton cluster classification (Proposition 3.24);
+the algebraic #334 H-step alone does not suffice.
+
+
+### 2026-10-11 — source-faithful finite two-edge H₁-cover census and sharp Z₁ kernel witness
+
+**HUMAN theorem, independently exhaustively sanity checked, NOT
+a Lean theorem yet.** In the TRUE source \(H₁=T(Y₁)\), every
+connected \(H₁\)-cover of a component of \(E[A]\), \(|A|=2\),
+has **at most FOUR vertices**. The complete local classification
+is in audit §§4e–4g, including all source edge loops and
+parallel nonloop edges. Two incident nonloop edges have
+\(|H₁[A]|=12\) and 3-vertex path covers; two parallel
+nonloop edges have \(|H₁[A]|=4\) and a 4-cycle cover;
+two disjoint nonloop edges have \(H₁[A]=C₂²\) and
+2-vertex edge covers. Loop labels act trivially in \(H₁\).
+The result was cross-checked over ALL 83 two-labelled
+endpoint patterns on ≤4 vertices. The proof is elementary:
+the two source generators are transpositions/identities
+with the corresponding independent unary detectors.
+
+**REAL SOURCE STAGE NONREDUNDANCY:** For connected original
+\(E=0\!-\!e\!-\!1\!-\!g\!-\!2\!-\!f\!-\!3\), and \(A=\{e,f\}\),
+the genuine source \(H₁\)-cover over the e-edge is a single
+old edge. Its plain full CE is an alternating 4-vertex
+path, on which \(ef\) has order **4**. The required
+\(B=\{e\}\)-augmentation at a freshly attached f-point
+is an alternating 5-vertex path with \(ef\) of order
+**5**. The word \((ef)^{12}\) is identity on source
+\(Y₁\), ALL source type-(1) augmented clusters,
+and ALL source type-(2) **plain** full CE stages;
+it is NONidentity on this genuinely required type-(2)
+augmented stage. Hence omitting all type-(2) B≠∅
+augmentations **strictly changes the actual source G₂
+transition-group word kernel**. This does not refute
+the possibility of another proof with a different Z₁.
+
+**Direct disjoint-slice regression:** The corresponding
+ONE local canonical \(H₁[A]\) coset-slice \(K_E^{v=0}\)
+contains two distinct e-edge components on four ambient
+group vertices. Its full source tagged CE has **8**
+vertices, not 4, despite all ambient H₁[A] coordinates
+already being present in old K. After augmentation
+at one new f-point it has **9** vertices, decomposing
+as a 5-point augmented source CE plus the 4-point
+plain CE of the other input component. Identifying
+cross-component equal ambient coordinates would corrupt
+the quotient, and this is a sharp small test for the
+planned componentwise CE isomorphism.
+
+**Practical consequence:** the rank-one Z₁ source-cover
+catalogue is combinatorially *tiny*, even with parallel
+edges/loops. It can be checked by explicit 1–4-vertex
+templates rather than an arbitrary-cover classification.
+But the type-(2) B≠∅ augmentation cannot simply be dropped,
+and the source-specific quotient/component isomorphism
+is still a separate Lean target. **Stop short of claiming
+higher-rank Y_k/Z_k completeness or PSTS EPPA.**
+
+
+### 2026-10-11 — UNIVERSAL RANK-ONE ACTION SUBSTITUTION (HUMAN ONLY; proposed cheaper route)
+
+A NEW alternative to explicit source-Z₁ indexing is fully described in
+[ABO_UNIVERSAL_RANK_ONE_STAGE_REPLACEMENT_2026-10-11.md](ABO_UNIVERSAL_RANK_ONE_STAGE_REPLACEMENT_2026-10-11.md).
+
+For the actual source \(H₁=T(Y₁)\), each label e has order
+\(m_e=1\) (loop edge) or \(m_e=2\) (nonloop edge). Every
+source Definition-5.3 completed Z₁ stage has **at most**
+\(M=3|H₁|+1\) vertices: type-(2) starts with a genuine
+H₁-cover of ≤|H₁| vertices, attaches at most one new
+vertex per old e- or f-component, then at most one for
+the final B-augmentation; type-(1) ≤4.
+
+Critically the positive e-transition in EVERY source Z₁
+complete stage has order dividing \(m_e\), as true source
+e-labelled edges sit in completed H₁[{e}]-cosets and
+all missing edges become loops.
+
+Therefore include **ALL** finite labelled permutation
+actions \(\rho:E\to\operatorname{Sym}(M)\) with
+\(\rho(e)^{m_e}=1\). The truly generated synchronized
+group over \(H₁\) is FINITE and automatically 1-stable
+over \(H₁\) (all singleton group relations are period
+relations). Each genuine source completed Z₁ action
+is isomorphic to an invariant component of a
+padded \(\rho\), so the new group Cayley covers ALL
+source-required Z₁ stages, without enumerating
+their component-indexed quotients. The all-action
+index is naturally invariant under source graph
+automorphisms and generator relabeling.
+Corrected Theorem 4.7 SHOULD give source Cond₂,
+assuming the source rank-two base Proposition 4.4.
+
+**Scope boundary:** This is a valid-looking HUMAN
+first-rank substitute, NOT a Lean theorem or higher-rank
+shortcut. For k≥2, *arbitrary* unary-correct stages can
+destroy k-stability (three-vertex C₂^E commuting
+counterexample). Formalization may favor this simpler
+universal family for H₁→G₂, but the general
+geometric Section-4/5 induction remains critical.
