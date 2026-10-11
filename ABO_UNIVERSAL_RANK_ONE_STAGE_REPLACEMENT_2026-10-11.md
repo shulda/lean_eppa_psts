@@ -55,6 +55,34 @@ one point, hence at most 4.
 Set \`M:=3N+1\`. Since N≥1, **EVERY** exact source \`Z₁\`
 completed stage has no more than M vertices.
 
+### A1. Uniform bound M=13 is possible, independent of |H₁|
+
+The M=3|H₁|+1 bound above is deliberately conservative
+and requires no classification. The independent complete
+rank-one cover classification in the accompanying audit
+§4e gives a stronger fact: **every source H₁-cover
+over a connected component of E[{e,f}] has at most
+four vertices**, including the parallel-edge and loop cases.
+Inserting |C_H|≤4 into the same full-CE counting
+argument yields the entirely INPUT-INDEPENDENT
+\[
+M=3\cdot4+1=13.
+\]
+Type-(1) augmented clusters have ≤4≤13 vertices.
+Thus one can in principle define the universal
+rank-one stage catalogue using \`Sym(Fin 13)\`
+uniformly for every finite original input graph.
+The only source-dependent information needed to
+INDEX the catalogue is the finite label set E
+and whether each original edge is a loop (m_e=1)
+or a nonloop (m_e=2).
+
+This uniform 13-point variant saves the bound
+\`|H₁|\` entirely but relies on the separately
+checked complete two-label source-cover
+classification. For the shortest formalization,
+use M=3|H₁|+1 first and improve later.
+
 ## B. The other key fact: unary PERIOD PRESERVATION
 
 Every source stage T in Definition 5.3 has its missing edges
