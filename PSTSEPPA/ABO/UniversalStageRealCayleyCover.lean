@@ -41,8 +41,7 @@ coordinate projection, not an assumed map to the stage. -/
 noncomputable def stageCoverCayleyHom
     (gen : ι → Γ) (T : CompleteEGraph V Edge ι) (u : V) :
     LabelledGraphHom
-      (cayleyGraph (generator gen T.transitionSubgroupGenerator)).
-        toEGraph.toLabelledGraph
+      (cayleyGraph (generator gen T.transitionSubgroupGenerator)).toEGraph.toLabelledGraph
       T.toEGraph.toLabelledGraph :=
   T.cayleyProjectionFromGroup
     (generator gen T.transitionSubgroupGenerator)
@@ -156,8 +155,7 @@ noncomputable def universalStageCayleyHom
     (j : boundedKernelAllSizesIndex gen k M)
     (x : Fin j.1.val) :
     LabelledGraphHom
-      (cayleyGraph (universalStageGenerator gen k M)).
-        toEGraph.toLabelledGraph
+      (cayleyGraph (universalStageGenerator gen k M)).toEGraph.toLabelledGraph
       (boundedKernelAllSizesStage gen k M).toEGraph.toLabelledGraph :=
   SynchronizedProduct.stageCoverCayleyHom gen
     (boundedKernelAllSizesStage gen k M)
