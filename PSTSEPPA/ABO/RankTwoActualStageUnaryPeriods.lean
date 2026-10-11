@@ -57,7 +57,7 @@ theorem evalGroup_repeatPositive
       (gen i) ^ n := by
   induction n with
   | zero =>
-      rfl
+      simp [repeatPositive, PSTS.SignedWord.evalGroup]
   | succ n ih =>
       change gen i *
         PSTS.SignedWord.evalGroup gen (repeatPositive i n) =
@@ -131,8 +131,7 @@ theorem rankTwoThreeFamilyStage_preserves_periods
     (m : ι → ℕ)
     (hperiod : ∀ i, (gen i) ^ (m i) = 1)
     (i : ι) :
-    (K.rankTwoThreeFamilyStage hcard hgen hret).
-      transitionSubgroupGenerator i ^ (m i) = 1 := by
+    (K.rankTwoThreeFamilyStage hcard hgen hret).transitionSubgroupGenerator i ^ (m i) = 1 := by
   apply completeStage_generator_pow_of_rankOneKernel
     gen (K.rankTwoThreeFamilyStage hcard hgen hret)
     (by
@@ -151,8 +150,7 @@ theorem rankTwoThreeFamilyStage_involutive
     (hgen : IsGenerated gen) (hret : Retractable gen)
     (hinvolutive : ∀ i, (gen i) ^ 2 = 1)
     (i : ι) :
-    (K.rankTwoThreeFamilyStage hcard hgen hret).
-      transitionSubgroupGenerator i ^ 2 = 1 := by
+    (K.rankTwoThreeFamilyStage hcard hgen hret).transitionSubgroupGenerator i ^ 2 = 1 := by
   exact K.rankTwoThreeFamilyStage_preserves_periods
     hcard hgen hret (fun _ => 2) hinvolutive i
 
