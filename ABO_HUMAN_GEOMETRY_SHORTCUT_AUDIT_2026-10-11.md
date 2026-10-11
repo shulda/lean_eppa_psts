@@ -80,6 +80,18 @@ full-coset-extension counterexample above, and demonstrates
 why actual completed-stage TRANSITION actions are genuinely
 necessary rather than mere algebraic content projections.
 
+In fact the positive a- and b-actions on this completed
+three-vertex cluster are the transpositions (1 a) and (1 b),
+which generate S₃. Taking the genuine synchronized subgroup
+of Γ×S₃ separates ab from ba, while the detector-only group
+does not. **Rank matters:** this stage preserves singleton
+relations (hence can be used at k=1), but it separates the
+two-letter relation ab=ba of Γ and would therefore destroy
+2-stability if indiscriminately used as a k=2 stage.
+Higher-rank stage families must simultaneously preserve
+ALL ≤k-letter relations and detect the required geometric
+collisions; adding arbitrary actions is not a free repair.
+
 ## What this actually rules out
 
 - It disproves the general shortcut **"the all-rank algebraic detector
