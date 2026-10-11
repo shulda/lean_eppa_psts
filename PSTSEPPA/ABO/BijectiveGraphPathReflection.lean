@@ -55,7 +55,9 @@ noncomputable def inverseOfBijective
         H.source (f.onEdge ((edgeEquivOfBijective f he).symm e)) :=
           (f.map_source _).symm
       _ = H.source e := by
-        rw [(edgeEquivOfBijective f he).apply_symm_apply e]
+        have hEdgeEval : f.onEdge ((edgeEquivOfBijective f he).symm e) = e :=
+          (edgeEquivOfBijective f he).apply_symm_apply e
+        rw [hEdgeEval]
       _ = f.onVertex ((vertexEquivOfBijective f hv).symm (H.source e)) :=
         ((vertexEquivOfBijective f hv).apply_symm_apply (H.source e)).symm
   map_inv e := by
@@ -66,7 +68,9 @@ noncomputable def inverseOfBijective
       f.onEdge ((edgeEquivOfBijective f he).symm (H.inv e)) =
         H.inv e := (edgeEquivOfBijective f he).apply_symm_apply (H.inv e)
       _ = H.inv (f.onEdge ((edgeEquivOfBijective f he).symm e)) := by
-        rw [(edgeEquivOfBijective f he).apply_symm_apply e]
+        have hEdgeEval : f.onEdge ((edgeEquivOfBijective f he).symm e) = e :=
+          (edgeEquivOfBijective f he).apply_symm_apply e
+        rw [hEdgeEval]
       _ = f.onEdge (G.inv ((edgeEquivOfBijective f he).symm e)) :=
         (f.map_inv _).symm
   map_label e := by
@@ -76,7 +80,9 @@ noncomputable def inverseOfBijective
         H.label (f.onEdge ((edgeEquivOfBijective f he).symm e)) :=
           (f.map_label _).symm
       _ = H.label e := by
-        rw [(edgeEquivOfBijective f he).apply_symm_apply e]
+        have hEdgeEval : f.onEdge ((edgeEquivOfBijective f he).symm e) = e :=
+          (edgeEquivOfBijective f he).apply_symm_apply e
+        rw [hEdgeEval]
 
 @[simp] theorem inverseOfBijective_onVertex_apply
     (f : LabelledGraphHom G H)
