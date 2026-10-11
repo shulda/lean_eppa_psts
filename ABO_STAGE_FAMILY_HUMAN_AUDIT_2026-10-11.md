@@ -784,6 +784,65 @@ augmentation detects order 5, although the ambient \`H₁\`
 has \`ef\` of order 2. All are compatible with required
 **1-stability**, which constrains only one-letter words.
 
+## 4g. NEW: source-faithful test of the DISCONNECTED-slice CE decomposition
+
+The example in §4f is also a stringent test of the proposed
+**single canonical source-skeleton** reduction §4c.
+
+Take the same original connected input path
+\`0 --e-- 1 --g-- 2 --f-- 3\`, fix source basepoint \`v₀=0\`,
+and let \`A={e,f}\`. Since the two source transpositions
+are disjoint, the actual local subgroup is
+\`H₁[A]={1,e,f,ef}\cong C₂²\`.
+
+The inverse image \`K_E^{v₀}\` restricted to this **one**
+\`H₁[A]\` coset contains ALL FOUR ambient group vertices,
+but precisely the TWO original e-edges
+\[
+1\xleftrightarrow{e}e,\qquad
+f\xleftrightarrow{e}ef.
+\]
+The f-generator moves group points, but f-edges of the original
+input graph occur only at source vertices 2,3, which \`v₀\`
+cannot reach using this local {e,f} coset. Thus the second
+displayed e-edge is a DIFFERENT intrinsic A-component, not
+an f-link to the first.
+
+The genuine tagged full CE of this disconnected local slice
+has **8 vertices**, partitioned into two disjoint four-vertex
+alternating paths, each isomorphic to the corresponding
+source \`CE(H₁,C_H;P_A)\`. Every old group coordinate is already
+occupied by one old point. Nonetheless four FRESH attached
+f-coset points are created, whose ambient H₁[A] coordinates
+DUPLICATE coordinates of old points in the *other*
+A-component. They are **not identified**, since the exact
+source (3.10) quotient requires a common old
+\`B\cap C=\varnothing\`-component representative in the
+SAME old A-component, not merely equality of ambient
+group coordinates.
+
+Augmenting the disconnected eight-vertex extension
+at one of the newly attached f-points by B={e} produces
+a **9-vertex** completed stage: a five-vertex augmented
+source component plus the OTHER unchanged four-vertex
+source component. This is precisely the direct-summand
+kernel inclusion asserted in §4c.
+
+Independent finite enumeration of the true tagged coset
+families reproduced \`|CE|=8\` and
+\`|CE@_zH₁[{e}]|=9\` (vs. 4/5 for one source C_H).
+In particular, a shortcut that directly identifies
+equal ambient group values would incorrectly produce
+an object of at most four points, destroy the
+source-stage decomposition and invalidate the
+transition-word kernel comparison.
+
+**Scope:** this validates a nontrivial source instance
+of §4c and provides a finite regression test. It does
+not replace the missing universal Lean proof that
+CE of arbitrary disconnected A-skeletons splits
+over their intrinsic components.
+
 ## 5. Required interfaces: where current Lean stops
 
 | Source obligation | Current Lean ingredient | Human audit verdict |
