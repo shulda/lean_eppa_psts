@@ -797,3 +797,67 @@ augmented carrier and transition group when Γ is finite; its first CI
 failed at explicit `Finite` instance synthesis, and the revised
 branch is awaiting its own independent CI. A failed or pending CI
 must NOT be recorded as a formalized result.
+
+
+### 2026-10-11 — Authoritative #334 checkpoint and human geometry falsification
+
+**Repo main at cut-off:** `509636b86531f7d8c43b1ab274dcdf3c1800e0cd`,
+with **successful post-merge full Lean and allowed-axioms CI**
+(run `38078483414`). The older entries above (including
+"\#300 pending") are HISTORICAL and are superseded by the
+later successful main merges.
+
+**Certified integrated stages:**
+
+- `#300–#318`, `#322`, `#325`: actual finite rank-two
+  completed stage geometry and singleton word kernels; genuine
+  ambient/coset slices; pullbacks of existing incomplete Cayley
+  skeletons along labelled quotients.
+- `#328`: finite generated low-rank group chain
+  `G₂ ↠ H₁ ↠ Γ`, each quotient 1-stable, the new groups
+  2-retractable, actual finite H₁ graph pullback with signed
+  path lifting.
+- `#329`, `#331`: any connected labelled morphism between
+  **already Cayley-embedded** skeletons is a translated quotient
+  map on each intrinsic component, and its component injectively
+  factors through a translated canonical pullback with exact
+  vertex and directed-edge commutation.
+- `#334`: for each `k`, the actual finite synchronously
+  generated group
+  `H_{k+1} ≤ Γ × ∏_{|A|≤k} Γ[A]`
+  is `(k+1)`-retractable without requiring `k`-retractability
+  of `Γ`. If `Γ` is generated and `k`-retractable, the
+  quotient `H_{k+1}↠Γ` is `k`-stable.
+  This is an **ALGEBRAIC** rank lift, not a proof of geometric
+  cover or source full stage-family completeness.
+
+**Critical human counterexample / STOP SIGN:**
+See [ABO_HUMAN_GEOMETRY_SHORTCUT_AUDIT_2026-10-11.md](ABO_HUMAN_GEOMETRY_SHORTCUT_AUDIT_2026-10-11.md).
+For `Γ=C₂×C₂` and the admissible two-letter Cayley path
+`1 —a— a —b— ab`, the full proper-alphabet coset extension
+contains two different points of ambient coordinate `b`:
+true paths `b` and `aba` have distinct endpoints even though
+their group values coincide. The completed extension has five
+vertices; the ambient Cayley group has only four.
+Since `Γ` is already retractable, the detector-based rank
+lift `H_{k+1}` is actually isomorphic to `Γ` and cannot
+cover this completed extension. Thus **retractability and
+k-stability alone cannot replace the geometry of augmented
+coset-extension stage action**. Our rank-two augmented
+transition stages may still distinguish the two endpoints.
+
+**Remaining mathematical gates, in order of risk:** prove
+Cayley covers of the **exact source-indexed**
+`Y_k/Z_k` completed stages, including plain `B=∅`
+full extensions and all prescribed augmented variants;
+derive global higher-rank admissibility, cluster property,
+and bridge-freeness without using the embedding in advance;
+carry equivariance and reach corrected ABO reflecting-group
+existence. Only then discharge the already certified
+conditional Cayley-content → PSTS-EPPA transfer.
+
+**Avoid circular use:** #331 requires both graphs to already
+embed in Cayley graphs; a coset extension may fail to embed.
+The next best human falsification test is the signed-word
+kernel of each required completed stage, **not** merely
+component surjectivity of existing embedded pullback maps.
