@@ -1291,3 +1291,53 @@ particularly the plain B=∅ full CE and augmentations, against the
 chosen construction. Only THEN study source Theorem-4.7 bridge
 freeness and cluster preservation. Component-surjectivity alone
 is insufficient to settle this issue.
+
+## 2026-10-11 — Paper-level Definition-5.3 human audit (before more Lean)
+
+See [ABO_STAGE_FAMILY_HUMAN_AUDIT_2026-10-11.md](ABO_STAGE_FAMILY_HUMAN_AUDIT_2026-10-11.md)
+for exact source indices, human proofs, finite examples and open obligations.
+
+**Negative result:** For ANY k≥2, arbitrary globally retractable
+Γ=(C₂)^E does not admit a k-stable expansion covering ALL
+source-shaped A-cluster stages for |A|=k+1: the permitted
+3-vertex stage with P={{a},{b}} has noncommuting a,b transitions
+although [a,b]=1 in Γ. Therefore k-retractability and #334
+algebraic detector lift ALONE cannot ensure Definition 5.3's
+completed stage covers with k-stability. Source history
+Z_{k-1} is a mathematically essential additional assumption.
+Do not replace the source Z_k by arbitrary extra action
+superfamilies: additional actions can DESTROY k-stability.
+
+**Positive human lemma, not Lean-certified as equivalence:**
+Under source 1≤k<|E| and k-retractability, our synchronized
+detector group with all |B|≤k is canonically isomorphic as a
+labelled group to the source Theorem-3.8 H_k using exactly
+|A|=k: erasure retractions Γ[A]→Γ[B] make lower detectors
+redundant. In particular our unary algebraic H1 is the
+source H1 group from Y1, once G1=T(X1) is fixed.
+
+**Positive conditional rank-one plan:** For a FIXED rank-two
+K, our three completed families exhaust the stage shapes
+of source Z1: type1 arbitrary clusters; type2 B=∅ plain;
+type2 singleton-B roots either in a completed B-coset
+(augmentation redundant) or singleton (our actual off-component
+augmentation). A canonical way to supply all genuine H1
+covers is to pull back the ORIGINAL E⊆X1 through the
+canonical H1 action map, then extract all intrinsic two-letter
+components in every left H1[A] coset. An actual component-level
+decomposition lemma for the disjoint, tagged full CE quotient
+is still required before this becomes a source-faithful
+certified Z1 stage kernel result.
+
+**Higher ranks:** full Z_k and Proposition 5.4 stage-kernel
+transport, then corrected Theorem 4.7 bridge-freeness,
+remain open. The source's own end-of-Lemma-5.6 discussion
+says the authors tried a reduced family of basic coset
+extensions and could not establish the needed k-stability.
+This is a researched barrier, not proof that all
+simplifications are impossible.
+
+**Next human-first gate:** prove or falsify the five-step
+source-specific K_E cover decomposition in §4b of the
+new audit. Do NOT start generic higher-rank Lean geometry
+while exact Z1 source-cover matching is unresolved.
