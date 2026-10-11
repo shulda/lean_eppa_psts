@@ -92,6 +92,7 @@ theorem sourceG1Generator_loop
   rw [actionGraph.transitionGenerator]
   rw [hloop]
   simp
+  rfl
 
 /-- The ACTUAL generated synchronous group of the source X1
 transition group with its own cyclic detector coordinates. -/
