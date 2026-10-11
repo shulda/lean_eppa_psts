@@ -245,6 +245,7 @@ import PSTSEPPA.ABO.IsolatedCosetOutsideSupport
 import PSTSEPPA.ABO.RankTwoType2OutsideAlphabet
 import PSTSEPPA.ABO.RankOneAlphabetDichotomy
 import PSTSEPPA.ABO.RankTwoType2RankOneKernel
+import PSTSEPPA.ABO.UniversalKernelPermutationCatalogue
 
 /-!
 # EPPA for partial Steiner triple systems
