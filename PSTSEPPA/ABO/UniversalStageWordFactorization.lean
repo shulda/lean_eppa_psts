@@ -109,10 +109,10 @@ theorem universalStage_wordEquality_reflects_completedStage
     calc
       U.followWord
           (⟨j, e u⟩ : boundedKernelAllSizesVertex gen k M) p =
-        rightApply (U.wordValue p)
+        CompleteEGraph.rightApply (U.wordValue p)
           (⟨j, e u⟩ : boundedKernelAllSizesVertex gen k M) :=
         (U.rightApply_wordValue p _).symm
-      _ = rightApply (U.wordValue q)
+      _ = CompleteEGraph.rightApply (U.wordValue q)
           (⟨j, e u⟩ : boundedKernelAllSizesVertex gen k M) := by
         rw [hPerm]
       _ = U.followWord
