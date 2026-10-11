@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
+import Mathlib.Tactic.Group
 
 /-!
 # Exact rooted proper-coset translation from a local subgroup into H1
