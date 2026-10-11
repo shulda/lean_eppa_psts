@@ -158,7 +158,16 @@ theorem sourceH1Orbit_cayley_target
         (sourceH1Orbit src dst base e.1) e.2) =
       sourceH1Orbit src dst base
         ((cayleyGraph (sourceH1Generator src dst)).target e) at h
-  rw [actionGraph.edgeAt] at h
+  have hedge :
+      (sourceX1 src dst).edgeAt
+        (sourceH1Orbit src dst base e.1) e.2 =
+      (sourceH1Orbit src dst base e.1, e.2) := by
+    change (actionGraph (fun i => Equiv.swap (src i) (dst i))).edgeAt
+      (sourceH1Orbit src dst base e.1) e.2 =
+        (sourceH1Orbit src dst base e.1, e.2)
+    exact actionGraph.edgeAt
+      (fun i => Equiv.swap (src i) (dst i)) _ _
+  rw [hedge] at h
   exact h.symm
 
 /-- The exact inverse-image Cayley skeleton of the ORIGINAL
