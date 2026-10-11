@@ -620,6 +620,170 @@ A hand and machine check on the eight C₂³ elements
 gives seven CE vertices and the B-component {c,ac,bc};
 the missing vertex is abc.
 
+## 4e. NEW: exact H₁-cover shapes on every two-letter input (including loops and parallel edges)
+
+This strengthens §4a/§4b from "we should understand the H₁-covers"
+to an **explicit complete rank-one classification**. It is a paper
+calculation plus an independent finite enumeration, NOT a Lean theorem.
+
+In the source first action \`X₁\`, every positive input edge \`e\` induces
+the **single transposition** of its endpoints, or identity if it is a
+loop. Its singleton \`G₁[{e}]\` detector is therefore \`C₂\` (nonloop)
+or trivial (loop). For distinct labels \`e,f\`, the *actual subgroup*
+\`H₁[{e,f}]\` consists of words in
+\[
+\widehat e=(t_e,\epsilon_e,0),\qquad
+\widehat f=(t_f,0,\epsilon_f),
+\]
+where a detector bit is absent/trivial if its edge is a loop.
+**Other input labels cannot introduce extra local relations among
+these two generators**, since the word value is coordinatewise in
+the full source group \`H₁\`.
+
+Consequently there are only these source two-edge configurations.
+Here "plain CE" and "augmented CE" refer to the *genuine source
+Definition-5.3 type-(2) stages over ONE actual connected H₁-cover*
+of a component of \`E[{e,f}]\`, not to an arbitrary skeleton.
+
+| Source pair of labelled edges | \`H₁[{e,f}]\` | Each connected H₁-cover \`C_H\` | Plain full CE size | Augmented CE sizes |
+|---|---|---|---:|---|
+| two disjoint nonloop edges | \`C₂²\` | one 2-vertex edge | 4 | 4 or 5 |
+| two nonloop edges meeting in exactly one vertex | dihedral of order 12 | one 3-vertex path | 5 | 5 or 6 |
+| two parallel nonloop edges, even if oppositely oriented | \`C₂²\` | a 4-vertex cycle covering the parallel-edge pair twice | 4 | 4 |
+| one nonloop edge and one loop (attached or disjoint) | \`C₂\` | a 2-vertex edge with optional attached loop, or an isolated loop vertex | 2 | 2 |
+| two loops (same or distinct vertices) | trivial | isolated vertex with its selected original loops | 1 | 1 |
+
+**Derivation, not just a computer census:**
+- Disjoint nonloop transpositions commute and have independent detector
+  bits, so local \`H₁[{e,f}]=C₂²\`. Over either original isolated
+  one-edge component the other edge is *absent*, yielding
+  disjoint copies of that 2-vertex edge in the old preimage graph.
+- At a common endpoint, the original transpositions generate \`S₃\`,
+  and \`\widehat e\widehat f\` has order
+  \`\mathrm{lcm}(3,2)=6\`; the two involutions generate dihedral
+  order 12. A covering of the 3-vertex original **tree**
+  consists of four separate copies of that path.
+- For parallel original edges, \`t_e=t_f\`; independent detector bits
+  yield \`C₂²\`. The true inverse image of the two parallel
+  oriented edges is one 4-cycle (a two-sheeted cover).
+- A loop label acts as identity in \`X₁\` and its singleton
+  detector is trivial. The remaining nonloop edge, if any,
+  generates \`C₂\`. Two loop labels generate the trivial group.
+
+Each \`H₁\` component is contained in a left
+\`H₁[{e,f}]\` coset; coset translations and arbitrary source
+basepoints do not change any of these component isomorphism types.
+There are **no rank-one source \`C_H\` components larger than 4 vertices**.
+
+An independent exhaustive enumerator checked all **83** ordered
+two-labelled-edge endpoint patterns on at most four vertices
+(where endpoint order within an edge is immaterial, labels are
+distinct, and loops, parallel edges and disconnected configurations
+are included). It enumerated the actual synchronized two-letter
+group, the inverse image of the ORIGINAL true edge tokens and
+its intrinsic connected components. The largest component had
+four vertices. The independent tagged full-CE/augmentation
+calculation also reproduced all stage vertex counts in the table.
+This is finite **sanity checking**, not the proof of the general
+conclusion (which is the preceding subgroup-action argument).
+
+**Impact on formalization:** an exact source-\`Z₁\` index matching
+can in principle be reduced to these finitely many elementary
+rank-two templates, plus the existing source-\`H₁\` action,
+coset translations and component-quotient isomorphisms.
+The theorem "all \`Z₁\` cases are simulated by our actual
+rank-two stage family" is still not in Lean, but there is no
+large uncontrolled class of source \`H₁\`-covers to classify at
+rank one. The loop and parallel-edge cases are essential:
+silently treating all \`E[A]\` components as trees is false.
+
+## 4f. NEW: a genuine source-Z₁ type-(2) augmentation changes the word kernel
+
+The general C₂² counterexample in the earlier audit is now
+realised in an **actual source input**. Let the original connected
+graph \`E\` be the four-vertex path
+\[
+0\xrightarrow{e}1\xrightarrow{g}2\xrightarrow{f}3,
+\]
+with distinct edge labels. The two labels \`e,f\` are disjoint.
+Thus the actual \`H₁[{e,f}]\cong C₂²\`; this is **not** an
+arbitrary surrogate group.
+
+Fix the source \`E[{e,f}]\`-component containing the original
+\`e\`-edge. A genuine \`H₁\`-cover of it is a **single e-edge**
+\[
+u\xleftrightarrow{e}ue.
+\]
+Its **plain** full proper-alphabet coset extension attaches
+distinct \`f\`-cosets at \`u\` and \`ue\`; the literal graph is
+the four-vertex alternating path
+\[
+uf\xleftrightarrow{f}u
+\xleftrightarrow{e}ue
+\xleftrightarrow{f}uef.
+\]
+After trivial completion its positive transition permutations are
+\[
+t_e=(u\ ue),\qquad
+t_f=(u\ uf)(ue\ uef).
+\]
+Therefore \`t_et_f\` is a **4-cycle**.
+
+Definition 5.3(2) also REQUIRES augmentation at the genuine new
+vertex \`uf\` with \`B=\{e\}\`. Its true \`e\`-component is a
+singleton. The augmentation attaches a fresh vertex \`z\` of
+ambient coordinate \`uef\`, different from the already present
+tagged point \`uef\`. The resulting five-vertex graph is
+\[
+z\xleftrightarrow{e}uf
+\xleftrightarrow{f}u
+\xleftrightarrow{e}ue
+\xleftrightarrow{f}uef.
+\]
+After trivial completion,
+\[
+t_e=(z\ uf)(u\ ue),\qquad
+t_f=(uf\ u)(ue\ uef),
+\]
+and \`t_et_f\` is a **5-cycle**.
+
+Take the signed positive word \`w=(ef)^{12}\`.
+It acts trivially on
+- source \`Y₁\`: the e- and f-transpositions are disjoint,
+  and the corresponding rank-one detectors are independent,
+  so \`ef\` has order 2;
+- **every source type-(1) cluster or augmentation**:
+  if its parent alphabet omits e or f, the absent generator
+  acts as identity, and the remaining generator is an involution;
+  if its parent alphabet is \`\{e,f\}\`, its entire actual
+  augmented cluster sits inside the four-element \`C₂²\`,
+  so the permutation \`ef\` has order 1, 2, 3 or 4;
+- **every PLAIN source type-(2) CE**: for parent
+  \`\{e,f\}\`, its components are the two disjoint old edge
+  covers, each giving an alternating four-vertex path and
+  an \`ef\` 4-cycle. For parents \`\{e,g\}\` or \`\{g,f\}\`,
+  the missing \`f\` or \`e\` acts trivially after completion,
+  so \`ef\` has order dividing 2.
+
+But \`w\` does **not** act trivially on the displayed genuine
+type-(2) B≠∅-augmented CE, because \`5\nmid12\`.
+
+This proves a sharp, **source-faithful kernel nonredundancy**:
+dropping all type-(2) B≠∅ augmentations from this source's
+\`Z₁\` strictly enlarges the common transition word kernel,
+even while retaining *all* its type-(1) stages and *all*
+plain type-(2) CEs. It is NOT a proof that a different
+reduced construction cannot still achieve the ultimate EPPA;
+it does rule out the proposal that these augmentation actions
+are redundant or that a detector-only rank lift reproduces the
+source \`G₂\`.
+
+It also explains how stage history can create much larger
+orders from very small Cayley groups: plain CE detects order 4,
+augmentation detects order 5, although the ambient \`H₁\`
+has \`ef\` of order 2. All are compatible with required
+**1-stability**, which constrains only one-letter words.
+
 ## 5. Required interfaces: where current Lean stops
 
 | Source obligation | Current Lean ingredient | Human audit verdict |
