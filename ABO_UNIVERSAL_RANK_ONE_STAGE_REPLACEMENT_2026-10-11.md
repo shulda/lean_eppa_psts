@@ -229,6 +229,91 @@ implements exactly the first-step symmetry analogue
 of source Proposition 5.5, with no arbitrary
 choice of graph component/transporter.
 
+## C4. Exact human theorem and a conservative Lean interface
+
+The rank-one replacement can be stated as a standalone abstract
+finite-group theorem, separating its trivial universal-action
+argument from ALL source-specific graph geometry.
+
+Let \((E,m)\) be a finite alphabet with \(m_e≥1\).
+Let \((H,\eta)\) be a finite **E-generated** group such that
+each distinguished generator \(\eta(e)\) has **exact order**
+\(m_e\). Choose a positive integer M. Form the finite action
+family
+\[
+\mathcal P(E,m,M)
+ =\{\rho:E\to\mathrm{Sym}(M):
+       \rho(e)^{m_e}=\mathrm{id}\ \forall e\},
+\]
+and its generated synchronized group
+\[
+U(H,m,M)
+ := \big\langle
+   \big(\eta(e),(\rho(e))_{\rho\in\mathcal P(E,m,M)}\big):
+   e\in E\big\rangle
+ \le H\times\prod_{\rho\in\mathcal P(E,m,M)}
+      \mathrm{Sym}(M).
+\]
+
+**Abstract assertions, admitting elementary proofs:**
+
+1. The first projection \(U↠H\) is a surjective labelled
+   group homomorphism, provided \(\eta(E)\) generates H.
+2. It is **1-stable**, because the only one-letter relations
+   in H are exponent-\(m_e\) relations, satisfied in every
+   \(\rho\).
+3. Every complete E-graph T with \(|V(T)|≤M\) and each
+   generator permutation of order dividing \(m_e\) is
+   a labelled invariant subgraph of the \(\rho_T\)-action
+   for SOME \(\rho_T\in\mathcal P(E,m,M)\), by padding the
+   underlying finite permutation action with fixed points.
+   In particular, every connected component T₀ of T
+   is **canonically covered** by Cayley U (for each selected
+   root \(v\in T_0\)).
+4. Every permutation \(\sigma:E\to E\) preserving \(m\)
+   permutes the finite family \(\mathcal P(E,m,M)\)
+   functorially. If \(\sigma\) extends to an automorphism
+   of H, it also extends to an automorphism of U.
+   Signed relabelings are harmless when \(m_e≤2\):
+   inversion and the positive generator have the same
+   effect on the added permutations.
+
+No coset-extension, cluster, source X₁ or source E occurs
+in these four abstract assertions.
+
+**Source specialization:** take \(H=H_1\),
+\(m_e\in\{1,2\}\) and \(M=3|H_1|+1\).
+To connect this abstract theorem to source Definition 5.3
+one needs only TWO genuine source-specific lemmas:
+
+(A) Every completed Z₁ stage has at most M vertices.
+(B) In EVERY Z₁ stage T, positive e acts with period
+    dividing \(m_e\).
+
+These are checked on paper in §§A–B above and are
+simple enough to prove directly over the existing
+source weakly-complete/full-coset model; unlike the
+previous proposed matching theorem, they need NO
+classification of individual H₁-cover components.
+
+**Suggested Lean dependency order (not yet executed):**
+- Build finite \(\mathcal P(E,m,M)\) and its complete E-graph
+  as a dependent tagged disjoint union, reusing
+  \`FiniteActionStages\` and \`DependentDisjointStages\`.
+- Use the existing \`SynchronizedProduct\` and
+  \`SynchronizedProductStability\` infrastructures
+  to construct U, prove its generatedness, finite
+  carrier and rank-one stability.
+- Prove abstract padding/covering theorem for arbitrary
+  finite complete E-graphs T with period constraints.
+- Separately prove source Z₁ bounds and unary period
+  from full coset geometry; link the abstract covering
+  theorem to the corrected Theorem 4.7 base only then.
+
+The abstract algebraic theorem can be formalized FIRST
+and audited independently. It cannot by itself certify
+source Cond₂ or the higher-rank reflecting group.
+
 ## D. What follows and what DOES NOT
 
 **Conditional human implication:** corrected source
