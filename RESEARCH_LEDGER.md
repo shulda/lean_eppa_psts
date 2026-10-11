@@ -1387,6 +1387,21 @@ stage catalogue as a generic higher-rank catalogue. It
 is not asserted that this particular K is a true
 source-H₂-cover.
 
+**Equivariance correction (HUMAN):** One chosen basepoint v₀
+for the canonical H₁→X₁ covering map gives stage isomorphism
+types via left translations, but is NOT automatically invariant
+under graph automorphisms moving v₀. To preserve source
+Proposition 5.5 naturally, use the finite **ALL-BASEPOINT**
+family K_E^v=φ_v⁻¹(E), v∈V(X₁), together with every
+rank-two A and left coset representative g∈H₁.
+Input automorphisms carry indices (v,A,g) to
+(τ(v),τ(A),τ_H(g)), coherently. The extra rank-one
+completed stages all have individually certified singleton
+word kernels, so the added redundancy is harmless for
+1-stability. This is the preferred source-faithful
+implementation; it does not yet prove Lean-equivariance
+of the complete stage action or the final finite group.
+
 **Priority:** source-specific K_E exact Z₁ simulation is
 now the next tightly scoped Lean work. Higher ranks must
 reuse the **full previous Z_{k−1} action history** and the
