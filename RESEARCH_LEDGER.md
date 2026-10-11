@@ -1463,3 +1463,45 @@ But the type-(2) B≠∅ augmentation cannot simply be dropped,
 and the source-specific quotient/component isomorphism
 is still a separate Lean target. **Stop short of claiming
 higher-rank Y_k/Z_k completeness or PSTS EPPA.**
+
+
+### 2026-10-11 — UNIVERSAL RANK-ONE ACTION SUBSTITUTION (HUMAN ONLY; proposed cheaper route)
+
+A NEW alternative to explicit source-Z₁ indexing is fully described in
+[ABO_UNIVERSAL_RANK_ONE_STAGE_REPLACEMENT_2026-10-11.md](ABO_UNIVERSAL_RANK_ONE_STAGE_REPLACEMENT_2026-10-11.md).
+
+For the actual source \(H₁=T(Y₁)\), each label e has order
+\(m_e=1\) (loop edge) or \(m_e=2\) (nonloop edge). Every
+source Definition-5.3 completed Z₁ stage has **at most**
+\(M=3|H₁|+1\) vertices: type-(2) starts with a genuine
+H₁-cover of ≤|H₁| vertices, attaches at most one new
+vertex per old e- or f-component, then at most one for
+the final B-augmentation; type-(1) ≤4.
+
+Critically the positive e-transition in EVERY source Z₁
+complete stage has order dividing \(m_e\), as true source
+e-labelled edges sit in completed H₁[{e}]-cosets and
+all missing edges become loops.
+
+Therefore include **ALL** finite labelled permutation
+actions \(\rho:E\to\operatorname{Sym}(M)\) with
+\(\rho(e)^{m_e}=1\). The truly generated synchronized
+group over \(H₁\) is FINITE and automatically 1-stable
+over \(H₁\) (all singleton group relations are period
+relations). Each genuine source completed Z₁ action
+is isomorphic to an invariant component of a
+padded \(\rho\), so the new group Cayley covers ALL
+source-required Z₁ stages, without enumerating
+their component-indexed quotients. The all-action
+index is naturally invariant under source graph
+automorphisms and generator relabeling.
+Corrected Theorem 4.7 SHOULD give source Cond₂,
+assuming the source rank-two base Proposition 4.4.
+
+**Scope boundary:** This is a valid-looking HUMAN
+first-rank substitute, NOT a Lean theorem or higher-rank
+shortcut. For k≥2, *arbitrary* unary-correct stages can
+destroy k-stability (three-vertex C₂^E commuting
+counterexample). Formalization may favor this simpler
+universal family for H₁→G₂, but the general
+geometric Section-4/5 induction remains critical.
