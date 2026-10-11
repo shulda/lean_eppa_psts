@@ -1505,3 +1505,39 @@ destroy k-stability (three-vertex C₂^E commuting
 counterexample). Formalization may favor this simpler
 universal family for H₁→G₂, but the general
 geometric Section-4/5 induction remains critical.
+
+
+## 2026-10-11 — CERTIFIED first-rank source/universal milestone (main 05c3486)
+
+**Authoritative frozen cut-off:** `05c3486113d257fd93193768a24e2c5b605ca6eb` on `main`. All statements below tagged CERTIFIED were merged only after the complete Lean build, the independent 256-case ABO regression and allowed-axioms audit (allowlist: `propext`, `Classical.choice`, `Quot.sound`). Pending work after this cut-off must not be silently promoted.
+
+### CERTIFIED mathematical deliverables
+
+1. **#337–#339:** actual finite all-permutation action catalogues with the exact rank-`k` signed-word kernel, a generated synchronised `k`-stable quotient, and an all-sizes `0≤n≤M` variant. This is an algebraic catalogue, not a theorem about source `Z_k`.
+2. **#340:** literal based Cayley-to-stage morphisms from any synchronised generated stage group, with exact reachable-component vertex and directed signed-edge images. No ambient-coordinate injectivity.
+3. **#342:** true rank-two completed THREE-family coset/augmentation stages inherit every ambient singleton generator period, from the previously certified whole-stage rank-one kernel.
+4. **#343:** concrete finite source-shaped `X₁,G₁,H₁` from original edge transpositions and unary detectors. Actual `H₁→G₁` is 1-stable, `H₁` is 2-retractable, all positive generators square to one, and input loops give literal identity. This is NOT yet identified with paper's exact `T(Y₁)`.
+5. **#344:** all genuine incomplete `A`-Cayley skeletons `K` for a *fixed* rank-two `A` over a finite globally retractable group form a finite family; synchronising their real three-family completed stages gives a finite 1-stable, 2-retractable group.
+6. **#345/#347 integrated in #348:** remove **global** retractability of the ambient: a merely 2-retractable finite generated `Γ` suffices. Enumerate ALL two-letter alphabets and ALL actual local `Γ[A]` signed Cayley skeletons. This yields a genuine finite 1-stable and 2-retractable synchronised group; when `Γ` is the concrete source-shaped `H₁`, it is a **concrete finite input-dependent `G₂`** with labelled surjective 1-stable projections `G₂↠H₁↠G₁`. It is a source-related SUPERFAMILY, not the proved exact `Z₁`.
+7. **#349:** from every original source base vertex build the TRUE INCOMPLETE `H₁` Cayley preimage of the ORIGINAL oriented graph, using precisely its original signed edges (not artificially filled-in `X₁` transitions). Actual old signed paths lift from any selected preimage, and intrinsic subalphabet-component images are exact.
+8. **#346 (clean carry of #341):** transport an arbitrary finite completed graph's actual signed action along `V≃Fin n`, preserve the rank-`k` kernel, and insert it into the all-sizes finite action catalogue without padding.
+9. **#354 (clean carry of #350):** if two signed words have equal values in the actual generated universal group, their endpoints agree on EVERY vertex of EVERY size-bounded kernel-correct finite completed stage.
+10. **#356 (clean carry of #351):** the universal finite group `U(Γ,k,M)` has an ACTUAL labelled Cayley-cover morphism onto each rooted connected component of EVERY completed finite stage satisfying the bounded-size and rank-`k` word-kernel conditions, with exact signed-edge and vertex ranges.
+11. **#352:** EVERY true intrinsic signed B-component of ANY incomplete Cayley skeleton is literally vertex- AND directed-edge-isomorphic to its rooted translation into the local generated subgroup `Γ[B]`. The root corresponds to the local identity.
+
+### DO NOT CLAIM — still OPEN
+
+- The finite group `H₁` from #343 is a valid *source-shaped alternative* but has not been identified with the exact printed `T(Y₁)`; any invocation of a theorem formulated about the literal `Y₁` must check/replace that hypothesis.
+- The local `G₂` group in #348 covers the actual constructed local-three-family stages. **A complete correspondence with every source Definition-5.3 `Z₁` stage is NOT proved.** The crucial next geometric bridge is the isomorphism of the FULL properly-tagged coset extensions and all `B`-augmentations when a genuine original `H₁`-cover component is translated to its rooted local `H₁[A]` skeleton. Do not identify different component tags merely because their ambient coordinates coincide (counterexamples: the 5-point augmented path and 8/9-point disconnected-slice examples in the human audit).
+- The general universal action construction does NOT imply that arbitrary source `Z_k` stages satisfy the necessary size or `k`-kernel conditions, especially at `k≥2`; a historical-stage invariant remains necessary.
+- Corrected source Condition 5.2, full Theorem 4.7 geometry (embeddedness, bridge-freeness) for the source-targeted family, general `Y_k/Z_k` induction, final reflecting group and unconditional PSTS EPPA are still **OPEN**. None follows from 1-stability or 2-retractability alone.
+
+### Immediate next interfaces (pending, NOT certified at this cutoff)
+
+- **#353:** index all genuinely connected `H₁)-preimage covers of the ORIGINAL source graph by finite `(base,A,root)` and send each to a literal `(A,K)` index of #348. Depends on #352; the initial CI failure was a Lean field-projection parsing error, not a mathematical no-go.
+- **#355:** actual Cayley morphisms from the concrete source-dependent `G₂` of #348 to its own genuine tagged completed rank-two stage components.
+- **#357:** invert vertex-and-signed-edge-bijective labelled graph morphisms and reflect EVERY realised signed word/path. Used to transfer intrinsic component indices under source/local translation.
+- **#358:** prove `B⊆A` generated subgroups and rooted `B`-cosets agree EXACTLY between `Γ[A]` and ambient `Γ`, preparing coset attachment transport.
+- Then prove source/local CE **quotient-setoid** translation on tagged vertices and directed signed edges, plain completion, **all** augmentations (`B=∅` included), and only then the corrected geometric Condition 5.2. Higher ranks remain a separate difficult project.
+
+**Discipline:** every newly authored branch is merely CANDIDATE until its own full Lean and axiom CI is green; unsuccessful initial runs must not be reported as certified. Closed superseded PRs (#341, #345, #347, #350, #351) were carried exactly via checked clean integrations (#346, #348, #354, #356).
