@@ -18,6 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Independent ABO rank-one stage census (256 edge pairs)
+        run: python3 research/abo_rank_one_sanity.py
+
       # Keep the explicit toolchain cache used in lean_all_those_eppa_classes.
       - name: Cache Lean toolchain
         uses: actions/cache@v5
