@@ -247,6 +247,7 @@ import PSTSEPPA.ABO.RankTwoType2OutsideAlphabet
 import PSTSEPPA.ABO.RankOneAlphabetDichotomy
 import PSTSEPPA.ABO.RankTwoType2RankOneKernel
 import PSTSEPPA.ABO.UniversalKernelPermutationCatalogue
+import PSTSEPPA.ABO.UnaryPeriodWordKernel
 
 /-!
 # EPPA for partial Steiner triple systems
