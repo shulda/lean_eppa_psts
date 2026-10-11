@@ -423,6 +423,23 @@ There is a plausible direct five-step **human proof outline**:
    exact subalphabet path-restriction theorems implement this.
    Therefore all source C_H are components of at least one
    rank-two local slice used by `rankTwoGlobalSkeletonStage(K_E)`.
+**All choices of canonical source basepoint are covered, not just one.**
+The initial complete E-graph X₁ is connected (the original E is
+connected), so the transition G₁-action is transitive. Fix one
+basepoint v₀∈X₁ and the canonical surjection q:H₁↠G₁.
+For any other v∈X₁ there exists t∈H₁ such that
+v=v₀·q(t). On Cayley vertices h∈H₁ the source canonical
+morphism with basepoint v is
+φ_v(h)=v·q(h)=v₀·q(th)=φ_{v₀}(th).
+Thus the complete preimage graph of E under φ_v is obtained
+from the single preimage K_E under φ_{v₀} by LEFT
+translation h↦th; it preserves both signed directed edge
+tokens and all A-path components. The overfamily enumerating
+ALL coset representatives g therefore captures every possible
+source choice of based covering morphism. This discharges
+the **human basepoint-indexing issue** in §4b(1) without
+selecting canonical representatives invariantly.
+
 3. **Full CE respects input-component disjoint unions.**
    This is a concrete NOT-YET-LEANED gluing lemma. In the
    literal quotient definition, every attached B-coset is
