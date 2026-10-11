@@ -843,6 +843,25 @@ not replace the missing universal Lean proof that
 CE of arbitrary disconnected A-skeletons splits
 over their intrinsic components.
 
+**Independent executable regression check:** `research/abo_rank_one_sanity.py`
+enumerates ALL 256 ordered two-positive-edge endpoint assignments
+on a four-vertex carrier, rather than only the previously reduced
+83-pattern census, and reproduces the bounds
+`|C_H|≤4`, `|CE|≤5`, `|CE@_vH_1[B]|≤6`.
+It also checks the source-faithful stage-kernel nonredundancy
+example: plain `ef` has order 4, augmented `ef` has order 5.
+The checker is now wired into GitHub CI, independently of the Lean
+build. This is finite regression evidence; the uniform mathematical
+proof remains the preceding source-action classification.
+
+**General abstract explanation:** the equivalence between stagewise
+rank-k word-kernel containment and existence of a common finite
+k-stable stage-covering group is proved on paper in
+[`ABO_FINITE_STAGE_KERNEL_UNIVERSALITY_2026-10-11.md`](ABO_FINITE_STAGE_KERNEL_UNIVERSALITY_2026-10-11.md).
+It explains both why the k=1 universal catalogue works and why
+at k≥2 the historical source Proposition-5.4 stage-kernel theorem
+remains necessary.
+
 ## 4h. NEW SIMPLIFICATION: universally enumerate unary-correct actions at k=1
 
 The explicit 1–4-vertex source-H₁ cover classification above is useful,
