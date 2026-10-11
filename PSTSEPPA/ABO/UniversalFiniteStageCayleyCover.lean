@@ -258,14 +258,23 @@ theorem universalStageCayleyCover_edge_range
       (T.source (T.edgeAt
         (universalStageVertexMap gen k M T hsize hkernel u g) s))
     rw [T.edgeAt_source]
-    exact
-      (universalStageCayleyCover_vertex_range
-        gen k M T hsize hkernel u).mp
-        ⟨g, rfl⟩
+    have hRange :
+        universalStageVertexMap gen k M T hsize hkernel u g ∈
+          Set.range
+            (universalStageCayleyCover
+              gen k M T hsize hkernel u).onVertex := ⟨g, rfl⟩
+    rw [universalStageCayleyCover_vertex_range
+      gen k M T hsize hkernel u] at hRange
+    exact hRange
   · intro he
-    obtain ⟨g,hg⟩ :=
-      (universalStageCayleyCover_vertex_range
-        gen k M T hsize hkernel u).mpr he
+    have hRange :
+        T.source e ∈ Set.range
+          (universalStageCayleyCover
+            gen k M T hsize hkernel u).onVertex := by
+      rw [universalStageCayleyCover_vertex_range
+        gen k M T hsize hkernel u]
+      exact he
+    obtain ⟨g,hg⟩ := hRange
     refine ⟨(g,T.label e), ?_⟩
     change T.edgeAt
       (universalStageVertexMap gen k M T hsize hkernel u g)
