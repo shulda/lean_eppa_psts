@@ -50,6 +50,8 @@ variable (he : Function.Bijective f.onEdge)
 under a labelled graph isomorphism, even if both graphs
 are incomplete and their ambient groups have different types. -/
 theorem subalphabetReachable_iff_graphIso
+    (hv : Function.Bijective f.onVertex)
+    (he : Function.Bijective f.onEdge)
     (B : Finset ι) (x y : L.Vertex) :
     L.SubalphabetReachable B x y ↔
       K.SubalphabetReachable B (f.onVertex x) (f.onVertex y) := by
