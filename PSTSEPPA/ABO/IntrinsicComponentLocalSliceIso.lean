@@ -74,9 +74,9 @@ theorem intrinsicComponentLocalHom_vertex_surjective
     Function.Surjective
       (K.intrinsicComponentLocalHom B root).onVertex := by
   intro y
-  apply ((K.subalphabetComponentSubgraph B root).
-    leftCosetSliceHom_vertex_range_iff root.1 y).mpr
-  exact K.intrinsicComponent_all_vertices_in_root_coset B root y
+  exact ((K.subalphabetComponentSubgraph B root).leftCosetSliceHom_vertex_range_iff
+    root.1 y).mpr
+    (K.intrinsicComponent_all_vertices_in_root_coset B root y)
 
 /-- The translated local component likewise hits EVERY
 original oriented signed edge, not just the vertices.
@@ -115,12 +115,10 @@ theorem intrinsicComponentLocalHom_bijective
       (K.intrinsicComponentLocalHom B root).onEdge := by
   constructor
   · exact ⟨
-      (K.subalphabetComponentSubgraph B root).
-        leftCosetSliceHom_vertex_injective root.1,
+      (K.subalphabetComponentSubgraph B root).leftCosetSliceHom_vertex_injective root.1,
       K.intrinsicComponentLocalHom_vertex_surjective B root⟩
   · exact ⟨
-      (K.subalphabetComponentSubgraph B root).
-        leftCosetSliceHom_edge_injective root.1,
+      (K.subalphabetComponentSubgraph B root).leftCosetSliceHom_edge_injective root.1,
       K.intrinsicComponentLocalHom_edge_surjective B root⟩
 
 /-- The identity element of Γ[B] represents the selected
