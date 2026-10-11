@@ -207,6 +207,7 @@ import PSTSEPPA.ABO.RankTwoIndexedAmbientStageCover
 import PSTSEPPA.ABO.RankTwoAllAmbientCosetSliceCover
 import PSTSEPPA.ABO.RankTwoGlobalSkeletonCover
 import PSTSEPPA.ABO.UniversalKernelAllSizesCatalogue
+import PSTSEPPA.ABO.UniversalStageFiniteTransport
 import PSTSEPPA.ABO.UniversalStageRealCayleyCover
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
