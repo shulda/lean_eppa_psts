@@ -167,8 +167,7 @@ theorem allRankTwoSkeletonsGroup_twoRetractable
     (hgen : IsGenerated gen) (hret : Retractable gen) :
     KRetractable
       (SynchronizedProduct.generator gen
-        (allRankTwoSkeletonsStage hcard hgen hret).
-          transitionSubgroupGenerator)
+        (allRankTwoSkeletonsStage hcard hgen hret).transitionSubgroupGenerator)
       2 := by
   exact (allRankTwoSkeletonsQuotient hcard hgen hret).
     kRetractable_of_retractable_target 1
