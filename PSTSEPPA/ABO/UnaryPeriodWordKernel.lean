@@ -77,6 +77,15 @@ theorem evalGroup_singleton_zpow
           rw [ih hw.2, zpow_add]
           simp
 
+/-- A signed word supported in A remains supported in any larger
+alphabet B. Both positive and inverse letters are handled uniformly. -/
+theorem Uses.mono {A B : Finset ι} (hAB : A ⊆ B)
+    {w : LabelWord ι} (hw : Uses A w) : Uses B w := by
+  induction w with
+  | nil => trivial
+  | cons s w ih =>
+      exact ⟨hAB hw.1, ih hw.2⟩
+
 end LabelWord
 
 variable {ι Γ Δ V Edge : Type*}
