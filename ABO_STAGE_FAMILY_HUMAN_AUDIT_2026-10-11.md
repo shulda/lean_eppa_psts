@@ -299,6 +299,98 @@ is an obstruction to the universal *shortcut* but it is NOT
 an instance of this true source-H₁ example: here H₁ separates
 the words b and aba as it should.
 
+## 4c. Componentwise CE decomposition: complete paper proof at the quotient level
+
+The non-formal lemma needed in step 4b(3) is in fact quite clean,
+provided **connected components mean realised A-paths in the
+INCOMPLETE old skeleton**, never ambient A-coset equality.
+
+Let K be any finite A-labelled Cayley skeleton admissible for full
+A-coset extension and let K=⨆_{i∈I}K_i be its decomposition
+into connected A-components, where every old edge belongs to exactly
+one K_i. For every B⊊A:
+
+* Each intrinsic B-component of K is wholly contained in a unique
+  K_i. Hence the actual type \`ComponentIndex K B\` is the disjoint
+  union of \`ComponentIndex K_i B\` over i. This is a genuine
+  equivalence of tagged quotient *types*, not an assertion that
+  two equal ambient group cosets determine the same index.
+* Each component-indexed attached B-coset point (q,h) inherits
+  the unique parent i of q. Under an inclusion from alphabet
+  D⊆B, the larger component index still has that same parent.
+* In the raw tagged vertex family
+  Σ_{B∈P} AttachedCosetVertex(K,B), assign to every tagged
+  vertex its parent i. If two raw vertices are related by the
+  source equation (3.10), they have a common intersection-alphabet
+  point r over B∩C. By the preceding observation both endpoints
+  have the same parent as r. Therefore the *actual* source
+  gluing equivalence relation never identifies points of
+  DIFFERENT old A-components. Its restriction to parent i
+  is precisely the relation used by CE(K_i;P).
+* Every raw directed edge belongs to a single-alphabet
+  coset extension, whose old edges and newly completed
+  B-coset edges have source and target with the SAME parent i.
+  The raw edge-token equivalence in Lean is **equal quotient
+  source plus equal signed label**. Equal quotient source
+  forces the same parent; thus no cross-component edge
+  identification occurs either. Its restriction to parent i
+  is the actual edge-token equivalence of CE(K_i;P).
+* The quotient source/target/inverse/label functions therefore
+  respect the partition, giving a canonical E-labelled graph
+  isomorphism
+  \[
+    \mathrm{CE}(\Gamma,K;P)
+      \cong \bigsqcup_{i\in I}\mathrm{CE}(\Gamma,K_i;P).
+  \]
+  Missing signed labels are completed **by loops at individual
+  vertices** so the same isomorphism holds after trivial
+  completion to complete E-graphs.
+* If z is a vertex of the i-th summand and B⊊A, its intrinsic
+  B-component lies entirely in this summand. The B-augmentation
+  therefore modifies ONLY summand i, and the other summands
+  remain unchanged:
+  \[
+   \overline{\mathrm{CE}(\Gamma,K;P)@_z\Gamma[B]}
+   \cong
+   \overline{\mathrm{CE}(\Gamma,K_i;P)@_z\Gamma[B]}
+   \;\sqcup\!
+   \bigsqcup_{j\ne i}
+   \overline{\mathrm{CE}(\Gamma,K_j;P)}.
+  \]
+  This is also true for B=∅, where the augmentation is plain.
+
+Consequently the complete transition action of each connected
+source-indexed augmented CE(K_i) is a genuine *invariant
+component action* of the augmented CE of the larger K.
+For every signed word w, identity of its action on the large
+completed stage implies identity on the specific source stage:
+\[
+ \ker(\mathrm{wordValue}_{\mathrm{augCE}(K)})
+ \subseteq
+ \ker(\mathrm{wordValue}_{\mathrm{augCE}(K_i)}).
+\]
+This is the **correct kernel inclusion direction** for having
+the synchronized larger stage group cover each prescribed
+source object.
+
+This completes the **human proof of componentwise gluing** by
+unpacking the actual checked Lean quotient definitions
+\`ComponentIndexedCosets\`,
+\`MultiCosetVertexQuotient.MultiCosetRawRelated\`,
+\`MultiCosetRawEdges\` and \`MultiCosetEdgeQuotient\`.
+A future *formal* equivalence/isomorphism proof still has
+dependent subtype/quotient transport bookkeeping. The proof
+assumes source admissibility and retractability where the
+multi-coset setoid is needed; at rank two admissibility
+is automatic and the generated local subgroup H₁[A] is
+globally retractable.
+
+**Important:** this is an equivalence of the **component-tagged
+full coset extension**, not of the potentially noninjective
+projection into the ambient Cayley graph. Two distinct
+components can have new vertices at equal ambient Γ-values,
+yet are NOT glued (the 5-vertex counterexample above).
+
 ## 4b. Promising human reduction: all genuine Z₁ covers from ONE canonical source skeleton
 
 The previous fixed-K result becomes much more powerful when K is
