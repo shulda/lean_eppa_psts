@@ -260,6 +260,88 @@ is an obstruction to the universal *shortcut* but it is NOT
 an instance of this true source-H₁ example: here H₁ separates
 the words b and aba as it should.
 
+## 4b. Promising human reduction: all genuine Z₁ covers from ONE canonical source skeleton
+
+The previous fixed-K result becomes much more powerful when K is
+chosen **canonically from the true initial graph**, rather than arbitrarily.
+
+Let G₁=T(X₁) be the source first transition group and
+H₁=T(Y₁) its actual rank-one unary-detector synchronization
+(algebraically as in ``2 and 4a). Choose the source canonical
+covering morphism φ:H₁→X₁, induced from H₁↠G₁ and the
+G₁-action on the vertices of X₁. Let **K_E** be the literal
+INCOMPLETE H₁-Cayley skeleton obtained as the complete inverse
+image of the ORIGINAL oriented graph E⊆X₁ under φ.
+This retains the original signed edge tokens but excludes the
+artificial nonoriginal edges added in the initial completion X₁.
+
+There is a plausible direct five-step **human proof outline**:
+
+1. **All source H₁-covers are literal connected components.**
+   For each two-letter alphabet A and every connected component
+   C of the ORIGINAL E[A], the true source H₁-cover C_H is
+   exactly an A-component of K_E whose φ-image lies in C.
+   Conversely each non-isolated A-component of K_E over C
+   is one of these covers. This follows directly from the
+   definition as a connected component of φ⁻¹(C), provided
+   K_E is defined using the original graph's true edge tokens.
+2. **They all occur in the local slices.**
+   Any A-component in an H₁-Cayley skeleton lies inside a
+   left coset g·H₁[A], because every actual path uses only
+   A-labelled generators. Our checked `leftCosetSlice` and
+   exact subalphabet path-restriction theorems implement this.
+   Therefore all source C_H are components of at least one
+   rank-two local slice used by `rankTwoGlobalSkeletonStage(K_E)`.
+3. **Full CE respects input-component disjoint unions.**
+   This is a concrete NOT-YET-LEANED gluing lemma. In the
+   literal quotient definition, every attached B-coset is
+   tagged by a B-component of the old skeleton. Such a
+   component lies in one A-component. The only identifications
+   of different coset tags come from a shared intersection
+   subcomponent OVER AN ACTUAL OLD VERTEX. Hence points originating in
+   different A-components can never be glued together.
+   The completed full CE of a possibly disconnected A-skeleton
+   thus decomposes, as an E-labelled action graph, into
+   disjoint completed CEs of its actual A-components.
+   **This lemma must be stated and checked explicitly:**
+   equality of ambient group coordinates does NOT cause gluing.
+4. **Augmentations respect the selected component.**
+   B=∅ means the plain CE. For singleton B at rank two,
+   full B-components give the same plain CE; off-B singleton
+   components are exactly our indexed off-component stages.
+   Augmenting the disconnected slice at one root only changes
+   its corresponding A-component; the other components remain
+   untouched (and retain their own trivial completions).
+   Thus every source type-(2) *completed* stage occurs, up to
+   faithful labelled graph isomorphism, as a complete connected
+   summand of one stage already in the global three-family
+   action. Type-(1) is indexed independently for all P,B,v.
+5. **Transition word-kernel simulation.**
+   If a source complete action S is a complete invariant
+   summand of one of our existing complete stages T, then
+   ker(wordValue_T) ⊆ ker(wordValue_S) immediately.
+   Synchronizing all our stages with H₁ yields a group
+   whose Cayley graph can cover S, via the action quotient.
+   The already-certified full singleton stage word kernels
+   guarantee 1-stability, and corrected rank descent gives
+   2-retractability. In combination with the source
+   Proposition 4.4 and corrected Theorem 4.7, this *would*
+   establish the exact rank-one-to-rank-two geometric base.
+
+**Assessment:** On paper this is a coherent plan and looks viable.
+The genuine bottleneck is **(3)+(4)**, faithful component-level
+decomposition of the real tagged coset quotient, followed by the
+actual constructed φ and E-preimage in (1). They are more concrete
+than a generic higher-rank geometric invariant and should be
+independently verified before expensive formalization. No general
+counterexample has been found to these steps.
+
+**Scope caution:** this is NOT the full higher-rank induction.
+At k≥2, off-skeleton B-components need not be singletons and the
+rank-two type-(2) family ceases to be exhaustive. Also replacing
+X_k and its historical Z_{k-1} action by an arbitrary detector
+group would violate k-stability, as proved in `3.
+
 ## 5. Required interfaces: where current Lean stops
 
 | Source obligation | Current Lean ingredient | Human audit verdict |
