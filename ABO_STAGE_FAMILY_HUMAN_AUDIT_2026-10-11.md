@@ -490,6 +490,70 @@ rank-two type-(2) family ceases to be exhaustive. Also replacing
 X_k and its historical Z_{k-1} action by an arbitrary detector
 group would violate k-stability, as proved in `3.
 
+## 4d. Explicit first higher-rank geometric obstruction: off-skeleton B-component can be THREE vertices
+
+The earlier rank-two classification relies on the fact that
+a proper B⊊A has at most one letter. At the first genuinely
+higher rank |A|=3, its analogue is FALSE, even in a completely
+elementary globally retractable ambient group.
+
+Let Γ=C₂³ with independent involutory generators a,b,c,
+A={a,b,c}, and let the old incomplete A-skeleton K
+consist only of its identity vertex 1, without any old edges.
+K is trivially admissible (for all proper alphabets).
+
+The true full proper-alphabet coset extension CE(Γ,K;P_A)
+coincides with the **literal cluster**
+\[
+\mathrm{CL}(\Gamma[A],P_A)
+ = \Gamma[\{a,b\}]\;\cup\;
+   \Gamma[\{a,c\}]\;\cup\;
+   \Gamma[\{b,c\}],
+\]
+where P_A consists of ALL proper subsets of A.
+Its seven vertices are
+\[
+   1,\ a,\ b,\ c,\ ab,\ ac,\ bc;
+\]
+only abc is missing from Γ[A].
+
+Now choose B={a,b} and z=c. Inside the ACTUAL (uncompleted)
+full coset extension, the B-component of z is
+\[
+  z\,\mathrm{CE}[B]=\{c,ac,bc\},
+\]
+with exactly the two geometric B-edges c--a--ac and
+c--b--bc. The fourth point abc of the full B-coset
+c Γ[B]={c,ac,bc,abc} is MISSING. This component
+does not meet the old skeleton {1} and is **NOT a singleton**;
+rather, it is the proper rank-two B-cluster
+CL(Γ[B], {{a},{b}}) translated by c.
+
+The source-type (2) augmentation at z, B adds the
+missing abc vertex and the two missing B-edges,
+producing the full cΓ[B]. It cannot be represented by
+either (i) the plain CE (B=∅), or (ii) the special
+rank-two *off-B singleton* augmentation from
+§RankTwoType2IndexedFamily.lean§.
+
+This is an explicit small mathematical disproof of trying
+to ITERATE our rank-two singleton classification as a
+higher-rank Z_k catalogue. It demonstrates exactly why
+Proposition 3.24/cluster property must be invoked for
+general off-skeleton B-component shapes.
+
+**Quantifier caution:** this example is a valid admissible
+Cayley-skeleton/coset-extension/augmentation instance,
+but K={1} has not been shown to be a canonical H₂-cover
+of a component of a particular source initial E[A].
+Thus it invalidates an arbitrary-input geometric
+generalization, NOT source Proposition 5.4 or the
+source-specific higher-rank Z₂ construction.
+
+A hand and machine check on the eight C₂³ elements
+gives seven CE vertices and the B-component {c,ac,bc};
+the missing vertex is abc.
+
 ## 5. Required interfaces: where current Lean stops
 
 | Source obligation | Current Lean ingredient | Human audit verdict |
