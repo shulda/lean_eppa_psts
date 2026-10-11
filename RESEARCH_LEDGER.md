@@ -1407,3 +1407,59 @@ now the next tightly scoped Lean work. Higher ranks must
 reuse the **full previous Z_{k−1} action history** and the
 non-singleton cluster classification (Proposition 3.24);
 the algebraic #334 H-step alone does not suffice.
+
+
+### 2026-10-11 — source-faithful finite two-edge H₁-cover census and sharp Z₁ kernel witness
+
+**HUMAN theorem, independently exhaustively sanity checked, NOT
+a Lean theorem yet.** In the TRUE source \(H₁=T(Y₁)\), every
+connected \(H₁\)-cover of a component of \(E[A]\), \(|A|=2\),
+has **at most FOUR vertices**. The complete local classification
+is in audit §§4e–4g, including all source edge loops and
+parallel nonloop edges. Two incident nonloop edges have
+\(|H₁[A]|=12\) and 3-vertex path covers; two parallel
+nonloop edges have \(|H₁[A]|=4\) and a 4-cycle cover;
+two disjoint nonloop edges have \(H₁[A]=C₂²\) and
+2-vertex edge covers. Loop labels act trivially in \(H₁\).
+The result was cross-checked over ALL 83 two-labelled
+endpoint patterns on ≤4 vertices. The proof is elementary:
+the two source generators are transpositions/identities
+with the corresponding independent unary detectors.
+
+**REAL SOURCE STAGE NONREDUNDANCY:** For connected original
+\(E=0\!-\!e\!-\!1\!-\!g\!-\!2\!-\!f\!-\!3\), and \(A=\{e,f\}\),
+the genuine source \(H₁\)-cover over the e-edge is a single
+old edge. Its plain full CE is an alternating 4-vertex
+path, on which \(ef\) has order **4**. The required
+\(B=\{e\}\)-augmentation at a freshly attached f-point
+is an alternating 5-vertex path with \(ef\) of order
+**5**. The word \((ef)^{12}\) is identity on source
+\(Y₁\), ALL source type-(1) augmented clusters,
+and ALL source type-(2) **plain** full CE stages;
+it is NONidentity on this genuinely required type-(2)
+augmented stage. Hence omitting all type-(2) B≠∅
+augmentations **strictly changes the actual source G₂
+transition-group word kernel**. This does not refute
+the possibility of another proof with a different Z₁.
+
+**Direct disjoint-slice regression:** The corresponding
+ONE local canonical \(H₁[A]\) coset-slice \(K_E^{v=0}\)
+contains two distinct e-edge components on four ambient
+group vertices. Its full source tagged CE has **8**
+vertices, not 4, despite all ambient H₁[A] coordinates
+already being present in old K. After augmentation
+at one new f-point it has **9** vertices, decomposing
+as a 5-point augmented source CE plus the 4-point
+plain CE of the other input component. Identifying
+cross-component equal ambient coordinates would corrupt
+the quotient, and this is a sharp small test for the
+planned componentwise CE isomorphism.
+
+**Practical consequence:** the rank-one Z₁ source-cover
+catalogue is combinatorially *tiny*, even with parallel
+edges/loops. It can be checked by explicit 1–4-vertex
+templates rather than an arbitrary-cover classification.
+But the type-(2) B≠∅ augmentation cannot simply be dropped,
+and the source-specific quotient/component isomorphism
+is still a separate Lean target. **Stop short of claiming
+higher-rank Y_k/Z_k completeness or PSTS EPPA.**
