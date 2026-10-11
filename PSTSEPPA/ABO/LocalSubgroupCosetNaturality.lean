@@ -1,5 +1,7 @@
 import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
 import PSTSEPPA.ABO.LocalCosetCayleySlice
+import PSTSEPPA.ABO.KRetractableCosetIntersections
+import PSTSEPPA.ABO.ComponentIndexMonotonicity
 
 /-!
 # Genuine proper cosets agree between a local subgroup and its ambient group
