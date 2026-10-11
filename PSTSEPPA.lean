@@ -210,6 +210,7 @@ import PSTSEPPA.ABO.RankTwoGlobalSkeletonCover
 import PSTSEPPA.ABO.UniversalKernelAllSizesCatalogue
 import PSTSEPPA.ABO.UniversalStageFiniteTransport
 import PSTSEPPA.ABO.UniversalStageWordFactorization
+import PSTSEPPA.ABO.UniversalFiniteStageCayleyCover
 import PSTSEPPA.ABO.UniversalStageRealCayleyCover
 import PSTSEPPA.ABO.AllFiniteRankTwoCayleySkeletons
 import PSTSEPPA.ABO.IntrinsicComponentLocalSliceIso
