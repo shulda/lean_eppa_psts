@@ -216,6 +216,50 @@ stage-action kernel simulation). The available connected-coset
 subgraph and path-reflection lemmas should help, but this is
 a substantive *index matching* obligation.
 
+## 4a. A TRUE source-H₁ rank-two example (not an arbitrary Γ)
+
+Take original oriented E to be the three-vertex path
+0 --a--> 1 --b--> 2, with two positive edge labels.
+
+The source starts with X₁ on vertices {0,1,2}:
+a=(0 1) and b=(1 2), so G₁≅S₃. Its Y₁ also contains the
+complete singleton Cayley graphs G₁[{a}] and G₁[{b}].
+Consequently the true source H₁ is the generated subgroup of
+S₃×C₂×C₂ under ((0 1),1,0), ((1 2),0,1).
+It has order 12 (dihedral of order 12); this is exactly the
+unary synchronised H₁ detector group discussed above.
+
+Now use the TRUE canonical H₁→X₁ vertex-action covering map.
+The inverse image of the original E (only its real signed
+a/b-edge tokens, NOT X₁'s artificial added reverse-positive
+edges) has 12 vertices, four fibres over each of 0,1,2.
+As a labelled graph it is exactly the disjoint union of
+FOUR actual three-vertex path components: a cover of a tree
+has a path component for each of the four starting-fibre points.
+
+For each such rooted path x--a--xa--b--xab, its rank-two
+full proper-alphabet CE has FIVE vertices. Its two new tagged
+points are represented in the ambient H₁ by xb and xaba.
+These are distinct from each other and from the old triple,
+since (ab) has order 6 in the source H₁. All four CE components
+therefore happen to embed individually in the source H₁
+for this particular elementary example. Their disjoint
+union has TWENTY tagged vertices, so cannot globally inject
+into the 12-element H₁ Cayley graph; component tags matter.
+
+This was checked by an explicit 12-state generator enumeration
+(with the S₃ permutation factor and two detector bits).
+It is a **finite sanity check**, not a general proof. It supports
+the intended specific choice of K for our rank-two family:
+K should be the preimage of the ACTUAL original edge graph E
+in the H₁ Cayley graph, and its actual connected two-letter
+components, not an arbitrarily guessed rank-two skeleton.
+
+In particular, our earlier counterexample using Γ=C₂²
+is an obstruction to the universal *shortcut* but it is NOT
+an instance of this true source-H₁ example: here H₁ separates
+the words b and aba as it should.
+
 ## 5. Required interfaces: where current Lean stops
 
 | Source obligation | Current Lean ingredient | Human audit verdict |
