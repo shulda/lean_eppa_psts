@@ -72,8 +72,7 @@ ambient H1[A] coset). -/
 noncomputable abbrev sourceCoverIndexComponent
     (src dst : ι → V)
     (j : SourceOriginalH1CoverIndex src dst) :=
-  ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).
-    subalphabetComponentSubgraph j.2.1.1
+  ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).subalphabetComponentSubgraph j.2.1.1
       (sourceCoverIndexRoot src dst j)
 
 /-- Its canonical local-Cayley presentation, rooted at 1
@@ -117,8 +116,7 @@ theorem sourceCoverIndex_local_graph_bijective
     Function.Bijective
       ((sourceCoverIndexComponent src dst j).leftCosetSliceHom j.2.2).onEdge := by
   exact
-    ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).
-      intrinsicComponentLocalHom_bijective j.2.1.1
+    ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).intrinsicComponentLocalHom_bijective j.2.1.1
         (sourceCoverIndexRoot src dst j)
 
 /-- Every input-indexed H1-cover component has a canonical
@@ -130,18 +128,14 @@ theorem sourceCoverIndex_local_identity_normalization
     ∃ x : (sourceCoverIndexLocalSkeleton src dst j).Vertex,
       x.1 =
         (1 : generatedSubgroup (sourceH1Generator src dst) j.2.1.1) ∧
-      ((sourceCoverIndexComponent src dst j).leftCosetSliceHom j.2.2).
-        onVertex x =
-        ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).
-          componentLiftVertex j.2.1.1
+      ((sourceCoverIndexComponent src dst j).leftCosetSliceHom j.2.2).onVertex x =
+        ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).componentLiftVertex j.2.1.1
             (sourceCoverIndexRoot src dst j)
             (sourceCoverIndexRoot src dst j)
-            (((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).
-              subalphabetReachable_refl j.2.1.1
+            (((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).subalphabetReachable_refl j.2.1.1
                 (sourceCoverIndexRoot src dst j)) := by
   exact
-    ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).
-      intrinsicComponentLocal_identity_root j.2.1.1
+    ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1).intrinsicComponentLocal_identity_root j.2.1.1
         (sourceCoverIndexRoot src dst j)
 
 /-- All possible genuine source H1-cover component indices
