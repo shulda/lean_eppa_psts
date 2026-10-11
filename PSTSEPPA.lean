@@ -208,6 +208,7 @@ import PSTSEPPA.ABO.RankTwoGlobalSkeletonCover
 import PSTSEPPA.ABO.UniversalKernelAllSizesCatalogue
 import PSTSEPPA.ABO.UniversalStageRealCayleyCover
 import PSTSEPPA.ABO.AllFiniteRankTwoCayleySkeletons
+import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
 import PSTSEPPA.ABO.RankTwoCompletedWordKernel
 import PSTSEPPA.ABO.RankTwoPlainFullCEKernel
