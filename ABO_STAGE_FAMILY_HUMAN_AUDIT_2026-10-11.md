@@ -165,6 +165,45 @@ enlarging arbitrary type-(1) clusters P to coatom sets. Replacing
 noncommuting action to the four-vertex regular Cayley square with
 commuting a,b, changing its transition word kernel.
 
+## 3a. A genuine source example where Z₁ *removes* the obstruction
+
+The previous no-go used an arbitrary abelian Γ. The necessity
+of retaining the stage history is also visible in a completely
+source-faithful input.
+
+Take the connected ORIGINAL oriented graph E to be the
+four-vertex path
+  0 --a--> 1 --c--> 2 --b--> 3
+with all three positive edge labels distinct.
+
+The genuine source X₁ has transition group G₁=S₄ generated
+by adjacent transpositions a=(0 1), c=(1 2), b=(2 3).
+The disjoint ones a,b COMMUTE in G₁.
+They also commute in source H₁=T(Y₁): the added singleton
+detector coordinates are independent, and the first
+projection G₁ already has a,b commuting. Their actual
+H₁-generated subgroup is C₂×C₂.
+
+But Z₁ type (1) for A={a,b}, P={{a},{b}}, B=∅ is exactly
+the three-vertex path-shaped cluster discussed in §3:
+its completed a,b actions are (1 a), (1 b), so they
+DO NOT commute. The true generated transition group
+G₂=T(Y₁⊔overline(Z₁)) therefore also has
+[a,b]_{G₂} != 1. This is perfectly consistent with
+G₂↠H₁ being only **1-STABLE**, not 2-stable!
+
+At the next source step, H₂↠G₂ is **2-stable**, hence
+[a,b]_{H₂} != 1. Consequently Z₂'s reuse of the analogous
+type-(1) cluster with A={a,b,c} does NOT force a
+NEW violation of 2-stability: the relation it detects
+was already removed by the previous stage.
+
+This three-letter source example is an exact, hand-checkable
+explanation of the paper's induction invariant:
+**Z_{k-1}'s action supplies the stage history which makes
+adding Z_k consistent with k-stability.**
+No abstract k-retractability statement can replace it.
+
 ## 4. POSITIVE rank-two (k=1) comparison over a FIXED input K
 
 Fix A of cardinality 2, a generated retractable labelled ambient Γ,
