@@ -47,7 +47,10 @@ theorem transportedAction_signed_step
   | pos i =>
       simp [signedPerm, transportedAction]
   | neg i =>
-      rw [T.letterPerm_inv (.pos i)]
+      have hneg : T.letterPerm (.neg i) =
+          (T.letterPerm (.pos i)).symm :=
+        T.letterPerm_inv (.pos i)
+      rw [hneg]
       simp [signedPerm, transportedAction]
 
 /-- The transported action follows exactly the same full signed word
@@ -76,8 +79,7 @@ theorem transportedAction_wordValue_eq_one
     {n : ℕ} (e : V ≃ Fin n) (w : LabelWord ι)
     (hval : T.wordValue w = 1) :
     (actionGraph (T.transportedAction e)).wordValue w = 1 := by
-  apply ((actionGraph (T.transportedAction e)).
-    wordValue_eq_one_iff_all_vertices_fixed w).mpr
+  apply ((actionGraph (T.transportedAction e)).wordValue_eq_one_iff_all_vertices_fixed w).mpr
   intro y
   calc
     (actionGraph (T.transportedAction e)).followWord y w =
