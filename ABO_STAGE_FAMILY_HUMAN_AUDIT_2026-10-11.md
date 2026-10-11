@@ -401,6 +401,34 @@ a minimal-pullback or detector-only shortcut. For formalization,
 stop adding stage indices until the corresponding rank-k
 kernel statement has been checked on paper.
 
+## 6a. The SOURCE authors explicitly considered a simpler Z_k, and rejected it as unproved
+
+An exceptionally relevant remark appears **after Lemma 5.6**, PDF
+p.51 (arXiv:2208.03273v6). For establishing the *final path
+content-reduction lemma alone*, it would suffice to add basic
+one-alphabet coset extensions CE(H_k,A_k;B) rather than the
+whole Definition-5.3 full/augmented graph machinery.
+The authors say they tried this and **could not prove k-stability
+of H_k→G_{k+1}** for that simplified Z_k, and did not know
+whether such a procedure could achieve k-stability.
+
+They therefore built ALL of the augmented clusters and
+full CE stages, with Section 4 geometry, PRECISELY to guarantee
+the stability needed to safely iterate. The source explicitly
+states this motivation, rather than presenting the cumbersome
+stage family as merely a convenient overcomplete implementation.
+
+This directly supports our audit verdict: while many smaller
+families might witness the FINAL endpoint assertion in isolation,
+the hard problem is retaining rank-k identity-word kernels at
+each intermediate stage. Our detector theorem #334 settles the
+algebraic H-step but does not supply that historical-kernel
+invariant for a thinner Z_k.
+
+**Caution:** inability to prove the reduced method is NOT a
+counterexample to its correctness. It is a sharply scoped
+RESEARCH LEAD, not an accepted shorter proof.
+
 ## 7. Risk-calibrated conclusion
 
 The algebraic rank lift is strong and humanly equivalent to the
