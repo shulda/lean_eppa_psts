@@ -83,8 +83,7 @@ theorem transportedAction_wordValue_eq_one
   intro y
   calc
     (actionGraph (T.transportedAction e)).followWord y w =
-        (actionGraph (T.transportedAction e)).
-          followWord (e (e.symm y)) w := by
+        (actionGraph (T.transportedAction e)).followWord (e (e.symm y)) w := by
             exact congrArg
               (fun z => (actionGraph (T.transportedAction e)).followWord z w)
               (e.apply_symm_apply y).symm
