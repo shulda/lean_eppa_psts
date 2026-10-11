@@ -130,18 +130,21 @@ the all-local-K catalogue without a chosen coset transversal. -/
 theorem intrinsicComponentLocal_identity_root
     (B : Finset ι) (root : K.Vertex) :
     ∃ x : (K.intrinsicComponentLocalSlice B root).Vertex,
-      x.1 = 1 ∧
+      x.1 = (1 : generatedSubgroup gen B) ∧
       (K.intrinsicComponentLocalHom B root).onVertex x =
-        (K.subalphabetComponentSubgraph B root).toEGraph.source
-          (Classical.choice (by
-            classical
-            -- A dummy source edge would incorrectly assume the
-            -- component contains a non-loop edge. We intentionally
-            -- state the concrete root directly in the next lemma.
-            exact (False.elim (by trivial)))) := by
-  classical
-  -- Replaced with direct root normalization below.
-  sorry
+        K.componentLiftVertex B root root
+          (K.subalphabetReachable_refl B root) := by
+  have hmem :
+      (1 : generatedSubgroup gen B) ∈
+        (K.intrinsicComponentLocalSlice B root).vertices := by
+    change root.1 * ((1 : generatedSubgroup gen B) : Γ) ∈
+      (K.subalphabetComponentSubgraph B root).vertices
+    simp only [Subgroup.coe_one, mul_one]
+    exact ⟨root, rfl, K.subalphabetReachable_refl B root⟩
+  refine ⟨⟨1, hmem⟩, rfl, ?_⟩
+  apply Subtype.ext
+  change root.1 * ((1 : generatedSubgroup gen B) : Γ) = root.1
+  simp
 
 end CayleySubgraphSpec
 end ABO
