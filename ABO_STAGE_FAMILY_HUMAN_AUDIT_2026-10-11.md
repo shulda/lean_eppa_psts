@@ -307,6 +307,64 @@ is an obstruction to the universal *shortcut* but it is NOT
 an instance of this true source-H₁ example: here H₁ separates
 the words b and aba as it should.
 
+## 4bb. Equivariance warning: ONE chosen φ-basepoint is not canonical
+
+There is a genuine distinction between **kernel-stage sufficiency**
+and **source Proposition 5.5 automorphism-equivariance**.
+
+The single fixed-basepoint skeleton K_E from §4b covers all based
+choices **UP TO A LEFT TRANSLATION**, so it is enough for a
+non-equivariant source-Z₁ word-kernel/cover simulation after
+enumerating all local coset representatives. But it is NOT
+on its face fixed by an automorphism of the original graph
+that moves the chosen basepoint v₀∈X₁.
+Thus blindly replacing the source's full Y₁/Z₁ indexing by
+one anchored K_E risks losing the symmetric construction
+needed for source Proposition 5.5 / the eventual EPPA bridge.
+
+**Simple finite, manifestly equivariant repair:**
+index the canonical inverse-image skeletons by ALL v∈V(X₁),
+\[
+ K_E^v := \varphi_v^{-1}(E)\ \subseteq\ \mathrm{Cayley}(H_1),
+ \qquad \varphi_v(h)=v\cdot q(h).
+\]
+For each v take all |A|=2 label subsets and all g∈H₁
+left coset slices of the genuine incomplete K_E^v;
+include their three certified families of completed stages.
+The total indexed family remains FINITE. At k=1 its
+word-kernel hypothesis is unchanged because every extra
+stage individually has the already certified full rank-one
+kernel. The resulting generated group is still
+1-stable above H₁ and 2-retractable after rank descent.
+
+This indexing is **naturally equivariant**. For each automorphism
+τ of the oriented input graph, let τ_X be its action on X₁,
+τ_H the induced generator-permuting automorphism of H₁,
+and σ_τ the induced permutation of edge labels.
+The source first group action satisfies
+\[
+ \tau_X(\varphi_v(h))=
+ \varphi_{\tau_X(v)}(\tau_H(h)),
+\]
+where the labels transform by σ_τ.
+Consequently τ_H sends K_E^v (with relabeling) to
+K_E^{τ_X(v)}, and the stage index
+\[
+ (v,A,g)\longmapsto(\tau_X(v),\sigma_\tau(A),\tau_H(g))
+\]
+is canonical. It respects compositions of input automorphisms
+without choosing any transporter of τ_X(v₀) back to v₀.
+
+**Recommendation:** the first source-faithful rank-one
+implementation should use the all-basepoint indexed family,
+NOT silently choose one v₀ and promise that left-translation
+symmetries will later be coherent. The one-basepoint proof
+in §4b is useful to reason about isomorphism types and
+component quotient decompositions, but the actual
+automorphism-equivariant construction should retain v
+in its finite index type. This restores precisely the
+source's intended symmetry-by-uniform-enumeration mechanism.
+
 ## 4c. Componentwise CE decomposition: complete paper proof at the quotient level
 
 The non-formal lemma needed in step 4b(3) is in fact quite clean,
