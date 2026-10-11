@@ -843,6 +843,63 @@ not replace the missing universal Lean proof that
 CE of arbitrary disconnected A-skeletons splits
 over their intrinsic components.
 
+## 4h. NEW SIMPLIFICATION: universally enumerate unary-correct actions at k=1
+
+The explicit 1–4-vertex source-H₁ cover classification above is useful,
+but a still more economical **HUMAN replacement of the entire source
+Z₁ stage-indexing problem** appears possible. The standalone proof is
+[ABO_UNIVERSAL_RANK_ONE_STAGE_REPLACEMENT_2026-10-11.md](ABO_UNIVERSAL_RANK_ONE_STAGE_REPLACEMENT_2026-10-11.md).
+
+In the actual source first group H₁, each distinguished generator
+has order m_e∈{1,2}: identity for original loops, involution for
+nonloop original edges. For *every* actual source type-(1)/(2) completed
+Z₁ stage T, its positive e-transition has period dividing m_e:
+all nontrivial old edges have been incorporated into FULL
+unary H₁[{e}]-cosets; other missing edges are completed
+by loops. This is the key property that MUST be audited
+against the exact source weakly complete graph definitions.
+
+Let N=|H₁| and choose the crude uniform size bound M=3N+1.
+Every H₁-cover of the original graph is a subset of the finite
+Cayley H₁ (≤N points); adding complete e/f-cosets to
+each singleton-label component adds at most 2N new points;
+one B-augmentation adds at most one. Type-(1) stages
+have at most four vertices. Hence every completed Z₁ stage
+has ≤M vertices.
+
+Now include **ALL** complete E-labelled permutation actions
+on a fixed M-point set with \(\rho(e)^{m_e}=1\) for every
+label e. There are finitely many. Their disjoint union
+with Y₁ defines a finite, genuinely synchronously generated
+group \(\widehat G_2\). Its quotient onto H₁ is automatically
+**1-stable**, because one-letter relations in H₁ are
+exactly period-\(m_e\) relations. Every required completed
+source-Z₁ stage embeds, after padding with fixed points,
+as an INVARIANT complete summand of one universal action:
+choose a bijection of its at-most-M vertices into [M]
+and transport each generator permutation. Therefore
+Cayley \(\widehat G_2\) covers every source-Z₁
+component. Corrected source Theorem 4.7 should then
+give Cond₂ without explicitly indexing genuine H₁-cover
+components and their tagged CEs in the *new* construction.
+
+The construction is manifestly equivariant under input
+automorphisms: relabel the entire finite family of all
+permutation assignments; loop/nonloop generator periods
+are preserved. **Extra actions are harmless at k=1**
+because respecting unary periods is the entire stability
+requirement.
+
+**RISK BOUNDARY:** this shortcut is specific to the first
+step. At k≥2, an arbitrary action satisfying unary
+periods can violate k-letter group relations, as the
+source-shaped three-vertex commutator example §3 proves.
+One cannot simply repeat the universal-enumeration
+argument at higher ranks without already knowing the
+hard Proposition-5.4 historical stage-kernel invariant.
+This is a NEW, much smaller k=1 option, not an
+all-rank geometry-free EPPA proof and not yet in Lean.
+
 ## 5. Required interfaces: where current Lean stops
 
 | Source obligation | Current Lean ingredient | Human audit verdict |
