@@ -211,6 +211,8 @@ import PSTSEPPA.ABO.UniversalStageFiniteTransport
 import PSTSEPPA.ABO.UniversalStageRealCayleyCover
 import PSTSEPPA.ABO.AllFiniteRankTwoCayleySkeletons
 import PSTSEPPA.ABO.IntrinsicComponentLocalSliceIso
+import PSTSEPPA.ABO.SourceOriginalH1PreimageSkeleton
+import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.SourceH1AllLocalG2
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
