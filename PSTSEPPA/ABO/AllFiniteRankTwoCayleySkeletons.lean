@@ -169,8 +169,7 @@ theorem allRankTwoSkeletonsGroup_twoRetractable
       (SynchronizedProduct.generator gen
         (allRankTwoSkeletonsStage hcard hgen hret).transitionSubgroupGenerator)
       2 := by
-  exact (allRankTwoSkeletonsQuotient hcard hgen hret).
-    kRetractable_of_retractable_target 1
+  exact (allRankTwoSkeletonsQuotient hcard hgen hret).kRetractable_of_retractable_target 1
       (allRankTwoSkeletonsQuotient_oneStable hcard hgen hret) hret
 
 /-- The entire true outer-indexed carrier is finite. This is
