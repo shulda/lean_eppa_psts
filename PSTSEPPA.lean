@@ -222,6 +222,7 @@ import PSTSEPPA.ABO.RootedComponentTaggedCosetFibres
 import PSTSEPPA.ABO.RootedTaggedAttachedCosetEquiv
 import PSTSEPPA.ABO.RootedCosetGluingRelationNaturality
 import PSTSEPPA.ABO.ExactQuotientEquivTransport
+import PSTSEPPA.ABO.SourceLabelEdgeQuotientNaturality
 import PSTSEPPA.ABO.RootedCompletedCosetStepNaturality
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
