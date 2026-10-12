@@ -151,6 +151,7 @@ import PSTSEPPA.ABO.MultiCosetMixedEdgeOverlap
 import PSTSEPPA.ABO.AdmissibleAttachedIntersectionLe
 import PSTSEPPA.ABO.MultiCosetTransitivity
 import PSTSEPPA.ABO.MultiCosetVertexQuotient
+import PSTSEPPA.ABO.ExactQuotientEquivTransport
 import PSTSEPPA.ABO.MultiCosetRawEdges
 import PSTSEPPA.ABO.MultiCosetOldEdgeOverlap
 import PSTSEPPA.ABO.MultiCosetRawEdgeInversion
