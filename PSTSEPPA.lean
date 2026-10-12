@@ -223,6 +223,7 @@ import PSTSEPPA.ABO.RootedTaggedAttachedCosetEquiv
 import PSTSEPPA.ABO.RootedCosetGluingRelationNaturality
 import PSTSEPPA.ABO.ExactQuotientEquivTransport
 import PSTSEPPA.ABO.RootedCompletedCosetStepNaturality
+import PSTSEPPA.ABO.RootedSingleCosetEGraphHom
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
