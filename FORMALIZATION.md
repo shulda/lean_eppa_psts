@@ -861,3 +861,22 @@ embed in Cayley graphs; a coset extension may fail to embed.
 The next best human falsification test is the signed-word
 kernel of each required completed stage, **not** merely
 component surjectivity of existing embedded pullback maps.
+
+
+### 2026-10-12 — Source-rooted rank-two multi-coset EGraph isomorphism CERTIFIED
+
+**Authoritative integration cutoff:** main merge commit `eb1e10fa1b5a49d00ce318025d02bc0673628009` (#390).
+The source branches #385/#386/#387 each passed a full Lean build, the independent 256-original-edge-pattern ABO regression and the allowed-axioms audit. The exact final theorem blobs were then assembled unchanged in clean #390, whose own full CI was also green before merge. A *separate post-merge CI run* must be checked before calling this particular main revision post-merge green.
+
+**New integrated source-facing declarations:**
+
+- `PSTSEPPA/ABO/RootedSourceMultiCosetVertexQuotient.lean` (#380): `rootedLocalMultiCosetVertexQuotientEquiv` transports the **literal** component-tagged intersection-supported vertex gluing quotient from the genuine A-rooted source component to the local Γ[A] representative. Assumes `A.card = 2` and `KRetractable gen 2`, **not** global retractability of Γ.
+- `PSTSEPPA/ABO/SourceLabelEdgeQuotientNaturality.lean` (#378) and `SourceLabelEdgeQuotientGraphIso.lean` (#390): the exact edge quotient is by **equal glued source plus equal signed label**, never merely equal ambient Γ-edge coordinate. Under honest bijective source/edge maps and explicit target congruence, the quotient EGraphs are isomorphic and reflect all genuine signed paths.
+- `RootedSingleCosetEGraphHom.lean`, `RootedSingleCosetEGraphIso.lean`, `RootedMultiCosetRawEdgeEquiv.lean` (#384): actual vertex-and-directed-edge-bijective signed isomorphisms of single-B completions for B⊆A, and a component/alphabet-tag-preserving equivalence of **all raw oriented signed edges** of a multi-coset family.
+- `RootedMultiCosetRawGraphNaturality.lean` (#390): exact source/local RAW multi-coset signed graph isomorphism over the genuine glued vertex quotients, preserving source, inverse edge and full signed labels.
+- `RootedSourceMultiCosetCompletedEGraphIso.lean` (#390): `rootedLocalMultiCosetRawGraph_target_congruent` is derived from the **local Γ[A]** retractable construction; `rootedAmbientMultiCosetRawGraph_target_congruent` transports it to the original source component. `rootedMultiCosetCompletedEGraphHom_bijective` gives an actual signed labelled EGraph isomorphism on all glued vertices and directed edge classes; `rootedMultiCosetCompletedEGraphHom_follows_iff` preserves and REFLECTS every truly realised signed path. These results apply to any proper-alphabet family `P : CosetFamilySpec A`, provided `A.card = 2`, `KRetractable gen 2` and a genuine rooted A-component.
+- `RootedSourceOffCosetIndexEquiv.lean` (#389): `rootedLocalMultiCosetOffCoset_iff` exactly preserves/refects the source type-(2) condition that a selected old quotient vertex lies outside the *entire component-tagged B-coset constituent*, including degenerate B, rather than testing its ambient coordinate.
+
+**Do not overstate this checkpoint.** The constructed source EGraph is the **plain** multi-coset extension, not the full corrected Definition-5.3 source stage catalogue. The source's outside-alphabet legal fixed-loop completion and B-coset **augmentations** have not yet been transported as complete signed EGraphs; exact matching of ALL source Z₁ stages to the finite G₂ local supercatalogue is NOT proved. Subsequent corrected Condition 5.2 / Theorem 4.7 (admissibility, embeddedness, cluster and bridge-free geometry), higher-rank Yₖ/Zₖ induction, reflecting group and unconditional ordinary PSTS EPPA remain **OPEN**.
+
+**Pending independent CI / active frontier (NOT integrated):** #388 legal trivial-loop completion naturality, #391 signed-edge availability and locally-paired transport, #392 local all-proper multi-CE pairing, #393 true fresh B-coset point equivalence, #394 exact ambient value of the source-glued quotient. Treat every statement in those PRs as a CANDIDATE until its specific latest head passes the full project and axioms CI, and then integrate only the checked code.
