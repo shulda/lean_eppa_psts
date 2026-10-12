@@ -46,8 +46,7 @@ noncomputable def rootedSingleCosetEGraphHom
     (A B : Finset ι) (hBA : B ⊆ A) (root : K.Vertex) :
     LabelledGraphHom
       ((K.intrinsicComponentLocalSlice A root).singleCosetEGraph B).toLabelledGraph
-      ((K.subalphabetComponentSubgraph A root).singleCosetEGraph B).
-        toLabelledGraph := by
+      ((K.subalphabetComponentSubgraph A root).singleCosetEGraph B).toLabelledGraph := by
   let L := K.intrinsicComponentLocalSlice A root
   let M := K.subalphabetComponentSubgraph A root
   let f := K.intrinsicComponentLocalHom A root
