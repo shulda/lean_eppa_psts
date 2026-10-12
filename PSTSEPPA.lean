@@ -221,6 +221,8 @@ import PSTSEPPA.ABO.BijectiveComponentIndexTransport
 import PSTSEPPA.ABO.RootedComponentTaggedCosetFibres
 import PSTSEPPA.ABO.RootedTaggedAttachedCosetEquiv
 import PSTSEPPA.ABO.RootedCosetGluingRelationNaturality
+import PSTSEPPA.ABO.ExactQuotientEquivTransport
+import PSTSEPPA.ABO.RootedSourceMultiCosetVertexQuotient
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.SourceH1AllLocalG2
