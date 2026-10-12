@@ -239,6 +239,7 @@ import PSTSEPPA.ABO.RootedLocalCosetPairedLabels
 import PSTSEPPA.ABO.RootedSourceAllProperCompletedStageIso
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
+import PSTSEPPA.ABO.RootedFreshCosetEquiv
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.SourceH1AllLocalG2
