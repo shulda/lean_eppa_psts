@@ -11,9 +11,7 @@ After translating such a component by its root to the genuine
 local subgroup Γ[A], we already have a bijection on OLD vertices
 and directed signed edge tokens (#352), on intrinsic D-component
 tags for every D (#361), and an exact matching of the ambient
-D-coset point fibres for every D⊆A (#366).
-
-Here we assemble these ingredients into an actual equivalence of
+D-coset point fibres for every D⊆A (#366).Here we assemble these ingredients into an actual equivalence of
 the full dependent component-tagged AttachedCosetVertex D types
 for every D⊆A. The map transports each point (component tag, coset
 coordinate) to (translated tag, rooted ambient coordinate), and
@@ -141,8 +139,7 @@ theorem rootedLocalAttachedCosetMap_oldVertex
       ((K.intrinsicComponentLocalHom A root).onVertex x) := by
   apply (K.subalphabetComponentSubgraph A root).attachedValue_injective_of_same_index D
   · exact
-      (K.intrinsicComponentLocalSlice A root).
-        componentIndexEquiv_of_graphIso_class
+      (K.intrinsicComponentLocalSlice A root).componentIndexEquiv_of_graphIso_class
         (K.subalphabetComponentSubgraph A root)
         (K.intrinsicComponentLocalHom A root)
         (K.intrinsicComponentLocalHom_bijective A root).1
@@ -159,15 +156,12 @@ theorem rootedLocalAttachedCosetMap_natural
     (root : K.Vertex)
     (p : (K.intrinsicComponentLocalSlice A root).AttachedCosetVertex D) :
     K.rootedLocalAttachedCosetMap A E hEA root
-      ((K.intrinsicComponentLocalSlice A root).
-        attachedSubalphabetMap D E hDE p) =
-    (K.subalphabetComponentSubgraph A root).
-      attachedSubalphabetMap D E hDE
+      ((K.intrinsicComponentLocalSlice A root).attachedSubalphabetMap D E hDE p) =
+    (K.subalphabetComponentSubgraph A root).attachedSubalphabetMap D E hDE
         (K.rootedLocalAttachedCosetMap A D hDA root p) := by
   apply (K.subalphabetComponentSubgraph A root).attachedValue_injective_of_same_index E
   · exact
-      ((K.intrinsicComponentLocalSlice A root).
-        componentIndexEquiv_of_graphIso_natural
+      ((K.intrinsicComponentLocalSlice A root).componentIndexEquiv_of_graphIso_natural
           (K.subalphabetComponentSubgraph A root)
           (K.intrinsicComponentLocalHom A root)
           (K.intrinsicComponentLocalHom_bijective A root).1
