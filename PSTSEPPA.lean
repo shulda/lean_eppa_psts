@@ -161,6 +161,7 @@ import PSTSEPPA.ABO.MultiCosetMorphisms
 import PSTSEPPA.ABO.MultiCosetWeakCompleteness
 import PSTSEPPA.ABO.WeakCompletePairedEdges
 import PSTSEPPA.ABO.TrivialLoopCompletion
+import PSTSEPPA.ABO.TrivialLoopCompletionIsomorphism
 import PSTSEPPA.ABO.TrivialCompletionPaths
 import PSTSEPPA.ABO.AugmentedClusterTrivialStage
 import PSTSEPPA.ABO.AugmentedClusterSingletonKernel
