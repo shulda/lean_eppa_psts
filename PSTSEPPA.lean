@@ -222,6 +222,7 @@ import PSTSEPPA.ABO.RootedComponentTaggedCosetFibres
 import PSTSEPPA.ABO.RootedTaggedAttachedCosetEquiv
 import PSTSEPPA.ABO.RootedCompletedCosetStepNaturality
 import PSTSEPPA.ABO.RootedSingleCosetEGraphHom
+import PSTSEPPA.ABO.RootedSingleCosetEGraphIso
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.SourceH1AllLocalG2
