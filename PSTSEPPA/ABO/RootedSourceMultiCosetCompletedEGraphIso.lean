@@ -82,7 +82,8 @@ theorem rootedAmbientMultiCosetRawGraph_target_congruent
     (K.rootedLocalMultiCosetRawEdgeEquiv A root P)
     (K.rootedMultiCosetRawGraph_source_natural A hcard hret root P)
     (K.rootedMultiCosetRawGraph_label_natural A hcard hret root P)
-    (K.rootedMultiCosetRawGraph_inv_natural A hcard hret root P)
+    (fun e => (K.rootedMultiCosetRawGraph_inv_natural
+      A hcard hret root P e).symm)
     (K.rootedLocalMultiCosetRawGraph_target_congruent A hcard hret root P)
 
 /-- The deterministic completed multi-coset EGraph of the local
@@ -128,7 +129,8 @@ noncomputable def rootedMultiCosetCompletedEGraphHom
     (K.rootedLocalMultiCosetRawEdgeEquiv A root P)
     (K.rootedMultiCosetRawGraph_source_natural A hcard hret root P)
     (K.rootedMultiCosetRawGraph_label_natural A hcard hret root P)
-    (K.rootedMultiCosetRawGraph_inv_natural A hcard hret root P)
+    (fun e => (K.rootedMultiCosetRawGraph_inv_natural
+      A hcard hret root P e).symm)
     (K.rootedLocalMultiCosetRawGraph_target_congruent A hcard hret root P)
     (K.rootedAmbientMultiCosetRawGraph_target_congruent A hcard hret root P)
 
@@ -150,7 +152,8 @@ theorem rootedMultiCosetCompletedEGraphHom_bijective
     (K.rootedLocalMultiCosetRawEdgeEquiv A root P)
     (K.rootedMultiCosetRawGraph_source_natural A hcard hret root P)
     (K.rootedMultiCosetRawGraph_label_natural A hcard hret root P)
-    (K.rootedMultiCosetRawGraph_inv_natural A hcard hret root P)
+    (fun e => (K.rootedMultiCosetRawGraph_inv_natural
+      A hcard hret root P e).symm)
     (K.rootedLocalMultiCosetRawGraph_target_congruent A hcard hret root P)
     (K.rootedAmbientMultiCosetRawGraph_target_congruent A hcard hret root P)
 
