@@ -219,6 +219,8 @@ import PSTSEPPA.ABO.BijectiveComponentIndexTransport
 import PSTSEPPA.ABO.BijectiveTaggedCosetTransport
 import PSTSEPPA.ABO.RootedLocalProperCosetExactness
 import PSTSEPPA.ABO.RootedComponentTaggedCosetFibres
+import PSTSEPPA.ABO.RootedTaggedAttachedCosetEquiv
+import PSTSEPPA.ABO.RootedCosetGluingRelationNaturality
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
