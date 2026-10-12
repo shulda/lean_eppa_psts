@@ -50,8 +50,7 @@ theorem rootedLocalAttachedCosetMap_cosetStep
       ((K.intrinsicComponentLocalSlice A root).cosetStep B p s) =
     (K.subalphabetComponentSubgraph A root).cosetStep B
       (K.rootedLocalAttachedCosetMap A B hBA root p) s := by
-  apply (K.subalphabetComponentSubgraph A root).
-    attachedValue_injective_of_same_index B
+  apply (K.subalphabetComponentSubgraph A root).attachedValue_injective_of_same_index B
   · rfl
   · change root.1 *
         (((p.2.1 * PSTS.SignedWord.evalGroupLetter
