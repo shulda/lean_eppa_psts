@@ -229,6 +229,7 @@ import PSTSEPPA.ABO.RootedCompletedCosetStepNaturality
 import PSTSEPPA.ABO.RootedSingleCosetEGraphHom
 import PSTSEPPA.ABO.RootedSingleCosetEGraphIso
 import PSTSEPPA.ABO.RootedMultiCosetRawEdgeEquiv
+import PSTSEPPA.ABO.RootedMultiCosetRawGraphNaturality
 import PSTSEPPA.ABO.RootedSourceMultiCosetVertexQuotient
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
