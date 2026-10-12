@@ -44,8 +44,7 @@ theorem rootedSingleCosetEGraphHom_edge_injective
     (root : K.Vertex) :
     Function.Injective
       (K.rootedSingleCosetEGraphHom A B hBA root).onEdge := by
-  exact (K.rootedSingleCosetEGraphHom A B hBA root).
-    edge_injective_of_vertex_injective
+  exact (K.rootedSingleCosetEGraphHom A B hBA root).edge_injective_of_vertex_injective
       (K.rootedSingleCosetEGraphHom_vertex_bijective A B hBA root).1
 
 /-- Every target directed edge is the image of an ORIGINAL
