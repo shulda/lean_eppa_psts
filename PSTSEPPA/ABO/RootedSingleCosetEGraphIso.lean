@@ -115,8 +115,8 @@ theorem rootedSingleCosetEGraphHom_follows_iff
     (root : K.Vertex)
     (u v : (K.intrinsicComponentLocalSlice A root).AttachedCosetVertex B)
     (w : LabelWord ι) :
-    (K.intrinsicComponentLocalSlice A root).singleCosetEGraph B |>.Follows u w v ↔
-      (K.subalphabetComponentSubgraph A root).singleCosetEGraph B |>.Follows
+    ((K.intrinsicComponentLocalSlice A root).singleCosetEGraph B).Follows u w v ↔
+      ((K.subalphabetComponentSubgraph A root).singleCosetEGraph B).Follows
         ((K.rootedSingleCosetEGraphHom A B hBA root).onVertex u)
         w
         ((K.rootedSingleCosetEGraphHom A B hBA root).onVertex v) := by
