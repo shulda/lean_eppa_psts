@@ -1,6 +1,7 @@
 import PSTSEPPA.ABO.RootedCosetGluingRelationNaturality
 import PSTSEPPA.ABO.ExactQuotientEquivTransport
 import PSTSEPPA.ABO.MultiCosetVertexQuotient
+import PSTSEPPA.ABO.RankTwoLocalThreeFamilyCover
 
 /-!
 # Actual SOURCE H1-component coset-extension vertex quotient from local H1[A]
@@ -122,8 +123,7 @@ noncomputable def rootedAmbientMultiCosetSetoid
   setoidOfEquivRelation
     (K.rootedLocalMultiCosetRawVertexEquiv A root P)
     ((K.intrinsicComponentLocalSlice A root).multiCosetSetoid P
-      ((K.intrinsicComponentLocalSlice A root).
-        admissible_of_card_le_two hcard.le)
+      ((K.intrinsicComponentLocalSlice A root).admissible_of_card_le_two hcard.le)
       (isGenerated_trivialCompletionGenerator gen A)
       (retractable_trivialCompletionGenerator_of_kRetractable
         gen 2 hret A hcard.le))
@@ -140,8 +140,7 @@ noncomputable def rootedLocalMultiCosetVertexQuotientEquiv
     (root : K.Vertex)
     (P : CosetFamilySpec A) :
     (K.intrinsicComponentLocalSlice A root).MultiCosetVertex P
-      ((K.intrinsicComponentLocalSlice A root).
-        admissible_of_card_le_two hcard.le)
+      ((K.intrinsicComponentLocalSlice A root).admissible_of_card_le_two hcard.le)
       (isGenerated_trivialCompletionGenerator gen A)
       (retractable_trivialCompletionGenerator_of_kRetractable
         gen 2 hret A hcard.le) ≃
@@ -149,8 +148,7 @@ noncomputable def rootedLocalMultiCosetVertexQuotientEquiv
   quotientEquivOfEquivRelation
     (K.rootedLocalMultiCosetRawVertexEquiv A root P)
     ((K.intrinsicComponentLocalSlice A root).multiCosetSetoid P
-      ((K.intrinsicComponentLocalSlice A root).
-        admissible_of_card_le_two hcard.le)
+      ((K.intrinsicComponentLocalSlice A root).admissible_of_card_le_two hcard.le)
       (isGenerated_trivialCompletionGenerator gen A)
       (retractable_trivialCompletionGenerator_of_kRetractable
         gen 2 hret A hcard.le))
