@@ -49,8 +49,7 @@ theorem rootedLocalMultiCosetRawGraph_target_congruent
     (A : Finset ι) (hcard : A.card = 2)
     (hret : KRetractable gen 2)
     (root : K.Vertex) (P : CosetFamilySpec A) :
-    (K.rootedLocalMultiCosetRawGraph A hcard hret root P).
-      SourceLabelTargetCongruent := by
+    (K.rootedLocalMultiCosetRawGraph A hcard hret root P).SourceLabelTargetCongruent := by
   let L := K.intrinsicComponentLocalSlice A root
   let hadm := L.admissible_of_card_le_two hcard.le
   let hgen := isGenerated_trivialCompletionGenerator gen A
@@ -75,8 +74,7 @@ theorem rootedAmbientMultiCosetRawGraph_target_congruent
     (A : Finset ι) (hcard : A.card = 2)
     (hret : KRetractable gen 2)
     (root : K.Vertex) (P : CosetFamilySpec A) :
-    (K.rootedAmbientMultiCosetRawGraph A hcard hret root P).
-      SourceLabelTargetCongruent :=
+    (K.rootedAmbientMultiCosetRawGraph A hcard hret root P).SourceLabelTargetCongruent :=
   sourceLabelTargetCongruent_transport
     (K.rootedLocalMultiCosetRawGraph A hcard hret root P)
     (K.rootedAmbientMultiCosetRawGraph A hcard hret root P)
@@ -163,8 +161,11 @@ theorem rootedMultiCosetCompletedEGraphHom_follows_iff
     (A : Finset ι) (hcard : A.card = 2)
     (hret : KRetractable gen 2)
     (root : K.Vertex) (P : CosetFamilySpec A)
-    (u v : (K.rootedLocalMultiCosetCompletedEGraph
-      A hcard hret root P).Vertex)
+    (u v : (K.intrinsicComponentLocalSlice A root).MultiCosetVertex P
+      ((K.intrinsicComponentLocalSlice A root).admissible_of_card_le_two hcard.le)
+      (isGenerated_trivialCompletionGenerator gen A)
+      (retractable_trivialCompletionGenerator_of_kRetractable
+        gen 2 hret A hcard.le))
     (w : LabelWord ι) :
     (K.rootedLocalMultiCosetCompletedEGraph
       A hcard hret root P).Follows u w v ↔
