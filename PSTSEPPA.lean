@@ -238,6 +238,7 @@ import PSTSEPPA.ABO.RootedSourceMultiCosetCompletedEGraphIso
 import PSTSEPPA.ABO.RootedLocalCosetPairedLabels
 import PSTSEPPA.ABO.RootedSourceAllProperCompletedStageIso
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
+import PSTSEPPA.ABO.RootedSourceMultiCosetAmbientValue
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
 import PSTSEPPA.ABO.RootedFreshCosetEquiv
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
