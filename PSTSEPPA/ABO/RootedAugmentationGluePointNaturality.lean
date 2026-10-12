@@ -110,7 +110,7 @@ theorem rootedLocal_gluePoint_natural
           gen A B hBA r g p).1,
           (rootedLocalFullCosetPointEquiv
             gen A B hBA r g p).2, htarget⟩ :
-          IsolatedCosetGluing.Vertex W gen B (r * (g : Γ)))
+          IsolatedCosetGluing.FreshPoint gen B (r * (g : Γ)))
     apply congrArg Sum.inr
     apply Subtype.ext
     exact (rootedLocalFreshCosetEquiv_value
