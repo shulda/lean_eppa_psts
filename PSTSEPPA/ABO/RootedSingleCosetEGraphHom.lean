@@ -45,8 +45,7 @@ distinction. No ambient-coordinate graph embedding is postulated. -/
 noncomputable def rootedSingleCosetEGraphHom
     (A B : Finset ι) (hBA : B ⊆ A) (root : K.Vertex) :
     LabelledGraphHom
-      ((K.intrinsicComponentLocalSlice A root).singleCosetEGraph B).
-        toLabelledGraph
+      ((K.intrinsicComponentLocalSlice A root).singleCosetEGraph B).toLabelledGraph
       ((K.subalphabetComponentSubgraph A root).singleCosetEGraph B).
         toLabelledGraph := by
   let L := K.intrinsicComponentLocalSlice A root
@@ -78,7 +77,7 @@ noncomputable def rootedSingleCosetEGraphHom
               (L.attachedOfSkeletonVertex B
                 ((L.toEGraph).source old.1))
         rw [K.rootedLocalAttachedCosetMap_oldVertex]
-        exact f.map_source old.1
+        exact congrArg (M.attachedOfSkeletonVertex B) (f.map_source old.1)
     | inr fresh =>
         rfl
   · intro e
