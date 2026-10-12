@@ -225,6 +225,7 @@ import PSTSEPPA.ABO.ExactQuotientEquivTransport
 import PSTSEPPA.ABO.SourceLabelEdgeQuotientNaturality
 import PSTSEPPA.ABO.SourceLabelEdgeQuotientIncidence
 import PSTSEPPA.ABO.SourceLabelEdgeQuotientEGraph
+import PSTSEPPA.ABO.SourceLabelEdgeQuotientGraphIso
 import PSTSEPPA.ABO.RootedCompletedCosetStepNaturality
 import PSTSEPPA.ABO.RootedSingleCosetEGraphHom
 import PSTSEPPA.ABO.RootedSingleCosetEGraphIso
