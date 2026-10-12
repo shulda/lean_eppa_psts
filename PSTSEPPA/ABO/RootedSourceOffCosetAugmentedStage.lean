@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.RootedSourceOffCosetNoOldEdges
+import PSTSEPPA.ABO.RootedSourceMultiCosetAmbientValue
 import PSTSEPPA.ABO.IsolatedCosetCompletion
 
 /-!
