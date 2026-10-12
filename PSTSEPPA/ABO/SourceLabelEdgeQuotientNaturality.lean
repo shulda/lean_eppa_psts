@@ -108,6 +108,7 @@ noncomputable def sourceLabelEdgeQuotientEquiv
         apply (sourceLabelRelated_iff_of_equivs
           vEquiv eEquiv src tgtSrc label tgtLabel hsrc hlabel
           (eEquiv.symm y) (eEquiv.symm z)).mpr
+        change tgtSrc y = tgtSrc z ∧ tgtLabel y = tgtLabel z at hyz
         simpa only [eEquiv.apply_symm_apply] using hyz)
   left_inv := by
     intro q
