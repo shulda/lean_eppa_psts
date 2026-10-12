@@ -91,9 +91,17 @@ noncomputable def trivialLoopCompletionIsoHom
   map_inv := by
     rintro ⟨u, s⟩
     apply Prod.ext
-    · change f.onVertex (G.loopCompletedStep s u) =
-        H.loopCompletedStep s (f.onVertex u)
-      exact (G.loopCompletedStep_natural_of_bijective H f hv he s u).symm
+    · cases s with
+      | pos i =>
+          change f.onVertex (G.loopCompletedStep (.pos i) u) =
+            H.loopCompletedStep (.pos i) (f.onVertex u)
+          exact (G.loopCompletedStep_natural_of_bijective
+            H f hv he (.pos i) u).symm
+      | neg i =>
+          change f.onVertex (G.loopCompletedStep (.neg i) u) =
+            H.loopCompletedStep (.neg i) (f.onVertex u)
+          exact (G.loopCompletedStep_natural_of_bijective
+            H f hv he (.neg i) u).symm
     · rfl
 
 /-- Bijective on the actual vertices AND on all oriented SIGNED
