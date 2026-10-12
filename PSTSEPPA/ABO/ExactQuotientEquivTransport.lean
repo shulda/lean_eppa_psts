@@ -94,7 +94,8 @@ noncomputable def quotientEquivOfEquivRelation
         intro y y' hyy'
         apply Quotient.sound
         apply (hRel (e.symm y) (e.symm y')).mpr
-        simpa only [e.apply_symm_apply] using hyy')
+        have hrelY : rY y y' := hyy'
+        simpa only [e.apply_symm_apply] using hrelY)
   left_inv := by
     intro q
     induction q using Quotient.inductionOn with
