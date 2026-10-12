@@ -70,7 +70,7 @@ theorem rootedAmbientAllProperCompletedStage_identity_B_word_fixes
   let Tamb := K.rootedAmbientAllProperCompletedStage A hcard hret root
   let f := K.rootedAllProperCompletedStageHom A hcard hret root
   have hBsubset : B ⊆ A :=
-    (allProperCosetFamily A).proper B hBP |>.subset
+    ((allProperCosetFamily A).proper B hBP).subset
   have hwA : LabelWord.Uses A w := hw.mono hBsubset
   have hvalCoe :
       ((PSTS.SignedWord.evalGroup
