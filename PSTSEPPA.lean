@@ -231,6 +231,7 @@ import PSTSEPPA.ABO.RootedSingleCosetEGraphIso
 import PSTSEPPA.ABO.RootedMultiCosetRawEdgeEquiv
 import PSTSEPPA.ABO.RootedSourceMultiCosetVertexQuotient
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
+import PSTSEPPA.ABO.RootedSourceMultiCosetAmbientValue
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
