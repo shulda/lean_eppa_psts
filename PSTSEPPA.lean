@@ -235,6 +235,8 @@ import PSTSEPPA.ABO.RootedMultiCosetRawEdgeEquiv
 import PSTSEPPA.ABO.RootedMultiCosetRawGraphNaturality
 import PSTSEPPA.ABO.RootedSourceMultiCosetVertexQuotient
 import PSTSEPPA.ABO.RootedSourceMultiCosetCompletedEGraphIso
+import PSTSEPPA.ABO.RootedLocalCosetPairedLabels
+import PSTSEPPA.ABO.RootedSourceAllProperCompletedStageIso
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
