@@ -1567,3 +1567,18 @@ This eliminates the central *plain multi-coset quotient* comparison obstacle in 
 ### Important audit discipline
 
 The old #376/#377/#379/#381/#382/#383 stacked PRs were independently CI green but are now CLOSED AS SUPERSEDED by their BYTE-IDENTICAL clean integration #384. The independent #385/#386/#387 final-head source files were integrated with unchanged exact blob SHAs by green #390; do not replay their entire historical dependency stacks. Treat failed, cancelled, queued or unverified CI as **NOT certified**. No earlier human rank-one universal catalogue observation implies a general-rank shortcut: the commutator obstruction and component-tagged duplicated-coordinate tests in the October 11 audit remain active.
+
+
+## 2026-10-12 EVENING — CERTIFIED plain COMPLETE source stage, FRESH B-carrier and true source value
+
+**Authoritative new main cutoff:** `120cdf48e1baf864d42a998ae49775544cebacee`. Successfully built/audited PRs #388, #391, #396, #393 and #394 are now merged; their new proofs are **CERTIFIED**. The previous 2026-10-12 checkpoint above is a historical snapshot and its `#388/#391/#392/#393/#394 pending` claims are **SUPERSEDED**. The post-merge CI for this exact new main revision should be checked separately before describing the new head as post-merge green.
+
+The completed exact source geometry now has two layers:
+
+1. **PLAIN EGraph** (#390): entire original connected A-component's proper-coset expansion, with genuine component tags, signed edge quotient and source/local graph/path equivalence, without global Γ retractability.
+2. **COMPLETE PLAIN ACTION** (#388/#391/#396): source/local signed availability is exactly matched, the `P_A` EGraph is locally paired on BOTH sides, legal completion inserts only fixed-point loops, and the resulting complete action graphs are isomorphic ON ALL VERTICES, SIGNED DIRECTED EDGE TOKENS and actual word paths. This is the unaugmented stage, NOT all corrected source Z₁.
+3. **B-AUGMENTATION PREPARATION** (#389/#393/#394): eligible source off-B roots are equivalent to precisely their local tagged counterparts; full-B-coset FRESH point sets (root removed) correspond bijectively by rooted group translation; the true source-glued quotient has a well-defined Γ-value satisfying exact root-translation naturality. None asserts that distinct tagged quotient points are identified by equal Γ-coordinate.
+
+**Immediate open geometric steps (not yet Lean certified):** #397 checks NO OLD signed B-labelled edge/loop at eligible original-source augmentation roots, allowing deterministic coset attachment; #398 uses it to construct the literal original-source type-(2) B-augmented EGraph and stationary-loop-completed full action. They are CANDIDATES until green full CI. Their construction alone will not prove source/local augmented EGraph isomorphism: the new full-B-coset oriented edge tokens, their two signs, formal inversion, target and gluing of the common basepoint need independent transport proofs. Thereafter the complete original Z₁ family must be shown to fit the actual finite G₂ local three-family catalogue (including type-(1), B=∅/nonempty, disconnected original-cover components).
+
+**Still NOT completed:** corrected ABO Condition 5.2, full Theorem 4.7 admissibility/embeddedness/cluster/bridge-free geometry, full higher-rank Yₖ/Zₖ induction, finite reflecting-group construction, final unconditional MAX⇒PSTS EPPA. The human `C₂×C₂` duplicate-coordinate counterexample and noncommuting-word rank≥2 obstruction remain valid safeguards against group-only shortcuts.
