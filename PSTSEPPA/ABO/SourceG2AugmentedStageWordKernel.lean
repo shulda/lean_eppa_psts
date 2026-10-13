@@ -95,5 +95,71 @@ theorem sourceG2Type2Catalogue_wordKernel
   rw [hw, sourceG2Type2CatalogueCover_one] at h
   exact h.symm
 
+
+/-- More generally, equal values of ANY TWO signed words in the real
+source-dependent G₂ induce exactly equal action endpoints on every
+completed type-(1) augmented cluster. The equality holds at the
+original tagged stage point, not merely after projection to H₁. -/
+theorem sourceG2Type1Catalogue_wordValue_congr
+    (src dst : ι → V)
+    (A : Finset ι) (hcard : A.card = 2)
+    (x : Σ j : ClusterSpec.augmentedType1Index
+      (trivialCompletionGenerator (sourceH1Generator src dst) A) A,
+        ClusterSpec.augmentedType1Vertex j)
+    (w₁ w₂ : LabelWord ι)
+    (hw : PSTS.SignedWord.evalGroup
+      (sourceAllLocalG2Generator src dst) w₁ =
+      PSTS.SignedWord.evalGroup
+        (sourceAllLocalG2Generator src dst) w₂) :
+    (ClusterSpec.augmentedType1FamilyStage
+      (trivialCompletionGenerator (sourceH1Generator src dst) A) A
+    ).followWord x w₁ =
+    (ClusterSpec.augmentedType1FamilyStage
+      (trivialCompletionGenerator (sourceH1Generator src dst) A) A
+    ).followWord x w₂ := by
+  apply sourceG2Type1CatalogueBasepoint_injective src dst A hcard
+  have h₁ := sourceG2Type1CatalogueCover_word src dst A hcard x w₁
+  have h₂ := sourceG2Type1CatalogueCover_word src dst A hcard x w₂
+  rw [hw] at h₁
+  exact h₁.symm.trans h₂
+
+/-- Equality of values in the actual finite input-dependent G₂
+likewise forces equality of the genuine SIGNED completed-action
+endpoints on every local type-(2) augmented full B-coset stage. -/
+theorem sourceG2Type2Catalogue_wordValue_congr
+    (src dst : ι → V)
+    (j : AllLocalRankTwoSkeletonIndex (sourceH1Generator src dst))
+    (x : localType2CatalogueFamilyVertex
+      (sourceH1Generator src dst)
+      (sourceH1_twoRetractable src dst) j)
+    (w₁ w₂ : LabelWord ι)
+    (hw : PSTS.SignedWord.evalGroup
+      (sourceAllLocalG2Generator src dst) w₁ =
+      PSTS.SignedWord.evalGroup
+        (sourceAllLocalG2Generator src dst) w₂) :
+    ((allLocalRankTwoSkeleton j).rankTwoType2SingletonFamilyStage
+      (allLocalRankTwoAlphabet_card j)
+      (isGenerated_trivialCompletionGenerator
+        (sourceH1Generator src dst) (allLocalRankTwoAlphabet j))
+      (retractable_trivialCompletionGenerator_of_kRetractable
+        (sourceH1Generator src dst) 2
+        (sourceH1_twoRetractable src dst)
+        (allLocalRankTwoAlphabet j)
+        (allLocalRankTwoAlphabet_card j).le)).followWord x w₁ =
+    ((allLocalRankTwoSkeleton j).rankTwoType2SingletonFamilyStage
+      (allLocalRankTwoAlphabet_card j)
+      (isGenerated_trivialCompletionGenerator
+        (sourceH1Generator src dst) (allLocalRankTwoAlphabet j))
+      (retractable_trivialCompletionGenerator_of_kRetractable
+        (sourceH1Generator src dst) 2
+        (sourceH1_twoRetractable src dst)
+        (allLocalRankTwoAlphabet j)
+        (allLocalRankTwoAlphabet_card j).le)).followWord x w₂ := by
+  apply sourceG2Type2CatalogueBasepoint_injective src dst j
+  have h₁ := sourceG2Type2CatalogueCover_word src dst j x w₁
+  have h₂ := sourceG2Type2CatalogueCover_word src dst j x w₂
+  rw [hw] at h₁
+  exact h₁.symm.trans h₂
+
 end ABO
 end PSTSEPPA
