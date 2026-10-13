@@ -325,6 +325,8 @@ import PSTSEPPA.ABO.SourceG2Type2ExactFibreWordAction
 
 import PSTSEPPA.ABO.SourceH1Type2ActualG2WordAction
 
+import PSTSEPPA.ABO.SourceH1Type2NamedActualG2WordAction
+
 /-!
 # EPPA for partial Steiner triple systems
 
