@@ -313,6 +313,8 @@ import PSTSEPPA.ABO.SourceType2ActualG2CatalogueLocator
 import PSTSEPPA.ABO.RootedSourceCompletedAugmentationApiAgreement
 import PSTSEPPA.ABO.CompleteStageWordKernelTransport
 
+import PSTSEPPA.ABO.RootedLocalPlainStageCatalogueAgreement
+
 /-!
 # EPPA for partial Steiner triple systems
 
