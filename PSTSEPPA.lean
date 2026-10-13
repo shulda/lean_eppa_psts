@@ -304,6 +304,8 @@ import PSTSEPPA.ABO.UniversalKernelPermutationCatalogue
 import PSTSEPPA.ABO.UnaryPeriodWordKernel
 import PSTSEPPA.ABO.RankTwoActualStageUnaryPeriods
 
+import PSTSEPPA.ABO.CompleteStageWordKernelTransport
+
 /-!
 # EPPA for partial Steiner triple systems
 
