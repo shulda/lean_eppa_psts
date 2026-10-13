@@ -150,7 +150,8 @@ theorem augmentedVertex_mem_parentSubgroup
       generatedSubgroup_mono gen hBA hB
     have hv : (v : Γ) ∈ generatedSubgroup gen A := v.2
     have hx' := (generatedSubgroup gen A).mul_mem hv hA
-    have hxEq : (v : Γ) * ((v : Γ)⁻¹ * x) = x := by group
+    have hxEq : (v : Γ) * ((v : Γ)⁻¹ * x) = x := by
+      simp only [← mul_assoc, mul_inv_cancel, one_mul]
     rw [hxEq] at hx'
     exact hx'
 
