@@ -1582,3 +1582,39 @@ The completed exact source geometry now has two layers:
 **Immediate open geometric steps (not yet Lean certified):** #397 checks NO OLD signed B-labelled edge/loop at eligible original-source augmentation roots, allowing deterministic coset attachment; #398 uses it to construct the literal original-source type-(2) B-augmented EGraph and stationary-loop-completed full action. They are CANDIDATES until green full CI. Their construction alone will not prove source/local augmented EGraph isomorphism: the new full-B-coset oriented edge tokens, their two signs, formal inversion, target and gluing of the common basepoint need independent transport proofs. Thereafter the complete original Z₁ family must be shown to fit the actual finite G₂ local three-family catalogue (including type-(1), B=∅/nonempty, disconnected original-cover components).
 
 **Still NOT completed:** corrected ABO Condition 5.2, full Theorem 4.7 admissibility/embeddedness/cluster/bridge-free geometry, full higher-rank Yₖ/Zₖ induction, finite reflecting-group construction, final unconditional MAX⇒PSTS EPPA. The human `C₂×C₂` duplicate-coordinate counterexample and noncommuting-word rank≥2 obstruction remain valid safeguards against group-only shortcuts.
+
+## 2026-10-13 — actual finite source G₂ stage actions and named source API (certified)
+
+**Frozen authoritative cutoff:** main `717b30aa9b1d54307ef39e428e91fc100d935278`. Independent full Lean/256-original-input-pattern/standard-axiom CI GREEN before merges #423/#427; main post-merge `ffbde230` GREEN. Exact new `717b30aa` post-merge CI should be separately verified.
+
+**MERGED and certified mathematical facts:**
+
+1. **#423:** clean carry of verified #417 plus corrected #418 and genuine source G₂ Cayley signed-action covers (#419/#420), and actual original H₁ type-(2) (A,K,B,z) catalogue location (#421). All proper B, including B=∅, both signs, old and fresh action vertices and legal fixed loops are retained. In the local finite G₂ disjoint action, **every type-(1) and every type-(2) completed stage is a literal tagged summand**, not just an action on ambient H₁ group coordinates. The error `No goals to be solved` in original #418 was precisely a redundant last `rfl` after its goal had closed, and was fixed before full certification. Original #417–#421 were closed with cross-links to accepted #423, not treated as separate unverified dependencies.
+2. **#427:** source-named `rootedSourceOffCosetCompletedStage` and root-translated `rootedTranslatedSourceOffCosetCompletedStage` are HEq via exact ambient anchor naturality (#424, source SHA `c701f0e328a57b3c0a7c13c780e1ab06366e36f3`). General `CompleteEGraph.wordActionCongr_iff_of_bijectiveHom` and its injective/surjective directions transport the FULL congruence of arbitrary chronological signed word actions on every vertex (#426, source SHA `f8aa955738df8aa21bdca051e87ff976948b1b1a`). Both source blobs were copied unchanged into green #427; its historical sources #422/#424/#426 have been closed as superseded with audit comments.
+
+**PENDING research candidates (do not call CERTIFIED yet):**
+
+- #425 current corrected head: a group-value equality in *actual* `sourceAllLocalG2` acts equally on full local type-(1)/(2) completed families; four old giant-rewrite `isDefEq` heartbeat timeouts replaced by precise `congrArg onVertex` compositions. CI PENDING.
+- #428 original stacked head FULL CI GREEN for rooted H₁ complete type-(2) word-congruence transport; independent CLEAN integration #434 after #427 is PENDING, so not yet a green-main theorem.
+- #429 vertices and signed edges of type-(1) ambient augmented clusters versus local Γ[A]; #431 actual vertex/edge carrier equivalences, #432 source/local complete signed augmented action isomorphism, #433 exact original/local (P,D,v) stage-index equivalence. All provisional pending exact CI. #430 independent sigma-stage arbitrary signed word-congruence decomposition pending CI.
+
+**Still open and conceptually important:** full original Z₁ action **coverage** (not only local stage occurrence and dependent index matching); corrected Section-4/5 Condition 5.2 and Theorem 4.7; higher-rank historical stage word kernels and Yₖ/Zₖ tower; finite reflecting group and unconditional PSTS EPPA. Respect the documented five-vertex duplicate-coordinate and noncommuting-word counterexamples against ambient-Cayley-only shortcuts. No progress percentages are inferred from line count or number of PRs.
+
+## 2026-10-13 — certified true source G₂ rank-one signed-action bridges (main 701b0261)
+
+**New authoritative cutoff:** `701b02611bba65f98db5c47a48f9a02cec17a063`. Clean #437 merged after full independent Lean library build, original oriented-graph 256-case census and standard-allowed-axioms audit GREEN. Exact source Lean blobs from independently green #425, #428, #429, #430, #431, #432 and #433 were carried byte-for-byte into that new clean head, not via unsafe stacks. Check post-merge CI of `701b0261` separately; an immediately triggered run does not itself certify success.
+
+**CERTIFIED facts:**
+
+1. Actual finite `sourceAllLocalG2` signed group-value equality controls actual complete word actions of every LOCAL type-(1)/(2) augmented source-related catalogue family, with old/fresh tags, all inverse signs and legal fixed loops. This is stronger than source H₁ group-coordinate agreement.
+2. Original H₁ rooted and normalized local completed type-(2) augmented actions are genuinely vertex/edge-bijective signed isomorphic and the full chronological signed-word congruence is preserved and reflected, including the named original stage to root-translated dependent HEq on previous main #427.
+3. Every proper-cluster type-(1) augmented stage `P∪vH₁[D]` (for v∈H₁[A]) has exact old+new ambient/local subgroup vertex and signed edge correspondence, bijective completed signed action transport and exact original/local `(P,D,v)` index equivalence. No arbitrary representatives and no identification of distinct coset tags.
+4. Any dependent disjoint sum of completed stage actions has whole-action signed-word congruence exactly iff each original stage fibre has it. The index types may be empty.
+
+**Remaining source-specific rank-one composition work (CI CANDIDATES, not certified main):**
+
+- #438 has FULL GREEN CI on its independent head and combines (1)+(3) for EVERY original H₁ ambient augmented type-(1) cluster; #443 packages every original `(P,D,v)` tag into the full original type-(1) dependent signed action. #443 must pass its own full checks.
+- #439 uses (1)+(4) for each single actual tagged local type-(2) stage; #442 composes this with (2), the literal original H₁-cover skeleton index and local G₂ stage identity. All individual heads require independent full CI.
+- #440 exhibits the *plain/unaugmented* local full proper-coset stage, first genuine `G₂` summand, its Cayley cover and word-action equality. #441 tests that its source/local completed action API agrees literally with the previously certified rooted local P_A completion. #444 proves the general exact full signed-word congruence under original/local plain-stage isomorphism. The final original plain-stage composition remains after their independent audits.
+
+**Strict scope:** original source Definition-5.3 complete Z₁ family coverage is not closed merely by all-local action superfamily; must explicitly compose source indices, action fibres, old/new signed edges and legal completion. Corrected Condition 5.2 / Theorem 4.7 admissibility/embeddedness, cluster property and bridge-freeness remain OPEN at general ranks. Full higher `Yₖ/Zₖ` induction and original group equivariance, final finite reflecting group, concrete fibre-MAX and unconditional PSTS EPPA remain OPEN. Reject any reinterpretation of distinct component-tagged points as one ambient group coordinate (human duplicate-coordinate counterexamples).
