@@ -241,6 +241,7 @@ import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
 import PSTSEPPA.ABO.RootedSourceOffCosetNoOldEdges
 import PSTSEPPA.ABO.RootedSourceOffCosetAugmentedStage
 import PSTSEPPA.ABO.RootedSourceAugmentedRankOneKernel
+import PSTSEPPA.ABO.RootedSourceType2FullRankOneKernel
 import PSTSEPPA.ABO.RootedSourceMultiCosetAmbientValue
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
 import PSTSEPPA.ABO.RootedFreshCosetEquiv
