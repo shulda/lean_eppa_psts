@@ -60,11 +60,9 @@ theorem rootedLocalOffCoset_no_old_B_edge
           (allProperCosetFamily A) B hBP q =
         K.rootedLocalMultiCosetVertexQuotientEquiv
           A hcard hret root (allProperCosetFamily A) z)
-    (e : (K.intrinsicComponentLocalSlice A root).
-      MultiCosetEdgeVertexIncidenceQuotient
+    (e : (K.intrinsicComponentLocalSlice A root).MultiCosetEdgeVertexIncidenceQuotient
         (allProperCosetFamily A)
-        ((K.intrinsicComponentLocalSlice A root).
-          admissible_of_card_le_two hcard.le)
+        ((K.intrinsicComponentLocalSlice A root).admissible_of_card_le_two hcard.le)
         (isGenerated_trivialCompletionGenerator gen A)
         (retractable_trivialCompletionGenerator_of_kRetractable
           gen 2 hret A hcard.le))
