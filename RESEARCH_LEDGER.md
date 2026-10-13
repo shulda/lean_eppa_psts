@@ -1541,3 +1541,44 @@ geometric Section-4/5 induction remains critical.
 - Then prove source/local CE **quotient-setoid** translation on tagged vertices and directed signed edges, plain completion, **all** augmentations (`B=∅` included), and only then the corrected geometric Condition 5.2. Higher ranks remain a separate difficult project.
 
 **Discipline:** every newly authored branch is merely CANDIDATE until its own full Lean and axiom CI is green; unsuccessful initial runs must not be reported as certified. Closed superseded PRs (#341, #345, #347, #350, #351) were carried exactly via checked clean integrations (#346, #348, #354, #356).
+
+
+## 2026-10-12 — INDEPENDENTLY CERTIFIED original-source rank-two multi-coset geometric bridge
+
+**Main cutoff:** #380 `0bc000c1` + #378 `afc7d21b` + #384 `6e5e3854` + #389 `bb5ffd8a` + #390 `eb1e10fa`.
+The full original-tree Lean builds, 256-pattern independent source-input census and allowed-axiom checks for every integration PR were green BEFORE their merges. The post-merge check for `eb1e10fa` is separate and must be verified.
+
+### CERTIFIED and actually on `main`
+
+1. **True source/local rank-two normalization.** For any literal connected A-component of an INCOMPLETE Γ-Cayley source graph, with |A|=2 and Γ only 2-retractable, the local subgroup Γ[A] translation preserves **all existing signed old edges** (not a fake completed Cayley graph).
+2. **Exact vertex and signed EDGE geometry** (#380, #384, #390): source and local component-indexed attached B-coset vertices match for every B⊆A, intersection-supported gluing is preserved AND REFLECTED and gives genuine equivalent tagged vertex quotients; individual signed single-B EGraphs are isomorphic, and their complete alphabet-tagged raw edge disjoint unions are isomorphic.
+3. **Source-specific EGraph congruence without global ambient retractability** (#390): the already checked local Γ[A] target congruence is carried through the bijective raw signed graph morphism to the honest source component. Identify raw oriented edges **only** by glued source and full signed label, descend the true target and formal inverse, and conclude a deterministic EGraph. `rootedMultiCosetCompletedEGraphHom_bijective` and `rootedMultiCosetCompletedEGraphHom_follows_iff` prove full signed graph and genuine path isomorphism of the **PLAIN** multi-coset extensions, not just ambient coordinate agreement.
+4. **Exact off-B augmentation root predicate** (#389): an old vertex is outside every point of the selected B-coset constituent iff its root-translated image is. This survives distinct component tags with identical Γ-values.
+
+This eliminates the central *plain multi-coset quotient* comparison obstacle in the original source rank-two Z₁ programme. It is stronger than the older `H1[A]` catalogue existence, but it is **not** the full theorem.
+
+### STILL OPEN: the actual Section-5 / PSTS theorem gates
+
+- Make source/local **trivial fixed-loop completion** natural for signed EGraph isomorphisms, and separately establish its prerequisite `LocallyPairedLabels` for the source root using the certified weakly complete local `P_A` EGraph; candidate PRs #388/#391/#392, each awaiting its own final CI as of this note.
+- Translate the **ambient value** of the glued source-rooted vertex, and the genuinely new *fresh* points and signed B-edges in a type-(2) full-B-coset augmentation. Exact source off-B root indexing itself is proved, but candidate fresh-carrier equivalence #393 and tagged ambient-value projection #394 are not yet certified. A full augmented EGraph isomorphism is **NOT** claimed.
+- Match every original Definition-5.3 Z₁ stage, including type-(1) augmented clusters, type-(2) ordinary/augmented full coset extensions, B=∅, B≠∅ and legal trivial completions, with an honest component and cover of the source-dependent finite all-local G₂ family. The source family equality/inclusion and stage action cover theorem remain open even after plain CE isomorphism.
+- Derive the corrected geometric Condition 5.2 and Theorem 4.7 properties without circularly invoking a Cayley embedding of a still-unembedded extension. Higher-rank history, the reflecting group and the final selected MAX⇒PSTS-EPPA application remain OPEN.
+
+### Important audit discipline
+
+The old #376/#377/#379/#381/#382/#383 stacked PRs were independently CI green but are now CLOSED AS SUPERSEDED by their BYTE-IDENTICAL clean integration #384. The independent #385/#386/#387 final-head source files were integrated with unchanged exact blob SHAs by green #390; do not replay their entire historical dependency stacks. Treat failed, cancelled, queued or unverified CI as **NOT certified**. No earlier human rank-one universal catalogue observation implies a general-rank shortcut: the commutator obstruction and component-tagged duplicated-coordinate tests in the October 11 audit remain active.
+
+
+## 2026-10-12 EVENING — CERTIFIED plain COMPLETE source stage, FRESH B-carrier and true source value
+
+**Authoritative new main cutoff:** `120cdf48e1baf864d42a998ae49775544cebacee`. Successfully built/audited PRs #388, #391, #396, #393 and #394 are now merged; their new proofs are **CERTIFIED**. The previous 2026-10-12 checkpoint above is a historical snapshot and its `#388/#391/#392/#393/#394 pending` claims are **SUPERSEDED**. The post-merge CI for this exact new main revision should be checked separately before describing the new head as post-merge green.
+
+The completed exact source geometry now has two layers:
+
+1. **PLAIN EGraph** (#390): entire original connected A-component's proper-coset expansion, with genuine component tags, signed edge quotient and source/local graph/path equivalence, without global Γ retractability.
+2. **COMPLETE PLAIN ACTION** (#388/#391/#396): source/local signed availability is exactly matched, the `P_A` EGraph is locally paired on BOTH sides, legal completion inserts only fixed-point loops, and the resulting complete action graphs are isomorphic ON ALL VERTICES, SIGNED DIRECTED EDGE TOKENS and actual word paths. This is the unaugmented stage, NOT all corrected source Z₁.
+3. **B-AUGMENTATION PREPARATION** (#389/#393/#394): eligible source off-B roots are equivalent to precisely their local tagged counterparts; full-B-coset FRESH point sets (root removed) correspond bijectively by rooted group translation; the true source-glued quotient has a well-defined Γ-value satisfying exact root-translation naturality. None asserts that distinct tagged quotient points are identified by equal Γ-coordinate.
+
+**Immediate open geometric steps (not yet Lean certified):** #397 checks NO OLD signed B-labelled edge/loop at eligible original-source augmentation roots, allowing deterministic coset attachment; #398 uses it to construct the literal original-source type-(2) B-augmented EGraph and stationary-loop-completed full action. They are CANDIDATES until green full CI. Their construction alone will not prove source/local augmented EGraph isomorphism: the new full-B-coset oriented edge tokens, their two signs, formal inversion, target and gluing of the common basepoint need independent transport proofs. Thereafter the complete original Z₁ family must be shown to fit the actual finite G₂ local three-family catalogue (including type-(1), B=∅/nonempty, disconnected original-cover components).
+
+**Still NOT completed:** corrected ABO Condition 5.2, full Theorem 4.7 admissibility/embeddedness/cluster/bridge-free geometry, full higher-rank Yₖ/Zₖ induction, finite reflecting-group construction, final unconditional MAX⇒PSTS EPPA. The human `C₂×C₂` duplicate-coordinate counterexample and noncommuting-word rank≥2 obstruction remain valid safeguards against group-only shortcuts.
