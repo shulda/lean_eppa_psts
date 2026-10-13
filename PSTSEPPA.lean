@@ -304,6 +304,12 @@ import PSTSEPPA.ABO.UniversalKernelPermutationCatalogue
 import PSTSEPPA.ABO.UnaryPeriodWordKernel
 import PSTSEPPA.ABO.RankTwoActualStageUnaryPeriods
 
+import PSTSEPPA.ABO.RootedLocalType2StageCatalogueAgreement
+import PSTSEPPA.ABO.Type2G2CatalogueActionOccurrence
+import PSTSEPPA.ABO.SourceG2Type1FamilyActionCover
+import PSTSEPPA.ABO.SourceG2Type2FamilyActionCover
+import PSTSEPPA.ABO.SourceType2ActualG2CatalogueLocator
+
 /-!
 # EPPA for partial Steiner triple systems
 
