@@ -238,6 +238,7 @@ import PSTSEPPA.ABO.RootedSourceMultiCosetCompletedEGraphIso
 import PSTSEPPA.ABO.RootedLocalCosetPairedLabels
 import PSTSEPPA.ABO.RootedSourceAllProperCompletedStageIso
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
+import PSTSEPPA.ABO.RootedOffCosetAugmentationIndexEquiv
 import PSTSEPPA.ABO.RootedSourceOffCosetNoOldEdges
 import PSTSEPPA.ABO.RootedSourceOffCosetAugmentedStage
 import PSTSEPPA.ABO.RootedSourceAugmentedRankOneKernel
