@@ -257,6 +257,7 @@ import PSTSEPPA.ABO.RootedOriginalSourceCompletedAugmentationTransport
 import PSTSEPPA.ABO.RootedFullBAugmentationCompletedActionIso
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
+import PSTSEPPA.ABO.Type1ClusterCatalogueAnchor
 import PSTSEPPA.ABO.SourceH1AllLocalG2
 import PSTSEPPA.ABO.SourceG2LocalCayleyCovers
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
