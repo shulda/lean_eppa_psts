@@ -323,6 +323,10 @@ import PSTSEPPA.ABO.Type1OriginalLocalStageIndexEquiv
 
 import PSTSEPPA.ABO.SourceG2PlainStageCayleyCover
 
+import PSTSEPPA.ABO.RootedLocalPlainStageCatalogueAgreement
+import PSTSEPPA.ABO.RootedSourcePlainWordActionCongruence
+import PSTSEPPA.ABO.SourceH1PlainActualG2WordAction
+
 /-!
 # EPPA for partial Steiner triple systems
 
