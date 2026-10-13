@@ -310,6 +310,9 @@ import PSTSEPPA.ABO.SourceG2Type1FamilyActionCover
 import PSTSEPPA.ABO.SourceG2Type2FamilyActionCover
 import PSTSEPPA.ABO.SourceType2ActualG2CatalogueLocator
 
+import PSTSEPPA.ABO.RootedSourceCompletedAugmentationApiAgreement
+import PSTSEPPA.ABO.CompleteStageWordKernelTransport
+
 /-!
 # EPPA for partial Steiner triple systems
 
