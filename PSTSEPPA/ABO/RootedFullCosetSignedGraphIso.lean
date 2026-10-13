@@ -54,7 +54,7 @@ noncomputable def rootedLocalFullCosetSignedGraphHom
     apply Subtype.ext
     apply Prod.ext
     · change
-        r * (((e.1.1 * PSTS.SignedWord.evalGroupLetter
+        r * ((e.1.1 * PSTS.SignedWord.evalGroupLetter
             (trivialCompletionGenerator gen A) e.1.2 :
             generatedSubgroup gen A) : Γ) =
           (r * (e.1.1 : Γ)) *
