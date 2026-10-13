@@ -103,16 +103,20 @@ noncomputable def rootedOffCosetAugmentationIndexEquiv
     rintro ⟨B, ⟨z, hz⟩⟩
     let ev := K.rootedLocalMultiCosetVertexQuotientEquiv
       A hcard hret root P
-    apply Sigma.ext rfl
-    apply Subtype.ext
-    exact ev.symm_apply_apply z
+    change
+      (⟨B, ⟨ev.symm (ev z), _⟩⟩ :
+        K.rootedLocalOffCosetAugmentationIndex A hcard hret root P) =
+        ⟨B, ⟨z, hz⟩⟩
+    simp only [Equiv.symm_apply_apply]
   right_inv := by
     rintro ⟨B, ⟨z, hz⟩⟩
     let ev := K.rootedLocalMultiCosetVertexQuotientEquiv
       A hcard hret root P
-    apply Sigma.ext rfl
-    apply Subtype.ext
-    exact ev.apply_symm_apply z
+    change
+      (⟨B, ⟨ev (ev.symm z), _⟩⟩ :
+        K.rootedAmbientOffCosetAugmentationIndex A hcard hret root P) =
+        ⟨B, ⟨z, hz⟩⟩
+    simp only [Equiv.apply_symm_apply]
 
 /-- The stage-index equivalence retains the genuine
 selected alphabet B exactly, including B=∅. -/
