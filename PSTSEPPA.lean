@@ -254,6 +254,7 @@ import PSTSEPPA.ABO.RootedAugmentationGluePointNaturality
 import PSTSEPPA.ABO.RootedFullBAugmentationGraphIso
 import PSTSEPPA.ABO.RootedOriginalSourceAugmentedGraphTransport
 import PSTSEPPA.ABO.RootedOriginalSourceCompletedAugmentationTransport
+import PSTSEPPA.ABO.RootedSourceCompletedAugmentationApiAgreement
 import PSTSEPPA.ABO.RootedFullBAugmentationCompletedActionIso
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
