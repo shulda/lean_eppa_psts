@@ -90,7 +90,7 @@ theorem sourceG2PlainCatalogueCover_word
       (PSTS.SignedWord.evalGroup
         (sourceAllLocalG2Generator src dst) w) =
     sourceG2PlainCatalogueBasepoint src dst j
-      ((allLocalRankTwoSkeleton j).allProperCompletedStage
+      (((allLocalRankTwoSkeleton j).allProperCompletedStage
         ((allLocalRankTwoSkeleton j).admissible_of_card_le_two
           (allLocalRankTwoAlphabet_card j).le)
         (isGenerated_trivialCompletionGenerator
@@ -100,7 +100,7 @@ theorem sourceG2PlainCatalogueCover_word
           (sourceH1_twoRetractable src dst)
           (allLocalRankTwoAlphabet j)
           (allLocalRankTwoAlphabet_card j).le)
-        (allLocalRankTwoAlphabet_card j).ge).followWord x w := by
+        (allLocalRankTwoAlphabet_card j).ge).followWord x w) := by
   let K := allLocalRankTwoSkeleton j
   let hcard := allLocalRankTwoAlphabet_card j
   let hgen := isGenerated_trivialCompletionGenerator
