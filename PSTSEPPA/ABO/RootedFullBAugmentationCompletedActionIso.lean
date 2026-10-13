@@ -59,8 +59,7 @@ noncomputable def rootedFullBAugmentationCompletedStageHom
         H gen B (r * (g : Γ)) (f.onVertex root)
         hMissingH hpairedH).toEGraph.toLabelledGraph :=
   (IsolatedCosetGluing.gluedEGraph G
-    (trivialCompletionGenerator gen A) B g root hMissingG).
-    trivialLoopCompletionIsoHom
+    (trivialCompletionGenerator gen A) B g root hMissingG).trivialLoopCompletionIsoHom
       (IsolatedCosetGluing.gluedEGraph H gen B
         (r * (g : Γ)) (f.onVertex root) hMissingH)
       (rootedFullBAugmentationGraphHom G H f hv he
@@ -101,8 +100,7 @@ theorem rootedFullBAugmentationCompletedStageHom_bijective
         A B hBA r g root hMissingG hMissingH hpairedG hpairedH).onEdge := by
   exact
     (IsolatedCosetGluing.gluedEGraph G
-      (trivialCompletionGenerator gen A) B g root hMissingG).
-      trivialLoopCompletionIsoHom_bijective
+      (trivialCompletionGenerator gen A) B g root hMissingG).trivialLoopCompletionIsoHom_bijective
         (IsolatedCosetGluing.gluedEGraph H gen B
           (r * (g : Γ)) (f.onVertex root) hMissingH)
         (rootedFullBAugmentationGraphHom G H f hv he
