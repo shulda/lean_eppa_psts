@@ -225,8 +225,7 @@ theorem rootedSourceOffCosetCompletedStage_rankOne_wordValue_eq_one
     (K.rootedSourceOffCosetCompletedStage
       A hcard hret root B hBP z hOffSource).wordValue w = 1 := by
   apply ((K.rootedSourceOffCosetCompletedStage
-    A hcard hret root B hBP z hOffSource).
-      wordValue_eq_one_iff_all_vertices_fixed w).mpr
+    A hcard hret root B hBP z hOffSource).wordValue_eq_one_iff_all_vertices_fixed w).mpr
   intro v
   exact K.rootedSourceOffCosetCompletedStage_rankOne_word_fixes
     A hcard hret root B hBP z hOffSource
