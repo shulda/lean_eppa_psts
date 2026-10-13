@@ -141,6 +141,7 @@ theorem type1StageVertexIntoAllLocalG2_followWord
       type1LocalG2CatalogueVertex gen hret)
   rw [CompleteEGraph.disjointUnion_followWord_inr,
       CompleteEGraph.disjointUnion_followWord_inl]
+  rfl
 
 end ABO
 end PSTSEPPA
