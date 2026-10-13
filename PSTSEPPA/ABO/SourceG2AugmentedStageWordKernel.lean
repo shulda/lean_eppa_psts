@@ -56,8 +56,11 @@ theorem sourceG2Type1Catalogue_wordKernel
     ).followWord x w = x := by
   apply sourceG2Type1CatalogueBasepoint_injective src dst A hcard
   have h := sourceG2Type1CatalogueCover_word src dst A hcard x w
-  rw [hw, sourceG2Type1CatalogueCover_one] at h
-  exact h.symm
+  exact h.symm.trans
+    ((congrArg
+      (sourceG2LocalCayleyHom src dst
+        (sourceG2Type1CatalogueBasepoint src dst A hcard x)).onVertex hw).trans
+      (sourceG2Type1CatalogueCover_one src dst A hcard x))
 
 /-- The exact doubly tagged type-(2) catalogue embedding is
 injective for a prescribed real local Cayley skeleton. -/
@@ -92,8 +95,11 @@ theorem sourceG2Type2Catalogue_wordKernel
         (allLocalRankTwoAlphabet_card j).le)).followWord x w = x := by
   apply sourceG2Type2CatalogueBasepoint_injective src dst j
   have h := sourceG2Type2CatalogueCover_word src dst j x w
-  rw [hw, sourceG2Type2CatalogueCover_one] at h
-  exact h.symm
+  exact h.symm.trans
+    ((congrArg
+      (sourceG2LocalCayleyHom src dst
+        (sourceG2Type2CatalogueBasepoint src dst j x)).onVertex hw).trans
+      (sourceG2Type2CatalogueCover_one src dst j x))
 
 
 /-- More generally, equal values of ANY TWO signed words in the real
@@ -120,8 +126,10 @@ theorem sourceG2Type1Catalogue_wordValue_congr
   apply sourceG2Type1CatalogueBasepoint_injective src dst A hcard
   have h₁ := sourceG2Type1CatalogueCover_word src dst A hcard x w₁
   have h₂ := sourceG2Type1CatalogueCover_word src dst A hcard x w₂
-  rw [hw] at h₁
-  exact h₁.symm.trans h₂
+  exact h₁.symm.trans
+    ((congrArg
+      (sourceG2LocalCayleyHom src dst
+        (sourceG2Type1CatalogueBasepoint src dst A hcard x)).onVertex hw).trans h₂)
 
 /-- Equality of values in the actual finite input-dependent G₂
 likewise forces equality of the genuine SIGNED completed-action
@@ -158,8 +166,10 @@ theorem sourceG2Type2Catalogue_wordValue_congr
   apply sourceG2Type2CatalogueBasepoint_injective src dst j
   have h₁ := sourceG2Type2CatalogueCover_word src dst j x w₁
   have h₂ := sourceG2Type2CatalogueCover_word src dst j x w₂
-  rw [hw] at h₁
-  exact h₁.symm.trans h₂
+  exact h₁.symm.trans
+    ((congrArg
+      (sourceG2LocalCayleyHom src dst
+        (sourceG2Type2CatalogueBasepoint src dst j x)).onVertex hw).trans h₂)
 
 end ABO
 end PSTSEPPA
