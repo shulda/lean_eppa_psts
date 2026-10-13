@@ -312,6 +312,8 @@ import PSTSEPPA.ABO.SourceType2ActualG2CatalogueLocator
 
 import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupMembership
 
+import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupEquiv
+
 /-!
 # EPPA for partial Steiner triple systems
 
