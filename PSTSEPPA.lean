@@ -246,6 +246,8 @@ import PSTSEPPA.ABO.RootedFullCosetSignedGraphIso
 import PSTSEPPA.ABO.RootedAugmentationGluePointNaturality
 import PSTSEPPA.ABO.RootedFullBAugmentationGraphIso
 import PSTSEPPA.ABO.RootedOriginalSourceAugmentedGraphTransport
+import PSTSEPPA.ABO.RootedFullBAugmentationCompletedActionIso
+import PSTSEPPA.ABO.RootedOriginalSourceCompletedAugmentationTransport
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.SourceH1AllLocalG2
