@@ -54,11 +54,13 @@ noncomputable def rootedLocalFullCosetSignedGraphHom
     apply Subtype.ext
     apply Prod.ext
     · change
-        r * ((e.1.1 * PSTS.SignedWord.evalGroupLetter
-            (trivialCompletionGenerator gen A) e.1.2 :
-            generatedSubgroup gen A) : Γ) =
-          (r * (e.1.1 : Γ)) *
-            PSTS.SignedWord.evalGroupLetter gen e.1.2
+        r * (((cayleyGraph (trivialCompletionGenerator gen A)).target
+            e.1 : generatedSubgroup gen A) : Γ) =
+          (cayleyGraph gen).target (r * (e.1.1 : Γ), e.1.2)
+      rw [cayleyGraph.target_eq_mul_evalGroupLetter
+            (trivialCompletionGenerator gen A) e.1.1 e.1.2,
+          cayleyGraph.target_eq_mul_evalGroupLetter
+            gen (r * (e.1.1 : Γ)) e.1.2]
       exact rootedLocalFullCoset_signedStep
         gen A B hBA r e.1.1 e.1.2 e.2.2
     · rfl
