@@ -112,13 +112,13 @@ theorem type2StageVertexIntoAllLocalG2_followWord
     (allLocalRankTwoStage (gen := gen) hret).followWord
         (type2StageVertexIntoAllLocalG2 gen hret j x) w =
       type2StageVertexIntoAllLocalG2 gen hret j
-        ((allLocalRankTwoSkeleton j).rankTwoType2SingletonFamilyStage
+        (((allLocalRankTwoSkeleton j).rankTwoType2SingletonFamilyStage
           (allLocalRankTwoAlphabet_card j)
           (isGenerated_trivialCompletionGenerator
             gen (allLocalRankTwoAlphabet j))
           (retractable_trivialCompletionGenerator_of_kRetractable
             gen 2 hret (allLocalRankTwoAlphabet j)
-            (allLocalRankTwoAlphabet_card j).le)).followWord x w := by
+            (allLocalRankTwoAlphabet_card j).le)).followWord x w) := by
   let K0 := allLocalRankTwoSkeleton j
   let hcard := allLocalRankTwoAlphabet_card j
   let hgen := isGenerated_trivialCompletionGenerator
