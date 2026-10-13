@@ -251,6 +251,7 @@ import PSTSEPPA.ABO.RootedAugmentationGluePointNaturality
 import PSTSEPPA.ABO.SourceOriginalH1LocalCoverIndex
 import PSTSEPPA.ABO.AllLocalRankTwoCayleySkeletons
 import PSTSEPPA.ABO.Type1ClusterCatalogueAnchor
+import PSTSEPPA.ABO.SourceG2Type1FamilyActionCover
 import PSTSEPPA.ABO.SourceH1AllLocalG2
 import PSTSEPPA.ABO.SourceG2LocalCayleyCovers
 import PSTSEPPA.ABO.RankTwoCompletedComponentShape
