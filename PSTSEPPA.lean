@@ -321,6 +321,8 @@ import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupEquiv
 import PSTSEPPA.ABO.AugmentedClusterLocalCompletedActionIso
 import PSTSEPPA.ABO.Type1OriginalLocalStageIndexEquiv
 
+import PSTSEPPA.ABO.SourceOriginalH1Z1StageFiniteness
+
 /-!
 # EPPA for partial Steiner triple systems
 
