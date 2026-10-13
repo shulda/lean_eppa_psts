@@ -314,6 +314,8 @@ import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupMembership
 
 import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupEquiv
 
+import PSTSEPPA.ABO.AugmentedClusterLocalCompletedActionIso
+
 /-!
 # EPPA for partial Steiner triple systems
 
