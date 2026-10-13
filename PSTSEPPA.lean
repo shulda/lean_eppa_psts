@@ -240,6 +240,7 @@ import PSTSEPPA.ABO.RootedSourceAllProperCompletedStageIso
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
 import PSTSEPPA.ABO.RootedOffCosetAugmentationIndexEquiv
 import PSTSEPPA.ABO.RootedSourceType2CatalogueIndex
+import PSTSEPPA.ABO.SourceH1Type2StageCatalogueIndex
 import PSTSEPPA.ABO.RootedSourceOffCosetNoOldEdges
 import PSTSEPPA.ABO.RootedSourceMultiCosetAmbientValue
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
