@@ -323,6 +323,8 @@ import PSTSEPPA.ABO.Type1OriginalLocalStageIndexEquiv
 
 import PSTSEPPA.ABO.SourceH1Type1ActualG2WordAction
 
+import PSTSEPPA.ABO.SourceH1AllType1G2WordAction
+
 /-!
 # EPPA for partial Steiner triple systems
 
