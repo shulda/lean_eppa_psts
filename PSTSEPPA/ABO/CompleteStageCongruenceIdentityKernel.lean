@@ -66,9 +66,9 @@ theorem fullWordActionCongr_iff_identityWordKernel
       rw [T.wordValue_append, T.wordValue_inv] at htrivial
       exact inv_mul_eq_one.mp htrivial
     calc
-      T.followWord x p = T.rightApply (T.wordValue p) x :=
+      T.followWord x p = rightApply (T.wordValue p) x :=
         (T.rightApply_wordValue p x).symm
-      _ = T.rightApply (T.wordValue q) x := by rw [heq]
+      _ = rightApply (T.wordValue q) x := by rw [heq]
       _ = T.followWord x q := T.rightApply_wordValue q x
 
 end CompleteEGraph
