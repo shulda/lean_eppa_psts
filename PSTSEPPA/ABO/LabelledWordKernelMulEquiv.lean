@@ -107,7 +107,7 @@ or identity generators. -/
     labelled_evalGroup_eq_of_kernel_iff genΓ genΔ hker hΓ
   change PSTS.SignedWord.evalGroup genΔ
     (wordRep genΓ hgenΓ (genΓ i)) = genΔ i
-  exact hΔ
+  simpa [PSTS.SignedWord.evalGroup] using hΔ
 
 /-- Equal signed-word kernels give the honest labelled GROUP
 ISOMORPHISM, with no ambient free-group assumption. All elements
