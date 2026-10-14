@@ -42,9 +42,10 @@ theorem sourceH1Orbit_mul
   let Q := unarySynchronizedCoverQuotient
     (sourceG1Generator src dst)
     (sourceG1Generator_isGenerated src dst)
-  change rightApply (Q.hom (t * h)) base =
-    rightApply (Q.hom h) (rightApply (Q.hom t) base)
-  rw [map_mul, rightApply_mul]
+  change CompleteEGraph.rightApply (Q.hom (t * h)) base =
+    CompleteEGraph.rightApply (Q.hom h)
+      (CompleteEGraph.rightApply (Q.hom t) base)
+  rw [map_mul, CompleteEGraph.rightApply_mul]
 
 /-- Exact old-oriented-edge support under source basepoint
 translation. Both sides are the real ORIGINAL edge-preimage
@@ -100,6 +101,11 @@ theorem sourceH1OriginalSkeleton_translateHom_bijective
       (sourceH1OriginalSkeleton_translateHom src dst base t).onVertex ∧
     Function.Bijective
       (sourceH1OriginalSkeleton_translateHom src dst base t).onEdge := by
+  have hcancel (x : SourceH1 src dst) :
+      t * (t⁻¹ * x) = x := by
+    calc
+      t * (t⁻¹ * x) = (t * t⁻¹) * x := (mul_assoc t t⁻¹ x).symm
+      _ = x := by simp
   constructor
   · constructor
     · intro x y h
@@ -108,16 +114,19 @@ theorem sourceH1OriginalSkeleton_translateHom_bijective
     · intro y
       refine ⟨⟨t⁻¹ * y.1, by trivial⟩, ?_⟩
       apply Subtype.ext
-      simp [mul_assoc]
+      exact hcancel y.1
   · constructor
     · intro e f hef
       have heq :
           (t * e.1.1, e.1.2) = (t * f.1.1, f.1.2) :=
         congrArg Subtype.val hef
+      have hfirst : e.1.1 = f.1.1 :=
+        mul_left_cancel
+          (congrArg (fun p : ActionEdge (SourceH1 src dst) ι => p.1) heq)
+      have hsecond : e.1.2 = f.1.2 :=
+        congrArg (fun p : ActionEdge (SourceH1 src dst) ι => p.2) heq
       apply Subtype.ext
-      apply Prod.ext
-      · exact mul_left_cancel (congrArg Prod.fst heq)
-      · exact congrArg Prod.snd heq
+      exact Prod.ext hfirst hsecond
     · intro e
       have hmem :
           (t⁻¹ * e.1.1, e.1.2) ∈
@@ -125,14 +134,17 @@ theorem sourceH1OriginalSkeleton_translateHom_bijective
               (sourceH1Orbit src dst base t)).edges := by
         apply (sourceH1OriginalSkeleton_translate_edge_iff
           src dst base t (t⁻¹ * e.1.1, e.1.2)).mp
+        have hold : sourceH1Orbit src dst base e.1.1 =
+            sourceInputSignedSource src dst e.1.2 := e.2
         change sourceH1Orbit src dst base
           (t * (t⁻¹ * e.1.1)) =
           sourceInputSignedSource src dst e.1.2
-        simpa [mul_assoc] using e.2
+        rw [hcancel]
+        exact hold
       refine ⟨⟨(t⁻¹ * e.1.1, e.1.2), hmem⟩, ?_⟩
       apply Subtype.ext
       apply Prod.ext
-      · simp [mul_assoc]
+      · exact hcancel e.1.1
       · rfl
 
 end ABO
