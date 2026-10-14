@@ -128,7 +128,9 @@ distinguished labelled generator, even for repeated/identity labels. -/
     T.transitionWordValue_eq_of_groupWordActionCongr
       gen hcongr (wordRep gen hgen (gen i))
       [PSTS.SignedLetter.pos i] hsource
-  simpa [groupWordActionHom] using heq
+  change PSTS.SignedWord.evalGroup T.transitionSubgroupGenerator
+    (wordRep gen hgen (gen i)) = T.transitionSubgroupGenerator i
+  exact heq
 
 /-- An ACTUAL labelled Cayley graph morphism from Γ to the
 complete stage T, not merely well-defined endpoint values.
