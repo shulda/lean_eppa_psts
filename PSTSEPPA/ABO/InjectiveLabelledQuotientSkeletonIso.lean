@@ -55,9 +55,9 @@ theorem pullbackQuotientHom_bijective_of_injective
             (Q.hom f.1.1, f.1.2) :=
         congrArg (fun z : K.Edge => z.1) hef
       have hfirst : e.1.1 = f.1.1 :=
-        hinj (congrArg Prod.fst hp)
+        hinj (congrArg (fun z : ActionEdge Γ ι => z.1) hp)
       have hsecond : e.1.2 = f.1.2 :=
-        congrArg Prod.snd hp
+        congrArg (fun z : ActionEdge Γ ι => z.2) hp
       apply Subtype.ext
       exact Prod.ext hfirst hsecond
     · exact K.pullbackQuotientHom_edge_surjective Q
