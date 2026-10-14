@@ -39,6 +39,40 @@ abbrev sourceOriginalH1Z1ThreeFamilyCarrier
   Σ j : sourceOriginalH1Z1ThreeFamilyIndex src dst,
     sourceOriginalH1Z1StageVertex src dst j
 
+/-- The TRUE rooted ambient full proper-coset quotient is finite
+when its ambient group is finite and only two-letter retractability
+is known. Transfer finiteness from the local subgroup multi-coset
+quotient across the certified exact component-tagged equivalence;
+do NOT identify source coset vertices by ambient coordinates. -/
+theorem finite_rootedAmbientAllProperSourceVertex
+    {Γ : Type*} [Group Γ] [Finite Γ]
+    {gen : ι → Γ} {S : Finset ι}
+    (K : CayleySubgraphSpec gen S)
+    (A : Finset ι) (hcard : A.card = 2)
+    (hret : KRetractable gen 2) (root : K.Vertex) :
+    Finite (Quotient
+      (K.rootedAmbientMultiCosetSetoid A hcard hret root
+        (allProperCosetFamily A))) := by
+  classical
+  letI : Finite (generatedSubgroup gen A) := inferInstance
+  let L := K.intrinsicComponentLocalSlice A root
+  letI : Finite
+      (L.MultiCosetVertex (allProperCosetFamily A)
+        (L.admissible_of_card_le_two hcard.le)
+        (isGenerated_trivialCompletionGenerator gen A)
+        (retractable_trivialCompletionGenerator_of_kRetractable
+          gen 2 hret A hcard.le)) :=
+    L.finite_allProperMultiCosetVertex
+      (L.admissible_of_card_le_two hcard.le)
+      (isGenerated_trivialCompletionGenerator gen A)
+      (retractable_trivialCompletionGenerator_of_kRetractable
+        gen 2 hret A hcard.le)
+  exact Finite.of_surjective
+    (K.rootedLocalMultiCosetVertexQuotientEquiv A hcard hret root
+      (allProperCosetFamily A))
+    (K.rootedLocalMultiCosetVertexQuotientEquiv A hcard hret root
+      (allProperCosetFamily A)).surjective
+
 /-- Every INDIVIDUAL genuine original H₁ completed source
 stage has finitely many old/fresh tagged vertices. Includes
 all three source-stage kinds and B=∅. -/
@@ -52,7 +86,11 @@ theorem finite_sourceOriginalH1Z1StageVertex
   | inl j =>
       change Finite
         (sourceOriginalH1PlainActionDatum src dst j).Carrier
-      infer_instance
+      exact finite_rootedAmbientAllProperSourceVertex
+        ((sourceCoverIndexSkeleton src dst j).restrictAlphabet j.2.1.1)
+        j.2.1.1 j.2.1.2
+        (sourceH1_twoRetractable src dst)
+        (sourceCoverIndexRoot src dst j)
   | inr j =>
       cases j with
       | inl j =>
@@ -61,6 +99,16 @@ theorem finite_sourceOriginalH1Z1StageVertex
       | inr j =>
           change Finite
             (sourceOriginalH1Type2ActionDatum src dst j).Carrier
+          let t := j.1
+          let A := t.2.1.1
+          let K := (sourceCoverIndexSkeleton src dst t).restrictAlphabet A
+          let root := sourceCoverIndexRoot src dst t
+          let hret := sourceH1_twoRetractable src dst
+          letI : Finite
+              (Quotient (K.rootedAmbientMultiCosetSetoid
+                A t.2.1.2 hret root (allProperCosetFamily A))) :=
+            finite_rootedAmbientAllProperSourceVertex
+              K A t.2.1.2 hret root
           infer_instance
 
 /-- The entire actual dependent disjoint ORIGINAL rank-one
