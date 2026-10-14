@@ -45,7 +45,12 @@ jobs:
         with:
           auto-config: false
           build: true
-          use-github-cache: false
+          # Cache the compiled Lake workspace, keyed by Lean toolchain,
+          # Lake manifest and commit. lean-action still runs the FULL
+          # source-sensitive lake build and standard axiom audit.
+          # This avoids rebuilding hundreds of unchanged project modules
+          # on every independently audited mathematical PR.
+          use-github-cache: true
           use-mathlib-cache: false
           axiom-audit: true
           axiom-audit-root: PSTSEPPA
