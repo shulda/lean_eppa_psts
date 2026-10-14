@@ -339,6 +339,8 @@ import PSTSEPPA.ABO.AllProperCompletedParentComponents
 import PSTSEPPA.ABO.TrivialCompletionSupportedReachability
 import PSTSEPPA.ABO.SourceOriginalH1Z1ActualG2CayleyCover
 import PSTSEPPA.ABO.SourceOriginalH1PathValueNormalization
+import PSTSEPPA.ABO.SourceOriginalH1ComponentWordCharacterization
+import PSTSEPPA.ABO.SourceOriginalH1CoverComponentExactImage
 
 /-!
 # EPPA for partial Steiner triple systems
