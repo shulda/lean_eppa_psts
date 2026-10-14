@@ -31,6 +31,14 @@ variable {ι V : Type*}
 variable [Fintype ι] [DecidableEq ι]
 variable [Fintype V] [DecidableEq V]
 
+/-- The exact dependent-Sigma carrier of the true original
+three-kind source stage family, independently of any later
+Cayley-cover shorthand or representative choice. -/
+abbrev sourceOriginalH1Z1ThreeFamilyCarrier
+    (src dst : ι → V) :=
+  Σ j : sourceOriginalH1Z1ThreeFamilyIndex src dst,
+    sourceOriginalH1Z1StageVertex src dst j
+
 /-- Every INDIVIDUAL genuine original H₁ completed source
 stage has finitely many old/fresh tagged vertices. Includes
 all three source-stage kinds and B=∅. -/
@@ -60,7 +68,7 @@ H₁ source Z₁ three-kind complete action has a FINITE
 vertex carrier, regardless of empty or repeated source indices. -/
 theorem finite_sourceOriginalH1Z1ThreeFamilyVertex
     (src dst : ι → V) :
-    Finite (SourceOriginalH1Z1Vertex src dst) := by
+    Finite (sourceOriginalH1Z1ThreeFamilyCarrier src dst) := by
   classical
   letI : Finite (sourceOriginalH1Z1ThreeFamilyIndex src dst) :=
     finite_sourceOriginalH1Z1ThreeFamilyIndex src dst
@@ -75,9 +83,9 @@ theorem finite_sourceOriginalH1Z1ThreeFamilyTransitionGroup
     (src dst : ι → V) :
     Finite (sourceOriginalH1Z1ThreeFamilyStage src dst).transitionGroup := by
   classical
-  letI : Finite (SourceOriginalH1Z1Vertex src dst) :=
+  letI : Finite (sourceOriginalH1Z1ThreeFamilyCarrier src dst) :=
     finite_sourceOriginalH1Z1ThreeFamilyVertex src dst
-  letI : Fintype (SourceOriginalH1Z1Vertex src dst) :=
+  letI : Fintype (sourceOriginalH1Z1ThreeFamilyCarrier src dst) :=
     Fintype.ofFinite _
   exact (sourceOriginalH1Z1ThreeFamilyStage src dst).finite_transitionGroup
 
