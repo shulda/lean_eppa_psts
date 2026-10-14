@@ -52,10 +52,10 @@ theorem allProperCompletedStage_reachable_iff_parent
     (K.allProperCompletedStage hadm hgen hret hcard).Reachable p q ↔
       (K.multiCosetVertexToParent
         (allProperCosetFamily A) hadm hgen hret A
-        K.allProperCosetFamily_alphabets_subset_parent p).1 =
+        allProperCosetFamily_alphabets_subset_parent p).1 =
       (K.multiCosetVertexToParent
         (allProperCosetFamily A) hadm hgen hret A
-        K.allProperCosetFamily_alphabets_subset_parent q).1 := by
+        allProperCosetFamily_alphabets_subset_parent q).1 := by
   let P := allProperCosetFamily A
   let G := K.multiCosetEGraph P hadm hgen hret
   let hweak := allProperCosetFamily_weaklyComplete
