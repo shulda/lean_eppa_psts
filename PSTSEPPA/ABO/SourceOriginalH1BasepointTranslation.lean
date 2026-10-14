@@ -45,7 +45,11 @@ theorem sourceH1Orbit_mul
   change CompleteEGraph.rightApply (Q.hom (t * h)) base =
     CompleteEGraph.rightApply (Q.hom h)
       (CompleteEGraph.rightApply (Q.hom t) base)
-  rw [map_mul, CompleteEGraph.rightApply_mul]
+  rw [map_mul]
+  change CompleteEGraph.rightApply ((Q.hom t).1 * (Q.hom h).1) base =
+    CompleteEGraph.rightApply (Q.hom h).1
+      (CompleteEGraph.rightApply (Q.hom t).1 base)
+  exact CompleteEGraph.rightApply_mul (Q.hom t).1 (Q.hom h).1 base
 
 /-- Exact old-oriented-edge support under source basepoint
 translation. Both sides are the real ORIGINAL edge-preimage
@@ -120,13 +124,11 @@ theorem sourceH1OriginalSkeleton_translateHom_bijective
       have heq :
           (t * e.1.1, e.1.2) = (t * f.1.1, f.1.2) :=
         congrArg Subtype.val hef
-      have hfirst : e.1.1 = f.1.1 :=
-        mul_left_cancel
-          (congrArg (fun p : ActionEdge (SourceH1 src dst) ι => p.1) heq)
-      have hsecond : e.1.2 = f.1.2 :=
-        congrArg (fun p : ActionEdge (SourceH1 src dst) ι => p.2) heq
+      have hparts :
+          t * e.1.1 = t * f.1.1 ∧ e.1.2 = f.1.2 := by
+        simpa only [Prod.mk.injEq] using heq
       apply Subtype.ext
-      exact Prod.ext hfirst hsecond
+      exact Prod.ext (mul_left_cancel hparts.1) hparts.2
     · intro e
       have hmem :
           (t⁻¹ * e.1.1, e.1.2) ∈
