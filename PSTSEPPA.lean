@@ -331,6 +331,12 @@ import PSTSEPPA.ABO.SourceG2PlainStageCayleyCover
 import PSTSEPPA.ABO.SourceH1PlainActualG2WordAction
 import PSTSEPPA.ABO.SourceOriginalH1Z1StageFiniteness
 
+import PSTSEPPA.ABO.CompleteStageWordCongruenceCayleyCover
+import PSTSEPPA.ABO.CompleteStageWordCongruenceReachableCover
+import PSTSEPPA.ABO.CompleteStageCongruenceIdentityKernel
+import PSTSEPPA.ABO.AllProperCompletedParentComponents
+import PSTSEPPA.ABO.TrivialCompletionSupportedReachability
+
 /-!
 # EPPA for partial Steiner triple systems
 
