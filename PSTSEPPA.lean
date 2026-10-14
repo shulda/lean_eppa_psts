@@ -337,6 +337,8 @@ import PSTSEPPA.ABO.CompleteStageCongruenceIdentityKernel
 import PSTSEPPA.ABO.AllProperCompletedParentComponents
 import PSTSEPPA.ABO.TrivialCompletionSupportedReachability
 
+import PSTSEPPA.ABO.AllProperCompletedFullComponents
+
 /-!
 # EPPA for partial Steiner triple systems
 
