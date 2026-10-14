@@ -84,8 +84,12 @@ theorem sourceH1_wordValue_eq_one_iff_unary_coordinates
         congrArg
           (fun x : UnaryGeneratedDetectorGroup gen =>
             (x : UnaryDetectorGroup gen)) hDetector
-      simpa only [coe_evalGroup_unaryGeneratedDetector, Subgroup.coe_one]
-        using hCoe
+      change
+        ((PSTS.SignedWord.evalGroup
+          (unaryGeneratedDetectorGenerator gen) w :
+            UnaryGeneratedDetectorGroup gen) : UnaryDetectorGroup gen) = 1 at hCoe
+      rw [coe_evalGroup_unaryGeneratedDetector] at hCoe
+      exact hCoe
     refine ⟨hFirst, ?_⟩
     intro i
     have hi :=
