@@ -336,6 +336,17 @@ import PSTSEPPA.ABO.SourceOriginalH1PathValueNormalization
 import PSTSEPPA.ABO.SourceOriginalH1ComponentWordCharacterization
 import PSTSEPPA.ABO.SourceOriginalH1CoverComponentExactImage
 
+import PSTSEPPA.ABO.CompleteStageWordCongruenceCayleyCover
+import PSTSEPPA.ABO.CompleteStageWordCongruenceReachableCover
+import PSTSEPPA.ABO.CompleteStageCongruenceIdentityKernel
+import PSTSEPPA.ABO.AllProperCompletedParentComponents
+import PSTSEPPA.ABO.TrivialCompletionSupportedReachability
+import PSTSEPPA.ABO.SourceOriginalH1Z1ActualG2CayleyCover
+import PSTSEPPA.ABO.SourceOriginalH1Z1TransitionQuotient
+import PSTSEPPA.ABO.SourceG2FirstRankSourceCoverTheorem
+import PSTSEPPA.ABO.SourceOriginalH1Z1FiniteCompleteAction
+import PSTSEPPA.ABO.AllProperCompletedFullComponents
+
 /-!
 # EPPA for partial Steiner triple systems
 
