@@ -335,6 +335,9 @@ import PSTSEPPA.ABO.SourceOriginalH1Z1ThreeFamilyAction
 import PSTSEPPA.ABO.SourceOriginalH1PathValueNormalization
 import PSTSEPPA.ABO.SourceOriginalH1ComponentWordCharacterization
 import PSTSEPPA.ABO.SourceOriginalH1CoverComponentExactImage
+import PSTSEPPA.ABO.SourceLiteralY1ActionKernel
+import PSTSEPPA.ABO.SourceOriginalH1BasepointTranslation
+import PSTSEPPA.ABO.SourceOriginalH1CoverBasepointNaturality
 
 import PSTSEPPA.ABO.CompleteStageWordCongruenceCayleyCover
 import PSTSEPPA.ABO.CompleteStageWordCongruenceReachableCover
