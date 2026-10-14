@@ -336,6 +336,7 @@ import PSTSEPPA.ABO.CompleteStageWordCongruenceCayleyCover
 import PSTSEPPA.ABO.CompleteStageWordCongruenceReachableCover
 import PSTSEPPA.ABO.CompleteStageCongruenceIdentityKernel
 import PSTSEPPA.ABO.AllProperCompletedParentComponents
+import PSTSEPPA.ABO.AllProperCompletedFullComponents
 import PSTSEPPA.ABO.TrivialCompletionSupportedReachability
 import PSTSEPPA.ABO.SourceOriginalH1Z1ActualG2CayleyCover
 import PSTSEPPA.ABO.SourceOriginalH1PathValueNormalization
