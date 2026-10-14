@@ -32,6 +32,7 @@ in the actual finite G₂ have IDENTICAL endpoints at every point
 of every NAMED original H₁ type-(2) source B-augmentation,
 including all old component-tagged and fresh B-coset vertices,
 negative letters and legal stationary loops. -/
+set_option maxHeartbeats 2000000 in
 theorem sourceG2OriginalH1Type2Named_wordValue_congr
     (src dst : ι → V)
     (j : SourceOriginalH1CoverIndex src dst)
