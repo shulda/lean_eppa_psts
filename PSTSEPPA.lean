@@ -339,6 +339,7 @@ import PSTSEPPA.ABO.AllProperCompletedParentComponents
 import PSTSEPPA.ABO.TrivialCompletionSupportedReachability
 import PSTSEPPA.ABO.SourceOriginalH1Z1ActualG2CayleyCover
 import PSTSEPPA.ABO.SourceOriginalH1Z1TransitionQuotient
+import PSTSEPPA.ABO.SourceG2FirstRankSourceCoverTheorem
 import PSTSEPPA.ABO.SourceOriginalH1PathValueNormalization
 
 /-!
