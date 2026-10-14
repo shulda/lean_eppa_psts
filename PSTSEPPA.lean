@@ -335,6 +335,7 @@ import PSTSEPPA.ABO.SourceOriginalH1Z1ThreeFamilyAction
 import PSTSEPPA.ABO.SourceOriginalH1PathValueNormalization
 import PSTSEPPA.ABO.SourceOriginalH1ComponentWordCharacterization
 import PSTSEPPA.ABO.SourceOriginalH1CoverComponentExactImage
+import PSTSEPPA.ABO.SourceLiteralY1ActionKernel
 
 /-!
 # EPPA for partial Steiner triple systems
