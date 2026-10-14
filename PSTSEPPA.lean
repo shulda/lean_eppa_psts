@@ -333,6 +333,10 @@ import PSTSEPPA.ABO.SourceOriginalH1Z1StageFiniteness
 
 import PSTSEPPA.ABO.SourceOriginalH1Z1ThreeFamilyAction
 
+import PSTSEPPA.ABO.CompleteStageWordCongruenceCayleyCover
+import PSTSEPPA.ABO.CompleteStageWordCongruenceReachableCover
+import PSTSEPPA.ABO.SourceOriginalH1Z1ActualG2CayleyCover
+
 /-!
 # EPPA for partial Steiner triple systems
 
