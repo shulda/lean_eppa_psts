@@ -109,6 +109,15 @@ theorem finite_sourceOriginalH1Z1StageVertex
                 A t.2.1.2 hret root (allProperCosetFamily A))) :=
             finite_rootedAmbientAllProperSourceVertex
               K A t.2.1.2 hret root
+          -- Expose the *actual* old/fresh disjoint carrier of the
+          -- rooted, translated source augmentation. The ambient
+          -- group and the tagged old quotient are both finite.
+          change Finite (IsolatedCosetGluing.Vertex
+            (Quotient (K.rootedAmbientMultiCosetSetoid
+              A t.2.1.2 hret root (allProperCosetFamily A)))
+            (sourceH1Generator src dst) j.2.1.1 _)
+          dsimp only [IsolatedCosetGluing.Vertex,
+            IsolatedCosetGluing.FreshPoint]
           infer_instance
 
 /-- The entire actual dependent disjoint ORIGINAL rank-one
