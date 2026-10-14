@@ -337,6 +337,8 @@ import PSTSEPPA.ABO.SourceOriginalH1ComponentWordCharacterization
 import PSTSEPPA.ABO.SourceOriginalH1CoverComponentExactImage
 import PSTSEPPA.ABO.SourceLiteralY1ActionKernel
 import PSTSEPPA.ABO.SourceLiteralY1ToH1WordKernel
+import PSTSEPPA.ABO.LabelledWordKernelMulEquiv
+import PSTSEPPA.ABO.SourceLiteralY1H1GroupEquiv
 
 /-!
 # EPPA for partial Steiner triple systems
