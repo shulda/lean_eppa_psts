@@ -333,6 +333,7 @@ import PSTSEPPA.ABO.SourceOriginalH1Z1StageFiniteness
 
 import PSTSEPPA.ABO.SourceOriginalH1Z1ThreeFamilyAction
 import PSTSEPPA.ABO.SourceOriginalH1PathValueNormalization
+import PSTSEPPA.ABO.SourceOriginalH1ComponentWordCharacterization
 
 /-!
 # EPPA for partial Steiner triple systems
