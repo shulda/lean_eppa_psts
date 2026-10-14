@@ -323,6 +323,8 @@ import PSTSEPPA.ABO.Type1OriginalLocalStageIndexEquiv
 
 import PSTSEPPA.ABO.CompleteStageWordCongruenceCayleyCover
 
+import PSTSEPPA.ABO.CompleteStageWordCongruenceReachableCover
+
 /-!
 # EPPA for partial Steiner triple systems
 
