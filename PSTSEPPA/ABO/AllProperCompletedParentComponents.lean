@@ -60,10 +60,10 @@ theorem allProperCompletedStage_A_reachable_iff_parent
           p w q) ↔
       (K.multiCosetVertexToParent
         (allProperCosetFamily A) hadm hgen hret A
-        K.allProperCosetFamily_alphabets_subset_parent p).1 =
+        allProperCosetFamily_alphabets_subset_parent p).1 =
       (K.multiCosetVertexToParent
         (allProperCosetFamily A) hadm hgen hret A
-        K.allProperCosetFamily_alphabets_subset_parent q).1 := by
+        allProperCosetFamily_alphabets_subset_parent q).1 := by
   let P := allProperCosetFamily A
   let G := K.multiCosetEGraph P hadm hgen hret
   let hweak := allProperCosetFamily_weaklyComplete
@@ -76,7 +76,7 @@ theorem allProperCompletedStage_A_reachable_iff_parent
   have hParent :=
     K.multiCosetEGraph_B_reachable_iff_parent_index
       P hadm hgen hret A
-      K.allProperCosetFamily_alphabets_subset_parent p q
+      allProperCosetFamily_alphabets_subset_parent p q
   exact hLoop.trans hParent
 
 end CayleySubgraphSpec
