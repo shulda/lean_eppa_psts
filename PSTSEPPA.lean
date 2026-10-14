@@ -337,6 +337,8 @@ import PSTSEPPA.ABO.CompleteStageWordCongruenceCayleyCover
 import PSTSEPPA.ABO.CompleteStageWordCongruenceReachableCover
 import PSTSEPPA.ABO.SourceOriginalH1Z1ActualG2CayleyCover
 
+import PSTSEPPA.ABO.SourceG2FirstRankSourceCoverTheorem
+
 /-!
 # EPPA for partial Steiner triple systems
 
