@@ -339,6 +339,8 @@ import PSTSEPPA.ABO.SourceLiteralY1ActionKernel
 import PSTSEPPA.ABO.SourceLiteralY1ToH1WordKernel
 import PSTSEPPA.ABO.LabelledWordKernelMulEquiv
 import PSTSEPPA.ABO.SourceLiteralY1H1GroupEquiv
+import PSTSEPPA.ABO.InjectiveLabelledQuotientSkeletonIso
+import PSTSEPPA.ABO.SourceLiteralY1OriginalCoverIso
 import PSTSEPPA.ABO.SourceOriginalH1BasepointTranslation
 import PSTSEPPA.ABO.SourceOriginalH1CoverBasepointNaturality
 
