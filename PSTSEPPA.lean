@@ -331,6 +331,8 @@ import PSTSEPPA.ABO.SourceG2PlainStageCayleyCover
 import PSTSEPPA.ABO.SourceH1PlainActualG2WordAction
 import PSTSEPPA.ABO.SourceOriginalH1Z1StageFiniteness
 
+import PSTSEPPA.ABO.SourceOriginalH1Z1ThreeFamilyAction
+
 /-!
 # EPPA for partial Steiner triple systems
 
