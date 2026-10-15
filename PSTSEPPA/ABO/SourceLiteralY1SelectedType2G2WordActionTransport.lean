@@ -126,8 +126,12 @@ noncomputable def literalPaperSelectedOffB_G2CayleyHom_of_source
           src dst base A hcard root B hBP z).followWord y p =
         (literalPaperSelectedOffBSourceCompletedStage
           src dst base A hcard root B hBP z).followWord y q)
-    (u : (literalPaperSelectedOffBCompletedStage
-      src dst base A hcard root B hBP z).toEGraph.Vertex) :
+    (u : IsolatedCosetGluing.Vertex
+      (Quotient (sourceLiteralY1DirectRootMultiCosetSetoid
+        src dst base A hcard root (allProperCosetFamily A)))
+      (sourceLiteralY1 src dst).transitionSubgroupGenerator B
+      (sourceLiteralY1SelectedRootAmbientValue
+        src dst base A hcard root (allProperCosetFamily A) z.vertex)) :
     LabelledGraphHom
       (cayleyGraph (sourceAllLocalG2Generator src dst)).toEGraph.toLabelledGraph
       (literalPaperSelectedOffBCompletedStage
