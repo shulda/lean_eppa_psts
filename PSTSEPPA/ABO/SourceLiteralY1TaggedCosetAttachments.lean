@@ -78,8 +78,7 @@ theorem sourceLiteralY1DirectTaggedBCosetEquiv_value
       (sourceLiteralY1DirectTaggedBCosetEquiv src dst base B p) =
       (sourceH1EquivLiteralY1Transition src dst).symm
         ((sourceLiteralY1DirectOriginalSkeleton src dst base).attachedValue B p) := by
-  exact (sourceLiteralY1DirectOriginalSkeleton src dst base)
-    .attachedCosetEquivOfLabelledGroupIso_value
+  exact (sourceLiteralY1DirectOriginalSkeleton src dst base).attachedCosetEquivOfLabelledGroupIso_value
       (sourceH1OriginalSkeleton src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom_bijective src dst base).1
@@ -100,8 +99,7 @@ theorem sourceLiteralY1DirectTaggedBCosetEquiv_old
         .attachedOfSkeletonVertex B x) =
       (sourceH1OriginalSkeleton src dst base).attachedOfSkeletonVertex B
         ((sourceLiteralY1DirectToSourceH1OriginalHom src dst base).onVertex x) := by
-  exact (sourceLiteralY1DirectOriginalSkeleton src dst base)
-    .attachedCosetEquivOfLabelledGroupIso_oldVertex
+  exact (sourceLiteralY1DirectOriginalSkeleton src dst base).attachedCosetEquivOfLabelledGroupIso_oldVertex
       (sourceH1OriginalSkeleton src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom_bijective src dst base).1
@@ -123,8 +121,7 @@ theorem sourceLiteralY1DirectTaggedBCosetEquiv_natural
         .attachedSubalphabetMap B C hBC p) =
       (sourceH1OriginalSkeleton src dst base).attachedSubalphabetMap B C hBC
         (sourceLiteralY1DirectTaggedBCosetEquiv src dst base B p) := by
-  exact (sourceLiteralY1DirectOriginalSkeleton src dst base)
-    .attachedCosetEquivOfLabelledGroupIso_natural
+  exact (sourceLiteralY1DirectOriginalSkeleton src dst base).attachedCosetEquivOfLabelledGroupIso_natural
       (sourceH1OriginalSkeleton src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom_bijective src dst base).1
