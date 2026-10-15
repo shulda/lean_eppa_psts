@@ -358,6 +358,7 @@ import PSTSEPPA.ABO.InverseTaggedCosetNaturality
 import PSTSEPPA.ABO.SourceLiteralY1RootComponentGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1RootCosetGluingTransport
 import PSTSEPPA.ABO.SourceLiteralY1RootMultiCosetSetoid
+import PSTSEPPA.ABO.SourceLiteralY1SelectedRootAmbientValue
 import PSTSEPPA.ABO.SourceLiteralY1RootSingleCosetSignedEdges
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootRawGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootCompletedEGraphIso
