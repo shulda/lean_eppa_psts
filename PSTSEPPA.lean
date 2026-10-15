@@ -350,6 +350,7 @@ import PSTSEPPA.ABO.LabelledMulEquivAugmentedClusterIso
 import PSTSEPPA.ABO.LabelledIsoTaggedCosetTransport
 import PSTSEPPA.ABO.LabelledGroupSingleCosetGraphIso
 import PSTSEPPA.ABO.LabelledMulEquivFullCosetSignedGraphIso
+import PSTSEPPA.ABO.LabelledMulEquivFreshCosetGlueNaturality
 import PSTSEPPA.ABO.SourceLiteralY1SingleCosetSignedEdges
 import PSTSEPPA.ABO.SourceLiteralY1MultiCosetRawGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1MultiCosetEdgeQuotientIso
