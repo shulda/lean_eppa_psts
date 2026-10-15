@@ -52,6 +52,10 @@ variable (E : Γ ≃* Δ)
 variable (hgen : ∀ i : ι, E (genΓ i) = genΔ i)
 variable (hcoord : ∀ x : L.Vertex, E x.1 = (f.onVertex x).1)
 
+-- These compatibility hypotheses are used in proof bodies even when
+-- the proposition contains only the induced tagged-coset transport.
+include hgen hcoord
+
 /-- All component-indexed B-cosets map INTO the matching
 tagged target coset. A B-component tag is transported through
 actual signed path reflection, NOT ambient coordinate equality. -/
