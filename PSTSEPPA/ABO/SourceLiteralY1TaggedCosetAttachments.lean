@@ -95,8 +95,7 @@ theorem sourceLiteralY1DirectTaggedBCosetEquiv_old
     (src dst : ι → V) (base : V) (B : Finset ι)
     (x : (sourceLiteralY1DirectOriginalSkeleton src dst base).Vertex) :
     sourceLiteralY1DirectTaggedBCosetEquiv src dst base B
-      ((sourceLiteralY1DirectOriginalSkeleton src dst base)
-        .attachedOfSkeletonVertex B x) =
+      ((sourceLiteralY1DirectOriginalSkeleton src dst base).attachedOfSkeletonVertex B x) =
       (sourceH1OriginalSkeleton src dst base).attachedOfSkeletonVertex B
         ((sourceLiteralY1DirectToSourceH1OriginalHom src dst base).onVertex x) := by
   exact (sourceLiteralY1DirectOriginalSkeleton src dst base).attachedCosetEquivOfLabelledGroupIso_oldVertex
@@ -117,8 +116,7 @@ theorem sourceLiteralY1DirectTaggedBCosetEquiv_natural
     (B C : Finset ι) (hBC : B ⊆ C)
     (p : (sourceLiteralY1DirectOriginalSkeleton src dst base).AttachedCosetVertex B) :
     sourceLiteralY1DirectTaggedBCosetEquiv src dst base C
-      ((sourceLiteralY1DirectOriginalSkeleton src dst base)
-        .attachedSubalphabetMap B C hBC p) =
+      ((sourceLiteralY1DirectOriginalSkeleton src dst base).attachedSubalphabetMap B C hBC p) =
       (sourceH1OriginalSkeleton src dst base).attachedSubalphabetMap B C hBC
         (sourceLiteralY1DirectTaggedBCosetEquiv src dst base B p) := by
   exact (sourceLiteralY1DirectOriginalSkeleton src dst base).attachedCosetEquivOfLabelledGroupIso_natural
