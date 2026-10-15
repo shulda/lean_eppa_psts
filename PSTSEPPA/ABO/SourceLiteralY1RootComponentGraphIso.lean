@@ -70,7 +70,8 @@ theorem inverseEdge_group_source
       e.1.1 * PSTS.SignedWord.evalGroupLetter gen e.1.2 := by
   change ((cayleyGraph gen).inv e.1).1 =
     e.1.1 * PSTS.SignedWord.evalGroupLetter gen e.1.2
-  cases e.1.2 <;> rfl
+  rcases e with ⟨⟨x, s⟩, he⟩
+  cases s <;> rfl
 
 end CayleySubgraphSpec
 
