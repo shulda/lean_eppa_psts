@@ -64,11 +64,19 @@ theorem sourceH1OriginalRankTwoRoot_offB_noSignedEdges
   let hret := sourceH1_twoRetractable src dst
   let Q := K.rootedLocalMultiCosetVertexQuotientEquiv A hcard hret r P
   obtain ⟨w, hw⟩ := Q.surjective z
+  have hOffK :
+      ¬ ∃ q : (K.subalphabetComponentSubgraph A r).AttachedCosetVertex B,
+        K.rootedAmbientMultiCosetInclude A hcard hret r P B hBP q =
+          z := by
+    change
+      (¬ ∃ q : (K.subalphabetComponentSubgraph A r).AttachedCosetVertex B,
+        K.rootedAmbientMultiCosetInclude A hcard hret r P B hBP q = z) at hOff
+    exact hOff
   have hOffSource :
       ¬ ∃ q : (K.subalphabetComponentSubgraph A r).AttachedCosetVertex B,
         K.rootedAmbientMultiCosetInclude A hcard hret r P B hBP q =
           Q w := by
-    simpa only [hw] using hOff
+    simpa only [hw] using hOffK
   intro e he
   have hOldSource :
       (K.rootedAmbientMultiCosetCompletedEGraph
