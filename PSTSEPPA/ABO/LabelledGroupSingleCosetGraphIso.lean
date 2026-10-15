@@ -31,7 +31,6 @@ namespace PSTSEPPA
 namespace ABO
 
 variable {ι Γ Δ : Type*}
-variable [Fintype ι] [DecidableEq ι]
 variable [Group Γ] [Group Δ]
 
 /-- A genuine same-labelled group isomorphism respects BOTH orientations
@@ -52,6 +51,7 @@ theorem labelledMulEquiv_evalGroupLetter
 
 namespace CayleySubgraphSpec
 
+variable [Fintype ι] [DecidableEq ι]
 variable {genΓ : ι → Γ} {genΔ : ι → Δ}
 variable {A D : Finset ι}
 variable (L : CayleySubgraphSpec genΓ A)
@@ -98,9 +98,16 @@ theorem labelledGroupIso_attachedCosetStep
           (K.cosetStep B
             (L.attachedCosetEquivOfLabelledGroupIso
               K f hv he E hgen hcoord B p) s) := by
-          rw [K.cosetStep_value,
-            L.attachedCosetEquivOfLabelledGroupIso_value]
-          rfl
+          have hvalue :
+              (L.attachedCosetEquivOfLabelledGroupIso
+                K f hv he E hgen hcoord B p).2.1 = E p.2.1 :=
+            L.attachedCosetEquivOfLabelledGroupIso_value
+              K f hv he E hgen hcoord B p
+          change E p.2.1 * PSTS.SignedWord.evalGroupLetter genΔ s.1 =
+            (L.attachedCosetEquivOfLabelledGroupIso
+              K f hv he E hgen hcoord B p).2.1 *
+              PSTS.SignedWord.evalGroupLetter genΔ s.1
+          rw [hvalue]
 
 /-- The whole non-complete signed single-B coset extension is mapped
 as a REAL labelled graph. The map distinguishes old outside-B oriented
