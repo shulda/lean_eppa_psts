@@ -1768,3 +1768,17 @@ proper-alphabet coset gluing quotient and signed edge/action
 isomorphism, not complete selected Definition-5.3 Z₁ coverage
 or higher-rank EPPA.
 
+
+
+## 2026-10-15 — Authoritative live original-paper H₁ signed coset geometry checkpoint
+
+**Green main cutoff `27837ee7cc7a58b677230f2132d389a1c1f596a1`, post-merge workflow `38731907469` SUCCESS.** This later checkpoint supersedes the October 15 addendum leaving #497 candidate. All listed commits are ACTUALLY merged: #498, #500, #501, #502, #503, #505, #507, #508, #511, #512.
+
+- Original DIRECT `T(Y₁)`↔SourceH₁ incomplete old-cover graph iso and generator-preserving MulEquiv support true tagged **B-component** coset bijections, natural under B⊆C. This controls old/supplemented labelled signed single-B graphs and P-indexed raw signed edge tokens (outside-B old, inside-B new; ± inversions included).
+- The ABO Eq. (3.10) raw intersection-support relation is transported in BOTH directions; ambient coordinate equality does not imply equality of distinct component-tagged attached coset copies. The whole-original-cover raw graphs therefore transport after SUPPLYING the literal support Setoid.
+- The exact source+signed-label EDGE quotient equivalence is proved conditionally, with full vertex/edge class bijection and signed path reflection. *Neither* global retractability of whole SourceH₁ nor validity of the exact Setoid/target congruence on an arbitrary disconnected whole preimage was asserted.
+- Importantly, the true old A-connected **rooted component** carries a separate oriented signed graph isomorphism (#508), not just equality of algebraic H₁[A] cosets. All actual OLD input directed edge predicates/paths match, including loops and inverse edge tokens. Thus local A-component transport is the right source for the pending rank-two selected `Z₁` construction.
+
+**Current hard gates (do not inflate the claims):** selected-root original |A|=2 tagged B∩C Setoid via local retractable H₁[A] (#514 candidate); selected-root old/fresh raw signed edge iso (#515 candidate); signed quotient congruence/complete source graph and stationary-loop completion; precise B-augmentation type-(1)/(2), source stage-family COVERAGE and equivariance; corrected Condition 5.2/Theorem 4.7; higher Yₖ/Zₖ induction, finite reflecting group, concrete fibre-MAX → PSTS EPPA. The source G₂ finite overcatalogue and the literal actual Definition-5.3 Z₁ catalogue are not silently equated.
+
+**Housekeeping:** #509 independently green on its exact source head but CLOSED without merge as a duplicate of accepted #508. #513 independently green and CLOSED without merge as duplicate of accepted #512. Never merge both alternate theorem-name families.
