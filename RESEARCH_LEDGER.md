@@ -1618,3 +1618,210 @@ The completed exact source geometry now has two layers:
 - #440 exhibits the *plain/unaugmented* local full proper-coset stage, first genuine `G₂` summand, its Cayley cover and word-action equality. #441 tests that its source/local completed action API agrees literally with the previously certified rooted local P_A completion. #444 proves the general exact full signed-word congruence under original/local plain-stage isomorphism. The final original plain-stage composition remains after their independent audits.
 
 **Strict scope:** original source Definition-5.3 complete Z₁ family coverage is not closed merely by all-local action superfamily; must explicitly compose source indices, action fibres, old/new signed edges and legal completion. Corrected Condition 5.2 / Theorem 4.7 admissibility/embeddedness, cluster property and bridge-freeness remain OPEN at general ranks. Full higher `Yₖ/Zₖ` induction and original group equivariance, final finite reflecting group, concrete fibre-MAX and unconditional PSTS EPPA remain OPEN. Reject any reinterpretation of distinct component-tagged points as one ambient group coordinate (human duplicate-coordinate counterexamples).
+
+
+## 2026-10-14 — certified rank-one source-cover consolidation; literal Y₁ frontier
+
+**Authoritative source-and-post-merge-CI-GREEN main cutoff:**
+`538d93e96a3c929155318d22fb804fd6b3fee4fa` (clean PR #476).
+GitHub Actions [run 38621664538](https://github.com/shulda/lean_eppa_psts/actions/runs/38621664538)
+completed the whole Lean library, the independent 256 genuine original-oriented-input
+regression cases and narrow standard-axioms audit on **this exact main revision**.
+The intermediate clean #470 integrated exact original-edge H₁ path/component
+and directed-edge image characterizations; #472 enabled incrementally cached
+`.lake` builds, without relaxing any of these tests.
+
+### First-rank results NOW ON MAIN (not conjectural)
+
+- Actual input-dependent finite group `SourceH1` and `sourceAllLocalG2`;
+  concrete generator-preserving **1-stable** G₂↠H₁; actual **2-retractability**
+  of G₂. The full source-facing first-rank theorem is in
+  `SourceG2FirstRankSourceCoverTheorem.lean`.
+- Original H₁ inverse-image **INCOMPLETE** skeleton has exactly the signed
+  original input edges, never X₁'s artificial complete action edges.
+  Every original signed path has a genuine H₁ lift with its exact chronological
+  group-word endpoint. Identity-rooted A-component membership is characterized
+  by real A-supported input paths, and each enumerated source H₁ A-component
+  projects exactly onto the corresponding original input A-component on
+  vertices, with lifts of all its genuine signed A-edges.
+- The entire three-kind dependent disjoint completed source action
+  (original plain full proper-coset CE, anchored type-(1) augmented clusters,
+  and original rooted off-B type-(2) full-B-coset augmentations) is FINITE
+  with its exact component-tagged vertex carriers and oriented signed edges.
+  The actual G₂ controls all chronological signed word actions; the true
+  generator-preserving **surjective group homomorphism** G₂→the complete
+  joint source-stage transition subgroup is in
+  `SourceOriginalH1Z1TransitionQuotient.lean`. Cayley(G₂) gives rooted
+  signed labelled graph covers of every source stage reachable component,
+  surjective on vertices AND formal directed signed edge tokens.
+- The original old A-component tag classifies **FULL** reachability by
+  arbitrary signed words in a LEGALLY trivial-loop-completed full proper
+  coset extension. Other generator labels act by actual stationary loops,
+  so no new connection of distinct tagged old components is introduced.
+  This uses true gluing quotients rather than identifying equal ambient
+  group coordinates.
+- Ten exact independently source-CI-green Lean module blobs were brought
+  together in clean #476, and the combined HEAD and post-merge main both
+  passed complete CI. Overlapping historical #457–#463 and #467/#469/#473–#475
+  are research ancestry, not alternative competing authoritative copies;
+  don't replay their entire stacks into current main.
+
+### Current mathematically useful work after this checkpoint
+
+- Printed Section-5 **literal** `Y₁=X₁⊔⨆_i G₁[{i}]` is represented by
+  complete signed actions with distinct summand tags, and its full signed
+  word kernel is explicit. A two-sided equivalence with the synchronized
+  `SourceH1` word kernel and a generator-preserving
+  `SourceH1 ≃* T(Y₁)` were all **independently Lean-CI GREEN** on source PRs
+  #477, #478, #479. Exact old-edge H₁-cover basepoint translation and its
+  commutation with the original-input projection passed source CI #468/#471.
+  These SIX independently checked source blobs are consolidated in
+  **#481, still pending its own exact combined CI and merge** as of this entry.
+  DO NOT call the literal paper-H₁ identification main-certified yet.
+- Candidate **#482** transfers the true incomplete original-edge H₁ cover
+  through the group isomorphism into the literal T(Y₁)-Cayley presentation;
+  it aims at a real signed vertex/edge bijection over the ORIGINAL input EGraph.
+  It remains UNVERIFIED pending independent build/audit. Candidate **#483**
+  constructs the two literal surjective generator-preserving transition
+  group restriction maps T(G⊔H)↠T(G),T(H) (needed for the intrinsic
+  printed projection T(Y₁)→T(X₁)); also UNVERIFIED.
+- Keep the next source-specific obligations separate:
+  (a) verify the literal-cover projection agrees with the actual restriction
+  of the paper's T(Y₁) action onto X₁;
+  (b) identify **ALL** selected Definition-5.3 Z₁ stages with actual source
+  first-rank covers, including arbitrary P/B/v type-(1), original C_H,
+  B=∅, full-selected-B cases and off-B augmentation type-(2), with genuine
+  component-tagged signed graph maps and fixed-loop completion;
+  (c) only then prove the corrected Condition 5.2 and Theorem 4.7
+  admissibility, embeddedness, cluster, bridge-freeness geometry and
+  proceed to historical rank-k word kernels, finite reflecting group,
+  final Cayley/semidirect fibre-MAX and unconditional ordinary PSTS EPPA.
+- **No general higher-rank shortcut is inferred** from the first-rank
+  synchronized detectors or from matching unary generator periods:
+  the earlier noncommuting-word and duplicate-coordinate counterexamples
+  remain active constraints. Do not treat full 1-stability/2-retractability
+  as a replacement for k-stable complete selected stage action history.
+
+**Audit convention:** a source branch being green is not enough for an
+integration claim; the exact clean combined HEAD and subsequent main revision
+must be checked. Distinguish original input signed edges from artificial X₁
+completion edges, intrinsic connected-component tags from ambient group
+coordinates, and actual selected paper stages from a finite supercatalogue.
+
+
+## 2026-10-14 LATE — paper's literal H₁=T(Y₁) now green on main
+
+**Updated authoritative source + postmerge GREEN main:** commit
+`53756e9f3e5436128507c391d11f440b00ea2607`,
+clean six-module PR #481; exact postmerge full Lean/256 original oriented-input
+cases/allowed-axioms CI [38625021267](https://github.com/shulda/lean_eppa_psts/actions/runs/38625021267)
+SUCCESS. The older `538d93e9` (#476) checkpoint remains a verified
+historical prefix; its ten-source-module results have not been lost.
+
+**New independently certified actual mathematical correspondence:**
+
+- The printed initial complete signed action is represented LITERALLY as
+  `sourceLiteralY1 = X₁ ⊔ (dependent family i ↦ Cayley(G₁[{i}]))`;
+  each old/new component and every positive/negative directed edge token is
+  tagged. Its finite transition group and unrestricted signed identity-word
+  kernel are proved in `SourceLiteralY1ActionKernel.lean`.
+- `SourceLiteralY1ToH1WordKernel.lean` proves the two-sided equivalence
+  of all signed identity-word relations of that TRUE T(Y₁) action and the
+  actual previously constructed synchronized SourceH₁ model.
+  `LabelledWordKernelMulEquiv.lean` gives a reusable generic
+  generator-preserving group isomorphism whenever two generated labelled
+  groups have equal unrestricted signed-word kernels.
+  Hence `SourceLiteralY1H1GroupEquiv.lean` genuinely proves
+  `SourceH1 src dst ≃* (sourceLiteralY1 src dst).transitionGroup`,
+  preserving EACH generator and every signed word. This is a
+  **main-certified literal source group identification**, not just a
+  source-shaped algebraic simulation.
+- `SourceOriginalH1BasepointTranslation.lean` and
+  `SourceOriginalH1CoverBasepointNaturality.lean` prove the exact true
+  original-edge incomplete SourceH₁ preimage graph isomorphism under left
+  basepoint translation, bijective on actual vertices and formal directed
+  edge tokens and STRICTLY commuting over the ORIGINAL incomplete input
+  graph. The entire input need not be connected.
+
+**Pending next source gates (NOT on main, irrespective of original-source
+branch success):**
+
+1. #482 is a CI candidate for transporting every genuine original-input
+   H₁ cover through the generator-preserving group isomorphism to the
+   literal T(Y₁) Cayley group, with exact vertex and signed edge bijection
+   OVER the original input graph; do not conflate this with mere abstract
+   group isomorphism.
+2. #483 independently passed full CI for literal signed disjoint
+   transition-factor quotients T(G⊔H)↠T(G),T(H); #485 carries its original
+   green source blob into a direct construction of the printed
+   T(Y₁)↠T(X₁) map and the ORIGINAL input-edge preimage/path covering.
+   Their new combined proof has NOT yet been certified or merged.
+   It still remains to PROVE that this intrinsic paper projection agrees
+   with the projection transported via the SourceH₁ isomorphism.
+3. The exact selected source Definition-5.3 Z₁ full/augmented
+   component-tagged signed action family comparison and every intended
+   automorphism-equivariance requirement are still OPEN. Follow with
+   corrected Condition 5.2 and Theorem 4.7 geometry (embeddedness,
+   cluster property, bridge freeness including full-coset alternative),
+   then the higher-k historical stage-kernel stability argument and
+   the reflecting group / fibre-MAX application. None of these follows
+   automatically from the literal H₁ identification or G₂'s 1-stability.
+
+**Reporting discipline:** do not represent any pending staged PR as a
+main-checked theorem. Continue to distinguish the ORIGINAL incomplete
+input EGraph and true H₁ preimage from the artificial complete X₁ action;
+old component/coset quotient tags from ambient group values; and
+the selected printed Z₁ from the constructed source supercatalogue.
+
+
+## 2026-10-15 — direct printed H₁=T(Y₁) original-edge cover accepted
+
+**Authoritative postmerge GREEN main cutoff** `16a90db8edc09bee5d820aa366f5e819f16761b4`:
+the new main postmerge complete Lean/256 original-input cases/allowed-axioms
+audit [38693600671](https://github.com/shulda/lean_eppa_psts/actions/runs/38693600671)
+was successful. The earlier literal SourceH₁≃*T(Y₁) checkpoint #481
+(`53756e9f`, CI 38625021267) remains a verified ancestor.
+
+**New certified actual paper-source result** (clean #485):
+- `DisjointCompleteTransitionQuotients.lean`: for true tagged
+  complete disjoint EGraphs G⊔H, T(G⊔H) has separately honest
+  surjective, generator-preserving group restrictions to T(G)
+  and T(H). The restrictions come from the literal signed
+  transition actions, not an assumed abstract group product.
+- `SourceLiteralY1CanonicalOriginalCover.lean`: instantiate
+  the restriction on the genuine literal paper Y₁ to get
+  T(Y₁) ↠ T(X₁)=G₁, with correct chronological word evaluation.
+  Define the ACTUAL original-input preimage T(Y₁)-Cayley
+  skeleton by retaining exactly those signed edges whose
+  source projects to the ORIGINAL input edge's source.
+  Its inverse-closed oriented EGraph covers precisely the
+  original incomplete graph: signed edge lifting at every
+  designated fibre source and full old signed-path lifting
+  are checked in Lean. All artificial X₁-completion edges
+  are excluded.
+- This is an independent, DIRECT construction of the source
+  covering (not obtained by definition from the SourceH₁
+  synchronized model). The next gate is compatibility with
+  the existing generator-preserving SourceH₁≃*T(Y₁) isomorphism.
+
+**Active CI candidates as of this dated ledger update:**
+- #487 copies exact formerly full-green source #482 after its
+  Lean comment syntax correction, proving a genuine
+  vertex/ORIENTED-EDGE-bijective translated original-input
+  cover over EGraph. It still requires its own exact clean
+  integration CI and is NOT main-certified.
+- #486 gives the missing commuting triangle of the *DIRECT*
+  quotient T(Y₁)↠G₁ and the synchronized quotient SourceH₁↠G₁
+  on ALL group elements, and the consequent exact original
+  input vertex orbit/edge membership/projection correspondence.
+  Its full CI is pending; not yet main-certified.
+- Exact selected printed Definition-5.3 Z₁ stage catalogue
+  correspondence and all stage-level equivariance remain
+  OPEN, along with corrected Condition 5.2, Theorem 4.7
+  (embeddedness/cluster/bridge-freeness), higher ranks,
+  reflecting group, final fibre-MAX and ordinary PSTS EPPA.
+
+**Do not confuse** a source-family supercatalogue with the
+exact PRINTED selected stage list; equal ambient group
+coordinates with same component-tagged quotient point;
+or original signed graph edges with artificial X₁ edges.
