@@ -40,8 +40,8 @@ noncomputable abbrev sourceH1OriginalRankTwoRootRawGraph
     (A : Finset ι) (hcard : A.card = 2)
     (root : SourceH1 src dst)
     (P : CosetFamilySpec A) :=
-  ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A)
-    .rootedAmbientMultiCosetRawGraph A hcard
+  ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).rootedAmbientMultiCosetRawGraph
+    A hcard
       (sourceH1_twoRetractable src dst)
       (⟨root, by trivial⟩ :
         ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex) P
@@ -58,8 +58,7 @@ theorem sourceH1OriginalRankTwoRootRawGraph_target_congruent
     (sourceH1OriginalRankTwoRootRawGraph
       src dst base A hcard root P).SourceLabelTargetCongruent := by
   exact
-    ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A)
-      .rootedAmbientMultiCosetRawGraph_target_congruent
+    ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).rootedAmbientMultiCosetRawGraph_target_congruent
         A hcard (sourceH1_twoRetractable src dst)
         (⟨root, by trivial⟩ :
           ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex)
