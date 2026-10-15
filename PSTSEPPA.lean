@@ -338,6 +338,7 @@ import PSTSEPPA.ABO.SourceOriginalH1CoverComponentExactImage
 import PSTSEPPA.ABO.SourceLiteralY1ActionKernel
 import PSTSEPPA.ABO.DisjointCompleteTransitionQuotients
 import PSTSEPPA.ABO.SourceLiteralY1CanonicalOriginalCover
+import PSTSEPPA.ABO.SourceLiteralY1G1ProjectionCompatibility
 import PSTSEPPA.ABO.SourceLiteralY1ToH1WordKernel
 import PSTSEPPA.ABO.LabelledWordKernelMulEquiv
 import PSTSEPPA.ABO.SourceLiteralY1H1GroupEquiv
