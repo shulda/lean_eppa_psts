@@ -350,6 +350,7 @@ import PSTSEPPA.ABO.LabelledGroupSingleCosetGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1SingleCosetSignedEdges
 import PSTSEPPA.ABO.SourceLiteralY1MultiCosetRawGraphIso
 import PSTSEPPA.ABO.MultiCosetGluingIsoTransport
+import PSTSEPPA.ABO.InverseTaggedCosetNaturality
 import PSTSEPPA.ABO.SourceLiteralY1TaggedCosetAttachments
 import PSTSEPPA.ABO.SourceLiteralY1MultiCosetRawGluingTransport
 import PSTSEPPA.ABO.SourceLiteralY1RootComponentVertexEquiv
