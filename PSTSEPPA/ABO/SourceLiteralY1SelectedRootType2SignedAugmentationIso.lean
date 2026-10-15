@@ -248,8 +248,12 @@ theorem literalPaperSelectedOffBAugmentedGraphHom_follows_iff
     (B : Finset ι)
     (hBP : B ∈ (allProperCosetFamily A).alphabets)
     (z : LiteralPaperSelectedOffBPoint src dst base A hcard root B hBP)
-    (u v : (literalPaperSelectedOffBAugmentedEGraph
-      src dst base A hcard root B hBP z).Vertex)
+    (u v : IsolatedCosetGluing.Vertex
+      (Quotient (sourceLiteralY1DirectRootMultiCosetSetoid
+        src dst base A hcard root (allProperCosetFamily A)))
+      (sourceLiteralY1 src dst).transitionSubgroupGenerator B
+      (sourceLiteralY1SelectedRootAmbientValue
+        src dst base A hcard root (allProperCosetFamily A) z.vertex))
     (w : LabelWord ι) :
     (literalPaperSelectedOffBAugmentedEGraph
       src dst base A hcard root B hBP z).Follows u w v ↔
