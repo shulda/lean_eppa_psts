@@ -347,6 +347,7 @@ import PSTSEPPA.ABO.SourceLiteralY1OriginalCoverComponentEquiv
 import PSTSEPPA.ABO.LabelledGroupSubalphabetCosetTransport
 import PSTSEPPA.ABO.LabelledIsoTaggedCosetTransport
 import PSTSEPPA.ABO.LabelledGroupSingleCosetGraphIso
+import PSTSEPPA.ABO.SourceLiteralY1SingleCosetGraphIso
 import PSTSEPPA.ABO.MultiCosetGluingIsoTransport
 import PSTSEPPA.ABO.SourceLiteralY1TaggedCosetAttachments
 import PSTSEPPA.ABO.SourceLiteralY1MultiCosetRawGluingTransport
