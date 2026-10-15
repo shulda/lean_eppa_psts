@@ -47,7 +47,8 @@ noncomputable def sourceH1OriginalRootMultiCosetSetoid
     (A : Finset ι) (hcard : A.card = 2)
     (root : SourceH1 src dst) (P : CosetFamilySpec A) :
     Setoid ((sourceH1OriginalRootComponent src dst base A root).MultiCosetRawVertex P) :=
-  ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).rootedAmbientMultiCosetSetoid
+  CayleySubgraphSpec.rootedAmbientMultiCosetSetoid
+    ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A)
     A hcard
       (sourceH1_twoRetractable src dst)
       (⟨root, by trivial⟩ :
