@@ -1618,3 +1618,117 @@ The completed exact source geometry now has two layers:
 - #440 exhibits the *plain/unaugmented* local full proper-coset stage, first genuine `G₂` summand, its Cayley cover and word-action equality. #441 tests that its source/local completed action API agrees literally with the previously certified rooted local P_A completion. #444 proves the general exact full signed-word congruence under original/local plain-stage isomorphism. The final original plain-stage composition remains after their independent audits.
 
 **Strict scope:** original source Definition-5.3 complete Z₁ family coverage is not closed merely by all-local action superfamily; must explicitly compose source indices, action fibres, old/new signed edges and legal completion. Corrected Condition 5.2 / Theorem 4.7 admissibility/embeddedness, cluster property and bridge-freeness remain OPEN at general ranks. Full higher `Yₖ/Zₖ` induction and original group equivariance, final finite reflecting group, concrete fibre-MAX and unconditional PSTS EPPA remain OPEN. Reject any reinterpretation of distinct component-tagged points as one ambient group coordinate (human duplicate-coordinate counterexamples).
+
+## 2026-10-15 — certified original-cover A-component equivalence for the LITERAL paper H₁
+
+**Authoritative accepted main cutoff:** `4fe391e405be1cb9ece24f194d9542e0a53fd1dd`
+(clean #492). Full post-merge GitHub Actions on this exact commit **GREEN**
+(run `38700096097`): full Lean library, independent 256-pattern
+original oriented-edge input census, and narrow permitted-axioms audit.
+This dated checkpoint supersedes stale pending assertions in earlier
+October 13/14 snapshots; they remain historically correct only for
+their originally named commits.
+
+### Certified mathematical interfaces ON main
+
+1. **Literal first-step source action:** clean #481 identifies the
+   algebraically synchronized source `SourceH1` with the printed
+   `T(Y₁)`, where `Y₁=X₁⊔∐ᵢ Cayley(G₁[{i}])` is a real COMPLETE
+   signed labelled action with different index tags. The isomorphism
+   `sourceH1EquivLiteralY1Transition` is an actual
+   generator-preserving `MulEquiv`; full chronological signed-word
+   evaluation commutes with it. It is NOT merely a k-stable quotient.
+2. **Original incomplete covering geometry:** #485, #486, #487, #488
+   construct the independently defined DIRECT `T(Y₁)↠T(X₁)=G₁`
+   restriction quotient, its true old-edge preimage Cayley skeleton,
+   and the source-synchronized `SourceH1` preimage. Their group
+   quotient triangle is checked, and the ORIGINAL signed edge
+   preimages are genuinely isomorphic over the SAME original input
+   EGraph (both vertices and directed ± edge tokens). No extra
+   X₁-completion edges are treated as original.
+3. **All cover-root indices:** #490 gives an explicit finite
+   equivalence between every printed T(Y₁) original-cover index
+   `(base,A,root)` with `A.card=2` and every SourceH₁ index,
+   preserving basepoint, alphabet, root orbit and actual old edge
+   membership. No representatives of B-component quotient classes
+   are chosen.
+4. **True path and component reflection:** clean #489 constructs
+   generic signed EGraph path reflection for a genuine vertex- and
+   directed-edge-bijective labelled morphism, including all signed
+   B-supported paths. Clean #492 applies it to the literal-vs-source
+   original covering comparison and proves EXACT equivalence of
+   every intrinsic A-component under the real old-edge graph iso.
+   The resulting root-indexed components are those used by the
+   finite all-local source G₂ construction, as real INCOMPLETE
+   skeletons, not just ambient H₁[A] cosets.
+5. **True first-rank source G₂ overcatalogue:** #476, already on
+   main with full verified Lean/256/axiom CI, constructs finite
+   input-dependent G₂→SourceH₁ with rank-one stability and
+   2-retractability, finite true original H₁ three-kind completed
+   source stage-action supercatalogue, a surjective
+   generator-preserving group homomorphism onto its transition
+   group and signed Cayley(G₂) covers of each reachable component,
+   on vertices AND formally oriented edge tokens. The original
+   proper-coset full completed action retains the intrinsic
+   old parent-component tags for ALL signed word paths.
+6. **Source H₁ basepoint translations:** clean #481 includes
+   vertex/edge-bijective left-translation isomorphisms of the
+   old-edge covering graph and their strict commutation with the
+   ORIGINAL input EGraph projection; disconnected inputs and
+   geometric loops are handled.
+
+### New candidate work, NOT automatically main-certified
+
+- **#493**, independent exact source HEAD `f55d8c19429a967f18c71a8843fe5d17591c7b4e`
+  FULL CI GREEN `38700653585`, proves label-preserving MulEquiv
+  transport of all subgroup generators `Γ[B]≃Δ[B]`, arbitrary
+  chronological signed words and all LEFT coset memberships
+  `E(x)∈E(g)Δ[B] iff x∈gΓ[B]`. Original source-only
+  CI does NOT mean the merged main contains the module.
+- **#494**, exact source HEAD `39bff97ff4af67eefba57cd6b464ce0905975b3b`
+  FULL CI GREEN `38701600154`, turns any labelled group
+  isomorphism compatible with a signed old-graph isomorphism
+  into a genuine equivalence of separately tagged attached
+  B-coset point types. It retains the actual B-component index,
+  old skeleton embeddings and all alphabet enlargement maps.
+- **#495** is the clean two-source-module combination over
+  `4fe391e4`, with exact unchanged theorem blobs. It is
+  a MERGE CANDIDATE until this NEW combined head passes full CI
+  and is accepted; no early claims of main certification.
+- **Documentation-only branch** records this cutoff in
+  `FORMALIZATION.md`/this ledger and needs its own independent CI
+  before merging. Do not treat a document diff as mathematical
+  verification.
+
+### Remaining genuine proof obligations
+
+The printed corrected Definition 5.3 selects specific **FULL
+component-tagged coset extensions and their B-augmentations**.
+The established first-rank old-cover component indexing is a
+PRECURSOR, not proof that all selected printed complete Z₁
+stages match or embed as full invariant components of the
+source three-kind G₂ overcatalogue.
+
+Next source geometric gates:
+(a) specialize tagged attached-coset transport to every literal
+T(Y₁) original A-component and its translated source-local H₁[A]
+skeleton;
+(b) transport AND REFLECT the actual `B∩C` intersection-support
+relation of the quotient raw vertices and their signed directed
+edge-token identifications, respecting different component tags
+even when their ambient group coordinates coincide;
+(c) compare the LEGAL fixed-loop completion and actual newly
+attached full-B-coset augmentation for all B, including B=∅,
+nonempty B, old/fresh point tags and both signed directions;
+(d) establish selected printed Z₁ family coverage/necessary
+equivariance and only then attempt corrected Condition 5.2
+and Theorem 4.7 embeddedness, cluster property and bridge-freeness
+without invoking an embedding that is not yet proved.
+
+The historical higher-rank Yₖ/Zₖ word-kernel and stage-history
+induction, finite reflecting group, MAX concrete Cayley
+specialization and unconditional ordinary PSTS EPPA remain OPEN.
+The old human five-vertex equal-ambient-coordinate/different-
+component-tag counterexample and noncommuting higher-rank
+word-kernel obstructions continue to rule out shortcuts.
+
