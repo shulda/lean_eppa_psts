@@ -61,6 +61,17 @@ theorem restrictedRootComponent_edge_iff
     rw [hsrc]
     exact hr
 
+/-- The original signed inverse-edge token's Cayley group source is
+the true signed one-step endpoint, for any incomplete Cayley
+skeleton, including absent edges and group identity labels. -/
+theorem inverseEdge_group_source
+    (e : K.Edge) :
+    ((K.toEGraph.inv e).1).1 =
+      e.1.1 * PSTS.SignedWord.evalGroupLetter gen e.1.2 := by
+  change ((cayleyGraph gen).inv e.1).1 =
+    e.1.1 * PSTS.SignedWord.evalGroupLetter gen e.1.2
+  cases e.1.2 <;> rfl
+
 end CayleySubgraphSpec
 
 variable {ι V : Type*}
@@ -167,20 +178,28 @@ noncomputable def sourceLiteralY1DirectRootComponentGraphHom
     intro e
     apply Subtype.ext
     apply Prod.ext
-    · dsimp [sourceLiteralY1Direct_rootA_component_edgeEquiv]
-      change
-        (sourceH1EquivLiteralY1Transition src dst).symm
-          (e.1.1 *
-            PSTS.SignedWord.evalGroupLetter
-              (sourceLiteralY1 src dst).transitionSubgroupGenerator e.1.2) =
-        (sourceH1EquivLiteralY1Transition src dst).symm e.1.1 *
-          PSTS.SignedWord.evalGroupLetter (sourceH1Generator src dst) e.1.2
-      rw [map_mul]
-      exact congrArg _ (labelledMulEquiv_evalGroupLetter
-        (sourceLiteralY1 src dst).transitionSubgroupGenerator
-        (sourceH1Generator src dst)
-        (sourceH1EquivLiteralY1Transition src dst).symm
-        (sourceLiteralY1Generator_to_sourceH1 src dst) e.1.2)
+    · let L := sourceLiteralY1DirectRootComponent src dst base A root
+      let K := sourceH1OriginalRootComponent src dst base A
+        ((sourceH1EquivLiteralY1Transition src dst).symm root)
+      let E := (sourceH1EquivLiteralY1Transition src dst).symm
+      let F := sourceLiteralY1Direct_rootA_component_edgeEquiv src dst base A root
+      calc
+        (F (L.toEGraph.inv e)).1.1 =
+            E ((L.toEGraph.inv e).1.1) := rfl
+        _ = E (e.1.1 *
+              PSTS.SignedWord.evalGroupLetter
+                (sourceLiteralY1 src dst).transitionSubgroupGenerator e.1.2) := by
+              rw [L.inverseEdge_group_source e]
+        _ = E e.1.1 *
+              PSTS.SignedWord.evalGroupLetter (sourceH1Generator src dst) e.1.2 := by
+              rw [map_mul,
+                labelledMulEquiv_evalGroupLetter
+                  (sourceLiteralY1 src dst).transitionSubgroupGenerator
+                  (sourceH1Generator src dst) E
+                  (sourceLiteralY1Generator_to_sourceH1 src dst) e.1.2]
+        _ = (K.toEGraph.inv (F e)).1.1 := by
+              rw [K.inverseEdge_group_source (F e)]
+              rfl
     · rfl
   map_label := by
     intro e
