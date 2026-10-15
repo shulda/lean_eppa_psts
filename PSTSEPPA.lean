@@ -347,6 +347,7 @@ import PSTSEPPA.ABO.BijectiveLabelledEGraphPaths
 import PSTSEPPA.ABO.SourceLiteralY1OriginalCoverComponentEquiv
 import PSTSEPPA.ABO.LabelledGroupSubalphabetCosetTransport
 import PSTSEPPA.ABO.LabelledMulEquivAugmentedClusterIso
+import PSTSEPPA.ABO.LabelledMulEquivAugmentedCompleteActionIso
 import PSTSEPPA.ABO.LabelledIsoTaggedCosetTransport
 import PSTSEPPA.ABO.LabelledGroupSingleCosetGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1SingleCosetSignedEdges
