@@ -97,9 +97,9 @@ theorem sourceLiteralY1Direct_rootA_component_edge_iff
   have htarget :=
     (K.restrictAlphabet A).componentSubgraph_edge_mem_iff A rK (E e.1, e.2)
   change
-    e ∈ (L.restrictAlphabet A).subalphabetComponentSubgraph A rL |>.edges ↔
+    e ∈ ((L.restrictAlphabet A).subalphabetComponentSubgraph A rL).edges ↔
       (E e.1, e.2) ∈
-        (K.restrictAlphabet A).subalphabetComponentSubgraph A rK |>.edges
+        ((K.restrictAlphabet A).subalphabetComponentSubgraph A rK).edges
   exact hsource.trans
     ((and_congr (and_congr hrestrict Iff.rfl) hcomponent).trans
       htarget.symm)
@@ -161,11 +161,19 @@ noncomputable def sourceLiteralY1Direct_rootA_component_graphHom
   · intro e
     apply Subtype.ext
     apply Prod.ext
-    · change E (e.1.1 * PSTS.SignedWord.evalGroupLetter genL e.1.2) =
-        E e.1.1 * PSTS.SignedWord.evalGroupLetter genK e.1.2
-      rw [map_mul,
-        labelledMulEquiv_evalGroupLetter genL genK E
-          (sourceLiteralY1Generator_to_sourceH1 src dst) e.1.2]
+    · have hstep :
+          E (e.1.1 * PSTS.SignedWord.evalGroupLetter genL e.1.2) =
+            E e.1.1 * PSTS.SignedWord.evalGroupLetter genK e.1.2 := by
+        rw [map_mul,
+          labelledMulEquiv_evalGroupLetter genL genK E
+            (sourceLiteralY1Generator_to_sourceH1 src dst) e.1.2]
+      simp only [sourceLiteralY1Direct_rootA_component_edgeEquiv,
+        CayleySubgraphSpec.toEGraph, CayleySubgraphSpec.toLabelledGraph]
+      change E ((cayleyGraph genL).target e.1) =
+        (cayleyGraph genK).target (E e.1.1, e.1.2)
+      rw [cayleyGraph.target_eq_mul_evalGroupLetter,
+        cayleyGraph.target_eq_mul_evalGroupLetter]
+      exact hstep
     · rfl
   · intro e
     rfl
