@@ -99,16 +99,17 @@ noncomputable def labelledMulEquivGeneratedSubgroup
     (B : Finset ι) :
     generatedSubgroup genΓ B ≃* generatedSubgroup genΔ B := by
   let F : generatedSubgroup genΓ B →*
-      generatedSubgroup genΔ B where
-    toFun x :=
-      ⟨E x.1, (labelledMulEquiv_mem_generatedSubgroup_iff
-        genΓ genΔ E hgen B x.1).mpr x.2⟩
-    map_one' := by
-      apply Subtype.ext
-      simp
-    map_mul' x y := by
-      apply Subtype.ext
-      exact E.map_mul x.1 y.1
+      generatedSubgroup genΔ B :=
+    { toFun := fun x =>
+        ⟨E x.1, (labelledMulEquiv_mem_generatedSubgroup_iff
+          genΓ genΔ E hgen B x.1).mpr x.2⟩
+      map_one' := by
+        apply Subtype.ext
+        simp
+      map_mul' := by
+        intro x y
+        apply Subtype.ext
+        exact E.map_mul x.1 y.1 }
   apply MulEquiv.ofBijective F
   constructor
   · intro x y h
