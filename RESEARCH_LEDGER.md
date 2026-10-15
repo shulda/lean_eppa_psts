@@ -1732,3 +1732,39 @@ The old human five-vertex equal-ambient-coordinate/different-
 component-tag counterexample and noncommuting higher-rank
 word-kernel obstructions continue to rule out shortcuts.
 
+### 2026-10-15 later — actual full B-coset TAG transport now integrated
+
+**Subsequent accepted main cutoff:** clean #495 squash commit
+`282916a8853092aca3d4b6a0e6a90cec2e7a6b33`. Its independent
+combined exact-head Lean build, original-input 256-case census and
+narrow axiom audit all GREEN (run `38702377912`) BEFORE merge;
+the separate post-merge main check must be verified before
+calling this particular revision post-merge green. This addendum
+SUPERSEDES the preceding paragraph calling #495 pending, but
+preserves the earlier paragraph as a historical snapshot.
+
+Two byte-identical theorem source modules from #493/#494 now
+appear in authoritative `main`:
+
+- `LabelledGroupSubalphabetCosetTransport.lean`: the correct
+  chronological same-generator `MulEquiv` maps all signed words,
+  subalphabet-generated subgroups and LEFT group cosets. An explicit
+  `Γ[B] ≃* Δ[B]` is constructed for each B (including B=∅),
+  avoiding accidental reversal of action order.
+- `LabelledIsoTaggedCosetTransport.lean`: a genuine signed
+  incomplete-skeleton vertex/edge bijection, compatible with
+  the generator-preserving MulEquiv on group coordinates,
+  induces the correct bijection of separately B-COMPONENT-INDEXED
+  attached full B-coset vertices. It maps old skeleton points
+  correctly, preserves ambient values under the MulEquiv and
+  commutes with B⊆C enlargements. No different component tags
+  are merged merely because their ambient coset coordinates agree.
+
+**Still CANDIDATE**: #497 specializes the above to the printed
+T(Y₁) DIRECT ORIGINAL-edge preimage versus SourceH₁ at EVERY
+original basepoint. Even when certified, #497 is still only the
+tagged attached-coset VERTEX interface, not yet the complete
+proper-alphabet coset gluing quotient and signed edge/action
+isomorphism, not complete selected Definition-5.3 Z₁ coverage
+or higher-rank EPPA.
+
