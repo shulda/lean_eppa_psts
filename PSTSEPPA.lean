@@ -348,6 +348,7 @@ import PSTSEPPA.ABO.SourceLiteralY1ToH1WordKernel
 import PSTSEPPA.ABO.LabelledWordKernelMulEquiv
 import PSTSEPPA.ABO.SourceLiteralY1H1GroupEquiv
 import PSTSEPPA.ABO.LabelledGroupSubalphabetCosetTransport
+import PSTSEPPA.ABO.LabelledIsoTaggedCosetTransport
 import PSTSEPPA.ABO.SourceOriginalH1BasepointTranslation
 import PSTSEPPA.ABO.SourceOriginalH1CoverBasepointNaturality
 
