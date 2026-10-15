@@ -30,24 +30,37 @@ variable {ι V : Type*}
 variable [Fintype ι] [DecidableEq ι]
 variable [Fintype V] [DecidableEq V]
 
+/-- The ACTUAL signed old-edge A-component of a literal T(Y₁) original
+cover, rooted at an arbitrary real group point. No ambient subgroup
+coset or artificial completed X₁ edges are substituted. -/
+noncomputable abbrev sourceLiteralY1DirectRootComponent
+    (src dst : ι → V) (base : V) (A : Finset ι)
+    (root : (sourceLiteralY1 src dst).transitionGroup) :=
+  ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).subalphabetComponentSubgraph A
+      (⟨root, by trivial⟩ :
+        ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)
+
+/-- The corresponding actual signed old-edge component of the source H₁
+original incomplete covering, with the group root mapped by the genuine
+T(Y₁)→SourceH₁ same-labelled group isomorphism. -/
+noncomputable abbrev sourceH1OriginalRootComponent
+    (src dst : ι → V) (base : V) (A : Finset ι)
+    (root : SourceH1 src dst) :=
+  ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).subalphabetComponentSubgraph A
+      (⟨root, by trivial⟩ :
+        ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex)
+
 /-- An arbitrary group vertex lies in the literal original A-component
-of a chosen old-cover root iff its actual image under the labelled
-group isomorphism lies in the corresponding SourceH₁ A-component.
+of a chosen old-cover root iff its actual image under the labelled group
+isomorphism lies in the corresponding source-H₁ A-component.
 Uses only true ORIGINAL signed A-paths, including formal inverses. -/
 theorem sourceLiteralY1Direct_rootA_component_vertex_iff
     (src dst : ι → V) (base : V) (A : Finset ι)
     (root x : (sourceLiteralY1 src dst).transitionGroup) :
-    x ∈
-      (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-        .subalphabetComponentSubgraph A
-          (⟨root, by trivial⟩ :
-            ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)).vertices
-      ↔
+    x ∈ (sourceLiteralY1DirectRootComponent src dst base A root).vertices ↔
     (sourceH1EquivLiteralY1Transition src dst).symm x ∈
-      (((sourceH1OriginalSkeleton src dst base).restrictAlphabet A)
-        .subalphabetComponentSubgraph A
-          (⟨(sourceH1EquivLiteralY1Transition src dst).symm root, by trivial⟩ :
-            ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex)).vertices := by
+      (sourceH1OriginalRootComponent src dst base A
+        ((sourceH1EquivLiteralY1Transition src dst).symm root)).vertices := by
   let L := sourceLiteralY1DirectOriginalSkeleton src dst base
   let K := sourceH1OriginalSkeleton src dst base
   let E := (sourceH1EquivLiteralY1Transition src dst).symm
@@ -70,8 +83,7 @@ theorem sourceLiteralY1Direct_rootA_component_vertex_iff
     rw [hroot, hxmap] at h
     exact h
   have hL :
-      x ∈ (L.restrictAlphabet A).subalphabetComponentSubgraph A
-            (rL : (L.restrictAlphabet A).Vertex) |>.vertices ↔
+      x ∈ ((L.restrictAlphabet A).subalphabetComponentSubgraph A rL).vertices ↔
       (L.restrictAlphabet A).SubalphabetReachable A rL xL := by
     constructor
     · rintro ⟨u, hu, hr⟩
@@ -81,8 +93,7 @@ theorem sourceLiteralY1Direct_rootA_component_vertex_iff
     · intro hr
       exact ⟨xL, rfl, hr⟩
   have hK :
-      E x ∈ (K.restrictAlphabet A).subalphabetComponentSubgraph A
-            (rK : (K.restrictAlphabet A).Vertex) |>.vertices ↔
+      E x ∈ ((K.restrictAlphabet A).subalphabetComponentSubgraph A rK).vertices ↔
       (K.restrictAlphabet A).SubalphabetReachable A rK xK := by
     constructor
     · rintro ⟨u, hu, hr⟩
@@ -92,8 +103,8 @@ theorem sourceLiteralY1Direct_rootA_component_vertex_iff
     · intro hr
       exact ⟨xK, rfl, hr⟩
   change
-    x ∈ (L.restrictAlphabet A).subalphabetComponentSubgraph A rL |>.vertices ↔
-      E x ∈ (K.restrictAlphabet A).subalphabetComponentSubgraph A rK |>.vertices
+    x ∈ ((L.restrictAlphabet A).subalphabetComponentSubgraph A rL).vertices ↔
+      E x ∈ ((K.restrictAlphabet A).subalphabetComponentSubgraph A rK).vertices
   exact hL.trans
     ((L.restrictAlphabet_subalphabetReachable_iff A A (subset_rfl) rL xL).trans
       (hreach.trans
@@ -105,15 +116,9 @@ base vertex and actual group root, with no choice of coset reps. -/
 noncomputable def sourceLiteralY1Direct_rootA_component_vertexEquiv
     (src dst : ι → V) (base : V) (A : Finset ι)
     (root : (sourceLiteralY1 src dst).transitionGroup) :
-    (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-      .subalphabetComponentSubgraph A
-        (⟨root, by trivial⟩ :
-          ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)).Vertex
-      ≃
-    (((sourceH1OriginalSkeleton src dst base).restrictAlphabet A)
-      .subalphabetComponentSubgraph A
-        (⟨(sourceH1EquivLiteralY1Transition src dst).symm root, by trivial⟩ :
-          ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex)).Vertex where
+    (sourceLiteralY1DirectRootComponent src dst base A root).Vertex ≃
+    (sourceH1OriginalRootComponent src dst base A
+      ((sourceH1EquivLiteralY1Transition src dst).symm root)).Vertex where
   toFun p :=
     ⟨(sourceH1EquivLiteralY1Transition src dst).symm p.1,
       (sourceLiteralY1Direct_rootA_component_vertex_iff src dst base A root p.1).mp p.2⟩
@@ -121,15 +126,15 @@ noncomputable def sourceLiteralY1Direct_rootA_component_vertexEquiv
     ⟨(sourceH1EquivLiteralY1Transition src dst) p.1, by
       apply (sourceLiteralY1Direct_rootA_component_vertex_iff src dst base A root
         ((sourceH1EquivLiteralY1Transition src dst) p.1)).mpr
-      simpa only [MulEquiv.symm_apply_apply] using p.2⟩
+      simpa using p.2⟩
   left_inv := by
     intro p
     apply Subtype.ext
-    exact (sourceH1EquivLiteralY1Transition src dst).apply_symm_apply p.1
+    simp
   right_inv := by
     intro p
     apply Subtype.ext
-    exact (sourceH1EquivLiteralY1Transition src dst).symm_apply_apply p.1
+    simp
 
 end ABO
 end PSTSEPPA
