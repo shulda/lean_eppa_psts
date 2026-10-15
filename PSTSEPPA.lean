@@ -349,6 +349,7 @@ import PSTSEPPA.ABO.LabelledIsoTaggedCosetTransport
 import PSTSEPPA.ABO.MultiCosetGluingIsoTransport
 import PSTSEPPA.ABO.SourceLiteralY1TaggedCosetAttachments
 import PSTSEPPA.ABO.SourceLiteralY1MultiCosetRawGluingTransport
+import PSTSEPPA.ABO.SourceLiteralY1RootComponentVertexEquiv
 import PSTSEPPA.ABO.SourceLiteralY1G1ProjectionCompatibility
 import PSTSEPPA.ABO.SourceLiteralY1ToH1WordKernel
 import PSTSEPPA.ABO.LabelledWordKernelMulEquiv
