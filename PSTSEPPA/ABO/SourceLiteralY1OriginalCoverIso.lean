@@ -145,7 +145,7 @@ an intrinsic A-component or a component-tagged coset point. -/
 
 /-- The original input directed edge token of the paper's
 literal H₁ cover is exactly the signed label of the
-corresponding old Cayley edge; formal +/- tokens remain
+corresponding old Cayley edge; formal positive and negative tokens remain
 distinct even if both are geometric loops. -/
 @[simp] theorem sourceLiteralY1OriginalSkeletonToInput_edge
     (src dst : ι → V) (base : V)
