@@ -63,26 +63,18 @@ noncomputable def labelledMulEquivFullCosetEdgeEquiv
     (B : Finset ι) (g : Γ) :
     IsolatedCosetGluing.CosetEdge genΓ B g ≃
       IsolatedCosetGluing.CosetEdge genΔ B (E g) where
-  toFun p := by
-    rcases p with ⟨⟨x, s⟩, hp⟩
-    rcases hp with ⟨hx, hs⟩
-    have hxB : x ∈ generatedLeftCoset genΓ B g := by
-      change x ∈ generatedLeftCoset genΓ B g at hx
-      exact hx
-    refine ⟨(E x, s), ?_⟩
-    exact ⟨(labelledMulEquiv_mem_generatedLeftCoset_iff
-      genΓ genΔ E hgen B g x).mpr hxB, hs⟩
-  invFun p := by
-    rcases p with ⟨⟨y, s⟩, hp⟩
-    rcases hp with ⟨hy, hs⟩
-    have hyB : y ∈ generatedLeftCoset genΔ B (E g) := by
-      change y ∈ generatedLeftCoset genΔ B (E g) at hy
-      exact hy
-    have hxB : E.symm y ∈ generatedLeftCoset genΓ B g := by
+  toFun p :=
+    ⟨(E p.1.1, p.1.2), by
+      refine ⟨?_, p.2.2⟩
       apply (labelledMulEquiv_mem_generatedLeftCoset_iff
-        genΓ genΔ E hgen B g (E.symm y)).mp
-      simpa only [E.apply_symm_apply] using hyB
-    exact ⟨(E.symm y, s), ⟨hxB, hs⟩⟩
+        genΓ genΔ E hgen B g p.1.1).mpr
+      exact p.2.1⟩
+  invFun p :=
+    ⟨(E.symm p.1.1, p.1.2), by
+      refine ⟨?_, p.2.2⟩
+      apply (labelledMulEquiv_mem_generatedLeftCoset_iff
+        genΓ genΔ E hgen B g (E.symm p.1.1)).mp
+      simpa only [E.apply_symm_apply] using p.2.1⟩
   left_inv := by
     intro p
     apply Subtype.ext
