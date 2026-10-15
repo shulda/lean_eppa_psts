@@ -350,6 +350,7 @@ import PSTSEPPA.ABO.LabelledMulEquivAugmentedClusterIso
 import PSTSEPPA.ABO.SourceLiteralY1Type1AugmentedClusterGraphIso
 import PSTSEPPA.ABO.LabelledMulEquivAugmentedCompleteActionIso
 import PSTSEPPA.ABO.SourceLiteralY1Type1CompletedStageIso
+import PSTSEPPA.ABO.SourceLiteralY1Type1G2CayleyCover
 import PSTSEPPA.ABO.LabelledIsoTaggedCosetTransport
 import PSTSEPPA.ABO.LabelledGroupSingleCosetGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1SingleCosetSignedEdges
