@@ -118,8 +118,6 @@ theorem labelledMulEquivAugmentedClusterHom_edge_bijective
         apply (labelledMulEquiv_mem_generatedSubgroup_iff
           genΓ genΔ E hgen C x).mp
         change y ∈ generatedSubgroup genΔ C at hC
-        change y ∈ generatedSubgroup genΔ C at hC
-        change (E v)⁻¹ * y ∈ generatedSubgroup genΔ B at hC
         simpa [x] using hC
       · rcases hy with ⟨hC, hS⟩
         apply Or.inr
