@@ -37,8 +37,8 @@ theorem sourceLiteralY1DirectToSourceH1_coordinate
     (x : (sourceLiteralY1DirectOriginalSkeleton
       src dst base).Vertex) :
     (sourceH1EquivLiteralY1Transition src dst).symm x.1 =
-      (sourceLiteralY1DirectToSourceH1OriginalHom
-        src dst base).onVertex x |>.1 := by
+      ((sourceLiteralY1DirectToSourceH1OriginalHom
+        src dst base).onVertex x).1 := by
   rfl
 
 /-- The paper's literal T(Y₁) positive generator is mapped
@@ -79,7 +79,7 @@ theorem sourceLiteralY1DirectTaggedBCosetEquiv_value
       (sourceH1EquivLiteralY1Transition src dst).symm
         ((sourceLiteralY1DirectOriginalSkeleton src dst base).attachedValue B p) := by
   exact (sourceLiteralY1DirectOriginalSkeleton src dst base)
-    |>.attachedCosetEquivOfLabelledGroupIso_value
+    .attachedCosetEquivOfLabelledGroupIso_value
       (sourceH1OriginalSkeleton src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom_bijective src dst base).1
@@ -101,7 +101,7 @@ theorem sourceLiteralY1DirectTaggedBCosetEquiv_old
       (sourceH1OriginalSkeleton src dst base).attachedOfSkeletonVertex B
         ((sourceLiteralY1DirectToSourceH1OriginalHom src dst base).onVertex x) := by
   exact (sourceLiteralY1DirectOriginalSkeleton src dst base)
-    |>.attachedCosetEquivOfLabelledGroupIso_oldVertex
+    .attachedCosetEquivOfLabelledGroupIso_oldVertex
       (sourceH1OriginalSkeleton src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom_bijective src dst base).1
@@ -124,7 +124,7 @@ theorem sourceLiteralY1DirectTaggedBCosetEquiv_natural
       (sourceH1OriginalSkeleton src dst base).attachedSubalphabetMap B C hBC
         (sourceLiteralY1DirectTaggedBCosetEquiv src dst base B p) := by
   exact (sourceLiteralY1DirectOriginalSkeleton src dst base)
-    |>.attachedCosetEquivOfLabelledGroupIso_natural
+    .attachedCosetEquivOfLabelledGroupIso_natural
       (sourceH1OriginalSkeleton src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom src dst base)
       (sourceLiteralY1DirectToSourceH1OriginalHom_bijective src dst base).1
