@@ -74,7 +74,11 @@ noncomputable def labelledMulEquivFullCosetEdgeEquiv
       refine ⟨?_, p.2.2⟩
       apply (labelledMulEquiv_mem_generatedLeftCoset_iff
         genΓ genΔ E hgen B g (E.symm p.1.1)).mp
-      simpa only [E.apply_symm_apply] using p.2.1⟩
+      have hy : p.1.1 ∈ generatedLeftCoset genΔ B (E g) := by
+        rcases p with ⟨⟨y, s⟩, ⟨hcos, hs⟩⟩
+        change y ∈ generatedLeftCoset genΔ B (E g) at hcos
+        exact hcos
+      simpa only [E.apply_symm_apply] using hy⟩
   left_inv := by
     intro p
     apply Subtype.ext
