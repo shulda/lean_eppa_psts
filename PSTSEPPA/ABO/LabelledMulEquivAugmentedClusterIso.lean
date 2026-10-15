@@ -103,8 +103,11 @@ theorem labelledMulEquivAugmentedClusterHom_edge_bijective
     have hpair :
         (E e.1.1, e.1.2) = (E f.1.1, f.1.2) :=
       congrArg Subtype.val hef
-    exact Prod.ext (E.injective (congrArg Prod.fst hpair))
-      (congrArg Prod.snd hpair)
+    have hfirst : e.1.1 = f.1.1 :=
+      E.injective (congrArg (fun p : Δ × SignedLabel ι => p.1) hpair)
+    have hsecond : e.1.2 = f.1.2 :=
+      congrArg (fun p : Δ × SignedLabel ι => p.2) hpair
+    exact Prod.ext hfirst hsecond
   · rintro ⟨⟨y, s⟩, hy⟩
     let x : Γ := E.symm y
     have hx : (x, s) ∈ P.AugmentedEdgeSet genΓ B v := by
@@ -114,12 +117,14 @@ theorem labelledMulEquivAugmentedClusterHom_edge_bijective
         refine ⟨C, hCP, ?_, hS⟩
         apply (labelledMulEquiv_mem_generatedSubgroup_iff
           genΓ genΔ E hgen C x).mp
+        change y ∈ generatedSubgroup genΔ C at hC
         simpa [x] using hC
       · rcases hy with ⟨hC, hS⟩
         apply Or.inr
         refine ⟨?_, hS⟩
         apply (labelledMulEquiv_mem_generatedLeftCoset_iff
           genΓ genΔ E hgen B v x).mp
+        change y ∈ generatedLeftCoset genΔ B (E v) at hC
         simpa [x] using hC
     refine ⟨⟨(x, s), hx⟩, ?_⟩
     apply Subtype.ext
