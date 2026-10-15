@@ -341,6 +341,7 @@ import PSTSEPPA.ABO.SourceLiteralY1CanonicalOriginalCover
 import PSTSEPPA.ABO.InjectiveLabelledQuotientSkeletonIso
 import PSTSEPPA.ABO.SourceLiteralY1OriginalCoverIso
 import PSTSEPPA.ABO.SourceLiteralY1DirectTransportedCoverIso
+import PSTSEPPA.ABO.SourceLiteralY1OriginalCoverIndexEquiv
 import PSTSEPPA.ABO.SourceLiteralY1G1ProjectionCompatibility
 import PSTSEPPA.ABO.SourceLiteralY1ToH1WordKernel
 import PSTSEPPA.ABO.LabelledWordKernelMulEquiv
