@@ -167,7 +167,8 @@ noncomputable def sourceLiteralY1DirectRootComponentGraphHom
     intro e
     apply Subtype.ext
     apply Prod.ext
-    · change
+    · dsimp [sourceLiteralY1Direct_rootA_component_edgeEquiv]
+      change
         (sourceH1EquivLiteralY1Transition src dst).symm
           (e.1.1 *
             PSTS.SignedWord.evalGroupLetter
