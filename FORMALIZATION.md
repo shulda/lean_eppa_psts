@@ -928,3 +928,27 @@ Main contains **all seven** Lean-certified modules at unchanged original source 
 **Current further candidates, NOT yet on green main:** #438 independently full-CI-green on its own exact head for actual G₂ word congruence directly on an ORIGINAL ambient type-(1) H₁ augmented cluster, pending clean integration. #443 extends to the whole original anchored type-(1) family. #439 extracts the individual local type-(2) (B,z) action word congruence and #442 transfers it to the true original-rooted type-(2) complete stage. #440 addresses the hitherto missing plain full proper-coset completion as the literal first finite-G₂ catalogue summand; #441 tests exact local plain action API equality; #444 transfers plain source/local word congruence. All except #438 require their own still-pending exact-head Lean/256-case/axiom CI and correct integration.
 
 **Remaining major gates:** original source Definition-5.3 Z₁ family completeness/action coverage; corrected Condition 5.2 and Theorem 4.7 (admissibility, embeddedness, cluster and bridge freeness); higher-rank historical `Yₖ/Zₖ` induction, finite reflecting group, final concrete fibre-MAX and unconditional ordinary PSTS EPPA. No proof or shortcut is asserted solely from G₂ 1-stability/2-retractability.
+
+
+### 2026-10-15 — Authoritative first-rank literal-paper Z₁ plain-action and type-(1) geometry cutoff
+
+**Latest accepted main:** `495c2c659c223c1b173cf0d9c2ac961ebf4b7f60` (#527). The clean #527 exact-head **full Lean build + 256 genuine original signed input cases + allowed-axioms audit is GREEN** (Actions `38750511514`); its separate *postmerge main* Actions run `38752725105` was still running at the time of this dated entry. Earlier accepted `ad65a606` (#530) had separate GREEN main Actions `38752091577`. Interpret all previous "pending" statuses in this file as historical snapshots, not the live verdict.
+
+**What is actually certified on main now:**
+- #514: on EVERY genuine original incomplete literal-paper `T(Y₁)` **rooted** old A-component, `|A|=2`, every proper-family intersection-support relation is a strict Setoid; it is NOT ambient group-coordinate equality and requires no global H₁ retractability.
+- #516/#518/#519: exact original source H₁ rank-two target congruence; signed single-B and whole P-indexed RAW old/new edge transport; true selected paper/source quotient vertex and signed raw graph isomorphism preserving all component tags, formal inverse labels and edge source incidence.
+- #522: actual deterministic signed **multi-coset edge quotient EGraph** on each literal paper selected A-root, edge classes identified only by *glued source + FULL SIGNED LABEL*. The result is vertex/edge-bijectively isomorphic to the separately normalized real source H₁ root, and reflects all signed paths.
+- #524: for canonical all-proper `P_A`, legal fixed-loop completion of ONLY missing signed labels gives the actual printed **plain/unaugmented COMPLETE Z₁ action**, isomorphic on vertices and formal oriented signed action tokens to true original source H₁.
+- #527: the finite input-dependent REAL source G₂ controls ALL signed word actions of EVERY such literal printed plain stage; based Cayley(G₂) morphisms cover precisely reachable complete-stage vertices AND signed oriented action edges.
+- #525: genuine generator-preserving group isomorphisms transport ALL old augmented type-(1) clusters and full attached left B-cosets, with signed vertex/edge bijection, without assuming global retractability.
+- #530: specializes that signed **precompletion** type-(1) geometry to actual literal `T(Y₁) ≃* SourceH₁` for every old anchored cluster.
+
+**Further CI-dependent candidates, NOT yet accepted on main at this cutoff:**
+- #537 clean generic LEGAL stationary-loop completion of type-(1) augmented signed actions (original #529 source independently GREEN).
+- #535 complete signed *literal-paper versus SourceH₁* type-(1) fibre isomorphism (independently GREEN on its original source head; needs clean integration after #537).
+- #532 finite exact index equivalence for ALL literal printed anchored type-(1) `(A,P,D,v)` stages (new missing-import fix requires fresh CI).
+- #538 concrete finite G₂ word kernel and based Cayley cover on printed COMPLETE type-(1) stages, pending Lean and ancestor integration.
+- #539 exact noninjective ambient group value of a literal paper selected/glued quotient vertex, and #540 its source/paper MulEquiv naturality; these prepare **off-B type-(2)** augmentation and require fresh CI.
+- Old stacked duplicate #520/#521/#523/#526 were closed only after matching their mathematical Lean source blobs byte-for-byte to integrated clean #522/#524/#527/#530.
+
+**Still mathematically OPEN:** the printed selected anchored type-(1) and off-B type-(2) COMPLETE families and the precise whole Definition-5.3 Z₁ *selection*, its needed equivariance/history and full match with the finite source three-kind overcatalogue; corrected Condition 5.2 and Theorem 4.7 at higher ranks (admissibility, embeddedness, cluster property, bridge freeness); the higher Yₖ/Zₖ induction, finite reflecting group, fibre-MAX specialization and ordinary PSTS EPPA. The source G₂ overcatalogue alone never proves that the selected printed family has been identified. 
