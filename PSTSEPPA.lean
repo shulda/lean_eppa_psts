@@ -348,6 +348,7 @@ import PSTSEPPA.ABO.LabelledGroupSubalphabetCosetTransport
 import PSTSEPPA.ABO.LabelledIsoTaggedCosetTransport
 import PSTSEPPA.ABO.LabelledGroupSingleCosetGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1SingleCosetSignedEdges
+import PSTSEPPA.ABO.SourceLiteralY1MultiCosetRawGraphIso
 import PSTSEPPA.ABO.MultiCosetGluingIsoTransport
 import PSTSEPPA.ABO.SourceLiteralY1TaggedCosetAttachments
 import PSTSEPPA.ABO.SourceLiteralY1MultiCosetRawGluingTransport
