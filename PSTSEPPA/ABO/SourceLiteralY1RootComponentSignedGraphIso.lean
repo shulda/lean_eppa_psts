@@ -101,7 +101,7 @@ theorem sourceLiteralY1Direct_rootA_component_edge_iff
       (E e.1, e.2) ∈
         ((K.restrictAlphabet A).subalphabetComponentSubgraph A rK).edges
   exact hsource.trans
-    ((and_congr (and_congr hrestrict Iff.rfl) hcomponent).trans
+    ((and_congr hrestrict (and_congr Iff.rfl hcomponent)).trans
       htarget.symm)
 
 /-- An actual signed oriented-edge equivalence for each selected
