@@ -1,5 +1,6 @@
 import PSTSEPPA.ABO.SourceOriginalH1Z1StageFiniteness
 import PSTSEPPA.ABO.LabelledGroupSubalphabetCosetTransport
+import PSTSEPPA.ABO.SourceLiteralY1TaggedCosetAttachments
 
 /-!
 # Finite exact literal paper T(Y₁) type-(1) anchored-augmentation indices
