@@ -63,7 +63,7 @@ theorem cayleyStageHom_followWord
     (g : Γ) (w : LabelWord ι) :
     T.followWord (F.onVertex g) w =
       F.onVertex (g * PSTS.SignedWord.evalGroup gen w) := by
-  rw [T.hom_followWord (cayleyGraph gen) F g w]
+  rw [CompleteEGraph.hom_followWord (cayleyGraph gen) T F g w]
   exact congrArg F.onVertex
     (cayleyGraph.followWord_eq_mul_evalGroup gen g w)
 
@@ -85,12 +85,12 @@ theorem cayleyStageHom_terminal_eq_of_equal_group_endpoint
   calc
     T.followWord (F.onVertex x) w₁ =
         F.onVertex ((cayleyGraph gen).followWord x w₁) :=
-      T.hom_followWord (cayleyGraph gen) F x w₁
+      CompleteEGraph.hom_followWord (cayleyGraph gen) T F x w₁
     _ = F.onVertex g := congrArg F.onVertex h₁
     _ = F.onVertex ((cayleyGraph gen).followWord y w₂) :=
       (congrArg F.onVertex h₂).symm
     _ = T.followWord (F.onVertex y) w₂ :=
-      (T.hom_followWord (cayleyGraph gen) F y w₂).symm
+      (CompleteEGraph.hom_followWord (cayleyGraph gen) T F y w₂).symm
 
 /-- A group point inside a chosen B-left coset admits
 a TRUE signed B-word whose completed H-stage path
@@ -111,7 +111,7 @@ theorem cayleyStageHom_coset_word_image
   obtain ⟨w, hw, hEnd⟩ :=
     (mem_generatedLeftCoset_iff_subalphabetReachable gen B x g).mp hx
   refine ⟨w, hw, ?_⟩
-  rw [T.hom_followWord (cayleyGraph gen) F x w, hEnd]
+  rw [CompleteEGraph.hom_followWord (cayleyGraph gen) T F x w, hEnd]
 
 /-- The genuine source-Cayley collision at the
 intersection of B and C FULL group cosets: two
