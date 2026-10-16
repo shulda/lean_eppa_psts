@@ -88,11 +88,11 @@ theorem trivialLoopCompletion_groupProjectionCoset_oldPath
     ∃ q : LabelWord ι,
       LabelWord.Uses B q ∧
       G.Follows
-        ((G.trivialLoopCompletion hpaired).cayleyProjectionFromGroup
-          gen φ hφ u).onVertex g
+        (((G.trivialLoopCompletion hpaired).cayleyProjectionFromGroup
+          gen φ hφ u).onVertex g)
         q
-        ((G.trivialLoopCompletion hpaired).cayleyProjectionFromGroup
-          gen φ hφ u).onVertex h := by
+        (((G.trivialLoopCompletion hpaired).cayleyProjectionFromGroup
+          gen φ hφ u).onVertex h) := by
   exact G.trivialLoopCompletion_cayleyCoset_oldPath
     hpaired gen
     ((G.trivialLoopCompletion hpaired).cayleyProjectionFromGroup
