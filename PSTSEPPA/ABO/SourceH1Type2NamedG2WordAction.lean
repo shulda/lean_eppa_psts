@@ -31,6 +31,7 @@ B-augmentation obeys equality of all signed word actions
 whenever the two words have equal values in the actual
 finite input-derived group G₂. All old/fresh vertex tags,
 inverse letters and legally inserted fixed loops are preserved. -/
+set_option maxHeartbeats 3000000 in
 theorem sourceG2OriginalH1Type2Named_wordValue_congr
     (src dst : ι → V)
     (j : SourceOriginalH1CoverIndex src dst)
