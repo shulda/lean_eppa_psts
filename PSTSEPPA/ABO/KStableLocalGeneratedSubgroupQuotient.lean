@@ -68,8 +68,8 @@ noncomputable def localGeneratedSubgroupQuotient
     intro i
     by_cases hi : i ∈ A
     · apply Subtype.ext
-      change Q.hom (genΓ i) = genΔ i
-      exact Q.map_gen i
+      simpa only [Q.subgroupHom_val,
+        trivialCompletionGenerator, dif_pos hi] using Q.map_gen i
     · simp [trivialCompletionGenerator, hi]
   surjective := Q.subgroupHom_surjective A
 
