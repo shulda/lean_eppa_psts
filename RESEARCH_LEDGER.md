@@ -1788,3 +1788,20 @@ or higher-rank EPPA.
 **Not accepted yet:** source #549 verified actual no-old-B-edge from OFF-B via local H₁[A] root normalization, under clean #552 CI; #553 selected literal/source old+fresh signed off-B augmentation; #551 its legal complete fixed-loop extension (stale stack may require clean proof carry); #554 entire finite indexed literal type-(1) family G₂ action/cover. These last steps must pass their OWN CI and be integrated without replaying red ancestors. The corrected type-(2) paper/source augmented stage anchor MUST use the actual quotient ambient value from #539/#546, not an arbitrarily chosen local representative, and must keep different old component tags with equal group coordinates distinct.
 
 **Remaining mathematical work:** source-vs-printed selected *full three-kind Z₁* family and G₂ coverage, corrected ABO Section-5 Condition 5.2 / Theorem 4.7 geometry at arbitrary ranks, true history-sensitive Yₖ/Zₖ induction, reflecting group and final finite PSTS ordinary EPPA theorem. NONE is established simply by finite G₂ 1-stability/2-retractability.
+
+
+## 2026-10-16 — audit cut: true printed rank-one type-(2) old+new completed stage and genuine G₂ selected local index
+
+**Main cutoff** \`84eade0e5d5c7f30aeae2beba8ccd606873500d4\` (#558), separate full postmerge main Actions run \`38870673418\` GREEN. Certified prior merges #560, #561, #564 passed independent exact-head Lean, 256 real signed original-input regression and narrow allowed-axioms checks. This paragraph supersedes stale October 15 pending status only as to present acceptance, not mathematical scope.
+
+**Genuine printed \`T(Y₁)\` geometry now proved, not hypothetical:**
+1. At any actual ORIGINAL incomplete old A-root, |A|=2, the component-tagged B-coset attachment and exact (B∩C)-glued quotient is a genuine signed directed EGraph. Different old component indices are not identified by equal group coordinate.
+2. Every printed off-B old point has no existing outgoing ±B signed edge; the selected fresh full B-coset attaches to EXACTLY that old quotient point. #560 transfers OLD+NEW oriented edge tokens to the true independent SourceH₁ model over genuine original old-input edges.
+3. #561 performs legal missing-loop-only completion; the printed/source completed actions are vertex/edge-bijective, with all signed paths, inverse tokens and fixed loops. #564 transfers complete word-action congruence and offers a concrete based finite G₂ cover only *assuming* original-source word-value congruence at that exact index.
+4. #558 gives the actual local G₂ type-(2) (B,w) index for every true source off-B tagged z, with \`sourceValue(z)=root*localValue(w)\`; this does NOT identify z with its value.
+
+**Current correct chain:** selected printed old off-B z → exact signed completed paper/source fibre (#561) → normalized source H₁[A] local \`(B,w)\` actual G₂ stage (#558) → prove the necessary dependent named/translated completed-action agreement → unconditional \`G₂\` word congruence on the printed fibre via #564 → actual based Cayley(G₂) coverage. These last middle HEq/action steps are NOT yet accepted.
+
+**Current non-main candidates** #565, #566, #567, #568 address these different middle steps. Their relations can be fragile under dependent vertex types; do NOT use direct \`cases heq\` if Lean cannot eliminate an equality of differently presented completed EGraph types; prefer rewriting the proved actual root-anchor equality inside both completed-stage definitions. Verify exact head CI and avoid duplicate source/API merges.
+
+**Longer open chain**: actual three-kind literal \`Z₁\` selected action-family coverage/equivariance (beyond locally adequate G₂ overcatalogue); corrected Conditions 5.2 / Theorem 4.7 rank-k admissibility, genuine embeddedness, clusters, bridge-freeness; historical Yₖ/Zₖ and word kernels; finite reflecting group; fibre-MAX→PSTS EPPA. Neither global H₁ retractability nor equal-coordinate old vertex collapse is allowed.
