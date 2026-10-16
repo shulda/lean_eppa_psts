@@ -143,11 +143,9 @@ theorem sourceLiteralY1X2AllOriginal_AComponentVertex_surjective
     (A : Finset ι)
     (root : (sourceLiteralY1X2AllOriginalSkeleton src dst base).Vertex) :
     Function.Surjective
-      ((sourceLiteralY1DirectOriginalSkeleton src dst base).
-        pullbackQuotient_intrinsicBComponentVertexMap
+      ((sourceLiteralY1DirectOriginalSkeleton src dst base).        pullbackQuotient_intrinsicBComponentVertexMap
           (sourceLiteralY1X2AllToY1 src dst) A root) :=
-  (sourceLiteralY1DirectOriginalSkeleton src dst base).
-    pullbackQuotient_intrinsicBComponentVertexMap_surjective
+  (sourceLiteralY1DirectOriginalSkeleton src dst base).    pullbackQuotient_intrinsicBComponentVertexMap_surjective
       (sourceLiteralY1X2AllToY1 src dst) A root
 
 /-- The exact first-rank original G A-component
@@ -159,11 +157,9 @@ theorem sourceLiteralY1X2AllOriginal_AComponentEdge_surjective
     (A : Finset ι)
     (root : (sourceLiteralY1X2AllOriginalSkeleton src dst base).Vertex) :
     Function.Surjective
-      ((sourceLiteralY1DirectOriginalSkeleton src dst base).
-        pullbackQuotient_intrinsicBComponentEdgeMap
+      ((sourceLiteralY1DirectOriginalSkeleton src dst base).        pullbackQuotient_intrinsicBComponentEdgeMap
           (sourceLiteralY1X2AllToY1 src dst) A root) :=
-  (sourceLiteralY1DirectOriginalSkeleton src dst base).
-    pullbackQuotient_intrinsicBComponentEdgeMap_surjective_unstable
+  (sourceLiteralY1DirectOriginalSkeleton src dst base).    pullbackQuotient_intrinsicBComponentEdgeMap_surjective_unstable
       (sourceLiteralY1X2AllToY1 src dst) A root
 
 end ABO
