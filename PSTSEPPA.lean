@@ -394,6 +394,7 @@ import PSTSEPPA.ABO.SourceLiteralY1ThreeKindFinite
 import PSTSEPPA.ABO.SourceLiteralY1PaperStageSynchronousGroup
 import PSTSEPPA.ABO.SourceLiteralY1X2AllRankOne
 import PSTSEPPA.ABO.SourceLiteralY1X2AllExactCayleyRanges
+import PSTSEPPA.ABO.SourceG2ToLiteralX2All
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootCompletedEGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootMissingSignedEdges
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootPlainStageIso
