@@ -129,3 +129,27 @@ corrected Theorem 4.7 induction, finite reflecting group,
 concrete fibre-MAX, and unconditional closed-embedding
 PSTS EPPA are still OPEN. No general result is promoted
 from the rank-one achievements alone.
+
+
+## Superseding 2026-10-16 afternoon update — G/H original-cover frontier after #599
+
+**Live accepted mathematical `main` at this checkpoint:** `a961e19446d813e5261a9421b6762239ad76ab0e` (PR #599). All PRs listed as accepted below have their own independently GREEN exact-head full Lean / 256 TRUE signed original-input cases / permitted-axiom audit; post-merge main CI is a separate check.
+
+Certified and merged since the historical earlier cutoff in this document:
+
+- **#590** `e5b19d26a525f04009a597cf05711d6deb98959c`: the original finite input-derived source G₂ maps SURJECTIVELY with labels intact and rank-one stability to the entire genuine literal `T(X₂^all)` signed transition group, not only to one of its action factors.
+- **#592** `3fab25de9237611ffd4ce2e7d92f5c3d1c3cb9bb`: arbitrary dependent disjoint complete signed action's TRUE transition subgroup surjects onto the transition subgroup of any chosen actual tagged stage.
+- **#593** `6dd3aee2205cb65ceaecfee3d4866bfef827a271`: genuine literal `T(X₂^all)` maps surjectively to each ORIGINAL-input rooted printed plain P_A stage transition group, with based Cayley maps of exact reachable vertex and formally signed edge ranges and exact word endpoints.
+- **#591** `cc6bfe6a2e36b95372f450ed669572f053db2030`: a labelled Cayley group map into LEGAL stationary-loop completion sends B-coset-related group points to endpoints connected by an actual signed B-path in the original INCOMPLETE graph after stripping only newly added loops.
+- **#595** `2f71b2f9c200910f604d66a47e790b69e307b6d2`: a CONDITIONALLY GIVEN labelled OLD graph lift S into the Cayley group, compatible at one root with a based Cayley-to-completion map F, gives `F∘S=id` throughout the original connected old graph. Consequently S is vertex-injective and has no external B-bridges. **Existence of S is NOT proved.**
+- **#597** `b0f3441ed4fa5d06230d1c2623ffd3365e1dad51`: for ANY labelled quotient G↠H stable on B, each *chosen* translated coset gG[B] is bijective under that very quotient with the corresponding Q(g)H[B]. In contrast, different component-tagged cosets are not collapsed.
+- **#594** `248bb59750f28486397560e065672904a44624e8`: any B-coset relation in ACTUAL `T(X₂^all)` projects into a true old B-labelled path in the exact incomplete original rooted P_A extension, via its real completed-stage quotient.
+- **#598** `c9fc86940871b0df413de5a5fd5e4243514b7c95`: the stable translated B-coset bijection COMMUTES with arbitrary chronological signed B-word endpoints, and REFLECTS exactly the same B-word path equation upstairs/downstairs. This is one-coset local geometry only.
+- **#599** `a961e19446d813e5261a9421b6762239ad76ab0e`: any real OLD chronological signed path in ANY incomplete H-Cayley skeleton lifts, from EVERY chosen source over its start, to a genuine old path in the Q-pullback G-Cayley skeleton, preserving the ENTIRE signed word, all formal edge tokens and prescribed downstairs target; uniqueness at fixed source.
+
+**New candidate PRs, not yet promoted:**
+
+- **#600** `SourceLiteralY1X2AllOriginalCover.lean`: instantiate the general pullback Q with genuine `T(X₂^all)↠T(Y₁)` and the independently certified ORIGINAL INPUT signed-edge preimage inside literal T(Y₁). Define the actual G-level incomplete old skeleton and map it first to H and then to original E; prove H-surjectivity of old vertices/oriented edges and lifting of EVERY original signed path from every chosen G-cover source. First attempted head had two Lean line-break field-notation mistakes and one named-let rewrite mismatch; updated head is being independently CI checked.
+- **#601** `KStablePullbackIntrinsicBComponents.lean`: for any stable-on-B labelled quotient and two points x,y in its TRUE incomplete pulled-back G-skeleton satisfying the ESSENTIAL y∈xG[B] restriction, the genuine old signed B-path x→y exists upstairs iff the image points are connected by an original old signed B-path downstairs. The reverse direction combines new #599 old-path lifting with the #597 fixed-coset injection, so distinct lifted B-components cannot be conflated. Exact-head CI pending.
+
+**Remaining mathematical main bottleneck**: corrected Theorem 4.7(ii) G-level full CE embedding — identify the genuine G-cover of an actual H-cover component, reflect both SAME and MIXED constituent supports via the appropriate stable proper-coset bijections and H-admissibility, and show distinct tagged quotient points with equal G[A] coordinates were already glued through a common intrinsic (B∩C)-component. Theorem 4.7(iii) then additionally needs correct cluster/full-B-coset R8 alternatives, augmented completed-stage covers, and k-stable signed-word comparison. Neither the accepted H-level Cayley cover nor the conditional section lemma #595 supplies this G-level lift automatically. Condition 5.2 at rank two, all k≥2 history, the reflecting group and unconditional PSTS EPPA remain OPEN.
