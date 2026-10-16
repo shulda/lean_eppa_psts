@@ -73,5 +73,28 @@ noncomputable def sourceLiteralY1X2AllSelectedRootLocalASkeletonHom
       (sourceLiteralY1X2AllSelectedRootPlainCayleyHom
         src dst base A hcard root) A 1
 
+
+/-- The local true G[A] identity is carried to the
+exact old component-tagged H-root in the printed stage. -/
+@[simp] theorem sourceLiteralY1X2AllSelectedRootLocalASkeletonHom_one
+    (src dst : ι → W) (base : W)
+    (A : Finset ι) (hcard : A.card = 2)
+    (root : (sourceLiteralY1 src dst).transitionGroup) :
+    (sourceLiteralY1X2AllSelectedRootLocalASkeletonHom
+      src dst base A hcard root).onVertex
+        (⟨1, by trivial⟩ :
+          (localSignedACayleySkeleton
+            (sourceLiteralY1X2AllGenerator src dst) A).Vertex) =
+    sourceLiteralY1SelectedRootPlainOldAnchor
+      src dst base A hcard root := by
+  change
+    (sourceLiteralY1X2AllSelectedRootPlainCayleyHom
+      src dst base A hcard root).onVertex
+        (1 * (1 : (sourceLiteralY1X2AllStage src dst).transitionGroup)) =
+    sourceLiteralY1SelectedRootPlainOldAnchor
+      src dst base A hcard root
+  simpa using sourceLiteralY1X2AllSelectedRootPlainCayleyHom_one
+    src dst base A hcard root
+
 end ABO
 end PSTSEPPA
