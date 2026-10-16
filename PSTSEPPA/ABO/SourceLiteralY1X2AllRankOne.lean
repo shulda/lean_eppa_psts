@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.SourceLiteralY1PaperStageSynchronousGroup
+import PSTSEPPA.ABO.SourceLiteralY1ThreeKindFinite
 import PSTSEPPA.ABO.DisjointCompleteTransitionQuotients
 import PSTSEPPA.ABO.LabelledWordKernelMulEquiv
 import PSTSEPPA.ABO.SourceLiteralY1H1GroupEquiv
@@ -144,6 +145,30 @@ theorem sourceLiteralY1X2All_twoRetractable
   exact (sourceLiteralY1X2AllToY1 src dst).kRetractable_of_kStable
     1 (sourceLiteralY1X2AllToY1_oneStable src dst)
       (sourceLiteralY1_transitionTwoRetractable src dst)
+
+/-- The ACTUAL literal paper-style complete disjoint action
+X₂^all = Y₁ ⊔ Z₁^all has a FINITE transition group.
+Both vertex carriers are independently finite, including all
+genuine B=∅ and component-tagged off-B augmentation roots.
+This argument never quotients by ambient group values. -/
+theorem finite_sourceLiteralY1X2AllTransitionGroup
+    (src dst : ι → V) :
+    Finite (sourceLiteralY1X2AllStage src dst).transitionGroup := by
+  classical
+  letI : Finite
+      (V ⊕ (Σ i : ι,
+        generatedSubgroup (sourceG1Generator src dst)
+          ({i} : Finset ι))) :=
+    finite_sourceLiteralY1Vertex src dst
+  letI : Finite (SourceLiteralY1ThreeKindVertex src dst) :=
+    finite_sourceLiteralY1ThreeKindVertex src dst
+  letI : Fintype
+      (V ⊕ (Σ i : ι,
+        generatedSubgroup (sourceG1Generator src dst)
+          ({i} : Finset ι))) := Fintype.ofFinite _
+  letI : Fintype (SourceLiteralY1ThreeKindVertex src dst) :=
+    Fintype.ofFinite _
+  exact (sourceLiteralY1X2AllStage src dst).finite_transitionGroup
 
 /-- Actual based labelled Cayley(T(X₂^all)) map into the
 ACTUAL printed full three-kind completed graph, not
