@@ -101,6 +101,7 @@ import PSTSEPPA.ABO.PullbackAttachedCosetSupportTransport
 import PSTSEPPA.ABO.KStablePullbackCommonSupportLift
 import PSTSEPPA.ABO.PullbackAttachedCosetSupportReflection
 import PSTSEPPA.ABO.KStablePullbackMultiCosetEmbedding
+import PSTSEPPA.ABO.KStablePullbackMultiCosetStageCoverEmbedding
 import PSTSEPPA.ABO.KStablePullbackAdmissibility
 import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalBComponents
 import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalCover
