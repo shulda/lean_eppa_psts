@@ -82,16 +82,31 @@ theorem literalPaperSelectedOffBSource_G2_wordValue_congr
     (sourceH1OriginalSelectedOffBLocalG2Index_root_exact
       src dst base A hcard rootH B hBP zS hOffS).symm
   have hAnchor :
-      sourceH1OriginalSelectedRootAmbientValue
-        src dst base A hcard rootH P zS =
+      (sourceH1EquivLiteralY1Transition src dst).symm
+        (sourceLiteralY1SelectedRootAmbientValue
+          src dst base A hcard root P z.vertex) =
       rootH * ((K.intrinsicComponentLocalSlice A r).multiCosetAmbientValue
         P ((K.intrinsicComponentLocalSlice A r).admissible_of_card_le_two hcard.le)
         (isGenerated_trivialCompletionGenerator (sourceH1Generator src dst) A)
         (retractable_trivialCompletionGenerator_of_kRetractable
           (sourceH1Generator src dst) 2 hret A hcard.le) k.2.1 :
-        SourceH1 src dst) :=
-    sourceH1OriginalSelectedOffB_ambientValue_eq_root_mul_localValue
-      src dst base A hcard rootH B hBP zS hOffS
+        SourceH1 src dst) := by
+    calc
+      (sourceH1EquivLiteralY1Transition src dst).symm
+          (sourceLiteralY1SelectedRootAmbientValue
+            src dst base A hcard root P z.vertex) =
+        sourceH1OriginalSelectedRootAmbientValue
+          src dst base A hcard rootH P zS :=
+        literalPaperSelectedOffBSourceAnchor_eq
+          src dst base A hcard root B hBP z
+      _ = rootH * ((K.intrinsicComponentLocalSlice A r).multiCosetAmbientValue
+            P ((K.intrinsicComponentLocalSlice A r).admissible_of_card_le_two hcard.le)
+            (isGenerated_trivialCompletionGenerator (sourceH1Generator src dst) A)
+            (retractable_trivialCompletionGenerator_of_kRetractable
+              (sourceH1Generator src dst) 2 hret A hcard.le) k.2.1 :
+            SourceH1 src dst) :=
+        sourceH1OriginalSelectedOffB_ambientValue_eq_root_mul_localValue
+          src dst base A hcard rootH B hBP zS hOffS
   let hOffT := (K.rootedLocalMultiCosetOffCoset_iff
     A hcard hret r P B hBP k.2.1).mp k.2.2
   have hMissingS :
