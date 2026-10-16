@@ -162,6 +162,7 @@ import PSTSEPPA.ABO.MultiCosetWeakCompleteness
 import PSTSEPPA.ABO.WeakCompletePairedEdges
 import PSTSEPPA.ABO.LocallyPairedGraphIso
 import PSTSEPPA.ABO.TrivialLoopCompletion
+import PSTSEPPA.ABO.TrivialLoopCompletionStripPaths
 import PSTSEPPA.ABO.TrivialLoopCompletionIsomorphism
 import PSTSEPPA.ABO.TrivialCompletionPaths
 import PSTSEPPA.ABO.AugmentedClusterTrivialStage
