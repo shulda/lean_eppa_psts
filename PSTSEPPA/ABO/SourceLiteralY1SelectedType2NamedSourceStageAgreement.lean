@@ -29,6 +29,32 @@ catalogue stage is a separate gate; no G₂ word kernel is claimed.
 namespace PSTSEPPA
 namespace ABO
 
+namespace IsolatedCosetGluing
+
+variable {ι V Γ OldEdge : Type*}
+variable [Fintype ι] [DecidableEq ι] [Group Γ]
+
+/-- Natural heterogeneous equality of the LEGALLY completed
+signed isolated B-coset action whenever the ACTUAL two group
+anchor elements agree. Old/new coset vertex carriers depend on
+the anchor; no equation of unrelated ambient-coordinate-tagged
+old vertices is claimed. Proofs of pairedness and missing old
+B-edges may differ propositionally. -/
+theorem completedStage_heq_of_group_anchor_eq
+    (G : EGraph V OldEdge ι) (gen : ι → Γ)
+    (B : Finset ι) {g h : Γ} (hgh : g = h)
+    (u : V)
+    (hMissingG hMissingH : ∀ e : OldEdge,
+      G.source e = u → signedBase (G.label e) ∉ B)
+    (hPairedG hPairedH : G.LocallyPairedLabels) :
+    HEq
+      (completedStage G gen B g u hMissingG hPairedG)
+      (completedStage G gen B h u hMissingH hPairedH) := by
+  cases hgh
+  rfl
+
+end IsolatedCosetGluing
+
 variable {ι V : Type*}
 variable [Fintype ι] [DecidableEq ι]
 variable [Fintype V] [DecidableEq V]
@@ -82,12 +108,21 @@ theorem literalPaperSelectedOffBSourceCompletedStage_heq_named
         src dst base A hcard root B hBP z)
       (literalPaperSelectedOffBNamedSourceCompletedStage
         src dst base A hcard root B hBP z) := by
-  unfold literalPaperSelectedOffBSourceCompletedStage
-    literalPaperSelectedOffBSourceAugmentedEGraph
-    literalPaperSelectedOffBNamedSourceCompletedStage
-  rw [literalPaperSelectedOffBSourceAnchor_eq
-    src dst base A hcard root B hBP z]
-  rfl
-
+  exact IsolatedCosetGluing.completedStage_heq_of_group_anchor_eq
+    (sourceH1OriginalRankTwoRootCompletedEGraph
+      src dst base A hcard
+        ((sourceH1EquivLiteralY1Transition src dst).symm root)
+        (allProperCosetFamily A))
+    (sourceH1Generator src dst) B
+    (literalPaperSelectedOffBSourceAnchor_eq
+      src dst base A hcard root B hBP z)
+    ((sourceLiteralY1RootToH1MultiCosetVertexEquiv
+      src dst base A hcard root (allProperCosetFamily A)) z.vertex)
+    (z.source_noOldBEdges src dst base A hcard root B hBP)
+    (z.source_noOldBEdges src dst base A hcard root B hBP)
+    (sourceH1OriginalRootAllProper_locallyPaired src dst base A hcard
+      ((sourceH1EquivLiteralY1Transition src dst).symm root))
+    (sourceH1OriginalRootAllProper_locallyPaired src dst base A hcard
+      ((sourceH1EquivLiteralY1Transition src dst).symm root))
 end ABO
 end PSTSEPPA
