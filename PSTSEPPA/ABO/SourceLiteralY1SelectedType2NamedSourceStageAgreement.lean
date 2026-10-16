@@ -82,10 +82,11 @@ theorem literalPaperSelectedOffBSourceCompletedStage_heq_named
         src dst base A hcard root B hBP z)
       (literalPaperSelectedOffBNamedSourceCompletedStage
         src dst base A hcard root B hBP z) := by
-  have hAnchor :=
-    literalPaperSelectedOffBSourceAnchor_eq
-      src dst base A hcard root B hBP z
-  cases hAnchor
+  unfold literalPaperSelectedOffBSourceCompletedStage
+    literalPaperSelectedOffBSourceAugmentedEGraph
+    literalPaperSelectedOffBNamedSourceCompletedStage
+  rw [literalPaperSelectedOffBSourceAnchor_eq
+    src dst base A hcard root B hBP z]
   rfl
 
 end ABO
