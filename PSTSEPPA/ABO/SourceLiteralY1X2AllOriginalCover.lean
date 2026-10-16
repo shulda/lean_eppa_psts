@@ -82,9 +82,8 @@ theorem sourceLiteralY1X2AllOriginalToY1_vertex_surjective
     (src dst : ι → V) (base : V) :
     Function.Surjective
       (sourceLiteralY1X2AllOriginalToY1Hom src dst base).onVertex :=
-  (sourceLiteralY1DirectOriginalSkeleton src dst base).
-    pullbackQuotientHom_vertex_surjective
-      (sourceLiteralY1X2AllToY1 src dst)
+  (sourceLiteralY1DirectOriginalSkeleton src dst base).pullbackQuotientHom_vertex_surjective
+    (sourceLiteralY1X2AllToY1 src dst)
 
 /-- Every actual oriented signed ORIGINAL H-cover edge
 has an equally genuine G-cover edge above it,
@@ -94,9 +93,8 @@ theorem sourceLiteralY1X2AllOriginalToY1_edge_surjective
     (src dst : ι → V) (base : V) :
     Function.Surjective
       (sourceLiteralY1X2AllOriginalToY1Hom src dst base).onEdge :=
-  (sourceLiteralY1DirectOriginalSkeleton src dst base).
-    pullbackQuotientHom_edge_surjective
-      (sourceLiteralY1X2AllToY1 src dst)
+  (sourceLiteralY1DirectOriginalSkeleton src dst base).pullbackQuotientHom_edge_surjective
+    (sourceLiteralY1X2AllToY1 src dst)
 
 /-- Every genuine original INPUT signed edge has an
 actual G-level old preimage edge starting at ANY
@@ -165,8 +163,11 @@ theorem sourceLiteralY1X2AllOriginal_follows_lift
       (sourceLiteralY1X2AllToY1 src dst) hzPath x hxK
   refine ⟨y, hyPath, ?_⟩
   change H.onVertex (F.onVertex y) = v
-  rw [hyMap]
-  exact hzMap
+  have hF : F.onVertex y = z := hyMap
+  calc
+    H.onVertex (F.onVertex y) = H.onVertex z :=
+      congrArg H.onVertex hF
+    _ = v := hzMap
 
 end ABO
 end PSTSEPPA
