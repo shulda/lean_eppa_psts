@@ -69,6 +69,7 @@ import PSTSEPPA.ABO.AugmentedComponentSeparation
 import PSTSEPPA.ABO.Stability
 import PSTSEPPA.ABO.KStableTranslatedCosetEquiv
 import PSTSEPPA.ABO.KStableLocalGeneratedSubgroupQuotient
+import PSTSEPPA.ABO.LocalCayleySlicePullbackCommutation
 import PSTSEPPA.ABO.KStableTranslatedCosetSignedPaths
 import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.SynchronizedGeneratedGroup
