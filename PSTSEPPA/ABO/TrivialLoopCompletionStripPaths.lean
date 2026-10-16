@@ -31,7 +31,9 @@ namespace ABO
 
 namespace EGraph
 
-variable {V Edge ι : Type*} (G : EGraph V Edge ι)
+variable {V Edge ι : Type*}
+variable [Fintype ι] [DecidableEq ι]
+variable (G : EGraph V Edge ι)
 
 /-- Actual signed one-letter step in legal trivial completion
 is exactly the original signed partial step if available,
@@ -76,7 +78,7 @@ theorem trivialLoopCompletion_stripWord
       refine ⟨[], ?_, ?_⟩
       · intro B _
         exact LabelWord.uses_nil B
-      · exact G.Follows.nil u
+      · exact EGraph.Follows.nil u
   | cons s w ih =>
       have hstep :
           (G.trivialLoopCompletion hpaired).followWord u (s :: w) =
@@ -91,7 +93,7 @@ theorem trivialLoopCompletion_stripWord
         · intro B hWord
           exact ⟨hWord.1, hUses B hWord.2⟩
         · rw [hstep, G.loopCompletedStep_of_edge s u e hsrc hlabel]
-          exact G.Follows.cons e hsrc hlabel hPath
+          exact EGraph.Follows.cons e hsrc hlabel hPath
       · obtain ⟨q, hUses, hPath⟩ := ih u
         refine ⟨q, ?_, ?_⟩
         · intro B hWord
