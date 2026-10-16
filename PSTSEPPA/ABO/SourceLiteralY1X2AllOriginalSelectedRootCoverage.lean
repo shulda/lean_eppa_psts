@@ -60,12 +60,10 @@ theorem sourceLiteralY1X2AllOriginal_eachHRoot_AComponent_cover
     ∃ gRoot : (sourceLiteralY1X2AllOriginalSkeleton src dst base).Vertex,
       (sourceLiteralY1X2AllOriginalToY1Hom src dst base).onVertex gRoot = hRoot ∧
       Function.Surjective
-        ((sourceLiteralY1DirectOriginalSkeleton src dst base).
-          pullbackQuotient_intrinsicBComponentVertexMap
+        ((sourceLiteralY1DirectOriginalSkeleton src dst base).pullbackQuotient_intrinsicBComponentVertexMap
             (sourceLiteralY1X2AllToY1 src dst) A gRoot) ∧
       Function.Surjective
-        ((sourceLiteralY1DirectOriginalSkeleton src dst base).
-          pullbackQuotient_intrinsicBComponentEdgeMap
+        ((sourceLiteralY1DirectOriginalSkeleton src dst base).pullbackQuotient_intrinsicBComponentEdgeMap
             (sourceLiteralY1X2AllToY1 src dst) A gRoot) := by
   obtain ⟨gRoot, hMap⟩ :=
     sourceLiteralY1X2AllOriginalToY1_vertex_surjective
