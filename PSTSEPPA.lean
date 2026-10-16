@@ -388,6 +388,7 @@ import PSTSEPPA.ABO.SourceLiteralY1SelectedType2ActualG2Action
 import PSTSEPPA.ABO.SourceLiteralY1AllType2FamilyG2Cover
 import PSTSEPPA.ABO.SourceLiteralY1ThreeKindG2Action
 import PSTSEPPA.ABO.SourceLiteralY1ThreeKindTransitionQuotient
+import PSTSEPPA.ABO.SourceLiteralY1ThreeKindFinite
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootCompletedEGraphIso
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootMissingSignedEdges
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootPlainStageIso
