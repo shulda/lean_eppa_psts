@@ -57,8 +57,7 @@ noncomputable def sourceH1OriginalSelectedOffBLocalG2Index
         B hBP p = z) :
     (((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).intrinsicComponentLocalSlice A
         (⟨root, by trivial⟩ :
-          ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex))
-       .rankTwoType2SingletonIndex
+          ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex)).rankTwoType2SingletonIndex
        hcard
        (isGenerated_trivialCompletionGenerator (sourceH1Generator src dst) A)
        (retractable_trivialCompletionGenerator_of_kRetractable
@@ -118,13 +117,11 @@ theorem sourceH1OriginalSelectedOffB_ambientValue_eq_root_mul_localValue
       src dst base A hcard root (allProperCosetFamily A) z =
     root * (((((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).intrinsicComponentLocalSlice A
         (⟨root, by trivial⟩ :
-          ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex))
-       .multiCosetAmbientValue
+          ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex)).multiCosetAmbientValue
        (allProperCosetFamily A)
        (((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).intrinsicComponentLocalSlice A
            (⟨root, by trivial⟩ :
-             ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex))
-         .admissible_of_card_le_two hcard.le
+             ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex)).admissible_of_card_le_two hcard.le
        (isGenerated_trivialCompletionGenerator (sourceH1Generator src dst) A)
        (retractable_trivialCompletionGenerator_of_kRetractable
          (sourceH1Generator src dst) 2
