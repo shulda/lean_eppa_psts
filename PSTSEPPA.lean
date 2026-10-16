@@ -326,6 +326,7 @@ import PSTSEPPA.ABO.SourceH1Type1ActualG2WordAction
 import PSTSEPPA.ABO.SourceH1AllType1G2WordAction
 import PSTSEPPA.ABO.SourceG2Type2ExactFibreWordAction
 import PSTSEPPA.ABO.SourceH1Type2ActualG2WordAction
+import PSTSEPPA.ABO.SourceH1Type2NamedG2WordAction
 import PSTSEPPA.ABO.RootedLocalPlainStageCatalogueAgreement
 import PSTSEPPA.ABO.RootedSourcePlainWordActionCongruence
 import PSTSEPPA.ABO.SourceG2PlainStageCayleyCover
