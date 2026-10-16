@@ -25,7 +25,8 @@ namespace PSTSEPPA
 namespace ABO
 namespace CompleteEGraph
 
-variable {V₁ E₁ V₂ E₂ ι : Type*}
+universe u v w
+variable {V₁ V₂ : Type u} {E₁ E₂ : Type v} {ι : Type w}
 variable (G : CompleteEGraph V₁ E₁ ι)
 variable (H : CompleteEGraph V₂ E₂ ι)
 
