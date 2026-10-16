@@ -95,6 +95,7 @@ import PSTSEPPA.ABO.CayleySubgraphComponents
 import PSTSEPPA.ABO.LabelledQuotientSkeletonPullback
 import PSTSEPPA.ABO.LabelledQuotientSkeletonPathLift
 import PSTSEPPA.ABO.KStablePullbackIntrinsicBComponents
+import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalBComponents
 import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalCover
 import PSTSEPPA.ABO.ConnectedCayleyCoverTranslation
 import PSTSEPPA.ABO.TranslatedQuotientSkeletonPullback
