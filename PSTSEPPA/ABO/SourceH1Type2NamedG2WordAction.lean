@@ -83,14 +83,10 @@ theorem sourceG2OriginalH1Type2Named_wordValue_congr
           A hcard hret root k.1.1 k.1.2 k.2.1 hOff).followWord y q :=
     sourceG2OriginalH1Type2Translated_wordValue_congr
       src dst j k p q hpq
-  have heq :
-      HEq (K.rootedSourceOffCosetCompletedStage
-        A hcard hret root k.1.1 k.1.2 k.2.1 hOff)
-        (K.rootedTranslatedSourceOffCosetCompletedStage
-          A hcard hret root k.1.1 k.1.2 k.2.1 hOff) :=
-    K.rootedSourceOffCosetCompletedStage_heq_translated
-      A hcard hret root k.1.1 k.1.2 k.2.1 hOff
-  cases heq
+  have hAnchor := K.rootedAmbientMultiCosetValue_natural
+    A hcard hret root (allProperCosetFamily A) k.2.1
+  unfold CayleySubgraphSpec.rootedSourceOffCosetCompletedStage
+  rw [hAnchor]
   exact htranslated
 
 end ABO
