@@ -38,10 +38,6 @@ variable {ι V : Type*}
 variable [Fintype ι] [DecidableEq ι]
 variable [Fintype V] [DecidableEq V]
 
-/-- An original source-H₁ selected old rank-two off-B vertex
-is an ACTUAL (B,z) stage index of the local Γ[A] type-(2)
-family used by the finite input-dependent G₂. The exact
-component-tagged B-constituent nonmembership is retained. -/
 /-- Exact local H₁[A] old signed skeleton of the selected SOURCE
 component, rooted at the ORIGINAL H₁ group element. -/
 noncomputable abbrev sourceH1OriginalSelectedLocalSkeleton
@@ -51,6 +47,10 @@ noncomputable abbrev sourceH1OriginalSelectedLocalSkeleton
     A (⟨root, by trivial⟩ :
       ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex)
 
+/-- An original source-H₁ selected old rank-two off-B vertex
+is an ACTUAL (B,z) stage index of the local Γ[A] type-(2)
+family used by the finite input-dependent G₂. The exact
+component-tagged B-constituent nonmembership is retained. -/
 noncomputable def sourceH1OriginalSelectedOffBLocalG2Index
     (src dst : ι → V) (base : V)
     (A : Finset ι) (hcard : A.card = 2)
@@ -123,17 +123,16 @@ theorem sourceH1OriginalSelectedOffB_ambientValue_eq_root_mul_localValue
         B hBP p = z) :
     sourceH1OriginalSelectedRootAmbientValue
       src dst base A hcard root (allProperCosetFamily A) z =
-    root * ((CayleySubgraphSpec.multiCosetAmbientValue
-      (sourceH1OriginalSelectedLocalSkeleton src dst base A root)
+    root * (((sourceH1OriginalSelectedLocalSkeleton src dst base A root).multiCosetAmbientValue
       (allProperCosetFamily A)
-      (CayleySubgraphSpec.admissible_of_card_le_two
-        (sourceH1OriginalSelectedLocalSkeleton src dst base A root) hcard.le)
+      ((sourceH1OriginalSelectedLocalSkeleton src dst base A root).admissible_of_card_le_two
+        hcard.le)
       (isGenerated_trivialCompletionGenerator (sourceH1Generator src dst) A)
       (retractable_trivialCompletionGenerator_of_kRetractable
         (sourceH1Generator src dst) 2
         (sourceH1_twoRetractable src dst) A hcard.le)
-       (sourceH1OriginalSelectedOffBLocalG2Index
-         src dst base A hcard root B hBP z hOff).2.1) : SourceH1 src dst) := by
+      (sourceH1OriginalSelectedOffBLocalG2Index
+        src dst base A hcard root B hBP z hOff).2.1 : SourceH1 src dst) := by
   let K := (sourceH1OriginalSkeleton src dst base).restrictAlphabet A
   let r : K.Vertex := ⟨root, by trivial⟩
   let hret := sourceH1_twoRetractable src dst
