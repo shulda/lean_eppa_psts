@@ -75,7 +75,7 @@ theorem localAlphabetCayley_vertex_range
     calc
       T.followWord (F.onVertex g) w =
           F.onVertex ((cayleyGraph gen).followWord g w) :=
-        T.hom_followWord (cayleyGraph gen) F g w
+        CompleteEGraph.hom_followWord (cayleyGraph gen) T F g w
       _ = F.onVertex (g * PSTS.SignedWord.evalGroup gen w) :=
         congrArg F.onVertex (cayleyGraph.followWord_eq_mul_evalGroup gen g w)
       _ = F.onVertex (g * (x : Γ)) := by rw [hx]
@@ -86,7 +86,7 @@ theorem localAlphabetCayley_vertex_range
     refine ⟨x, ?_⟩
     change F.onVertex (g * PSTS.SignedWord.evalGroup gen w) = v
     rw [← cayleyGraph.followWord_eq_mul_evalGroup gen g w]
-    exact (T.hom_followWord (cayleyGraph gen) F g w).symm.trans hv
+    exact (CompleteEGraph.hom_followWord (cayleyGraph gen) T F g w).symm.trans hv
 
 /-- The image of ALL ACTUAL oriented SIGNED Cayley
 A-edge tokens with source inside a fixed translated
@@ -118,12 +118,12 @@ theorem localAlphabetCayley_edge_range
       calc
         T.followWord (F.onVertex g) w =
             F.onVertex ((cayleyGraph gen).followWord g w) :=
-          T.hom_followWord (cayleyGraph gen) F g w
+          CompleteEGraph.hom_followWord (cayleyGraph gen) T F g w
         _ = F.onVertex (g * PSTS.SignedWord.evalGroup gen w) :=
           congrArg F.onVertex (cayleyGraph.followWord_eq_mul_evalGroup gen g w)
         _ = F.onVertex (g * (x : Γ)) := by rw [hx]
         _ = T.source (F.onEdge (g * (x : Γ), s.1)) :=
-          (F.map_source _).symm
+          (F.map_source (g * (x : Γ), s.1)).symm
     · have hs : T.label (F.onEdge (g * (x : Γ), s.1)) = s.1 :=
         F.map_label _
       simpa only [hs] using s.2
@@ -144,7 +144,7 @@ theorem localAlphabetCayley_edge_range
         _ = F.onVertex ((cayleyGraph gen).followWord g w) :=
           congrArg F.onVertex (cayleyGraph.followWord_eq_mul_evalGroup gen g w).symm
         _ = T.followWord (F.onVertex g) w :=
-          (T.hom_followWord (cayleyGraph gen) F g w).symm
+          (CompleteEGraph.hom_followWord (cayleyGraph gen) T F g w).symm
         _ = T.source e := heq
     · exact F.map_label _
 
