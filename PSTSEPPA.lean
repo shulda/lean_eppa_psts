@@ -207,6 +207,7 @@ import PSTSEPPA.ABO.MultiCosetParentHom
 import PSTSEPPA.ABO.MultiCosetParentPathInvariant
 import PSTSEPPA.ABO.MultiCosetParentComponentExact
 import PSTSEPPA.ABO.RootedComponentCompletedMultiCosetConnectivity
+import PSTSEPPA.ABO.SourceLiteralY1SelectedRootPlainAConnected
 import PSTSEPPA.ABO.MultiCosetSelectedComponentExact
 import PSTSEPPA.ABO.MultiCosetSkeletonComponentIntersections
 import PSTSEPPA.ABO.ComponentMultiCosetConnected
