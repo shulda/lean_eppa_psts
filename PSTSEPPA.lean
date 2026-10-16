@@ -320,6 +320,7 @@ import PSTSEPPA.ABO.SourceG2AugmentedStageWordKernel
 import PSTSEPPA.ABO.RootedSourceType2WordActionCongruence
 import PSTSEPPA.ABO.DependentDisjointWordCongruence
 import PSTSEPPA.ABO.DependentDisjointFibreTransitionQuotient
+import PSTSEPPA.ABO.SourceLiteralY1X2AllPrintedPlainTransitionQuotient
 import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupMembership
 import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupEquiv
 import PSTSEPPA.ABO.AugmentedClusterLocalCompletedActionIso
