@@ -132,7 +132,7 @@ theorem sourceH1OriginalSelectedOffB_ambientValue_eq_root_mul_localValue
         (sourceH1Generator src dst) 2
         (sourceH1_twoRetractable src dst) A hcard.le)
       (sourceH1OriginalSelectedOffBLocalG2Index
-        src dst base A hcard root B hBP z hOff).2.1 : SourceH1 src dst) := by
+        src dst base A hcard root B hBP z hOff).2.1 : SourceH1 src dst)) := by
   let K := (sourceH1OriginalSkeleton src dst base).restrictAlphabet A
   let r : K.Vertex := ⟨root, by trivial⟩
   let hret := sourceH1_twoRetractable src dst
