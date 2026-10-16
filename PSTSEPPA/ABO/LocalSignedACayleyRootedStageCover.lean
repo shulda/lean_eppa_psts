@@ -18,10 +18,9 @@ noncomputable def localSignedACayleySkeleton
     trivial
   inv_mem := by
     intro e he
-    change signedBase
-      ((cayleyGraph (trivialCompletionGenerator gen A)).inv e).2 ∈ A
     rcases e with ⟨x, s⟩
-    cases s <;> simpa [signedBase_inv] using he
+    change signedBase (PSTS.SignedLetter.inv s) ∈ A
+    simpa only [signedBase_inv] using he
   label_mem := by
     intro e he
     exact he
