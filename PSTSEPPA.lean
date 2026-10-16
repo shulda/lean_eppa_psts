@@ -101,6 +101,7 @@ import PSTSEPPA.ABO.LabelledQuotientSkeletonPullback
 import PSTSEPPA.ABO.LabelledQuotientSkeletonPathLift
 import PSTSEPPA.ABO.KStablePullbackIntrinsicBComponents
 import PSTSEPPA.ABO.KStablePullbackComponentGraphEquiv
+import PSTSEPPA.ABO.OriginalRootedAComponentSurjectiveCover
 import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalBComponentGraphEquiv
 import PSTSEPPA.ABO.PullbackAttachedCosetSupportTransport
 import PSTSEPPA.ABO.KStablePullbackCommonSupportLift
