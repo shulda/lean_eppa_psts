@@ -19,6 +19,7 @@ noncomputable def localSignedACayleySkeleton
   inv_mem := by
     intro e he
     rcases e with ⟨x, s⟩
+    change signedBase s ∈ A at he
     change signedBase (PSTS.SignedLetter.inv s) ∈ A
     simpa only [signedBase_inv] using he
   label_mem := by
