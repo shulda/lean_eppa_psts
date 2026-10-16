@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootAmbientValueNaturality
+import PSTSEPPA.ABO.SourceLiteralY1SelectedRootOffBIndexEquiv
 import PSTSEPPA.ABO.SourceH1Type2StageCatalogueIndex
 import PSTSEPPA.ABO.RootedSourceMultiCosetAmbientValue
 
@@ -54,8 +55,7 @@ noncomputable def sourceH1OriginalSelectedOffBLocalG2Index
       sourceH1SelectedRootBInclude
         src dst base A hcard root (allProperCosetFamily A)
         B hBP p = z) :
-    (((sourceH1OriginalSkeleton src dst base).restrictAlphabet A)
-      .intrinsicComponentLocalSlice A
+    (((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).intrinsicComponentLocalSlice A
         (⟨root, by trivial⟩ :
           ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex))
        .rankTwoType2SingletonIndex
@@ -116,14 +116,12 @@ theorem sourceH1OriginalSelectedOffB_ambientValue_eq_root_mul_localValue
         B hBP p = z) :
     sourceH1OriginalSelectedRootAmbientValue
       src dst base A hcard root (allProperCosetFamily A) z =
-    root * (((((sourceH1OriginalSkeleton src dst base).restrictAlphabet A)
-      .intrinsicComponentLocalSlice A
+    root * (((((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).intrinsicComponentLocalSlice A
         (⟨root, by trivial⟩ :
           ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex))
        .multiCosetAmbientValue
        (allProperCosetFamily A)
-       (((sourceH1OriginalSkeleton src dst base).restrictAlphabet A)
-         .intrinsicComponentLocalSlice A
+       (((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).intrinsicComponentLocalSlice A
            (⟨root, by trivial⟩ :
              ((sourceH1OriginalSkeleton src dst base).restrictAlphabet A).Vertex))
          .admissible_of_card_le_two hcard.le
