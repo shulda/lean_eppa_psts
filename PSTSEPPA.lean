@@ -313,6 +313,7 @@ import PSTSEPPA.ABO.SourceType2ActualG2CatalogueLocator
 
 import PSTSEPPA.ABO.RootedSourceCompletedAugmentationApiAgreement
 import PSTSEPPA.ABO.CompleteStageWordKernelTransport
+import PSTSEPPA.ABO.CompleteStageWordHEqTransport
 
 import PSTSEPPA.ABO.SourceG2AugmentedStageWordKernel
 import PSTSEPPA.ABO.RootedSourceType2WordActionCongruence
