@@ -96,10 +96,10 @@ theorem sourceG2_literalY1_wordValue_congr
           T.evalGroup_transitionSubgroupGenerator_val q
   intro x
   calc
-    T.followWord x p = rightApply (T.wordValue p) x :=
+    T.followWord x p = CompleteEGraph.rightApply (T.wordValue p) x :=
       (T.rightApply_wordValue p x).symm
-    _ = rightApply (T.wordValue q) x :=
-      congrArg (fun g : RightPerm _ => rightApply g x) hPerm
+    _ = CompleteEGraph.rightApply (T.wordValue q) x :=
+      congrArg (fun g : RightPerm _ => CompleteEGraph.rightApply g x) hPerm
     _ = T.followWord x q :=
       T.rightApply_wordValue q x
 
