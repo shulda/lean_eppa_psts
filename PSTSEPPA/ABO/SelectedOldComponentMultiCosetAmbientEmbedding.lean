@@ -144,7 +144,8 @@ theorem pullbackQuotient_rootedMultiCosetAmbient_injOn
   obtain ⟨x, hidxB, hreachX⟩ := hrawU
   obtain ⟨y, hidxC, hreachY⟩ := hrawV
   have hValue : L.attachedValue B p = L.attachedValue C q := by
-    simpa only [L.multiCosetAmbientValue_include] using huv
+    change L.attachedValue B p = L.attachedValue C q at huv
+    exact huv
   exact K.rootedOldStageCover_mixedSupportMultiCE_equal
     Q P hAdmH hGenH hRetH
     hAdmG hGenG hRetG
