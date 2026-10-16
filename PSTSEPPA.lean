@@ -110,6 +110,7 @@ import PSTSEPPA.ABO.KStablePullbackMultiCosetStageCoverEmbedding
 import PSTSEPPA.ABO.CompletedHStageOldAnchorDeterminesAttached
 import PSTSEPPA.ABO.RootedOldComponentDeterminesHStageCover
 import PSTSEPPA.ABO.SelectedOldComponentMixedCosetCollision
+import PSTSEPPA.ABO.SelectedOldComponentMultiCosetAmbientEmbedding
 import PSTSEPPA.ABO.KStablePullbackAdmissibility
 import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalBComponents
 import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalCover
