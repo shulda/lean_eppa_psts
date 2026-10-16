@@ -348,6 +348,7 @@ import PSTSEPPA.ABO.RootedSourceType2WordActionCongruence
 import PSTSEPPA.ABO.DependentDisjointWordCongruence
 import PSTSEPPA.ABO.DependentDisjointFibreTransitionQuotient
 import PSTSEPPA.ABO.SourceLiteralY1X2AllPrintedPlainTransitionQuotient
+import PSTSEPPA.ABO.BasedCayleyLocalAlphabetStageCoverage
 import PSTSEPPA.ABO.SourceLiteralY1X2AllPrintedPlainOldBBridge
 import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupMembership
 import PSTSEPPA.ABO.AugmentedClusterLocalSubgroupEquiv
