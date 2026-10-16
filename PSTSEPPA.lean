@@ -164,6 +164,7 @@ import PSTSEPPA.ABO.LocallyPairedGraphIso
 import PSTSEPPA.ABO.TrivialLoopCompletion
 import PSTSEPPA.ABO.TrivialLoopCompletionStripPaths
 import PSTSEPPA.ABO.TrivialLoopCompletionCayleyCosetBridge
+import PSTSEPPA.ABO.CayleySectionBridgeFreeness
 import PSTSEPPA.ABO.SourceLiteralY1PlainStripPaths
 import PSTSEPPA.ABO.TrivialLoopCompletionIsomorphism
 import PSTSEPPA.ABO.TrivialCompletionPaths
