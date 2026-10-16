@@ -1,5 +1,5 @@
 import PSTSEPPA.ABO.DependentDisjointWordCongruence
-import PSTSEPPA.ABO.CompleteStageWordCongruenceCayleyCover
+import PSTSEPPA.ABO.CompleteStageWordCongruenceReachableCover
 import PSTSEPPA.ABO.TransitionGroupGenerated
 
 /-!
