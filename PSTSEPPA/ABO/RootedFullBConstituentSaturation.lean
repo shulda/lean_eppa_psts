@@ -181,7 +181,7 @@ theorem rootedMultiCoset_full_B_endpoint_reachable
   have hPath :=
     (K.multiCoset_selected_B_component_exact
       P hadm hgen hret B hBP p v).mpr
-      ⟨q, hqp, hqv⟩
+      ⟨q, hqp, hqv.symm⟩
   simpa only [hp] using hPath
 
 /-- The TRUE remaining off-B orbit obstruction on the
