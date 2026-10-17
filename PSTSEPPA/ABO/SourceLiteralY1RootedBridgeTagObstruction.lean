@@ -116,8 +116,7 @@ theorem rootedMultiCosetAmbient_edge_injOn_of_vertex_injOn
     Set.InjOn
       (K.multiCosetAmbientHom P hadm hgen hret).onEdge
       (K.rootedMultiCosetEdgeRegion P hadm hgen hret root) :=
-  (K.multiCosetAmbientHom P hadm hgen hret)
-    .edge_injOn_of_vertex_injOn
+  (K.multiCosetAmbientHom P hadm hgen hret).edge_injOn_of_vertex_injOn
       (K.rootedMultiCosetImage P hadm hgen hret root) hv
 
 /-- With rooted ambient injectivity, the empty alphabet creates
@@ -231,12 +230,8 @@ theorem rootedProperBridgeReflection_iff_tagAlignment
     rcases K.rank_two_B_component_full_or_singleton
         hadm hgen hret hcard B hBP u with hfull | hisolated
     · rcases hfull with ⟨p, hpu, hexact⟩
-      have hpv : ∃ w : LabelWord ι, LabelWord.Uses B w ∧
-          (K.multiCosetEGraph P hadm hgen hret).Follows
-            (K.multiCosetInclude P hadm hgen hret B hBP p) w v := by
-        rw [hpu] at hpath
-        exact ⟨w, hw, hpath⟩
-      obtain ⟨q, hqp, hvq⟩ := (hexact v).mp hpv
+      obtain ⟨q, hqp, hvq⟩ :=
+        (hexact v).mp ⟨w, hw, hpath⟩
       exact Or.inr ⟨p, q, hqp.symm, hpu, hvq⟩
     · have hEq : v = u := hisolated v ⟨w, hw, hpath⟩
       exact Or.inl hEq.symm
