@@ -231,11 +231,21 @@ theorem lowerComponent_bridgeFree_reflect_upper_path
           (allProperCosetFamily C)
           (K.subalphabetComponentSubgraph_admissible
             hadm C hCA root) hgen hret u) := by
-    simpa only [
-      K.lowerComponentToFullMultiCosetHom_ambient_value
-        C hCA root hadm hgen hret u,
-      K.lowerComponentToFullMultiCosetHom_ambient_value
-        C hCA root hadm hgen hret v] using hCosetUpper
+    change
+      K.multiCosetAmbientValue (allProperCosetFamily A)
+        hadm hgen hret
+        ((K.lowerComponentToFullMultiCosetHom
+          C hCA root hadm hgen hret).onVertex v) ∈
+      generatedLeftCoset gen D
+        (K.multiCosetAmbientValue (allProperCosetFamily A)
+          hadm hgen hret
+          ((K.lowerComponentToFullMultiCosetHom
+            C hCA root hadm hgen hret).onVertex u)) at hCosetUpper
+    rw [K.lowerComponentToFullMultiCosetHom_ambient_value
+          C hCA root hadm hgen hret v,
+        K.lowerComponentToFullMultiCosetHom_ambient_value
+          C hCA root hadm hgen hret u] at hCosetUpper
+    exact hCosetUpper
   obtain ⟨q, hqD, hLowerPath⟩ :=
     hBridge.2 D hDC u v hCosetLower
   exact ⟨q, hqD, hLowerPath, hLowerPath.map J⟩
