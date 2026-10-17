@@ -332,6 +332,7 @@ import PSTSEPPA.ABO.RankTwoType2AllProperKernel
 import PSTSEPPA.ABO.TrivialCompletionOutsideSupport
 import PSTSEPPA.ABO.MultiCosetSignedParentSupport
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootPlainOutsideASupport
+import PSTSEPPA.ABO.SourceLiteralY1SelectedRootFullLocalCayleyCover
 import PSTSEPPA.ABO.AllProperCosetEdgeSupport
 import PSTSEPPA.ABO.IsolatedCosetOutsideSupport
 import PSTSEPPA.ABO.RankTwoType2OutsideAlphabet
