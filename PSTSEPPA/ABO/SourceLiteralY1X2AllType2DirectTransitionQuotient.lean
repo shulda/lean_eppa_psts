@@ -63,8 +63,7 @@ noncomputable def sourceLiteralY1X2AllToType2Stage
     (j : sourceLiteralY1Type2Index src dst) :
     LabelledGroupQuotient
       (sourceLiteralY1X2AllGenerator src dst)
-      ((sourceLiteralY1Type2ActionDatum src dst j).stage)
-        .transitionSubgroupGenerator := by
+      ((sourceLiteralY1Type2ActionDatum src dst j).stage).transitionSubgroupGenerator := by
   let idx : sourceLiteralY1ThreeKindIndex src dst :=
     Sum.inr (Sum.inr j)
   exact (sourceLiteralY1X2AllToThreeKind src dst).comp
@@ -81,12 +80,9 @@ noncomputable def sourceLiteralY1X2AllType2BasedCayleyHom
     (j : sourceLiteralY1Type2Index src dst)
     (u : (sourceLiteralY1Type2ActionDatum src dst j).Carrier) :
     LabelledGraphHom
-      (cayleyGraph (sourceLiteralY1X2AllGenerator src dst))
-        .toEGraph.toLabelledGraph
-      ((sourceLiteralY1Type2ActionDatum src dst j).stage)
-        .toEGraph.toLabelledGraph :=
-  ((sourceLiteralY1Type2ActionDatum src dst j).stage)
-    .cayleyProjectionFromGroup
+      (cayleyGraph (sourceLiteralY1X2AllGenerator src dst)).toEGraph.toLabelledGraph
+      ((sourceLiteralY1Type2ActionDatum src dst j).stage).toEGraph.toLabelledGraph :=
+  ((sourceLiteralY1Type2ActionDatum src dst j).stage).cayleyProjectionFromGroup
       (sourceLiteralY1X2AllGenerator src dst)
       (sourceLiteralY1X2AllToType2Stage src dst j).hom
       (sourceLiteralY1X2AllToType2Stage src dst j).map_gen
@@ -98,10 +94,8 @@ is precisely the Cayley group identity's image. -/
     (src dst : ι → V)
     (j : sourceLiteralY1Type2Index src dst)
     (u : (sourceLiteralY1Type2ActionDatum src dst j).Carrier) :
-    (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u)
-      .onVertex 1 = u :=
-  ((sourceLiteralY1Type2ActionDatum src dst j).stage)
-    .cayleyProjectionFromGroup_one
+    (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u).onVertex 1 = u :=
+  ((sourceLiteralY1Type2ActionDatum src dst j).stage).cayleyProjectionFromGroup_one
       (sourceLiteralY1X2AllGenerator src dst)
       (sourceLiteralY1X2AllToType2Stage src dst j).hom
       (sourceLiteralY1X2AllToType2Stage src dst j).map_gen u
@@ -115,14 +109,11 @@ theorem sourceLiteralY1X2AllType2BasedCayleyHom_word
     (j : sourceLiteralY1Type2Index src dst)
     (u : (sourceLiteralY1Type2ActionDatum src dst j).Carrier)
     (w : LabelWord ι) :
-    (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u)
-      .onVertex
+    (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u).onVertex
         (PSTS.SignedWord.evalGroup
           (sourceLiteralY1X2AllGenerator src dst) w) =
-      ((sourceLiteralY1Type2ActionDatum src dst j).stage)
-        .followWord u w :=
-  ((sourceLiteralY1Type2ActionDatum src dst j).stage)
-    .cayleyProjectionFromGroup_evalGroup
+      ((sourceLiteralY1Type2ActionDatum src dst j).stage).followWord u w :=
+  ((sourceLiteralY1Type2ActionDatum src dst j).stage).cayleyProjectionFromGroup_evalGroup
       (sourceLiteralY1X2AllGenerator src dst)
       (sourceLiteralY1X2AllToType2Stage src dst j).hom
       (sourceLiteralY1X2AllToType2Stage src dst j).map_gen u w
@@ -143,10 +134,8 @@ noncomputable def sourceLiteralY1X2AllType2BasedAtHom
     (u : (sourceLiteralY1Type2ActionDatum src dst j).Carrier)
     (g : (sourceLiteralY1X2AllStage src dst).transitionGroup) :
     LabelledGraphHom
-      (cayleyGraph (sourceLiteralY1X2AllGenerator src dst))
-        .toEGraph.toLabelledGraph
-      ((sourceLiteralY1Type2ActionDatum src dst j).stage)
-        .toEGraph.toLabelledGraph :=
+      (cayleyGraph (sourceLiteralY1X2AllGenerator src dst)).toEGraph.toLabelledGraph
+      ((sourceLiteralY1Type2ActionDatum src dst j).stage).toEGraph.toLabelledGraph :=
   (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u).comp
     (cayleyLeftTranslateHom
       (sourceLiteralY1X2AllGenerator src dst) g⁻¹)
@@ -159,11 +148,9 @@ old/fresh selected original type-(2) vertex u. -/
     (j : sourceLiteralY1Type2Index src dst)
     (u : (sourceLiteralY1Type2ActionDatum src dst j).Carrier)
     (g : (sourceLiteralY1X2AllStage src dst).transitionGroup) :
-    (sourceLiteralY1X2AllType2BasedAtHom src dst j u g)
-      .onVertex g = u := by
+    (sourceLiteralY1X2AllType2BasedAtHom src dst j u g).onVertex g = u := by
   change
-    (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u)
-      .onVertex (g⁻¹ * g) = u
+    (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u).onVertex (g⁻¹ * g) = u
   simpa using (sourceLiteralY1X2AllType2BasedCayleyHom_one
     src dst j u)
 
