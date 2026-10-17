@@ -113,6 +113,7 @@ import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalBComponentGraphEquiv
 import PSTSEPPA.ABO.PullbackAttachedCosetSupportTransport
 import PSTSEPPA.ABO.PullbackMultiCosetTaggedVertexNaturality
 import PSTSEPPA.ABO.PullbackSingleCosetSignedNaturality
+import PSTSEPPA.ABO.PullbackMultiCosetSignedGraphNaturality
 import PSTSEPPA.ABO.KStablePullbackCommonSupportLift
 import PSTSEPPA.ABO.PullbackAttachedCosetSupportReflection
 import PSTSEPPA.ABO.KStablePullbackMultiCosetEmbedding
