@@ -61,8 +61,13 @@ noncomputable def sourceLiteralY1SelectedLocalHOld_anchor
     (src dst : ι → V) (base : V)
     (A : Finset ι) (hcard : A.card = 2)
     (root : (sourceLiteralY1 src dst).transitionGroup) :
-    (sourceLiteralY1SelectedLocalHCompleteStage
-      src dst base A hcard root).Vertex := by
+    (sourceLiteralY1SelectedLocalHOldSkeleton
+      src dst base A root).MultiCosetVertex
+        (allProperCosetFamily A)
+        (sourceLiteralY1SelectedLocalHOld_admissible
+          src dst base A hcard root)
+        (sourceLiteralY1Local_isGenerated src dst A)
+        (sourceLiteralY1Local_retractable src dst A hcard.le) := by
   let H := sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root
   have hn : A.Nonempty := Finset.card_pos.mp (by rw [hcard]; decide)
   let hEmpty : (∅ : Finset ι) ∈ (allProperCosetFamily A).alphabets :=
