@@ -97,10 +97,8 @@ theorem sourceLiteralY1SelectedLocal_rootedOffB_globalOrbit_isolated
   have hStable : Q.StableAt B := by
     exact (sourceLiteralY1X2AllToY1_oneStable src dst) B
       (rankTwoProper_card_le_one A B hcard (P.proper B hBP))
-  have hMissing :
-      ∀ e : H.toLabelledGraph.Edge,
-        H.source e = Hroot → signedBase (H.label e) ∉ B := by
-    exact idx.paper_noOldBEdges src dst base A hcard root B hBP
+  have hMissing : H.NoSignedBEdgesAt B Hroot :=
+    idx.paper_noOldBEdges src dst base A hcard root B hBP
   have hPaired : H.LocallyPairedLabels :=
     sourceLiteralY1SelectedRootAllProper_locallyPaired
       src dst base A hcard root
