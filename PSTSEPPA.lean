@@ -45,6 +45,7 @@ import PSTSEPPA.ABO.TransitionDisjointUnion
 import PSTSEPPA.ABO.DisjointStageWordKernel
 import PSTSEPPA.ABO.DependentDisjointStages
 import PSTSEPPA.ABO.CayleyStageProjection
+import PSTSEPPA.ABO.LocalCompleteCayleyStageCover
 import PSTSEPPA.ABO.SourceCayleyStageCosetCollision
 import PSTSEPPA.ABO.Retractability
 import PSTSEPPA.ABO.RetractabilityCover
