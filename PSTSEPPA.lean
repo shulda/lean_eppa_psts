@@ -346,6 +346,7 @@ import PSTSEPPA.ABO.CoatomFamilyPathEquivalence
 import PSTSEPPA.ABO.StrictCoatomEdgePatches
 import PSTSEPPA.ABO.SelectedCosetSliceConnectivity
 import PSTSEPPA.ABO.BridgeFreenessInterface
+import PSTSEPPA.ABO.Lemma43LowerIntersectionBridgeConnected
 import PSTSEPPA.ABO.BridgeFreenessCoatomTransfer
 import PSTSEPPA.ABO.ComponentSelectedSliceExact
 import PSTSEPPA.ABO.ComponentGeometricDichotomy
