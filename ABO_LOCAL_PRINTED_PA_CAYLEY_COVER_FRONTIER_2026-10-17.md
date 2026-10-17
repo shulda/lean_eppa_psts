@@ -1,168 +1,170 @@
-# 2026-10-17 — Literal printed first-rank fully LOCAL signed P_A stage cover: audited checkpoint
+# 2026-10-17 — Corrected ABO first-rank TRUE printed P_A: post-#638 verified checkpoint
 
-## Authoritative verification cutoff
+## Authoritative status and verification boundary
 
-The last accepted mathematical main on inspection was
-`88067976cc16052f89b4e97e78e54d50a72d7044` (merged #630).
-The ORIGINAL full-Lean exact-source-head, 256 actual original
-signed-input regression cases, and permitted-axioms audit
-for #630 was GREEN (run `38992141734`). The independent
-postmerge main check (run `38992591852`) was still
-IN PROGRESS at this dated snapshot. The earlier main
-`def5e7271537a9ae290680202fd85256ea935494`,
-after #626, had independent fully GREEN main CI run
-`38991780164`.
+The authoritative GitHub `main` after the source-old-component
+compatibility series is **`d01d98d325f0d4393632afa53a782db2473b64ba`**
+(merged **PR #638**). No final unconditional ordinary EPPA theorem for
+finite PSTS has been proved. The first-rank TRUE local signed
+Cayley(T(X₂^all)[A]) cover and its exact original OLD A-component
+compatibility, including actual formally oriented old edges, **have**
+been Lean-proved.
 
-### Newly integrated mathematical results
+Relevant **exact PR head** full-Lean + independent 256 genuinely signed
+original-input edge-pair regression + axioms-audit GREEN runs:
 
-- **#626**: an ACTUAL incomplete signed A-Cayley skeleton on the
-  true generated subgroup G[A], retaining precisely formal
-  positive/negative original A-edges, has an authentic labelled
-  graph map to every selected ORIGINAL printed paper
-  T(Y₁)-rooted, legally completed P_A stage. Correct root is
-  the actual OLD component-tagged paper quotient point. Does
-  NOT claim a complete local Cayley(G[A]) action outside A.
-- **#627**: every genuine original intrinsic A-component, its
-  normalized local A-coset slice, and (given source assumptions)
-  the full ORIGINAL tagged P_A multi-coset extension including
-  every FRESH quotient vertex are genuinely A-WORD CONNECTED.
-  LEGAL completion by only missing signed stationary loops
-  preserves all the old paths and this connectedness.
-- **#630**, the mathematical next step: for arbitrary genuine
-  complete signed EGraph T and an ACTUAL labelled surjective
-  quotient G↠Transition(T), restrict to genuine G[A] and
-  assume every actual transition outside A is trivial.
-  This constructs an honest FULL signed Cayley(G[A])→T
-  graph morphism based at any stage vertex u, with exact
-  identity image. If T is A-WORD CONNECTED from u, the map
-  is SURJECTIVE ON EVERY genuine stage VERTEX and EVERY
-  formal ORIENTED signed EDGE, including negative and
-  stationary outside-A loops. This does not assume
-  global G/H ambient injectivity or generator freeness.
+| PR | Mathematical source file | Verified PR CI |
+|---|---|---|
+| #635 | `SourceLiteralY1OldPathLocalStageAgreement.lean` | [39012670675](https://github.com/shulda/lean_eppa_psts/actions/runs/39012670675) |
+| #636 | `SourceLiteralY1OldRootTaggedStageInclusion.lean` | [39013072158](https://github.com/shulda/lean_eppa_psts/actions/runs/39013072158) |
+| #637 | `SourceLiteralY1OldGToTaggedHCompatibility.lean` | [39013475447](https://github.com/shulda/lean_eppa_psts/actions/runs/39013475447) |
+| #638 | `SourceLiteralY1OldGToTaggedHVertexEdgeAgreement.lean` | [39014050678](https://github.com/shulda/lean_eppa_psts/actions/runs/39014050678) |
 
-## Candidate dependency DAG: exact HEAD full CI required
+All four are merged in dependency order and imported from
+`PSTSEPPA.lean`. In #638 an earlier PR head failed to parse a
+`signedBase` application due only to missing parentheses;
+**only its corrected exact head** `3d3663cdf3d6f4d7cdb804355f08cf43ac532b64`
+passed all audits and was merged.
 
-- **#628**, corrected HEAD `aa91642b3c2ebade1d4924765c84451773b40153`,
-  PR CI `38991800669` pending at snapshot:
-  `SourceLiteralY1SelectedRootPlainAConnected.lean`.
-  Transfers FULL old/fresh A-word connectedness across
-  actual source-local → SourceH₁ → literal T(Y₁) rooted
-  P_A complete-stage bijections, preserving every signed
-  word. Concludes surjectivity of local G[A] old/fresh
-  orbit map onto entire actual PRINTED selected stage.
-  Original red head `74900b32deac` had two
-  Lean source-target `hom_followWord` argument order
-  errors at lines 60, 81; corrected source calls
-  `G.hom_followWord H f` now undergoing full CI.
-- **#629**, corrected HEAD `978a9cc9218410e3c02d9979b27ab61b782941b8`,
-  PR CI `38992508100` pending:
-  `MultiCosetSignedParentSupport.lean`.
-  Strengthens certified parent-alphabet label support
-  from all-proper P_A to arbitrary proper selected
-  `CosetFamilySpec A`, proving every true signed
-  directed raw/quotient old/fresh edge label belongs to A;
-  legal fixed-loop completion acts stationarily outside A.
-  Important repair: original standalone previous
-  commit `714e0a275705` passed a push check but was
-  NEVER imported into PSTSEPPA.lean; initial genuine
-  full import CI exposed a parser error, then a DUPLICATE
-  `singleCosetEdge_label_mem_parent` already provided
-  by `AllProperCosetEdgeSupport.lean`.
-  Current head reuses existing certified source theorem,
-  defines only genuinely new generalized corollaries.
-- **#631**, current source HEAD `bb8edc47cc9c94781017d7fe21774de6abd8e64a`,
-  stacked on #629 (child branch cleanly rebased as
-  `0fcb00dc2ef3210e835bb06892ffb5227ba64892`
-  then two syntactic fixes); latest exact-source PR
-  CI `38992711137` pending:
-  `SourceLiteralY1SelectedRootPlainOutsideASupport.lean`.
-  Checks label support for each EXACT original selected
-  PRINTED T(Y₁) root-A proper multi-CE signed RAW token,
-  descends through the source+FULL-SIGNED-label edge
-  quotient, concludes stationarity of outside-A signed
-  letters on ALL genuine tagged old/fresh stage vertices
-  and actual subgroup generator equality to 1.
-  One cannot replace OLD gluing by equal ambient H values.
-- **#632**, actual source main goal, branch after fixes
-  head `b9f090122fe0282044daca02f2d2d325fcba6be5`,
-  PR CI `38992741873` pending, stacked on #631
-  but temporarily includes EXACT NEW SOURCE BLOBS for
-  #628 and #630 for a full Lean compile:
-  `SourceLiteralY1SelectedRootFullLocalCayleyCover.lean`.
-  Build the ACTUAL full signed local
-  Cayley(T(X₂^all)[A]) → every literal PRINTED
-  original-root completed P_A stage for |A|=2,
-  based at any actual old/fresh tagged stage vertex.
-  Prove surjective on FULL vertex and directed signed
-  edge sorts. This combines #628 real A-connectedness,
-  #629/#631 true outside-A fixed transitions and
-  independently accepted #630 generic local-cover theorem,
-  with already-certified actual transition quotient
-  T(X₂^all)↠Transition(P_A stage).
-  **DO NOT MERGE** until ancestor independent
-  exact-head full CI green, then CLEAN rebase #632
-  diff to only its new source file/root import, and
-  run another exact-head full CI.
+The prior file snapshot at #630 (and PRs #628/#629/#631/#632 still
+pending then) is historical, **superseded by this checkpoint**; its
+detail remains available in Git history. Prior to #635, main
+`587afb17b5f6df9edbba2c793eb56a445cc66427` had already
+integrated the full source printed local P_A Cayley coverage, old/fresh
+signed edge surjectivity, outside-A stationarity and original
+old-component surjective G→H cover.
 
-### Strongest source-facing implications and honest remaining gates
+## Precisely what is now proved
 
-The local completely signed Cayley(G[A])→actual H completed P_A
-cover is a *precondition* of the corrected two-group
-Theorem 4.7(ii), not automatically the final G coset
-extension's ambient embedding.
+Fix a parent alphabet `A` with `A.card = 2`, one genuine ORIGINAL
+old H root `root ∈ T(Y₁)`, and a real original G root
+`gRoot ∈ T(X₂^all)` projecting to it. Work with genuine original
+**incomplete** signed edge preimages in both groups, never with
+the artificial X₁ completion. Select the actual intrinsic original
+signed A-component of `gRoot`. The H-side completed P_A stage is
+the genuine old/fresh **component-tagged** intersection-support
+multi-coset vertex quotient; signed edges are quotiented by glued
+source + **full signed label**; only missing signed stationary loops
+are legally added.
 
-Already accepted #617–#620: One ACTUAL root-normalized
-G Cayley covering of an exact legally completed
-H component-tagged stage, aligned with the ORIGINAL
-incomplete old skeleton along genuine A-paths, forces
-precise B/C tagged image equality and the
-`B∩C` gluing relation upstairs. This establishes
-the genuine FULL coset-extension Cayley ambient map
-INJECTIVE **ON THE IMAGE OF THE ONE SELECTED ORIGINAL
-G OLD A-COMPONENT**, not on all unrelated disconnected
-A-components. Do not assume a whole-pullback
-connectedness or global H-multiCE ambient embedding.
+* **#635:** Real old signed A-word path `gRoot --w--> x`
+  determines `gRoot⁻¹*x ∈ G[A]`. Its evaluation under the
+  TRUE FULL local signed Cayley(G[A])→H-P_A stage cover equals the
+  endpoint of `w` from the exact OLD TAGGED H stage anchor.
+  The matching orientation-aware complete-stage edge formula is
+  separately proved. This alone did **not** identify an actual H
+  original old edge / component-tagged old vertex.
+* **#636:** Construct a concrete labelled-graph morphism from the
+  original incomplete H old A-root component to the actual completed
+  P_A stage. Each original signed edge is represented in a genuine
+  chosen proper-B raw constituent, then in the exact source/label
+  edge quotient, and finally in the legal loop completion. Use the
+  genuine B=∅ proper constituent to anchor the original old H root.
+  Every realised old H signed path has the corresponding exact
+  component-tagged completed-stage endpoint.
+* **#637:** Project any actual G original old A-path to H, restrict
+  to actual original A-edges, and lift the entire path to the
+  selected **intrinsic original H A-component**. Compose #635 and
+  #636. The local G[A] cover of the root-normalised actual G point
+  equals the image of the exact selected old H vertex **in the
+  tagged quotient itself**, not merely in H ambient coordinates.
+  Main theorem:
+  `sourceLiteralY1X2AllSelectedRoot_oldAComponent_taggedCompatibility`.
+* **#638:** Remove the word witness in an all-true-old-component
+  vertex API, and strengthen to all **actual original signed A-edge
+  tokens** leaving any true old G A-component vertex. Exhibit the
+  literal original H signed edge token, lift it to the actual old
+  H A-component with the correct source, and prove the local G[A]
+  completed cover's edge image equals its tagged old H inclusion
+  image. Both positive and negative directions, genuine loops,
+  identity/repeated labels are covered by the signed formalism.
+  Main theorem:
+  `sourceLiteralY1X2AllSelectedRoot_oldAComponent_allEdges_tagged`.
 
-**Next mathematical bottleneck after #632**:
-Connect the new literal local full signed G[A]-cover
-to the exact TRUE local OLD H[A] skeleton and selected
-G[A] OLD component under the verified original G/H
-quotient slice/pullback compatibility (#616). Align
-the selected local G root and its H-old genuine tag
-with the actual old anchor of the printed stage, via
-the existing source/local/paper signed graph
-isomorphisms, then instantiate the corrected
-component-scoped embeddedness from #619/#620. A
-group-Cayley morphism and vertex surjectivity alone
-do NOT assert this OLD original-edge compatibility.
+Crucially, **NOT** proved: all original G ambient A-coset points
+belong to the selected old A-component; the whole G pullback is
+A-connected; the H multi-coset ambient group-coordinate projection
+is injective; G↠H is A-stable at |A|=2 (only proper singleton/empty
+stability is certified); or every completed H-stage edge existed
+in the original old skeleton. Such assertions would generally be
+wrong or at least unjustified.
 
-After embeddedness, Theorem 4.7(iii) still requires
-the source's separate cluster/augmentation
-alternatives, especially **full B-coset repair R8**,
-and genuine G-external B-BRIDGE FREENESS. The
-full rank-two cluster base is independently
-certified, as are signed loop-stripping and
-genuine old coset B-path-lifting, but those do
-not alone establish the entire source bridge argument.
+## Existing abstract embeddings and the next exact source gate
 
-Final ordinary finite PSTS EPPA for closed embeddings
-still requires Condition 5.2 at rank 2,
-higher k≥2 historical Yₖ/Zₖ stage word kernels
-and exact equivariant Definition 5.3 Zₖ selection,
-higher-rank corrected Theorem 4.7 and bridge
-geometries, finite reflecting group and fibre-MAX.
-**NO unconditional PSTS EPPA theorem yet**.
+Generic conditional ABO corrected 4.7(ii) tools, previously
+Lean-certified, include:
 
-## Safe crash recovery
+* `RootedOldComponentDeterminesHStageCover.lean`:
+  `pullbackOldToWeakMultiCosetStageHom`,
+  `rootedWeakMultiCosetCompletedStage_represents_all_attached`,
+  `pullbackQuotient_multiCosetAmbient_injective_of_rooted_stageCover`.
+  The strong unscoped final theorem there explicitly assumes the
+  WHOLE pullback is one rooted intrinsic A-component, so it is
+  **not** automatically applicable to the possibly disconnected
+  original source pullback.
+* `SelectedOldComponentMixedCosetCollision.lean` and
+  `SelectedOldComponentMultiCosetAmbientEmbedding.lean`:
+  `pullbackQuotient_rootedMultiCosetAmbient_injOn`.
+  This is the correct conclusion **restricted to the selected old
+  A-component's FULL attached B-coset region**, and handles actual
+  B/C intersection-support gluing, not merely original old points.
 
-Check `main` SHA and the PR HEADs for #628,
-#629, #631, #632 and exact HEAD CI run conclusions
-from GitHub. Do not infer PR status from stale
-standalone branch push CI. Do not merge red or
-pending exact heads. Retarget and cleanly rebase
-stacked PRs in dependency order; each new head
-needs independent complete Lean + 256 genuine
-signed original input regressions and axiom audit.
-If a session stops without a reply, these changes
-remain auditable in GitHub. User decisions are
-not needed to continue this mathematical work.
+**Next formalization task: instantiate the latter rooted
+component-scoped theorem at the true first-rank local
+G[A]↠H[A] construction**, using the new #635–#638
+old signed graph compatibility.
+
+The next instance must discharge, explicitly and without global
+ambient shortcuts:
+
+1. The exact local `G[A]`/`H[A]` **generated** group presentations,
+   selected original old signed component skeletons and their
+   first-rank labelled quotient, with stability only on selected
+   proper `B⊊A` (|B|≤1). Use genuine component/local-coset-slice
+   and pullback modules, not whole ambient cosets.
+2. The required local retractability, admissibility,
+   selected-root multi-coset **weak completeness** and legal loop
+   completion, transported along previously certified genuine signed
+   source-H₁ ↔ literal T(Y₁) rooted P_A stage isomorphisms.
+3. The precise based complete signed local G[A] Cayley cover
+   translated to the **selected root** required by the generic
+   embedding lemma. Its identity is the actual old tagged H point.
+   #637–#638 now certify all old component vertex AND original
+   signed edge compatibility at this root. Check the family
+   `P=allProperCosetFamily A` and all old/fresh quotient edge
+   tokens; do not infer full G global injectivity.
+4. Apply the **rooted** mixed-support/ambient `Set.InjOn`
+   result to the full fresh/old attached region selected by this
+   ONE genuine original G A-component. Distinguish this
+   component-scoped conclusion from full global multiCE
+   injectivity.
+
+The key nearby source files worth reading together are
+`SourceLiteralY1SelectedRootFullLocalCayleyCover.lean`,
+`SourceLiteralY1SelectedRootPlainOldAnchorCover.lean`,
+`OriginalRootedAComponentSurjectiveCover.lean`,
+`SourceLiteralY1X2AllOriginalBComponentGraphEquiv.lean`,
+`KStablePullbackMultiCosetStageCoverEmbedding.lean`,
+`LocalCosetCayleyPaths.lean`,
+`RootedSourceAllProperCompletedStageIso.lean`,
+plus all four newly merged source modules above.
+
+Even when corrected rank-two 4.7(ii) is fully instantiated,
+**4.7(iii)** needs genuine independent
+cluster/augmentation alternatives and **R8 full B-coset repair and
+G-external B-bridge freeness**. Subsequently Condition 5.2 at rank
+2, exact equivariant Definition-5.3 Z_k selection and higher-rank
+word kernels/stages (k≥2), finite reflecting group and fibre-MAX,
+and final PSTS EPPA for closed embeddings remain open.
+
+## Recovery instructions
+
+On restarting, check current GitHub `main` and open PR/CI status
+before treating this dated SHA as current. Check exact PR HEAD
+GitHub Actions GREEN, not cancelled intermediate push runs.
+Read the recent source files **and the theorem signatures**,
+then tackle the local rooted component-scoped embedding instance
+above. Keep reporting conservatively: strong signed old G/H
+compatibility is complete, but no unconditional PSTS EPPA and
+no blanket rank-two 4.7(ii)/(iii) proof yet. User input is not
+needed for this current mathematical next step.
