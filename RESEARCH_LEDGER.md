@@ -17,7 +17,7 @@ C⊇B or a singleton (#685). For the first genuinely hard
 outgoing signed B-letters from a B-reachable point force
 an actual nonempty common tagged support D disjoint from B
 (#686). For |A|=3, |B|=2 this support alphabet is
-**exactly A\\B**, the unique missing letter (#687).
+**exactly A\B**, the unique missing letter (#687).
 Independent exact-head CI runs and exact declarations are
 recorded in [ABO_HIGHER_RANK_CLUSTER_CORE_FRONTIER_2026-10-17.md](ABO_HIGHER_RANK_CLUSTER_CORE_FRONTIER_2026-10-17.md).
 
