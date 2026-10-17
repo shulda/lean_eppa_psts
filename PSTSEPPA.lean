@@ -228,6 +228,7 @@ import PSTSEPPA.ABO.ComponentMultiCosetEdgeRange
 import PSTSEPPA.ABO.ComponentMultiCosetBComponentEdges
 import PSTSEPPA.ABO.MultiCosetVertexSupport
 import PSTSEPPA.ABO.MultiCosetMinimalSupport
+import PSTSEPPA.ABO.Definition322WholeComponentMinimalSupport
 import PSTSEPPA.ABO.MultiCosetMinimalSupportPaths
 import PSTSEPPA.ABO.MultiCosetSupportSkeletonMeet
 import PSTSEPPA.ABO.MultiCosetComponentSupportInvariant
