@@ -246,7 +246,7 @@ theorem LabelledGroupQuotient.augmentedStage_old_B_orbit_injective
         (cayleyGraph genΓ).followWord x w :=
           (cayleyGraph.followWord_eq_mul_evalGroup genΓ x w).symm
       _ = y := hxy
-  simpa [hUp] using hWord.symm
+  simpa [hUp] using hWord
 
 end ABO
 end PSTSEPPA
