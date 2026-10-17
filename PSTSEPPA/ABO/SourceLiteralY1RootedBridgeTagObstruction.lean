@@ -38,11 +38,13 @@ or replacing component tags by ambient coordinates.
    uses the verified rank-two full-coset-or-isolated-singleton
    classification, and DOES NOT assume the alignment condition.
 
-Consequently the k=1 genuine B-external bridge-freeness/R8
-obligation is now precise: prove this TAG ALIGNMENT for every
-B with |B|=1 among the chosen old-root attached points.
+Consequently the first-rank EXTERNAL B-bridge-reflection problem
+is reduced to TAG ALIGNMENT for each nonempty singleton B among
+the chosen old-root attached points. This is distinct from
+the paper's separate repair R8 for the full-B-coset alternative
+inside the cluster analysis of corrected 4.7(iii).
 Neither ambient embeddedness nor rank-two admissibility
-automatically supplies it.
+automatically supplies external B-tag alignment.
 
 No statement of unconditional full bridge freeness, corrected
 4.7(iii), Condition 5.2 or PSTS EPPA is asserted.
@@ -372,8 +374,8 @@ theorem sourceLiteralY1SelectedLocal_rootedMultiCoset_no_empty_bridges
       src dst base A hcard root)
     u v hu hv hCoset
 
-/-- SOURCE-EXACT REFORMULATION OF THE REMAINING k=1 R8 G-external
-B-bridge obstruction: relative bridge reflection of the selected
+/-- SOURCE-EXACT REFORMULATION OF THE REMAINING first-rank G-external
+B-bridge reflection obligation: reflection of the selected
 genuine old G[A]-component region is equivalent to true
 same-component-index B-tagged coset alignment on every external
 proper-B ambient pair. In this concrete case, the only still
