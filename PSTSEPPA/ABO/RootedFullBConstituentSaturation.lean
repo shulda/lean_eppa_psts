@@ -34,9 +34,13 @@ For |A| <= 2, the rank-two dichotomy of #647 yields a SHARPER
 exact reduction: rooted proper-B bridge reflection is equivalent
 to the sole assertion that an OFF-B vertex u has an ambient
 G[B]-coset meeting the selected A-component only in u itself.
-This does NOT establish that remaining off-B isolation;
-it isolates the precise part to be controlled by the source
-type-(2) augmented full B-coset stages.
+This does NOT establish that remaining off-B isolation.
+The source proof must ALSO classify the H-image of each G-off-B
+point: it might be a genuine full H[B]-constituent, or an
+H-off-B singleton. The first case needs an original signed
+old-B path/component lift; the second needs an actual
+based type-(2) augmented cover and exact OLD image control.
+Neither case is inferred from G/H ambient value equality.
 
 Signed edges, true old/fresh tags, and actual path components
 are preserved throughout. Theorem 4.7(iii), its separate R8
