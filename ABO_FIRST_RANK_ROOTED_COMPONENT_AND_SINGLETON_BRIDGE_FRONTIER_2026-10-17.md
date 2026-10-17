@@ -1,5 +1,44 @@
 # 2026-10-17 — PSTS/ABO first rank: rooted component embedding and singleton bridge frontier
 
+## Update — 17 October 2026, afternoon: first-rank off-B source bridge pipeline
+
+**Warning: GitHub main and actual PR/CI heads are authoritative.** This dated snapshot was prepared at accepted main d04fbc471dbd119ba18748eb9e7a573ba047a1a7. Later merges supersede this checkpoint; never infer a green status for a PR from the mere existence of its Lean file.
+
+### Independently CI-checked and MERGED since the earlier #648 snapshot
+
+- #650: saturation of complete, intrinsic component-tagged B-constituents INSIDE one selected original rooted A-component. Rooted proper-B bridge reflection is equivalent to ambient B-orbit isolation of selected off-B points; this is an equivalence, NOT already the isolation theorem.
+- #651: genuine signed B-word displacement/return detection on the real newly attached type-(2) full B coset, plus stable original G-to-H OLD-image B-orbit detector.
+- #652 and #657: one correctly aligned REAL old root and genuine signed path determine old-image agreement throughout the original connected signed component; the one-real-path theorem is particularly useful.
+- #653, #656 and #658: TRUE original incomplete signed G-to-H multiCE vertex gluing and source+FULL-SIGNED-LABEL quotient edge map, preserving old/fresh tags, formal inverse tokens, loop tokens and exact old-skeleton inclusions.
+- #661: strong stable pullback reflection — a true G multiCE point is in a FULL B-constituent iff its genuine component-tagged H image is in one. Thus G-off-B iff H-off-B; this is NOT a statement about injective H ambient group values.
+- #660: concrete actual first-rank signed G[A] to normalized H[A] original multiCE morphism.
+- #662: genuine finite source G=T(X₂^all) quotient/Cayley action cover on EVERY literal printed T(Y₁) type-(2) legally completed augmented stage; any global group coordinate can be chosen as the base.
+- #663: TRUE source G[A] vs H[A] stable off/full proper-B equivalence.
+- #664: normalized H[A] off-B old quotient point maps to the exact original component-tagged LITERAL printed T(Y₁) type-(2) augmentation index (base,A,root,B,off-B vertex).
+- #665 (accepted b1f2aeba): original source G[A] signed P_A multiCE maps to GLOBAL finite Cayley(T(X₂^all)) by restricting to ACTUALLY present A-supported signed edges. There is NO invalid whole complete Cayley(G[A]) to Cayley(G) morphism for outside-A labels. Selected rooted ambient vertex injection follows.
+- #666 (accepted d04fbc471): TRUE original signed G[A] multiCE to LITERAL printed H=T(Y₁) old P_A graph hom preserving all signed edges and exact old component tags, together with exact off-B OLD augmentation root. Green full PR CI: https://github.com/shulda/lean_eppa_psts/actions/runs/39036950809.
+
+Exploratory stacked PRs #654, #655 and #659 were superseded by clean accepted integrations #656, #658 and #660, and CLOSED. Do not redo or merge the older branches.
+
+### Still under full Lean CI: all statuses require a fresh check
+
+1. **#667**: concrete ORIGINAL finite G Cayley cover of the exact printed type-(2) stage selected by ANY true G[A] off-B old/fresh quotient point z, BASED AT EXACTLY the global G-coordinate of z; its value there is precisely the OLD H component-tagged augmentation root. HEAD 4108cdae. Initial HEAD 4068990d failed only because source printed OLD map from #666 was not in its base/import; now #666 is accepted on main, #667 is re-based on main and imports its signed old module. New exact-head PR CI is still required.
+2. **#668**, HEAD 35b74160, stacked on #667: use a true signed A-path inside ONE selected old A-component, genuine original G multiCE to global Cayley signed map S, true printed-H signed OLD map M, actual global G-based type-(2) cover F from #667, and global one-stability on each proper B, to prove no other selected vertex lies in the same global G[B]-orbit as an off-B z. Never assert the entire original G[A] pullback connected.
+3. **#669**, HEAD eeaaf3a5, stacked on #668: combine the actual source off-B orbit isolation with accepted #650 full B-saturation and the exact rank-two equivalence to derive actual unconditional ROOTED relative proper-B bridge reflection on ONE selected original A-component. This is NOT the globally unqualified Theorem 4.7(iii). Require its own exact-head CI and clean source integration.
+4. **#670**, HEAD e9ce911d, independent: actual surjective full G[A] Cayley to genuine completed H[A] P_A cover can be left-translated around the tagged image of ANY old original G[A] root. Consequently each original signed old A-component's entire attached region is individually G[A]-embedded, but not necessarily simultaneously embedded across different disconnected A-components. Pending full CI.
+5. **#671**, HEAD 9842c552, independent source correction R8: if an off-skeleton B-component is already a FULL B-coset, its true signed B-paths lie inside ONE selected containing full C-constituent (B⊆C), witnessed by EXACT old (B∩C)-support gluing. This is the one-constituent R8 alternative, NOT the genuine multiconstituent cluster proof or all of Theorem 4.7(iii). Pending full CI.
+
+### Correct scope and next steps
+
+The true global finite first-rank groups G=T(X₂^all), H=T(Y₁) are only 2-retractable, and Q:G onto H only 1-stable. At two-letter A, the genuine generated local groups G[A], H[A] are retractable and Q_A is stable on every proper B⊊A, NOT on all A. Its original old signed Q-pullback may be disconnected. No ambient H-coordinate injectivity or artificial completed X₁ old edges are legitimate.
+
+First finish #667 exact CI (now with correct #666 dependency). Then audit #668/#669 logs; if green, migrate the new theorem blobs to clean main-based branches, obtain fresh exact-head full Lean and allowed-axiom checks, and merge in order. Check #670 and #671 independently. Later k≥2 clusters, the separate full-R8 paper repair, Condition 5.2, equivariant Z_k representative choices, reflecting group and fibre-MAX, and actual unconditional PSTS EPPA are STILL OPEN.
+
+On every recovery check GitHub latest main SHA, branch and PR exact HEAD, and workflow jobs; do not interpret cancelled push jobs as a source failure. The full Lean + 256 original signed input regressions + allowed axioms audit remain mandatory.
+
+---
+
+
 ## Authoritative verified cutoff
 
 > **Same-day mathematical addendum.** Subsequent to the a16bb415 cutoff below,
