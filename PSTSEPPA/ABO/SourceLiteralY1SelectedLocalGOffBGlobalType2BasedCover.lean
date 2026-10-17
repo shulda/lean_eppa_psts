@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.SourceLiteralY1SelectedLocalGlobalCayleySignedEmbedding
+-- The source signed OLD printed H graph morphism is supplied by stacked PR #666.
 import PSTSEPPA.ABO.SourceLiteralY1SelectedLocalSignedOffBReflection
 import PSTSEPPA.ABO.SourceLiteralY1LocalHOffBPrintedType2Index
 import PSTSEPPA.ABO.SourceLiteralY1X2AllType2DirectTransitionQuotient
