@@ -57,7 +57,7 @@ theorem AWordConnected_of_surjective
   refine ⟨w, hw, ?_⟩
   calc
     H.followWord u w = H.followWord (f.onVertex x) w := by rw [hx]
-    _ = f.onVertex (G.followWord x w) := H.hom_followWord G f x w
+    _ = f.onVertex (G.followWord x w) := G.hom_followWord H f x w
     _ = f.onVertex y := congrArg f.onVertex hxy
     _ = v := hy
 
@@ -78,7 +78,7 @@ theorem AWordConnected_of_injective
   calc
     f.onVertex (G.followWord u w) =
         H.followWord (f.onVertex u) w :=
-      (H.hom_followWord G f u w).symm
+      (G.hom_followWord H f u w).symm
     _ = f.onVertex v := hxy
 
 end CompleteEGraph
