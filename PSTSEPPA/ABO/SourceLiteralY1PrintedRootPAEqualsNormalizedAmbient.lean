@@ -52,8 +52,7 @@ theorem sourceLiteralY1SelectedRoot_setoid_eq_rootedAmbient
     (P : CosetFamilySpec A) :
     sourceLiteralY1DirectRootMultiCosetSetoid
       src dst base A hcard root P =
-    ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-      .rootedAmbientMultiCosetSetoid A hcard
+    ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).rootedAmbientMultiCosetSetoid A hcard
         (sourceLiteralY1_transitionTwoRetractable src dst)
         (⟨root, by trivial⟩ :
           ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)
@@ -72,8 +71,7 @@ theorem sourceLiteralY1SelectedRootPlainStage_eq_rootedAmbient
     (root : (sourceLiteralY1 src dst).transitionGroup) :
     sourceLiteralY1SelectedRootPlainCompleteStage
       src dst base A hcard root =
-    ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-      .rootedAmbientAllProperCompletedStage A hcard
+    ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).rootedAmbientAllProperCompletedStage A hcard
         (sourceLiteralY1_transitionTwoRetractable src dst)
         (⟨root, by trivial⟩ :
           ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex) := by
