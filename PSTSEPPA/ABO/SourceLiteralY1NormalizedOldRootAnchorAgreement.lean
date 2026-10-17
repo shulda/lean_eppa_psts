@@ -38,8 +38,7 @@ theorem sourceLiteralY1SelectedLocalHOld_identity_to_originalRoot
     (src dst : ι → V) (base : V)
     (A : Finset ι)
     (root : (sourceLiteralY1 src dst).transitionGroup) :
-    (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-      .intrinsicComponentLocalHom A
+    (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).intrinsicComponentLocalHom A
         (⟨root, by trivial⟩ :
           ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)).onVertex
           (sourceLiteralY1SelectedLocalHOld_identity
@@ -86,8 +85,7 @@ theorem sourceLiteralY1SelectedLocalHOld_anchor_to_paper
     (src dst : ι → V) (base : V)
     (A : Finset ι) (hcard : A.card = 2)
     (root : (sourceLiteralY1 src dst).transitionGroup) :
-    (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-      .rootedAllProperCompletedStageHom A hcard
+    (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).rootedAllProperCompletedStageHom A hcard
         (sourceLiteralY1_transitionTwoRetractable src dst)
         (⟨root, by trivial⟩ :
           ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)).onVertex
@@ -159,8 +157,7 @@ theorem sourceLiteralY1SelectedLocalHOld_anchor_eq_pullbackRoot
     (root : (sourceLiteralY1 src dst).transitionGroup) :
     sourceLiteralY1SelectedLocalHOld_anchor
       src dst base A hcard root =
-    ((sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root)
-      .pullbackOldToWeakMultiCosetStageHom
+    ((sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root).pullbackOldToWeakMultiCosetStageHom
         (sourceLiteralY1X2AllLocalQuotient src dst A)
         (allProperCosetFamily A)
         (sourceLiteralY1SelectedLocalHOld_admissible
