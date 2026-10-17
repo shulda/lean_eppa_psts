@@ -2,6 +2,7 @@ import PSTSEPPA.ABO.SourceLiteralY1X2AllRankOne
 import PSTSEPPA.ABO.SourceLiteralY1ThreeKindG2Action
 import PSTSEPPA.ABO.DependentDisjointFibreTransitionQuotient
 import PSTSEPPA.ABO.CayleyStageProjection
+import PSTSEPPA.ABO.CayleyLeftTranslations
 
 /-!
 # Real literal T(X₂^all) → EACH original printed type-(2) augmented action
@@ -125,6 +126,46 @@ theorem sourceLiteralY1X2AllType2BasedCayleyHom_word
       (sourceLiteralY1X2AllGenerator src dst)
       (sourceLiteralY1X2AllToType2Stage src dst j).hom
       (sourceLiteralY1X2AllToType2Stage src dst j).map_gen u w
+
+
+/-- Translate the actual signed Cayley-G cover so that an
+ARBITRARY genuine global group coordinate g, rather than
+only the identity, maps EXACTLY to the specified original
+component-tagged old/fresh type-(2) stage point u.
+
+This is PRECOMPOSITION with a real signed Cayley LEFT
+translation by g⁻¹. It does not assume a global input
+graph embedding, transitivity of old H-component labels,
+or equality of different original coset tags. -/
+noncomputable def sourceLiteralY1X2AllType2BasedAtHom
+    (src dst : ι → V)
+    (j : sourceLiteralY1Type2Index src dst)
+    (u : (sourceLiteralY1Type2ActionDatum src dst j).Carrier)
+    (g : (sourceLiteralY1X2AllStage src dst).transitionGroup) :
+    LabelledGraphHom
+      (cayleyGraph (sourceLiteralY1X2AllGenerator src dst))
+        .toEGraph.toLabelledGraph
+      ((sourceLiteralY1Type2ActionDatum src dst j).stage)
+        .toEGraph.toLabelledGraph :=
+  (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u).comp
+    (cayleyLeftTranslateHom
+      (sourceLiteralY1X2AllGenerator src dst) g⁻¹)
+
+/-- At the EXACT specified genuine global group point g,
+the translated Cayley cover is based at the genuine
+old/fresh selected original type-(2) vertex u. -/
+@[simp] theorem sourceLiteralY1X2AllType2BasedAtHom_base
+    (src dst : ι → V)
+    (j : sourceLiteralY1Type2Index src dst)
+    (u : (sourceLiteralY1Type2ActionDatum src dst j).Carrier)
+    (g : (sourceLiteralY1X2AllStage src dst).transitionGroup) :
+    (sourceLiteralY1X2AllType2BasedAtHom src dst j u g)
+      .onVertex g = u := by
+  change
+    (sourceLiteralY1X2AllType2BasedCayleyHom src dst j u)
+      .onVertex (g⁻¹ * g) = u
+  simpa using (sourceLiteralY1X2AllType2BasedCayleyHom_one
+    src dst j u)
 
 end ABO
 end PSTSEPPA
