@@ -2,6 +2,22 @@
 
 ## Authoritative verified cutoff
 
+> **Same-day mathematical addendum.** Subsequent to the a16bb415 cutoff below,
+> [#651](https://github.com/shulda/lean_eppa_psts/pull/651) independently passed
+> exact-head full Lean/256 real signed-input regression/axioms CI
+> [39028791397](https://github.com/shulda/lean_eppa_psts/actions/runs/39028791397)
+> and was merged as **1da3ac56397a6603b4e21294ec07118cd916bad1**.
+> It proves exact signed B-word displacement in genuine type-(2) added full B-cosets,
+> the converse B-word return iff identity, and a B-stable G→H *old-image orbit detector*.
+> The detector requires both compared G group points to map to actual OLD augmentation
+> vertices (first exactly the attachment root), and DOES NOT establish
+> this source-specific OLD-image compatibility for the entire selected G[A] component.
+> Work-in-progress [#650](https://github.com/shulda/lean_eppa_psts/pull/650)
+> and [#652](https://github.com/shulda/lean_eppa_psts/pull/652) respectively address
+> the full-constituent saturation/off-B-only reduction and rooted path compatibility.
+> On every restart check latest main and exact green PR heads, not this fixed addendum.
+
+
 GitHub main at this checkpoint: **a16bb415ca8065f9519f0a649506fd194b3a998b** (merged #648). Always check GitHub anew on restart; this dated SHA is not automatically the latest.
 
 Accepted, merged results, each with independent exact-HEAD full Lean project compilation, 256 genuinely signed original-input edge-pair regressions and configured axiom audit:
