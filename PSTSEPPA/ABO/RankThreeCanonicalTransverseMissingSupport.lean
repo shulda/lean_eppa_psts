@@ -5,14 +5,14 @@ import Mathlib.Data.Finset.Card
 # Canonical missing-letter support at the first higher parent rank
 
 The first genuinely higher-rank cluster case has parent |A| = 3
-and proper B of size two, so A \\ B is a singleton {c}.
+and proper B of size two, so A \ B is a singleton {c}.
 The certified arbitrary-rank transverse-step lemma shows that
 whenever a genuine B-cluster vertex has two different outgoing
 B-letter edges, some actual component-tagged support D exists
 which has no letters from B but does have a letter outside B.
 
 At this first higher rank there is ONLY ONE possible
-nonempty such support alphabet: precisely A \\ B.
+nonempty such support alphabet: precisely A \ B.
 Thus every genuine two-direction switching vertex carries
 the CANONICAL missing-letter support, not merely some
 choice of a lower-alphabet patch.
@@ -38,7 +38,7 @@ variable {gen : ι → Γ} {A : Finset ι}
 
 /-- Elementary finite-support principle: if D⊆A contains no
 B-letter, has at least one actual outside-B letter, and
-A\\B has at most one letter, then D is EXACTLY A\\B.
+A\B has at most one letter, then D is EXACTLY A\B.
 The explicit non-B-containment prevents a false empty-core
 argument. -/
 theorem outsideCore_eq_singleton_complement
@@ -46,10 +46,10 @@ theorem outsideCore_eq_singleton_complement
     (hDA : D ⊆ A)
     (hNoB : ∀ i : ι, i ∈ D → i ∉ B)
     (hNotContained : ¬ D ⊆ B)
-    (hComplSmall : (A \\ B).card ≤ 1) :
-    D = A \\ B := by
+    (hComplSmall : (A \ B).card ≤ 1) :
+    D = A \ B := by
   classical
-  have hSubset : D ⊆ A \\ B := by
+  have hSubset : D ⊆ A \ B := by
     intro i hi
     exact Finset.mem_sdiff.mpr ⟨hDA hi, hNoB i hi⟩
   have hWitness : ∃ c : ι, c ∈ D ∧ c ∉ B := by
@@ -59,7 +59,7 @@ theorem outsideCore_eq_singleton_complement
     by_contra hiNot
     exact hn ⟨i, hi, hiNot⟩
   obtain ⟨c, hcD, _hcNotB⟩ := hWitness
-  have hcCompl : c ∈ A \\ B := hSubset hcD
+  have hcCompl : c ∈ A \ B := hSubset hcD
   apply Finset.Subset.antisymm hSubset
   intro i hi
   have heq : i = c :=
@@ -79,7 +79,7 @@ constituent at its root z), and a vertex y reached by
 an actual signed B-word has outgoing REAL oriented signed
 B-edges with different base letters, then y has an actual
 TAGGED constituent presentation supported by the exact
-singleton complement A\\B.
+singleton complement A\B.
 
 This is a theorem about the source gluing quotient's
 actual vertices/edges and their true old component tags.
@@ -123,7 +123,7 @@ theorem allProperCoset_rank_three_transverse_B_edges_missing_support
       signedBase ((K.multiCosetEGraph
         (allProperCosetFamily A) hadm hgen hret).label f)) :
     K.MultiCosetVertexSupported
-      (allProperCosetFamily A) hadm hgen hret (A \\ B) y := by
+      (allProperCosetFamily A) hadm hgen hret (A \ B) y := by
   let P := allProperCosetFamily A
   obtain ⟨D, hD, hNoB, hDNotB⟩ :=
     K.allProperCoset_B_component_transverse_edges_common_outside_core
@@ -135,11 +135,11 @@ theorem allProperCoset_rank_three_transverse_B_edges_missing_support
     ((mem_allProperCosetFamily A D).mp hDP).subset
   have hBA : B ⊆ A :=
     ((mem_allProperCosetFamily A B).mp hBP).subset
-  have hComplCard : (A \\ B).card ≤ 1 := by
-    have hDiff : (A \\ B).card = A.card - B.card :=
+  have hComplCard : (A \ B).card ≤ 1 := by
+    have hDiff : (A \ B).card = A.card - B.card :=
       Finset.card_sdiff_of_subset hBA
     omega
-  have hExact : D = A \\ B :=
+  have hExact : D = A \ B :=
     outsideCore_eq_singleton_complement D A B
       hDA hNoB hDNotB hComplCard
   simpa only [hExact] using
