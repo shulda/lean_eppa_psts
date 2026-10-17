@@ -1,5 +1,30 @@
 # 2026-10-17 — PSTS/ABO first rank: rooted component embedding and singleton bridge frontier
 
+## New authoritative cutoff — verified first-rank rooted bridge proof (17 Oct 2026)
+
+**Accepted source main at this cutoff: `eec9dcf929656da4fecc88094d84a8078950f6b0`.** GitHub main and exact-head Actions status must be checked afresh on restart; older sections below are historical.
+
+**The following are now independently whole-Lean/256 *original signed input* regression/allowed-axioms CI GREEN and MERGED:**
+
+- **#666:** the TRUE incomplete old+fresh source G=T(X₂^all)[A] P_A extension has a signed graph morphism into the LITERAL original printed H=T(Y₁) old multiCE, with correct oriented old/new tokens and exact intrinsically tagged off-B old anchor (main `d04fbc4`).
+- **#667:** EVERY off-B source G[A] quotient vertex selects a genuine printed H type-(2) off-B index and a globally finite T(X₂^all) Cayley cover based at its EXACT original G coordinate, with old H augmentation basepoint the real tagged old quotient point (main `522b854`; [CI 39040774738](https://github.com/shulda/lean_eppa_psts/actions/runs/39040774738)).
+- **#670:** the completed H[A] source stage cover is vertex-surjective, hence for **EVERY true original old G[A] vertex root** the entire attached P_A region of its ONE actual signed old A-component is embedded in the ambient local G[A] coordinate. It does *not* simultaneously embed distinct old components (main `94d11d5`; [CI 39040362207](https://github.com/shulda/lean_eppa_psts/actions/runs/39040362207)).
+- **#671:** genuine full-B-coset variant of the source-corrected R8 repair: a real B-path in a tagged full B-coset lies in one selected containing C-constituent, with exact original (B∩C)-support gluing. R8's full-coset alternative is closed, **not** the entire higher-rank cluster case (main `8cc4412`; [CI 39041936908](https://github.com/shulda/lean_eppa_psts/actions/runs/39041936908)).
+- **#673:** genuine finite T(X₂^all) type-(2) action plus true original old H-signed map and a real signed A-path prove **off-B ambient singleton B-orbit isolation** for every z in ONE old-identity-rooted original signed G[A] A-component (main `c4041e4`; [CI 39047900715](https://github.com/shulda/lean_eppa_psts/actions/runs/39047900715)). Source theorem: `sourceLiteralY1SelectedLocal_rootedOffB_globalOrbit_isolated`.
+- **#677:** combines #673 with accepted intrinsic full-B-coset saturation from #650 and true local/global G[B] coset identity to prove UNCONDITIONAL **`sourceLiteralY1SelectedLocal_rootedProperBridgeReflection`**: for |A|=2, every proper B⊊A, and any two old/fresh signed vertices inside the ONE original old-identity-selected A-component in the same ambient G[A][B] coset, there is a REAL signed B-path inside the ORIGINAL uncompleted G[A] P_A multiCE. This is a *component-local* corrected 4.7(iii) result, **not** the whole globally unqualified theorem (main `eec9dcf`; [CI 39048524385](https://github.com/shulda/lean_eppa_psts/actions/runs/39048524385)).
+
+**Further componentwise strengthening (still pending acceptance at this checkpoint):**
+
+- [#680](https://github.com/shulda/lean_eppa_psts/pull/680) clean integration of `sourceLiteralY1SelectedLocal_everyOldRootOffB_globalOrbit_isolated`, i.e. the same genuine type-(2) orbit exclusion for EVERY separately selected original old G[A] A-component, using #670 rooted componentwise injection. The identical theorem was full-CI-GREEN on original PR #675 (run 39048204519), but the clean post-#677 main-based integration needs its OWN exact-head CI. The earlier clean #678 attempt was likewise green on head but had a squash-history merge conflict in the root import and was superseded by #680.
+- [#676](https://github.com/shulda/lean_eppa_psts/pull/676) contains the all-roots signed proper-B bridge-reflection theorem (independently CI GREEN on its original stacked head, run 39048654788). After #680 merges, integrate the theorem into a new clean main-based PR; its own CI is mandatory. Do not merge original stacked branch blindly or infer cross-component simultaneous B-freeness.
+- The earlier exploratory #668/#669 and redundant later #674/#675/#678 preserve old audit history, not authoritative green main.
+
+**Next genuine mathematics:** even when #680 and clean all-roots bridge integrate, this establishes *separate rooted A-component* original rank-two P_A embeddedness and bridge reflection, not a theorem that any two vertices in different disconnected G-old A-components can be joined by B-paths merely because they share one ambient G[B] coset. Do not impose that false globally. The remaining construction still needs the higher k≥2 multi-constituent cluster-common-core (Lemma 4.3/Prop. 3.23) and upward corrected 4.7(iii) bridge induction, exact stage histories and equivariant Definition 5.3 selectors, Condition 5.2, finite reflecting group/fibre-MAX, and final closed-embedding PSTS EPPA. The separate R8 one-constituent omission is repaired #671.
+
+**Recovery:** check latest GitHub main and exact-head CI, then focus either on clean integration of #680 and the all-roots relative bridge theorem or on genuinely new higher-rank common-cluster core geometry. Preserve real source signs, original missing old edges, correct B/C quotient tags, and source one-stability (NOT false A-stability). No user decision is needed to continue.
+
+---
+
 ## Update — 17 October 2026, afternoon: first-rank off-B source bridge pipeline
 
 **Warning: GitHub main and actual PR/CI heads are authoritative.** This dated snapshot was prepared at accepted main d04fbc471dbd119ba18748eb9e7a573ba047a1a7. Later merges supersede this checkpoint; never infer a green status for a PR from the mere existence of its Lean file.
