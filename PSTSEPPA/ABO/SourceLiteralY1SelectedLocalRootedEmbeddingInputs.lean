@@ -94,8 +94,7 @@ theorem sourceLiteralY1SelectedLocalHOld_admissible
     (root : (sourceLiteralY1 src dst).transitionGroup) :
     (sourceLiteralY1SelectedLocalHOldSkeleton
       src dst base A root).AdmissibleForCosetExtension :=
-  (sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root)
-    .admissible_of_card_le_two hcard.le
+  (sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root).admissible_of_card_le_two hcard.le
 
 /-- All original and freshly completed signed H-local P_A
 edges satisfy *weak* completeness, with exact proper-B
@@ -105,8 +104,7 @@ theorem sourceLiteralY1SelectedLocalHOld_weakComplete
     (src dst : ι → V) (base : V)
     (A : Finset ι) (hcard : A.card = 2)
     (root : (sourceLiteralY1 src dst).transitionGroup) :
-    (sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root)
-      .MultiCosetWeaklyComplete (allProperCosetFamily A)
+    (sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root).MultiCosetWeaklyComplete (allProperCosetFamily A)
       (sourceLiteralY1SelectedLocalHOld_admissible
         src dst base A hcard root)
       (sourceLiteralY1Local_isGenerated src dst A)
@@ -143,8 +141,7 @@ theorem sourceLiteralY1SelectedLocalGOld_admissible
     (sourceLiteralY1SelectedLocalGOldPullback
       src dst base A root).AdmissibleForCosetExtension := by
   exact
-    (sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root)
-      .pullbackQuotient_admissible_of_kStable
+    (sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root).pullbackQuotient_admissible_of_kStable
         (sourceLiteralY1X2AllLocalQuotient src dst A) 1
         (sourceLiteralY1X2AllLocalQuotient_oneStable src dst A)
         (by simp only [hcard]; omega)
@@ -216,8 +213,7 @@ noncomputable abbrev sourceLiteralY1SelectedLocalHCompleteStage
     (src dst : ι → V) (base : V)
     (A : Finset ι) (hcard : A.card = 2)
     (root : (sourceLiteralY1 src dst).transitionGroup) :=
-  (sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root)
-    .weakMultiCosetCompletedStage
+  (sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root).weakMultiCosetCompletedStage
       (allProperCosetFamily A)
       (sourceLiteralY1SelectedLocalHOld_admissible
         src dst base A hcard root)
@@ -254,8 +250,7 @@ theorem sourceLiteralY1SelectedLocal_rootedMultiCoset_injOn_of_cover
     (hOne :
       F.onVertex (1 : generatedSubgroup
         (sourceLiteralY1X2AllGenerator src dst) A) =
-      ((sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root)
-        .pullbackOldToWeakMultiCosetStageHom
+      ((sourceLiteralY1SelectedLocalHOldSkeleton src dst base A root).pullbackOldToWeakMultiCosetStageHom
           (sourceLiteralY1X2AllLocalQuotient src dst A)
           (allProperCosetFamily A)
           (sourceLiteralY1SelectedLocalHOld_admissible
@@ -266,8 +261,7 @@ theorem sourceLiteralY1SelectedLocal_rootedMultiCoset_injOn_of_cover
             src dst base A hcard root)
           ∅
           (empty_mem_allProperCosetFamily A
-            (Finset.card_pos.mp (by rw [hcard]; decide))))
-        .onVertex
+            (Finset.card_pos.mp (by rw [hcard]; decide)))).onVertex
           (sourceLiteralY1SelectedLocalGOld_identity
             src dst base A root)) :
     Set.InjOn
