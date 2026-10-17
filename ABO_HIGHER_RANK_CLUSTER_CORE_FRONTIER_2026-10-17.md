@@ -16,7 +16,7 @@ postmerge main run is not claimed where one had not yet completed.
 | [#684](https://github.com/shulda/lean_eppa_psts/pull/684) | Same global COMPONENT-TAGGED injection on **all actual oriented signed old/fresh edge tokens**, respecting missing old edges | [39054743768](https://github.com/shulda/lean_eppa_psts/actions/runs/39054743768) | `4dc5798` |
 | [#685](https://github.com/shulda/lean_eppa_psts/pull/685) | At **every parent rank**, true B-component dichotomy for every proper `B` with `|B|≤1`: one selected tagged full B-coset inside a C-copy with B⊆C, or isolated singleton | [39055907009](https://github.com/shulda/lean_eppa_psts/actions/runs/39055907009) | `9abeea0` |
 | [#686](https://github.com/shulda/lean_eppa_psts/pull/686) | For `|B|≤2`, any two outgoing actual signed B-edges of **different base letters** from a no-large (cluster-branch) B-component vertex have a common **nonempty tagged support** D with D∩B=∅ and D⊄B, at arbitrary parent rank | [39056422245](https://github.com/shulda/lean_eppa_psts/actions/runs/39056422245) | `bd9331f` |
-| [#687](https://github.com/shulda/lean_eppa_psts/pull/687) | For parent `|A|=3` and `|B|=2`, the tagged support D of each such transverse switching vertex can be chosen **exactly A\\B** (the unique missing-letter alphabet) | [39057023145](https://github.com/shulda/lean_eppa_psts/actions/runs/39057023145) | `f1bcb3e` |
+| [#687](https://github.com/shulda/lean_eppa_psts/pull/687) | For parent `|A|=3` and `|B|=2`, the tagged support D of each such transverse switching vertex can be chosen **exactly A\B** (the unique missing-letter alphabet) | [39057023145](https://github.com/shulda/lean_eppa_psts/actions/runs/39057023145) | `f1bcb3e` |
 
 The new mathematical files, imported from `PSTSEPPA.lean`, are:
 - `SourceLiteralY1TaggedFirstRankComponentAssembly.lean`
@@ -50,7 +50,7 @@ every higher-rank B-component:
    on an alphabet disjoint from B and **not empty**.
 3. If A has precisely three letters and B precisely two,
    the supporting alphabet at such a transition is
-   exactly the one-letter complement A\\B. Its intrinsic
+   exactly the one-letter complement A\B. Its intrinsic
    OLD-component tag is retained and is not equated with
    the tags at other transition vertices.
 
@@ -96,7 +96,7 @@ The next proof must go BEYOND individual switching vertices:
 > under precisely the lower-rank component embeddedness /
 > bridge-free premises of the ABO forward induction,
 > prove a **whole-component common-core / cluster decomposition**.
-> At |A|=3, |B|=2, understand how the canonical A\\B
+> At |A|=3, |B|=2, understand how the canonical A\B
 > support points and their true old component tags behave
 > along an actual B-word path, including the separate
 > *already-full-B-coset* R8 alternative.
