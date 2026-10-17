@@ -42,7 +42,7 @@ variable (K : CayleySubgraphSpec gen A)
 /-- The actual signed directed edge token is sent to its genuine
 Cayley signed edge, but with its intrinsically inherited parent
 A-component index retained as a first coordinate. -/
-def multiCosetComponentTaggedAmbientEdge
+noncomputable def multiCosetComponentTaggedAmbientEdge
     (P : CosetFamilySpec A)
     (hadm : K.AdmissibleForCosetExtension)
     (hgen : IsGenerated gen) (hret : Retractable gen)
