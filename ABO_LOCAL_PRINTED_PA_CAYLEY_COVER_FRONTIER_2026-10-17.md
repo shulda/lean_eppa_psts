@@ -1,3 +1,5 @@
+> **SUPERSEDED CHECKPOINT:** This file documents the post-#638 mathematical state. The now-authoritative 2026-10-17 first-rank rooted component/bridge frontier after independently certified and merged #646–#648 is [ABO_FIRST_RANK_ROOTED_COMPONENT_AND_SINGLETON_BRIDGE_FRONTIER_2026-10-17.md](ABO_FIRST_RANK_ROOTED_COMPONENT_AND_SINGLETON_BRIDGE_FRONTIER_2026-10-17.md). Preserve this older page as historical proof dependency/audit detail, not as the latest current-state summary.
+
 # 2026-10-17 — Corrected ABO first-rank TRUE printed P_A: post-#638 verified checkpoint
 
 ## Authoritative status and verification boundary
