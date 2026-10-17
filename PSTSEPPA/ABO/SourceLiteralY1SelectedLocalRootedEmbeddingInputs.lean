@@ -4,6 +4,7 @@ import PSTSEPPA.ABO.RootedSourceAllProperCompletedStageIso
 import PSTSEPPA.ABO.LocalGeneratedSubgroupIsGenerated
 import PSTSEPPA.ABO.KStablePullbackAdmissibility
 import PSTSEPPA.ABO.StandardCosetFamily
+import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalBComponentGraphEquiv
 
 /-!
 # The actual FIRST-RANK local G[A]→H[A] rooted embedding inputs
@@ -69,8 +70,7 @@ noncomputable abbrev sourceLiteralY1SelectedLocalHOldSkeleton
     (src dst : ι → V) (base : V)
     (A : Finset ι)
     (root : (sourceLiteralY1 src dst).transitionGroup) :=
-  ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-    .intrinsicComponentLocalSlice A
+  ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).intrinsicComponentLocalSlice A
       (⟨root, by trivial⟩ :
         ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)
 
@@ -162,8 +162,11 @@ noncomputable def sourceLiteralY1SelectedLocalHOld_identity
       src dst base A root).Vertex := by
   let K := (sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A
   let r : K.Vertex := ⟨root, by trivial⟩
-  obtain ⟨x, hx, _⟩ := K.intrinsicComponentLocal_identity_root A r
-  exact ⟨1, by simpa only [← hx] using x.2⟩
+  classical
+  let h := K.intrinsicComponentLocal_identity_root A r
+  let x := Classical.choose h
+  have hx : x.1 = 1 := (Classical.choose_spec h).1
+  exact ⟨1, hx ▸ x.2⟩
 
 @[simp] theorem sourceLiteralY1SelectedLocalHOld_identity_val
     (src dst : ι → V) (base : V)
