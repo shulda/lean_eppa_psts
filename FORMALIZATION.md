@@ -1,5 +1,26 @@
 # Formalization status
 
+## 2026-10-17 — Correction: distinguish ABO proof from Lean gap
+
+**The next task is FORMALIZATION of an already published and
+independently prose-audited proof, not mathematical discovery.**
+Source [ABO I](https://arxiv.org/pdf/2208.03273), Definition 3.22
+DEFINES whole-component cluster property; Proposition 3.23 ASSUMES it
+and proves connected intersections; **Lemma 4.3** proves the
+higher-rank cluster property under explicit lower-rank
+embeddedness/bridge-free/cluster assumptions; Theorem 4.5
+packages forward induction. The source Lemma 4.3 itself
+synchronizes minimum supports over intersecting maximal
+constituents, using retractability, (3.11)/(3.12), Lemma 3.21
+and Corollary 3.12. The paper's proof is **not an open problem**.
+
+"OPEN" or "missing" below refers ONLY to absent, or not yet
+fully audited, Lean proofs. PRs #685–#687 are ancillary
+local lemmas; they are NOT a replacement for the source's
+complete minimum-support synchronization. See the corrected
+[ABO source-aligned proof plan](ABO_HIGHER_RANK_CLUSTER_CORE_FRONTIER_2026-10-17.md)
+and preserve the audited local repairs R1–R8.
+
 ## 2026-10-17 — Certified higher-rank cluster-core progress (after PR #687)
 
 Accepted mathematical `main` cutoff: `f1bcb3e1c921b52e5e156b0e584b33bfcb1fb2f2`.
