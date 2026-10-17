@@ -273,6 +273,7 @@ import PSTSEPPA.ABO.RootedSourceMultiCosetCompletedEGraphIso
 import PSTSEPPA.ABO.SourceH1OriginalRankTwoRawTargetCongruence
 import PSTSEPPA.ABO.RootedLocalCosetPairedLabels
 import PSTSEPPA.ABO.RootedSourceAllProperCompletedStageIso
+import PSTSEPPA.ABO.RootedLocalCompletedPAOldVertexNaturality
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
 import PSTSEPPA.ABO.RootedOffCosetAugmentationIndexEquiv
 import PSTSEPPA.ABO.RootedSourceType2CatalogueIndex
