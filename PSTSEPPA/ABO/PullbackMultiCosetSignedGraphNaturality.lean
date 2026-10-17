@@ -84,7 +84,7 @@ theorem pullbackQuotient_multiCosetRawEdge_source_natural
   change K.multiCosetInclude P hAdmH hGenH hRetH B hBP
         ((K.singleCosetEGraph B).source (F.onEdge e)) =
       K.multiCosetInclude P hAdmH hGenH hRetH B hBP
-        (F.onVertex ((K.pullbackQuotient Q).singleCosetEGraph B |>.source e))
+        (F.onVertex (((K.pullbackQuotient Q).singleCosetEGraph B).source e))
   exact congrArg
     (K.multiCosetInclude P hAdmH hGenH hRetH B hBP)
     (F.map_source e)
@@ -227,7 +227,7 @@ noncomputable def pullbackQuotient_multiCosetSignedHom
       rcases raw with ⟨⟨B, hBP⟩, e⟩
       let F := K.pullbackQuotient_singleCosetHom Q B
       change K.multiCosetEdgeInclude P hAdmH hGenH hRetH
-          B hBP (F.onEdge ((K.pullbackQuotient Q).singleCosetEGraph B |>.inv e)) =
+          B hBP (F.onEdge (((K.pullbackQuotient Q).singleCosetEGraph B).inv e)) =
         K.multiCosetEdgeInclude P hAdmH hGenH hRetH
           B hBP ((K.singleCosetEGraph B).inv (F.onEdge e))
       exact congrArg
