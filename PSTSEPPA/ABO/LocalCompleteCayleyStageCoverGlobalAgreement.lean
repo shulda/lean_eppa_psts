@@ -77,10 +77,11 @@ theorem localGeneratedCayleyStageHom_vertex_eq_global
     (u : V) (x : generatedSubgroup gen A) :
     (T.localGeneratedCayleyStageHom Q A hOutside u).onVertex x =
       (T.cayleyProjectionFromGroup gen Q.hom Q.map_gen u).onVertex x.1 := by
-  rw [T.localGeneratedCayleyStageHom,
-      T.cayleyProjectionFromGroup_onVertex,
-      T.cayleyProjectionFromGroup_onVertex,
-      T.localGeneratedStageTransitionHom_apply Q A x]
+  change
+    T.canonicalVertex u (T.localGeneratedStageTransitionHom Q A x) =
+      T.canonicalVertex u (Q.hom x.1)
+  exact congrArg (T.canonicalVertex u)
+    (T.localGeneratedStageTransitionHom_apply Q A x)
 
 /-- Equality extends to EVERY FORMAL directed signed edge
 token (x,s), even when its signed letter is outside A
@@ -95,10 +96,12 @@ theorem localGeneratedCayleyStageHom_edge_eq_global
     (T.localGeneratedCayleyStageHom Q A hOutside u).onEdge e =
       (T.cayleyProjectionFromGroup gen Q.hom Q.map_gen u).onEdge
         ((e.1 : Γ), e.2) := by
-  rw [T.localGeneratedCayleyStageHom,
-      T.cayleyProjectionFromGroup_onEdge,
-      T.cayleyProjectionFromGroup_onEdge,
-      T.localGeneratedStageTransitionHom_apply Q A e.1]
+  change
+    T.canonicalEdge u (T.localGeneratedStageTransitionHom Q A e.1, e.2) =
+      T.canonicalEdge u (Q.hom e.1.1, e.2)
+  exact congrArg
+    (fun z : T.transitionGroup => T.canonicalEdge u (z, e.2))
+    (T.localGeneratedStageTransitionHom_apply Q A e.1)
 
 end CompleteEGraph
 
