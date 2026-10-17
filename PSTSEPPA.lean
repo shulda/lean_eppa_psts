@@ -336,6 +336,7 @@ import PSTSEPPA.ABO.SourceLiteralY1SelectedRootPlainOutsideASupport
 import PSTSEPPA.ABO.SourceLiteralY1SelectedRootFullLocalCayleyCover
 import PSTSEPPA.ABO.SourceLiteralY1OldPathLocalStageAgreement
 import PSTSEPPA.ABO.SourceLiteralY1OldRootTaggedStageInclusion
+import PSTSEPPA.ABO.SourceLiteralY1OldGToTaggedHCompatibility
 import PSTSEPPA.ABO.AllProperCosetEdgeSupport
 import PSTSEPPA.ABO.IsolatedCosetOutsideSupport
 import PSTSEPPA.ABO.RankTwoType2OutsideAlphabet
