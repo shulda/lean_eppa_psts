@@ -101,7 +101,8 @@ pullback is explicitly NOT assumed to be one component.
 theorem sourceLiteralY1SelectedLocal_everyOldRootProperBridgeReflection
     (src dst : ι → V) (base : V)
     (A : Finset ι) (hcard : A.card = 2)
-    (root : (sourceLiteralY1 src dst).transitionGroup) :
+    (root : (sourceLiteralY1 src dst).transitionGroup)
+    (r : (sourceLiteralY1SelectedLocalGOldPullback src dst base A root).Vertex) :
     (sourceLiteralY1SelectedLocalGOldPullback
       src dst base A root).RootedProperBridgeReflection
         (sourceLiteralY1SelectedLocalGOld_admissible
