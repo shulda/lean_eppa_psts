@@ -92,7 +92,9 @@ theorem pullbackQuotient_attachedCosetToBase_lift_at_value
         B (K.componentClass B y) := by
       simpa only [hy] using q.2.2
     change q.2.1 ∈ generatedLeftCoset genΔ B y.1 at hq
-    simpa only [hg] using hq
+    rw [hg]
+    change q.2.1 ∈ generatedLeftCoset genΔ B y.1
+    exact hq
   have hyBack : y.1 ∈ generatedLeftCoset genΔ B (Q.hom g) := by
     have hSame := generatedLeftCoset_eq_of_mem genΔ B hqB
     rw [← hSame]
