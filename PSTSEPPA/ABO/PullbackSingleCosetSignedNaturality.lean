@@ -79,7 +79,6 @@ noncomputable def pullbackQuotient_outsideEdgeToBase
     (e : (K.pullbackQuotient Q).OutsideEdge B) :
     K.OutsideEdge B :=
   ⟨(K.pullbackQuotientHom Q).onEdge e.1, by
-    change signedBase e.1.1.2 ∉ B at e
     exact e.2⟩
 
 /-- The entire signed single-B EGraph map, including ALL actual
