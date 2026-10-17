@@ -67,6 +67,7 @@ import PSTSEPPA.ABO.IsolatedCosetOldBCompletedWords
 import PSTSEPPA.ABO.IsolatedCosetCompletion
 import PSTSEPPA.ABO.IsolatedCosetCompletedBOrbitDetector
 import PSTSEPPA.ABO.AugmentedOldComponentCayleyAgreement
+import PSTSEPPA.ABO.AugmentedOldRootedSinglePathDetector
 import PSTSEPPA.ABO.IsolatedCosetDisjointPaths
 import PSTSEPPA.ABO.AugmentedClusterReflection
 import PSTSEPPA.ABO.AugmentedComponentSlices
