@@ -59,8 +59,7 @@ noncomputable def sourceLiteralY1SelectedRootPlainToNormalizedHLocalHom
     LabelledGraphHom
       (sourceLiteralY1SelectedRootPlainCompleteStage
         src dst base A hcard root).toEGraph.toLabelledGraph
-      (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-        .rootedLocalAllProperCompletedStage A hcard
+      (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).rootedLocalAllProperCompletedStage A hcard
           (sourceLiteralY1_transitionTwoRetractable src dst)
           (⟨root, by trivial⟩ :
             ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)
@@ -120,8 +119,7 @@ noncomputable def sourceLiteralY1X2AllSelectedRootNormalizedLocalHStageHom
     LabelledGraphHom
       (cayleyGraph (trivialCompletionGenerator
         (sourceLiteralY1X2AllGenerator src dst) A)).toEGraph.toLabelledGraph
-      (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A)
-        .rootedLocalAllProperCompletedStage A hcard
+      (((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).rootedLocalAllProperCompletedStage A hcard
           (sourceLiteralY1_transitionTwoRetractable src dst)
           (⟨root, by trivial⟩ :
             ((sourceLiteralY1DirectOriginalSkeleton src dst base).restrictAlphabet A).Vertex)
