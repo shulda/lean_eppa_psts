@@ -103,7 +103,7 @@ theorem sourceLiteralY1X2AllSelectedRoot_oldAComponent_allEdges_tagged
       ((sourceLiteralY1X2AllOriginalSkeleton src dst base).toEGraph).source e = x)
     (heA :
       signedBase
-        ((sourceLiteralY1X2AllOriginalSkeleton src dst base).toEGraph).label e ∈ A) :
+        (((sourceLiteralY1X2AllOriginalSkeleton src dst base).toEGraph).label e) ∈ A) :
     ∃ (z : generatedSubgroup (sourceLiteralY1X2AllGenerator src dst) A)
       (y : (sourceLiteralY1DirectRootComponent src dst base A root).Vertex)
       (eH : (sourceLiteralY1DirectRootComponent src dst base A root).Edge),
