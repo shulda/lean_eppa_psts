@@ -88,8 +88,9 @@ theorem pullbackQuotient_attachedCosetToBase_lift_at_value
   let L := K.pullbackQuotient Q
   obtain ⟨y, hy⟩ := K.componentClass_surjective B q.1
   have hqB : Q.hom g ∈ generatedLeftCoset genΔ B y.1 := by
-    have hq := q.2.2
-    rw [← hy] at hq
+    have hq : q.2.1 ∈ K.componentAmbientCoset
+        B (K.componentClass B y) := by
+      simpa only [hy] using q.2.2
     change q.2.1 ∈ generatedLeftCoset genΔ B y.1 at hq
     simpa only [hg] using hq
   have hyBack : y.1 ∈ generatedLeftCoset genΔ B (Q.hom g) := by
@@ -158,8 +159,8 @@ theorem pullbackQuotient_multiCosetToBase_reflect_full_B
       have hQval : Q.hom p.2.1 = K.attachedValue B q := by
         have hv := congrArg
           (K.multiCosetAmbientValue P hAdmH hGenH hRetH) hImage
-        simpa only [K.multiCosetAmbientValue_include,
-          K.pullbackQuotient_attachedCosetToBase_value] using hv
+        change Q.hom p.2.1 = K.attachedValue B q at hv
+        exact hv
       obtain ⟨pB, hpBval, hpBimage⟩ :=
         K.pullbackQuotient_attachedCosetToBase_lift_at_value
           Q B q p.2.1 hQval
