@@ -103,8 +103,7 @@ theorem multiCoset_trivialCompletion_outside_A_fixes
       hpaired).target
       (((K.multiCosetEGraph P hadm hgen hret).trivialLoopCompletion
         hpaired).edgeAt u s) = u := by
-  exact (K.multiCosetEGraph P hadm hgen hret).
-    trivialLoopCompletion_outside_label_fixes
+  exact (K.multiCosetEGraph P hadm hgen hret).trivialLoopCompletion_outside_label_fixes
       A
       (K.multiCosetEGraph_label_mem_parent
         P hadm hgen hret)
