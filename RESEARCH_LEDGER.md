@@ -1,6 +1,30 @@
 # Research / formalization ledger
 
 
+## 2026-10-17 — Critical source/Lean status correction
+
+We are FORMALIZING the published ABO I proof, with local repairs
+R1–R8 from the October-7 prose audit, not researching whether
+its claimed geometry is true. **ABO Definition 3.22** defines
+whole-component cluster property; **Proposition 3.23 ASSUMES**
+it and derives intrinsic component intersections; **Lemma 4.3
+PROVES** it for higher parent rank from lower embeddedness,
+bridge-freeness and cluster property. The published proof
+already synchronizes minimum supports of intersecting
+constituent patches: minimal constituent cover, lower
+embedded extensions, support transport, retractability /
+word restriction, pairwise overlap, then induction to
+a common core, followed by Corollary 3.12 (PDF pp.35–38).
+The previous checkpoint's phrase "Unsolved mathematical theorem"
+and its attribution of cluster property to Prop. 3.23
+were incorrect; they were fixed in the current frontier
+document.
+
+The gaps below mean **UNFORMALIZED IN LEAN**, not unknown
+mathematics. New PRs #685–#687 are optional local source-compatible
+lemmas but must not distract from literal Lemma-4.3 translation.
+See [corrected source-aligned plan](ABO_HIGHER_RANK_CLUSTER_CORE_FRONTIER_2026-10-17.md).
+
 ## 2026-10-17 — First higher-rank common-core and single-letter dichotomy
 
 Post #682 accepted mathematical source baseline supplemented by fully

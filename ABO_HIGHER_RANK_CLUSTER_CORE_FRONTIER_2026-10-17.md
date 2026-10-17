@@ -80,39 +80,99 @@ The separate
 also prohibits assuming that a merely generated/retractable
 ambient Cayley graph covers every completed coset extension.
 
-## Unsolved mathematical theorem, and recommended next gate
+## Corrected status: SOURCE-PROVED, NOT YET LEAN-FORMALIZED
 
-**Still OPEN:** the full ORIGINAL ABO Proposition 3.23
-whole-component cluster property and higher-rank Lemma 4.3,
-corrected Theorem 4.7(iii) beyond rank one, Condition 5.2,
-exact equivariant Definition 5.3 historical Y_k/Z_k stages,
-finite reflecting group, concrete fibre-MAX, and unconditional
-ordinary EPPA for closed finite PSTS.
+**Critical correction (17 October 2026):** The previous heading
+"Unsolved mathematical theorem" and the description
+"Proposition 3.23 whole-component cluster property" were WRONG.
+The objective is to translate the **existing ABO proof**, not discover
+a new proof of an alleged open mathematical problem. The October-7
+independent prose audit classified the corrected construction
+as **verified with local repairs R1–R8**; this is a human/AI
+mathematical-audit verdict, **not** a Lean certificate of those
+still-unformalized statements.
 
-The next proof must go BEYOND individual switching vertices:
+Exact source distinctions ([ABO I, arXiv:2208.03273v6](https://arxiv.org/pdf/2208.03273)):
 
-> For a no-large original off-skeleton B-component
-> assembled from actual strictly smaller (B∩C)-patches,
-> under precisely the lower-rank component embeddedness /
-> bridge-free premises of the ABO forward induction,
-> prove a **whole-component common-core / cluster decomposition**.
-> At |A|=3, |B|=2, understand how the canonical A\B
-> support points and their true old component tags behave
-> along an actual B-word path, including the separate
-> *already-full-B-coset* R8 alternative.
+- **Definition 3.22 (PDF p.31):** defines whole-component
+  cluster property, including both genuine cluster and full-coset
+  alternatives and the minimum support attained at a core vertex.
+- **Proposition 3.23 (PDF p.31–33):** ASSUMES the cluster
+  property and proves that intersections of intrinsic B-
+  and C-components are (B∩C)-components.
+  It does NOT prove the cluster property.
+- **Lemma 4.3 (PDF p.35–38):** PROVES the next-rank
+  cluster property under precisely stated embeddedness,
+  bridge-freeness and cluster-property assumptions on
+  lower-rank component extensions.
+- **Proposition 4.4 / Theorem 4.5 (PDF p.38–39):** rank-two
+  base and general forward-induction consequence.
+- **Theorem 4.7 (PDF p.39–43):** upward-induction package.
+  Preserve source audit repairs R1 (retractability consequence),
+  R7 (index typo), R8 (off-skeleton full-B-coset alternative).
+- **Proposition 3.24 / Condition 5.2 / Proposition 5.4:**
+  subsequent established source proof ingredients, with
+  separate base/domain repairs R2–R3.
 
-Do NOT assume the c-component tags at distinct switching
-vertices are equal solely from ambient G[B]-coset equality,
-and do NOT use the rank-two singleton lemma beyond |B|≤1.
-A true full-B-coset component might be assembled from several
-lower constituents even when it is not a selected B-constituent.
+**Precise formalization plan: follow ABO Lemma 4.3 as written,
+not a new switching-vertex research program.**
 
-The full-constituent R8 case already has an independently
-Lean-checked source repair in
+1. Take an off-skeleton intrinsic B-component `Q` of the
+   genuine signed full `CE(H,L;P_A)`. Classify its case of
+   containment in a single maximal tagged constituent; this is
+   the full-coset alternative, not the multi-piece cluster case.
+2. Otherwise choose a MINIMAL cover of `Q` by genuinely
+   maximal constituent cosets `v_i H[A_i]` and set
+   `B_i = Q ∩ v_i H[A_i]`. Prove each nonempty `B_i`
+   has a genuine support with alphabet of size < |A_i|.
+3. Apply the **induction assumptions** to the actual lower-rank
+   embedded and bridge-free `CE(H,A_i;P_{A_i})`:
+   the portion of `B_i` in it is an intrinsic connected
+   component and inherits a unique minimum support `(D_i,u_i)`
+   from its lower-rank cluster property. Transfer this support
+   to the original upper extension with original-component
+   tags unchanged.
+4. For two intersecting `B_i,B_j`, use source (3.11),
+   (3.12), Lemma 3.21, and **retractability / deletion of
+   letters outside D** to prove the minimal supports agree
+   (including their genuine tagged coset), attained in the
+   intersection. This is the NONTRIVIAL synchronization
+   argument in the published proof (PDF pp.36–37).
+5. Induct along the finite connected family of constituents:
+   obtain a single minimum tagged support attained in the
+   common core. Identify the union of maximal constituents
+   as an A-cluster and apply Corollary 3.12 for the B-cluster
+   representation. The source provides these steps explicitly.
+6. Apply the result to Theorem 4.5 and only thereafter
+   formalize the off-skeleton cases of conditional Proposition
+   3.23 and the Proposition 3.24 augmented classification
+   and corrected upward Theorem 4.7. Carry the exact
+   Section-5 stage histories and Condition 5.2 subsequently.
+
+**What is currently OPEN means only "not yet checked by Lean":**
+the whole Lemma-4.3 argument and corresponding general
+cluster property, conditional full Proposition 3.23,
+Proposition 3.24, higher Theorem 4.7, Condition 5.2,
+exact equivariant Definition-5.3 stage selection,
+finite reflecting group, concrete fibre-MAX and
+the final ordinary PSTS EPPA theorem. No new mathematical
+conjecture is implied.
+
+**Interpretation of PRs #685–#687:** they are valid
+Lean-certified auxiliary **local** observations, not the
+source's whole-component minimum-support synchronization
+argument; they should no longer drive the proof plan.
+PRs #683–#684 are useful tagged-component APIs but do not
+replace full source embeddedness. The rank-three C₂³
+example remains a falsification check against incorrectly
+extending the singleton case to |B|=2.
+
+The R8 full-constituent repair already has separately
+checked source-facing formalization in
 `PSTSEPPA/ABO/CorrectedR8FullCosetOneConstituent.lean`.
-The first-rank rooted source B-bridge reflection for EVERY
-original old A-component is already certified in
+First-rank rooted source B-bridge reflection at every original
+old A-root is independently certified in
 `PSTSEPPA/ABO/SourceLiteralY1EveryOldRootProperBridgeReflection.lean`.
-Neither substitutes for the higher-rank cluster case.
+Neither proves the higher-rank induction by itself.
 
-No user decision is needed to continue from this checkpoint.
+No user decision is needed to resume the known ABO proof translation.
