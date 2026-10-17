@@ -1,5 +1,23 @@
 # Formalization status
 
+## 2026-10-17 — Certified higher-rank cluster-core progress (after PR #687)
+
+Accepted mathematical `main` cutoff: `f1bcb3e1c921b52e5e156b0e584b33bfcb1fb2f2`.
+**Formalized** with independent exact-head full Lean / 256 genuine signed
+original-input regression / allowed-axioms CI green: #683–#684 global
+component-TAGGED true first-rank vertex and oriented signed-edge injections;
+#685 rank-INDEPENDENT genuine |B|≤1 full-C-coset-or-singleton
+B-component dichotomy; #686 genuinely tagged nonempty outside-B core
+for transverse B-labelled original edges with |B|≤2 at ANY parent
+rank; and #687 canonical A\B one-letter support at every
+transverse two-letter B-step vertex when |A|=3.
+
+**Not formalized**: whole-component coherence of these local cores,
+general Proposition 3.23 / Lemma 4.3, higher Theorem 4.7,
+Condition 5.2, reflecting group / concrete fibre-MAX, PSTS EPPA.
+See [exact theorem names, verified runs, counterexample and next gate](ABO_HIGHER_RANK_CLUSTER_CORE_FRONTIER_2026-10-17.md).
+
+
 This file is the live map from the mathematical proof plan to Lean.
 A statement is called **Formalized** only after the corresponding declaration
 is on `main` and GitHub Actions is green.

@@ -1,5 +1,35 @@
 # Research / formalization ledger
 
+
+## 2026-10-17 — First higher-rank common-core and single-letter dichotomy
+
+Post #682 accepted mathematical source baseline supplemented by fully
+Lean-certified and merged #683–#687, accepted `main` `f1bcb3e`.
+True original signed first-rank multiCE is globally embedded in
+**(old A-component tag, local G[A] group coordinate)**, on both
+vertices and oriented signed edge tokens; *untagged* global
+injectivity across distinct original old A-components is not asserted.
+
+Higher-rank new facts: for ANY parent rank, a genuine |B|≤1
+B-component is either a tagged full B-coset inside a selected
+C⊇B or a singleton (#685). For the first genuinely hard
+|B|≤2 cluster branch without C⊇B support, two distinct
+outgoing signed B-letters from a B-reachable point force
+an actual nonempty common tagged support D disjoint from B
+(#686). For |A|=3, |B|=2 this support alphabet is
+**exactly A\B**, the unique missing letter (#687).
+Independent exact-head CI runs and exact declarations are
+recorded in [ABO_HIGHER_RANK_CLUSTER_CORE_FRONTIER_2026-10-17.md](ABO_HIGHER_RANK_CLUSTER_CORE_FRONTIER_2026-10-17.md).
+
+Do not conflate these local cores with the still OPEN
+whole-B-component common-core/cluster shape; do not infer
+equality of component tags across different switch vertices.
+The C₂³ old-singleton K benchmark has the genuine off-skeleton
+three-vertex B-cluster {c,ac,bc}. Higher-rank Lemma 4.3,
+corrected Theorem 4.7, Condition 5.2, Definition 5.3 stage
+history and final PSTS EPPA are NOT yet proved.
+
+
 This ledger records proof-engineering decisions that matter mathematically.
 It is intentionally stricter than ordinary implementation notes.
 
