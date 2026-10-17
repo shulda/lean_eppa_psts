@@ -1,4 +1,4 @@
-import PSTSEPPA.ABO.MultiCosetEGraph
+import PSTSEPPA.ABO.AllProperCosetEdgeSupport
 import PSTSEPPA.ABO.TrivialCompletionOutsideSupport
 import PSTSEPPA.ABO.StandardCosetFamily
 
@@ -46,24 +46,6 @@ variable {gen : ι → Γ} {A : Finset ι}
 
 namespace CayleySubgraphSpec
 
-/-- An OLD (outside-B) edge belongs to the actual
-original A-skeleton; a FRESH (inside-B) coset
-edge uses a label in B⊆A. Hence the true signed
-edge alphabet of each single-B constituent lies
-inside the parent A, with both signs preserved. -/
-theorem singleCosetEdge_label_mem_parent
-    (K : CayleySubgraphSpec gen A)
-    (B : Finset ι) (hBA : B ⊆ A)
-    (e : K.SingleCosetEdge B) :
-    signedBase ((K.singleCosetEGraph B).label e) ∈ A := by
-  cases e with
-  | inl e =>
-      change signedBase e.1.1.2 ∈ A
-      exact K.label_mem e.1.1 e.1.2
-  | inr e =>
-      change signedBase e.2.1 ∈ A
-      exact hBA e.2.2
-
 /-- After quotienting ALL component-tagged raw
 B-constituent signed edges by their ACTUAL
 glued source and FULL signed label, every
@@ -81,7 +63,7 @@ theorem multiCosetEGraph_label_mem_parent
   induction e using Quotient.inductionOn with
   | h raw =>
       rcases raw with ⟨B, edge⟩
-      change signedBase ((K.singleCosetEGraph B.1).label edge) ∈ A
+      change signedBase (K.singleCosetLabel B.1 edge) ∈ A
       exact K.singleCosetEdge_label_mem_parent
         B.1 (P.proper B.1 B.2).subset edge
 
