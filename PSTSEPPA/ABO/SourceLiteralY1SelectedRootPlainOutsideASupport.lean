@@ -51,8 +51,7 @@ theorem sourceLiteralY1SelectedRootRawGraph_label_mem_parent
   rcases e with ⟨⟨B, hBP⟩, edge⟩
   change signedBase
     (((sourceLiteralY1DirectRootComponent src dst base A root).singleCosetEGraph B).label edge) ∈ A
-  exact (sourceLiteralY1DirectRootComponent src dst base A root).
-    singleCosetEdge_label_mem_parent B (P.proper B hBP).subset edge
+  exact (sourceLiteralY1DirectRootComponent src dst base A root).singleCosetEdge_label_mem_parent B (P.proper B hBP).subset edge
 
 /-- The actual full source+signed-label edge quotient of
 the original printed P_A extension has NO real
@@ -88,8 +87,7 @@ theorem sourceLiteralY1SelectedRootPlain_outside_A_fixes
       ((sourceLiteralY1SelectedRootPlainCompleteStage
         src dst base A hcard root).edgeAt u s) = u := by
   exact (sourceLiteralY1SelectedRootCompletedEGraph
-    src dst base A hcard root (allProperCosetFamily A)).
-      trivialLoopCompletion_outside_label_fixes
+    src dst base A hcard root (allProperCosetFamily A)).trivialLoopCompletion_outside_label_fixes
       A (sourceLiteralY1SelectedRootCompletedEGraph_label_mem_parent
         src dst base A hcard root (allProperCosetFamily A))
       (sourceLiteralY1SelectedRootAllProper_locallyPaired
