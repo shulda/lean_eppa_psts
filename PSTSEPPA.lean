@@ -275,6 +275,7 @@ import PSTSEPPA.ABO.RootedLocalCosetPairedLabels
 import PSTSEPPA.ABO.RootedSourceAllProperCompletedStageIso
 import PSTSEPPA.ABO.RootedLocalCompletedPAOldVertexNaturality
 import PSTSEPPA.ABO.SourceLiteralY1NormalizedOldRootAnchorAgreement
+import PSTSEPPA.ABO.SourceLiteralY1SelectedLocalRootedAmbientEmbedding
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
 import PSTSEPPA.ABO.RootedOffCosetAugmentationIndexEquiv
 import PSTSEPPA.ABO.RootedSourceType2CatalogueIndex
