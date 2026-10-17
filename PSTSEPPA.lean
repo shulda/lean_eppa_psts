@@ -111,6 +111,7 @@ import PSTSEPPA.ABO.SourceLiteralY1SelectedRootPlainOldAnchorCover
 import PSTSEPPA.ABO.LocalSignedACayleyRootedStageCover
 import PSTSEPPA.ABO.SourceLiteralY1X2AllOriginalBComponentGraphEquiv
 import PSTSEPPA.ABO.PullbackAttachedCosetSupportTransport
+import PSTSEPPA.ABO.PullbackMultiCosetTaggedVertexNaturality
 import PSTSEPPA.ABO.KStablePullbackCommonSupportLift
 import PSTSEPPA.ABO.PullbackAttachedCosetSupportReflection
 import PSTSEPPA.ABO.KStablePullbackMultiCosetEmbedding
