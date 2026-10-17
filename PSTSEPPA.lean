@@ -281,6 +281,7 @@ import PSTSEPPA.ABO.SourceLiteralY1NormalizedOldRootAnchorAgreement
 import PSTSEPPA.ABO.SourceLiteralY1SelectedLocalRootedAmbientEmbedding
 import PSTSEPPA.ABO.SourceLiteralY1RootedBridgeTagObstruction
 import PSTSEPPA.ABO.RootedMultiCosetAComponentExact
+import PSTSEPPA.ABO.RootedFullBConstituentSaturation
 import PSTSEPPA.ABO.RootedSourceOffCosetIndexEquiv
 import PSTSEPPA.ABO.RootedOffCosetAugmentationIndexEquiv
 import PSTSEPPA.ABO.RootedSourceType2CatalogueIndex
