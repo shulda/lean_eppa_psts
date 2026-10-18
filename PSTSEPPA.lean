@@ -232,6 +232,7 @@ import PSTSEPPA.ABO.Definition322WholeComponentMinimalSupport
 import PSTSEPPA.ABO.Lemma43LowerTaggedSupportNaturality
 import PSTSEPPA.ABO.Lemma43LowerMinimumSupportImageTransfer
 import PSTSEPPA.ABO.Lemma43ProperSupportedSliceBridgeLift
+import PSTSEPPA.ABO.Lemma43EntireUpperCosetSliceMinimalSupport
 import PSTSEPPA.ABO.MultiCosetMinimalSupportPaths
 import PSTSEPPA.ABO.MultiCosetSupportSkeletonMeet
 import PSTSEPPA.ABO.MultiCosetComponentSupportInvariant
