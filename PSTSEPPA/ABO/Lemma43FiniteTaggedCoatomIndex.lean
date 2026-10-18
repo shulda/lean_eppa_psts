@@ -92,7 +92,10 @@ ORIGINAL component-tagged selected proper constituent identities. -/
 theorem finite_properCosetTag
     [Finite Γ] : Finite K.ProperCosetTag := by
   classical
-  unfold ProperCosetTag ComponentIndex
+  letI (C : Finset ι) : Finite (K.ComponentIndex C) := by
+    unfold CayleySubgraphSpec.ComponentIndex
+    infer_instance
+  unfold ProperCosetTag
   infer_instance
 
 /-- For finite Γ, the actual ORIENTED SIGNED old+fresh edge-token
@@ -105,9 +108,20 @@ theorem finite_allProper_signed_edge_tokens
     Finite (K.MultiCosetEdgeVertexIncidenceQuotient
       (allProperCosetFamily A) hadm hgen hret) := by
   classical
-  unfold MultiCosetEdgeVertexIncidenceQuotient MultiCosetRawEdge
-    SingleCosetEdge OutsideEdge CosetEdge ComponentIndex
-    AttachedCosetVertex
+  letI (C : Finset ι) : Finite (K.ComponentIndex C) := by
+    unfold CayleySubgraphSpec.ComponentIndex
+    infer_instance
+  letI (C : Finset ι) : Finite (K.AttachedCosetVertex C) := by
+    unfold CayleySubgraphSpec.AttachedCosetVertex
+    infer_instance
+  haveI : Finite (K.MultiCosetRawEdge (allProperCosetFamily A)) := by
+    unfold CayleySubgraphSpec.MultiCosetRawEdge
+      CayleySubgraphSpec.SingleCosetEdge
+      CayleySubgraphSpec.OutsideEdge CayleySubgraphSpec.CosetEdge
+    infer_instance
+  change Finite (Quotient
+    (K.multiCosetRawEdgeSetoid (allProperCosetFamily A)
+      hadm hgen hret))
   infer_instance
 
 /-- Every TRUE quotient vertex has an original-tagged coatom
