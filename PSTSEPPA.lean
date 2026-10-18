@@ -252,6 +252,7 @@ import PSTSEPPA.ABO.Lemma43CommonOriginalSkeletonAnchor
 import PSTSEPPA.ABO.Lemma43ClusterVertexImage
 import PSTSEPPA.ABO.Lemma43CommonAnchorFaithfulCosetGluing
 import PSTSEPPA.ABO.Lemma43WholeComponentAmbientFaithful
+import PSTSEPPA.ABO.Lemma43WholeComponentSignedEdgeFaithful
 import PSTSEPPA.ABO.Lemma43OffFullComponentInductiveMinimum
 import PSTSEPPA.ABO.Lemma43TaggedSliceBInterCPaths
 import PSTSEPPA.ABO.Lemma43IntersectingTaggedSlicesMinimaAgree
