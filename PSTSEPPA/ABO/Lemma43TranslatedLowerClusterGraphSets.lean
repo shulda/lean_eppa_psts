@@ -103,6 +103,8 @@ theorem activeTaggedLowerCluster_vertex_iff
   · rintro ⟨D, hD, hg⟩
     obtain ⟨t, ht, hEq⟩ := Finset.mem_image.mp hD
     refine ⟨t, ht, ?_⟩
+    change core⁻¹ * g ∈ generatedSubgroup gen
+      (B ∩ K.properCosetTagAlphabet t)
     simpa only [hEq] using hg
   · rintro ⟨t, ht, hg⟩
     exact ⟨B ∩ K.properCosetTagAlphabet t,
@@ -142,8 +144,11 @@ theorem activeTaggedLowerCluster_edge_iff
   · rintro ⟨D, hD, hg, hs⟩
     obtain ⟨t, ht, hEq⟩ := Finset.mem_image.mp hD
     refine ⟨t, ht, ?_, ?_⟩
-    · simpa only [hEq] using hg
-    · simpa only [hEq] using hs
+    · change core⁻¹ * g ∈ generatedSubgroup gen
+        (B ∩ K.properCosetTagAlphabet t)
+      simpa only [hEq] using hg
+    · change signedBase s ∈ B ∩ K.properCosetTagAlphabet t
+      simpa only [hEq] using hs
   · rintro ⟨t, ht, hg, hs⟩
     exact ⟨B ∩ K.properCosetTagAlphabet t,
       Finset.mem_image.mpr ⟨t, ht, rfl⟩, hg, hs⟩
