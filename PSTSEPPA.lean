@@ -250,6 +250,7 @@ import PSTSEPPA.ABO.Lemma43FiniteActiveCoatomCover
 import PSTSEPPA.ABO.Lemma43FiniteCoatomWholeComponentMinimum
 import PSTSEPPA.ABO.Lemma43CommonOriginalSkeletonAnchor
 import PSTSEPPA.ABO.Lemma43CommonAnchorFaithfulCosetGluing
+import PSTSEPPA.ABO.Lemma43WholeComponentAmbientFaithful
 import PSTSEPPA.ABO.Lemma43OffFullComponentInductiveMinimum
 import PSTSEPPA.ABO.Lemma43TaggedSliceBInterCPaths
 import PSTSEPPA.ABO.Lemma43IntersectingTaggedSlicesMinimaAgree
