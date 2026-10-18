@@ -240,6 +240,7 @@ import PSTSEPPA.ABO.Lemma43OverlapWitnessByRetraction
 import PSTSEPPA.ABO.Lemma43TaggedSliceOverlapByDeletion
 import PSTSEPPA.ABO.Lemma43TaggedSliceBInterCPaths
 import PSTSEPPA.ABO.Lemma43SignedEdgeCoverConnectivity
+import PSTSEPPA.ABO.Lemma43LocalSliceEdgeCoverConnectivity
 import PSTSEPPA.ABO.Lemma43IntersectingTaggedSlicesMinimaAgree
 import PSTSEPPA.ABO.Lemma43MinimumWitnessPropagation
 import PSTSEPPA.ABO.Lemma43PairwiseTaggedMinimaFromSourcePaths
