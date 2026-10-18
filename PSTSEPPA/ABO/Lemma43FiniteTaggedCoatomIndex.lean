@@ -127,9 +127,13 @@ theorem finite_allProper_signed_edge_tokens
       Finite.of_injective
         (fun s : {s : SignedLabel ι // signedBase s ∈ C} => s.1)
         (fun _ _ h => Subtype.ext h)
-    change Finite
-      (K.AttachedCosetVertex C × {s : SignedLabel ι // signedBase s ∈ C})
-    infer_instance
+    letI : Fintype (K.AttachedCosetVertex C) := Fintype.ofFinite _
+    letI : Fintype {s : SignedLabel ι // signedBase s ∈ C} :=
+      Fintype.ofFinite _
+    exact Fintype.finite
+      (inferInstance :
+        Fintype (K.AttachedCosetVertex C ×
+          {s : SignedLabel ι // signedBase s ∈ C}))
   letI : Finite (K.MultiCosetRawEdge P) := by
     change Finite (Σ b : {B : Finset ι // B ∈ P.alphabets},
       K.SingleCosetEdge b.1)
