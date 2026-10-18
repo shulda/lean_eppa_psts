@@ -92,11 +92,12 @@ ORIGINAL component-tagged selected proper constituent identities. -/
 theorem finite_properCosetTag
     [Finite Γ] : Finite K.ProperCosetTag := by
   classical
-  letI (C : Finset ι) : Finite (K.ComponentIndex C) := by
-    unfold CayleySubgraphSpec.ComponentIndex
-    infer_instance
-  unfold ProperCosetTag
-  infer_instance
+  change Finite (Σ C : {C : Finset ι //
+    C ∈ (allProperCosetFamily A).alphabets}, K.ComponentIndex C.1)
+  exact @Finite.instSigma _ _
+    (inferInstance : Finite {C : Finset ι //
+      C ∈ (allProperCosetFamily A).alphabets})
+    (fun C => K.finite_componentIndex C.1)
 
 /-- For finite Γ, the actual ORIENTED SIGNED old+fresh edge-token
 quotient of the full proper coset extension is itself finite.
@@ -108,21 +109,27 @@ theorem finite_allProper_signed_edge_tokens
     Finite (K.MultiCosetEdgeVertexIncidenceQuotient
       (allProperCosetFamily A) hadm hgen hret) := by
   classical
-  letI (C : Finset ι) : Finite (K.ComponentIndex C) := by
-    unfold CayleySubgraphSpec.ComponentIndex
+  let P := allProperCosetFamily A
+  haveI : Finite K.Edge := by
+    change Finite {e : ActionEdge Γ ι // e ∈ K.edges}
     infer_instance
-  letI (C : Finset ι) : Finite (K.AttachedCosetVertex C) := by
-    unfold CayleySubgraphSpec.AttachedCosetVertex
-    infer_instance
-  haveI : Finite (K.MultiCosetRawEdge (allProperCosetFamily A)) := by
-    unfold CayleySubgraphSpec.MultiCosetRawEdge
-      CayleySubgraphSpec.SingleCosetEdge
-      CayleySubgraphSpec.OutsideEdge CayleySubgraphSpec.CosetEdge
-    infer_instance
-  change Finite (Quotient
-    (K.multiCosetRawEdgeSetoid (allProperCosetFamily A)
-      hadm hgen hret))
-  infer_instance
+  letI : Finite (K.MultiCosetRawEdge P) := by
+    change Finite (Σ b : {B : Finset ι // B ∈ P.alphabets},
+      K.SingleCosetEdge b.1)
+    exact @Finite.instSigma _ _
+      (inferInstance : Finite {B : Finset ι // B ∈ P.alphabets})
+      (fun b => by
+        letI : Finite (K.AttachedCosetVertex b.1) :=
+          K.finite_attachedCosetVertex b.1
+        change Finite (K.OutsideEdge b.1 ⊕ K.CosetEdge b.1)
+        infer_instance)
+  apply Finite.of_surjective
+    (fun e : K.MultiCosetRawEdge P =>
+      (Quotient.mk (K.multiCosetRawEdgeSetoid P hadm hgen hret) e :
+        K.MultiCosetEdgeVertexIncidenceQuotient P hadm hgen hret))
+  intro q
+  induction q using Quotient.inductionOn with
+  | h e => exact ⟨e, rfl⟩
 
 /-- Every TRUE quotient vertex has an original-tagged coatom
 constituent presentation (the one needed for a root slice).
