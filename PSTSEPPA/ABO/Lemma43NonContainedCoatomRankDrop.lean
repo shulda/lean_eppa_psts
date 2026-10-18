@@ -97,7 +97,7 @@ theorem allProperCoset_nonContained_coatom_slice_both_inter_strict
         P hadm hgen hret C hCP
         (PSTS.SignedWord.inv p ++ q)
         hwC pC y hFromC
-    exact hNotC ⟨v, hvIndex.trans hIndexC, hvVertex.symm⟩
+    exact hNotC ⟨v, hvIndex.trans hIndexC, hvVertex⟩
   have hCnotB : ¬ C ⊆ B := by
     intro hCB
     have hBCeq : B = C :=
