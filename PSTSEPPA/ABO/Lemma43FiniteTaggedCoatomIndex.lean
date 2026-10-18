@@ -116,14 +116,28 @@ theorem finite_allProper_signed_edge_tokens
   letI : Finite K.Edge :=
     Finite.of_injective (fun e : K.Edge => e.1)
       (fun _ _ h => Subtype.ext h)
+  have hOutside (C : Finset ι) : Finite (K.OutsideEdge C) := by
+    exact Finite.of_injective
+      (fun e : K.OutsideEdge C => e.1)
+      (fun _ _ h => Subtype.ext h)
+  have hCoset (C : Finset ι) : Finite (K.CosetEdge C) := by
+    letI : Finite (K.AttachedCosetVertex C) :=
+      K.finite_attachedCosetVertex C
+    letI : Finite {s : SignedLabel ι // signedBase s ∈ C} :=
+      Finite.of_injective
+        (fun s : {s : SignedLabel ι // signedBase s ∈ C} => s.1)
+        (fun _ _ h => Subtype.ext h)
+    change Finite
+      (K.AttachedCosetVertex C × {s : SignedLabel ι // signedBase s ∈ C})
+    infer_instance
   letI : Finite (K.MultiCosetRawEdge P) := by
     change Finite (Σ b : {B : Finset ι // B ∈ P.alphabets},
       K.SingleCosetEdge b.1)
     exact @Finite.instSigma _ _
       (inferInstance : Finite {B : Finset ι // B ∈ P.alphabets})
       (fun b => by
-        letI : Finite (K.AttachedCosetVertex b.1) :=
-          K.finite_attachedCosetVertex b.1
+        letI : Finite (K.OutsideEdge b.1) := hOutside b.1
+        letI : Finite (K.CosetEdge b.1) := hCoset b.1
         change Finite (K.OutsideEdge b.1 ⊕ K.CosetEdge b.1)
         infer_instance)
   apply Finite.of_surjective
