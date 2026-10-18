@@ -243,6 +243,7 @@ import PSTSEPPA.ABO.Lemma43TaggedSliceOverlapByDeletion
 import PSTSEPPA.ABO.Lemma43NoLargeCoatomLowerRank
 import PSTSEPPA.ABO.Lemma43EveryNonSingleCoatomSliceLowerSupport
 import PSTSEPPA.ABO.Lemma43FiniteCoatomWholeComponentMinimum
+import PSTSEPPA.ABO.Lemma43OffFullComponentInductiveMinimum
 import PSTSEPPA.ABO.Lemma43LocalSliceEdgeCoverConnectivity
 import PSTSEPPA.ABO.Lemma43FiniteTaggedCoatomIndex
 import PSTSEPPA.ABO.Lemma43FiniteActiveCoatomCover
