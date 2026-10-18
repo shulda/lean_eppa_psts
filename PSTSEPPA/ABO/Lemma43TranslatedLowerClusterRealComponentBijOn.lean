@@ -89,13 +89,33 @@ theorem allProperCoset_B_component_translated_lower_cluster_bijOn
   obtain ⟨hV, hE⟩ :=
     K.allProperCoset_B_component_vertex_and_signed_edge_images_eq_lower_cluster
       hadm hgen hret hcard B anchor core hAll hProper
+  have hInjV :=
+    (K.allProperCoset_B_component_ambient_vertex_bijOn
+      hadm hgen hret B anchor core hAll).2.1
+  have hInjE :=
+    (K.allProperCoset_B_component_ambient_signed_edge_bijOn
+      hadm hgen hret hcard B anchor core hAll).2.1
   constructor
-  · rw [← hV]
-    exact K.allProperCoset_B_component_ambient_vertex_bijOn
-      hadm hgen hret B anchor core hAll
-  · rw [← hE]
-    exact K.allProperCoset_B_component_ambient_signed_edge_bijOn
-      hadm hgen hret hcard B anchor core hAll
+  · constructor
+    · intro x hx
+      rw [← hV]
+      exact ⟨x, hx, rfl⟩
+    constructor
+    · exact hInjV
+    · intro y hy
+      rw [← hV] at hy
+      obtain ⟨x, hx, hEq⟩ := hy
+      exact ⟨x, hx, hEq⟩
+  · constructor
+    · intro e he
+      rw [← hE]
+      exact ⟨e, he, rfl⟩
+    constructor
+    · exact hInjE
+    · intro a ha
+      rw [← hE] at ha
+      obtain ⟨e, he, hEq⟩ := ha
+      exact ⟨e, he, hEq⟩
 
 end CayleySubgraphSpec
 end ABO
