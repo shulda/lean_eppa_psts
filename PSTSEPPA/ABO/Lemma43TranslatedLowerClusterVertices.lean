@@ -133,9 +133,8 @@ theorem allProperCoset_B_component_ambient_image_eq_translated_lower_cluster
       g0⁻¹ * g ∈ generatedSubgroup gen D at hg
     obtain ⟨D, hD, hgD⟩ := hg
     obtain ⟨t, ht, hDt⟩ := Finset.mem_image.mp hD
-    refine ⟨t, ht, ?_⟩
-    rw [hDt] at hgD
-    exact hgD
+    subst D
+    exact ⟨t, ht, hgD⟩
 
 end CayleySubgraphSpec
 end ABO
