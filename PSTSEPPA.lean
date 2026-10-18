@@ -236,6 +236,7 @@ import PSTSEPPA.ABO.Lemma43LowerTaggedSupportNaturality
 import PSTSEPPA.ABO.Lemma43LowerMinimumSupportImageTransfer
 import PSTSEPPA.ABO.Lemma43ProperSupportedSliceBridgeLift
 import PSTSEPPA.ABO.Lemma43EntireUpperCosetSliceMinimalSupport
+import PSTSEPPA.ABO.Lemma43LowerInductionToTaggedSliceMinimum
 import PSTSEPPA.ABO.Lemma43RetractableWordDeletion
 import PSTSEPPA.ABO.Lemma43OverlapWitnessByRetraction
 import PSTSEPPA.ABO.Lemma43TaggedSliceOverlapByDeletion
