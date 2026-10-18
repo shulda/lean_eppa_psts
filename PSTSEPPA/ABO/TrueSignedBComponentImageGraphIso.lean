@@ -1,6 +1,6 @@
 import PSTSEPPA.ABO.CosetConnectivity
 import PSTSEPPA.ABO.Morphisms
-import PSTSEPPA.ABO.Lemma43SignedEdgeCoverConnectivity
+import PSTSEPPA.ABO.Lemma43LocalSliceEdgeCoverConnectivity
 
 /-!
 # Genuine oriented signed B-component image as a labelled graph
