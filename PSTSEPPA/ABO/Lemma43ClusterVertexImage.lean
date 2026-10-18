@@ -119,7 +119,10 @@ theorem allProperCoset_tagged_slice_ambient_range_iff
     exact hSmall
   · intro hg
     have hSmall : g ∈ generatedLeftCoset gen (B ∩ C) pZ.2.1 := by
-      simpa only [hZvalue] using hg
+      change g ∈ generatedLeftCoset gen (B ∩ C)
+        (K.multiCosetAmbientValue P hadm hgen hret z) at hg
+      rw [hZvalue] at hg
+      exact hg
     have hBig : g ∈ generatedLeftCoset gen C pZ.2.1 :=
       generatedSubgroup_mono gen Finset.inter_subset_right hSmall
     have hCosetEq : K.componentAmbientCoset C pZ.1 =
