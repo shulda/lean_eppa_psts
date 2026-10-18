@@ -221,7 +221,10 @@ theorem allProperCoset_B_component_ambient_signed_edge_image_eq_cluster
     have hReach :
         ∃ w : LabelWord ι, LabelWord.Uses B w ∧
           G.Follows anchor w (G.source e) := by
-      simpa only [e] using hToP
+      have hSourceE : G.source e =
+          K.multiCosetInclude P hadm hgen hret C hCP p := rfl
+      rw [hSourceE]
+      exact hToP
     have hProj :
         K.multiCosetEdgeQuotientAmbient P hadm hgen hret e = a := by
       change ((cayleyGraph gen).source a,
