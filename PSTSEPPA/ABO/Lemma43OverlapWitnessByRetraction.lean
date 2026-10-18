@@ -205,7 +205,7 @@ theorem allProperCoset_retractable_overlap_witness
       (PSTS.SignedWord.inv u) z := by
     rw [hEndE]
     exact G.follows_inverse hPath
-  obtain ⟨pStartE, hIdxE, hStartE⟩ :=
+  obtain ⟨pStartE, hIdxE, _hCosetE, hStartE⟩ :=
     (K.multiCoset_selected_C_subalphabet_B_component_exact
       P hadm hgen hret E hEP (B ∩ D) hBDE pEndE z).mp
       ⟨PSTS.SignedWord.inv u, hu.inv, hReverse⟩
