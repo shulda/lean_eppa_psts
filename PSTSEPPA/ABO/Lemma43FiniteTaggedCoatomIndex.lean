@@ -1,4 +1,5 @@
 import PSTSEPPA.ABO.CoatomEdgeCover
+import PSTSEPPA.ABO.FiniteRankTwoType2Stages
 import PSTSEPPA.ABO.MultiCosetSelectedComponentExact
 import PSTSEPPA.ABO.Lemma43TaggedSliceOverlapByDeletion
 
