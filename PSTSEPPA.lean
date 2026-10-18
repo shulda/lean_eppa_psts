@@ -83,6 +83,7 @@ import PSTSEPPA.ABO.SynchronizedLabelledGroups
 import PSTSEPPA.ABO.SynchronizedGeneratedGroup
 import PSTSEPPA.ABO.StabilityRetractability
 import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
+import PSTSEPPA.ABO.LocalSubalphabetGeneratedRetractable
 import PSTSEPPA.ABO.RankDetectorGroup
 import PSTSEPPA.ABO.RankDetectorSynchronizedLift
 import PSTSEPPA.ABO.KRetractableCosetIntersections
