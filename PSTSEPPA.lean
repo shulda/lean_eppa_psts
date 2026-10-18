@@ -355,6 +355,7 @@ import PSTSEPPA.ABO.MultiCosetMaximalConstituentPathExit
 import PSTSEPPA.ABO.MaximalProperAlphabets
 import PSTSEPPA.ABO.MultiCosetLowerSupportSkeletonAnchor
 import PSTSEPPA.ABO.MultiCosetWholeComponentBoundarySupport
+import PSTSEPPA.ABO.Lemma43EveryNonSingleCoatomSliceLowerSupport
 import PSTSEPPA.ABO.CoatomConstituentCover
 import PSTSEPPA.ABO.NoLargeCoatomSupport
 import PSTSEPPA.ABO.CoatomEdgeCover
