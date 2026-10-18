@@ -1,6 +1,7 @@
 import PSTSEPPA.ABO.Lemma43RetractableWordDeletion
 import PSTSEPPA.ABO.MultiCosetSelectedSubalphabetComponents
 import PSTSEPPA.ABO.MultiCosetMorphisms
+import PSTSEPPA.ABO.StandardCosetFamily
 
 /-!
 # ABO Lemma 4.3 Figure 7->8: word deletion forces a shared tagged constituent
