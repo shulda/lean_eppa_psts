@@ -180,7 +180,7 @@ theorem allProperCoset_edge_exists_tagged_coatom
   obtain ⟨q, hqIndex, hTarget⟩ :=
     K.multiCoset_selected_B_step_stays_in_coset
       P hadm hgen hret C hCP p e hSource hLetter
-  exact ⟨t, hCard, p, q, rfl, hqIndex.symm,
+  exact ⟨t, hCard, p, q, rfl, hqIndex,
     hSource, hTarget⟩
 
 end CayleySubgraphSpec
