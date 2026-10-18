@@ -191,11 +191,11 @@ theorem activeTaggedCoatoms_local_signed_edge_cover
   have hs :
       G.source e ∈
         K.properCosetTagSlice hadm hgen hret B anchor t :=
-    ⟨hReach, p, hpTag, hSource.symm⟩
+    ⟨hReach, p, hpTag, hSource⟩
   have ht :
       G.target e ∈
         K.properCosetTagSlice hadm hgen hret B anchor t :=
-    ⟨hTargetReach, q, hqTag, hTarget.symm⟩
+    ⟨hTargetReach, q, hqTag, hTarget⟩
   refine ⟨t, ?_, hs, ht⟩
   exact (K.mem_activeTaggedCoatoms_iff
     hadm hgen hret B anchor t).mpr
