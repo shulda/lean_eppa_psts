@@ -229,6 +229,7 @@ import PSTSEPPA.ABO.ComponentMultiCosetBComponentEdges
 import PSTSEPPA.ABO.MultiCosetVertexSupport
 import PSTSEPPA.ABO.MultiCosetMinimalSupport
 import PSTSEPPA.ABO.Definition322WholeComponentMinimalSupport
+import PSTSEPPA.ABO.Lemma43OverlapMinimumSynchronization
 import PSTSEPPA.ABO.Lemma43LowerTaggedSupportNaturality
 import PSTSEPPA.ABO.Lemma43LowerMinimumSupportImageTransfer
 import PSTSEPPA.ABO.Lemma43ProperSupportedSliceBridgeLift
