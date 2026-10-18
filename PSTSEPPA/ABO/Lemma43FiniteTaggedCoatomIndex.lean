@@ -111,9 +111,11 @@ theorem finite_allProper_signed_edge_tokens
       (allProperCosetFamily A) hadm hgen hret) := by
   classical
   let P := allProperCosetFamily A
-  haveI : Finite K.Edge := by
-    change Finite {e : ActionEdge Γ ι // e ∈ K.edges}
-    infer_instance
+  letI : Fintype Γ := Fintype.ofFinite _
+  letI : Finite (ActionEdge Γ ι) := finite_actionEdge
+  letI : Finite K.Edge :=
+    Finite.of_injective (fun e : K.Edge => e.1)
+      (fun _ _ h => Subtype.ext h)
   letI : Finite (K.MultiCosetRawEdge P) := by
     change Finite (Σ b : {B : Finset ι // B ∈ P.alphabets},
       K.SingleCosetEdge b.1)
