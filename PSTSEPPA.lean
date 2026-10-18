@@ -252,6 +252,7 @@ import PSTSEPPA.ABO.Lemma43CommonOriginalSkeletonAnchor
 import PSTSEPPA.ABO.Lemma43ClusterVertexImage
 import PSTSEPPA.ABO.Lemma43ClusterSignedEdgeImage
 import PSTSEPPA.ABO.Lemma43TranslatedLowerClusterGraphSets
+import PSTSEPPA.ABO.Lemma43TranslatedLowerClusterRealComponentBijOn
 import PSTSEPPA.ABO.Lemma43CommonAnchorFaithfulCosetGluing
 import PSTSEPPA.ABO.Lemma43WholeComponentAmbientFaithful
 import PSTSEPPA.ABO.Lemma43WholeComponentSignedEdgeFaithful
