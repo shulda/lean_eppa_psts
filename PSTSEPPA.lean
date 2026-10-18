@@ -230,6 +230,7 @@ import PSTSEPPA.ABO.MultiCosetVertexSupport
 import PSTSEPPA.ABO.MultiCosetMinimalSupport
 import PSTSEPPA.ABO.Definition322WholeComponentMinimalSupport
 import PSTSEPPA.ABO.Lemma43LowerTaggedSupportNaturality
+import PSTSEPPA.ABO.Lemma43LowerMinimumSupportImageTransfer
 import PSTSEPPA.ABO.MultiCosetMinimalSupportPaths
 import PSTSEPPA.ABO.MultiCosetSupportSkeletonMeet
 import PSTSEPPA.ABO.MultiCosetComponentSupportInvariant
