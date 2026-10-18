@@ -244,6 +244,7 @@ import PSTSEPPA.ABO.Lemma43NoLargeCoatomLowerRank
 import PSTSEPPA.ABO.Lemma43LocalSliceEdgeCoverConnectivity
 import PSTSEPPA.ABO.Lemma43FiniteTaggedCoatomIndex
 import PSTSEPPA.ABO.Lemma43FiniteActiveCoatomCover
+import PSTSEPPA.ABO.Lemma43FiniteCoatomWholeComponentMinimum
 import PSTSEPPA.ABO.Lemma43TaggedSliceBInterCPaths
 import PSTSEPPA.ABO.Lemma43IntersectingTaggedSlicesMinimaAgree
 import PSTSEPPA.ABO.Lemma43MinimumWitnessPropagation
