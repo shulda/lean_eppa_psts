@@ -249,6 +249,7 @@ import PSTSEPPA.ABO.Lemma43FiniteTaggedCoatomIndex
 import PSTSEPPA.ABO.Lemma43FiniteActiveCoatomCover
 import PSTSEPPA.ABO.Lemma43FiniteCoatomWholeComponentMinimum
 import PSTSEPPA.ABO.Lemma43CommonOriginalSkeletonAnchor
+import PSTSEPPA.ABO.Lemma43ClusterVertexImage
 import PSTSEPPA.ABO.Lemma43CommonAnchorFaithfulCosetGluing
 import PSTSEPPA.ABO.Lemma43WholeComponentAmbientFaithful
 import PSTSEPPA.ABO.Lemma43OffFullComponentInductiveMinimum
