@@ -185,9 +185,6 @@ theorem allProperCoset_signed_full_or_proper_cluster_of_minimum
         K.MultiCosetVertexSupported P hadm hgen hret C anchor
   · left
     obtain ⟨C, hCP, hBC, ⟨_hC, p, hp⟩⟩ := hFull
-    change ∃ (C : Finset ι) (hCP : C ∈ P.alphabets),
-      B ⊆ C ∧
-        ∃ p : K.AttachedCosetVertex C, _ at *
     refine ⟨C, hCP, hBC, p, hp, ?_, ?_⟩
     · intro e he
       have he' :
