@@ -284,6 +284,7 @@ import PSTSEPPA.ABO.Lemma43SignedDichotomyFromMinimum
 import PSTSEPPA.ABO.Lemma43NoFullMinimumFromLowerBothCases
 import PSTSEPPA.ABO.Lemma43MultiConstituentStrictLowerMinimum
 import PSTSEPPA.ABO.Lemma43NoFullMinimumStrictLower
+import PSTSEPPA.ABO.Lemma43HigherRankSignedDichotomyStrictLower
 import PSTSEPPA.ABO.MultiCosetFullComponentFromSuperset
 import PSTSEPPA.ABO.CorrectedR8FullCosetOneConstituent
 import PSTSEPPA.ABO.RankTwoComponentBase
