@@ -315,6 +315,7 @@ import PSTSEPPA.ABO.IntrinsicComponentLocalSliceIso
 import PSTSEPPA.ABO.ForwardInductionLocalSignedPathReflection
 import PSTSEPPA.ABO.ForwardInductionLocalTaggedCosetMembership
 import PSTSEPPA.ABO.ForwardInductionLocalTaggedCosetBackward
+import PSTSEPPA.ABO.ForwardInductionLocalAttachedCosetFibreEquiv
 import PSTSEPPA.ABO.BijectiveGraphPathReflection
 import PSTSEPPA.ABO.BijectiveComponentIndexTransport
 import PSTSEPPA.ABO.BijectiveTaggedCosetTransport
