@@ -133,11 +133,11 @@ theorem intrinsicComponentLocalHom_follows_iff
   constructor
   · intro h
     have hBij := K.intrinsicComponentLocalHom_bijective C root
-    exact
-      (K.intrinsicComponentLocalSlice C root).toEGraph
-        |>.follows_reflect_of_vertex_injective_edge_surjective
-          (K.intrinsicComponentLocalHom C root)
-          hBij.1.1 hBij.2.2 h
+    exact EGraph.follows_reflect_of_vertex_injective_edge_surjective
+      (G := (K.intrinsicComponentLocalSlice C root).toEGraph)
+      (H := (K.subalphabetComponentSubgraph C root).toEGraph)
+      (K.intrinsicComponentLocalHom C root)
+      hBij.1.1 hBij.2.2 h
   · intro h
     exact h.map (K.intrinsicComponentLocalHom C root)
 
