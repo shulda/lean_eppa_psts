@@ -261,6 +261,7 @@ import PSTSEPPA.ABO.Lemma43ActualTranslatedLowerClusterSignedGraphIso
 import PSTSEPPA.ABO.Lemma43SourceMultiConstituentSignedClusterIso
 import PSTSEPPA.ABO.Lemma43SingleCoatomNoLowerMinimum
 import PSTSEPPA.ABO.Lemma43NoLowerSingleCoatomSignedEdge
+import PSTSEPPA.ABO.Lemma43OneCoatomNoLowerComponentEdges
 import PSTSEPPA.ABO.Lemma43OffFullComponentInductiveMinimum
 import PSTSEPPA.ABO.Lemma43TaggedSliceBInterCPaths
 import PSTSEPPA.ABO.Lemma43IntersectingTaggedSlicesMinimaAgree
