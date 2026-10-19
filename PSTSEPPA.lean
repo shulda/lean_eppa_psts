@@ -556,6 +556,8 @@ import PSTSEPPA.ABO.SourceG2FirstRankSourceCoverTheorem
 import PSTSEPPA.ABO.SourceOriginalH1Z1FiniteCompleteAction
 import PSTSEPPA.ABO.AllProperCompletedFullComponents
 
+import PSTSEPPA.ABO.ForwardInductionArbitraryRankRootedRawSignedGraph
+
 /-!
 # EPPA for partial Steiner triple systems
 
