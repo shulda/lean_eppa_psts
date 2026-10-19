@@ -268,6 +268,7 @@ import PSTSEPPA.ABO.Lemma43OneCoatomNoLowerComponentEdges
 import PSTSEPPA.ABO.Lemma43OneTagComponentSignedAmbientFaithful
 import PSTSEPPA.ABO.Lemma43OffFullComponentInductiveMinimum
 import PSTSEPPA.ABO.Lemma43TaggedSliceBInterCPaths
+import PSTSEPPA.ABO.Lemma43SignedEdgeCoverConnectivity
 import PSTSEPPA.ABO.Lemma43IntersectingTaggedSlicesMinimaAgree
 import PSTSEPPA.ABO.Lemma43MinimumWitnessPropagation
 import PSTSEPPA.ABO.Lemma43FiniteConnectedTaggedCommonCore
