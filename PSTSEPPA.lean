@@ -317,6 +317,7 @@ import PSTSEPPA.ABO.ForwardInductionLocalTaggedCosetMembership
 import PSTSEPPA.ABO.ForwardInductionLocalTaggedCosetBackward
 import PSTSEPPA.ABO.ForwardInductionLocalAttachedCosetFibreEquiv
 import PSTSEPPA.ABO.ForwardInductionLocalAttachedCosetNaturality
+import PSTSEPPA.ABO.ForwardInductionLocalAttachedCosetGluingIff
 import PSTSEPPA.ABO.BijectiveGraphPathReflection
 import PSTSEPPA.ABO.BijectiveComponentIndexTransport
 import PSTSEPPA.ABO.BijectiveTaggedCosetTransport
