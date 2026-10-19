@@ -562,6 +562,8 @@ import PSTSEPPA.ABO.ForwardInductionArbitraryRankRootedCompletedEGraphIso
 
 import PSTSEPPA.ABO.ForwardInductionArbitraryRankSignedComponentTransport
 
+import PSTSEPPA.ABO.ForwardInductionArbitraryRankRootedAmbientValue
+
 /-!
 # EPPA for partial Steiner triple systems
 
