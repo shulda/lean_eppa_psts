@@ -163,7 +163,9 @@ theorem allProperCoset_coatom_minimum_all_active_pieces_proper
     hMinimum.2 E hEP pE y hyReach hyE.symm
   have hEeqC : E = C :=
     allProperCoset_coatom_maximal A C hCcard E hEP hCE
-  simpa only [hEeqC] using hStrict
+  change B ∩ E ⊂ B
+  rw [hEeqC]
+  exact hStrict
 
 /-- Source one-coatom/no-lower-support cluster-core interface.
 
