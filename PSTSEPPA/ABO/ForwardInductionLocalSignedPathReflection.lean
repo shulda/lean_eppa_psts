@@ -1,109 +1,43 @@
 import PSTSEPPA.ABO.IntrinsicComponentLocalSliceIso
 import PSTSEPPA.ABO.LocalSubalphabetGeneratedRetractable
-import PSTSEPPA.ABO.Morphisms
+import PSTSEPPA.ABO.BijectiveComponentIndexTransport
 
 /-!
-# Reflect true signed paths through a bijective labelled graph morphism
+# Actual source-to-local component transport for ABO forward induction
 
-For the source ABO forward induction (Theorem 4.5), one frequently
-replaces an intrinsic component of an INCOMPLETE Cayley skeleton in H
-by its genuine rooted local skeleton in the generated group H[C].
-The accepted `IntrinsicComponentLocalSliceIso` proves that this
-translation is bijective on vertices and ACTUAL directed signed
-edge tokens, including formal inverses and geometrical loops.
+ABO Theorem 4.5 works inside the TRUE subgroup H[C], not
+an arbitrary globally retractable ambient H. The previously
+certified developments already establish:
 
-A bijective labelled E-graph morphism also REFLECTS every true
-realised labelled path. We prove this explicitly by induction on
-the signed word. For each target edge, SURJECTIVITY on genuine
-edge tokens supplies an actual source edge, and INJECTIVITY on
-vertices identifies its source. The path is lifted edge by edge
-in the INCOMPLETE source EGraph: no missing edge or artificial
-complete-Cayley edge is introduced.
+* `IntrinsicComponentLocalSliceIso`: the ORIGINAL intrinsic
+  C-component of an INCOMPLETE signed Cayley skeleton and its
+  root-normalized local skeleton over H[C] are bijectively
+  isomorphic on VERTICES and actual ORIENTED SIGNED EDGE TOKENS.
+* `BijectiveGraphPathReflection`: such morphisms preserve and
+  reflect every GENUINELY REALISED signed word path.
+* `BijectiveComponentIndexTransport`: for every alphabet D,
+  their quotients of intrinsic D-components are equivalent
+  and these equivalences COMMUTE with D⊆E enlargement.
+* `LocalSubalphabetGeneratedRetractable`: when H is k-retractable
+  and |C|≤k, the actual H[C] with labels outside C trivial
+  is generated and GLOBALLY retractable.
 
-We instantiate the generic path-reflection principle for the
-intrinsic rooted component's true signed local H[C] translation.
-Finally we package the source's k-retractability reduction:
-for |C| ≤ k, H[C] is generated and globally retractable with
-outside-C letters acting as the identity; simultaneously the
-original rooted C-component is genuinely isomorphic to its
-local signed Cayley skeleton, on both edges and paths.
+This file does NOT reprove any of those generic facts.
+It specializes them to the EXACT normalized rooted source
+C-component and packages the data required by the published
+forward/upward induction construction, including both formal
+inverse edge tokens and actual signed reachability.
 
-This STILL does not identify the corresponding multi-coset
-extensions; their old component-tagged quotient naturality
-and the full forward-induction (Theorem 4.5) remain separate
-formalization obligations.
+Still OPEN IN LEAN: extending this signed old-skeleton
+isomorphism to the original COMPONENT-TAGGED FULL PROPER
+COSET-EXTENSION quotients with their actual attached
+coset fibres; that is a separate source naturality gate.
+No equality of ambient group coordinates is used to
+identify distinct original component tags.
 -/
 
 namespace PSTSEPPA
 namespace ABO
-
-namespace EGraph
-
-variable {V₁ E₁ V₂ E₂ ι : Type*}
-variable {G : EGraph V₁ E₁ ι} {H : EGraph V₂ E₂ ι}
-
-/-- A labelled graph morphism injective on vertices and
-surjective on TRUE directed signed edge tokens lifts every
-realised target word path starting at the image of a source
-vertex. This does not assume completeness of either EGraph. -/
-theorem follows_lift_of_vertex_injective_edge_surjective
-    (f : LabelledGraphHom G.toLabelledGraph H.toLabelledGraph)
-    (hVertex : Function.Injective f.onVertex)
-    (hEdge : Function.Surjective f.onEdge)
-    {u : V₁} {y : V₂} {w : LabelWord ι}
-    (hPath : H.Follows (f.onVertex u) w y) :
-    ∃ v : V₁, G.Follows u w v ∧ f.onVertex v = y := by
-  induction w generalizing u y with
-  | nil =>
-      have huy : f.onVertex u = y := H.follows_nil_iff.mp hPath
-      exact ⟨u, Follows.nil u, huy⟩
-  | cons s w ih =>
-      cases hPath with
-      | @cons _ _ _ _ e hs hl hRest =>
-          obtain ⟨e', he'⟩ := hEdge e
-          have hSource : G.source e' = u := by
-            apply hVertex
-            calc
-              f.onVertex (G.source e') =
-                  H.source (f.onEdge e') := (f.map_source e').symm
-              _ = H.source e := by rw [he']
-              _ = f.onVertex u := hs
-          have hLabel : G.label e' = s := by
-            calc
-              G.label e' = H.label (f.onEdge e') :=
-                (f.map_label e').symm
-              _ = H.label e := by rw [he']
-              _ = s := hl
-          have hTarget :
-              f.onVertex (G.target e') = H.target e := by
-            calc
-              f.onVertex (G.target e') =
-                  H.target (f.onEdge e') := (f.map_target e').symm
-              _ = H.target e := by rw [he']
-          have hRest' :
-              H.Follows (f.onVertex (G.target e')) w y := by
-            rw [hTarget]
-            exact hRest
-          obtain ⟨v, hSourcePath, hv⟩ := ih hRest'
-          exact ⟨v, Follows.cons e' hSource hLabel hSourcePath, hv⟩
-
-/-- A bijective source-signed graph morphism reflects ALL
-actual labelled paths, even when the source graph is
-INCOMPLETE. No fake old edges enter the proof. -/
-theorem follows_reflect_of_vertex_injective_edge_surjective
-    (f : LabelledGraphHom G.toLabelledGraph H.toLabelledGraph)
-    (hVertex : Function.Injective f.onVertex)
-    (hEdge : Function.Surjective f.onEdge)
-    {u v : V₁} {w : LabelWord ι}
-    (hPath : H.Follows (f.onVertex u) w (f.onVertex v)) :
-    G.Follows u w v := by
-  obtain ⟨v', hLift, hv'⟩ :=
-    G.follows_lift_of_vertex_injective_edge_surjective
-      f hVertex hEdge hPath
-  have heq : v' = v := hVertex hv'
-  simpa only [heq] using hLift
-
-end EGraph
 
 variable {ι Γ : Type*}
 variable [Fintype ι] [DecidableEq ι] [Group Γ]
@@ -113,13 +47,11 @@ namespace CayleySubgraphSpec
 
 variable (K : CayleySubgraphSpec gen A)
 
-/-- Genuine original rooted C-component and its local H[C]
-translated skeleton have exactly the SAME realised signed
-word paths, including inverses and actual loops.
+/-- An actual oriented signed path in the original incomplete
+rooted C-component is realised iff its root-normalized
+local H[C]-skeleton realises the SAME signed word.
 
-One direction is standard graph-homomorphism preservation;
-the other uses TRUE signed edge surjectivity and vertex
-injectivity of the separately certified local component map. -/
+This is NOT completeness of either skeleton. -/
 theorem intrinsicComponentLocalHom_follows_iff
     (C : Finset ι) (root : K.Vertex)
     (u v : (K.intrinsicComponentLocalSlice C root).Vertex)
@@ -130,27 +62,76 @@ theorem intrinsicComponentLocalHom_follows_iff
       ((K.intrinsicComponentLocalHom C root).onVertex v) ↔
     ((K.intrinsicComponentLocalSlice C root).toEGraph).Follows
       u w v := by
-  constructor
-  · intro h
-    have hBij := K.intrinsicComponentLocalHom_bijective C root
-    exact EGraph.follows_reflect_of_vertex_injective_edge_surjective
+  have hBij := K.intrinsicComponentLocalHom_bijective C root
+  exact (EGraph.follows_iff_bijective
       (G := (K.intrinsicComponentLocalSlice C root).toEGraph)
       (H := (K.subalphabetComponentSubgraph C root).toEGraph)
       (K.intrinsicComponentLocalHom C root)
-      hBij.1.1 hBij.2.2 h
-  · intro h
-    exact h.map (K.intrinsicComponentLocalHom C root)
+      hBij.1 hBij.2 u v w).symm
 
-/-- Source-local input package for induction on alphabets:
-when the ambient original group is k-retractable and
-|C| ≤ k, the TRUE subgroup H[C] is labelled-generated
-and globally retractable, and the rooted old C-component
-is faithfully translated to an actual H[C] skeleton
-on original vertices, directed signed edges AND words.
+/-- The intrinsic signed D-path component relation is
+preserved AND reflected by root localization, for
+EVERY D (in particular each D⊆C and D=∅).
+The words and their formal signed inverses stay literal. -/
+theorem intrinsicComponentLocalHom_reachable_iff
+    (C D : Finset ι) (root : K.Vertex)
+    (u v : (K.intrinsicComponentLocalSlice C root).Vertex) :
+    (K.subalphabetComponentSubgraph C root).SubalphabetReachable D
+      ((K.intrinsicComponentLocalHom C root).onVertex u)
+      ((K.intrinsicComponentLocalHom C root).onVertex v) ↔
+    (K.intrinsicComponentLocalSlice C root).SubalphabetReachable D
+      u v := by
+  constructor
+  · rintro ⟨w, hw, hp⟩
+    exact ⟨w, hw,
+      (K.intrinsicComponentLocalHom_follows_iff C root u v w).mp hp⟩
+  · rintro ⟨w, hw, hp⟩
+    exact ⟨w, hw,
+      (K.intrinsicComponentLocalHom_follows_iff C root u v w).mpr hp⟩
 
-This is not an assertion that H itself is globally
-retractable or that its completed proper-coset extension
-is already transported to H[C]. -/
+/-- Canonical equivalence between ACTUAL D-component quotient
+TAGS of the local H[C]-skeleton and the original rooted
+intrinsic C-component. This is defined by the signed
+vertex-and-edge isomorphism, not by ambient Γ coordinates. -/
+noncomputable def intrinsicComponentLocalIndexEquiv
+    (C D : Finset ι) (root : K.Vertex) :
+    (K.intrinsicComponentLocalSlice C root).ComponentIndex D ≃
+    (K.subalphabetComponentSubgraph C root).ComponentIndex D :=
+  (K.intrinsicComponentLocalSlice C root).componentIndexEquiv_of_graphIso
+    (K.subalphabetComponentSubgraph C root)
+    (K.intrinsicComponentLocalHom C root)
+    (K.intrinsicComponentLocalHom_bijective C root).1
+    (K.intrinsicComponentLocalHom_bijective C root).2 D
+
+/-- Compatibility of the ACTUAL original/local component tag
+equivalences with every original alphabet inclusion D⊆E.
+This is exactly what source coset-gluing intersection
+naturality (3.10)/(3.11) later requires. -/
+theorem intrinsicComponentLocalIndexEquiv_natural
+    (C D E : Finset ι) (root : K.Vertex)
+    (hDE : D ⊆ E)
+    (d : (K.intrinsicComponentLocalSlice C root).ComponentIndex D) :
+    (K.subalphabetComponentSubgraph C root).componentIndexMap
+      D E hDE (K.intrinsicComponentLocalIndexEquiv C D root d) =
+    K.intrinsicComponentLocalIndexEquiv C E root
+      ((K.intrinsicComponentLocalSlice C root).componentIndexMap
+        D E hDE d) := by
+  exact
+    (K.intrinsicComponentLocalSlice C root).componentIndexEquiv_of_graphIso_natural
+      (K.subalphabetComponentSubgraph C root)
+      (K.intrinsicComponentLocalHom C root)
+      (K.intrinsicComponentLocalHom_bijective C root).1
+      (K.intrinsicComponentLocalHom_bijective C root).2
+      D E hDE d
+
+/-- The local H[C] group and the original intrinsic
+C-component are usable together in the forward induction:
+the local signed labels generate, the local group is
+globally retractable, and the true old source/local signed
+graph morphism is bijective on BOTH directed edges and vertices.
+
+A LOCAL GROUP/SKELETON statement, not an unproved multiCE
+quotient transport. -/
 theorem intrinsicComponent_local_algebra_and_signed_iso
     (k : ℕ) (hret : KRetractable gen k)
     (C : Finset ι) (hC : C.card ≤ k)
