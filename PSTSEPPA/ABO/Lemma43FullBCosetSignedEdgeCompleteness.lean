@@ -133,8 +133,15 @@ theorem multiCoset_full_B_component_all_signed_steps_exist
     exact hY.symm
   have hLabel : G.label e = s := rfl
   refine ⟨e, ?_, hSource, hLabel⟩
-  exact ⟨by simpa only [hLabel] using hsB,
-    by simpa only [hSource] using hy⟩
+  change signedBase (G.label e) ∈ B ∧
+    (∃ w : LabelWord ι, LabelWord.Uses B w ∧
+      G.Follows (K.multiCosetInclude P hadm hgen hret C hCP p)
+        w (G.source e))
+  constructor
+  · rw [hLabel]
+    exact hsB
+  · rw [hSource]
+    exact ⟨w, hwB, hReal⟩
 
 end CayleySubgraphSpec
 end ABO
