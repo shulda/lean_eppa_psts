@@ -279,6 +279,7 @@ import PSTSEPPA.ABO.MultiCosetOffSkeletonEdgeSupport
 import PSTSEPPA.ABO.MultiCosetOffComponentPatches
 import PSTSEPPA.ABO.MultiCosetOffComponentProperPatches
 import PSTSEPPA.ABO.MultiCosetSelectedSubalphabetComponents
+import PSTSEPPA.ABO.Lemma43FullBCosetSignedEdgeCompleteness
 import PSTSEPPA.ABO.MultiCosetFullComponentFromSuperset
 import PSTSEPPA.ABO.CorrectedR8FullCosetOneConstituent
 import PSTSEPPA.ABO.RankTwoComponentBase
