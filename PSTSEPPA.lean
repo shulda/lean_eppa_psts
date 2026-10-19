@@ -281,6 +281,7 @@ import PSTSEPPA.ABO.MultiCosetOffComponentProperPatches
 import PSTSEPPA.ABO.MultiCosetSelectedSubalphabetComponents
 import PSTSEPPA.ABO.Lemma43FullBCosetSignedEdgeCompleteness
 import PSTSEPPA.ABO.Lemma43SignedDichotomyFromMinimum
+import PSTSEPPA.ABO.Lemma43NoFullMinimumFromLowerBothCases
 import PSTSEPPA.ABO.MultiCosetFullComponentFromSuperset
 import PSTSEPPA.ABO.CorrectedR8FullCosetOneConstituent
 import PSTSEPPA.ABO.RankTwoComponentBase
