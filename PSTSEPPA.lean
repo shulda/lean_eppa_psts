@@ -570,6 +570,8 @@ import PSTSEPPA.ABO.Lemma43LowerInductionToTaggedSliceMinimumOffSkeleton
 
 import PSTSEPPA.ABO.Lemma43OneCoatomMinimumOffSkeleton
 
+import PSTSEPPA.ABO.Lemma43MultiConstituentMinimumOffSkeleton
+
 /-!
 # EPPA for partial Steiner triple systems
 
