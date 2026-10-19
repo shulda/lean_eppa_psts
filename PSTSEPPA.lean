@@ -260,6 +260,7 @@ import PSTSEPPA.ABO.TrueSignedBComponentImageGraphIso
 import PSTSEPPA.ABO.Lemma43ActualTranslatedLowerClusterSignedGraphIso
 import PSTSEPPA.ABO.Lemma43SourceMultiConstituentSignedClusterIso
 import PSTSEPPA.ABO.Lemma43SingleCoatomNoLowerMinimum
+import PSTSEPPA.ABO.Lemma43OneCoatomMinimumFromLowerInduction
 import PSTSEPPA.ABO.Lemma43OffFullComponentInductiveMinimum
 import PSTSEPPA.ABO.Lemma43TaggedSliceBInterCPaths
 import PSTSEPPA.ABO.Lemma43IntersectingTaggedSlicesMinimaAgree
