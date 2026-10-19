@@ -558,6 +558,8 @@ import PSTSEPPA.ABO.AllProperCompletedFullComponents
 
 import PSTSEPPA.ABO.ForwardInductionArbitraryRankRootedRawSignedGraph
 
+import PSTSEPPA.ABO.ForwardInductionArbitraryRankRootedCompletedEGraphIso
+
 /-!
 # EPPA for partial Steiner triple systems
 
