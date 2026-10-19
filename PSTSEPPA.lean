@@ -313,6 +313,7 @@ import PSTSEPPA.ABO.UniversalStageRealCayleyCover
 import PSTSEPPA.ABO.AllFiniteRankTwoCayleySkeletons
 import PSTSEPPA.ABO.IntrinsicComponentLocalSliceIso
 import PSTSEPPA.ABO.ForwardInductionLocalSignedPathReflection
+import PSTSEPPA.ABO.ForwardInductionLocalTaggedCosetMembership
 import PSTSEPPA.ABO.BijectiveGraphPathReflection
 import PSTSEPPA.ABO.BijectiveComponentIndexTransport
 import PSTSEPPA.ABO.BijectiveTaggedCosetTransport
