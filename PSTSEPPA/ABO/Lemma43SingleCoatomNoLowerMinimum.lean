@@ -132,7 +132,7 @@ theorem allProperCoset_single_coatom_no_lower_minimal_support
         exact (Finset.mem_inter.mp (hCI hi)).2
       exact hNoLower y hy (C ∩ E) hStrict hSuppInter
     have hEC : E = C :=
-      (allProperCoset_coatom_maximal A C hCcard E hEP hCE).symm
+      allProperCoset_coatom_maximal A C hCcard E hEP hCE
     subst E
     have hEqC : pC = q :=
       K.multiCosetInclude_injective
