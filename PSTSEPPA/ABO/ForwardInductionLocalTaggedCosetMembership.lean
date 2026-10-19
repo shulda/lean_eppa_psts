@@ -1,6 +1,7 @@
 import PSTSEPPA.ABO.ForwardInductionLocalSignedPathReflection
 import PSTSEPPA.ABO.BijectiveTaggedCosetTransport
 import PSTSEPPA.ABO.LocalSubgroupCosetNaturality
+import Mathlib.Tactic.Group
 
 /-!
 # ABO Theorem 4.5: exact local-to-original tagged coset membership
