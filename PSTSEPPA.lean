@@ -576,6 +576,8 @@ import PSTSEPPA.ABO.Lemma43NoFullMinimumOffSkeleton
 
 import PSTSEPPA.ABO.Lemma43SignedDichotomyOffSkeletonLower
 
+import PSTSEPPA.ABO.ForwardInductionUniformOffSkeletonLower
+
 /-!
 # EPPA for partial Steiner triple systems
 
