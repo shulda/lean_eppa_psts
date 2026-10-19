@@ -56,7 +56,7 @@ theorem follows_lift_of_vertex_injective_edge_surjective
   induction w generalizing u y with
   | nil =>
       have huy : f.onVertex u = y := H.follows_nil_iff.mp hPath
-      exact ⟨u, G.Follows.nil u, huy⟩
+      exact ⟨u, Follows.nil u, huy⟩
   | cons s w ih =>
       cases hPath with
       | @cons _ _ _ _ e hs hl hRest =>
@@ -85,7 +85,7 @@ theorem follows_lift_of_vertex_injective_edge_surjective
             rw [hTarget]
             exact hRest
           obtain ⟨v, hSourcePath, hv⟩ := ih hRest'
-          exact ⟨v, G.Follows.cons e' hSource hLabel hSourcePath, hv⟩
+          exact ⟨v, Follows.cons e' hSource hLabel hSourcePath, hv⟩
 
 /-- A bijective source-signed graph morphism reflects ALL
 actual labelled paths, even when the source graph is
