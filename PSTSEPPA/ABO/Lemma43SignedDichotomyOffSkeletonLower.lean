@@ -22,7 +22,7 @@ B-component Q, the printed forward-induction assumptions are:
 
 * every lower rooted original C-component full proper-coset extension,
   for C⊊A, is bridge-free;
-* every one of its genuine (B∩C)-components has an attained minimum
+* every genuinely OFF-SKELETON (B∩C)-component has an attained minimum
   original-tagged support of proper C-rank.
 
 These explicit hypotheses are now required ONLY FOR OFF-SKELETON lower D-components,
@@ -79,9 +79,9 @@ variable (K : CayleySubgraphSpec gen A)
 source ABO Lemma 4.3 at a chosen signed path alphabet B.
 
 Lower rooted C-component stages (for EVERY selected C⊊A)
-must be bridge-free and their genuine signed (B∩C)
-components must have attained minimum old-component-tagged
-support of alphabet M⊊C. These are the two published
+must be bridge-free; for genuine signed (B∩C)-components
+we require a minimum old-component-tagged support M⊊C ONLY
+if they avoid the ORIGINAL lower old C-skeleton. These are the two published
 lower-rank obligations, NOT an additional new axiom. -/
 def HasOffSkeletonLowerLemma43Induction
     (hadm : K.AdmissibleForCosetExtension)
@@ -158,7 +158,7 @@ theorem allProperCoset_higher_rank_signed_cluster_dichotomy_of_off_skeleton_lowe
     (hBP : B ∈ (allProperCosetFamily A).alphabets)
     (anchor : K.MultiCosetVertex
       (allProperCosetFamily A) hadm hgen hret)
-    (hLower : K.HasStrictLowerLemma43Induction
+    (hLower : K.HasOffSkeletonLowerLemma43Induction
       hadm hgen hret B) :
     K.HasFullSignedBCosetAlternative
       hadm hgen hret B anchor ∨
