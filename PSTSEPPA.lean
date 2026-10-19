@@ -566,6 +566,8 @@ import PSTSEPPA.ABO.ForwardInductionArbitraryRankRootedAmbientValue
 
 import PSTSEPPA.ABO.Lemma43LowerOffSkeletonGate
 
+import PSTSEPPA.ABO.Lemma43LowerInductionToTaggedSliceMinimumOffSkeleton
+
 /-!
 # EPPA for partial Steiner triple systems
 
