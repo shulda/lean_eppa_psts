@@ -84,7 +84,7 @@ def HasUniformOffSkeletonLowerComponentInput
                 (K.subalphabetComponentSubgraph_admissible
                   hadm C ((mem_allProperCosetFamily A C).mp hCP) root)
                 hgen hret D
-                ((mem_allProperCosetFamily C D).mpr hDlocal)).onVertex v)
+                ((mem_allProperCosetFamily C D).mpr hDC)).onVertex v)
               w x₀) →
       ∃ (M : Finset ι) (hMC : M ⊂ C)
         (m : (K.subalphabetComponentSubgraph C root).ComponentIndex M),
