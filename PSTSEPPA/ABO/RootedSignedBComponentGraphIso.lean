@@ -162,8 +162,7 @@ theorem arbitraryRankRootedSignedBComponentIso_bijective
     (u : (K.intrinsicComponentLocalSlice C root).MultiCosetVertex
       P hadm hgen hret) :
     Function.Bijective
-      ((K.arbitraryRankRootedLocalCompletedEGraph C root P hadm hgen hret)
-        .BComponentHomOfBijective
+      ((K.arbitraryRankRootedLocalCompletedEGraph C root P hadm hgen hret).BComponentHomOfBijective
         (K.arbitraryRankRootedOriginalCompletedEGraph C root P hadm hgen hret)
         (K.arbitraryRankRootedCompletedEGraphHom C root P hadm hgen hret)
         (K.arbitraryRankRootedCompletedEGraphHom_bijective
@@ -172,8 +171,7 @@ theorem arbitraryRankRootedSignedBComponentIso_bijective
           C root P hadm hgen hret).2
         B u).onVertex ∧
     Function.Bijective
-      ((K.arbitraryRankRootedLocalCompletedEGraph C root P hadm hgen hret)
-        .BComponentHomOfBijective
+      ((K.arbitraryRankRootedLocalCompletedEGraph C root P hadm hgen hret).BComponentHomOfBijective
         (K.arbitraryRankRootedOriginalCompletedEGraph C root P hadm hgen hret)
         (K.arbitraryRankRootedCompletedEGraphHom C root P hadm hgen hret)
         (K.arbitraryRankRootedCompletedEGraphHom_bijective
@@ -181,8 +179,7 @@ theorem arbitraryRankRootedSignedBComponentIso_bijective
         (K.arbitraryRankRootedCompletedEGraphHom_bijective
           C root P hadm hgen hret).2
         B u).onEdge :=
-  (K.arbitraryRankRootedLocalCompletedEGraph C root P hadm hgen hret)
-    .BComponentHomOfBijective_bijective
+  (K.arbitraryRankRootedLocalCompletedEGraph C root P hadm hgen hret).BComponentHomOfBijective_bijective
       (K.arbitraryRankRootedOriginalCompletedEGraph C root P hadm hgen hret)
       (K.arbitraryRankRootedCompletedEGraphHom C root P hadm hgen hret)
       (K.arbitraryRankRootedCompletedEGraphHom_bijective
