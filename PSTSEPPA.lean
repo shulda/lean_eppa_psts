@@ -596,6 +596,8 @@ import PSTSEPPA.ABO.NestedComponentBridgeFreeHeredity
 
 import PSTSEPPA.ABO.ForwardInductionTheorem45
 
+import PSTSEPPA.ABO.ForwardInductionKLocalCluster
+
 /-!
 # EPPA for partial Steiner triple systems
 
