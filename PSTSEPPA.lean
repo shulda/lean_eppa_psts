@@ -598,6 +598,8 @@ import PSTSEPPA.ABO.ForwardInductionTheorem45
 
 import PSTSEPPA.ABO.ForwardInductionKLocalCluster
 
+import PSTSEPPA.ABO.ProperClusterLocalSubgroupSignedIso
+
 /-!
 # EPPA for partial Steiner triple systems
 
