@@ -596,6 +596,8 @@ import PSTSEPPA.ABO.NestedComponentBridgeFreeHeredity
 
 import PSTSEPPA.ABO.ForwardInductionRootedTaggedSupportTransport
 
+import PSTSEPPA.ABO.ForwardInductionRootedTagPairTransport
+
 /-!
 # EPPA for partial Steiner triple systems
 
