@@ -588,6 +588,8 @@ import PSTSEPPA.ABO.NestedComponentFlattening
 
 import PSTSEPPA.ABO.NestedComponentSignedEdges
 
+import PSTSEPPA.ABO.NestedComponentBridgeFreeHeredity
+
 /-!
 # EPPA for partial Steiner triple systems
 
