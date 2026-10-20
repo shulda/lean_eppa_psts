@@ -69,7 +69,9 @@ theorem lowerComponentToFullMultiCosetHom_skeleton
         ((K.subalphabetComponentSubgraphHom C root).onVertex x))
   rw [K.componentMultiCosetVertexMap_skeleton
     C hCA root Q hadm hgen hret D hDP x]
-  rw [K.multiCosetFamilyVertexMap_include]
+  -- The enlarged-family membership proof is definitionally the
+  -- same as hDP, but the rewrite tactic does not see through the
+  -- family wrapper. The concrete inclusion computes definitionally.
   rfl
 
 /-- If the upper B-component is off the original old skeleton,
