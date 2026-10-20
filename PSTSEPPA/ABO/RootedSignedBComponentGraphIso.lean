@@ -38,12 +38,11 @@ variable {V E W F ι : Type*}
 variable [Fintype ι] [DecidableEq ι]
 variable (G : EGraph V E ι) (H : EGraph W F ι)
 variable (f : LabelledGraphHom G.toLabelledGraph H.toLabelledGraph)
-variable (hv : Function.Bijective f.onVertex)
-variable (he : Function.Bijective f.onEdge)
-
 /-- The actual B-component membership of a vertex is reflected
 by the bijective labelled signed graph morphism. -/
 theorem BComponentVertex_mem_iff_bijective
+    (hv : Function.Bijective f.onVertex)
+    (he : Function.Bijective f.onEdge)
     (B : Finset ι) (anchor v : V) :
     v ∈ G.BComponentVertexSet B anchor ↔
       f.onVertex v ∈ H.BComponentVertexSet B (f.onVertex anchor) :=
@@ -53,6 +52,8 @@ theorem BComponentVertex_mem_iff_bijective
 /-- Membership of the complete ORIGINAL oriented signed B-edge
 token set is reflected, not merely source or label equality. -/
 theorem BComponentEdge_mem_iff_bijective
+    (hv : Function.Bijective f.onVertex)
+    (he : Function.Bijective f.onEdge)
     (B : Finset ι) (anchor : V) (e : E) :
     e ∈ G.BComponentEdgeSet B anchor ↔
       f.onEdge e ∈ H.BComponentEdgeSet B (f.onVertex anchor) := by
@@ -76,6 +77,8 @@ theorem BComponentEdge_mem_iff_bijective
 morphism to the TRUE B-component is a genuine labelled graph
 morphism of exactly the ORIGINAL B-component EGraphs. -/
 noncomputable def BComponentHomOfBijective
+    (hv : Function.Bijective f.onVertex)
+    (he : Function.Bijective f.onEdge)
     (B : Finset ι) (anchor : V) :
     LabelledGraphHom
       (G.BComponentEGraph B anchor).toLabelledGraph
@@ -100,6 +103,8 @@ noncomputable def BComponentHomOfBijective
 B-component vertex set AND on every actual oriented signed
 B-edge token. No global completeness or Cayley coset shortcut. -/
 theorem BComponentHomOfBijective_bijective
+    (hv : Function.Bijective f.onVertex)
+    (he : Function.Bijective f.onEdge)
     (B : Finset ι) (anchor : V) :
     Function.Bijective
       (G.BComponentHomOfBijective H f hv he B anchor).onVertex ∧
