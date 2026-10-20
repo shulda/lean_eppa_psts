@@ -590,6 +590,8 @@ import PSTSEPPA.ABO.ExactSignedRankTwoClusterBase
 
 import PSTSEPPA.ABO.ExactSignedSmallRankClusterBase
 
+import PSTSEPPA.ABO.NestedComponentSignedEdges
+
 /-!
 # EPPA for partial Steiner triple systems
 
