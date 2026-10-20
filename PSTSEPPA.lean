@@ -567,6 +567,8 @@ import PSTSEPPA.ABO.ForwardInductionArbitraryRankRootedAmbientValue
 import PSTSEPPA.ABO.ForwardInductionArbitraryRankBridgePaths
 import PSTSEPPA.ABO.ForwardInductionArbitraryRankBridgeProperty
 
+import PSTSEPPA.ABO.ForwardInductionLocalAdmissibility
+
 /-!
 # EPPA for partial Steiner triple systems
 
