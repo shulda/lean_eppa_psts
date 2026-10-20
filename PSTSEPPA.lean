@@ -588,6 +588,8 @@ import PSTSEPPA.ABO.NestedComponentFlattening
 
 import PSTSEPPA.ABO.ExactSignedRankTwoClusterBase
 
+import PSTSEPPA.ABO.ExactSignedSmallRankClusterBase
+
 /-!
 # EPPA for partial Steiner triple systems
 
