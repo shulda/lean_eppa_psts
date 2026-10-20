@@ -70,8 +70,11 @@ theorem nestedComponent_edges_iff
         K.SubalphabetReachable B root ((K.toEGraph).source tK) :=
       K.subalphabetReachable_trans B hRootX
         (K.subalphabetReachable_mono D B hDB hParentReach)
+    have heInB : signedBase tK.1.2 ∈ B := by
+      rw [ht]
+      exact hDB heD
     let tL : L.Edge :=
-      K.componentLiftEdge B root tK (hDB heD) hRootSrc
+      K.componentLiftEdge B root tK heInB hRootSrc
     have hSource :
         (L.toEGraph).source tL =
           K.componentLiftVertex B root
