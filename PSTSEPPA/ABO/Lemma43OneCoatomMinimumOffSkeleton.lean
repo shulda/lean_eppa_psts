@@ -118,7 +118,7 @@ theorem allProperCoset_one_coatom_component_minimum_of_off_skeleton_lower_induct
                 (K.subalphabetComponentSubgraph_admissible
                   hadm C ((mem_allProperCosetFamily A C).mp hCP) root)
                 hgen hret (B ∩ C)
-                ((mem_allProperCosetFamily C (B ∩ C)).mpr hDC)).onVertex v)
+                ((mem_allProperCosetFamily C (B ∩ C)).mpr hDlocal)).onVertex v)
               w x₀) →
         ∃ (M : Finset ι) (hMC : M ⊂ C)
           (m : (K.subalphabetComponentSubgraph C root).ComponentIndex M),
