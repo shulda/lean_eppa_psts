@@ -39,6 +39,21 @@ variable {gen : ι → Γ} {A : Finset ι}
 
 namespace CayleySubgraphSpec
 
+/-- Extensionality for a literal Cayley skeleton from its actual
+old group-vertex and oriented signed-edge sets. All other fields
+are propositional closure proofs, hence proof-irrelevant. -/
+private theorem nestedSkeleton_ext {D : Finset ι}
+    {L R : CayleySubgraphSpec gen D}
+    (hv : L.vertices = R.vertices)
+    (he : L.edges = R.edges) : L = R := by
+  cases L with
+  | mk lv le ls li ll =>
+      cases R with
+      | mk rv re rs ri rl =>
+          cases hv
+          cases he
+          rfl
+
 variable (K : CayleySubgraphSpec gen A)
 
 /-- An ACTUAL nested D-component of the original old
@@ -52,22 +67,8 @@ theorem nestedComponent_eq_original
       D x) =
     K.subalphabetComponentSubgraph D
       ((K.subalphabetComponentSubgraphHom B root).onVertex x) := by
-  let L : CayleySubgraphSpec gen D :=
-    (K.subalphabetComponentSubgraph B root).subalphabetComponentSubgraph D x
-  let R : CayleySubgraphSpec gen D :=
-    K.subalphabetComponentSubgraph D
-      ((K.subalphabetComponentSubgraphHom B root).onVertex x)
   have hBoth := K.nestedComponent_vertex_edge_sets B D hDB root x
-  have hVertices : L.vertices = R.vertices := hBoth.1
-  have hEdges : L.edges = R.edges := hBoth.2
-  change L = R
-  cases L with
-  | mk lv le ls li ll =>
-      cases R with
-      | mk rv re rs ri rl =>
-          cases hVertices
-          cases hEdges
-          rfl
+  exact nestedSkeleton_ext hBoth.1 hBoth.2
 
 /-- The source's actual lower rooted bridge-free premise is
 HEREDITARY under passage to any genuine proper B-component.
