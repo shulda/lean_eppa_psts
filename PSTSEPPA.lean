@@ -586,6 +586,8 @@ import PSTSEPPA.ABO.ForwardInductionFromActualLowerClusters
 
 import PSTSEPPA.ABO.NestedComponentFlattening
 
+import PSTSEPPA.ABO.NestedComponentSignedEdges
+
 /-!
 # EPPA for partial Steiner triple systems
 
