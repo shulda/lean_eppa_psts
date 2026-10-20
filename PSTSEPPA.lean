@@ -584,6 +584,8 @@ import PSTSEPPA.ABO.OffFullBCosetMinimalSupport
 import PSTSEPPA.ABO.SourceSignedWholeClusterProperty
 import PSTSEPPA.ABO.ForwardInductionFromActualLowerClusters
 
+import PSTSEPPA.ABO.ExactSignedRankTwoClusterBase
+
 /-!
 # EPPA for partial Steiner triple systems
 
