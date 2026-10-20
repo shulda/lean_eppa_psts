@@ -100,7 +100,10 @@ theorem arbitraryRankRootedBComponent_exists_minimum_iff
     refine ⟨D, F.symm d, ?_⟩
     apply (K.arbitraryRankRootedBComponent_minimum_iff
       C root P hadm hgen hret B D u (F.symm d)).mpr
-    simpa only [Equiv.apply_symm_apply] using hd
+    have heq :
+        (K.rootedLocalComponentIndexEquiv C root D) (F.symm d) = d :=
+      F.apply_symm_apply d
+    rwa [heq]
 
 end CayleySubgraphSpec
 end ABO
