@@ -600,6 +600,9 @@ import PSTSEPPA.ABO.ForwardInductionRootedTagPairTransport
 
 import PSTSEPPA.ABO.ForwardInductionRootedWholeMinimumTransport
 
+import PSTSEPPA.ABO.ForwardInductionRootedWholeComponentImage
+import PSTSEPPA.ABO.ForwardInductionRootedBComponentMinimumTransport
+
 /-!
 # EPPA for partial Steiner triple systems
 
