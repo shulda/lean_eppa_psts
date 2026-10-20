@@ -590,6 +590,9 @@ import PSTSEPPA.ABO.NestedComponentSignedEdges
 
 import PSTSEPPA.ABO.NestedComponentBridgeFreeHeredity
 
+import PSTSEPPA.ABO.ExactSignedSmallRankClusterBase
+import PSTSEPPA.ABO.ForwardInductionTheorem45
+
 /-!
 # EPPA for partial Steiner triple systems
 
