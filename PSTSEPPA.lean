@@ -592,6 +592,8 @@ import PSTSEPPA.ABO.ExactSignedSmallRankClusterBase
 
 import PSTSEPPA.ABO.NestedComponentSignedEdges
 
+import PSTSEPPA.ABO.NestedComponentBridgeFreeHeredity
+
 /-!
 # EPPA for partial Steiner triple systems
 
