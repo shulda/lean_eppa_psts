@@ -1,5 +1,35 @@
 # Research / formalization ledger
 
+## 2026-10-21 — Certified ABO Theorem-4.5 signed Γ-local bridge and handoff
+
+Authoritative detailed dependency record:
+[`ABO_THEOREM45_SOURCE_HANDOFF_2026-10-21.md`](ABO_THEOREM45_SOURCE_HANDOFF_2026-10-21.md).
+
+The new actual original Γ-rooted **entire** signed B-component minimum and
+correct intrinsic (D,d)-component tag come from green and merged #859
+(`ForwardInductionOriginalRootedMinimum.lean`). Real signed component
+shape transport by a vertex/edge-bijective labelled graph homomorphism
+is green and merged #861 (`SignedBComponentShapeTransport.lean`).
+The canonical signed proper B-cluster shape on the original rooted Γ quotient
+is now certified with target the canonical **LOCAL H[C] translated**
+cluster via green and merged #863
+(`ForwardInductionOriginalCanonicalProperShape.lean`). Full global
+retractable Γ case, including canonical genuine Γ-cluster target,
+was merged earlier in #858. These results require only actual local
+lower bridge-free premises when Γ is merely k-retractable; a full original
+Γ-root-translated cluster and original full-coset tags remain separate
+obligations before one may claim the complete original Γ-facing Theorem 4.5.
+
+Historical duplicate-inverse #860 was closed UNMERGED after CI revealed
+the original inverse already exists in
+`PSTSEPPA/ABO/BijectiveGraphPathReflection.lean`; #861 reuses it.
+Clean PR #863 re-integrates byte-for-byte source-proof stack #862 after
+parent #861's merge; #862 is closed as superseded. All accepted exact
+clean heads passed full Lean build, all 256 genuine old signed regression
+cases, and allowed-axiom audit. Preserve source repair obligations R1–R8.
+DO NOT confuse "not yet formalized" with "mathematically open".
+
+
 
 ## 2026-10-17 — Critical source/Lean status correction
 
