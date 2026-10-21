@@ -608,6 +608,8 @@ import PSTSEPPA.ABO.ForwardInductionRootedOffSkeletonMinimumTransport
 import PSTSEPPA.ABO.ForwardInductionLocalCompletedEGraphAgreement
 import PSTSEPPA.ABO.RootedSignedBComponentGraphIso
 
+import PSTSEPPA.ABO.ProperClusterLocalSubgroupSignedIso
+
 /-!
 # EPPA for partial Steiner triple systems
 
