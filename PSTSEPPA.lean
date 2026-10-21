@@ -623,3 +623,4 @@ import PSTSEPPA.ABO.SourceCanonicalSignedForwardClusterProperty
 
 Root module for the formalization.
 -/
+import PSTSEPPA.ABO.ForwardInductionOriginalRootedMinimum
