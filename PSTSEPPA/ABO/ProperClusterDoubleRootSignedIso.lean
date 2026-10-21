@@ -74,7 +74,7 @@ theorem rootTranslatedClusterHom_bijective
       · change g⁻¹ * y.1 ∈ P.VertexSet gen
         exact y.2
       · apply Subtype.ext
-        simp
+        group
   · constructor
     · intro e f hef
       have h : (g * e.1.1, e.1.2) = (g * f.1.1, f.1.2) :=
@@ -82,14 +82,14 @@ theorem rootTranslatedClusterHom_bijective
       apply Subtype.ext
       apply Prod.ext
       · exact mul_left_cancel (congrArg Prod.fst h)
-      · exact congrArg Prod.snd h
+      · exact congrArg (fun a : ActionEdge Γ ι => a.2) h
     · intro y
       refine ⟨⟨(g⁻¹ * y.1.1, y.1.2), ?_⟩, ?_⟩
       · change (g⁻¹ * y.1.1, y.1.2) ∈ P.EdgeSet gen
         exact y.2
       · apply Subtype.ext
         apply Prod.ext
-        · simp
+        · group
         · rfl
 
 /-- TWO-ROOT TRUE SIGNED GRAPH ISO, with the exact source root.
