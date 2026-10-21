@@ -1,5 +1,32 @@
 # Formalization status
 
+## 2026-10-21 — Current certified `main` checkpoint (supersedes older dated statuses)
+
+The authoritative consolidated current status is
+[`ABO_THEOREM45_SOURCE_HANDOFF_2026-10-21.md`](ABO_THEOREM45_SOURCE_HANDOFF_2026-10-21.md).
+Accepted mathematical HEAD at this checkpoint: `e3e138d5353a003d0847a23e2f00b35064ee7ebc`
+(clean #863). Globally retractable signed forward ABO Theorem 4.5 is
+formalized; under merely `k`-retractable original Γ we have:
+(1) the local H[C] exact forward signed cluster property from original
+admissibility and actual local bridge-free premises;
+(2) original Γ-rooted off-skeleton entire true signed B-component minimum
+with original old-component tag (`ForwardInductionOriginalRootedMinimum.lean`);
+(3) a signed graph isomorphism of its ORIGINAL entire B-component to a
+canonical **local H[C]** proper cluster under the proper alternative,
+together with the local full-B-coset alternative
+(`ForwardInductionOriginalCanonicalProperShape.lean`).
+
+**Still missing** is the fully ORIGINAL Γ-root-translated proper cluster,
+the original tagged full-B-coset alternative and complete source k-local
+Theorem 4.5 assembly, followed by corrected upward Theorem 4.7,
+ABO §5 reflection/fibre-MAX and unconditional PSTS EPPA.
+Older 2026-10-17 entries below are preserved as historical snapshots;
+their listed open Lemma-4.3 or Theorem-4.5 gates have since advanced.
+Exact merged CI runs: #858 (39555298659), #859 (39575046629),
+#861 (39576227571), #863 (39577452733), all full Lean/256 original
+signed edge-pair regressions/allowed-axiom audit green.
+
+
 ## 2026-10-17 — Correction: distinguish ABO proof from Lean gap
 
 **The next task is FORMALIZATION of an already published and
