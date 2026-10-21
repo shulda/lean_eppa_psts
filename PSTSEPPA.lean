@@ -613,6 +613,8 @@ import PSTSEPPA.ABO.ProperClusterLocalSubgroupSignedIso
 import PSTSEPPA.ABO.ProperClusterRootTranslatedSubgroupEquiv
 import PSTSEPPA.ABO.ProperClusterRootTranslatedSignedIso
 
+import PSTSEPPA.ABO.ForwardInductionRootedBridgeFreeStandardEquivalence
+
 /-!
 # EPPA for partial Steiner triple systems
 
