@@ -619,6 +619,7 @@ import PSTSEPPA.ABO.CanonicalSignedTranslatedProperCluster
 import PSTSEPPA.ABO.SourceCanonicalSignedForwardClusterProperty
 
 import PSTSEPPA.ABO.ForwardInductionOriginalRootedMinimum
+import PSTSEPPA.ABO.SignedBComponentShapeTransport
 /-!
 # EPPA for partial Steiner triple systems
 
