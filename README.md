@@ -19,6 +19,8 @@ specification**. Lean is expected to verify every simplification. If a proposed
 streamlining fails, the project should fall back toward the audited corrected
 ABO source rather than force the abstraction.
 
+See the [October 21 ABO Theorem 4.5 certified handoff](ABO_THEOREM45_SOURCE_HANDOFF_2026-10-21.md) for the latest exact signed Γ-local proof frontier and remaining obligations.
+
 See [FORMALIZATION.md](FORMALIZATION.md) for the live dependency/status map and
 [RESEARCH_LEDGER.md](RESEARCH_LEDGER.md) for repairs, deviations, failed
 approaches, and the current proof frontier.
