@@ -86,28 +86,33 @@ theorem allProperCoset_B_component_canonicalTranslatedCluster_signedIso
   have hInjE : Set.InjOn F.onEdge (G.BComponentEdgeSet B anchor) :=
     (K.allProperCoset_B_component_ambient_signed_edge_bijOn
       hadm hgen hret hcard B anchor core hAll).2.1
-  have hvImage (v : (G.BComponentEGraph B anchor).Vertex) :
+  have hvImage (v : {v : K.MultiCosetVertex P hadm hgen hret //
+      v ∈ G.BComponentVertexSet B anchor}) :
       F.onVertex v.1 ∈ T.vertices := by
     change F.onVertex v.1 ∈ ClusterSpec.LeftTranslateSet g (Q.VertexSet gen)
     rw [← hV]
     exact ⟨v.1, v.2, rfl⟩
-  have heImage (e : (G.BComponentEGraph B anchor).Edge) :
+  have heImage (e : {e : K.MultiCosetEdgeVertexIncidenceQuotient
+      P hadm hgen hret // e ∈ G.BComponentEdgeSet B anchor}) :
       F.onEdge e.1 ∈ T.edges := by
     change F.onEdge e.1 ∈ ClusterSpec.LeftTranslateEdgeSet g (Q.EdgeSet gen)
     rw [← hE]
     exact ⟨e.1, e.2, rfl⟩
   let f : LabelledGraphHom
       (G.BComponentEGraph B anchor).toLabelledGraph
-      T.toEGraph.toLabelledGraph where
-    onVertex v := ⟨F.onVertex v.1, hvImage v⟩
-    onEdge e := ⟨F.onEdge e.1, heImage e⟩
+      T.toEGraph.toLabelledGraph := {
+    onVertex := fun v => ⟨F.onVertex v.1, hvImage v⟩
+    onEdge := fun e => ⟨F.onEdge e.1, heImage e⟩
     map_source e := by
       apply Subtype.ext
       exact F.map_source e.1
     map_inv e := by
       apply Subtype.ext
       exact F.map_inv e.1
-    map_label e := F.map_label e.1
+    map_label := by
+      intro e
+      exact F.map_label e.1
+  }
   refine ⟨f, ⟨?_,?_⟩, ⟨?_,?_⟩⟩
   · intro x y hxy
     apply Subtype.ext
