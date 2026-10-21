@@ -122,8 +122,8 @@ theorem allProperCoset_B_component_canonicalTranslatedCluster_signedIso
         {z : Γ | ∃ v : K.MultiCosetVertex P hadm hgen hret,
           v ∈ G.BComponentVertexSet B anchor ∧
           F.onVertex v = z} := by
-      rw [hV]
-      exact y.2
+      have hMem := congrArg (fun S : Set Γ => y.1 ∈ S) hV
+      exact hMem.symm ▸ y.2
     obtain ⟨x,hx,hxy⟩ := hy
     refine ⟨⟨x,hx⟩, ?_⟩
     apply Subtype.ext
@@ -137,8 +137,8 @@ theorem allProperCoset_B_component_canonicalTranslatedCluster_signedIso
           ∃ e : K.MultiCosetEdgeVertexIncidenceQuotient
             P hadm hgen hret,
             e ∈ G.BComponentEdgeSet B anchor ∧ F.onEdge e = a} := by
-      rw [hE]
-      exact y.2
+      have hMem := congrArg (fun S : Set (ActionEdge Γ ι) => y.1 ∈ S) hE
+      exact hMem.symm ▸ y.2
     obtain ⟨e,he,hey⟩ := hy
     refine ⟨⟨e,he⟩, ?_⟩
     apply Subtype.ext
