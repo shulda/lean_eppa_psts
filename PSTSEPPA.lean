@@ -618,9 +618,9 @@ import PSTSEPPA.ABO.ForwardInductionRootedBridgeFreeStandardEquivalence
 import PSTSEPPA.ABO.CanonicalSignedTranslatedProperCluster
 import PSTSEPPA.ABO.SourceCanonicalSignedForwardClusterProperty
 
+import PSTSEPPA.ABO.ForwardInductionOriginalRootedMinimum
 /-!
 # EPPA for partial Steiner triple systems
 
 Root module for the formalization.
 -/
-import PSTSEPPA.ABO.ForwardInductionOriginalRootedMinimum
