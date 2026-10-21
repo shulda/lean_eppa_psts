@@ -612,6 +612,8 @@ import PSTSEPPA.ABO.ProperClusterLocalSubgroupSignedIso
 
 import PSTSEPPA.ABO.ProperClusterRootTranslatedSubgroupEquiv
 
+import PSTSEPPA.ABO.ProperClusterRootTranslatedSignedIso
+
 /-!
 # EPPA for partial Steiner triple systems
 
