@@ -623,6 +623,8 @@ import PSTSEPPA.ABO.SignedBComponentShapeTransport
 import PSTSEPPA.ABO.ForwardInductionOriginalCanonicalProperShape
 import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetTag
 
+import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetSignedSteps
+
 /-!
 # EPPA for partial Steiner triple systems
 
