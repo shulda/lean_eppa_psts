@@ -616,6 +616,8 @@ import PSTSEPPA.ABO.ProperClusterRootTranslatedSignedIso
 
 import PSTSEPPA.ABO.CanonicalSignedTranslatedProperCluster
 
+import PSTSEPPA.ABO.SourceCanonicalSignedForwardClusterProperty
+
 /-!
 # EPPA for partial Steiner triple systems
 
