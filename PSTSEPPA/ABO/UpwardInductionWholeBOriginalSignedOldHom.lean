@@ -126,7 +126,7 @@ theorem wholeOriginalBComponent_positive_old_edge
           Sum.inr (cHom.onVertex ⟨G.target e, hTargetInside⟩) := by
         have hStep :=
           C.signedStep_of_labelledHom_into_complete
-            T F (⟨e, hEdgeB⟩ : C.Edge)
+            T F ⟨e, hEdgeB⟩
         change
           T.letterPerm (G.label e)
             (Sum.inr (cHom.onVertex ⟨G.source e, hInside⟩)) =
@@ -134,6 +134,7 @@ theorem wholeOriginalBComponent_positive_old_edge
         rw [heLabel] at hStep
         exact hStep
       change T.letterPerm (.pos i) (j (G.source e)) = j (G.target e)
+      dsimp only [j]
       rw [G.originalVertexToFullBReplacement_inside
         gen B anchor g cHom.onVertex (G.source e) hInside]
       rw [G.originalVertexToFullBReplacement_inside
@@ -171,6 +172,7 @@ theorem wholeOriginalBComponent_positive_old_edge
       calc
         T.letterPerm (.pos i) (j (G.source e)) =
             T.letterPerm (.pos i) (Sum.inl u) := by
+          dsimp only [j]
           rw [G.originalVertexToFullBReplacement_outside
             gen B anchor g cHom.onVertex (G.source e) hInside]
         _ = Sum.inl
@@ -178,6 +180,7 @@ theorem wholeOriginalBComponent_positive_old_edge
                 hpaired B anchor i hi u) := hAction
         _ = Sum.inl v := congrArg Sum.inl hSignedOutside
         _ = j (G.target e) := by
+          dsimp only [j]
           rw [G.originalVertexToFullBReplacement_outside
             gen B anchor g cHom.onVertex (G.target e) hTargetOutside]
   · have hOld := G.wholeOriginalBComponentAugmentedStage_outsideB_old
