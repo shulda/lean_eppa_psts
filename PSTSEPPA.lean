@@ -629,6 +629,8 @@ import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetTag
 import PSTSEPPA.ABO.ForwardInductionOriginalTaggedCommonCore
 import PSTSEPPA.ABO.ForwardInductionOriginalFreshEdgeClass
 import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetSignedEdgeClass
+import PSTSEPPA.ABO.ForwardInductionOriginalActiveCoatomTags
+import PSTSEPPA.ABO.ForwardInductionIntrinsicOriginalActiveCoatoms
 /-!
 # EPPA for partial Steiner triple systems
 
