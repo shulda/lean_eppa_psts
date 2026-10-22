@@ -73,6 +73,7 @@ theorem upwardLocalMultiCosetSignedEmbedding_of_stageCover
     (A : Finset ι) (hA : A.card ≤ k + 1)
     (K : CayleySubgraphSpec (trivialCompletionGenerator genΔ A) A)
     (P : CosetFamilySpec A)
+    (Edge : Type*)
     (hAdmH : K.AdmissibleForCosetExtension)
     (T : CompleteEGraph
       (K.MultiCosetVertex P hAdmH
