@@ -73,7 +73,11 @@ theorem arbitraryRankRootedOriginal_fullBComponent_sameOldDTag
     (K.arbitraryRankRootedCompletedEGraphHom_follows_iff
       C root P hadm hgen hret
       (L.multiCosetInclude P hadm hgen hret D hDP p) v w).mpr (by
-        simpa only [hv] using hp)
+        change (K.arbitraryRankRootedOriginalCompletedEGraph
+          C root P hadm hgen hret).Follows
+          (e (L.multiCosetInclude P hadm hgen hret D hDP p)) w (e v)
+        rw [hv]
+        exact hp)
   obtain ⟨q, hIndex, _hBValue, hVertex⟩ :=
     (L.multiCoset_selected_C_subalphabet_B_component_exact
       P hadm hgen hret D hDP B hBD p v).mp
