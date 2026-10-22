@@ -68,7 +68,7 @@ theorem upwardProperSinglePiece_actualSignedBPath
   exact (K.multiCoset_selected_C_subalphabet_B_component_exact
       P hadm hgen hret C hCP B hBC p
         (K.multiCosetInclude P hadm hgen hret C hCP q)).mpr
-    ⟨q, hTag, hCoset, rfl⟩
+    ⟨q, hTag.symm, hCoset, rfl⟩
 
 /-- Exact source n=1 UPWARD signed BRIDGE-WORD reflection:
 for one original component-tagged selected C constituent,
@@ -116,7 +116,8 @@ theorem upwardProperSinglePiece_signedBridgeWord
       w
       (K.multiCosetAmbientValue P hadm hgen hret
         (K.multiCosetInclude P hadm hgen hret C hCP q)) at h
-    simpa only [K.multiCosetAmbientValue_include] using h
+    simpa only [K.multiCosetAmbientValue_include,
+      CayleySubgraphSpec.attachedValue] using h
   have hFollow :
       (cayleyGraph gen).followWord p.2.1 w = q.2.1 :=
     (cayleyGraph gen).toEGraph.follows_right_unique
