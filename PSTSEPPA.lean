@@ -632,6 +632,7 @@ import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetSignedEdgeClass
 import PSTSEPPA.ABO.ForwardInductionOriginalActiveCoatomTags
 import PSTSEPPA.ABO.ForwardInductionIntrinsicOriginalActiveCoatoms
 import PSTSEPPA.ABO.UpwardInductionR1LocalGroupPackage
+import PSTSEPPA.ABO.UpwardInductionActualGCoverAdmissible
 /-!
 # EPPA for partial Steiner triple systems
 
