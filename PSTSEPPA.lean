@@ -644,6 +644,7 @@ import PSTSEPPA.ABO.UpwardInductionFullBCosetOldSignedPath
 import PSTSEPPA.ABO.UpwardInductionWordCongruenceEmbedding
 import PSTSEPPA.ABO.UpwardInductionProperTwoPieceSignedBridge
 import PSTSEPPA.ABO.UpwardInductionProperTwoPieceCoreFromEmbedding
+import PSTSEPPA.ABO.UpwardInductionFullBCosetSignedWordEquality
 /-!
 # EPPA for partial Steiner triple systems
 
