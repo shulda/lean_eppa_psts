@@ -640,6 +640,7 @@ import PSTSEPPA.ABO.UpwardInductionActualGCoverAdmissible
 import PSTSEPPA.ABO.UpwardInductionLocalStageCoverSignedEmbedding
 import PSTSEPPA.ABO.UpwardInductionStageSignedWordEndpoint
 import PSTSEPPA.ABO.UpwardInductionSignedWordCertifiedEmbedding
+import PSTSEPPA.ABO.UpwardInductionWordCongruenceEmbedding
 /-!
 # EPPA for partial Steiner triple systems
 
