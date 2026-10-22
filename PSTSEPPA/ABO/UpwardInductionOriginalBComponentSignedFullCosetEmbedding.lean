@@ -103,7 +103,11 @@ theorem rootTranslatedClusterToFullBCosetHom_vertex_injective
       (P.rootTranslatedClusterToFullBCosetHom gen g).onVertex := by
   intro x y h
   apply Subtype.ext
-  exact congrArg Subtype.val h
+  have hValue :
+      ((P.rootTranslatedClusterToFullBCosetHom gen g).onVertex x).1 =
+        ((P.rootTranslatedClusterToFullBCosetHom gen g).onVertex y).1 :=
+    congrArg (fun z : IsolatedCosetGluing.CosetPoint gen B g => z.1) h
+  exact hValue
 
 end ClusterSpec
 
