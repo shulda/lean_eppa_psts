@@ -1,5 +1,6 @@
 import PSTSEPPA.ABO.StabilityRetractability
 import PSTSEPPA.ABO.LocalRankRetractableSubalphabet
+import PSTSEPPA.ABO.LocalSubalphabetGeneratedRetractable
 
 /-!
 # ABO corrected Theorem 4.7: exact R1 local retractability bridge
@@ -104,7 +105,8 @@ theorem upwardLocalGroupPackage
   exact ⟨isGenerated_trivialCompletionGenerator genΓ A,
     isGenerated_trivialCompletionGenerator genΔ A,
     Q.upwardLocalRetractable_domain k hStable hRetH A hA,
-    Q.upwardLocalRetractable_target k hRetH A hA,
+    retractable_trivialCompletionGenerator_of_kRetractable
+      genΔ (k+1) hRetH A hA,
     Q.upwardProperStable k hStable A hA⟩
 
 end LabelledGroupQuotient
