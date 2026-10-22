@@ -101,7 +101,7 @@ theorem upwardProperSinglePiece_signedBridgeWord
   have hCoset : q.2.1 ∈ generatedLeftCoset gen B p.2.1 := by
     change p.2.1⁻¹ * q.2.1 ∈ generatedSubgroup gen B
     rw [hAmbient]
-    simpa only [inv_mul_cancel_left] using
+    simpa [mul_assoc] using
       (evalGroup_mem_generatedSubgroup_of_uses gen B hu)
   obtain ⟨w, hw, hPath⟩ :=
     K.upwardProperSinglePiece_actualSignedBPath
