@@ -656,6 +656,7 @@ import PSTSEPPA.ABO.UpwardInductionOriginalConstituentPathsFromCanonicalCluster
 import PSTSEPPA.ABO.UpwardInductionOriginalBComponentLoopActionInvariant
 import PSTSEPPA.ABO.UpwardInductionBasedCayleyCoverAtOriginalAnchor
 import PSTSEPPA.ABO.UpwardInductionRealCoverFullCosetActualEndpoint
+import PSTSEPPA.ABO.UpwardInductionActualGCoverHQuotientEndpoint
 /-!
 # EPPA for partial Steiner triple systems
 
