@@ -53,7 +53,8 @@ theorem follows_signedWord_reverse
               G.toLabelledGraph.label_inv e
             _ = PSTS.SignedLetter.inv s :=
               congrArg PSTS.SignedLetter.inv hl
-        · change G.Follows (G.source e) [] u
+        · rw [show G.target (G.inv e) = G.source e from
+            G.toLabelledGraph.target_inv e]
           rw [hs]
           exact EGraph.Follows.nil u
       exact G.follows_append ih hReverseEdge
