@@ -52,19 +52,17 @@ theorem fullBCosetCompleteAction_existing_signed_step
       (fullCosetSubgraph gen B g).toEGraph.target e := by
   let K := (fullCosetSubgraph gen B g).toEGraph
   let T := fullBCosetCompleteAction gen B g
-  have hOriginal :=
-    K.trivialLoopCompletion_target_existing
+  have hOriginal :
+      T.target (K.source e, K.label e) = K.target e := by
+    exact K.trivialLoopCompletion_target_existing
       (fullCoset_locallyPairedLabels gen B g) e
   have hEdgeAt :
       T.edgeAt (K.source e) (K.label e) = (K.source e, K.label e) := by
     apply T.edgeAt_eq
     · rfl
     · rfl
-  calc
-    T.letterPerm (K.label e) (K.source e) =
-        T.target (T.edgeAt (K.source e) (K.label e)) := rfl
-    _ = T.target (K.source e, K.label e) := congrArg T.target hEdgeAt
-    _ = K.target e := hOriginal
+  change T.target (T.edgeAt (K.source e) (K.label e)) = K.target e
+  exact (congrArg T.target hEdgeAt).trans hOriginal
 
 end IsolatedCosetGluing
 
