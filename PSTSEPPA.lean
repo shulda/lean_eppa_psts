@@ -624,6 +624,7 @@ import PSTSEPPA.ABO.ForwardInductionOriginalCanonicalProperShape
 import PSTSEPPA.ABO.ProperClusterDoubleRootSignedIso
 
 import PSTSEPPA.ABO.ForwardInductionOriginalFreshEdgeClass
+import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetSignedEdgeClass
 /-!
 # EPPA for partial Steiner triple systems
 
