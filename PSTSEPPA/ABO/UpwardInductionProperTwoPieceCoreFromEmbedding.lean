@@ -157,8 +157,7 @@ theorem upwardProperTwoPiece_actualCore_coalesces_of_embedding
             rw [hEnd₁]
       _ = K.multiCosetAmbientValue P hadm hgen hret s₁ *
           PSTS.SignedWord.evalGroup genΓ (p₁ ++ p₂) := by
-            rw [PSTS.SignedWord.evalGroup_append]
-            group
+            simp only [PSTS.SignedWord.evalGroup_append, mul_assoc]
       _ = K.multiCosetAmbientValue P hadm hgen hret s₁ *
           PSTS.SignedWord.evalGroup genΓ p := by
             rw [← hG]
