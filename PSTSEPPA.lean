@@ -654,6 +654,9 @@ import PSTSEPPA.ABO.UpwardInductionEmbeddedFullBCosetStageWordEquality
 import PSTSEPPA.ABO.UpwardInductionNonisolatedFullBCosetStageEmbedding
 import PSTSEPPA.ABO.UpwardInductionOriginalConstituentPathsFromCanonicalCluster
 import PSTSEPPA.ABO.UpwardInductionOriginalBComponentLoopActionInvariant
+import PSTSEPPA.ABO.UpwardInductionOutsideBComponentPermutations
+import PSTSEPPA.ABO.UpwardInductionPermutationExtensionToFreshCoset
+import PSTSEPPA.ABO.UpwardInductionWholeBComponentReplacementCarrier
 import PSTSEPPA.ABO.UpwardInductionBasedCayleyCoverAtOriginalAnchor
 /-!
 # EPPA for partial Steiner triple systems
