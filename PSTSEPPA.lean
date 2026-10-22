@@ -649,6 +649,11 @@ import PSTSEPPA.ABO.UpwardInductionProperSinglePieceSignedBridge
 import PSTSEPPA.ABO.SignedGraphPathReverse
 import PSTSEPPA.ABO.UpwardInductionProperTwoConstSignedCosetLift
 import PSTSEPPA.ABO.UpwardInductionAugmentedFullBCosetWordEquality
+import PSTSEPPA.ABO.UpwardInductionAugmentedClusterBWordEquality
+import PSTSEPPA.ABO.UpwardInductionEmbeddedFullBCosetStageWordEquality
+import PSTSEPPA.ABO.UpwardInductionNonisolatedFullBCosetStageEmbedding
+import PSTSEPPA.ABO.UpwardInductionOriginalConstituentPathsFromCanonicalCluster
+import PSTSEPPA.ABO.UpwardInductionOriginalBComponentLoopActionInvariant
 /-!
 # EPPA for partial Steiner triple systems
 
