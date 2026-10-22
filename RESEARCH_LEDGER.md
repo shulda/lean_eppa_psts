@@ -1,5 +1,28 @@
 # Research / formalization ledger
 
+
+## 2026-10-22 — Source forward 4.5 FINISHED; upward 4.7 next
+
+See [full signed original Γ proof/API and corrected upward task](ABO_THEOREM45_COMPLETE_THEOREM47_FRONTIER_2026-10-22.md).
+Green merged #890, main `8738074992b90d7de5c48b3b2c7b1295ed389472`,
+exports `sourceKLocal_originalCanonicalExactSignedWholeClusterProperty`
+for actual signed original root-normalized incomplete Γ Cayley geometry
+in ranks 2≤|C|≤k, no globally retractable Γ. Its exact B-component
+minimum, original active-coatom-tagged common core and genuine full
+tagged Γ-coset/proper translated Γ-cluster signed graph alternatives
+are now certified, including BOTH edge token orientations and all
+original component tags. Earlier flags that full forward Theorem4.5
+was still open are superseded; retain them only as historical record.
+
+Next: corrected UPWARD Theorem 4.7(i),(ii),(iii), with source's
+actual complete and augmented H-coset G-stage covering hypotheses
+and repairs R1 (G local retractability from k-stability),
+R7 (A₁/A₂ labels) and R8 (skeleton-meeting/full B-coset
+case separately). #891/#892 are source-ready R1 and literal
+G-cover admissibility CANDIDATES, not yet integrated at the
+time of this note. Then source §5, rank k=1 repair and
+unconditional closed-PSTS EPPA remain unproved in Lean.
+
 ## 2026-10-21 — Certified ABO Theorem-4.5 signed Γ-local bridge and handoff
 
 Authoritative detailed dependency record:

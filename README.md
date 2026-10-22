@@ -1,5 +1,14 @@
 # EPPA for partial Steiner triple systems — Lean formalization
 
+
+**Certified mathematical frontier (2026-10-22):**
+[complete original Γ-rooted signed k-local ABO Theorem 4.5 and corrected upward Theorem 4.7 plan](ABO_THEOREM45_COMPLETE_THEOREM47_FRONTIER_2026-10-22.md).
+Main commit `8738074992b90d7de5c48b3b2c7b1295ed389472` is green
+(clean #890); the remaining major proof is **UPWARD Theorem 4.7**,
+followed by ABO §5 and the unconditional finite PSTS EPPA instantiation.
+The target is **not** yet proved merely because the conditional
+fibre-MAX transfer has been formalized.
+
 Lean formalization of ordinary EPPA for finite partial Steiner triple systems
 (PSTS) with **closed** substructures/embeddings.
 

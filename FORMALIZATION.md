@@ -1,5 +1,31 @@
 # Formalization status
 
+
+## 2026-10-22 — Authoritative CURRENT main: full original Γ-facing signed forward ABO 4.5
+
+See [certified Theorem 4.5 and exact source Theorem 4.7 frontier](ABO_THEOREM45_COMPLETE_THEOREM47_FRONTIER_2026-10-22.md).
+Main `8738074992b90d7de5c48b3b2c7b1295ed389472` integrates
+#885, #886, #889 and #890. Clean #890's `lake build`, all 256 REAL
+signed original edge-case pairs and permitted axiom audit passed green.
+For finite merely k-retractable Γ, original admissible incomplete Cayley
+skeleton K, C⊆A of rank **2≤|C|≤k**, true lower rooted bridge-free
+H[C] premises and original signed off-skeleton B-component, the single
+Lean declaration
+`sourceKLocal_originalCanonicalExactSignedWholeClusterProperty`
+proves the ATTAINED minimum of its entire original signed B-component,
+an original common tagged coatom core and a literal original-full
+signed Γ B-coset OR canonical signed Γ-root-translated proper B-cluster
+alternative preserving real vertices, BOTH oriented edge tokens and
+original intrinsic old component tags. A separate direct source
+characterization of genuine original active coatom tags is also accepted.
+Low-rank bases are separate.
+
+**NOT COMPLETED:** corrected upward Theorem 4.7 (admissibility,
+embedding and bridge-free), full historical selected ABO §5 reflecting
+group with rank-one repair, Cayley fibre-MAX group certificate and
+unconditional ordinary PSTS EPPA. The 2026-10-21 status below is
+historical and must not supersede this current checkpoint.
+
 ## 2026-10-21 — Current certified `main` checkpoint (supersedes older dated statuses)
 
 The authoritative consolidated current status is
