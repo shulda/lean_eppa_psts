@@ -2,43 +2,30 @@ import PSTSEPPA.ABO.UpwardInductionAugmentedFullBCosetWordEquality
 import PSTSEPPA.ABO.CayleyStageProjection
 
 /-!
-# Corrected ABO Theorem 4.7(iii): actual G cover of B-augmentation yields H word equality
+# Actual Cayley(G) cover forces H word equality in an ISOLATED-root attachment
 
-The source's key off-skeleton PROPER n≥2 step does not
-ASSUME a mysterious group relation [p]_H=[p₁ inv(p₂)]_H.
-It produces it from:
+This theorem is a precise cover/path calculation for the legally completed
+`IsolatedCosetGluing` stage constructed at an old H-root with NO outgoing
+old B-labelled edges (hypothesis `hMissing`). It is valid for the
+rank-one/type-(2) isolated full B-coset attachment, including signed inverse
+edge tokens and stationary loops on labels outside B.
 
-* an ACTUAL signed labelled Cayley(G)→T cover of the
-  legally completed H-stage with an attached FULL H[B] coset;
-* the true original G Cayley B-word p from u to
-  u*[p]_G, so its image under the genuine stage cover
-  is a REAL T signed p-path;
-* the accurate stage basepoint F(u) in the glued
-  full H[B] coset, including the old root case;
-* an independently REAL signed path in the augmented
-  stage with word p₁ inv(p₂) from exactly the SAME
-  basepoint to F(u*[p]_G).
+The source's corrected ABO Theorem 4.7(iii) off-skeleton proper B-cluster
+with multiple constituents normally already has genuine old B-edges. Its
+augmentation identifies the WHOLE B-component with a full H[B] coset.
+This lemma DOES NOT supply that non-isolated cluster augmentation or its
+Cayley(G) cover. The parallel genuine canonical Cayley cluster construction
+is being developed separately in `UpwardInductionAugmentedClusterBWordEquality`.
 
-The true signed G Cayley path maps to the correct
-signed completed-stage path. Deterministic signed paths
-from the same source to the same target have identical
-true completed-stage endpoints under their respective
-word-following operations. The independently certified
-exact full-B-augmentation detector now proves
-[p]_H=[p₁ inv(p₂)]_H.
+Within this isolated-root scope, a genuine labelled Cayley(G)→stage
+morphism takes the original G B-word path p into the completed stage.
+If a genuine second stage path labelled w₁ ++ inv(w₂) has the same
+true endpoint, deterministic signed stage following and the exact
+attached B-coset word endpoint lemma yield [p]_H=[w₁ inv(w₂)]_H.
 
-No assumption that the entire legally loop-completed H
-stage embeds in Cayley(H), no false fixed outside-B
-loop treated as an H-group relation, no invented
-missing old signed edge and no old tag collapse.
-
-The remaining source geometry must furnish the
-actual B-augmentation H path p₁ inv(p₂) ending at
-the required image of the G ambient endpoint, using
-the true proper H cluster/core. This is more concrete
-than assuming equality of H group words directly.
+No unsupported Cayley(H) embedding of the WHOLE loop-completed stage,
+no fake old signed edges, no collapse of original component tags.
 -/
-
 namespace PSTSEPPA
 namespace ABO
 namespace IsolatedCosetGluing
@@ -47,11 +34,12 @@ variable {V OldEdge ι Γ Δ : Type*}
 variable [Fintype ι] [DecidableEq ι]
 variable [Group Γ] [Group Δ]
 
-/-- A real G→legally completed H B-AUGMENTATION cover and
-one ACTUAL completed-stage constituent-piece B-path from
+/-- A real G→legally completed ISOLATED-root H B-augmentation
+cover and one ACTUAL completed-stage constituent-piece B-path from
 its correct glued full-B source to the image of the genuine
 G ambient p endpoint yield EXACTLY the group-word equality
-used by the proper n≥2 source upward bridge argument.
+used as an ingredient in the proper n≥2 source upward bridge argument,
+conditional on obtaining the corresponding genuine general augmentation.
 
 Every signed path is witnessed using genuine positive and
 inverse edge tokens; the proof does NOT presuppose
