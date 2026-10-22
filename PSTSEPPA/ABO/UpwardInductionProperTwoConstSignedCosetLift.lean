@@ -135,7 +135,8 @@ theorem upwardProperTwoConstituents_signedBridge_of_HWordEquality
       K.multiCosetAmbientValue P hadm hgen hret
         (K.multiCosetInclude P hadm hgen hret C₁ hC₁ a₁) *
           PSTS.SignedWord.evalGroup genΓ p := by
-    simpa only [K.multiCosetAmbientValue_include] using hAmbient
+    simpa only [K.multiCosetAmbientValue_include,
+      CayleySubgraphSpec.attachedValue] using hAmbient
   exact K.upwardProperTwoPiece_signedBridge_of_embedding
     P hadm hgen hret Q B hStable C₁ C₂
     (K.multiCosetInclude P hadm hgen hret C₁ hC₁ a₁)
