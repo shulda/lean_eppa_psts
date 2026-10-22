@@ -638,6 +638,8 @@ import PSTSEPPA.ABO.ForwardInductionOriginalExactTheorem45
 import PSTSEPPA.ABO.UpwardInductionR1LocalGroupPackage
 import PSTSEPPA.ABO.UpwardInductionActualGCoverAdmissible
 import PSTSEPPA.ABO.UpwardInductionLocalStageCoverSignedEmbedding
+import PSTSEPPA.ABO.UpwardInductionStageSignedWordEndpoint
+import PSTSEPPA.ABO.UpwardInductionSignedWordCertifiedEmbedding
 /-!
 # EPPA for partial Steiner triple systems
 
