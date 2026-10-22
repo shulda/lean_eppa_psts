@@ -624,6 +624,7 @@ import PSTSEPPA.ABO.ForwardInductionOriginalCanonicalProperShape
 import PSTSEPPA.ABO.ProperClusterDoubleRootSignedIso
 
 import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetTag
+import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetSignedSteps
 /-!
 # EPPA for partial Steiner triple systems
 
