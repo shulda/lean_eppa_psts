@@ -108,6 +108,11 @@ theorem arbitraryRankRootedOriginalFullBComponent_exactGammaTaggedCoset
           exact hCoset)
     apply hExact.mpr
     refine ⟨v, hSame, hLocalCoset, ?_⟩
+    change y = Quotient.mk
+      (K.arbitraryRankRootedOriginalMultiCosetSetoid
+        C root P hadm hgen hret)
+      (⟨⟨D, hDP⟩, r v⟩ :
+        (K.subalphabetComponentSubgraph C root).MultiCosetRawVertex P)
     rw [hMap]
     exact hV
 
