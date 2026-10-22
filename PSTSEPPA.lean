@@ -652,6 +652,8 @@ import PSTSEPPA.ABO.UpwardInductionAugmentedFullBCosetWordEquality
 import PSTSEPPA.ABO.UpwardInductionEmbeddedFullBCosetStageWordEquality
 import PSTSEPPA.ABO.UpwardInductionProperTwoConstituentsFromRealAugmentedCover
 import PSTSEPPA.ABO.UpwardInductionOriginalHPathsToGBridge
+import PSTSEPPA.ABO.UpwardInductionOriginalConstituentPathsFromCanonicalCluster
+import PSTSEPPA.ABO.UpwardInductionCanonicalHClusterToRealGBridge
 /-!
 # EPPA for partial Steiner triple systems
 
