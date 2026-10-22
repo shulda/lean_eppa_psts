@@ -234,7 +234,7 @@ theorem wholeOriginalBComponentAugmentedStage_outsideB_old
      G.originalVertexToFullBReplacement gen B anchor g coord
        (G.loopCompletedStep (.pos i) v)
   rw [dif_neg hi]
-  exact G.extendPermAlongEmbedding_old_action
+  exact extendPermAlongEmbedding_old_action
     (G.originalVertexToFullBReplacement gen B anchor g coord)
     (G.originalVertexToFullBReplacement_injective
       gen B anchor g coord hcoord)
