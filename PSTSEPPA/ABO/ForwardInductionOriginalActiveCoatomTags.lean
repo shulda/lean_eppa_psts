@@ -167,6 +167,7 @@ theorem exactOriginalRootedSignedTaggedCommonCore_of_localTagged
       C root hadm hgen hret B u) :
     K.HasExactOriginalRootedSignedTaggedCommonCore
       C root hadm hgen hret B u := by
+  classical
   obtain ⟨M, m, core, hMin, hReach, hTagged, hAll⟩ := h
   refine ⟨M, m, core, hMin, hReach, hTagged, ?_⟩
   intro t ht
