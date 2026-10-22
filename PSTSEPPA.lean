@@ -650,6 +650,7 @@ import PSTSEPPA.ABO.SignedGraphPathReverse
 import PSTSEPPA.ABO.UpwardInductionProperTwoConstSignedCosetLift
 import PSTSEPPA.ABO.UpwardInductionAugmentedFullBCosetWordEquality
 import PSTSEPPA.ABO.UpwardInductionOriginalBComponentSignedFullCosetEmbedding
+import PSTSEPPA.ABO.UpwardInductionOriginalForward45FullBCosetEmbedding
 /-!
 # EPPA for partial Steiner triple systems
 
