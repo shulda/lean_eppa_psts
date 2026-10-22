@@ -3,45 +3,33 @@ import PSTSEPPA.ABO.CosetConnectivity
 import PSTSEPPA.ABO.KRetractableCosetIntersections
 
 /-!
-# ABO Theorem 4.7(iii): TRUE B-AUGMENTATION endpoints certify H-word equality
+# Exact signed B-word equality in an ISOLATED full-coset attachment
 
-The published corrected upward proof's OFF-SKELETON proper
-n≥2 B-cluster branch uses the canonical H-stage B-augmentation:
-the proper B-cluster is blown up to a genuine FULL H[B] coset.
-Two signed B-words from the same attached coset point with
-the same actual completed-stage endpoint must have the SAME
-group value in H. This group equality is then reflected
-to G by k-stability (|B|≤k).
+This theorem applies to the genuinely constructed `IsolatedCosetGluing`
+stage: its attachment root has NO OLD B-labelled outgoing edge. The
+full H[B] coset is attached at that ONE old root with all other
+coset vertices fresh, followed by legal stationary-loop completion.
 
-This is NOT a consequence of injectivity of an unaugmented
-H coset extension into H, which can fail for different old
-component tags. Nor can we assume the WHOLE loop-completed
-H-stage maps to Cayley(H), since legal outside-B fixed loops
-need not be H-generators equal to the identity.
+This is a valid rank-one/type-(2) augmentation and a useful model
+calculation for the word-equality step in corrected ABO 4.7(iii).
+However, a NONTRIVIAL proper B-cluster already contains original
+B-edges. The source's general proper n≥2 B-augmentation must
+identify an ENTIRE existing B-component with its full H[B] coset.
+The single-root construction and the theorems below DO NOT
+implement or prove that general source-cover geometry.
 
-Instead we use the already-certified EXACT signed B-word
-action in the REAL attached H[B] coset after legal trivial
-loop completion:
+For the present legal isolated attachment, every B-word w from a
+genuine glued H[B]-coset point p has an EXACT completed-stage
+endpoint `gluePoint(q)` with group coordinate
+`q.1 = p.1 * SignedWord.evalGroup gen w`.
+Two real signed B-words from the SAME such point ending at the
+SAME actual stage vertex therefore have equal group word values.
+The proof preserves both positive/inverse signed directed tokens
+and treats all missing labels as stationary loops only.
 
-   T.followWord (gluePoint(p)) w = gluePoint(q),
-   q.1 = p.1 * [w]_H.
-
-The gluing map is injective on the actual full B-coset
-points, even at the old attachment root. Hence equal
-completed-stage endpoints yield equal coset point
-coordinates; ordinary group cancellation now proves
-equality of the two H-word values.
-
-Both POSITIVE/INVERSE signed edge tokens and loops are
-treated as real completed-stage paths; no false old edge
-or ambient tag collapse is used. This is the exact
-source AUGMENTATION word-equality step needed by
-the independently formalized proper two-piece bridge
-reassembly. Constructing the relevant B-augmented
-G→H stage cover and proving its required endpoint
-equality remain separate source 4.7(iii) obligations.
+No global ambient embedding of the completed stage in Cayley(H)
+is assumed: outside-B loops generally preclude such a map.
 -/
-
 namespace PSTSEPPA
 namespace ABO
 namespace IsolatedCosetGluing
@@ -93,17 +81,19 @@ theorem completedStage_attached_B_sameEndpoint_evalGroup_eq
       _ = p.1 * PSTS.SignedWord.evalGroup gen w₂ := hVal₂
   exact mul_left_cancel hMul
 
-/-- SOURCE CORRECTED 4.7(iii) proper n≥2 H-equality:
+/-- Isolated-root augmentation analogue of the signed two-piece
+word-equality calculation needed in corrected ABO 4.7(iii):
 if the original ambient B-word p and the two constituent
 words w₁ and w₂ (with the second path reversed) have the
 same ACTUAL signed endpoint in the genuine completed
 B-AUGMENTATION, then
   [p]_H = [w₁ inv(w₂)]_H.
 
-This supplies precisely the H-word relation used for
-k-stable source G bridge reassembly, WITHOUT any
-assumption that two H group coordinates identify
-different original quotient tags. -/
+This supplies the algebraic equality IN THIS ISOLATED-ROOT STAGE.
+It is not by itself the source's general proper B-cluster
+augmentation, whose root may have genuine old B-edges.
+No distinct original quotient tags are identified by ambient
+H-coordinate equality. -/
 theorem completedStage_properTwoPiece_BWordEquality
     (G : EGraph V OldEdge ι)
     (gen : ι → Γ) (B : Finset ι) (g : Γ) (root : V)
