@@ -137,7 +137,7 @@ theorem upwardLocalMultiCosetSignedEmbedding_of_wordCongruence
     rw [hOne]
     exact hwStage
   exact K.upwardLocalMultiCosetSignedEmbedding_of_signedWordCertificates
-    Q k hk hRetH A hA K P Edge hAdmH T F hCert
+    Q k hk hRetH A hA P Edge hAdmH T F hCert
 
 end CayleySubgraphSpec
 end ABO
