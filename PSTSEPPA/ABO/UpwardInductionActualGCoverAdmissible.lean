@@ -59,7 +59,7 @@ theorem upwardGCover_admissible_of_kStable
     K.pullbackQuotient_admissible_of_kStable
       Q k hStable hA hAdmH
   exact (K.pullbackQuotient Q).subalphabetComponentSubgraph_admissible_of_subset
-    hAdmPullback A (Finset.Subset.refl A) root
+    hAdmPullback A (by intro i hi; exact hi) root
 
 end CayleySubgraphSpec
 end ABO
