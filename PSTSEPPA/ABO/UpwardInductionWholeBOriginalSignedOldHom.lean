@@ -231,7 +231,8 @@ theorem wholeOriginalBComponent_old_signed_edge
           T.letterPerm (.pos i) (j (G.target e)) =
             j (G.source e) := by
         dsimp only [T, j]
-        simpa only [G.toLabelledGraph.target_inv] using hPositive
+        simpa only [G.toLabelledGraph.source_inv,
+          G.toLabelledGraph.target_inv] using hPositive
       have hNegative :
           T.letterPerm (.neg i) (j (G.source e)) =
             j (G.target e) := by
