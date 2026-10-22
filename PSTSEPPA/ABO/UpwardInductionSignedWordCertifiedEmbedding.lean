@@ -92,7 +92,7 @@ theorem upwardLocalMultiCosetSignedEmbedding_of_signedWordCertificates
         (isGenerated_trivialCompletionGenerator genΓ A)
         (Q.upwardLocalRetractable_domain k hk hRetH A hA)).onEdge := by
   apply K.upwardLocalMultiCosetSignedEmbedding_of_stageCover
-    Q k hk hRetH A hA K P Edge hAdmH T F
+    Q k hk hRetH A hA P Edge hAdmH T F
   intro B hBP p
   obtain ⟨w, hGroup, hStage⟩ := hWordCertificate B hBP p
   calc
