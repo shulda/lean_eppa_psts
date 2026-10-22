@@ -648,6 +648,7 @@ import PSTSEPPA.ABO.UpwardInductionFullBCosetSignedWordEquality
 import PSTSEPPA.ABO.UpwardInductionProperSinglePieceSignedBridge
 import PSTSEPPA.ABO.UpwardInductionOriginalBComponentLoopActionInvariant
 import PSTSEPPA.ABO.UpwardInductionOutsideBComponentPermutations
+import PSTSEPPA.ABO.UpwardInductionWholeNonisolatedBCompleteAction
 /-!
 # EPPA for partial Steiner triple systems
 
