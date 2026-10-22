@@ -69,7 +69,8 @@ theorem fullCoset_locallyPairedLabels
   intro e he
   refine ⟨he.1, ?_⟩
   change signedBase (PSTS.SignedLetter.inv e.2) ∈ B
-  simpa only [signedBase_inv] using he.2
+  rw [signedBase_inv]
+  exact he.2
 
 /-- The ACTUAL complete signed full H[B]-coset action.
 Every B-labelled signed edge was already genuinely
@@ -139,23 +140,8 @@ theorem wholeOriginalBComponentAugmentedStage_B_on_coset
     Sum.inr
       ((IsolatedCosetGluing.fullBCosetCompleteAction
         gen B g).letterPerm (.pos i) p) := by
-  change
-    (if h : i ∈ B then
-      Equiv.Perm.sumCongr
-        (G.loopCompletedOutsideBPermutation
-          hpaired B anchor i h)
-        ((IsolatedCosetGluing.fullBCosetCompleteAction
-          gen B g).letterPerm (.pos i))
-     else
-       extendPermAlongEmbedding
-         (G.originalVertexToFullBReplacement gen B anchor g coord)
-         (G.originalVertexToFullBReplacement_injective
-           gen B anchor g coord hcoord)
-         (G.loopCompletedPermutation hpaired i)) (Sum.inr p) =
-      Sum.inr
-        ((IsolatedCosetGluing.fullBCosetCompleteAction
-          gen B g).letterPerm (.pos i) p)
-  rw [dif_pos hi]
+  simp only [wholeOriginalBComponentAugmentedStage,
+    actionGraph.letterPerm, signedPerm.pos, dif_pos hi]
   rfl
 
 /-- On each old vertex OUTSIDE the chosen true B-component,
@@ -178,23 +164,8 @@ theorem wholeOriginalBComponentAugmentedStage_B_on_oldOutside
     Sum.inl
       (G.loopCompletedOutsideBPermutation
         hpaired B anchor i hi p) := by
-  change
-    (if h : i ∈ B then
-      Equiv.Perm.sumCongr
-        (G.loopCompletedOutsideBPermutation
-          hpaired B anchor i h)
-        ((IsolatedCosetGluing.fullBCosetCompleteAction
-          gen B g).letterPerm (.pos i))
-     else
-       extendPermAlongEmbedding
-         (G.originalVertexToFullBReplacement gen B anchor g coord)
-         (G.originalVertexToFullBReplacement_injective
-           gen B anchor g coord hcoord)
-         (G.loopCompletedPermutation hpaired i)) (Sum.inl p) =
-      Sum.inl
-        (G.loopCompletedOutsideBPermutation
-          hpaired B anchor i hi p)
-  rw [dif_pos hi]
+  simp only [wholeOriginalBComponentAugmentedStage,
+    actionGraph.letterPerm, signedPerm.pos, dif_pos hi]
   rfl
 
 /-- Crucially a generator i OUTSIDE B still performs the
@@ -217,23 +188,8 @@ theorem wholeOriginalBComponentAugmentedStage_outsideB_old
       (G.originalVertexToFullBReplacement gen B anchor g coord v) =
     G.originalVertexToFullBReplacement gen B anchor g coord
       (G.loopCompletedStep (.pos i) v) := by
-  change
-    (if h : i ∈ B then
-      Equiv.Perm.sumCongr
-        (G.loopCompletedOutsideBPermutation
-          hpaired B anchor i h)
-        ((IsolatedCosetGluing.fullBCosetCompleteAction
-          gen B g).letterPerm (.pos i))
-     else
-       extendPermAlongEmbedding
-         (G.originalVertexToFullBReplacement gen B anchor g coord)
-         (G.originalVertexToFullBReplacement_injective
-           gen B anchor g coord hcoord)
-         (G.loopCompletedPermutation hpaired i))
-       (G.originalVertexToFullBReplacement gen B anchor g coord v) =
-     G.originalVertexToFullBReplacement gen B anchor g coord
-       (G.loopCompletedStep (.pos i) v)
-  rw [dif_neg hi]
+  simp only [wholeOriginalBComponentAugmentedStage,
+    actionGraph.letterPerm, signedPerm.pos, dif_neg hi]
   exact extendPermAlongEmbedding_old_action
     (G.originalVertexToFullBReplacement gen B anchor g coord)
     (G.originalVertexToFullBReplacement_injective
