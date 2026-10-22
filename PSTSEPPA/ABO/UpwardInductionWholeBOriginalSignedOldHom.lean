@@ -236,7 +236,11 @@ theorem wholeOriginalBComponent_old_signed_edge
           T.letterPerm (.neg i) (j (G.source e)) =
             j (G.target e) := by
         apply (T.letterPerm (.pos i)).injective
-        rw [T.letterPerm_inv (.pos i)]
+        have hInv :
+            T.letterPerm (.neg i) = (T.letterPerm (.pos i)).symm := by
+          simpa only [PSTS.SignedLetter.inv] using
+            (T.letterPerm_inv (.pos i))
+        rw [hInv]
         rw [Equiv.apply_symm_apply]
         exact hPositive'.symm
       simpa only [hs] using hNegative
