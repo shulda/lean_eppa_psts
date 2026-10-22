@@ -17,7 +17,7 @@ Instead, fix ONE genuine labelled full H[B]-coset graph
 embedding J into ANY complete signed H-stage T. In that
 coset the true completed-stage endpoint of each actual
 B-supported signed word p, from its genuine coset point c₁,
-is J(c₂) if and ONLY if c₂.coord=c₁.coord*[p]_H.
+is J(c₂) whenever c₂.coord=c₁.coord*[p]_H.
 
 Thus if a real labelled Cayley(G)→T cover F is based at
 the EXACT stage vertex J(c₁), the original signed
