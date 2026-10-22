@@ -631,6 +631,10 @@ import PSTSEPPA.ABO.ForwardInductionOriginalFreshEdgeClass
 import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetSignedEdgeClass
 import PSTSEPPA.ABO.ForwardInductionOriginalActiveCoatomTags
 import PSTSEPPA.ABO.ForwardInductionIntrinsicOriginalActiveCoatoms
+import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetGammaExact
+import PSTSEPPA.ABO.ForwardInductionOriginalFullCosetSignedSteps
+import PSTSEPPA.ABO.ForwardInductionOriginalFullSignedAlternative
+import PSTSEPPA.ABO.ForwardInductionOriginalExactTheorem45
 /-!
 # EPPA for partial Steiner triple systems
 
