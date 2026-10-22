@@ -97,7 +97,11 @@ theorem arbitraryRankRootedOriginal_fullBComponent_allSignedSteps
   · calc
       H.source (f.onEdge d) = f.onVertex (G.source d) :=
         f.map_source d
-      _ = f.onVertex x := by rw [hdSrc]
+      _ = f.onVertex x := by
+        change f.onVertex
+          ((L.multiCosetEGraph P hadm hgen hret).source d) =
+            f.onVertex x
+        exact congrArg f.onVertex hdSrc
       _ = y := hx
   · calc
       H.label (f.onEdge d) = G.label d := f.map_label d
