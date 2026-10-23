@@ -665,6 +665,7 @@ import PSTSEPPA.ABO.UpwardInductionOriginalForward45FullBCosetEmbedding
 import PSTSEPPA.ABO.UpwardInductionWholeBOldSignedEmbedding
 import PSTSEPPA.ABO.UpwardInductionRealCoverFullCosetActualEndpoint
 import PSTSEPPA.ABO.UpwardInductionActualGCoverHQuotientEndpoint
+import PSTSEPPA.ABO.UpwardInductionOriginalHWholeStageCosetAgreement
 import PSTSEPPA.ABO.UpwardInductionBasedCayleyCoverAtOriginalAnchor
 /-!
 # EPPA for partial Steiner triple systems
