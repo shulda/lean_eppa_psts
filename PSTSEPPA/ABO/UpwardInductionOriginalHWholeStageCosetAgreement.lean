@@ -65,7 +65,7 @@ theorem wholeOriginalBComponentOldSignedHom_agrees_fullCoset
       (G.BComponentEGraph B anchor).toLabelledGraph
       ((IsolatedCosetGluing.fullCosetSubgraph genH B gH).toEGraph).toLabelledGraph)
     (hcInjective : Function.Injective cHom.onVertex)
-    (x : (G.BComponentEGraph B anchor).Vertex) :
+    (x : {v : V // v ∈ G.BComponentVertexSet B anchor}) :
     (G.wholeOriginalBComponentOldSignedHom
       hpaired genH B anchor gH cHom hcInjective).onVertex x.1 =
     (G.fullBCosetToWholeOriginalBComponentStageHom
@@ -106,7 +106,7 @@ theorem wholeOriginalBComponent_oldTarget_of_realGCover_and_HQuotient
       (G.wholeOriginalBComponentAugmentedStage
         hpaired genH B anchor gH cHom.onVertex hcInjective).toEGraph.toLabelledGraph)
     (g₁ g₂ : Δ)
-    (s₁ s₂ : (G.BComponentEGraph B anchor).Vertex)
+    (s₁ s₂ : {v : V // v ∈ G.BComponentVertexSet B anchor})
     (p : LabelWord ι) (hp : LabelWord.Uses B p)
     (hG : g₂ = g₁ * PSTS.SignedWord.evalGroup genG p)
     (hH₁ : (cHom.onVertex s₁).1 = Q.hom g₁)
