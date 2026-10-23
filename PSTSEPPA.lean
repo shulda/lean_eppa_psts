@@ -668,6 +668,8 @@ import PSTSEPPA.ABO.UpwardInductionActualGCoverHQuotientEndpoint
 import PSTSEPPA.ABO.UpwardInductionProperTwoConstituentsFromRealAugmentedCover
 import PSTSEPPA.ABO.UpwardInductionOriginalHPathsToGBridge
 import PSTSEPPA.ABO.UpwardInductionCanonicalHClusterToRealGBridge
+import PSTSEPPA.ABO.UpwardInductionOriginalHWholeStageCosetAgreement
+import PSTSEPPA.ABO.UpwardInductionConstructedProperHStageToGBridge
 import PSTSEPPA.ABO.UpwardInductionBasedCayleyCoverAtOriginalAnchor
 /-!
 # EPPA for partial Steiner triple systems
