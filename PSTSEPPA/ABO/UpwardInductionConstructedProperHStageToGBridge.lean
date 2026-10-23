@@ -209,7 +209,7 @@ theorem upwardProperTwoConstituents_signedBridge_of_constructedHStage
   have hTarget :
       F.onVertex a₂.2.1 = iOld.onVertex s₂.1 :=
     H.wholeOriginalBComponent_oldTarget_of_realGCover_and_HQuotient
-      genG genH Q H hpaired B anchor gH cHom hcInjective
+      genG genH Q hpaired B anchor gH cHom hcInjective
       F a₁.2.1 a₂.2.1 s₁ s₂ p hp
       hAmbient hH₁ hH₂ hBaseOld
   have hCoverEnd :
