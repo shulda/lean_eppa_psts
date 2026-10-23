@@ -669,6 +669,7 @@ import PSTSEPPA.ABO.UpwardInductionProperTwoConstituentsFromRealAugmentedCover
 import PSTSEPPA.ABO.UpwardInductionOriginalHPathsToGBridge
 import PSTSEPPA.ABO.UpwardInductionCanonicalHClusterToRealGBridge
 import PSTSEPPA.ABO.CanonicalSignedTranslatedProperClusterNaturality
+import PSTSEPPA.ABO.OriginalTaggedActiveCoatomCanonicalCosets
 import PSTSEPPA.ABO.UpwardInductionBasedCayleyCoverAtOriginalAnchor
 /-!
 # EPPA for partial Steiner triple systems
